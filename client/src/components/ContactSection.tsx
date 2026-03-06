@@ -43,7 +43,7 @@ export default function ContactSection() {
 
   if (submitted) {
     return (
-      <section id="contact" className="py-20 md:py-28 bg-charcoal">
+      <section id="contact" className="py-14 sm:py-20 md:py-28 bg-charcoal">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -70,9 +70,9 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-charcoal">
+    <section id="contact" className="py-14 sm:py-20 md:py-28 bg-charcoal">
       <div className="container">
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-16">
           {/* Left: Copy */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -87,13 +87,13 @@ export default function ContactSection() {
               Get in Touch
             </span>
             <h2
-              className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-4 sm:mb-5"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Ready to Make a{" "}
               <span className="text-gold">Smart Move?</span>
             </h2>
-            <p className="text-cream/70 text-lg leading-relaxed mb-8">
+            <p className="text-cream/70 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
               Whether you're buying, selling, relocating, or looking for a trusted
               agent referral — Rob is here to help. Fill out the form and he'll be in
               touch to discuss your goals.
@@ -125,10 +125,10 @@ export default function ContactSection() {
           >
             <form
               onSubmit={handleSubmit}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded p-6 md:p-8 space-y-5"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-5 sm:p-6 md:p-8 space-y-4 sm:space-y-5"
             >
               {/* Name & Email */}
-              <div className="grid md:grid-cols-2 gap-5">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
                 <div>
                   <label className="block text-cream/60 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
                     Name *
@@ -137,7 +137,7 @@ export default function ContactSection() {
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/15 rounded text-white placeholder-white/30 focus:border-gold/50 focus:outline-none transition-colors"
+                    className="w-full px-4 py-3.5 sm:py-3 bg-white/5 border border-white/15 rounded-lg sm:rounded text-white text-base placeholder-white/30 focus:border-gold/50 focus:outline-none transition-colors"
                     placeholder="Your full name"
                   />
                 </div>
@@ -149,14 +149,14 @@ export default function ContactSection() {
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/15 rounded text-white placeholder-white/30 focus:border-gold/50 focus:outline-none transition-colors"
+                    className="w-full px-4 py-3.5 sm:py-3 bg-white/5 border border-white/15 rounded-lg sm:rounded text-white text-base placeholder-white/30 focus:border-gold/50 focus:outline-none transition-colors"
                     placeholder="you@email.com"
                   />
                 </div>
               </div>
 
               {/* Phone & Type */}
-              <div className="grid md:grid-cols-2 gap-5">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
                 <div>
                   <label className="block text-cream/60 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
                     Phone
@@ -165,7 +165,7 @@ export default function ContactSection() {
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/15 rounded text-white placeholder-white/30 focus:border-gold/50 focus:outline-none transition-colors"
+                    className="w-full px-4 py-3.5 sm:py-3 bg-white/5 border border-white/15 rounded-lg sm:rounded text-white text-base placeholder-white/30 focus:border-gold/50 focus:outline-none transition-colors"
                     placeholder="(555) 123-4567"
                   />
                 </div>
@@ -176,7 +176,7 @@ export default function ContactSection() {
                   <select
                     value={formData.type}
                     onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/15 rounded text-white focus:border-gold/50 focus:outline-none transition-colors appearance-none"
+                    className="w-full px-4 py-3.5 sm:py-3 bg-white/5 border border-white/15 rounded-lg sm:rounded text-white text-base focus:border-gold/50 focus:outline-none transition-colors appearance-none"
                   >
                     <option value="" className="bg-charcoal">Select one</option>
                     <option value="buying" className="bg-charcoal">Buying a Home</option>
@@ -194,13 +194,13 @@ export default function ContactSection() {
                 <label className="block text-cream/60 text-sm mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>
                   Select any that apply:
                 </label>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 sm:gap-2">
                   {interestOptions.map((interest) => (
                     <button
                       key={interest}
                       type="button"
                       onClick={() => handleInterestToggle(interest)}
-                      className={`px-3.5 py-2 text-xs rounded border transition-all ${
+                      className={`px-3.5 py-2.5 sm:py-2 text-xs sm:text-xs rounded-lg sm:rounded border transition-all ${
                         formData.interests.includes(interest)
                           ? "bg-gold/20 border-gold/50 text-gold"
                           : "bg-white/5 border-white/15 text-cream/60 hover:border-gold/30"
@@ -222,7 +222,7 @@ export default function ContactSection() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={4}
-                  className="w-full px-4 py-3 bg-white/5 border border-white/15 rounded text-white placeholder-white/30 focus:border-gold/50 focus:outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3.5 sm:py-3 bg-white/5 border border-white/15 rounded-lg sm:rounded text-white text-base placeholder-white/30 focus:border-gold/50 focus:outline-none transition-colors resize-none"
                   placeholder="Tell Rob about your goals, timeline, or questions..."
                 />
               </div>
@@ -230,7 +230,7 @@ export default function ContactSection() {
               {/* Submit */}
               <button
                 type="submit"
-                className="group w-full inline-flex items-center justify-center gap-2 px-7 py-4 bg-gold text-charcoal font-semibold rounded transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20"
+                className="group w-full inline-flex items-center justify-center gap-2 px-7 py-4 bg-gold text-charcoal font-semibold text-base rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98]"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
                 <Send size={16} />

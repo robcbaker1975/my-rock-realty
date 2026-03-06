@@ -10,9 +10,9 @@ const stats = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 md:py-28 bg-warm-white overflow-hidden">
+    <section id="about" className="py-14 sm:py-20 md:py-28 bg-warm-white overflow-hidden">
       <div className="container">
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Headshot */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -59,14 +59,14 @@ export default function AboutSection() {
               About Rob
             </span>
             <h2
-              className="text-3xl md:text-4xl font-bold text-charcoal leading-tight mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal leading-tight mb-5 sm:mb-6"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               A Coaching Mindset.{" "}
               <span className="text-gold-dark">A Strategic Approach.</span>
             </h2>
 
-            <div className="space-y-4 text-charcoal-light/80 text-lg leading-relaxed mb-8">
+            <div className="space-y-3 sm:space-y-4 text-charcoal-light/80 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
               <p>
                 Hi, I'm Rob Baker, founder and owner of My Rock Realty. I've been in
                 real estate since 2018 and bring more than 25 years of experience in
@@ -88,7 +88,7 @@ export default function AboutSection() {
             </div>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-8 pt-6 border-t border-cream-dark/60">
+            <div className="flex flex-wrap gap-6 sm:gap-8 pt-5 sm:pt-6 border-t border-cream-dark/60">
               {stats.map((stat, i) => (
                 <motion.div
                   key={stat.label}

@@ -35,10 +35,10 @@ export default function ProcessSection() {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-cream">
+    <section className="py-14 sm:py-20 md:py-28 bg-cream">
       <div className="container">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-14">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export default function ProcessSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl font-bold text-charcoal leading-tight mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal leading-tight mb-3 sm:mb-4"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             A Simple, Strategic Process
@@ -63,14 +63,14 @@ export default function ProcessSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-charcoal-light/80 text-lg"
+            className="text-charcoal-light/80 text-base sm:text-lg"
           >
             Working with Rob is straightforward. Here's what to expect.
           </motion.p>
         </div>
 
         {/* Steps */}
-        <div className="grid md:grid-cols-4 gap-6 md:gap-4 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-4 mb-8 sm:mb-12">
           {steps.map((step, i) => (
             <motion.div
               key={step.number}
@@ -122,7 +122,7 @@ export default function ProcessSection() {
         >
           <button
             onClick={() => scrollTo("#contact")}
-            className="group inline-flex items-center gap-2 px-7 py-4 bg-charcoal text-cream font-semibold rounded transition-all hover:bg-charcoal-light hover:shadow-lg"
+            className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-4 bg-charcoal text-cream font-semibold rounded-lg sm:rounded transition-all hover:bg-charcoal-light hover:shadow-lg active:scale-[0.98]"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Let's Get Started

@@ -12,7 +12,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-[100vh] flex items-center overflow-hidden"
+      className="relative min-h-[100svh] flex items-end sm:items-center overflow-hidden"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -22,35 +22,36 @@ export default function HeroSection() {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/70 to-charcoal/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-charcoal/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-charcoal/30" />
       </div>
 
-      {/* Content */}
-      <div className="relative container pt-28 pb-20 md:pt-32 md:pb-28">
+      {/* Content — mobile: pushed lower for visual balance; desktop: centered */}
+      <div className="relative container pb-16 pt-24 sm:pt-28 sm:pb-20 md:pt-32 md:pb-28">
         <div className="max-w-2xl">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-gold/40 bg-gold/10 backdrop-blur-sm"
+            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 mb-5 sm:mb-6 rounded-full border border-gold/40 bg-gold/10 backdrop-blur-sm"
           >
-            <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-            <span className="text-gold text-xs font-medium tracking-widest uppercase" style={{ fontFamily: "'Outfit', sans-serif" }}>
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gold animate-pulse" />
+            <span className="text-gold text-[11px] sm:text-xs font-medium tracking-widest uppercase" style={{ fontFamily: "'Outfit', sans-serif" }}>
               Serving Colorado — Referrals Nationwide
             </span>
           </motion.div>
 
-          {/* Headline */}
+          {/* Headline — mobile: smaller, clean wrapping */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-6"
+            className="text-[2rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white sm:leading-[1.1] tracking-tight mb-4 sm:mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Strategic Real Estate Guidance for{" "}
-            <span className="text-gold">Colorado</span> Buyers & Sellers
+            <span className="text-gold">Colorado</span>{" "}
+            <span className="inline sm:inline">Buyers & Sellers</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -58,7 +59,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 max-w-xl"
+            className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed mb-6 sm:mb-8 max-w-xl"
             style={{ fontFamily: "'Libre Franklin', sans-serif" }}
           >
             25+ years of negotiation expertise. A coaching mindset shaped at Zillow.
@@ -66,16 +67,16 @@ export default function HeroSection() {
             with confidence.
           </motion.p>
 
-          {/* CTAs */}
+          {/* CTAs — stacked on mobile, side by side on sm+ */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45 }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4"
           >
             <button
               onClick={() => scrollTo("#contact")}
-              className="group inline-flex items-center justify-center gap-2 px-7 py-4 bg-gold text-charcoal font-semibold rounded transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-4 sm:px-7 bg-gold text-charcoal font-semibold rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-base sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Schedule a Consultation
@@ -83,7 +84,7 @@ export default function HeroSection() {
             </button>
             <button
               onClick={() => scrollTo("#buyers")}
-              className="group inline-flex items-center justify-center gap-2 px-7 py-4 border border-white/30 text-white font-medium rounded transition-all hover:border-gold/60 hover:text-gold backdrop-blur-sm"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-4 sm:px-7 border border-white/30 text-white font-medium rounded-lg sm:rounded transition-all hover:border-gold/60 hover:text-gold backdrop-blur-sm active:bg-white/5 text-base sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               <Phone size={16} />
@@ -96,7 +97,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.7 }}
-            className="mt-8 text-sm text-white/50 tracking-wide"
+            className="mt-6 sm:mt-8 text-xs sm:text-sm text-white/50 tracking-wide"
             style={{ fontFamily: "'Libre Franklin', sans-serif" }}
           >
             Helping buyers, sellers, land clients, and relocations across Colorado
@@ -104,12 +105,12 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — hidden on mobile for cleaner look */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:block"
       >
         <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
           <motion.div

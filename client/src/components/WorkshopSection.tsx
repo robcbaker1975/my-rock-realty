@@ -12,9 +12,9 @@ const takeaways = [
 
 export default function WorkshopSection() {
   return (
-    <section id="workshop" className="py-20 md:py-28 bg-charcoal overflow-hidden">
+    <section id="workshop" className="py-14 sm:py-20 md:py-28 bg-charcoal overflow-hidden">
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -29,13 +29,13 @@ export default function WorkshopSection() {
               Weekly Workshop
             </span>
             <h2
-              className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-4 sm:mb-5"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Colorado Home Buying{" "}
               <span className="text-gold">Workshop</span>
             </h2>
-            <p className="text-cream/70 text-lg leading-relaxed mb-6">
+            <p className="text-cream/70 text-base sm:text-lg leading-relaxed mb-5 sm:mb-6">
               Every week, Rob hosts a free educational workshop designed to help
               Colorado buyers understand their options, explore home buying programs,
               and build a clear path to homeownership. No pressure, no sales pitch —
@@ -60,7 +60,7 @@ export default function WorkshopSection() {
             </div>
 
             {/* Stats */}
-            <div className="flex gap-8 mb-8 pb-8 border-b border-white/10">
+            <div className="flex flex-wrap gap-4 sm:gap-8 mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-white/10">
               <div className="flex items-center gap-2 text-cream/60">
                 <Calendar size={16} className="text-gold" />
                 <span className="text-sm">Weekly Sessions</span>
@@ -79,7 +79,7 @@ export default function WorkshopSection() {
               href="https://ColoradoHomeBuyingWorkshop.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-6 py-3.5 bg-gold text-charcoal font-semibold rounded transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20"
+              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-4 sm:py-3.5 bg-gold text-charcoal font-semibold rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-[0.98]"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Learn More About the Workshop

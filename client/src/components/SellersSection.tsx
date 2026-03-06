@@ -28,9 +28,9 @@ export default function SellersSection() {
   };
 
   return (
-    <section id="sellers" className="py-20 md:py-28 bg-cream overflow-hidden">
+    <section id="sellers" className="py-14 sm:py-20 md:py-28 bg-cream overflow-hidden">
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -45,13 +45,13 @@ export default function SellersSection() {
               For Sellers
             </span>
             <h2
-              className="text-3xl md:text-4xl font-bold text-charcoal leading-tight mb-5"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal leading-tight mb-4 sm:mb-5"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Maximize Your Sale with{" "}
               <span className="text-gold-dark">Strategy, Not Luck</span>
             </h2>
-            <p className="text-charcoal-light/80 text-lg leading-relaxed mb-8">
+            <p className="text-charcoal-light/80 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
               Selling a home is about more than listing it and hoping for the right
               offer. Rob builds a clear plan around pricing, marketing, and
               negotiation — designed to create demand and drive top-dollar results.
@@ -85,7 +85,7 @@ export default function SellersSection() {
 
             <button
               onClick={() => scrollTo("#contact")}
-              className="group inline-flex items-center gap-2 px-6 py-3.5 bg-charcoal text-cream font-semibold rounded transition-all hover:bg-charcoal-light hover:shadow-lg"
+              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-4 sm:py-3.5 bg-charcoal text-cream font-semibold rounded-lg sm:rounded transition-all hover:bg-charcoal-light hover:shadow-lg active:scale-[0.98]"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Get a Selling Strategy

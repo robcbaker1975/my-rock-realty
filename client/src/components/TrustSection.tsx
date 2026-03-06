@@ -45,10 +45,10 @@ const fadeUp = {
 
 export default function TrustSection() {
   return (
-    <section className="py-20 md:py-28 bg-warm-white">
+    <section className="py-14 sm:py-20 md:py-28 bg-warm-white">
       <div className="container">
         {/* Section Header */}
-        <div className="max-w-2xl mb-14">
+        <div className="max-w-2xl mb-8 sm:mb-14">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ export default function TrustSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl font-bold text-charcoal leading-tight mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal leading-tight mb-3 sm:mb-4"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Experience, Strategy & a{" "}
@@ -75,7 +75,7 @@ export default function TrustSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-charcoal-light/80 text-lg leading-relaxed"
+            className="text-charcoal-light/80 text-base sm:text-lg leading-relaxed"
           >
             Not every agent brings the same depth of experience. Here's what makes
             working with My Rock Realty different.
@@ -83,7 +83,7 @@ export default function TrustSection() {
         </div>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {differentiators.map((item, i) => (
             <motion.div
               key={item.title}
@@ -92,7 +92,7 @@ export default function TrustSection() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
-              className="group p-6 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-lg hover:shadow-gold/5"
+              className="group p-5 sm:p-6 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-lg hover:shadow-gold/5"
             >
               <div className="w-11 h-11 rounded flex items-center justify-center bg-gold/10 text-gold-dark mb-4 group-hover:bg-gold/20 transition-colors">
                 <item.icon size={22} strokeWidth={1.8} />
