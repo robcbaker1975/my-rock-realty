@@ -1,25 +1,42 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
-
 /**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+ * My Rock Realty — Home Page
+ * Design: "Front Range Modern" — Colorado Contemporary Architecture meets Digital Craft
+ * Palette: Warm charcoal (#292524), warm cream (#F5F0EB), antique gold (#C9A96E)
+ * Typography: Outfit (display) + Libre Franklin (body)
  */
-export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
 
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import TrustSection from "@/components/TrustSection";
+import BuyersSection from "@/components/BuyersSection";
+import SellersSection from "@/components/SellersSection";
+import LandSection from "@/components/LandSection";
+import RelocationsSection from "@/components/RelocationsSection";
+import WorkshopSection from "@/components/WorkshopSection";
+import AboutSection from "@/components/AboutSection";
+import ProcessSection from "@/components/ProcessSection";
+import ContactSection from "@/components/ContactSection";
+import FAQSection from "@/components/FAQSection";
+import Footer from "@/components/Footer";
+
+export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
+      <Navbar />
       <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+        <HeroSection />
+        <TrustSection />
+        <BuyersSection />
+        <SellersSection />
+        <LandSection />
+        <RelocationsSection />
+        <WorkshopSection />
+        <AboutSection />
+        <ProcessSection />
+        <ContactSection />
+        <FAQSection />
       </main>
+      <Footer />
     </div>
   );
 }

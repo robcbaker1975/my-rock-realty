@@ -1,0 +1,115 @@
+import { motion } from "framer-motion";
+
+const HEADSHOT_URL = "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663410368883/QjobAKPgddayCpvp.jpg?Expires=1804373851&Signature=uA6Gphvd5bl4ENxNzBbQS1oAArXlCb32hSXZhITA6srXCvm6jhJ8XSk4gqtuUT44OD8vYJxI4csuue70NrJIL73aw5Rdut8wvJMFT8oBlWgkLibBYdqpDz2ALAnALtea4v6EY47X~UF1dLGM6ap6b7I6zvKNYZPbtPejOi-h-UodSRru6RzEWRm95eexOQrg~gkie3LIbcH8pG0w-Eg8aQQLqgDlexS7YfjlO~20PFiX8NB4wumOS1BbB7VOEZmmSxWuI~C6IlPVEudjNzgLGzAyAHaMgcm4xRvP-ikeUvUQEBz7XdSRmjG5OHiMr~yrc9J6yZHNMLejnqFpPRg7mA__&Key-Pair-Id=K2HSFNDJXOU9YS";
+
+const stats = [
+  { value: "25+", label: "Years in Sales & Negotiations" },
+  { value: "4.5", label: "Years at Zillow" },
+  { value: "50", label: "States in Referral Network" },
+];
+
+export default function AboutSection() {
+  return (
+    <section id="about" className="py-20 md:py-28 bg-warm-white overflow-hidden">
+      <div className="container">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+          {/* Headshot */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-2 relative"
+          >
+            <div className="relative max-w-md mx-auto lg:mx-0">
+              {/* Gold accent background */}
+              <div className="absolute -top-4 -left-4 w-full h-full bg-gold/10 rounded" />
+              <div className="relative rounded overflow-hidden shadow-xl bg-cream">
+                <img
+                  src={HEADSHOT_URL}
+                  alt="Rob Baker, founder and owner of My Rock Realty"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              {/* Name card */}
+              <div className="absolute -bottom-4 left-4 right-4 bg-charcoal rounded p-4 shadow-lg">
+                <p
+                  className="text-white font-bold text-lg"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  Rob Baker
+                </p>
+                <p className="text-gold text-sm">Founder & Owner, My Rock Realty</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Bio Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-3"
+          >
+            <span
+              className="text-gold-dark text-sm font-semibold tracking-widest uppercase mb-3 block"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              About Rob
+            </span>
+            <h2
+              className="text-3xl md:text-4xl font-bold text-charcoal leading-tight mb-6"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              A Coaching Mindset.{" "}
+              <span className="text-gold-dark">A Strategic Approach.</span>
+            </h2>
+
+            <div className="space-y-4 text-charcoal-light/80 text-lg leading-relaxed mb-8">
+              <p>
+                Hi, I'm Rob Baker, founder and owner of My Rock Realty. I've been in
+                real estate since 2018 and bring more than 25 years of experience in
+                sales and negotiations.
+              </p>
+              <p>
+                Before launching my brokerage, I spent 4.5 years at Zillow as an
+                Agent Coach & Consultant, helping agents improve strategy, client
+                experience, and results.
+              </p>
+              <p>
+                Today, I bring that same coaching mindset to buyers and sellers across
+                Colorado — helping buyers navigate home buying programs and smart
+                financing opportunities, helping sellers pursue top-dollar outcomes
+                through modern marketing and data-driven pricing, and helping clients
+                connect with trusted agents through my referral network in all 50
+                states.
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="flex flex-wrap gap-8 pt-6 border-t border-cream-dark/60">
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <p
+                    className="text-3xl font-bold text-gold-dark"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    {stat.value}
+                  </p>
+                  <p className="text-charcoal-light/60 text-sm mt-1">{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
