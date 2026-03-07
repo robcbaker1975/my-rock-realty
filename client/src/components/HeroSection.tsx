@@ -59,31 +59,24 @@ export default function HeroSection() {
               Strategic Real Estate{" "}
               <br className="hidden sm:block" />
               Guidance for{" "}
-              <span className="relative inline-block">
+              <span className="inline-flex items-baseline">
                 <svg
-                  style={{
-                    display: 'inline-block',
-                    width: '0.90em',
-                    height: '1.02em',
-                    verticalAlign: 'baseline',
-                    marginRight: '0.01em'
-                  }}
+                  aria-hidden="true"
                   viewBox="0 0 100 100"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="inline-block h-[0.92em] w-[0.82em] align-[-0.06em] mr-[0.01em] shrink-0"
                 >
                   <path
-                    d="M 80 18 A 38 38 0 0 0 22 50 A 38 38 0 0 0 80 82"
-                    fill="none"
-                    stroke="#C41E3A"
-                    strokeWidth="16"
-                    strokeLinecap="round"
+                    d="M78 24
+                       A38 38 0 1 0 78 76
+                       L67 64
+                       A22 22 0 1 1 67 36
+                       Z"
+                    fill="#C41E3A"
                   />
-                  <circle cx="44" cy="50" r="17" fill="#FDB913" stroke="none" />
-                </svg><span style={{
-                  color: 'white',
-                  fontWeight: 700,
-                  letterSpacing: 'inherit'
-                }}>olorado</span>
+                  <circle cx="45" cy="50" r="14.5" fill="#FDB913" />
+                </svg>
+                <span className="text-white">olorado</span>
               </span>{" "}
               <br className="hidden sm:block" />
               Buyers & Sellers
