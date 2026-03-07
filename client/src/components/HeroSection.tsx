@@ -59,7 +59,14 @@ export default function HeroSection() {
               Strategic Real Estate{" "}
               <br className="hidden sm:block" />
               Guidance for{" "}
-              <span className="text-gold">Colorado</span>{" "}
+              <span className="relative inline-block" style={{
+                background: 'linear-gradient(90deg, #C41E3A 0%, #002868 25%, #FFB81C 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                fontWeight: 700,
+                letterSpacing: 'inherit'
+              }}>Colorado</span>{" "}
               <br className="hidden sm:block" />
               Buyers & Sellers
             </motion.h1>
