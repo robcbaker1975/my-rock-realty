@@ -134,7 +134,7 @@ export default function Coaching() {
                 className="text-gold text-xs sm:text-sm font-semibold tracking-wide"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                REAL ESTATE COACHING · COLORADO
+                REAL ESTATE COACHING · NATIONWIDE
               </span>
             </div>
 
