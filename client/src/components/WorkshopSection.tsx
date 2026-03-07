@@ -73,9 +73,7 @@ export default function WorkshopSection() {
             </div>
 
             <a
-              href="https://ColoradoHomeBuyingWorkshop.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/colorado-home-buying-workshop"
               className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 bg-gold text-charcoal font-semibold rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
@@ -109,7 +107,7 @@ export default function WorkshopSection() {
               className="absolute -bottom-6 -left-4 md:-left-8 bg-white rounded shadow-xl p-5 max-w-[260px]"
             >
               <p className="text-charcoal font-semibold text-sm mb-1" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                ColoradoHomeBuyingWorkshop.com
+                MyRockHomes.com/colorado-home-buying-workshop
               </p>
               <p className="text-charcoal-light/60 text-xs leading-relaxed">
                 Free weekly sessions for Colorado home buyers

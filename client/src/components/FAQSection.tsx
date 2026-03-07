@@ -35,7 +35,7 @@ const faqs = [
   {
     question: "What is the Colorado Home Buying Workshop?",
     answer:
-      "It's a free weekly educational session hosted by Rob for anyone interested in buying a home in Colorado. You'll learn about available programs, financing strategies, and the buying process — with no pressure or sales pitch. Visit ColoradoHomeBuyingWorkshop.com for details.",
+      "It's a free weekly educational session hosted by Rob for anyone interested in buying a home in Colorado. You'll learn about available programs, financing strategies, and the buying process — with no pressure or sales pitch. Visit MyRockHomes.com/colorado-home-buying-workshop for details.",
   },
   {
     question: "Do you help with land purchases and investment properties?",

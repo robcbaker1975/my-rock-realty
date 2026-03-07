@@ -92,9 +92,7 @@ export default function Footer() {
             </h4>
             <div className="space-y-2.5 text-sm">
               <a
-                href="https://ColoradoHomeBuyingWorkshop.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/colorado-home-buying-workshop"
                 className="block text-cream/50 hover:text-gold transition-colors"
               >
                 Colorado Home Buying Workshop
