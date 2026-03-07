@@ -145,6 +145,13 @@
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Improve mobile section transitions */
+  section {
+    position: relative;
   }
 
   /* Custom scrollbar */

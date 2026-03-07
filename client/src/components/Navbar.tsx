@@ -59,7 +59,7 @@ export default function Navbar() {
             <img
               src={LOGO_URL}
               alt="My Rock Realty"
-              className="h-12 sm:h-14 md:h-[3.5rem] w-auto"
+              className="h-14 sm:h-16 md:h-[4.5rem] w-auto"
             />
           </a>
 
@@ -100,7 +100,7 @@ export default function Navbar() {
       {/* === NOT SCROLLED (hero): large centered logo + nav below === */}
       <div className={`transition-all duration-300 ${scrolled ? "hidden" : "block"}`}>
         {/* Row 1: Centered logo (large & prominent) */}
-        <div className="container flex items-center justify-center pt-4 pb-2 sm:pt-5 sm:pb-2 relative">
+        <div className="container flex items-center justify-center pt-5 pb-3 sm:pt-6 sm:pb-3 relative">
           <a
             href="#hero"
             onClick={(e) => { e.preventDefault(); handleNavClick("#hero"); }}
@@ -109,7 +109,7 @@ export default function Navbar() {
             <img
               src={LOGO_URL}
               alt="My Rock Realty"
-              className="h-[5.5rem] sm:h-[6rem] md:h-[6.5rem] lg:h-28 w-auto drop-shadow-lg"
+              className="h-[7rem] sm:h-[7.5rem] md:h-[8rem] lg:h-[8.5rem] w-auto drop-shadow-lg"
             />
           </a>
 
@@ -162,7 +162,7 @@ export default function Navbar() {
               <img
                 src={LOGO_URL}
                 alt="My Rock Realty"
-                className="h-16 w-auto"
+                className="h-20 w-auto"
               />
               <button
                 onClick={() => setMobileOpen(false)}

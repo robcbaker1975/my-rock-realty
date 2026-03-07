@@ -28,10 +28,10 @@ export default function RelocationsSection() {
   };
 
   return (
-    <section id="relocations" className="py-14 sm:py-20 md:py-28 bg-cream relative overflow-hidden">
+    <section id="relocations" className="py-12 sm:py-20 md:py-28 bg-cream relative overflow-hidden">
       <div className="container">
         {/* Section Header */}
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start mb-8 sm:mb-14">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-12 lg:gap-16 items-start mb-7 sm:mb-14">
           <div>
             <motion.span
               initial={{ opacity: 0, y: 10 }}
@@ -81,7 +81,7 @@ export default function RelocationsSection() {
         </div>
 
         {/* Scenario Cards */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 mb-7 sm:mb-10">
           {scenarios.map((s, i) => (
             <motion.div
               key={s.title}
@@ -89,7 +89,7 @@ export default function RelocationsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 * i }}
-              className="p-5 sm:p-7 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-lg hover:shadow-gold/5"
+              className="p-4 sm:p-7 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-lg hover:shadow-gold/5"
             >
               <div className="w-12 h-12 rounded flex items-center justify-center bg-gold/10 text-gold-dark mb-4">
                 <s.icon size={24} strokeWidth={1.8} />
@@ -111,7 +111,7 @@ export default function RelocationsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="bg-charcoal rounded-lg p-6 sm:p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6"
+          className="bg-charcoal rounded-lg p-5 sm:p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6"
         >
           <div className="text-center md:text-left">
             <h3
@@ -127,7 +127,7 @@ export default function RelocationsSection() {
           </div>
           <button
             onClick={() => scrollTo("#contact")}
-            className="group shrink-0 inline-flex items-center justify-center gap-2 w-full md:w-auto px-7 py-4 bg-gold text-charcoal font-semibold rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98]"
+            className="group shrink-0 inline-flex items-center justify-center gap-2 w-full md:w-auto px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Request a Referral

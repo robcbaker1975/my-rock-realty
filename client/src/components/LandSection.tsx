@@ -8,7 +8,7 @@ export default function LandSection() {
   };
 
   return (
-    <section className="py-14 sm:py-20 md:py-24 bg-charcoal relative overflow-hidden">
+    <section className="py-12 sm:py-20 md:py-24 bg-charcoal relative overflow-hidden">
       {/* Subtle topographic pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A96E' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -47,7 +47,7 @@ export default function LandSection() {
           </motion.p>
 
           {/* Cards */}
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 mb-7 sm:mb-10">
             {[
               {
                 icon: Mountain,
@@ -71,7 +71,7 @@ export default function LandSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * i }}
-                className="p-6 rounded border border-white/10 bg-white/5 backdrop-blur-sm text-left hover:border-gold/30 transition-colors"
+                className="p-5 sm:p-6 rounded border border-white/10 bg-white/5 backdrop-blur-sm text-left hover:border-gold/30 transition-colors"
               >
                 <card.icon size={24} className="text-gold mb-3" />
                 <h4
@@ -93,7 +93,7 @@ export default function LandSection() {
           >
             <button
               onClick={() => scrollTo("#contact")}
-              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-4 sm:py-3.5 border border-gold/50 text-gold font-semibold rounded-lg sm:rounded transition-all hover:bg-gold hover:text-charcoal active:scale-[0.98]"
+              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 border border-gold/50 text-gold font-semibold rounded-lg sm:rounded transition-all hover:bg-gold hover:text-charcoal active:scale-[0.98] text-[15px] sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Explore Your Options

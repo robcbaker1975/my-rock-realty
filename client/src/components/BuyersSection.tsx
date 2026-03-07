@@ -28,7 +28,7 @@ export default function BuyersSection() {
   };
 
   return (
-    <section id="buyers" className="py-14 sm:py-20 md:py-28 bg-charcoal overflow-hidden">
+    <section id="buyers" className="py-12 sm:py-20 md:py-28 bg-charcoal overflow-hidden">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Image */}
@@ -76,7 +76,7 @@ export default function BuyersSection() {
               Rob helps buyers uncover programs and financing strategies most agents overlook — reducing costs, improving terms, and building a stronger path to homeownership.
             </p>
 
-            <div className="space-y-5 mb-8">
+            <div className="space-y-4 mb-6 sm:mb-8">
               {benefits.map((b, i) => (
                 <motion.div
                   key={b.title}
@@ -104,7 +104,7 @@ export default function BuyersSection() {
 
             <button
               onClick={() => scrollTo("#contact")}
-              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-4 sm:py-3.5 bg-gold text-charcoal font-semibold rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-[0.98]"
+              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 bg-gold text-charcoal font-semibold rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Ask About Buyer Programs

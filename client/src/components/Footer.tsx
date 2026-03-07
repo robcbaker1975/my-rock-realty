@@ -32,12 +32,12 @@ export default function Footer() {
 
   return (
     <footer className="bg-charcoal border-t border-white/5">
-      <div className="container py-10 sm:py-14">
+        <div className="container py-8 sm:py-14">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-8 sm:mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10 mb-7 sm:mb-10">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <img src={LOGO_URL} alt="My Rock Realty" className="h-16 sm:h-14 w-auto mb-4" />
+            <img src={LOGO_URL} alt="My Rock Realty" className="h-16 sm:h-18 w-auto mb-4" />
             <p className="text-cream/50 text-[13px] sm:text-sm leading-relaxed max-w-xs mb-3">
               Strategic real estate guidance for Colorado buyers, sellers, and relocation clients.
             </p>

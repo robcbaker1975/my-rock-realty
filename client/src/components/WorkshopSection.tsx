@@ -12,7 +12,7 @@ const takeaways = [
 
 export default function WorkshopSection() {
   return (
-    <section id="workshop" className="py-14 sm:py-20 md:py-28 bg-charcoal overflow-hidden">
+    <section id="workshop" className="py-12 sm:py-20 md:py-28 bg-charcoal overflow-hidden">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Content */}
@@ -40,7 +40,7 @@ export default function WorkshopSection() {
             </p>
 
             {/* Takeaways */}
-            <div className="space-y-3 mb-8">
+            <div className="space-y-2.5 mb-6 sm:mb-8">
               {takeaways.map((item, i) => (
                 <motion.div
                   key={i}
@@ -76,7 +76,7 @@ export default function WorkshopSection() {
               href="https://ColoradoHomeBuyingWorkshop.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-4 sm:py-3.5 bg-gold text-charcoal font-semibold rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-[0.98]"
+              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 bg-gold text-charcoal font-semibold rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Learn More About the Workshop

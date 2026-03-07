@@ -8,6 +8,7 @@ const interestOptions = [
   "Selling my home",
   "Relocating",
   "Out-of-state referral",
+  "Land / investment",
   "Workshop info",
 ];
 
@@ -44,7 +45,7 @@ export default function ContactSection() {
 
   if (submitted) {
     return (
-      <section id="contact" className="py-14 sm:py-20 md:py-28 bg-charcoal">
+      <section id="contact" className="py-12 sm:py-20 md:py-28 bg-charcoal">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -71,7 +72,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-14 sm:py-20 md:py-28 bg-charcoal">
+    <section id="contact" className="py-12 sm:py-20 md:py-28 bg-charcoal">
       <div className="container">
         <div className="grid lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-16">
           {/* Left: Copy */}
@@ -229,7 +230,7 @@ export default function ContactSection() {
               {/* Submit */}
               <button
                 type="submit"
-                className="group w-full inline-flex items-center justify-center gap-2 px-7 py-4 bg-gold text-charcoal font-semibold text-base rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98]"
+                className="group w-full inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-bold text-base rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98]"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
                 <Send size={16} />

@@ -46,11 +46,11 @@ const faqs = [
 
 export default function FAQSection() {
   return (
-    <section className="py-14 sm:py-20 md:py-28 bg-warm-white">
+    <section className="py-12 sm:py-20 md:py-28 bg-warm-white">
       <div className="container">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-8 sm:mb-12">
+          <div className="text-center mb-7 sm:mb-12">
             <motion.span
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -79,15 +79,15 @@ export default function FAQSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <Accordion type="single" collapsible className="space-y-3">
+            <Accordion type="single" collapsible className="space-y-2.5">
               {faqs.map((faq, i) => (
                 <AccordionItem
                   key={i}
                   value={`faq-${i}`}
-                  className="bg-white border border-cream-dark/60 rounded px-4 sm:px-6 data-[state=open]:border-gold/30 transition-colors"
+                  className="bg-white border border-cream-dark/60 rounded px-4 sm:px-6 data-[state=open]:border-gold/40 data-[state=open]:shadow-sm transition-all"
                 >
                   <AccordionTrigger
-                    className="text-left text-charcoal font-semibold py-5 hover:text-gold-dark transition-colors [&[data-state=open]]:text-gold-dark"
+                    className="text-left text-charcoal font-semibold text-[15px] sm:text-base py-4 sm:py-5 hover:text-gold-dark transition-colors [&[data-state=open]]:text-gold-dark"
                     style={{ fontFamily: "'Outfit', sans-serif" }}
                   >
                     {faq.question}

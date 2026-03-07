@@ -35,10 +35,10 @@ export default function ProcessSection() {
   };
 
   return (
-    <section className="py-14 sm:py-20 md:py-28 bg-cream">
+    <section className="py-12 sm:py-20 md:py-28 bg-cream">
       <div className="container">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-7 sm:mb-14">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ export default function ProcessSection() {
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 md:gap-4 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-4 mb-7 sm:mb-12">
           {steps.map((step, i) => (
             <motion.div
               key={step.number}
@@ -122,7 +122,7 @@ export default function ProcessSection() {
         >
           <button
             onClick={() => scrollTo("#contact")}
-            className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-4 bg-charcoal text-cream font-semibold rounded-lg sm:rounded transition-all hover:bg-charcoal-light hover:shadow-lg active:scale-[0.98]"
+            className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-3.5 bg-charcoal text-cream font-semibold rounded-lg sm:rounded transition-all hover:bg-charcoal-light hover:shadow-lg active:scale-[0.98] text-[15px] sm:text-base"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Let's Get Started

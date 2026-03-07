@@ -10,7 +10,7 @@ const stats = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-14 sm:py-20 md:py-28 bg-warm-white overflow-hidden">
+    <section id="about" className="py-12 sm:py-20 md:py-28 bg-warm-white overflow-hidden">
       <div className="container">
         <div className="grid lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Headshot */}
@@ -66,7 +66,7 @@ export default function AboutSection() {
               <span className="text-gold-dark">A Strategic Approach.</span>
             </h2>
 
-            <div className="space-y-3 sm:space-y-4 text-charcoal-light/80 text-[15px] sm:text-lg leading-relaxed mb-6 sm:mb-8">
+            <div className="space-y-3 text-charcoal-light/80 text-[15px] sm:text-lg leading-relaxed mb-5 sm:mb-8">
               <p>
                 Hi, I'm Rob Baker, founder and owner of My Rock Realty. I've been in
                 real estate since 2018 and bring more than 25 years of experience in

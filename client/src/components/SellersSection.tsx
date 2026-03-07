@@ -28,7 +28,7 @@ export default function SellersSection() {
   };
 
   return (
-    <section id="sellers" className="py-14 sm:py-20 md:py-28 bg-cream overflow-hidden">
+    <section id="sellers" className="py-12 sm:py-20 md:py-28 bg-cream overflow-hidden">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Content */}
@@ -55,7 +55,7 @@ export default function SellersSection() {
               Rob builds a clear plan around pricing, marketing, and negotiation — designed to create demand and drive top-dollar results.
             </p>
 
-            <div className="space-y-5 mb-8">
+            <div className="space-y-4 mb-6 sm:mb-8">
               {strategies.map((s, i) => (
                 <motion.div
                   key={s.title}
@@ -83,7 +83,7 @@ export default function SellersSection() {
 
             <button
               onClick={() => scrollTo("#contact")}
-              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-4 sm:py-3.5 bg-charcoal text-cream font-semibold rounded-lg sm:rounded transition-all hover:bg-charcoal-light hover:shadow-lg active:scale-[0.98]"
+              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 bg-charcoal text-cream font-semibold rounded-lg sm:rounded transition-all hover:bg-charcoal-light hover:shadow-lg active:scale-[0.98] text-[15px] sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Get a Selling Strategy
