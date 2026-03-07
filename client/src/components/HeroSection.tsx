@@ -66,7 +66,11 @@ export default function HeroSection() {
                   fontWeight: 700,
                   letterSpacing: 'inherit',
                   position: 'relative',
-                  textShadow: 'inset -1px -1px 0 rgba(255, 184, 28, 0.4), inset 1px 1px 0 rgba(255, 184, 28, 0.2)'
+                  background: 'radial-gradient(circle at 40% 45%, rgba(255, 184, 28, 0.7) 0%, rgba(255, 184, 28, 0.3) 35%, transparent 70%)',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: '#C41E3A',
+                  textShadow: 'none'
                 }}>C</span><span style={{
                   color: 'white',
                   fontWeight: 700,
