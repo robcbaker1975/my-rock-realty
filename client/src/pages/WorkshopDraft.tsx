@@ -44,10 +44,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 function CTAButton({ variant = "primary", className = "" }: { variant?: "primary" | "secondary"; className?: string }) {
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    const popup = document.getElementById('popup-sD4hCHIgZtHikPcqCh1z');
-    if (popup) {
-      popup.style.display = 'block';
-    }
+    window.open('https://coloradohomebuyingworkshop.com/registration-form-page', '_blank');
   };
 
   return (
