@@ -60,7 +60,7 @@ export default function FairHousing() {
                 Our Commitment
               </h2>
               <p>
-                My Rock Realty is committed to complying fully with the Fair Housing Act and all applicable federal, state, and local fair housing laws. We believe that every person has the right to choose where they live, free from discrimination.
+                My Rock Realty, LLC is committed to complying fully with the Fair Housing Act and all applicable federal, state, and local fair housing laws. We believe that every person has the right to choose where they live, free from discrimination.
               </p>
             </section>
 
@@ -87,7 +87,7 @@ export default function FairHousing() {
                 Colorado Fair Housing
               </h2>
               <p>
-                In addition to federal protections, the Colorado Anti-Discrimination Act (CADA) provides additional protections against housing discrimination based on marital status, ancestry, creed, and sexual orientation. My Rock Realty adheres to all state-level fair housing requirements in our real estate practice.
+                In addition to federal protections, the Colorado Anti-Discrimination Act (CADA) provides additional protections against housing discrimination based on marital status, ancestry, creed, and sexual orientation. My Rock Realty, LLC adheres to all state-level fair housing requirements in our real estate practice.
               </p>
             </section>
 
@@ -137,7 +137,7 @@ export default function FairHousing() {
                 </svg>
               </div>
               <p className="text-cream/80 text-sm leading-relaxed max-w-lg mx-auto">
-                My Rock Realty is pledged to the letter and spirit of U.S. policy for the achievement of equal housing opportunity throughout the nation. We encourage and support an affirmative advertising and marketing program in which there are no barriers to obtaining housing because of race, color, religion, sex, handicap, familial status, or national origin.
+                My Rock Realty, LLC is pledged to the letter and spirit of U.S. policy for the achievement of equal housing opportunity throughout the nation. We encourage and support an affirmative advertising and marketing program in which there are no barriers to obtaining housing because of race, color, religion, sex, handicap, familial status, or national origin.
               </p>
             </div>
           </div>

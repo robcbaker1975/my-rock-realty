@@ -120,7 +120,7 @@ export default function Terms() {
                 9. Licensing & Compliance
               </h2>
               <p>
-                My Rock Realty operates as a licensed real estate brokerage in the state of Colorado. All real estate activities are conducted in compliance with applicable state and federal laws, including fair housing regulations. Rob Baker is a licensed real estate professional in the state of Colorado.
+                My Rock Realty, LLC operates as a licensed real estate brokerage in the state of Colorado (License ER100078487). All real estate activities are conducted in compliance with applicable state and federal laws, including fair housing regulations. Rob Baker is a licensed real estate professional in the state of Colorado.
               </p>
             </section>
 
@@ -141,11 +141,13 @@ export default function Terms() {
                 If you have questions about these Terms & Conditions, please contact:
               </p>
               <div className="mt-3 p-4 bg-cream rounded border border-cream-dark/40 text-sm">
-                <p className="font-semibold text-charcoal">Rob Baker</p>
-                <p>My Rock Realty</p>
-                <p>Serving Colorado</p>
-                <p className="mt-2 text-charcoal-light/60">
-                  Please use the contact form on our website to reach us.
+                <p className="font-semibold text-charcoal">Rob Baker, Broker/Owner</p>
+                <p>My Rock Realty, LLC</p>
+                <p>Lic. ER100078487</p>
+                <p className="mt-2">8650 N Pioneer Trail, Parker, CO 80138</p>
+                <p>(720) 363-6544</p>
+                <p>
+                  <a href="mailto:RobBakerRE@gmail.com" className="text-gold-dark hover:underline">RobBakerRE@gmail.com</a>
                 </p>
               </div>
             </section>

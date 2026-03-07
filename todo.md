@@ -19,3 +19,12 @@
 - [x] Footer/trust polish: clean mobile stacking
 - [x] Contact form: spacing, field sizing, tap targets
 - [x] Final visual finish: typography, spacing, button consistency
+
+## V7 Final Launch Polish
+- [x] Integrate approved headshot into hero section (tasteful, mobile-friendly, hat not cropped)
+- [x] Integrate approved headshot into About section
+- [x] Replace placeholder footer details with real business info (My Rock Realty LLC, Lic. ER100078487, address, phone, email)
+- [x] Update contact section with real business details
+- [x] Update legal pages with real business details
+- [x] Ensure "Schedule a Consultation" remains visually dominant CTA
+- [x] Mobile-first spacing and visual polish

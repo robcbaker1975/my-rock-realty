@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const HEADSHOT_URL = "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663410368883/QjobAKPgddayCpvp.jpg?Expires=1804373851&Signature=uA6Gphvd5bl4ENxNzBbQS1oAArXlCb32hSXZhITA6srXCvm6jhJ8XSk4gqtuUT44OD8vYJxI4csuue70NrJIL73aw5Rdut8wvJMFT8oBlWgkLibBYdqpDz2ALAnALtea4v6EY47X~UF1dLGM6ap6b7I6zvKNYZPbtPejOi-h-UodSRru6RzEWRm95eexOQrg~gkie3LIbcH8pG0w-Eg8aQQLqgDlexS7YfjlO~20PFiX8NB4wumOS1BbB7VOEZmmSxWuI~C6IlPVEudjNzgLGzAyAHaMgcm4xRvP-ikeUvUQEBz7XdSRmjG5OHiMr~yrc9J6yZHNMLejnqFpPRg7mA__&Key-Pair-Id=K2HSFNDJXOU9YS";
+const HEADSHOT_URL = "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663410368883/daNVlPqvwXbwkTQz.png?Expires=1804384152&Signature=jZDznTIANoEiBOoHj25iwt4TpWQc5i4A4OIbszucwQcMb-Gpy~FHBqxpq~CWtxVmmhEEThAzrOvOhrg078TNI9S~yyEglVcq-TeGL74eLGgH6I7bk6bOhsr41R5AF-0Z2FEXt3tTfMei81ZyquIUhzv1eyNAeU6StCUimTSoR47XPCk0dsAGLsU97g33GyRX1rm4xC2WPPdEFyremPPiKeeDhewZrIKm9ZM8XMpDSD8SeLcY1PrOBp2hfGwBnU7BUDnMztc3iWXEPLH2TOTph9Mx--TYq3QCj8hy5f1w0KSM7xNWicmLfFc6ncKQTG9cdH9Rto1vSqy5mKE16-8aWQ__&Key-Pair-Id=K2HSFNDJXOU9YS";
 
 const stats = [
   { value: "25+", label: "Years in Sales & Negotiations" },
@@ -13,7 +13,7 @@ export default function AboutSection() {
     <section id="about" className="py-12 sm:py-20 md:py-28 bg-warm-white overflow-hidden">
       <div className="container">
         <div className="grid lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-16 items-center">
-          {/* Headshot */}
+          {/* Headshot — generous container to preserve cowboy hat */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -21,25 +21,28 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-2 relative"
           >
-            <div className="relative max-w-md mx-auto lg:mx-0">
-              {/* Gold accent background */}
-              <div className="absolute -top-4 -left-4 w-full h-full bg-gold/10 rounded" />
-              <div className="relative rounded overflow-hidden shadow-xl bg-cream">
+            <div className="relative max-w-sm mx-auto lg:mx-0">
+              {/* Gold accent background — offset for depth */}
+              <div className="absolute -top-4 -left-4 w-full h-full bg-gold/10 rounded-lg" />
+              {/* Main image container — extra top padding to never crop the hat */}
+              <div className="relative rounded-lg overflow-hidden shadow-xl bg-cream">
                 <img
                   src={HEADSHOT_URL}
-                  alt="Rob Baker, founder and owner of My Rock Realty"
+                  alt="Rob Baker, founder and owner of My Rock Realty, wearing a cowboy hat with Colorado flag motif"
                   className="w-full h-auto object-cover"
+                  style={{ objectPosition: "center top" }}
                 />
               </div>
               {/* Name card */}
-              <div className="absolute -bottom-4 left-4 right-4 bg-charcoal rounded p-4 shadow-lg">
+              <div className="absolute -bottom-4 left-4 right-4 bg-charcoal rounded-lg p-4 shadow-lg">
                 <p
                   className="text-white font-bold text-lg"
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
                   Rob Baker
                 </p>
-                <p className="text-gold text-sm">Founder & Owner, My Rock Realty</p>
+                <p className="text-gold text-sm">Broker/Owner, My Rock Realty, LLC</p>
+                <p className="text-cream/40 text-xs mt-1">Lic. ER100078487</p>
               </div>
             </div>
           </motion.div>
@@ -79,7 +82,7 @@ export default function AboutSection() {
               </p>
               <p>
                 Today, I bring that same coaching mindset to buyers and sellers across
-                Colorado — helping buyers navigate home buying programs and smart
+                Colorado&mdash;helping buyers navigate home buying programs and smart
                 financing opportunities, helping sellers pursue top-dollar outcomes
                 through modern marketing and data-driven pricing, and helping clients
                 connect with trusted agents through my referral network in all 50

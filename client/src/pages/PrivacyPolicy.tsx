@@ -143,11 +143,13 @@ export default function PrivacyPolicy() {
                 If you have questions about this Privacy Policy or how your information is handled, please contact:
               </p>
               <div className="mt-3 p-4 bg-cream rounded border border-cream-dark/40 text-sm">
-                <p className="font-semibold text-charcoal">Rob Baker</p>
-                <p>My Rock Realty</p>
-                <p>Serving Colorado</p>
-                <p className="mt-2 text-charcoal-light/60">
-                  Please use the contact form on our website to reach us.
+                <p className="font-semibold text-charcoal">Rob Baker, Broker/Owner</p>
+                <p>My Rock Realty, LLC</p>
+                <p>Lic. ER100078487</p>
+                <p className="mt-2">8650 N Pioneer Trail, Parker, CO 80138</p>
+                <p>(720) 363-6544</p>
+                <p>
+                  <a href="mailto:RobBakerRE@gmail.com" className="text-gold-dark hover:underline">RobBakerRE@gmail.com</a>
                 </p>
               </div>
             </section>

@@ -32,24 +32,32 @@ export default function Footer() {
 
   return (
     <footer className="bg-charcoal border-t border-white/5">
-        <div className="container py-8 sm:py-14">
+      <div className="container py-8 sm:py-14">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10 mb-7 sm:mb-10">
-          {/* Brand */}
+          {/* Brand & Contact Info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <img src={LOGO_URL} alt="My Rock Realty" className="h-16 sm:h-18 w-auto mb-4" />
             <p className="text-cream/50 text-[13px] sm:text-sm leading-relaxed max-w-xs mb-3">
               Strategic real estate guidance for Colorado buyers, sellers, and relocation clients.
             </p>
-            <p className="text-cream/40 text-sm">
-              Rob Baker — Founder & Owner
-            </p>
-            <p className="text-cream/40 text-sm">
-              Serving Colorado
-            </p>
-            <p className="text-cream/40 text-sm">
-              Trusted agent referrals in all 50 states
-            </p>
+            <div className="space-y-1.5 text-cream/40 text-sm">
+              <p className="text-cream/60 font-medium">Rob Baker, Broker/Owner</p>
+              <p>My Rock Realty, LLC</p>
+              <p>Lic. ER100078487</p>
+              <p className="pt-1">8650 N Pioneer Trail</p>
+              <p>Parker, CO 80138</p>
+              <p className="pt-1">
+                <a href="tel:7203636544" className="hover:text-gold transition-colors">
+                  (720) 363-6544
+                </a>
+              </p>
+              <p>
+                <a href="mailto:RobBakerRE@gmail.com" className="hover:text-gold transition-colors">
+                  RobBakerRE@gmail.com
+                </a>
+              </p>
+            </div>
           </div>
 
           {/* Navigation */}
@@ -100,7 +108,7 @@ export default function Footer() {
                 MyRockHomes.com
               </a>
               <p className="text-cream/35 pt-1">
-                Agent referral support in all 50 states
+                Trusted agent referrals in all 50 states
               </p>
             </div>
           </div>
@@ -139,7 +147,7 @@ export default function Footer() {
             </div>
             {/* Brokerage Disclosure */}
             <p className="text-cream/30 text-xs leading-relaxed">
-              My Rock Realty is a licensed real estate brokerage in the state of Colorado. All real estate services are provided in compliance with applicable federal, state, and local laws, including the Fair Housing Act and the Colorado Anti-Discrimination Act. Licensing and brokerage details available upon request.
+              My Rock Realty, LLC &middot; Rob Baker, Broker/Owner &middot; Colorado Real Estate License ER100078487 &middot; 8650 N Pioneer Trail, Parker, CO 80138. All real estate services are provided in compliance with applicable federal, state, and local laws, including the Fair Housing Act and the Colorado Anti-Discrimination Act.
             </p>
           </div>
         </div>
@@ -147,7 +155,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-cream/30 text-xs">
-            &copy; {new Date().getFullYear()} My Rock Realty. All rights reserved.
+            &copy; {new Date().getFullYear()} My Rock Realty, LLC. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-cream/30 text-xs">
             <Link href="/privacy" className="hover:text-cream/50 transition-colors">

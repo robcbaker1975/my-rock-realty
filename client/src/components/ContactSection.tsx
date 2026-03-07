@@ -119,11 +119,23 @@ export default function ContactSection() {
               <p>
                 <strong className="text-cream/80">Rob Baker</strong>
                 <br />
-                Founder & Owner, My Rock Realty
+                Broker/Owner, My Rock Realty, LLC
+                <br />
+                <span className="text-cream/40 text-xs">Lic. ER100078487</span>
               </p>
               <p>
-                <strong className="text-cream/80">Serving:</strong> Colorado buyers,
-                sellers, land clients, and relocations
+                <strong className="text-cream/80">Office:</strong> 8650 N Pioneer Trail, Parker, CO 80138
+              </p>
+              <p>
+                <strong className="text-cream/80">Phone:</strong>{" "}
+                <a href="tel:7203636544" className="hover:text-gold transition-colors">(720) 363-6544</a>
+              </p>
+              <p>
+                <strong className="text-cream/80">Email:</strong>{" "}
+                <a href="mailto:RobBakerRE@gmail.com" className="hover:text-gold transition-colors">RobBakerRE@gmail.com</a>
+              </p>
+              <p>
+                <strong className="text-cream/80">Serving:</strong> Buyers, sellers, and land clients across Colorado
               </p>
               <p>
                 <strong className="text-cream/80">Referrals:</strong> Trusted agent
