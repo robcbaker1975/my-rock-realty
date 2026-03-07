@@ -5,6 +5,7 @@
  * Typography: Outfit (display) + Libre Franklin (body)
  */
 
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TrustSection from "@/components/TrustSection";
@@ -20,6 +21,10 @@ import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
+  useEffect(() => {
+    document.title = "My Rock Realty | Colorado Real Estate by Rob Baker";
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
