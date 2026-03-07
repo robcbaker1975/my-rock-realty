@@ -48,7 +48,7 @@ export default function PrivacyPolicy() {
                 1. Information We Collect
               </h2>
               <p className="mb-3">
-                My Rock Realty ("we," "us," or "our") collects information you voluntarily provide when you use our website, complete forms, or communicate with us. This may include:
+                My Rock Realty, LLC ("we," "us," or "our") collects information you voluntarily provide when you use our website, complete forms, or communicate with us. This may include:
               </p>
               <ul className="list-disc pl-6 space-y-1.5 text-sm">
                 <li>Your name, email address, and phone number</li>
@@ -113,7 +113,7 @@ export default function PrivacyPolicy() {
                 7. Your Rights
               </h2>
               <p>
-                You may request access to, correction of, or deletion of your personal information by contacting us using the information below. We will review and respond to requests within a reasonable timeframe, subject to any legal or recordkeeping requirements that apply. To make a request, please contact us using the email address or phone number listed below.
+                You may request access to, correction of, or deletion of your personal information by using the email address or phone number listed below. We will review and respond to requests within a reasonable timeframe, subject to any legal or recordkeeping requirements that apply.
               </p>
             </section>
 
