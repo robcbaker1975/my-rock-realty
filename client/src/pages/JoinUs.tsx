@@ -588,7 +588,7 @@ export default function JoinUs() {
             </div>
 
             {/* Bio */}
-            <div className="text-center md:text-left">
+            <div className="text-left">
               <p className="text-[15px] sm:text-base text-charcoal/75 leading-relaxed mb-4">
                 Rob has been in real estate since 2018 and brings more than 25 years of experience in sales and negotiations. Before launching My Rock Realty, he spent 4.5 years at Zillow as an Agent Coach & Consultant — working directly with agents to improve strategy, client experience, and business results.
               </p>
@@ -597,7 +597,7 @@ export default function JoinUs() {
               </p>
 
               {/* Trust stats */}
-              <div className="flex flex-wrap justify-center md:justify-start gap-6">
+              <div className="flex flex-wrap justify-start gap-6">
                 <div>
                   <p
                     className="text-2xl font-bold text-gold"
@@ -640,7 +640,7 @@ export default function JoinUs() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-center"
+              className="text-center py-8 sm:py-12"
             >
               <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-6">
                 <CheckCircle size={32} className="text-gold" />
@@ -651,7 +651,7 @@ export default function JoinUs() {
               >
                 Message Received
               </h3>
-              <p className="text-charcoal/70 text-base leading-relaxed">
+              <p className="text-charcoal/70 text-base leading-relaxed max-w-md mx-auto">
                 Thanks for your interest. Rob will review your message and get back to you shortly.
               </p>
             </motion.div>
@@ -679,10 +679,10 @@ export default function JoinUs() {
 
               <form
                 onSubmit={handleSubmit}
-                className="bg-charcoal/5 border border-charcoal/10 rounded-lg p-6 sm:p-8 space-y-5"
+                className="bg-charcoal/5 border border-charcoal/10 rounded-lg p-5 sm:p-8 space-y-4 sm:space-y-5"
               >
                 {/* Name & Email */}
-                <div className="grid sm:grid-cols-2 gap-5">
+                <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
                   <div>
                     <label className="block text-charcoal/70 text-sm font-medium mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>
                       Full Name *
@@ -691,7 +691,7 @@ export default function JoinUs() {
                       type="text"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors"
+                      className="w-full px-4 py-2.5 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors"
                       placeholder="Your full name"
                     />
                   </div>
@@ -703,14 +703,14 @@ export default function JoinUs() {
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors"
+                      className="w-full px-4 py-2.5 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors"
                       placeholder="you@email.com"
                     />
                   </div>
                 </div>
 
                 {/* Phone & License Status */}
-                <div className="grid sm:grid-cols-2 gap-5">
+                <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
                   <div>
                     <label className="block text-charcoal/70 text-sm font-medium mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>
                       Phone
@@ -719,7 +719,7 @@ export default function JoinUs() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors"
+                      className="w-full px-4 py-2.5 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors"
                       placeholder="(555) 123-4567"
                     />
                   </div>
@@ -730,7 +730,7 @@ export default function JoinUs() {
                     <select
                       value={formData.type}
                       onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                      className="w-full px-4 py-3 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base focus:border-gold/50 focus:outline-none transition-colors appearance-none"
+                      className="w-full px-4 py-2.5 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base focus:border-gold/50 focus:outline-none transition-colors appearance-none"
                     >
                       <option value="agent">Active Agent</option>
                       <option value="broker">Broker/Manager</option>
@@ -749,7 +749,7 @@ export default function JoinUs() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={4}
-                    className="w-full px-4 py-3 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors resize-none"
+                    className="w-full px-4 py-2.5 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors resize-none"
                     placeholder="Tell Rob about your goals, experience, current market, or anything else that would help him understand your situation..."
                   />
                 </div>
@@ -758,7 +758,7 @@ export default function JoinUs() {
                 <button
                   type="submit"
                   disabled={contactMutation.isPending}
-                  className="w-full inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-bold text-base rounded-lg transition-all hover:bg-gold-light hover:shadow-lg active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-gold text-charcoal font-bold text-base rounded-lg transition-all hover:bg-gold-light hover:shadow-lg active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
                   {contactMutation.isPending ? (
