@@ -65,7 +65,8 @@ export default function HeroSection() {
                   color: '#C41E3A',
                   fontWeight: 700,
                   letterSpacing: 'inherit',
-                  position: 'relative'
+                  position: 'relative',
+                  textShadow: 'inset -1px -1px 0 rgba(255, 184, 28, 0.4), inset 1px 1px 0 rgba(255, 184, 28, 0.2)'
                 }}>C</span><span style={{
                   color: 'white',
                   fontWeight: 700,
