@@ -116,7 +116,7 @@ export default function WorkshopDraft() {
               Colorado Home Buying Workshop
             </h1>
             <p className="text-cream/80 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl mx-auto">
-              In just 60 minutes, discover how to qualify for programs that let you buy with little or no money down — and walk away with a clear, step-by-step roadmap to homeownership.
+              In just 60 minutes, learn how Colorado home buying programs, seller concessions, and financing strategies may help reduce upfront cash needs — and walk away with a clear, step-by-step roadmap to homeownership.
             </p>
 
             {/* Workshop details — professional bullet formatting */}
@@ -177,7 +177,7 @@ export default function WorkshopDraft() {
 
           <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
             {[
-              { text: "Buy with little or no money down — even if you thought you couldn't qualify", icon: HomeIcon },
+              { text: "How Colorado buyer programs, seller concessions, and financing strategies may help reduce upfront cash needs", icon: HomeIcon },
               { text: "Colorado programs explained: FHA, VA, USDA, grants, and down-payment assistance", icon: Landmark },
               { text: "Exact steps from renter to homeowner — a clear, actionable plan", icon: ArrowRight },
               { text: "Avoid costly mistakes that first-time buyers commonly make", icon: Shield },
@@ -223,12 +223,12 @@ export default function WorkshopDraft() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {[
-              { icon: HomeIcon, title: "$0 Down Programs", desc: "You may qualify with nothing out of pocket — even if you thought you couldn't." },
-              { icon: Shield, title: "VA Advantage", desc: "Active duty, veterans, and surviving spouses may qualify for $0 down and waived fees." },
-              { icon: Banknote, title: "FHA + Grants", desc: "Turn 3.5% down into almost nothing with Colorado grant and assistance programs." },
-              { icon: TrendingUp, title: "3% Conventional", desc: "Lower down payments with flexible options for qualified buyers." },
-              { icon: Wrench, title: "Buy Fixer-Uppers", desc: "Bundle repairs and payments into one affordable loan — renovation financing explained." },
-              { icon: DollarSign, title: "$15K+ Saved", desc: "With the right concessions and strategy, you could keep serious cash in your pocket." },
+              { icon: HomeIcon, title: "Low Down Payment Options", desc: "Learn about low down payment and, for qualified buyers, no down payment loan options that may be available." },
+              { icon: Shield, title: "VA Advantage", desc: "Eligible active duty service members, veterans, and surviving spouses may qualify for VA financing benefits, including low or no down payment options." },
+              { icon: Banknote, title: "FHA + Assistance Programs", desc: "See how FHA financing and Colorado assistance programs may help reduce upfront costs for qualified buyers." },
+              { icon: TrendingUp, title: "Conventional Options", desc: "Explore flexible conventional loan options that may work for qualified buyers with lower down payments." },
+              { icon: Wrench, title: "Renovation Financing", desc: "Understand how some buyers use renovation financing to purchase a home and fund eligible improvements." },
+              { icon: DollarSign, title: "Seller Concessions Strategy", desc: "Learn how seller concessions may help reduce upfront closing costs. In some transactions, Rob Baker has negotiated more than $20,000 in concessions, though results vary by property, financing, market conditions, and terms." },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -294,7 +294,7 @@ export default function WorkshopDraft() {
                 Rob has been in real estate since 2018 and brings more than 25 years of experience in sales and negotiations. Before launching My Rock Realty, he spent 4.5 years at Zillow as an Agent Coach & Consultant, helping agents improve strategy, client experience, and results.
               </p>
               <p className="text-[15px] sm:text-base text-charcoal/75 leading-relaxed mb-6">
-                Today, Rob helps Colorado buyers understand home buying programs and financing opportunities that most people don't know exist. This workshop is the same education-first approach he brings to every client.
+                Today, Rob helps Colorado buyers understand home buying programs, seller concessions, and financing options they may not realize are available. This workshop reflects the same education-first approach he brings to every client.
               </p>
 
               {/* Trust stats */}
@@ -395,7 +395,7 @@ export default function WorkshopDraft() {
           <div className="bg-white rounded-lg border border-charcoal/5 shadow-sm px-5 sm:px-8">
             <FAQItem
               question="Can I really buy a home in Colorado with little or no money down?"
-              answer="Yes. Programs like FHA, VA, USDA, and Colorado-specific down-payment assistance can dramatically reduce or eliminate the upfront down payment. In the workshop, Rob shows you exactly how to check eligibility."
+              answer="Some buyers may qualify for low down payment or no down payment loan programs depending on eligibility. The workshop covers common Colorado buyer programs, seller concessions, and financing strategies that may help reduce upfront cash needed at closing."
             />
             <FAQItem
               question="How much does the workshop cost?"
@@ -407,7 +407,7 @@ export default function WorkshopDraft() {
             />
             <FAQItem
               question="What credit score do I need?"
-              answer="Many buyers qualify with scores around 600, sometimes lower with compensating factors. Rob covers realistic ranges and next steps during the workshop."
+              answer="Credit requirements vary by loan type, lender, and overall financial profile. The workshop covers common program guidelines, what lenders typically look for, and practical next steps for buyers who may need more preparation."
             />
             <FAQItem
               question="Is this just a sales pitch?"
@@ -430,7 +430,7 @@ export default function WorkshopDraft() {
             Ready to Take the First Step Toward Homeownership?
           </h2>
           <p className="text-cream/70 text-[15px] sm:text-base leading-relaxed mb-4 max-w-xl mx-auto">
-            Join Rob Baker's free weekly workshop and discover the programs, strategies, and steps that Colorado buyers are using to get into homes with little or no money down.
+            Join Rob Baker's free weekly workshop and discover the programs, strategies, and steps that may help Colorado buyers reduce upfront costs and move toward homeownership with more clarity and confidence.
           </p>
 
           <div className="text-cream/50 text-sm mb-8">

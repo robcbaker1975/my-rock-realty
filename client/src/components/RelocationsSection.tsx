@@ -7,7 +7,7 @@ const scenarios = [
   {
     icon: MapPinned,
     title: "Moving to Colorado",
-    text: "Rob guides you through Colorado neighborhoods, markets, and buying strategies so you land in the right home from day one.",
+    text: "Rob helps relocation clients navigate the Colorado market, timing, and property search process so they can move forward with a clearer plan and greater confidence.",
   },
   {
     icon: ArrowRightLeft,

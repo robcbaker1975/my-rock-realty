@@ -75,7 +75,7 @@ export default function Terms() {
                 4. Referral Services
               </h2>
               <p>
-                When we refer you to agents in other states through our referral network, we make reasonable efforts to connect you with qualified professionals. However, we are not responsible for the actions, performance, or outcomes of referred agents or their brokerages. Referral relationships may involve referral fees between licensed professionals, which is standard practice in the real estate industry.
+                When we refer you to agents in other states through our referral network, we make reasonable efforts to connect you with qualified licensed professionals. However, we are not responsible for the actions, performance, or outcomes of referred agents or their brokerages. If you choose to work with a referred agent, that agent or their brokerage may pay a referral fee to My Rock Realty, LLC. In most cases, this fee is a percentage of the commission they receive. This referral fee does not increase the purchase price or sale price of a property.
               </p>
             </section>
 

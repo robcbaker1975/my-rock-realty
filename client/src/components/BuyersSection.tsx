@@ -12,7 +12,7 @@ const benefits = [
   {
     icon: TrendingDown,
     title: "Improve Your Buying Power",
-    text: "Strategic financing guidance to help you qualify for more — or save more on what you buy.",
+    text: "Strategic financing guidance to help you explore more options — or save more on what you buy.",
   },
   {
     icon: Lightbulb,

@@ -86,7 +86,7 @@ export default function PrivacyPolicy() {
                 4. Referral Network
               </h2>
               <p>
-                If you request a referral to an agent in another state, we may share your contact information and real estate needs with a vetted agent in our referral network to facilitate the connection. This is done only with your knowledge and in service of your stated goals.
+                If you request a referral to an agent in another state, we may share your contact information and real estate needs with a vetted agent in our referral network to facilitate the connection. If you choose to work with that referred agent, My Rock Realty, LLC may receive a referral fee from that agent or their brokerage. In most cases, this fee is a percentage of the commission they receive. This referral arrangement does not increase the price you pay for a property or reduce the amount you receive from a sale.
               </p>
             </section>
 
