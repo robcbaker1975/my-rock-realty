@@ -77,7 +77,7 @@ export default function WorkshopDraft() {
       <header className="bg-charcoal">
         <div className="container flex items-center justify-between py-3 sm:py-4">
           <a href="/" className="flex items-center">
-            <img src={LOGO_URL} alt="My Rock Realty" className="h-12 sm:h-14 w-auto" />
+            <img src={LOGO_URL} alt="My Rock Realty" className="h-[5rem] sm:h-[5.5rem] md:h-[6rem] w-auto drop-shadow-lg" />
           </a>
           <a
             href="/"
@@ -93,12 +93,12 @@ export default function WorkshopDraft() {
           HERO — Workshop headline + trust bar
       ═══════════════════════════════════════════════════ */}
       <section className="relative bg-charcoal overflow-hidden">
-        {/* Background image */}
+        {/* Premium hero background — Colorado mountains matching main site */}
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-15"
-          style={{ backgroundImage: `url(${WORKSHOP_BG})` }}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/hero-bg-dyEKuHhWXn8eKxpjETtCvy.webp)`, backgroundPosition: "center 30%" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/90 to-charcoal" />
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/75 via-charcoal/85 to-charcoal/95" />
 
         <div className="container relative z-10 py-12 sm:py-16 lg:py-20">
           <div className="max-w-3xl mx-auto text-center">
@@ -115,23 +115,25 @@ export default function WorkshopDraft() {
             >
               Colorado Home Buying Workshop
             </h1>
-            <p className="text-cream/80 text-base sm:text-lg leading-relaxed mb-4 max-w-2xl mx-auto">
+            <p className="text-cream/80 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl mx-auto">
               In just 60 minutes, discover how to qualify for programs that let you buy with little or no money down — and walk away with a clear, step-by-step roadmap to homeownership.
             </p>
 
-            {/* Workshop details inline */}
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-cream/60 text-sm mb-8">
+            {/* Workshop details — clean separators */}
+            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-cream/60 text-sm mb-10">
               <span className="flex items-center gap-1.5">
                 <Clock size={15} className="text-gold" />
                 Every Tuesday at 6 PM MT
               </span>
+              <span className="text-cream/30 hidden sm:inline">|</span>
               <span className="flex items-center gap-1.5">
                 <MapPin size={15} className="text-gold" />
                 Online (Zoom)
               </span>
+              <span className="text-cream/30 hidden sm:inline">|</span>
               <span className="flex items-center gap-1.5">
                 <DollarSign size={15} className="text-gold" />
-                Free — limited seats
+                Free — Limited Seats
               </span>
             </div>
 
@@ -139,26 +141,34 @@ export default function WorkshopDraft() {
           </div>
         </div>
 
-        {/* Trust bar */}
-        <div className="relative z-10 bg-charcoal-light/50 border-t border-white/5">
-          <div className="container py-4 sm:py-5">
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-cream/50 text-xs sm:text-sm">
-              <span className="flex items-center gap-1.5">
-                <Award size={14} className="text-gold/70" />
-                In Real Estate Since 2018
-              </span>
-              <span className="flex items-center gap-1.5">
-                <TrendingUp size={14} className="text-gold/70" />
-                25+ Years in Sales & Negotiations
-              </span>
-              <span className="flex items-center gap-1.5">
-                <BadgeCheck size={14} className="text-gold/70" />
-                4.5 Years at Zillow
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Globe size={14} className="text-gold/70" />
-                Referral Network in All 50 States
-              </span>
+        {/* Trust strip — clean badge format */}
+        <div className="relative z-10 bg-charcoal-light/30 border-t border-white/5">
+          <div className="container py-5 sm:py-6">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto">
+              <div className="text-center">
+                <div className="w-9 h-9 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-2">
+                  <Award size={16} className="text-gold" />
+                </div>
+                <p className="text-cream/70 text-xs sm:text-sm font-medium leading-tight">In Real Estate<br />Since 2018</p>
+              </div>
+              <div className="text-center">
+                <div className="w-9 h-9 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-2">
+                  <TrendingUp size={16} className="text-gold" />
+                </div>
+                <p className="text-cream/70 text-xs sm:text-sm font-medium leading-tight">25+ Years in Sales<br />& Negotiations</p>
+              </div>
+              <div className="text-center">
+                <div className="w-9 h-9 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-2">
+                  <BadgeCheck size={16} className="text-gold" />
+                </div>
+                <p className="text-cream/70 text-xs sm:text-sm font-medium leading-tight">4.5 Years<br />at Zillow</p>
+              </div>
+              <div className="text-center">
+                <div className="w-9 h-9 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-2">
+                  <Globe size={16} className="text-gold" />
+                </div>
+                <p className="text-cream/70 text-xs sm:text-sm font-medium leading-tight">Referral Network<br />in All 50 States</p>
+              </div>
             </div>
           </div>
         </div>
@@ -463,7 +473,7 @@ export default function WorkshopDraft() {
           <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6">
             {/* Left: Logo + business info */}
             <div className="text-center sm:text-left">
-              <img src={LOGO_URL} alt="My Rock Realty" className="h-12 w-auto mx-auto sm:mx-0 mb-3" />
+              <img src={LOGO_URL} alt="My Rock Realty" className="h-16 sm:h-20 w-auto mx-auto sm:mx-0 mb-3" />
               <p className="text-cream/50 text-xs leading-relaxed">
                 Rob Baker, Broker/Owner<br />
                 My Rock Realty, LLC<br />

@@ -18,7 +18,8 @@ function Router() {
       <Route path={"/privacy"} component={PrivacyPolicy} />
       <Route path={"/terms"} component={Terms} />
       <Route path={"/fair-housing"} component={FairHousing} />
-      <Route path={"/workshop-draft"} component={WorkshopDraft} />
+      <Route path={"/colorado-home-buying-workshop"} component={WorkshopDraft} />
+      <Route path={"/workshop-draft"}>{() => { window.location.href = "/colorado-home-buying-workshop"; return null; }}</Route>
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

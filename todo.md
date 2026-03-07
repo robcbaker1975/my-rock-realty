@@ -44,3 +44,11 @@
 - [x] Add premium polish without overhyping
 - [x] Keep: core workshop offer, CTA flow, testimonials, FAQ concept, conversion structure
 - [x] Verify no changes to existing pages (homepage, legal pages)
+
+## V10 Workshop Page Final Polish
+- [ ] Change slug from /workshop-draft to /colorado-home-buying-workshop
+- [ ] Match workshop header logo size to homepage logo size (especially mobile)
+- [ ] Add premium Colorado hero background with dark overlay
+- [ ] Fix hero text spacing ("Every Tuesday at 6 PM MT · Online (Zoom) · Free — limited seats")
+- [ ] Improve trust strip to clean badge/stat format instead of compressed line
+- [ ] Keep everything else stable (offer, testimonials, FAQ, CTA flow, conversion structure)
