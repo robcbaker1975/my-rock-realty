@@ -57,7 +57,7 @@ export default function Terms() {
                 2. No Relationship Created
               </h2>
               <p>
-                Use of this website, attendance at our workshop, submission of contact forms, or communication with My Rock Realty does not create an agency relationship, brokerage relationship, fiduciary duty, or client relationship. Representation as a real estate client begins only through a separate written agreement signed by you and My Rock Realty or one of our licensed agents, where applicable by law. Until such an agreement is in place, we are not acting as your agent or representative, and you should not rely on us to protect your interests in any transaction.
+                Use of this website, attendance at our workshop, submission of contact forms, or communication with My Rock Realty does not create an agency relationship, brokerage relationship, fiduciary duty, or client relationship. Representation as a real estate client begins only through a separate written agreement signed by you and My Rock Realty or one of our licensed agents, where applicable by law. Without such an agreement, we are providing information and guidance only, and you should independently verify any information material to your transaction.
               </p>
             </section>
 
@@ -72,7 +72,7 @@ export default function Terms() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                5. No Guaranteed Outcomes
+                4. No Guaranteed Outcomes
               </h2>
               <p>
                 While we strive to provide excellent service and strategic guidance, real estate transactions involve inherent risks and variables. We do not guarantee specific outcomes, sale prices, timelines, or results. Past performance and client experiences do not guarantee future results.
@@ -81,7 +81,7 @@ export default function Terms() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                6. Referral Services
+                5. Referral Services
               </h2>
               <p>
                 When we refer you to agents in other states through our referral network, we make reasonable efforts to connect you with qualified licensed professionals. However, we are not responsible for the actions, performance, or outcomes of referred agents or their brokerages. If you choose to work with a referred agent, that agent or their brokerage may pay a referral fee to My Rock Realty, LLC. In most cases, this fee is a percentage of the commission they receive. This referral fee does not increase the purchase price or sale price of a property.
@@ -90,7 +90,7 @@ export default function Terms() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                7. Intellectual Property
+                6. Intellectual Property
               </h2>
               <p>
                 All content on this Site — including text, graphics, logos, images, and design elements — is the property of My Rock Realty or its content suppliers and is protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works from this content without our express written permission.
@@ -99,7 +99,7 @@ export default function Terms() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                8. User Submissions
+                7. User Submissions
               </h2>
               <p>
                 Any information you submit through our contact forms or other communication channels is subject to our Privacy Policy. By submitting information, you represent that the information is accurate and that you have the right to provide it.
@@ -108,7 +108,7 @@ export default function Terms() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                9. Third-Party Links
+                8. Third-Party Links
               </h2>
               <p>
                 This Site may contain links to third-party websites, tools, or services. These links are provided for your convenience. We do not control and are not responsible for the content, privacy policies, or practices of third-party sites or services.
@@ -117,7 +117,7 @@ export default function Terms() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                10. Limitation of Liability
+                9. Limitation of Liability
               </h2>
               <p>
                 To the fullest extent permitted by law, My Rock Realty and its owner, Rob Baker, shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Site or our services. Our total liability shall not exceed the amount of fees actually paid by you for services rendered.
@@ -125,7 +125,7 @@ export default function Terms() {
             </section>
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                11. Licensing & Compliance
+                10. Licensing & Compliance
               </h2>
               <p>
                 My Rock Realty, LLC operates as a licensed real estate brokerage in the state of Colorado (License ER100078487). All real estate activities are conducted in compliance with applicable state and federal laws, including fair housing regulations. Rob Baker is a licensed real estate professional in the state of Colorado.
@@ -134,7 +134,7 @@ export default function Terms() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                12. Governing Law
+                11. Governing Law
               </h2>
               <p>
                 These Terms & Conditions are governed by and construed in accordance with the laws of the state of Colorado, without regard to conflict of law principles. Any disputes arising from these terms or your use of the Site shall be resolved in the appropriate courts of Colorado.
@@ -143,7 +143,7 @@ export default function Terms() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                13. Financing Disclaimer
+                12. Financing Disclaimer
               </h2>
               <p>
                 My Rock Realty, LLC is a real estate brokerage and is not a mortgage lender. Any information provided on this website or in the Colorado Home Buying Workshop regarding loan programs, affordability, interest rates, concessions, or financing strategies is for general educational purposes only. Loan approval, terms, rates, and program eligibility are determined by licensed lenders based on buyer qualifications and current lending guidelines, and are not guaranteed.
@@ -152,7 +152,7 @@ export default function Terms() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                14. Colorado Real Estate Regulatory Contact
+                13. Colorado Real Estate Regulatory Contact
               </h2>
               <p>
                 For complaints concerning licensed real estate activity in Colorado, consumers may contact the Colorado Division of Real Estate:
@@ -168,7 +168,7 @@ export default function Terms() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                15. Contact
+                14. Contact
               </h2>
               <p>
                 If you have questions about these Terms & Conditions, please contact:

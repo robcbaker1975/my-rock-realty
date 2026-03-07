@@ -65,12 +65,11 @@ export default function PrivacyPolicy() {
               <p className="mb-3">We use the information we collect to:</p>
               <ul className="list-disc pl-6 space-y-1.5 text-sm">
                 <li>Respond to your inquiries and provide real estate guidance, workshop-related information, or referral assistance</li>
-                <li>Send follow-up communications related to your inquiry or requested service via email, phone, or text message</li>
+                <li>Send follow-up communications related to your inquiry or requested service via email, phone, or text message (you may unsubscribe from emails or reply STOP to text messages at any time)</li>
                 <li>Connect you with relevant services, programs, or agent referrals</li>
                 <li>Improve our website, services, and client experience</li>
                 <li>Comply with legal obligations</li>
               </ul>
-              <p className="mt-3 text-sm"><strong>Opt-Out:</strong> You may unsubscribe from email communications at any time by clicking the unsubscribe link in our emails. To opt out of text messages, reply STOP to any message we send.</p>
             </section>
 
             <section>
