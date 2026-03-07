@@ -57,7 +57,7 @@ export default function Terms() {
                 2. Services Description
               </h2>
               <p>
-                My Rock Realty provides real estate brokerage services in the state of Colorado, including buyer representation, seller representation, relocation assistance, and agent referrals across all 50 states. The information on this Site is intended for general informational purposes and does not constitute legal, financial, or professional advice.
+                My Rock Realty provides real estate brokerage services in the state of Colorado, including buyer representation, seller representation, relocation assistance, and agent referrals across all 50 states. The information on this Site is provided for general informational and educational purposes only and does not constitute legal, financial, lending, or other professional advice. Information on this Site may change and should be independently verified where material to a real estate transaction.
               </p>
             </section>
 
@@ -102,7 +102,7 @@ export default function Terms() {
                 7. Third-Party Links
               </h2>
               <p>
-                This Site may contain links to third-party websites, including but not limited to ColoradoHomeBuyingWorkshop.com and MyRockHomes.com. These links are provided for your convenience. We do not control and are not responsible for the content, privacy policies, or practices of any third-party sites.
+                This Site may contain links to third-party websites, tools, or services. These links are provided for your convenience. We do not control and are not responsible for the content, privacy policies, or practices of third-party sites or services.
               </p>
             </section>
 
