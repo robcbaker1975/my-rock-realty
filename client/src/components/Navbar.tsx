@@ -14,6 +14,9 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+// Secondary link — not part of main consumer funnel
+const JOIN_HREF = "/join-us";
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -76,6 +79,14 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+            {/* Secondary link — subtle, non-dominant */}
+            <a
+              href={JOIN_HREF}
+              className="px-3 py-2 text-xs font-medium tracking-wide transition-colors rounded text-cream/45 hover:text-gold/80"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Join Our Team
+            </a>
             <a
               href="#contact"
               onClick={(e) => { e.preventDefault(); handleNavClick("#contact"); }}
@@ -136,6 +147,14 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          {/* Secondary link — subtle, non-dominant */}
+          <a
+            href={JOIN_HREF}
+            className="px-3 py-1.5 text-xs font-medium tracking-wide transition-colors rounded text-white/40 hover:text-gold/80"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            Join Our Team
+          </a>
           <a
             href="#contact"
             onClick={(e) => { e.preventDefault(); handleNavClick("#contact"); }}
@@ -188,6 +207,18 @@ export default function Navbar() {
                   {link.label}
                 </motion.a>
               ))}
+              {/* Secondary link — subtle in mobile menu */}
+              <motion.a
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navLinks.length * 0.05 }}
+                href={JOIN_HREF}
+                onClick={() => setMobileOpen(false)}
+                className="px-4 py-3 text-cream/45 hover:text-gold/80 text-sm font-medium transition-colors rounded-lg active:bg-white/5 border-t border-white/5 mt-1"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                Join Our Team
+              </motion.a>
               <motion.a
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}

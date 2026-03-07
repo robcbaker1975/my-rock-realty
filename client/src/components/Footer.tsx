@@ -97,6 +97,12 @@ export default function Footer() {
                 Colorado Home Buying Workshop
               </a>
               <a
+                href="/join-us"
+                className="block text-cream/50 hover:text-gold transition-colors"
+              >
+                Join Our Team
+              </a>
+              <a
                 href="https://MyRockHomes.com"
                 target="_blank"
                 rel="noopener noreferrer"
