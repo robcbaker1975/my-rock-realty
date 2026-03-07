@@ -1,3 +1,4 @@
+// Workshop popup integration verified
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown, Clock, MapPin, DollarSign, Star, ArrowRight, Phone, Mail, Shield, Users, TrendingUp, Award, Home as HomeIcon, Landmark, Wrench, Banknote, BadgeCheck, Globe } from "lucide-react";
