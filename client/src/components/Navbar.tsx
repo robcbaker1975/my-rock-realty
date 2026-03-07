@@ -90,14 +90,14 @@ export default function Navbar() {
             {/* Secondary links — subtle, non-dominant */}
             <a
               href={JOIN_HREF}
-              className="px-3 py-2 text-xs font-medium tracking-wide transition-colors rounded text-cream/45 hover:text-gold/80"
+              className="px-3 py-2 text-xs font-medium tracking-wide transition-colors rounded text-cream/65 hover:text-gold/80"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Join Our Team
             </a>
             <a
               href={COACHING_HREF}
-              className="px-3 py-2 text-xs font-medium tracking-wide transition-colors rounded text-cream/45 hover:text-gold/80"
+              className="px-3 py-2 text-xs font-medium tracking-wide transition-colors rounded text-cream/65 hover:text-gold/80"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Coaching
@@ -165,14 +165,14 @@ export default function Navbar() {
           {/* Secondary links — subtle, non-dominant */}
           <a
             href={JOIN_HREF}
-            className="px-3 py-1.5 text-xs font-medium tracking-wide transition-colors rounded text-white/40 hover:text-gold/80"
+            className="px-3 py-1.5 text-xs font-medium tracking-wide transition-colors rounded text-white/60 hover:text-gold/80"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Join Our Team
           </a>
           <a
             href={COACHING_HREF}
-            className="px-3 py-1.5 text-xs font-medium tracking-wide transition-colors rounded text-white/40 hover:text-gold/80"
+            className="px-3 py-1.5 text-xs font-medium tracking-wide transition-colors rounded text-white/60 hover:text-gold/80"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Coaching
