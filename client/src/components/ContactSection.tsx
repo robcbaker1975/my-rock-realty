@@ -123,9 +123,7 @@ export default function ContactSection() {
                 <br />
                 <span className="text-cream/40 text-xs">Lic. ER100078487</span>
               </p>
-              <p>
-                <strong className="text-cream/80">Office:</strong> 8650 N Pioneer Trail, Parker, CO 80138
-              </p>
+
               <p>
                 <strong className="text-cream/80">Phone:</strong>{" "}
                 <a href="tel:7203636544" className="hover:text-gold transition-colors">(720) 363-6544</a>

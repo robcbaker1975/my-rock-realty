@@ -45,7 +45,7 @@ export default function Footer() {
               <p className="text-cream/60 font-medium">Rob Baker, Broker/Owner</p>
               <p>My Rock Realty, LLC</p>
               <p>Lic. ER100078487</p>
-              <p className="pt-1">Parker, Colorado</p>
+
               <p className="pt-1">
                 <a href="tel:7203636544" className="hover:text-gold transition-colors">
                   (720) 363-6544

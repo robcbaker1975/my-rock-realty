@@ -146,7 +146,7 @@ export default function PrivacyPolicy() {
                 <p className="font-semibold text-charcoal">Rob Baker, Broker/Owner</p>
                 <p>My Rock Realty, LLC</p>
                 <p>Lic. ER100078487</p>
-                <p className="mt-2">Parker, Colorado</p>
+
                 <p>(720) 363-6544</p>
                 <p>
                   <a href="mailto:RobBakerRE@gmail.com" className="text-gold-dark hover:underline">RobBakerRE@gmail.com</a>

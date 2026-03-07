@@ -490,9 +490,7 @@ export default function WorkshopDraft() {
                 My Rock Realty, LLC<br />
                 Lic. ER100078487
               </p>
-              <p className="text-cream/40 text-xs mt-2">
-                8650 N Pioneer Trail, Parker, CO 80138
-              </p>
+
               <div className="flex items-center justify-center sm:justify-start gap-4 mt-2">
                 <a href="tel:7203636544" className="text-cream/50 hover:text-gold text-xs flex items-center gap-1 transition-colors">
                   <Phone size={12} /> (720) 363-6544
