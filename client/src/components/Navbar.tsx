@@ -14,8 +14,9 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-// Secondary link — not part of main consumer funnel
+// Secondary links — not part of main consumer funnel
 const JOIN_HREF = "/join-us";
+const COACHING_HREF = "/coaching";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -79,13 +80,20 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            {/* Secondary link — subtle, non-dominant */}
+            {/* Secondary links — subtle, non-dominant */}
             <a
               href={JOIN_HREF}
               className="px-3 py-2 text-xs font-medium tracking-wide transition-colors rounded text-cream/45 hover:text-gold/80"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Join Our Team
+            </a>
+            <a
+              href={COACHING_HREF}
+              className="px-3 py-2 text-xs font-medium tracking-wide transition-colors rounded text-cream/45 hover:text-gold/80"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Coaching
             </a>
             <a
               href="#contact"
@@ -147,13 +155,20 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          {/* Secondary link — subtle, non-dominant */}
+          {/* Secondary links — subtle, non-dominant */}
           <a
             href={JOIN_HREF}
             className="px-3 py-1.5 text-xs font-medium tracking-wide transition-colors rounded text-white/40 hover:text-gold/80"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Join Our Team
+          </a>
+          <a
+            href={COACHING_HREF}
+            className="px-3 py-1.5 text-xs font-medium tracking-wide transition-colors rounded text-white/40 hover:text-gold/80"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            Coaching
           </a>
           <a
             href="#contact"
@@ -207,7 +222,7 @@ export default function Navbar() {
                   {link.label}
                 </motion.a>
               ))}
-              {/* Secondary link — subtle in mobile menu */}
+              {/* Secondary links — subtle in mobile menu */}
               <motion.a
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -218,6 +233,17 @@ export default function Navbar() {
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
                 Join Our Team
+              </motion.a>
+              <motion.a
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: (navLinks.length + 1) * 0.05 }}
+                href={COACHING_HREF}
+                onClick={() => setMobileOpen(false)}
+                className="px-4 py-3 text-cream/45 hover:text-gold/80 text-sm font-medium transition-colors rounded-lg active:bg-white/5"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                Coaching
               </motion.a>
               <motion.a
                 initial={{ opacity: 0, y: 10 }}

@@ -103,6 +103,12 @@ export default function Footer() {
                 Join Our Team
               </a>
               <a
+                href="/coaching"
+                className="block text-cream/50 hover:text-gold transition-colors"
+              >
+                Coaching
+              </a>
+              <a
                 href="https://MyRockHomes.com"
                 target="_blank"
                 rel="noopener noreferrer"
