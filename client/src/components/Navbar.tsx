@@ -9,7 +9,7 @@ const navLinks = [
   { label: "Buyers", href: "#buyers" },
   { label: "Sellers", href: "#sellers" },
   { label: "Relocations", href: "#relocations" },
-  { label: "Workshop", href: "#workshop" },
+  { label: "Workshop", href: "/colorado-home-buying-workshop" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];

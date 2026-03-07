@@ -415,7 +415,7 @@ export default function WorkshopDraft() {
             />
             <FAQItem
               question="How much does the workshop cost?"
-              answer="It's completely free. Seats are limited each Tuesday at 6:00 PM MST, so we recommend reserving early."
+              answer="It's completely free. Seats are limited each Tuesday at 6 PM MT, so we recommend reserving early."
             />
             <FAQItem
               question="Who should attend?"
