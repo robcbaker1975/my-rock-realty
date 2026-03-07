@@ -48,7 +48,7 @@ export default function PrivacyPolicy() {
                 1. Information We Collect
               </h2>
               <p className="mb-3">
-                My Rock Realty ("we," "us," or "our") collects information you voluntarily provide when you use our website, fill out contact forms, or communicate with us. This may include:
+                My Rock Realty ("we," "us," or "our") collects information you voluntarily provide when you use our website, complete forms, or communicate with us. This may include:
               </p>
               <ul className="list-disc pl-6 space-y-1.5 text-sm">
                 <li>Your name, email address, and phone number</li>
@@ -64,7 +64,7 @@ export default function PrivacyPolicy() {
               </h2>
               <p className="mb-3">We use the information we collect to:</p>
               <ul className="list-disc pl-6 space-y-1.5 text-sm">
-                <li>Respond to your inquiries and provide real estate guidance</li>
+                <li>Respond to your inquiries and provide real estate guidance, workshop-related information, or referral assistance</li>
                 <li>Connect you with relevant services, programs, or agent referrals</li>
                 <li>Improve our website, services, and client experience</li>
                 <li>Send follow-up communications related to your inquiry (you may opt out at any time)</li>
@@ -95,7 +95,7 @@ export default function PrivacyPolicy() {
                 5. Cookies and Tracking
               </h2>
               <p>
-                Our website may use cookies and similar technologies to support core site functionality, remember preferences, and collect aggregated analytics data about how visitors use the site. These technologies may include essential cookies, functional cookies, and analytics cookies. If we add advertising or retargeting tools in the future, this policy may be updated accordingly. You can manage cookies through your browser settings, and if additional cookie preference tools are added in the future, you may be able to manage settings there as well.
+                Our website may use cookies and similar technologies to support core site functionality, remember preferences, and collect aggregated analytics data about how visitors use the site. These technologies may include essential cookies, functional cookies, and analytics cookies. If we add advertising or retargeting tools in the future, this policy may be updated accordingly. You can manage cookies through your browser settings, and if additional cookie preference tools are added in the future, you may be able to manage settings there as well. These technologies do not give us direct access to information stored on your device beyond what is normally available through standard website interactions.
               </p>
             </section>
 
@@ -113,7 +113,7 @@ export default function PrivacyPolicy() {
                 7. Your Rights
               </h2>
               <p>
-                You may request access to, correction of, or deletion of your personal information by contacting us using the information below. We will review and respond to requests within a reasonable timeframe, subject to any legal or recordkeeping requirements that apply.
+                You may request access to, correction of, or deletion of your personal information by contacting us using the information below. We will review and respond to requests within a reasonable timeframe, subject to any legal or recordkeeping requirements that apply. To make a request, please contact us using the email address or phone number listed below.
               </p>
             </section>
 
