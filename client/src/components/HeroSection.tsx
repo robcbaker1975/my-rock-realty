@@ -105,6 +105,17 @@ export default function HeroSection() {
               </button>
             </motion.div>
 
+            {/* Micro-clarity line */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-3 sm:mt-4 text-[12px] sm:text-[13px] text-white/50 text-center"
+              style={{ fontFamily: "'Libre Franklin', sans-serif" }}
+            >
+              Free consultation • No pressure • Clear guidance on your options
+            </motion.p>
+
             {/* Supporting trust line */}
             <motion.p
               initial={{ opacity: 0 }}
