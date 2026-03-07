@@ -60,18 +60,26 @@ export default function HeroSection() {
               <br className="hidden sm:block" />
               Guidance for{" "}
               <span className="relative inline-block">
-                <span style={{
-                  display: 'inline-block',
-                  color: '#C41E3A',
-                  fontWeight: 700,
-                  letterSpacing: 'inherit',
-                  position: 'relative',
-                  background: 'radial-gradient(circle at 40% 45%, rgba(255, 184, 28, 0.7) 0%, rgba(255, 184, 28, 0.3) 35%, transparent 70%)',
-                  backgroundClip: 'text',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: '#C41E3A',
-                  textShadow: 'none'
-                }}>C</span><span style={{
+                <svg
+                  style={{
+                    display: 'inline-block',
+                    width: '1em',
+                    height: '1em',
+                    verticalAlign: 'middle',
+                    marginRight: '-0.05em'
+                  }}
+                  viewBox="0 0 100 100"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M 85 20 A 40 40 0 0 0 20 50 A 40 40 0 0 0 85 80"
+                    fill="none"
+                    stroke="#C41E3A"
+                    strokeWidth="20"
+                    strokeLinecap="round"
+                  />
+                  <circle cx="50" cy="50" r="18" fill="#FFD700" stroke="#000" strokeWidth="2" />
+                </svg><span style={{
                   color: 'white',
                   fontWeight: 700,
                   letterSpacing: 'inherit'
