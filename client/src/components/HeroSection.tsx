@@ -63,22 +63,22 @@ export default function HeroSection() {
                 <svg
                   style={{
                     display: 'inline-block',
-                    width: '1em',
-                    height: '1em',
-                    verticalAlign: 'middle',
-                    marginRight: '-0.05em'
+                    width: '0.90em',
+                    height: '1.02em',
+                    verticalAlign: 'baseline',
+                    marginRight: '0.01em'
                   }}
                   viewBox="0 0 100 100"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M 85 20 A 40 40 0 0 0 20 50 A 40 40 0 0 0 85 80"
+                    d="M 80 18 A 38 38 0 0 0 22 50 A 38 38 0 0 0 80 82"
                     fill="none"
                     stroke="#C41E3A"
-                    strokeWidth="20"
+                    strokeWidth="16"
                     strokeLinecap="round"
                   />
-                  <circle cx="50" cy="50" r="18" fill="#FFD700" stroke="#000" strokeWidth="2" />
+                  <circle cx="44" cy="50" r="17" fill="#FDB913" stroke="none" />
                 </svg><span style={{
                   color: 'white',
                   fontWeight: 700,
