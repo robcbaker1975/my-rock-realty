@@ -31,3 +31,16 @@
 
 ## V8 Micro-adjustment
 - [x] Increase mobile header logo height by ~10-15% (mobile only, no other changes)
+
+## V9 Workshop Draft Page
+- [x] Audit existing AgentFlywheel workshop page (structure, copy, CTAs, testimonials, FAQ)
+- [x] Build improved workshop page at /workshop-draft (separate from live site)
+- [x] Align branding with main My Rock Realty site (colors, typography, logo)
+- [x] Add trust cues near the top (Rob's credentials, Zillow background, experience)
+- [x] Improve host identity clarity (Rob Baker, Broker/Owner, My Rock Realty LLC)
+- [x] Improve footer/legal consistency with main site
+- [x] Optimize mobile readability and spacing
+- [x] Reduce repetitive copy
+- [x] Add premium polish without overhyping
+- [x] Keep: core workshop offer, CTA flow, testimonials, FAQ concept, conversion structure
+- [x] Verify no changes to existing pages (homepage, legal pages)

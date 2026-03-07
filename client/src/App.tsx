@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import FairHousing from "./pages/FairHousing";
+import WorkshopDraft from "./pages/WorkshopDraft";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -17,6 +18,7 @@ function Router() {
       <Route path={"/privacy"} component={PrivacyPolicy} />
       <Route path={"/terms"} component={Terms} />
       <Route path={"/fair-housing"} component={FairHousing} />
+      <Route path={"/workshop-draft"} component={WorkshopDraft} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
