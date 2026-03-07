@@ -51,10 +51,8 @@ export default function SellersSection() {
               Maximize Your Sale with{" "}
               <span className="text-gold-dark">Strategy, Not Luck</span>
             </h2>
-            <p className="text-charcoal-light/80 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
-              Selling a home is about more than listing it and hoping for the right
-              offer. Rob builds a clear plan around pricing, marketing, and
-              negotiation — designed to create demand and drive top-dollar results.
+            <p className="text-charcoal-light/80 text-[15px] sm:text-lg leading-relaxed mb-5 sm:mb-8">
+              Rob builds a clear plan around pricing, marketing, and negotiation — designed to create demand and drive top-dollar results.
             </p>
 
             <div className="space-y-5 mb-8">

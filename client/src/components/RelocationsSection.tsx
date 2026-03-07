@@ -7,17 +7,17 @@ const scenarios = [
   {
     icon: MapPinned,
     title: "Moving to Colorado",
-    text: "Relocating to the Centennial State? Rob guides you through neighborhoods, markets, and buying strategies — so you land in the right home from day one.",
+    text: "Rob guides you through Colorado neighborhoods, markets, and buying strategies so you land in the right home from day one.",
   },
   {
     icon: ArrowRightLeft,
     title: "Moving Out of Colorado",
-    text: "Heading to a new state? Rob connects you with a vetted, trusted agent in your destination — someone who's been personally screened for quality and professionalism.",
+    text: "Rob connects you with a vetted, trusted agent in your destination — personally screened for quality and professionalism.",
   },
   {
     icon: UserCheck,
     title: "Refer a Friend or Family Member",
-    text: "Know someone buying or selling anywhere in the U.S.? Rob's referral network means your people get connected with a strong agent, no matter the state.",
+    text: "Know someone buying or selling anywhere in the U.S.? Rob connects your people with a strong, reliable agent — no matter the state.",
   },
 ];
 
@@ -58,12 +58,9 @@ export default function RelocationsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-charcoal-light/80 text-base sm:text-lg leading-relaxed"
+              className="text-charcoal-light/80 text-[15px] sm:text-lg leading-relaxed"
             >
-              Real estate doesn't stop at state lines. Whether you're moving into
-              Colorado, leaving Colorado, or helping someone you care about find a
-              great agent elsewhere, Rob's nationwide referral network ensures a
-              smooth handoff to a trusted professional — every time.
+              Real estate doesn't stop at state lines. Rob's nationwide referral network ensures smooth handoffs to trusted, vetted professionals — whether you're moving into Colorado, leaving the state, or connecting someone you care about with a strong agent elsewhere.
             </motion.p>
           </div>
 

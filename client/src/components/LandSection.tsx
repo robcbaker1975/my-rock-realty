@@ -41,11 +41,9 @@ export default function LandSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-cream/70 text-base sm:text-lg leading-relaxed mb-8 sm:mb-12 max-w-2xl mx-auto"
+            className="text-cream/70 text-[15px] sm:text-lg leading-relaxed mb-6 sm:mb-12 max-w-2xl mx-auto"
           >
-            Whether you're looking for acreage, a move-up property, or a strategic
-            real estate investment in Colorado, Rob provides the same data-driven
-            guidance and negotiation strength to help you make a confident decision.
+            Looking for acreage, a move-up property, or a strategic investment in Colorado? Rob provides the same data-driven guidance and negotiation strength to help you decide with confidence.
           </motion.p>
 
           {/* Cards */}

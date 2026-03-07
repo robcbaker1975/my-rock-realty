@@ -1,34 +1,31 @@
-# My Rock Realty - Refinement Pass
+# My Rock Realty - Refinement Pass v3
+
+## Header / Logo
+- [ ] Increase logo size in header, especially on mobile
+- [ ] Ensure larger logo works with hamburger menu without layout issues
+- [ ] Keep header clean, polished, balanced
+
+## Hero Background
+- [ ] Refine/darken overlay behind headline and CTA area
+- [ ] Reduce visual noise behind text
+- [ ] Ensure mobile crop prioritizes mountain mass and central focal point
+- [ ] Make hero more conversion-friendly, less generic scenic
 
 ## Mobile-First Optimization
-- [ ] Increase logo size in header (mobile + desktop)
-- [ ] Optimize hero section for mobile (spacing, text wrap, CTA prominence)
-- [ ] Improve mobile nav (hamburger menu, clean, polished)
-- [ ] Improve vertical rhythm, padding, tap targets across all sections
-- [ ] Ensure headlines wrap cleanly on mobile
-- [ ] Make CTA buttons prominent and easy to tap on mobile
-- [ ] Reduce dead space/crowding/misalignment on mobile
-- [ ] Optimize contact form for mobile (short fields, clean spacing, large tap targets)
+- [ ] Improve mobile spacing, readability, tap targets, vertical rhythm
+- [ ] Ensure headlines wrap cleanly on smaller screens
+- [ ] CTAs easy to tap and clearly visible
+- [ ] Hero feels intentionally designed for mobile, not cramped
+- [ ] Reduce awkward empty space or crowding on phones
 
-## Legal / Compliance Pages
-- [ ] Create Privacy Policy page
-- [ ] Create Terms & Conditions page
-- [ ] Create Fair Housing / Equal Housing disclosure
-- [ ] Add routes in App.tsx for new pages
+## Copy / Section Polish
+- [ ] Tighten overly long body copy for mobile scanning
+- [ ] Keep strong differentiators visible early on mobile
+- [ ] Trust-building content high enough on page for phone users
 
-## Footer Upgrade
-- [ ] Add Privacy Policy link
-- [ ] Add Terms & Conditions link
-- [ ] Add Fair Housing / Equal Housing logo
-- [ ] Add brokerage/licensing/compliance disclosure space
-- [ ] Ensure footer stacks cleanly on mobile
-
-## Contact Form Enhancement
-- [ ] Confirm all interest options present (buying, selling, relocating, out-of-state referral, buyer programs, workshop)
-- [ ] Optimize form layout for mobile
-
-## Final Polish
-- [ ] Verify Relocations section is prominent enough
-- [ ] Verify About section uses exact bio
-- [ ] Verify Workshop integration is strong
-- [ ] Ensure navigation supports all sections + legal pages
+## Verify Existing (already built)
+- [ ] Relocations section prominent with CTA
+- [ ] About section uses exact bio
+- [ ] Privacy Policy, Terms, Fair Housing pages exist
+- [ ] Footer has all required links and compliance
+- [ ] Contact form supports all interest types

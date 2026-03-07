@@ -5,12 +5,12 @@ const differentiators = [
   {
     icon: Shield,
     title: "Licensed Since 2018",
-    description: "Dedicated real estate professional with deep market knowledge across Colorado's diverse communities.",
+    description: "Deep market knowledge across Colorado's diverse communities.",
   },
   {
     icon: TrendingUp,
     title: "25+ Years in Sales & Negotiations",
-    description: "Decades of experience closing deals and advocating for clients translates to stronger outcomes for you.",
+    description: "Decades of deal-making and client advocacy that translate to stronger outcomes for you.",
   },
   {
     icon: GraduationCap,
@@ -20,7 +20,7 @@ const differentiators = [
   {
     icon: Target,
     title: "Coaching Mindset",
-    description: "A strategic, education-first approach that empowers you to make confident, informed decisions.",
+    description: "A strategic, education-first approach so you make confident, informed decisions.",
   },
   {
     icon: Users,
@@ -77,8 +77,7 @@ export default function TrustSection() {
             transition={{ delay: 0.2 }}
             className="text-charcoal-light/80 text-base sm:text-lg leading-relaxed"
           >
-            Not every agent brings the same depth of experience. Here's what makes
-            working with My Rock Realty different.
+            Here's what makes working with My Rock Realty different.
           </motion.p>
         </div>
 

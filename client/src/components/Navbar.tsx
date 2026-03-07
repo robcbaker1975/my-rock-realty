@@ -48,7 +48,7 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="container flex items-center justify-between h-[72px] md:h-20 lg:h-22">
+      <div className="container flex items-center justify-between h-[76px] md:h-20 lg:h-[5.5rem]">
         {/* Logo — larger on both mobile and desktop */}
         <a
           href="#hero"
@@ -58,7 +58,7 @@ export default function Navbar() {
           <img
             src={LOGO_URL}
             alt="My Rock Realty"
-            className="h-14 sm:h-16 md:h-[4.5rem] lg:h-20 w-auto"
+            className="h-[4.25rem] sm:h-[4.5rem] md:h-[5rem] lg:h-[5.5rem] w-auto"
           />
         </a>
 
@@ -107,7 +107,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden fixed inset-0 top-[72px] bg-charcoal/[0.98] backdrop-blur-md z-40"
+            className="lg:hidden fixed inset-0 top-[76px] bg-charcoal/[0.98] backdrop-blur-md z-40"
           >
             <div className="container py-6 flex flex-col gap-1 h-full overflow-y-auto">
               {navLinks.map((link, i) => (

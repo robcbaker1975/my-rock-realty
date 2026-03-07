@@ -72,11 +72,8 @@ export default function BuyersSection() {
               Navigate Home Buying Programs &{" "}
               <span className="text-gold">Smart Financing</span>
             </h2>
-            <p className="text-cream/70 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
-              Buying a home in Colorado doesn't have to mean draining your savings.
-              Rob helps buyers uncover programs and financing strategies that most
-              agents overlook — reducing costs, improving terms, and building a
-              stronger path to homeownership.
+            <p className="text-cream/70 text-[15px] sm:text-lg leading-relaxed mb-5 sm:mb-8">
+              Rob helps buyers uncover programs and financing strategies most agents overlook — reducing costs, improving terms, and building a stronger path to homeownership.
             </p>
 
             <div className="space-y-5 mb-8">

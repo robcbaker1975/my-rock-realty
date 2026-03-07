@@ -92,7 +92,7 @@ export default function FAQSection() {
                   >
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-charcoal-light/70 leading-relaxed pb-5">
+                  <AccordionContent className="text-charcoal-light/70 text-[14px] sm:text-base leading-relaxed pb-5">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

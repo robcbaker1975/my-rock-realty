@@ -63,14 +63,14 @@ export default function ProcessSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-charcoal-light/80 text-base sm:text-lg"
+            className="text-charcoal-light/80 text-[15px] sm:text-lg"
           >
             Working with Rob is straightforward. Here's what to expect.
           </motion.p>
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-4 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 md:gap-4 mb-8 sm:mb-12">
           {steps.map((step, i) => (
             <motion.div
               key={step.number}

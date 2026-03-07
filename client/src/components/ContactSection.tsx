@@ -4,10 +4,11 @@ import { Send, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 
 const interestOptions = [
-  "Interested in buyer programs",
-  "Interested in the workshop",
-  "Interested in selling",
-  "Need an out-of-state referral",
+  "Buyer programs",
+  "Selling my home",
+  "Relocating",
+  "Out-of-state referral",
+  "Workshop info",
 ];
 
 export default function ContactSection() {
@@ -93,10 +94,8 @@ export default function ContactSection() {
               Ready to Make a{" "}
               <span className="text-gold">Smart Move?</span>
             </h2>
-            <p className="text-cream/70 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
-              Whether you're buying, selling, relocating, or looking for a trusted
-              agent referral — Rob is here to help. Fill out the form and he'll be in
-              touch to discuss your goals.
+            <p className="text-cream/70 text-[15px] sm:text-lg leading-relaxed mb-5 sm:mb-8">
+              Whether you're buying, selling, relocating, or looking for a trusted agent referral — fill out the form and Rob will be in touch.
             </p>
 
             <div className="space-y-4 text-cream/60 text-sm">
