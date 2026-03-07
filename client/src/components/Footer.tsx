@@ -45,8 +45,7 @@ export default function Footer() {
               <p className="text-cream/60 font-medium">Rob Baker, Broker/Owner</p>
               <p>My Rock Realty, LLC</p>
               <p>Lic. ER100078487</p>
-              <p className="pt-1">8650 N Pioneer Trail</p>
-              <p>Parker, CO 80138</p>
+              <p className="pt-1">Parker, Colorado</p>
               <p className="pt-1">
                 <a href="tel:7203636544" className="hover:text-gold transition-colors">
                   (720) 363-6544
@@ -145,7 +144,7 @@ export default function Footer() {
             </div>
             {/* Brokerage Disclosure */}
             <p className="text-cream/30 text-xs leading-relaxed">
-              My Rock Realty, LLC &middot; Rob Baker, Broker/Owner &middot; Colorado Real Estate License ER100078487 &middot; 8650 N Pioneer Trail, Parker, CO 80138. All real estate services are provided in compliance with applicable federal, state, and local laws, including the Fair Housing Act and the Colorado Anti-Discrimination Act.
+              My Rock Realty, LLC &middot; Rob Baker, Broker/Owner &middot; Colorado Real Estate License ER100078487. All real estate services are provided in compliance with applicable federal, state, and local laws, including the Fair Housing Act and the Colorado Anti-Discrimination Act.
             </p>
           </div>
         </div>
