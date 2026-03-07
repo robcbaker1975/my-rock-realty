@@ -81,7 +81,7 @@ export default function WorkshopDraft() {
           </a>
           <a
             href="/"
-            className="hidden sm:block text-cream/70 hover:text-gold text-sm font-medium transition-colors"
+            className="absolute top-4 right-4 sm:static text-cream/70 hover:text-gold text-xs sm:text-sm font-medium transition-colors"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Back to Main Site
@@ -120,12 +120,8 @@ export default function WorkshopDraft() {
             </p>
 
             {/* Workshop details — professional bullet formatting */}
-            <div className="text-cream/70 text-sm sm:text-base mb-10 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-              <span>Every Tuesday at 6 PM MT</span>
-              <span className="hidden sm:inline text-cream/40">•</span>
-              <span>Online (Zoom)</span>
-              <span className="hidden sm:inline text-cream/40">•</span>
-              <span>Free — Limited Seats</span>
+            <div className="text-cream/70 text-sm sm:text-base mb-10">
+              <p>Every Tuesday at 6 PM MT • Online (Zoom) • Free — Limited Seats</p>
             </div>
 
             <CTAButton />
@@ -437,19 +433,8 @@ export default function WorkshopDraft() {
             Join Rob Baker's free weekly workshop and discover the programs, strategies, and steps that Colorado buyers are using to get into homes with little or no money down.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-cream/50 text-sm mb-8">
-            <span className="flex items-center gap-1.5">
-              <Clock size={15} className="text-gold" />
-              Every Tuesday at 6 PM MT
-            </span>
-            <span className="flex items-center gap-1.5">
-              <MapPin size={15} className="text-gold" />
-              Online (Zoom)
-            </span>
-            <span className="flex items-center gap-1.5">
-              <DollarSign size={15} className="text-gold" />
-              Free — limited seats
-            </span>
+          <div className="text-cream/50 text-sm mb-8">
+            <p>Every Tuesday at 6 PM MT • Online (Zoom) • Free — Limited Seats</p>
           </div>
 
           <CTAButton />
