@@ -72,19 +72,15 @@ export default function WorkshopSection() {
               </div>
             </div>
 
-            <button
-              onClick={() => {
-                const popup = document.getElementById('popup-sD4hCHIgZtHikPcqCh1z');
-                if (popup) {
-                  popup.style.display = 'block';
-                }
-              }}
-              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 bg-gold text-charcoal font-semibold rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base cursor-pointer"
+            {/* Homepage CTA → navigates to workshop page */}
+            <a
+              href="/colorado-home-buying-workshop"
+              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 bg-gold text-charcoal font-semibold rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Learn More About the Workshop
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </button>
+            </a>
           </motion.div>
 
           {/* Image */}

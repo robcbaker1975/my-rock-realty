@@ -2,14 +2,15 @@ import { Link } from "wouter";
 
 const LOGO_URL = "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663410368883/MyFokdbFMWxFfHiY.png?Expires=1804373851&Signature=tX8Nz-0U25wCRVcyN~gH7soBhlF3NkZUa-fhbO66r4~ix6wF5QJgpPopSr1AHJBk3LYrKIvxfO7YD9vTdqjZjlu3cRO~lkYxkxZTjoEnC4lRTtjG5BAb93p2PDrMuu2aVHq7bLQju4D-2XQxrn4CTm9kL1SbUQFUO-A84x7mFMo~GuyOHMKwN5Y8FJn7Ab31FwMwmSPPSt250S-gmfDDE641SKapGELse-4gAkYO2Uy7HOgsFPNinIzISyHmorDYolNCgA0fVXih1zjLlPmv4tUT4theY~IW3Wg5cuPbxYCSFRkYITYhEoeW1oC1OSZByxIaTDBAmvXWZN~bb7cNlA__&Key-Pair-Id=K2HSFNDJXOU9YS";
 
+// Navigation links for footer — page routes use <a href>, anchors use scrollTo
 const siteLinks = [
-  { label: "Home", href: "#hero" },
-  { label: "Buyers", href: "#buyers" },
-  { label: "Sellers", href: "#sellers" },
-  { label: "Relocations", href: "#relocations" },
-  { label: "Workshop", href: "#workshop" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "#hero", isRoute: false },
+  { label: "Buyers", href: "#buyers", isRoute: false },
+  { label: "Sellers", href: "#sellers", isRoute: false },
+  { label: "Relocations", href: "#relocations", isRoute: false },
+  { label: "Workshop", href: "/colorado-home-buying-workshop", isRoute: true },
+  { label: "About", href: "#about", isRoute: false },
+  { label: "Contact", href: "#contact", isRoute: false },
 ];
 
 function EqualHousingLogo({ className = "w-10 h-10" }: { className?: string }) {
@@ -68,16 +69,26 @@ export default function Footer() {
               Navigation
             </h4>
             <div className="space-y-2.5">
-              {siteLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
-                  className="block text-cream/50 text-sm hover:text-gold transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {siteLinks.map((link) =>
+                link.isRoute ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="block text-cream/50 text-sm hover:text-gold transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
+                    className="block text-cream/50 text-sm hover:text-gold transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
             </div>
           </div>
 
@@ -108,17 +119,6 @@ export default function Footer() {
               >
                 Coaching
               </a>
-              <a
-                href="https://MyRockHomes.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-cream/50 hover:text-gold transition-colors"
-              >
-                MyRockHomes.com
-              </a>
-              <p className="text-cream/35 pt-1">
-                Trusted agent referrals in all 50 states
-              </p>
             </div>
           </div>
 
@@ -135,7 +135,7 @@ export default function Footer() {
                 Privacy Policy
               </Link>
               <Link href="/terms" className="block text-cream/50 hover:text-gold transition-colors">
-                Terms & Conditions
+                Terms &amp; Conditions
               </Link>
               <Link href="/fair-housing" className="block text-cream/50 hover:text-gold transition-colors">
                 Fair Housing Statement

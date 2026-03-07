@@ -199,10 +199,10 @@ export default function JoinUs() {
               Why Agents Join
             </p>
             <h2
-              className="text-xl sm:text-3xl font-bold text-charcoal text-center mb-10 leading-tight"
+              className="text-lg sm:text-3xl font-bold text-charcoal text-center mb-10 leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Support, Strategy, and Standards<br className="hidden sm:block" /> — Not Just a Split
+              Support, Strategy, and Standards<br className="hidden sm:block" />{" "}— Not Just a Split
             </h2>
           </motion.div>
 
@@ -670,10 +670,10 @@ export default function JoinUs() {
                   Let's Connect
                 </p>
                 <h3
-                  className="text-xl sm:text-3xl font-bold text-charcoal leading-tight"
+                  className="text-xl sm:text-2xl font-bold text-charcoal leading-tight"
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
-                  Tell Us About<br className="hidden sm:block" /> Your Background
+                  Tell Us About Your Background
                 </h3>
               </div>
 
@@ -804,7 +804,7 @@ export default function JoinUs() {
               className="text-xl sm:text-3xl lg:text-4xl font-bold text-cream mb-5 leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Let's Talk About<br className="hidden sm:block" /> Whether It's a Fit
+              Let's Talk About Whether It's a Fit
             </h2>
             <p className="text-cream/70 text-base sm:text-lg leading-relaxed mb-8">
               No pressure, no pitch. Just a straightforward conversation about what you're looking for, what we offer, and whether My Rock Realty makes sense for where you want to go.

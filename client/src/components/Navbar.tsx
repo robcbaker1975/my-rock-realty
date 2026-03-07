@@ -38,7 +38,14 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    // Page routes (start with "/") navigate directly; anchors scroll on-page
+    if (href.startsWith("/")) {
+      // Let the browser handle normal navigation — do NOT preventDefault
+      setMobileOpen(false);
+      return;
+    }
+    e.preventDefault();
     setMobileOpen(false);
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -57,7 +64,7 @@ export default function Navbar() {
         <div className="container flex items-center justify-between h-[68px] md:h-[72px]">
           <a
             href="#hero"
-            onClick={(e) => { e.preventDefault(); handleNavClick("#hero"); }}
+            onClick={(e) => handleNavClick(e, "#hero")}
             className="flex items-center shrink-0"
           >
             <img
@@ -73,7 +80,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="px-3 py-2 text-sm font-medium tracking-wide transition-colors rounded text-cream/80 hover:text-gold"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
@@ -97,7 +104,7 @@ export default function Navbar() {
             </a>
             <a
               href="#contact"
-              onClick={(e) => { e.preventDefault(); handleNavClick("#contact"); }}
+              onClick={(e) => handleNavClick(e, "#contact")}
               className="ml-3 px-5 py-2.5 bg-gold text-charcoal text-sm font-semibold rounded transition-all hover:bg-gold-light hover:shadow-lg"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
@@ -122,7 +129,7 @@ export default function Navbar() {
         <div className="container flex items-center justify-center pt-5 pb-3 sm:pt-6 sm:pb-3 relative">
           <a
             href="#hero"
-            onClick={(e) => { e.preventDefault(); handleNavClick("#hero"); }}
+            onClick={(e) => handleNavClick(e, "#hero")}
             className="flex items-center"
           >
             <img
@@ -148,7 +155,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="px-3 py-1.5 text-sm font-medium tracking-wide transition-colors rounded text-white/80 hover:text-gold"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
@@ -172,7 +179,7 @@ export default function Navbar() {
           </a>
           <a
             href="#contact"
-            onClick={(e) => { e.preventDefault(); handleNavClick("#contact"); }}
+            onClick={(e) => handleNavClick(e, "#contact")}
             className="ml-3 px-5 py-2 bg-gold text-charcoal text-sm font-semibold rounded transition-all hover:bg-gold-light hover:shadow-lg"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
@@ -215,7 +222,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                   href={link.href}
-                  onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="px-4 py-4 text-cream/90 hover:text-gold text-lg font-medium transition-colors rounded-lg active:bg-white/5 border-b border-white/5 last:border-0"
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
@@ -250,7 +257,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
                 href="#contact"
-                onClick={(e) => { e.preventDefault(); handleNavClick("#contact"); }}
+                onClick={(e) => handleNavClick(e, "#contact")}
                 className="mt-4 mx-2 px-6 py-4 bg-gold text-charcoal text-center text-base font-semibold rounded-lg transition-all hover:bg-gold-light active:scale-[0.98]"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
