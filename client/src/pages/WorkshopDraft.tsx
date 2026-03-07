@@ -44,12 +44,18 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
 /* ─── CTA Button ─── */
 function CTAButton({ variant = "primary", className = "" }: { variant?: "primary" | "secondary"; className?: string }) {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const popup = document.getElementById('popup-sD4hCHIgZtHikPcqCh1z');
+    if (popup) {
+      popup.style.display = 'block';
+    }
+  };
+
   return (
-    <a
-      href={REGISTER_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 ${
+    <button
+      onClick={handleClick}
+      className={`inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 cursor-pointer ${
         variant === "primary"
           ? "bg-gold text-charcoal hover:bg-gold-light hover:shadow-lg px-7 py-4 text-[15px] sm:text-base"
           : "border-2 border-gold text-gold hover:bg-gold hover:text-charcoal px-6 py-3 text-sm"
@@ -58,7 +64,7 @@ function CTAButton({ variant = "primary", className = "" }: { variant?: "primary
     >
       Reserve Your Free Seat
       <ArrowRight size={18} />
-    </a>
+    </button>
   );
 }
 
