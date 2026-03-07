@@ -11,6 +11,7 @@ import FairHousing from "./pages/FairHousing";
 import WorkshopDraft from "./pages/WorkshopDraft";
 import JoinUs from "./pages/JoinUs";
 import Coaching from "./pages/Coaching";
+import Accessibility from "./pages/Accessibility";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -23,6 +24,7 @@ function Router() {
       <Route path={"/colorado-home-buying-workshop"} component={WorkshopDraft} />
       <Route path={"/join-us"} component={JoinUs} />
       <Route path={"/coaching"} component={Coaching} />
+      <Route path={"/accessibility"} component={Accessibility} />
       <Route path={"/workshop-draft"}>{() => { window.location.href = "/colorado-home-buying-workshop"; return null; }}</Route>
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

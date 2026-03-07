@@ -140,6 +140,9 @@ export default function Footer() {
               <Link href="/fair-housing" className="block text-cream/50 hover:text-gold transition-colors">
                 Fair Housing Statement
               </Link>
+              <Link href="/accessibility" className="block text-cream/50 hover:text-gold transition-colors">
+                Accessibility Statement
+              </Link>
             </div>
           </div>
         </div>
@@ -177,6 +180,10 @@ export default function Footer() {
             <span>&middot;</span>
             <Link href="/fair-housing" className="hover:text-cream/50 transition-colors">
               Fair Housing
+            </Link>
+            <span>&middot;</span>
+            <Link href="/accessibility" className="hover:text-cream/50 transition-colors">
+              Accessibility
             </Link>
           </div>
         </div>
