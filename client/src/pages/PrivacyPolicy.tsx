@@ -65,11 +65,12 @@ export default function PrivacyPolicy() {
               <p className="mb-3">We use the information we collect to:</p>
               <ul className="list-disc pl-6 space-y-1.5 text-sm">
                 <li>Respond to your inquiries and provide real estate guidance, workshop-related information, or referral assistance</li>
+                <li>Send follow-up communications related to your inquiry or requested service via email, phone, or text message</li>
                 <li>Connect you with relevant services, programs, or agent referrals</li>
                 <li>Improve our website, services, and client experience</li>
-                <li>Send follow-up communications related to your inquiry (you may opt out at any time)</li>
                 <li>Comply with legal obligations</li>
               </ul>
+              <p className="mt-3 text-sm"><strong>Opt-Out:</strong> You may unsubscribe from email communications at any time by clicking the unsubscribe link in our emails. To opt out of text messages, reply STOP to any message we send.</p>
             </section>
 
             <section>
@@ -119,7 +120,16 @@ export default function PrivacyPolicy() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                8. Third-Party Links
+                8. Children's Privacy
+              </h2>
+              <p>
+                Our website is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected information from a child under 13, we will take steps to delete such information promptly.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                9. Third-Party Links
               </h2>
               <p>
                 Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of those sites. We encourage you to review the privacy policies of any third-party site you visit.
@@ -128,7 +138,7 @@ export default function PrivacyPolicy() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                9. Changes to This Policy
+                10. Changes to This Policy
               </h2>
               <p>
                 We may update this Privacy Policy from time to time. Changes will be posted on this page with a revised "Last updated" date. We encourage you to review this policy periodically.
@@ -137,7 +147,7 @@ export default function PrivacyPolicy() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                10. Contact Us
+                11. Contact Us
               </h2>
               <p>
                 If you have questions about this Privacy Policy or how your information is handled, please contact:

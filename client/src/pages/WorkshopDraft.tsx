@@ -486,7 +486,6 @@ export default function WorkshopDraft() {
             <div className="text-center sm:text-left">
               <img src={LOGO_URL} alt="My Rock Realty" className="h-16 sm:h-20 w-auto mx-auto sm:mx-0 mb-3" />
               <p className="text-cream/50 text-xs leading-relaxed">
-                Rob Baker, Broker/Owner<br />
                 My Rock Realty, LLC<br />
                 Lic. ER100078487
               </p>
@@ -514,9 +513,6 @@ export default function WorkshopDraft() {
           <div className="mt-6 pt-6 border-t border-white/5">
             <p className="text-cream/30 text-[11px] leading-relaxed text-center max-w-3xl mx-auto">
               Information provided is for educational purposes only and is not a commitment to lend. Rob Baker is not a lender, accountant, CPA, or attorney. Please consult with licensed lending, tax, or legal professionals regarding your specific situation. My Rock Realty, LLC is a Colorado-licensed real estate brokerage. All real estate services are provided in compliance with applicable federal, state, and local laws, including the Fair Housing Act.
-            </p>
-            <p className="text-cream/25 text-[11px] text-center mt-3">
-              &copy; {new Date().getFullYear()} My Rock Realty, LLC. All rights reserved.
             </p>
           </div>
         </div>
