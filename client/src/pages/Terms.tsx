@@ -135,7 +135,32 @@ export default function Terms() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                11. Contact
+                11. Financing Disclaimer
+              </h2>
+              <p>
+                My Rock Realty, LLC is a real estate brokerage and is not a mortgage lender. Any information provided on this website or in the Colorado Home Buying Workshop regarding loan programs, affordability, interest rates, concessions, or financing strategies is for general educational purposes only. Loan approval, terms, rates, and program eligibility are determined by licensed lenders based on buyer qualifications and current lending guidelines, and are not guaranteed.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                12. Colorado Real Estate Regulatory Contact
+              </h2>
+              <p>
+                For complaints concerning licensed real estate activity in Colorado, consumers may contact the Colorado Division of Real Estate:
+              </p>
+              <div className="mt-3 p-4 bg-cream rounded border border-cream-dark/40 text-sm">
+                <p className="font-semibold text-charcoal">Colorado Division of Real Estate</p>
+                <p>1560 Broadway, Suite 925</p>
+                <p>Denver, CO 80202</p>
+                <p className="mt-2">(303) 894-2166</p>
+                <p className="mt-2 text-charcoal-light/70">Complaints may also be filed through the Division's online complaint process.</p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                13. Contact
               </h2>
               <p>
                 If you have questions about these Terms & Conditions, please contact:

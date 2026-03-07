@@ -36,7 +36,7 @@ export default function WorkshopSection() {
               <span className="text-gold">Workshop</span>
             </h2>
             <p className="text-cream/70 text-[15px] sm:text-lg leading-relaxed mb-5 sm:mb-6">
-              Every week, Rob hosts a free workshop helping Colorado buyers explore programs and build a clear path to homeownership. No pressure — just real information from a real professional.
+              Every week, Rob hosts a free workshop helping Colorado buyers and homeowners explore programs, reduce upfront costs, and build a clear path forward. No pressure — just real information from a real professional.
             </p>
 
             {/* Takeaways */}

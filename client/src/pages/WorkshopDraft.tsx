@@ -442,6 +442,17 @@ export default function WorkshopDraft() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
+          FINANCING DISCLAIMER
+      ═══════════════════════════════════════════════════ */}
+      <section className="py-10 sm:py-14 bg-warm-white/50 border-t border-charcoal/5">
+        <div className="container max-w-3xl">
+          <p className="text-[14px] sm:text-[15px] text-charcoal/70 leading-relaxed text-center">
+            <span className="font-semibold text-charcoal">My Rock Realty, LLC is not a mortgage lender.</span> Loan options, approval, rates, and program eligibility are determined by licensed lenders and may vary based on qualifications and current guidelines.
+          </p>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
           FINAL CTA
       ═══════════════════════════════════════════════════ */}
       <section className="py-14 sm:py-20 bg-charcoal relative overflow-hidden">
