@@ -75,7 +75,7 @@ export default function HeroSection() {
               className="text-[15px] leading-[1.7] sm:text-lg md:text-xl text-white/80 sm:leading-relaxed mb-7 sm:mb-9 max-w-lg"
               style={{ fontFamily: "'Libre Franklin', sans-serif" }}
             >
-              25+ years of negotiation expertise. A coaching mindset shaped at Zillow.
+              25+ years of negotiation expertise. A coaching mindset shaped at Zillow®.
               Data-driven strategies to help you buy smarter, sell stronger, and move with confidence.
             </motion.p>
 

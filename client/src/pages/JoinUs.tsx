@@ -590,7 +590,7 @@ export default function JoinUs() {
             {/* Bio */}
             <div className="text-left">
               <p className="text-[15px] sm:text-base text-charcoal/75 leading-relaxed mb-4">
-                Rob has been in real estate since 2018 and brings more than 25 years of experience in sales and negotiations. Before launching My Rock Realty, he spent 4.5 years at Zillow as an Agent Coach & Consultant — working directly with agents to improve strategy, client experience, and business results.
+                Rob has been in real estate since 2018 and brings more than 25 years of experience in sales and negotiations. Before launching My Rock Realty, he spent 4.5 years at Zillow® as an Agent Coach & Consultant — working directly with agents to improve strategy, client experience, and business results.
               </p>
               <p className="text-[15px] sm:text-base text-charcoal/75 leading-relaxed mb-6">
                 That background shapes how My Rock Realty operates: education-first, strategy-driven, and focused on practical support across buyer, seller, relocation, land, investor, and referral business. Rob is directly accessible to agents — not a distant figure at the top of a corporate structure.

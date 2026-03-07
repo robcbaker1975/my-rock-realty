@@ -568,7 +568,7 @@ export default function Coaching() {
             {/* Bio */}
             <div className="text-left">
               <p className="text-[15px] sm:text-base text-charcoal/75 leading-relaxed mb-4">
-                Rob has been in real estate since 2018 and brings more than 25 years of experience in sales and negotiations. Before launching My Rock Realty, he spent 4.5 years at Zillow as an Agent Coach & Consultant — working directly with agents to improve strategy, client experience, and business results.
+                Rob has been in real estate since 2018 and brings more than 25 years of experience in sales and negotiations. Before launching My Rock Realty, he spent 4.5 years at Zillow® as an Agent Coach & Consultant — working directly with agents to improve strategy, client experience, and business results.
               </p>
               <p className="text-[15px] sm:text-base text-charcoal/75 leading-relaxed mb-6">
                 That background informs how Rob approaches coaching: education-first, strategy-driven, and grounded in what actually helps agents serve clients better and build a more sustainable business. Coaching is not motivational content — it's practical guidance based on real transaction experience across buyers, sellers, relocations, land clients, and investor work.

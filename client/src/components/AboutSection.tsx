@@ -76,7 +76,7 @@ export default function AboutSection() {
                 sales and negotiations.
               </p>
               <p>
-                Before launching my brokerage, I spent 4.5 years at Zillow as an
+                Before launching my brokerage, I spent 4.5 years at Zillow® as an
                 Agent Coach & Consultant, helping agents improve strategy, client
                 experience, and results.
               </p>

@@ -294,7 +294,7 @@ export default function WorkshopDraft() {
             {/* Bio */}
             <div className="text-center md:text-left">
               <p className="text-[15px] sm:text-base text-charcoal/75 leading-relaxed mb-4">
-                Rob has been in real estate since 2018 and brings more than 25 years of experience in sales and negotiations. Before launching My Rock Realty, he spent 4.5 years at Zillow as an Agent Coach & Consultant, helping agents improve strategy, client experience, and results.
+                Rob has been in real estate since 2018 and brings more than 25 years of experience in sales and negotiations. Before launching My Rock Realty, he spent 4.5 years at Zillow® as an Agent Coach & Consultant, helping agents improve strategy, client experience, and results.
               </p>
               <p className="text-[15px] sm:text-base text-charcoal/75 leading-relaxed mb-6">
                 Today, Rob helps Colorado buyers understand home buying programs, seller concessions, and financing options they may not realize are available. This workshop reflects the same education-first approach he brings to every client.
