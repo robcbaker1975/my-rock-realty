@@ -498,8 +498,8 @@ export default function WorkshopDraft() {
                 <a href="tel:7203636544" className="text-cream/50 hover:text-gold text-xs flex items-center gap-1 transition-colors">
                   <Phone size={12} /> (720) 363-6544
                 </a>
-                <a href="mailto:RobBakerRE@gmail.com" className="text-cream/50 hover:text-gold text-xs flex items-center gap-1 transition-colors">
-                  <Mail size={12} /> RobBakerRE@gmail.com
+                <a href="mailto:workshop@myrockhomes.com" className="text-cream/50 hover:text-gold text-xs flex items-center gap-1 transition-colors">
+                  <Mail size={12} /> workshop@myrockhomes.com
                 </a>
               </div>
             </div>

@@ -53,8 +53,8 @@ export default function Footer() {
                 </a>
               </p>
               <p>
-                <a href="mailto:RobBakerRE@gmail.com" className="hover:text-gold transition-colors">
-                  RobBakerRE@gmail.com
+                <a href="mailto:rob@myrockhomes.com" className="hover:text-gold transition-colors">
+                  rob@myrockhomes.com
                 </a>
               </p>
             </div>

@@ -207,7 +207,7 @@ export default function Terms() {
 
                 <p>(720) 363-6544</p>
                 <p>
-                  <a href="mailto:RobBakerRE@gmail.com" className="text-gold-dark hover:underline">RobBakerRE@gmail.com</a>
+                  <a href="mailto:support@myrockhomes.com" className="text-gold-dark hover:underline">support@myrockhomes.com</a>
                 </p>
               </div>
             </section>

@@ -46,7 +46,7 @@ const fadeUp = {
 function CTAButton({ className = "", label = "Start a Coaching Conversation" }: { className?: string; label?: string }) {
   return (
     <a
-      href="mailto:RobBakerRE@gmail.com?subject=Coaching Inquiry — My Rock Realty"
+      href="mailto:coaching@myrockhomes.com?subject=Coaching Inquiry — My Rock Realty"
       className={`inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 bg-gold text-charcoal hover:bg-gold-light hover:shadow-lg px-7 py-4 text-[15px] sm:text-base ${className}`}
       style={{ fontFamily: "'Outfit', sans-serif" }}
     >
@@ -801,11 +801,11 @@ export default function Coaching() {
               </a>
               <span className="hidden sm:block">·</span>
               <a
-                href="mailto:RobBakerRE@gmail.com"
+                href="mailto:coaching@myrockhomes.com"
                 className="inline-flex items-center gap-1.5 hover:text-gold transition-colors"
               >
                 <Mail size={14} />
-                RobBakerRE@gmail.com
+                coaching@myrockhomes.com
               </a>
             </div>
           </motion.div>

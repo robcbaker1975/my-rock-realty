@@ -47,7 +47,7 @@ const fadeUp = {
 function CTAButton({ className = "" }: { className?: string }) {
   return (
     <a
-      href="mailto:RobBakerRE@gmail.com?subject=Joining My Rock Realty — Let's Talk"
+      href="mailto:join@myrockhomes.com?subject=Joining My Rock Realty — Let's Talk"
       className={`inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 bg-gold text-charcoal hover:bg-gold-light hover:shadow-lg px-7 py-4 text-[15px] sm:text-base ${className}`}
       style={{ fontFamily: "'Outfit', sans-serif" }}
     >
@@ -822,11 +822,11 @@ export default function JoinUs() {
               </a>
               <span className="hidden sm:block">·</span>
               <a
-                href="mailto:RobBakerRE@gmail.com"
+                href="mailto:join@myrockhomes.com"
                 className="inline-flex items-center gap-1.5 hover:text-gold transition-colors"
               >
                 <Mail size={14} />
-                RobBakerRE@gmail.com
+                join@myrockhomes.com
               </a>
             </div>
           </motion.div>
@@ -858,10 +858,10 @@ export default function JoinUs() {
                   <Phone size={12} /> (720) 363-6544
                 </a>
                 <a
-                  href="mailto:RobBakerRE@gmail.com"
+                  href="mailto:join@myrockhomes.com"
                   className="text-cream/50 hover:text-gold text-xs flex items-center gap-1 transition-colors"
                 >
-                  <Mail size={12} /> RobBakerRE@gmail.com
+                  <Mail size={12} /> join@myrockhomes.com
                 </a>
               </div>
             </div>

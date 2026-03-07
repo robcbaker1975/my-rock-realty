@@ -130,7 +130,7 @@ export default function ContactSection() {
               </p>
               <p>
                 <strong className="text-cream/80">Email:</strong>{" "}
-                <a href="mailto:RobBakerRE@gmail.com" className="hover:text-gold transition-colors">RobBakerRE@gmail.com</a>
+                <a href="mailto:rob@myrockhomes.com" className="hover:text-gold transition-colors">rob@myrockhomes.com</a>
               </p>
               <p>
                 <strong className="text-cream/80">Serving:</strong> Buyers, sellers, and land clients across Colorado

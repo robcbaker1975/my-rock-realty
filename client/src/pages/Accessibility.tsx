@@ -135,11 +135,11 @@ export default function Accessibility() {
                 Email
               </p>
               <a
-                href="mailto:RobBakerRE@gmail.com?subject=Accessibility Support Request"
+                href="mailto:support@myrockhomes.com?subject=Accessibility Support Request"
                 className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors font-medium"
               >
                 <Mail size={16} />
-                RobBakerRE@gmail.com
+                support@myrockhomes.com
               </a>
             </div>
 
