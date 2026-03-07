@@ -77,7 +77,7 @@ export default function PrivacyPolicy() {
                 3. Information Sharing
               </h2>
               <p>
-                We do not sell, rent, or trade your personal information to third parties for marketing purposes. We may share your information with trusted service providers who assist in operating our website or conducting our business, provided they agree to keep your information confidential. We may also share information when required by law or to protect our rights.
+                We do not sell, rent, or trade your personal information to third parties for marketing purposes. We may share your information with trusted service providers that support functions such as website hosting, analytics, contact forms or CRM systems, email or text communications, and referral coordination when requested by you. These providers are expected to protect your information and use it only as needed to support our business operations. We may also share information when required by law or to protect our rights.
               </p>
             </section>
 
@@ -95,7 +95,7 @@ export default function PrivacyPolicy() {
                 5. Cookies and Tracking
               </h2>
               <p>
-                Our website may use cookies and similar technologies to enhance your browsing experience and collect aggregate usage data. You can control cookie settings through your browser preferences. We use analytics tools to understand how visitors interact with our site, helping us improve content and functionality.
+                Our website may use cookies and similar technologies to support core site functionality, remember preferences, and collect aggregated analytics data about how visitors use the site. These technologies may include essential cookies, functional cookies, and analytics cookies. If we add advertising or retargeting tools in the future, this policy may be updated accordingly. You can manage cookies through your browser settings, and if additional cookie preference tools are added in the future, you may be able to manage settings there as well.
               </p>
             </section>
 
@@ -113,7 +113,7 @@ export default function PrivacyPolicy() {
                 7. Your Rights
               </h2>
               <p>
-                You have the right to request access to, correction of, or deletion of your personal information. To exercise these rights, please contact us using the information below. We will respond to your request within a reasonable timeframe.
+                You may request access to, correction of, or deletion of your personal information by contacting us using the information below. We will review and respond to requests within a reasonable timeframe, subject to any legal or recordkeeping requirements that apply.
               </p>
             </section>
 
