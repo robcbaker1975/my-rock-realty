@@ -8,6 +8,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
+import { trpc } from "@/lib/trpc";
 import {
   ArrowRight,
   ArrowLeft,
@@ -27,6 +29,9 @@ import {
   ChevronDown,
   Phone,
   Mail,
+  Send,
+  Loader2,
+  CheckCircle,
 } from "lucide-react";
 
 const LOGO_URL =
@@ -53,6 +58,42 @@ function CTAButton({ className = "" }: { className?: string }) {
 }
 
 export default function JoinUs() {
+  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    type: "agent",
+    interests: ["Join Our Team"],
+    message: "",
+  });
+
+  const contactMutation = trpc.contact.submit.useMutation({
+    onSuccess: () => {
+      setSubmitted(true);
+      toast.success("Thank you! Rob will be in touch soon.");
+    },
+    onError: (error) => {
+      toast.error(error.message || "Something went wrong. Please try again.");
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email) {
+      toast.error("Please fill in your name and email.");
+      return;
+    }
+    contactMutation.mutate({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || undefined,
+      type: "Agent Inquiry",
+      interests: formData.interests,
+      message: formData.message || undefined,
+    });
+  };
+
   useEffect(() => {
     document.title = "Join Our Team | My Rock Realty";
     window.scrollTo(0, 0);
@@ -591,11 +632,159 @@ export default function JoinUs() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          FINAL CTA
+          AGENT INQUIRY FORM
       ═══════════════════════════════════════════════════ */}
-      <section className="relative bg-charcoal overflow-hidden py-16 sm:py-24">
+      <section className="py-12 sm:py-16 md:py-20 bg-warm-white border-t border-gold/10">
+        <div className="container max-w-3xl">
+          {submitted ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-6">
+                <CheckCircle size={32} className="text-gold" />
+              </div>
+              <h3
+                className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                Message Received
+              </h3>
+              <p className="text-charcoal/70 text-base leading-relaxed">
+                Thanks for your interest. Rob will review your message and get back to you shortly.
+              </p>
+            </motion.div>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="mb-8 text-center">
+                <p
+                  className="text-gold text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  Let's Connect
+                </p>
+                <h3
+                  className="text-2xl sm:text-3xl font-bold text-charcoal"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  Tell Us About Your Background
+                </h3>
+              </div>
+
+              <form
+                onSubmit={handleSubmit}
+                className="bg-charcoal/5 border border-charcoal/10 rounded-lg p-6 sm:p-8 space-y-5"
+              >
+                {/* Name & Email */}
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-charcoal/70 text-sm font-medium mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-4 py-3 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors"
+                      placeholder="Your full name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-charcoal/70 text-sm font-medium mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-4 py-3 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors"
+                      placeholder="you@email.com"
+                    />
+                  </div>
+                </div>
+
+                {/* Phone & License Status */}
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-charcoal/70 text-sm font-medium mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                      Phone
+                    </label>
+                    <input
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-4 py-3 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors"
+                      placeholder="(555) 123-4567"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-charcoal/70 text-sm font-medium mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                      License Status
+                    </label>
+                    <select
+                      value={formData.type}
+                      onChange={(e) => setFormData({ ...formData, type: e.target.value })}
+                      className="w-full px-4 py-3 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base focus:border-gold/50 focus:outline-none transition-colors appearance-none"
+                    >
+                      <option value="agent">Active Agent</option>
+                      <option value="broker">Broker/Manager</option>
+                      <option value="exploring">Exploring Real Estate</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label className="block text-charcoal/70 text-sm font-medium mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                    What are you looking for in your next brokerage?
+                  </label>
+                  <textarea
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    rows={4}
+                    className="w-full px-4 py-3 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors resize-none"
+                    placeholder="Tell Rob about your goals, experience, current market, or anything else that would help him understand your situation..."
+                  />
+                </div>
+
+                {/* Submit */}
+                <button
+                  type="submit"
+                  disabled={contactMutation.isPending}
+                  className="w-full inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-bold text-base rounded-lg transition-all hover:bg-gold-light hover:shadow-lg active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  {contactMutation.isPending ? (
+                    <>
+                      <Loader2 size={16} className="animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send size={16} />
+                      Send My Information
+                    </>
+                  )}
+                </button>
+              </form>
+            </motion.div>
+          )}
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          READY TO EXPLORE
+      ═══════════════════════════════════════════════════ */}
+      <section className="relative bg-charcoal overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/hero-bg-dyEKuHhWXn8eKxpjETtCvy.webp)`,
             backgroundPosition: "center 30%",
