@@ -110,7 +110,7 @@ export default function HeroSection() {
               className="mt-6 sm:mt-9 text-[11px] sm:text-sm text-white/40 tracking-wide"
               style={{ fontFamily: "'Libre Franklin', sans-serif" }}
             >
-              Helping buyers, sellers, land clients, and relocations across Colorado
+              Serving first-time buyers, current homeowners, sellers, and relocations across Colorado
             </motion.p>
           </div>
 

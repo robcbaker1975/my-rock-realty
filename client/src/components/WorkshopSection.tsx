@@ -5,7 +5,7 @@ const WORKSHOP_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7
 
 const takeaways = [
   "Understand national, state, and local home buying programs",
-  "Learn how to reduce out-of-pocket costs and improve financing",
+  "Learn how to reduce out-of-pocket costs and better understand financing options",
   "Get clarity on the buying process from start to close",
   "Ask questions directly to a licensed real estate professional",
 ];
@@ -36,7 +36,7 @@ export default function WorkshopSection() {
               <span className="text-gold">Workshop</span>
             </h2>
             <p className="text-cream/70 text-[15px] sm:text-lg leading-relaxed mb-5 sm:mb-6">
-              Every week, Rob hosts a free workshop helping Colorado buyers understand their options, explore home buying programs, and build a clear path to homeownership. No pressure — just real information from a real professional.
+              Every week, Rob hosts a free workshop helping Colorado buyers explore programs and build a clear path to homeownership. No pressure — just real information from a real professional.
             </p>
 
             {/* Takeaways */}

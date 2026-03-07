@@ -148,7 +148,7 @@ export default function FairHousing() {
       <footer className="bg-charcoal py-6">
         <div className="container text-center">
           <p className="text-cream/30 text-xs">
-            &copy; {new Date().getFullYear()} My Rock Realty. All rights reserved.
+            &copy; {new Date().getFullYear()} My Rock Realty, LLC. All rights reserved.
           </p>
         </div>
       </footer>

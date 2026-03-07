@@ -379,6 +379,22 @@ export default function WorkshopDraft() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
+          WHO THIS WORKSHOP IS FOR
+      ═══════════════════════════════════════════════════ */}
+      <section className="py-12 sm:py-16 bg-warm-white/50">
+        <div className="container max-w-3xl">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <h3 className="text-xl sm:text-2xl font-bold text-charcoal mb-5" style={{ fontFamily: "'Outfit', sans-serif" }}>
+              Who This Workshop Is For
+            </h3>
+            <p className="text-charcoal/70 text-[15px] sm:text-base leading-relaxed">
+              First-time buyers. Renters exploring homeownership. Current homeowners planning their next purchase. Buyers relocating to Colorado. Anyone who wants clarity before talking to a lender or making a move. If you're curious about your options, this workshop is for you.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
           FAQ
       ═══════════════════════════════════════════════════ */}
       <section className="py-14 sm:py-20 bg-warm-white">
@@ -412,6 +428,14 @@ export default function WorkshopDraft() {
             <FAQItem
               question="Is this just a sales pitch?"
               answer="No. This is an educational workshop led by Rob Baker. You'll get actionable steps and resources, not a hard sell. Rob's coaching background at Zillow means the focus is always on education first."
+            />
+            <FAQItem
+              question="What if I'm worried about overpaying or hidden repair issues?"
+              answer="Appraisals, professional inspections, and home warranty options can provide peace of mind. The workshop covers how to use market data, comparable sales, and negotiation strategy to make a more informed decision about pricing and condition."
+            />
+            <FAQItem
+              question="What if I'm uncertain about financing or don't have much cash upfront?"
+              answer="That's exactly what the workshop addresses. Trusted lender partners and financing programs may help buyers explore options that work for their situation. Seller concessions can also help reduce upfront closing costs in some transactions."
             />
           </div>
         </div>
