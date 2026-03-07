@@ -64,17 +64,17 @@ export default function HeroSection() {
                   aria-hidden="true"
                   viewBox="0 0 100 100"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="inline-block h-[0.92em] w-[0.82em] align-[-0.06em] mr-[0.01em] shrink-0"
+                  className="inline-block h-[0.78em] w-[0.70em] align-[-0.02em] mr-[0.005em] shrink-0"
                 >
                   <path
-                    d="M78 24
-                       A38 38 0 1 0 78 76
-                       L67 64
-                       A22 22 0 1 1 67 36
+                    d="M76 26
+                       A34 34 0 1 0 76 74
+                       L67 63
+                       A19 19 0 1 1 67 37
                        Z"
                     fill="#C41E3A"
                   />
-                  <circle cx="45" cy="50" r="14.5" fill="#FDB913" />
+                  <circle cx="45" cy="50" r="11.5" fill="#FDB913" />
                 </svg>
                 <span className="text-white">olorado</span>
               </span>{" "}
