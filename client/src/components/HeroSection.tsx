@@ -124,7 +124,7 @@ export default function HeroSection() {
               className="mt-6 sm:mt-9 text-[11px] sm:text-sm text-white/40 tracking-wide"
               style={{ fontFamily: "'Libre Franklin', sans-serif" }}
             >
-              Serving first-time buyers, current homeowners, sellers, and relocations across Colorado
+              Serving first-time buyers, current homeowners, sellers, and relocations across Colorado. This website is not intended to solicit buyers or sellers who are already subject to an exclusive agreement with another real estate broker.
             </motion.p>
           </div>
 

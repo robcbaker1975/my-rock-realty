@@ -63,7 +63,16 @@ export default function Terms() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                3. Services Description
+                3. Represented-Party Notice
+              </h2>
+              <p>
+                This website is not intended to solicit buyers or sellers who are already subject to an exclusive agreement with another real estate broker. If you are currently represented by another broker, please do not submit information through this site without first consulting with your current broker.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                4. Services Description
               </h2>
               <p>
                 My Rock Realty provides real estate brokerage services in the state of Colorado, including buyer representation, seller representation, relocation assistance, and agent referrals across all 50 states. The information on this Site is provided for general informational and educational purposes only and does not constitute legal, financial, lending, or other professional advice. Information on this Site may change and should be independently verified where material to a real estate transaction.
@@ -72,7 +81,25 @@ export default function Terms() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                4. No Guaranteed Outcomes
+                5. Professional Advice Disclaimer
+              </h2>
+              <p>
+                My Rock Realty, LLC is a real estate brokerage and does not provide legal, tax, accounting, or financial advice. For matters related to legal rights, tax implications, title issues, financing, or financial planning, you should consult appropriate licensed professionals such as an attorney, CPA, tax advisor, or financial advisor.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                6. Wire Fraud Protection
+              </h2>
+              <p>
+                To help protect against wire fraud, do not rely solely on emailed wiring instructions. Always verify any wiring instructions by calling the intended recipient at a trusted phone number you already know is valid. Fraudsters may intercept emails and provide false wiring information.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                7. No Guaranteed Outcomes
               </h2>
               <p>
                 While we strive to provide excellent service and strategic guidance, real estate transactions involve inherent risks and variables. We do not guarantee specific outcomes, sale prices, timelines, or results. Past performance and client experiences do not guarantee future results.
