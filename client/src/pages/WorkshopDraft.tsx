@@ -75,13 +75,13 @@ export default function WorkshopDraft() {
           HEADER — Logo + back to main site
       ═══════════════════════════════════════════════════ */}
       <header className="bg-charcoal">
-        <div className="container flex items-center justify-between py-3 sm:py-4">
+        <div className="container flex items-center justify-center sm:justify-between py-3 sm:py-4">
           <a href="/" className="flex items-center">
-            <img src={LOGO_URL} alt="My Rock Realty" className="h-[5rem] sm:h-[5.5rem] md:h-[6rem] w-auto drop-shadow-lg" />
+            <img src={LOGO_URL} alt="My Rock Realty" className="h-[7rem] sm:h-[6.5rem] md:h-[7rem] lg:h-[7.5rem] w-auto drop-shadow-lg" />
           </a>
           <a
             href="/"
-            className="text-cream/70 hover:text-gold text-sm font-medium transition-colors"
+            className="hidden sm:block text-cream/70 hover:text-gold text-sm font-medium transition-colors"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Back to Main Site
@@ -119,22 +119,13 @@ export default function WorkshopDraft() {
               In just 60 minutes, discover how to qualify for programs that let you buy with little or no money down — and walk away with a clear, step-by-step roadmap to homeownership.
             </p>
 
-            {/* Workshop details — clean separators */}
-            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-cream/60 text-sm mb-10">
-              <span className="flex items-center gap-1.5">
-                <Clock size={15} className="text-gold" />
-                Every Tuesday at 6 PM MT
-              </span>
-              <span className="text-cream/30 hidden sm:inline">|</span>
-              <span className="flex items-center gap-1.5">
-                <MapPin size={15} className="text-gold" />
-                Online (Zoom)
-              </span>
-              <span className="text-cream/30 hidden sm:inline">|</span>
-              <span className="flex items-center gap-1.5">
-                <DollarSign size={15} className="text-gold" />
-                Free — Limited Seats
-              </span>
+            {/* Workshop details — professional bullet formatting */}
+            <div className="text-cream/70 text-sm sm:text-base mb-10 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+              <span>Every Tuesday at 6 PM MT</span>
+              <span className="hidden sm:inline text-cream/40">•</span>
+              <span>Online (Zoom)</span>
+              <span className="hidden sm:inline text-cream/40">•</span>
+              <span>Free — Limited Seats</span>
             </div>
 
             <CTAButton />
