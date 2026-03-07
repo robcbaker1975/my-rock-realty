@@ -48,7 +48,7 @@ function CTAButton({ className = "" }: { className?: string }) {
   return (
     <a
       href="mailto:join@myrockhomes.com?subject=Joining My Rock Realty — Let's Talk"
-      className={`inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 bg-gold text-charcoal hover:bg-gold-light hover:shadow-lg px-7 py-4 text-[15px] sm:text-base ${className}`}
+      className={`inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 bg-gold text-charcoal hover:bg-gold-light hover:shadow-lg px-7 py-4 text-[15px] sm:text-base no-underline ${className}`}
       style={{ fontFamily: "'Outfit', sans-serif" }}
     >
       Start a Confidential Conversation
