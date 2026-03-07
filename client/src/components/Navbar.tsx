@@ -109,7 +109,7 @@ export default function Navbar() {
             <img
               src={LOGO_URL}
               alt="My Rock Realty"
-              className="h-[7rem] sm:h-[7.5rem] md:h-[8rem] lg:h-[8.5rem] w-auto drop-shadow-lg"
+              className="h-[8rem] sm:h-[7.5rem] md:h-[8rem] lg:h-[8.5rem] w-auto drop-shadow-lg"
             />
           </a>
 

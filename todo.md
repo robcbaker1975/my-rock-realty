@@ -28,3 +28,6 @@
 - [x] Update legal pages with real business details
 - [x] Ensure "Schedule a Consultation" remains visually dominant CTA
 - [x] Mobile-first spacing and visual polish
+
+## V8 Micro-adjustment
+- [x] Increase mobile header logo height by ~10-15% (mobile only, no other changes)
