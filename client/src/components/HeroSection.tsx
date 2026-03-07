@@ -30,7 +30,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content — mobile: pushed lower for visual balance; desktop: centered */}
-      <div className="relative container pb-14 pt-24 sm:pt-28 sm:pb-20 md:pt-32 md:pb-28">
+      <div className="relative container pb-14 pt-32 sm:pt-36 sm:pb-20 md:pt-40 md:pb-28">
         <div className="max-w-2xl">
           {/* Badge */}
           <motion.div

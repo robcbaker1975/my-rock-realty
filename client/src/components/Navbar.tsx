@@ -19,7 +19,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
+    const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -48,32 +48,89 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="container flex items-center justify-between h-[76px] md:h-20 lg:h-[5.5rem]">
-        {/* Logo — larger on both mobile and desktop */}
-        <a
-          href="#hero"
-          onClick={(e) => { e.preventDefault(); handleNavClick("#hero"); }}
-          className="flex items-center gap-2 shrink-0"
-        >
-          <img
-            src={LOGO_URL}
-            alt="My Rock Realty"
-            className="h-[4.25rem] sm:h-[4.5rem] md:h-[5rem] lg:h-[5.5rem] w-auto"
-          />
-        </a>
+      {/* === SCROLLED (compact): logo left + nav right === */}
+      <div className={`transition-all duration-300 ${scrolled ? "block" : "hidden"}`}>
+        <div className="container flex items-center justify-between h-[68px] md:h-[72px]">
+          <a
+            href="#hero"
+            onClick={(e) => { e.preventDefault(); handleNavClick("#hero"); }}
+            className="flex items-center shrink-0"
+          >
+            <img
+              src={LOGO_URL}
+              alt="My Rock Realty"
+              className="h-12 sm:h-14 md:h-[3.5rem] w-auto"
+            />
+          </a>
 
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-1">
+          {/* Desktop Nav (compact) */}
+          <div className="hidden lg:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
+                className="px-3 py-2 text-sm font-medium tracking-wide transition-colors rounded text-cream/80 hover:text-gold"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              onClick={(e) => { e.preventDefault(); handleNavClick("#contact"); }}
+              className="ml-3 px-5 py-2.5 bg-gold text-charcoal text-sm font-semibold rounded transition-all hover:bg-gold-light hover:shadow-lg"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Schedule a Consultation
+            </a>
+          </div>
+
+          {/* Mobile Toggle (compact) */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="lg:hidden p-3 -mr-2 rounded-lg active:bg-white/10 text-cream"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+      </div>
+
+      {/* === NOT SCROLLED (hero): large centered logo + nav below === */}
+      <div className={`transition-all duration-300 ${scrolled ? "hidden" : "block"}`}>
+        {/* Row 1: Centered logo (large & prominent) */}
+        <div className="container flex items-center justify-center pt-4 pb-2 sm:pt-5 sm:pb-2 relative">
+          <a
+            href="#hero"
+            onClick={(e) => { e.preventDefault(); handleNavClick("#hero"); }}
+            className="flex items-center"
+          >
+            <img
+              src={LOGO_URL}
+              alt="My Rock Realty"
+              className="h-[5.5rem] sm:h-[6rem] md:h-[6.5rem] lg:h-28 w-auto drop-shadow-lg"
+            />
+          </a>
+
+          {/* Mobile hamburger — absolute right */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="lg:hidden absolute right-4 sm:right-6 p-3 rounded-lg active:bg-white/10 text-white"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+
+        {/* Row 2: Desktop nav links centered below logo */}
+        <div className="hidden lg:flex items-center justify-center gap-1 pb-3">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-              className={`px-3 py-2 text-sm font-medium tracking-wide transition-colors rounded ${
-                scrolled
-                  ? "text-cream/80 hover:text-gold"
-                  : "text-white/80 hover:text-gold"
-              }`}
+              className="px-3 py-1.5 text-sm font-medium tracking-wide transition-colors rounded text-white/80 hover:text-gold"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               {link.label}
@@ -82,21 +139,12 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={(e) => { e.preventDefault(); handleNavClick("#contact"); }}
-            className="ml-3 px-5 py-2.5 bg-gold text-charcoal text-sm font-semibold rounded transition-all hover:bg-gold-light hover:shadow-lg"
+            className="ml-3 px-5 py-2 bg-gold text-charcoal text-sm font-semibold rounded transition-all hover:bg-gold-light hover:shadow-lg"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Schedule a Consultation
           </a>
         </div>
-
-        {/* Mobile Toggle — larger tap target */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className={`lg:hidden p-3 -mr-2 rounded-lg active:bg-white/10 ${scrolled ? "text-cream" : "text-white"}`}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
       </div>
 
       {/* Mobile Menu — full screen overlay with animation */}
@@ -107,9 +155,25 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden fixed inset-0 top-[76px] bg-charcoal/[0.98] backdrop-blur-md z-40"
+            className="lg:hidden fixed inset-0 top-0 bg-charcoal/[0.98] backdrop-blur-md z-40"
           >
-            <div className="container py-6 flex flex-col gap-1 h-full overflow-y-auto">
+            {/* Close button at top */}
+            <div className="container flex items-center justify-between pt-5 pb-3">
+              <img
+                src={LOGO_URL}
+                alt="My Rock Realty"
+                className="h-16 w-auto"
+              />
+              <button
+                onClick={() => setMobileOpen(false)}
+                className="p-3 rounded-lg active:bg-white/10 text-cream"
+                aria-label="Close menu"
+              >
+                <X size={28} />
+              </button>
+            </div>
+
+            <div className="container py-4 flex flex-col gap-1 h-[calc(100%-5rem)] overflow-y-auto">
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.href}
