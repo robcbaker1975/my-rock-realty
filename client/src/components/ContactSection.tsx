@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle } from "lucide-react";
+import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { trpc } from "@/lib/trpc";
 
 const interestOptions = [
   "Buyer programs",
@@ -23,6 +24,16 @@ export default function ContactSection() {
     message: "",
   });
 
+  const contactMutation = trpc.contact.submit.useMutation({
+    onSuccess: () => {
+      setSubmitted(true);
+      toast.success("Thank you! Rob will be in touch soon.");
+    },
+    onError: (error) => {
+      toast.error(error.message || "Something went wrong. Please try again.");
+    },
+  });
+
   const handleInterestToggle = (interest: string) => {
     setFormData((prev) => ({
       ...prev,
@@ -38,9 +49,14 @@ export default function ContactSection() {
       toast.error("Please fill in your name and email.");
       return;
     }
-    // In production, this would send to a backend
-    setSubmitted(true);
-    toast.success("Thank you! Rob will be in touch soon.");
+    contactMutation.mutate({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || undefined,
+      type: formData.type || undefined,
+      interests: formData.interests,
+      message: formData.message || undefined,
+    });
   };
 
   if (submitted) {
@@ -230,11 +246,21 @@ export default function ContactSection() {
               {/* Submit */}
               <button
                 type="submit"
-                className="group w-full inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-bold text-base rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98]"
+                disabled={contactMutation.isPending}
+                className="group w-full inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-bold text-base rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                <Send size={16} />
-                Send Message
+                {contactMutation.isPending ? (
+                  <>
+                    <Loader2 size={16} className="animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send size={16} />
+                    Send Message
+                  </>
+                )}
               </button>
             </form>
           </motion.div>
