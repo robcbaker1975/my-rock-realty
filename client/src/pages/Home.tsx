@@ -8,20 +8,19 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import TrustStrip from "@/components/TrustStrip";
 import TrustSection from "@/components/TrustSection";
 import BuyersSection from "@/components/BuyersSection";
 import SellersSection from "@/components/SellersSection";
 import LandSection from "@/components/LandSection";
 import RelocationsSection from "@/components/RelocationsSection";
+import HomeTestimonialsSection from "@/components/HomeTestimonialsSection";
 import WorkshopSection from "@/components/WorkshopSection";
 import AboutSection from "@/components/AboutSection";
 import ProcessSection from "@/components/ProcessSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import ColoradoExpertiseSection from "@/components/ColoradoExpertiseSection";
+import HomeColoradoExpertiseSection from "@/components/HomeColoradoExpertiseSection";
 import ContactSection from "@/components/ContactSection";
+import HomeFinalCTASection from "@/components/HomeFinalCTASection";
 import FAQSection from "@/components/FAQSection";
-import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -34,20 +33,19 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <TrustStrip />
         <TrustSection />
         <BuyersSection />
         <SellersSection />
         <LandSection />
         <RelocationsSection />
+        <HomeTestimonialsSection />
         <WorkshopSection />
         <AboutSection />
         <ProcessSection />
-        <TestimonialsSection />
-        <ColoradoExpertiseSection />
+        <HomeColoradoExpertiseSection />
         <ContactSection />
+        <HomeFinalCTASection />
         <FAQSection />
-        <FinalCTASection />
       </main>
       <Footer />
     </div>
