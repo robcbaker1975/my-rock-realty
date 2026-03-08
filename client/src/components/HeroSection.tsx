@@ -114,7 +114,7 @@ export default function HeroSection() {
               className="mt-3 sm:mt-4 text-[12px] sm:text-[13px] text-white/50 text-center"
               style={{ fontFamily: "'Libre Franklin', sans-serif" }}
             >
-              Free consultation • No pressure • Clear guidance on your options
+              Helping buyers, sellers, land clients, and relocations across Colorado — with referrals nationwide.
             </motion.p>
 
             {/* Supporting trust line */}
