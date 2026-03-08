@@ -95,7 +95,15 @@ export default function JoinUs() {
   };
 
   useEffect(() => {
-    document.title = "Join Our Team | My Rock Realty";
+    document.title = "Join My Rock Realty | Colorado Real Estate Careers";
+    // Meta description
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) { metaDesc = document.createElement('meta'); (metaDesc as HTMLMetaElement).name = 'description'; document.head.appendChild(metaDesc); }
+    (metaDesc as HTMLMetaElement).content = "Explore real estate career opportunities with My Rock Realty. A boutique Colorado brokerage offering support, strategy, systems, and leadership access.";
+    // Canonical
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) { canonical = document.createElement('link'); (canonical as HTMLLinkElement).rel = 'canonical'; document.head.appendChild(canonical); }
+    (canonical as HTMLLinkElement).href = 'https://www.myrockhomes.com/join-us';
     window.scrollTo(0, 0);
   }, []);
 

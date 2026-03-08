@@ -5,7 +5,7 @@
  * Typography: Outfit (display) + Libre Franklin (body)
  */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
@@ -57,6 +57,19 @@ function CTAButton({ className = "", label = "Start a Coaching Conversation" }: 
 }
 
 export default function Coaching() {
+  useEffect(() => {
+    document.title = "Real Estate Coaching for Agents Nationwide | My Rock Realty";
+    // Meta description
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) { metaDesc = document.createElement('meta'); (metaDesc as HTMLMetaElement).name = 'description'; document.head.appendChild(metaDesc); }
+    (metaDesc as HTMLMetaElement).content = "Practical real estate coaching for agents nationwide, including lead conversion, negotiation, systems, consultation strategy, and business growth.";
+    // Canonical
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) { canonical = document.createElement('link'); (canonical as HTMLLinkElement).rel = 'canonical'; document.head.appendChild(canonical); }
+    (canonical as HTMLLinkElement).href = 'https://www.myrockhomes.com/coaching';
+    window.scrollTo(0, 0);
+  }, []);
+
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",

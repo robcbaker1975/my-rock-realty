@@ -25,7 +25,15 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   useEffect(() => {
-    document.title = "My Rock Realty | Colorado Real Estate by Rob Baker";
+    document.title = "Colorado Real Estate Guidance for Buyers & Sellers | My Rock Realty";
+    // Meta description
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) { metaDesc = document.createElement('meta'); (metaDesc as HTMLMetaElement).name = 'description'; document.head.appendChild(metaDesc); }
+    (metaDesc as HTMLMetaElement).content = "Strategic real estate guidance for Colorado buyers, sellers, and relocating families. Attend the free Colorado Home Buying Workshop and work with My Rock Realty.";
+    // Canonical
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) { canonical = document.createElement('link'); (canonical as HTMLLinkElement).rel = 'canonical'; document.head.appendChild(canonical); }
+    (canonical as HTMLLinkElement).href = 'https://www.myrockhomes.com/';
   }, []);
 
   return (

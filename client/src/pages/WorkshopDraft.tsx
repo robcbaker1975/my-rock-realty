@@ -67,6 +67,14 @@ function CTAButton({ variant = "primary", className = "" }: { variant?: "primary
 export default function WorkshopDraft() {
   useEffect(() => {
     document.title = "Free Colorado Home Buying Workshop | My Rock Realty";
+    // Meta description
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) { metaDesc = document.createElement('meta'); (metaDesc as HTMLMetaElement).name = 'description'; document.head.appendChild(metaDesc); }
+    (metaDesc as HTMLMetaElement).content = "Join the free Colorado Home Buying Workshop for practical guidance on financing, buyer programs, negotiation strategy, and the path to homeownership.";
+    // Canonical
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) { canonical = document.createElement('link'); (canonical as HTMLLinkElement).rel = 'canonical'; document.head.appendChild(canonical); }
+    (canonical as HTMLLinkElement).href = 'https://www.myrockhomes.com/colorado-home-buying-workshop';
     window.scrollTo(0, 0);
   }, []);
 
