@@ -93,7 +93,7 @@ export default function HeroSection() {
                 className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 sm:px-8 sm:py-4 bg-gold text-charcoal font-bold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-base sm:text-[17px]"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                Attend the Free Colorado Home Buying Workshop
+                Attend the Free Workshop
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </button>
               {/* SECONDARY CTA */}
@@ -106,26 +106,15 @@ export default function HeroSection() {
               </button>
             </motion.div>
 
-            {/* Micro-clarity line */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-3 sm:mt-4 text-[12px] sm:text-[13px] text-white/50 text-center"
-              style={{ fontFamily: "'Libre Franklin', sans-serif" }}
-            >
-              Helping buyers, sellers, land clients, and relocations across Colorado — with referrals nationwide.
-            </motion.p>
-
             {/* Supporting trust line */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-6 sm:mt-9 text-[11px] sm:text-sm text-white/40 tracking-wide"
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-4 sm:mt-5 text-[12px] sm:text-[13px] text-white/45 tracking-wide"
               style={{ fontFamily: "'Libre Franklin', sans-serif" }}
             >
-              Serving first-time buyers, current homeowners, sellers, and relocations across Colorado. This website is not intended to solicit buyers or sellers who are already subject to an exclusive agreement with another real estate broker.
+              Helping buyers, sellers, land clients, and relocations across Colorado — with referrals nationwide.
             </motion.p>
           </div>
 
