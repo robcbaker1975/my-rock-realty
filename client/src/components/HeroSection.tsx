@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useLocation } from "wouter";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/hero-bg-dyEKuHhWXn8eKxpjETtCvy.webp";
 const HEADSHOT_URL = "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663410368883/daNVlPqvwXbwkTQz.png?Expires=1804384152&Signature=jZDznTIANoEiBOoHj25iwt4TpWQc5i4A4OIbszucwQcMb-Gpy~FHBqxpq~CWtxVmmhEEThAzrOvOhrg078TNI9S~yyEglVcq-TeGL74eLGgH6I7bk6bOhsr41R5AF-0Z2FEXt3tTfMei81ZyquIUhzv1eyNAeU6StCUimTSoR47XPCk0dsAGLsU97g33GyRX1rm4xC2WPPdEFyremPPiKeeDhewZrIKm9ZM8XMpDSD8SeLcY1PrOBp2hfGwBnU7BUDnMztc3iWXEPLH2TOTph9Mx--TYq3QCj8hy5f1w0KSM7xNWicmLfFc6ncKQTG9cdH9Rto1vSqy5mKE16-8aWQ__&Key-Pair-Id=K2HSFNDJXOU9YS";
 
 export default function HeroSection() {
+  const [, setLocation] = useLocation();
   const scrollTo = (id: string) => {
     const el = document.querySelector(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -75,8 +77,7 @@ export default function HeroSection() {
               className="text-[15px] leading-[1.7] sm:text-lg md:text-xl text-white/80 sm:leading-relaxed mb-7 sm:mb-9 max-w-lg"
               style={{ fontFamily: "'Libre Franklin', sans-serif" }}
             >
-              25+ years of negotiation expertise. A coaching mindset shaped at Zillow®.
-              Data-driven strategies to help you buy smarter, sell stronger, and move with confidence.
+              Helping Colorado buyers, sellers, and relocating families navigate the market with clear strategy, negotiation expertise, and real-world guidance.
             </motion.p>
 
             {/* CTAs */}
@@ -88,11 +89,11 @@ export default function HeroSection() {
             >
               {/* PRIMARY CTA */}
               <button
-                onClick={() => scrollTo("#contact")}
+                onClick={() => setLocation("/colorado-home-buying-workshop")}
                 className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 sm:px-8 sm:py-4 bg-gold text-charcoal font-bold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-base sm:text-[17px]"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                Schedule a Consultation
+                Attend the Free Colorado Home Buying Workshop
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </button>
               {/* SECONDARY CTA */}
@@ -101,7 +102,7 @@ export default function HeroSection() {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:px-7 sm:py-3.5 border border-white/25 text-white/80 font-medium rounded-lg transition-all hover:border-gold/50 hover:text-gold backdrop-blur-sm active:bg-white/5 text-[15px] sm:text-base"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                Ask About Buyer Programs
+                Explore Buying &amp; Selling in Colorado
               </button>
             </motion.div>
 

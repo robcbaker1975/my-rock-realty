@@ -8,6 +8,7 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import TrustStrip from "@/components/TrustStrip";
 import TrustSection from "@/components/TrustSection";
 import BuyersSection from "@/components/BuyersSection";
 import SellersSection from "@/components/SellersSection";
@@ -16,8 +17,11 @@ import RelocationsSection from "@/components/RelocationsSection";
 import WorkshopSection from "@/components/WorkshopSection";
 import AboutSection from "@/components/AboutSection";
 import ProcessSection from "@/components/ProcessSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import ColoradoExpertiseSection from "@/components/ColoradoExpertiseSection";
 import ContactSection from "@/components/ContactSection";
 import FAQSection from "@/components/FAQSection";
+import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -30,6 +34,7 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <TrustStrip />
         <TrustSection />
         <BuyersSection />
         <SellersSection />
@@ -38,8 +43,11 @@ export default function Home() {
         <WorkshopSection />
         <AboutSection />
         <ProcessSection />
+        <TestimonialsSection />
+        <ColoradoExpertiseSection />
         <ContactSection />
         <FAQSection />
+        <FinalCTASection />
       </main>
       <Footer />
     </div>
