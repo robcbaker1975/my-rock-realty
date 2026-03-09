@@ -1,0 +1,89 @@
+import type { JSX } from 'react';
+import { buildBreadcrumbs } from '../../lib/seo/breadcrumbs';
+import { buildBreadcrumbListSchema, serializeJsonLd } from '../../lib/seo/schema';
+import type { BreadcrumbsProps } from '../../types/seo';
+
+function joinClassNames(...values: Array<string | undefined | false | null>): string {
+  return values.filter(Boolean).join(' ');
+}
+
+export default function Breadcrumbs({
+  items,
+  className,
+  listClassName,
+  itemClassName,
+  separator = '/',
+  ariaLabel = 'Breadcrumb',
+  siteUrl,
+  homeLabel = 'Home',
+  includeHome = true,
+  renderSchema = false,
+}: BreadcrumbsProps): JSX.Element | null {
+  const breadcrumbItems = buildBreadcrumbs(items, {
+    siteUrl,
+    homeLabel,
+    includeHome,
+  });
+
+  if (!breadcrumbItems.length) {
+    return null;
+  }
+
+  const breadcrumbSchema = renderSchema ? buildBreadcrumbListSchema(breadcrumbItems) : null;
+
+  return (
+    <>
+      <nav aria-label={ariaLabel} className={joinClassNames('w-full', className)}>
+        <ol
+          className={joinClassNames(
+            'flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-600',
+            listClassName,
+          )}
+        >
+          {breadcrumbItems.map((item, index) => {
+            const isLast = index === breadcrumbItems.length - 1;
+
+            return (
+              <li
+                key={`${item.label}-${item.position}`}
+                className={joinClassNames('inline-flex items-center gap-2', itemClassName)}
+              >
+                {item.href && !isLast ? (
+                  <a
+                    href={item.href}
+                    className="transition-colors hover:text-slate-900 hover:underline"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <span aria-current="page" className="font-medium text-slate-900">
+                    {item.label}
+                  </span>
+                )}
+
+                {!isLast ? (
+                  <span aria-hidden="true" className="text-slate-400">
+                    {separator}
+                  </span>
+                ) : null}
+              </li>
+            );
+          })}
+        </ol>
+      </nav>
+
+      {/*
+        Phase 1 breadcrumb schema rule:
+        - SeoHead is the canonical source of page-level BreadcrumbList JSON-LD.
+        - Breadcrumbs renders schema only when renderSchema is explicitly true.
+        - Standard page usage should leave renderSchema as false to avoid duplicates.
+      */}
+      {breadcrumbSchema ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }}
+        />
+      ) : null}
+    </>
+  );
+}

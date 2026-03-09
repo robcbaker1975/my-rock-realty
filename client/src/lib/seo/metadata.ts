@@ -6,19 +6,16 @@ import type {
   SiteConfig,
 } from '../../types/seo';
 
-export const OG_IMAGE_URL =
-  'https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/og-preview-myrockrealty-RtkLSkUnkRHZrddDsPQWnq.webp';
-
 export const DEFAULT_SITE_CONFIG: SiteConfig = {
-  siteName: 'My Rock Realty',
+  siteName: 'MyRockHomes.com',
   siteUrl: 'https://www.myrockhomes.com',
   brandName: 'My Rock Realty',
   organizationName: 'My Rock Realty',
   defaultLocale: 'en_US',
-  defaultTitle: 'Colorado Real Estate Guidance for Buyers & Sellers | My Rock Realty',
+  defaultTitle: 'MyRockHomes.com',
   defaultDescription:
-    'Strategic real estate guidance for Colorado buyers, sellers, and relocating families. Attend the free Colorado Home Buying Workshop and work with My Rock Realty.',
-  defaultImage: OG_IMAGE_URL,
+    'Denver-first real estate authority platform for homes, neighborhoods, suburbs, property types, guides, comparisons, and relocation.',
+  defaultImage: 'https://www.myrockhomes.com/og/default.jpg',
   twitterHandle: '@myrockhomes',
 };
 
@@ -40,7 +37,7 @@ function normalizeWhitespace(value: string): string {
 function clampText(value: string, maxLength: number): string {
   const clean = normalizeWhitespace(value);
   if (clean.length <= maxLength) return clean;
-  return `${clean.slice(0, maxLength - 1).trimEnd()}\u2026`;
+  return `${clean.slice(0, maxLength - 1).trimEnd()}…`;
 }
 
 export function resolveSiteConfig(overrides?: Partial<SiteConfig>): SiteConfig {

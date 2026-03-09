@@ -5,7 +5,6 @@
  * Typography: Outfit (display) + Libre Franklin (body)
  */
 
-import SeoHead from "@/components/seo/SeoHead";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TrustSection from "@/components/TrustSection";
@@ -26,18 +25,6 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
-      <SeoHead
-        metadata={{
-          title: "Colorado Real Estate Guidance for Buyers & Sellers | My Rock Realty",
-          description: "Strategic real estate guidance for Colorado buyers, sellers, and relocating families. Attend the free Colorado Home Buying Workshop and work with My Rock Realty.",
-          canonicalUrl: "https://www.myrockhomes.com/",
-          image: {
-            url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/og-preview-myrockrealty-RtkLSkUnkRHZrddDsPQWnq.webp",
-            width: 1200,
-            height: 630,
-          },
-        }}
-      />
       <Navbar />
       <main>
         <HeroSection />
