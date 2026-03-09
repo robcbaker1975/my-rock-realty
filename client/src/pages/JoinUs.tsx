@@ -6,6 +6,7 @@
  */
 
 import { useState, useEffect } from "react";
+import SeoHead from "@/components/seo/SeoHead";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
@@ -94,21 +95,22 @@ export default function JoinUs() {
     });
   };
 
-  useEffect(() => {
-    document.title = "Join My Rock Realty | Colorado Real Estate Careers";
-    // Meta description
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) { metaDesc = document.createElement('meta'); (metaDesc as HTMLMetaElement).name = 'description'; document.head.appendChild(metaDesc); }
-    (metaDesc as HTMLMetaElement).content = "Explore real estate career opportunities with My Rock Realty. A boutique Colorado brokerage offering support, strategy, systems, and leadership access.";
-    // Canonical
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) { canonical = document.createElement('link'); (canonical as HTMLLinkElement).rel = 'canonical'; document.head.appendChild(canonical); }
-    (canonical as HTMLLinkElement).href = 'https://www.myrockhomes.com/join-us';
-    window.scrollTo(0, 0);
-  }, []);
+  useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
     <div className="min-h-screen bg-warm-white">
+      <SeoHead
+        metadata={{
+          title: "Join My Rock Realty | Colorado Real Estate Careers",
+          description: "Explore real estate career opportunities with My Rock Realty. A boutique Colorado brokerage offering support, strategy, systems, and leadership access.",
+          canonicalUrl: "https://www.myrockhomes.com/join-us",
+          image: {
+            url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/og-preview-myrockrealty-RtkLSkUnkRHZrddDsPQWnq.webp",
+            width: 1200,
+            height: 630,
+          },
+        }}
+      />
       {/* ═══════════════════════════════════════════════════
           HEADER
       ═══════════════════════════════════════════════════ */}

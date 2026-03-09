@@ -5,7 +5,7 @@
  * Typography: Outfit (display) + Libre Franklin (body)
  */
 
-import { useEffect } from "react";
+import SeoHead from "@/components/seo/SeoHead";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TrustSection from "@/components/TrustSection";
@@ -24,20 +24,20 @@ import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  useEffect(() => {
-    document.title = "Colorado Real Estate Guidance for Buyers & Sellers | My Rock Realty";
-    // Meta description
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) { metaDesc = document.createElement('meta'); (metaDesc as HTMLMetaElement).name = 'description'; document.head.appendChild(metaDesc); }
-    (metaDesc as HTMLMetaElement).content = "Strategic real estate guidance for Colorado buyers, sellers, and relocating families. Attend the free Colorado Home Buying Workshop and work with My Rock Realty.";
-    // Canonical
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) { canonical = document.createElement('link'); (canonical as HTMLLinkElement).rel = 'canonical'; document.head.appendChild(canonical); }
-    (canonical as HTMLLinkElement).href = 'https://www.myrockhomes.com/';
-  }, []);
-
   return (
     <div className="min-h-screen flex flex-col">
+      <SeoHead
+        metadata={{
+          title: "Colorado Real Estate Guidance for Buyers & Sellers | My Rock Realty",
+          description: "Strategic real estate guidance for Colorado buyers, sellers, and relocating families. Attend the free Colorado Home Buying Workshop and work with My Rock Realty.",
+          canonicalUrl: "https://www.myrockhomes.com/",
+          image: {
+            url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/og-preview-myrockrealty-RtkLSkUnkRHZrddDsPQWnq.webp",
+            width: 1200,
+            height: 630,
+          },
+        }}
+      />
       <Navbar />
       <main>
         <HeroSection />

@@ -6,6 +6,7 @@
  */
 
 import { useState, useEffect } from "react";
+import SeoHead from "@/components/seo/SeoHead";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
@@ -57,18 +58,7 @@ function CTAButton({ className = "", label = "Start a Coaching Conversation" }: 
 }
 
 export default function Coaching() {
-  useEffect(() => {
-    document.title = "Real Estate Coaching for Agents Nationwide | My Rock Realty";
-    // Meta description
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) { metaDesc = document.createElement('meta'); (metaDesc as HTMLMetaElement).name = 'description'; document.head.appendChild(metaDesc); }
-    (metaDesc as HTMLMetaElement).content = "Practical real estate coaching for agents nationwide, including lead conversion, negotiation, systems, consultation strategy, and business growth.";
-    // Canonical
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) { canonical = document.createElement('link'); (canonical as HTMLLinkElement).rel = 'canonical'; document.head.appendChild(canonical); }
-    (canonical as HTMLLinkElement).href = 'https://www.myrockhomes.com/coaching';
-    window.scrollTo(0, 0);
-  }, []);
+  useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -104,6 +94,18 @@ export default function Coaching() {
 
   return (
     <div className="min-h-screen bg-warm-white">
+      <SeoHead
+        metadata={{
+          title: "Real Estate Coaching for Agents Nationwide | My Rock Realty",
+          description: "Practical real estate coaching for agents nationwide, including lead conversion, negotiation, systems, consultation strategy, and business growth.",
+          canonicalUrl: "https://www.myrockhomes.com/coaching",
+          image: {
+            url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/og-preview-myrockrealty-RtkLSkUnkRHZrddDsPQWnq.webp",
+            width: 1200,
+            height: 630,
+          },
+        }}
+      />
       {/* ═══════════════════════════════════════════════════
           HEADER
       ═══════════════════════════════════════════════════ */}
