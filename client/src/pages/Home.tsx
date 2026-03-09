@@ -5,7 +5,7 @@
  * Typography: Outfit (display) + Libre Franklin (body)
  */
 
-import { useEffect } from "react";
+import SeoHead from "@/components/seo/SeoHead";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TrustSection from "@/components/TrustSection";
@@ -24,16 +24,15 @@ import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  useEffect(() => {
-    document.title = "Colorado Real Estate | My Rock Realty";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", "Colorado real estate guidance for buyers, sellers, and relocating families. Work with My Rock Realty.");
-    }
-  }, []);
-
   return (
     <div className="min-h-screen flex flex-col">
+      <SeoHead
+        metadata={{
+          title: "Colorado Real Estate | My Rock Realty",
+          description: "Colorado real estate guidance for buyers, sellers, and relocating families. Work with My Rock Realty.",
+          canonicalUrl: "https://www.myrockhomes.com/",
+        }}
+      />
       <Navbar />
       <main>
         <HeroSection />
