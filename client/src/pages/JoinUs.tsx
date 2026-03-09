@@ -6,7 +6,6 @@
  */
 
 import { useState, useEffect } from "react";
-import SeoHead from "@/components/seo/SeoHead";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
@@ -99,18 +98,6 @@ export default function JoinUs() {
 
   return (
     <div className="min-h-screen bg-warm-white">
-      <SeoHead
-        metadata={{
-          title: "Join My Rock Realty | Colorado Real Estate Careers",
-          description: "Explore real estate career opportunities with My Rock Realty. A boutique Colorado brokerage offering support, strategy, systems, and leadership access.",
-          canonicalUrl: "https://www.myrockhomes.com/join-us",
-          image: {
-            url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/og-preview-myrockrealty-RtkLSkUnkRHZrddDsPQWnq.webp",
-            width: 1200,
-            height: 630,
-          },
-        }}
-      />
       {/* ═══════════════════════════════════════════════════
           HEADER
       ═══════════════════════════════════════════════════ */}

@@ -6,7 +6,6 @@
  */
 
 import { useState, useEffect } from "react";
-import SeoHead from "@/components/seo/SeoHead";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
@@ -94,18 +93,6 @@ export default function Coaching() {
 
   return (
     <div className="min-h-screen bg-warm-white">
-      <SeoHead
-        metadata={{
-          title: "Real Estate Coaching for Agents Nationwide | My Rock Realty",
-          description: "Practical real estate coaching for agents nationwide, including lead conversion, negotiation, systems, consultation strategy, and business growth.",
-          canonicalUrl: "https://www.myrockhomes.com/coaching",
-          image: {
-            url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/og-preview-myrockrealty-RtkLSkUnkRHZrddDsPQWnq.webp",
-            width: 1200,
-            height: 630,
-          },
-        }}
-      />
       {/* ═══════════════════════════════════════════════════
           HEADER
       ═══════════════════════════════════════════════════ */}
