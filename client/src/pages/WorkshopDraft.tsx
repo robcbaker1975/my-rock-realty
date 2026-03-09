@@ -1,4 +1,5 @@
 // Workshop popup integration verified
+import SeoHead from "@/components/seo/SeoHead";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown, Clock, MapPin, DollarSign, Star, ArrowRight, Phone, Mail, Shield, Users, TrendingUp, Award, Home as HomeIcon, Landmark, Wrench, Banknote, BadgeCheck, Globe } from "lucide-react";
@@ -69,6 +70,13 @@ export default function WorkshopDraft() {
 
   return (
     <div className="min-h-screen bg-warm-white">
+      <SeoHead
+        metadata={{
+          title: "Free Colorado Home Buying Workshop | My Rock Realty",
+          description: "Attend the free Colorado Home Buying Workshop with Rob Baker. Learn how to buy a home in Colorado with clear strategy, no pressure, and real-world guidance.",
+          canonicalUrl: "https://www.myrockhomes.com/colorado-home-buying-workshop",
+        }}
+      />
       {/* ═══════════════════════════════════════════════════
           HEADER — Logo + back to main site
       ═══════════════════════════════════════════════════ */}

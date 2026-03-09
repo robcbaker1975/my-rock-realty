@@ -5,6 +5,7 @@
  * Typography: Outfit (display) + Libre Franklin (body)
  */
 
+import SeoHead from "@/components/seo/SeoHead";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TrustSection from "@/components/TrustSection";
@@ -25,6 +26,13 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SeoHead
+        metadata={{
+          title: "Colorado Real Estate | My Rock Realty",
+          description: "Strategic real estate guidance for Colorado buyers, sellers, and relocating families. Work with My Rock Realty — serving Colorado with referrals nationwide.",
+          canonicalUrl: "https://www.myrockhomes.com/",
+        }}
+      />
       <Navbar />
       <main>
         <HeroSection />
