@@ -5,11 +5,19 @@
  * Typography: Outfit (display) + Libre Franklin (body)
  */
 
+import SeoHead from "@/components/seo/SeoHead";
 import { ArrowLeft, Phone, Mail } from "lucide-react";
 
 export default function Accessibility() {
   return (
     <div className="min-h-screen bg-warm-white">
+      <SeoHead
+        metadata={{
+          title: "Accessibility Statement | My Rock Realty",
+          description: "My Rock Realty is committed to web accessibility. Learn about our accessibility features and how to contact us with accessibility concerns.",
+          canonicalUrl: "https://www.myrockhomes.com/accessibility",
+        }}
+      />
       {/* ═══════════════════════════════════════════════════
           HEADER
       ═══════════════════════════════════════════════════ */}

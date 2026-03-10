@@ -4,6 +4,7 @@
  * Design: Front Range Modern — warm charcoal, cream, gold accents
  */
 
+import SeoHead from "@/components/seo/SeoHead";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 
@@ -12,6 +13,13 @@ const LOGO_URL = "https://private-us-east-1.manuscdn.com/user_upload_by_module/s
 export default function Terms() {
   return (
     <div className="min-h-screen bg-warm-white">
+      <SeoHead
+        metadata={{
+          title: "Terms & Conditions | My Rock Realty",
+          description: "Review the terms and conditions governing your use of My Rock Realty's website and services. Understand your rights and responsibilities when working with us.",
+          canonicalUrl: "https://www.myrockhomes.com/terms",
+        }}
+      />
       {/* Header */}
       <header className="bg-charcoal">
         <div className="container py-5 flex items-center justify-between">

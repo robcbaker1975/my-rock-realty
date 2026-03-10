@@ -1,5 +1,6 @@
 // Workshop popup integration verified
 import SeoHead from "@/components/seo/SeoHead";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown, Clock, MapPin, DollarSign, Star, ArrowRight, Phone, Mail, Shield, Users, TrendingUp, Award, Home as HomeIcon, Landmark, Wrench, Banknote, BadgeCheck, Globe } from "lucide-react";
@@ -75,6 +76,9 @@ export default function WorkshopDraft() {
           title: "Free Colorado Home Buying Workshop | My Rock Realty",
           description: "Attend the free Colorado Home Buying Workshop with Rob Baker. Learn how to buy a home in Colorado with clear strategy, no pressure, and real-world guidance.",
           canonicalUrl: "https://www.myrockhomes.com/colorado-home-buying-workshop",
+          breadcrumbs: [
+            { label: "Workshop", href: "/colorado-home-buying-workshop" },
+          ],
         }}
       />
       {/* ═══════════════════════════════════════════════════
@@ -94,6 +98,24 @@ export default function WorkshopDraft() {
           </a>
         </div>
       </header>
+
+      {/* ═══════════════════════════════════════════════════
+          BREADCRUMBS
+      ═══════════════════════════════════════════════════ */}
+      <div className="bg-warm-white border-b border-charcoal/5">
+        <div className="container py-3 sm:py-4">
+          <Breadcrumbs
+            items={[
+              { label: "Workshop", href: "/colorado-home-buying-workshop" },
+            ]}
+            siteUrl="https://www.myrockhomes.com"
+            className="py-0"
+            listClassName="text-xs sm:text-sm text-charcoal/60"
+            itemClassName="text-charcoal/60"
+            separator="/"
+          />
+        </div>
+      </div>
 
       {/* ═══════════════════════════════════════════════════
           HERO — Workshop headline + trust bar

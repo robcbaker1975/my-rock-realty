@@ -8,6 +8,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import SeoHead from "@/components/seo/SeoHead";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
@@ -104,6 +105,9 @@ export default function JoinUs() {
           title: "Join My Rock Realty | Colorado Real Estate Careers",
           description: "Explore real estate career opportunities with My Rock Realty. A boutique Colorado brokerage offering support, strategy, systems, and leadership access.",
           canonicalUrl: "https://www.myrockhomes.com/join-us",
+          breadcrumbs: [
+            { label: "Join Us", href: "/join-us" },
+          ],
         }}
       />
       {/* ═══════════════════════════════════════════════════
@@ -128,6 +132,24 @@ export default function JoinUs() {
           </a>
         </div>
       </header>
+
+      {/* ═══════════════════════════════════════════════════
+          BREADCRUMBS
+      ═══════════════════════════════════════════════════ */}
+      <div className="bg-warm-white border-b border-charcoal/5">
+        <div className="container py-3 sm:py-4">
+          <Breadcrumbs
+            items={[
+              { label: "Join Us", href: "/join-us" },
+            ]}
+            siteUrl="https://www.myrockhomes.com"
+            className="py-0"
+            listClassName="text-xs sm:text-sm text-charcoal/60"
+            itemClassName="text-charcoal/60"
+            separator="/"
+          />
+        </div>
+      </div>
 
       {/* ═══════════════════════════════════════════════════
           HERO

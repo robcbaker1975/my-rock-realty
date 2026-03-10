@@ -4,6 +4,7 @@
  * Design: Front Range Modern — warm charcoal, cream, gold accents
  */
 
+import SeoHead from "@/components/seo/SeoHead";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 
@@ -12,6 +13,13 @@ const LOGO_URL = "https://private-us-east-1.manuscdn.com/user_upload_by_module/s
 export default function FairHousing() {
   return (
     <div className="min-h-screen bg-warm-white">
+      <SeoHead
+        metadata={{
+          title: "Fair Housing & Equal Opportunity | My Rock Realty",
+          description: "My Rock Realty is committed to fair housing practices. We comply with all federal, state, and local fair housing laws and equal opportunity regulations.",
+          canonicalUrl: "https://www.myrockhomes.com/fair-housing",
+        }}
+      />
       {/* Header */}
       <header className="bg-charcoal">
         <div className="container py-5 flex items-center justify-between">

@@ -7,6 +7,7 @@
 
 import { useState, useEffect } from "react";
 import SeoHead from "@/components/seo/SeoHead";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
@@ -99,6 +100,9 @@ export default function Coaching() {
           title: "Real Estate Coaching for Agents Nationwide | My Rock Realty",
           description: "Real estate coaching and mentorship for agents at any stage. Get practical systems, negotiation training, and direct access to an experienced Colorado broker.",
           canonicalUrl: "https://www.myrockhomes.com/real-estate-coaching",
+          breadcrumbs: [
+            { label: "Coaching", href: "/real-estate-coaching" },
+          ],
         }}
       />
       {/* ═══════════════════════════════════════════════════
@@ -123,6 +127,24 @@ export default function Coaching() {
           </a>
         </div>
       </header>
+
+      {/* ═══════════════════════════════════════════════════
+          BREADCRUMBS
+      ═══════════════════════════════════════════════════ */}
+      <div className="bg-warm-white border-b border-charcoal/5">
+        <div className="container py-3 sm:py-4">
+          <Breadcrumbs
+            items={[
+              { label: "Coaching", href: "/real-estate-coaching" },
+            ]}
+            siteUrl="https://www.myrockhomes.com"
+            className="py-0"
+            listClassName="text-xs sm:text-sm text-charcoal/60"
+            itemClassName="text-charcoal/60"
+            separator="/"
+          />
+        </div>
+      </div>
 
       {/* ═══════════════════════════════════════════════════
           HERO
