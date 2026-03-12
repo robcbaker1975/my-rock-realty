@@ -1,6 +1,6 @@
 /**
- * Parker CO Homes for Sale — My Rock Realty
- * Denver suburb spoke page — focused suburb page for Parker search intent
+ * Greeley Homes for Sale — My Rock Realty
+ * Primary Greeley city spoke page — focused neighborhood page for Greeley search intent
  * Design: Front Range Modern — matches existing site design system
  * Palette: Warm charcoal (#292524), cream (#F5F0EB), antique gold (#C9A96E)
  * Typography: Outfit (display) + Libre Franklin (body)
@@ -13,6 +13,7 @@ import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
+  Trees,
   Home,
   MapPin,
   CheckCircle2,
@@ -21,35 +22,35 @@ import {
   ChevronDown,
 } from "lucide-react";
 
-/* Hero Background Image — Approved Denver metro aerial view */
-const DENVER_HERO_BG = "/images/denver-rowhouses-hero.jpg";
+/* Hero Background Image — Approved asset */
+const GREELEY_HERO_BG = "/images/denver-rowhouses-hero.jpg";
 
 /* ─── FAQ Content ─── */
 const faqContent = [
   {
-    question: "What is Parker known for in the Denver metro area?",
+    question: "What is Greeley known for in Colorado?",
     answer:
-      "Parker is known for its suburban setting, residential growth, community-oriented feel, and range of housing options for buyers looking outside central Denver.",
+      "Greeley is known as the county seat of Weld County and home to the University of Northern Colorado. The city has a mix of established neighborhoods, newer suburban developments, and a community character shaped by its agricultural heritage, university presence, and northern Colorado location.",
   },
   {
-    question: "What types of homes can buyers find in Parker?",
+    question: "What types of homes can buyers find in Greeley?",
     answer:
-      "Buyers may find a mix of detached homes, newer residential developments, townhomes, and other housing options depending on the area and stage of development.",
+      "Buyers may find a mix of older established homes, newer construction in suburban neighborhoods, condos, townhomes, and single-family homes depending on the neighborhood and price range they are exploring. Greeley offers options across a range of price points.",
   },
   {
-    question: "Why do buyers consider Parker when searching in the Denver metro area?",
+    question: "Why do buyers consider Greeley when searching in Colorado?",
     answer:
-      "Buyers often consider Parker for its suburban character, neighborhood variety, access to everyday amenities, and its position within the broader Denver-area housing market.",
+      "Buyers often consider Greeley for its Weld County location, University of Northern Colorado presence, range of housing options, and price points relative to other northern Colorado communities. Buyers should research specific neighborhoods to find the best fit for their priorities.",
   },
   {
-    question: "Is Parker a good fit for buyers who want a suburban setting?",
+    question: "Is Greeley a good fit for buyers who want a university town setting?",
     answer:
-      "Parker can be a strong fit for buyers who want a more suburban environment with residential neighborhoods, community amenities, and a different pace from central Denver.",
+      "Greeley can be a strong fit for buyers who value a university town setting, community amenities, and access to northern Colorado. Buyers should research specific neighborhoods to understand how proximity to the University of Northern Colorado aligns with their priorities.",
   },
   {
-    question: "What should buyers pay attention to when considering homes in Parker?",
+    question: "What should buyers pay attention to when considering homes in Greeley?",
     answer:
-      "Buyers should pay attention to neighborhood differences, commute patterns, home age and condition, community layout, nearby amenities, and how one part of Parker compares with another.",
+      "Buyers should pay attention to neighborhood location, home condition, proximity to the university or downtown, commute considerations, and how a property compares with nearby alternatives. Buyers should independently research schools, crime data, and other community factors important to them.",
   },
 ];
 
@@ -59,7 +60,8 @@ const faqSchema = buildFAQPageSchema(faqContent);
 /* ─── Breadcrumb Items ─── */
 const breadcrumbItems = [
   { label: "Home", url: "/" },
-  { label: "Parker CO Homes for Sale", url: "/parker-co-homes-for-sale" },
+  { label: "Greeley, CO Homes for Sale", url: "/greeley-co-homes-for-sale" },
+  { label: "Greeley Homes for Sale", url: "/greeley-homes-for-sale" },
 ];
 
 const fadeUp = {
@@ -68,7 +70,7 @@ const fadeUp = {
 };
 
 function CTAButton({
-  label = "Schedule a Parker Home Buying Consultation",
+  label = "Schedule a Greeley Home Buying Consultation",
   className = "",
 }: {
   label?: string;
@@ -76,7 +78,7 @@ function CTAButton({
 }) {
   return (
     <a
-      href="mailto:rob@myrockhomes.com?subject=Parker Home Buying Consultation"
+      href="mailto:rob@myrockhomes.com?subject=Greeley Home Buying Consultation"
       className={`inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 bg-gold text-charcoal hover:bg-gold-light hover:shadow-lg px-7 py-4 text-[15px] sm:text-base no-underline ${className}`}
       style={{ fontFamily: "'Outfit', sans-serif" }}
     >
@@ -86,17 +88,17 @@ function CTAButton({
   );
 }
 
-export default function ParkerCoHomesForSale() {
+export default function GreeleyHomesForSale() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
-          title: "Parker CO Homes for Sale | Parker Colorado Real Estate",
+          title: "Greeley Homes for Sale | Greeley, Colorado Real Estate",
           description:
-            "Explore Parker CO homes for sale, neighborhood character, housing styles, local lifestyle appeal, and helpful resources for buying in Parker, Colorado.",
-          canonicalUrl: "https://www.myrockhomes.com/parker-co-homes-for-sale",
+            "Explore Greeley homes for sale, neighborhood character, housing styles, university town setting, and helpful resources for buying in Greeley, Colorado.",
+          canonicalUrl: "https://www.myrockhomes.com/greeley-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}
@@ -112,13 +114,13 @@ export default function ParkerCoHomesForSale() {
       </div>
 
       {/* ═══════════════════════════════════════════════════
-          1. HERO — Parker CO Homes for Sale
+          1. HERO — Greeley Homes for Sale
       ═══════════════════════════════════════════════════ */}
       <section className="relative bg-charcoal overflow-hidden">
         {/* Hero Background Image */}
         <img
-          src={DENVER_HERO_BG}
-          alt="Row houses along a residential street in Denver"
+          src={GREELEY_HERO_BG}
+          alt="Row houses along a residential street in Greeley"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         {/* Gradient Overlay — ensures text readability */}
@@ -134,22 +136,19 @@ export default function ParkerCoHomesForSale() {
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Parker CO Homes for Sale
+              Greeley Homes for Sale
             </h1>
             <p className="text-lg text-cream/80 mb-8 leading-relaxed">
-              Explore homes in Parker — a suburban community in the Denver metro
-              area. Residential growth, community-oriented neighborhoods, and a
-              range of housing options make Parker an attractive choice for
-              buyers seeking a suburban setting outside central Denver.
+              Explore homes in Greeley — a Weld County city with the University of Northern Colorado, established and newer neighborhoods, and a range of housing options. Greeley's location and community character make it an option worth considering for buyers exploring northern Colorado.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton />
               <a
-                href="mailto:rob@myrockhomes.com?subject=Parker Listings — Alert Request"
+                href="mailto:rob@myrockhomes.com?subject=Greeley Listings — Alert Request"
                 className="inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 border-2 border-gold text-gold hover:bg-gold hover:text-charcoal px-7 py-4 text-[15px] sm:text-base no-underline"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                Get Alerts for New Parker Homes
+                Get Alerts for New Greeley Homes
                 <ArrowRight size={18} />
               </a>
             </div>
@@ -158,7 +157,7 @@ export default function ParkerCoHomesForSale() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          2. Why Buyers Consider Parker
+          2. Why Buyers Consider Greeley
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
         <div className="container">
@@ -166,24 +165,24 @@ export default function ParkerCoHomesForSale() {
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Why Buyers Consider Parker
+            Why Buyers Consider Greeley
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
+                icon: Trees,
+                title: "University Town Setting",
+                desc: "The University of Northern Colorado is located in Greeley and influences certain neighborhoods and segments of the housing market. Buyers should research how proximity to the university aligns with their priorities.",
+              },
+              {
                 icon: Home,
-                title: "Suburban Setting",
-                desc: "Parker offers a suburban environment with residential neighborhoods, community amenities, and a different pace from central Denver.",
+                title: "Neighborhood Variety",
+                desc: "Greeley offers a range of neighborhoods from older established areas to newer suburban developments, providing options across different housing styles, price points, and community settings.",
               },
               {
                 icon: MapPin,
-                title: "Neighborhood Variety",
-                desc: "Buyers may find a mix of detached homes, newer residential developments, townhomes, and other housing options depending on the area.",
-              },
-              {
-                icon: CheckCircle2,
-                title: "Denver-Area Position",
-                desc: "Parker's position within the broader Denver-area housing market provides suburban character with access to everyday amenities and employment centers.",
+                title: "Weld County Location",
+                desc: "Greeley serves as the county seat of Weld County and a regional hub for northern Colorado, providing access to services, employment, and amenities for the surrounding area.",
               },
             ].map((item, idx) => (
               <motion.div
@@ -229,24 +228,17 @@ export default function ParkerCoHomesForSale() {
             className="bg-cream/10 rounded-lg p-8 border border-cream/20"
           >
             <p className="text-cream/90 leading-relaxed mb-6">
-              Parker has a recognizable suburban identity built around
-              residential growth, community-oriented neighborhoods, and a
-              range of housing choices. Buyers are drawn to the community's
-              suburban character, neighborhood variety, and access to everyday
-              amenities within the broader Denver metro area.
+              Greeley has a community character shaped by the University of Northern Colorado, its agricultural heritage, established neighborhoods, and newer suburban growth. The city offers a range of neighborhood identities from older areas near the university to newer developments on the city's edges.
             </p>
             <p className="text-cream/90 leading-relaxed">
-              The community attracts a range of buyers — from those prioritizing
-              suburban lifestyle and residential neighborhoods to buyers
-              comparing Denver-area suburbs for housing variety and long-term
-              fit.
+              Buyers are drawn to Greeley for different reasons — from those seeking a university town setting and community amenities to buyers looking for more affordable options in northern Colorado. Buyers should research specific neighborhoods to find the best fit for their lifestyle and priorities.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          4. Homes and Housing Styles in Parker
+          4. Homes and Housing Styles in Greeley
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
         <div className="container">
@@ -254,30 +246,30 @@ export default function ParkerCoHomesForSale() {
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Homes and Housing Styles in Parker
+            Homes and Housing Styles in Greeley
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                name: "Highlands Ranch",
-                link: "/highlands-ranch-co-homes-for-sale",
+                name: "University District Greeley",
+                link: "/greeley-homes-for-sale",
               },
               {
-                name: "Castle Rock",
-                link: "/castle-rock-co-homes-for-sale",
+                name: "Downtown Greeley",
+                link: "/greeley-homes-for-sale",
               },
               {
-                name: "Littleton",
-                link: "/littleton-co-homes-for-sale",
+                name: "Greeley Suburban Neighborhoods",
+                link: "/greeley-homes-for-sale",
               },
               {
-                name: "Denver Homes Hub",
-                link: "/denver-homes-for-sale",
+                name: "Greeley County Homes Hub",
+                link: "/greeley-co-homes-for-sale",
               },
-            ].map((suburb, idx) => (
+            ].map((neighborhood, idx) => (
               <motion.a
                 key={idx}
-                href={suburb.link}
+                href={neighborhood.link}
                 initial="hidden"
                 whileInView="visible"
                 variants={fadeUp}
@@ -285,7 +277,7 @@ export default function ParkerCoHomesForSale() {
               >
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-charcoal group-hover:text-gold transition-colors">
-                    {suburb.name}
+                    {neighborhood.name}
                   </h3>
                   <ArrowRight
                     size={18}
@@ -299,7 +291,7 @@ export default function ParkerCoHomesForSale() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          5. What to Know Before Buying in Parker
+          5. What to Know Before Buying in Greeley
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
         <div className="container max-w-2xl">
@@ -307,17 +299,17 @@ export default function ParkerCoHomesForSale() {
             className="text-3xl sm:text-4xl font-bold text-cream mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            What to Know Before Buying in Parker
+            What to Know Before Buying in Greeley
           </h2>
           <div className="space-y-4">
             {[
-              "Pay attention to neighborhood differences throughout Parker",
-              "Understand commute patterns and transportation access",
-              "Evaluate home age and condition carefully",
-              "Review community layout and nearby amenities",
-              "Compare one part of Parker with another",
-              "Consider school districts and community services if applicable",
-              "Work with an agent familiar with Parker's specific market dynamics",
+              "Understand neighborhood-specific market dynamics and price ranges",
+              "Evaluate home condition, renovation quality, and lot characteristics",
+              "Consider proximity to the university, downtown, and community amenities",
+              "Research commute considerations and access to northern Colorado communities",
+              "Research neighborhood character and community factors independently",
+              "Independently research schools, crime data, and other community factors important to you",
+              "Work with an agent familiar with Greeley's specific market dynamics",
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -339,7 +331,7 @@ export default function ParkerCoHomesForSale() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          6. Explore Parker Real Estate Options
+          6. Explore Greeley Real Estate Options
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
         <div className="container">
@@ -347,29 +339,29 @@ export default function ParkerCoHomesForSale() {
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Explore Parker Real Estate Options
+            Explore Greeley Real Estate Options
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: "Highlands Ranch Homes",
-                link: "/highlands-ranch-co-homes-for-sale",
-              },
-              {
-                title: "Castle Rock Homes",
-                link: "/castle-rock-co-homes-for-sale",
-              },
-              {
-                title: "Denver Condos for Sale",
+                title: "Greeley Condos for Sale",
                 link: "/denver-condos-for-sale",
               },
               {
-                title: "Denver Townhomes for Sale",
+                title: "Greeley Townhomes for Sale",
                 link: "/denver-townhomes-for-sale",
               },
               {
-                title: "Denver New Construction Homes",
+                title: "Greeley Luxury Homes",
+                link: "/denver-luxury-homes-for-sale",
+              },
+              {
+                title: "Greeley New Construction",
                 link: "/denver-new-construction-homes",
+              },
+              {
+                title: "Greeley County Homes",
+                link: "/greeley-co-homes-for-sale",
               },
             ].map((resource, idx) => (
               <motion.a
@@ -397,7 +389,7 @@ export default function ParkerCoHomesForSale() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          7. Parker Buyer Resources
+          7. Greeley Buyer Resources
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
         <div className="container max-w-2xl">
@@ -405,7 +397,7 @@ export default function ParkerCoHomesForSale() {
             className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Parker Buyer Resources
+            Greeley Buyer Resources
           </h2>
           <motion.div
             initial="hidden"
@@ -414,19 +406,16 @@ export default function ParkerCoHomesForSale() {
             className="bg-cream/10 rounded-lg p-8 border border-cream/20"
           >
             <p className="text-cream/90 leading-relaxed mb-6">
-              Buying in Parker involves understanding the community's specific
-              market dynamics, housing mix, and how individual properties
-              compare within the area. Knowing the Denver-area buying process
-              helps buyers move forward with confidence.
+              Buying in Greeley involves understanding the city's specific market dynamics, housing mix, neighborhood character, and how individual properties compare within the area. Knowing the home buying process helps buyers move forward with confidence.
             </p>
             <div className="space-y-3 mb-8">
               {[
                 {
-                  title: "Buying a Home in Denver",
+                  title: "Buying a Home in Colorado",
                   link: "/buying-a-home-in-denver",
                 },
                 {
-                  title: "Denver Home Buying Process",
+                  title: "Colorado Home Buying Process",
                   link: "/denver-home-buying-process",
                 },
               ].map((guide, idx) => (
@@ -441,10 +430,10 @@ export default function ParkerCoHomesForSale() {
               ))}
             </div>
             <a
-              href="/denver-homes-for-sale"
+              href="/greeley-co-homes-for-sale"
               className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors font-semibold"
             >
-              Back to Denver Homes Hub
+              Back to Greeley County Homes Hub
               <ArrowRight size={16} />
             </a>
           </motion.div>
@@ -452,7 +441,7 @@ export default function ParkerCoHomesForSale() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          8a. Douglas County Communities
+          8a. Greeley Area Communities
       ═══════════════════════════════════════════════════ */}
       <section className="py-14 sm:py-16 bg-cream">
         <div className="container max-w-4xl mx-auto">
@@ -460,51 +449,51 @@ export default function ParkerCoHomesForSale() {
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Douglas County Communities
+            Greeley Area Communities
           </h2>
           <p className="text-charcoal/60 text-sm mb-6">
-            Parker is one of several communities in Douglas County. Buyers often compare
-            multiple areas before deciding on a location.
+            Greeley is the hub of the Weld County cluster. Buyers often compare nearby communities
+            before deciding on a location.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             <a
-              href="/douglas-co-homes-for-sale"
+              href="/greeley-co-homes-for-sale"
               className="block bg-white border border-charcoal/10 rounded-lg px-4 py-3 text-sm font-medium text-charcoal hover:border-gold hover:text-gold transition-colors duration-150"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Douglas County Hub
+              Greeley Area Hub
               <ArrowRight size={13} className="inline ml-1.5 opacity-60" />
             </a>
             <a
-              href="/castle-pines-co-homes-for-sale"
+              href="/evans-co-homes-for-sale"
               className="block bg-white border border-charcoal/10 rounded-lg px-4 py-3 text-sm font-medium text-charcoal hover:border-gold hover:text-gold transition-colors duration-150"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Castle Pines CO Homes
+              Evans CO Homes
               <ArrowRight size={13} className="inline ml-1.5 opacity-60" />
             </a>
             <a
-              href="/centennial-co-homes-for-sale"
+              href="/platteville-co-homes-for-sale"
               className="block bg-white border border-charcoal/10 rounded-lg px-4 py-3 text-sm font-medium text-charcoal hover:border-gold hover:text-gold transition-colors duration-150"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Centennial CO Homes
+              Platteville CO Homes
               <ArrowRight size={13} className="inline ml-1.5 opacity-60" />
             </a>
             <a
-              href="/lone-tree-co-homes-for-sale"
+              href="/lasalle-co-homes-for-sale"
               className="block bg-white border border-charcoal/10 rounded-lg px-4 py-3 text-sm font-medium text-charcoal hover:border-gold hover:text-gold transition-colors duration-150"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Lone Tree CO Homes
+              LaSalle CO Homes
               <ArrowRight size={13} className="inline ml-1.5 opacity-60" />
             </a>
             <a
-              href="/denver-homes-for-sale"
+              href="/fort-collins-co-homes-for-sale"
               className="block bg-white border border-charcoal/10 rounded-lg px-4 py-3 text-sm font-medium text-charcoal hover:border-gold hover:text-gold transition-colors duration-150"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Denver Metro
+              Fort Collins Area
               <ArrowRight size={13} className="inline ml-1.5 opacity-60" />
             </a>
           </div>
@@ -512,7 +501,7 @@ export default function ParkerCoHomesForSale() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          8. Parker FAQs
+          8. Greeley FAQs
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
         <div className="container max-w-2xl">
@@ -520,7 +509,7 @@ export default function ParkerCoHomesForSale() {
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Parker FAQs
+            Greeley FAQs
           </h2>
           <div className="space-y-4">
             {faqContent.map((item, idx) => (
@@ -572,20 +561,19 @@ export default function ParkerCoHomesForSale() {
               className="text-3xl sm:text-4xl font-bold text-cream mb-6"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Ready to Explore Parker Homes?
+              Ready to Explore Greeley Homes?
             </h2>
             <p className="text-lg text-cream/80 mb-8">
-              Schedule a consultation to discuss your Parker home buying goals
-              and explore available options in the community.
+              Schedule a consultation to discuss your Greeley home buying goals and explore available options.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <CTAButton />
               <a
-                href="/denver-homes-for-sale"
+                href="/greeley-co-homes-for-sale"
                 className="inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 border-2 border-gold text-gold hover:bg-gold hover:text-charcoal px-7 py-4 text-[15px] sm:text-base no-underline"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                Browse Parker Listings
+                Browse Greeley Listings
                 <ArrowRight size={18} />
               </a>
             </div>
