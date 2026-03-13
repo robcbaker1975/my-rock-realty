@@ -102,16 +102,10 @@ export default function NorthglennCoHomesForSale() {
     <div className="min-h-screen bg-cream font-body">
       {/* ── SEO Head ── */}
       <SeoHead
-        title="Northglenn CO Homes for Sale | My Rock Realty"
-        description="Explore homes for sale in Northglenn, CO — an Adams County city north of Denver. Browse housing options, buyer guidance, and local context for Northglenn real estate."
-        canonical="https://www.myrockhomes.com/northglenn-co-homes-for-sale"
-        openGraph={{
+        metadata={{
           title: "Northglenn CO Homes for Sale | My Rock Realty",
-          description:
-            "Explore homes for sale in Northglenn, CO — an Adams County city north of Denver. Browse housing options, buyer guidance, and local context for Northglenn real estate.",
-          url: "https://www.myrockhomes.com/northglenn-co-homes-for-sale",
-          type: "website",
-          breadcrumbs: breadcrumbItems,
+          description: "Explore homes for sale in Northglenn, CO — an Adams County city north of Denver. Browse housing options, buyer guidance, and local context for Northglenn real estate.",
+          canonicalUrl: "https://www.myrockhomes.com/northglenn-co-homes-for-sale",
         }}
         schema={faqSchema ? [faqSchema] : []}
       />

@@ -102,16 +102,10 @@ export default function BrightonCoHomesForSale() {
     <div className="min-h-screen bg-cream font-body">
       {/* ── SEO Head ── */}
       <SeoHead
-        title="Brighton CO Homes for Sale | My Rock Realty"
-        description="Explore homes for sale in Brighton, CO — the Adams County seat. Browse housing options, buyer guidance, and local context for Brighton real estate."
-        canonical="https://www.myrockhomes.com/brighton-co-homes-for-sale"
-        openGraph={{
+        metadata={{
           title: "Brighton CO Homes for Sale | My Rock Realty",
-          description:
-            "Explore homes for sale in Brighton, CO — the Adams County seat. Browse housing options, buyer guidance, and local context for Brighton real estate.",
-          url: "https://www.myrockhomes.com/brighton-co-homes-for-sale",
-          type: "website",
-          breadcrumbs: breadcrumbItems,
+          description: "Explore homes for sale in Brighton, CO — the Adams County seat. Browse housing options, buyer guidance, and local context for Brighton real estate.",
+          canonicalUrl: "https://www.myrockhomes.com/brighton-co-homes-for-sale",
         }}
         schema={faqSchema ? [faqSchema] : []}
       />

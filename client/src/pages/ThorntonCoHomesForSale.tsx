@@ -102,16 +102,10 @@ export default function ThorntonCoHomesForSale() {
     <div className="min-h-screen bg-cream font-body">
       {/* ── SEO Head ── */}
       <SeoHead
-        title="Thornton CO Homes for Sale | My Rock Realty"
-        description="Explore homes for sale in Thornton, CO — a major Adams County city north of Denver. Browse housing options, buyer guidance, and local context for Thornton real estate."
-        canonical="https://www.myrockhomes.com/thornton-co-homes-for-sale"
-        openGraph={{
+        metadata={{
           title: "Thornton CO Homes for Sale | My Rock Realty",
-          description:
-            "Explore homes for sale in Thornton, CO — a major Adams County city north of Denver. Browse housing options, buyer guidance, and local context for Thornton real estate.",
-          url: "https://www.myrockhomes.com/thornton-co-homes-for-sale",
-          type: "website",
-          breadcrumbs: breadcrumbItems,
+          description: "Explore homes for sale in Thornton, CO — a major Adams County city north of Denver. Browse housing options, buyer guidance, and local context for Thornton real estate.",
+          canonicalUrl: "https://www.myrockhomes.com/thornton-co-homes-for-sale",
         }}
         schema={faqSchema ? [faqSchema] : []}
       />

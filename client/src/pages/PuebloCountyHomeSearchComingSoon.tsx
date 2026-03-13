@@ -90,11 +90,12 @@ export default function PuebloCountyHomeSearchComingSoon() {
   return (
     <>
       <SeoHead
-        title="Pueblo County Home Search — Coming Soon | My Rock Realty"
-        description="Pueblo County home search coverage is being prepared. Learn about the Pueblo County area, connect with a local buyer resource, and reach out directly for current assistance."
-        canonical="https://www.myrockhomes.com/pueblo-county-home-search-coming-soon"
+        metadata={{
+          title: "Pueblo County Home Search — Coming Soon | My Rock Realty",
+          description: "Pueblo County home search coverage is being prepared. Learn about the Pueblo County area, connect with a local buyer resource, and reach out directly for current assistance.",
+          canonicalUrl: "https://www.myrockhomes.com/pueblo-county-home-search-coming-soon",
+        }}
         schema={faqSchema ? [faqSchema] : []}
-        breadcrumbs={breadcrumbItems}
       />
 
       {/* ─── Hero ─── */}
