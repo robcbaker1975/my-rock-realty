@@ -23,6 +23,9 @@ import {
   Truck,
 } from "lucide-react";
 
+/* Hero Background Image — Approved Denver metro aerial view */
+const DENVER_HERO_BG = "/images/denver-rowhouses-hero.jpg";
+
 /* ─── FAQ Content ─── */
 const faqContent = [
   {
@@ -86,7 +89,7 @@ export default function RelocatingToDenverColorado() {
         metadata={{
           title: "Relocating to Denver Colorado | Denver Relocation Guide",
           description:
-            "Explore relocating to Denver Colorado, including neighborhood and suburb choices, housing strategy, lifestyle considerations, and practical steps for moving to the Denver area.",
+            "Relocating to Denver, Colorado? Explore neighborhoods, market insights, buying process, costs, and resources for relocating families.",
           canonicalUrl: "https://www.myrockhomes.com/relocation/relocating-to-denver-colorado",
           breadcrumbs: breadcrumbItems,
         }}
@@ -102,7 +105,20 @@ export default function RelocatingToDenverColorado() {
 
       {/* 1. HERO */}
       <section className="relative bg-charcoal overflow-hidden">
-        <div className="container py-16 sm:py-20 md:py-24">
+        {/* Hero Background Image */}
+        <img
+          src={DENVER_HERO_BG}
+          alt="Row houses along a residential street in Denver"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
+        />
+        {/* Gradient Overlay — ensures text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
+        <div className="container relative z-10 py-16 sm:py-20 md:py-24">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} className="max-w-2xl">
             <h1
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
@@ -388,6 +404,7 @@ export default function RelocatingToDenverColorado() {
             </p>
             <div className="space-y-3 mb-8">
               {[
+                { title: "Denver vs Colorado Springs", link: "/denver-vs-colorado-springs" },
                 { title: "Buying a Home in Denver", link: "/buying-a-home-in-denver" },
                 { title: "First-Time Home Buyer Denver", link: "/first-time-home-buyer-denver" },
                 { title: "Denver Home Buying Process", link: "/denver-home-buying-process" },

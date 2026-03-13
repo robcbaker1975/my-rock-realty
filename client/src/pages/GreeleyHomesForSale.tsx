@@ -122,6 +122,11 @@ export default function GreeleyHomesForSale() {
           src={GREELEY_HERO_BG}
           alt="Row houses along a residential street in Greeley"
           className="absolute inset-0 w-full h-full object-cover object-center"
+        
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
         />
         {/* Gradient Overlay — ensures text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
@@ -486,14 +491,6 @@ export default function GreeleyHomesForSale() {
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               LaSalle CO Homes
-              <ArrowRight size={13} className="inline ml-1.5 opacity-60" />
-            </a>
-            <a
-              href="/fort-collins-co-homes-for-sale"
-              className="block bg-white border border-charcoal/10 rounded-lg px-4 py-3 text-sm font-medium text-charcoal hover:border-gold hover:text-gold transition-colors duration-150"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Fort Collins Area
               <ArrowRight size={13} className="inline ml-1.5 opacity-60" />
             </a>
           </div>

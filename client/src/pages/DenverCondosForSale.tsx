@@ -7,20 +7,29 @@
  */
 
 import { useState } from "react";
+import { Link } from "wouter";
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
+import { trpc } from "@/lib/trpc";
 import {
   ArrowRight,
+  ArrowLeft,
   Home,
   MapPin,
   DollarSign,
+  Users,
   CheckCircle2,
   Phone,
   Mail,
   ChevronDown,
+  Loader2,
 } from "lucide-react";
+
+/* Hero Background Image — Approved Denver metro aerial view */
+const DENVER_HERO_BG = "/images/denver-rowhouses-hero.jpg";
 
 /* ─── FAQ Content ─── */
 const faqContent = [
@@ -107,7 +116,19 @@ export default function DenverCondosForSale() {
           1. HERO — Denver Condos for Sale
       ═══════════════════════════════════════════════════ */}
       <section className="relative bg-charcoal overflow-hidden">
-        <div className="container py-16 sm:py-20 md:py-24">
+        {/* Hero Background Image */}
+        <img
+          src={DENVER_HERO_BG}
+          alt="Row houses along a residential street in Denver"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
+        />
+        {/* Gradient Overlay — ensures text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
+        <div className="container relative z-10 py-16 sm:py-20 md:py-24">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -331,6 +352,14 @@ export default function DenverCondosForSale() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
+              {
+                title: "Denver Townhomes for Sale",
+                link: "/denver-townhomes-for-sale",
+              },
+              {
+                title: "Denver Luxury Homes",
+                link: "/denver-luxury-homes-for-sale",
+              },
               {
                 title: "First-Time Buyer Guide",
                 link: "/first-time-home-buyer-denver",

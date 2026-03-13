@@ -28,6 +28,12 @@ import HighlandsRanchCoHomesForSale from "./pages/HighlandsRanchCoHomesForSale";
 import CastleRockCoHomesForSale from "./pages/CastleRockCoHomesForSale";
 import LittletonCoHomesForSale from "./pages/LittletonCoHomesForSale";
 import ArvadaCoHomesForSale from "./pages/ArvadaCoHomesForSale";
+import WashParkDenverBuyerGuide from "./pages/WashParkDenverBuyerGuide";
+import CherryCreekDenverBuyerGuide from "./pages/CherryCreekDenverBuyerGuide";
+import LohiDenverBuyerGuide from "./pages/LohiDenverBuyerGuide";
+import RiNoDenverBuyerGuide from "./pages/RiNoDenverBuyerGuide";
+import CentralParkDenverBuyerGuide from "./pages/CentralParkDenverBuyerGuide";
+import SloanLakeDenverBuyerGuide from "./pages/SloanLakeDenverBuyerGuide";
 import BuyingAHomeInDenver from "./pages/BuyingAHomeInDenver";
 import FirstTimeHomeBuyerDenver from "./pages/FirstTimeHomeBuyerDenver";
 import DenverHomeBuyingProcess from "./pages/DenverHomeBuyingProcess";
@@ -35,6 +41,55 @@ import CostOfLivingInDenverColorado from "./pages/CostOfLivingInDenverColorado";
 import RelocatingToDenverColorado from "./pages/RelocatingToDenverColorado";
 import DenverVsColoradoSprings from "./pages/DenverVsColoradoSprings";
 import DenverVsBoulder from "./pages/DenverVsBoulder";
+import DenverVsFortCollins from "./pages/DenverVsFortCollins";
+import BoulderCoHomesForSale from "./pages/BoulderCoHomesForSale";
+import BoulderHomesForSale from "./pages/BoulderHomesForSale";
+import LafayetteCoHomesForSale from "./pages/LafayetteCoHomesForSale";
+import LongmontCoHomesForSale from "./pages/LongmontCoHomesForSale";
+import NiwotCoHomesForSale from "./pages/NiwotCoHomesForSale";
+import ColoradoSpringsCoHomesForSale from "./pages/ColoradoSpringsCoHomesForSale";
+import ColoradoSpringsHomesForSale from "./pages/ColoradoSpringsHomesForSale";
+import ManitouSpringsCoHomesForSale from "./pages/ManitouSpringsCoHomesForSale";
+import WidefieldCoHomesForSale from "./pages/WidefieldCoHomesForSale";
+import PalmerLakeCoHomesForSale from "./pages/PalmerLakeCoHomesForSale";
+import FortCollinsCoHomesForSale from "./pages/FortCollinsCoHomesForSale";
+import FortCollinsHomesForSale from "./pages/FortCollinsHomesForSale";
+import LovelandCoHomesForSale from "./pages/LovelandCoHomesForSale";
+import WindsorCoHomesForSale from "./pages/WindsorCoHomesForSale";
+import JohnstownCoHomesForSale from "./pages/JohnstownCoHomesForSale";
+import PuebloCountyHomeSearchComingSoon from "./pages/PuebloCountyHomeSearchComingSoon";
+import PuebloHomeSearchComingSoon from "./pages/PuebloHomeSearchComingSoon";
+import GreeleyCoHomesForSale from "./pages/GreeleyCoHomesForSale";
+import GreeleyHomesForSale from "./pages/GreeleyHomesForSale";
+import EvansCoHomesForSale from "./pages/EvansCoHomesForSale";
+import PlattevilleCoHomesForSale from "./pages/PlattevilleCoHomesForSale";
+import LaSalleCoHomesForSale from "./pages/LaSalleCoHomesForSale";
+import DouglasCoHomesForSale from "./pages/DouglasCoHomesForSale";
+import CastlePinesCoHomesForSale from "./pages/CastlePinesCoHomesForSale";
+import CentennialCoHomesForSale from "./pages/CentennialCoHomesForSale";
+import LoneTreeCoHomesForSale from "./pages/LoneTreeCoHomesForSale";
+import JeffersonCoHomesForSale from "./pages/JeffersonCoHomesForSale";
+import GoldenHomesForSale from "./pages/GoldenHomesForSale";
+import LakewoodCoHomesForSale from "./pages/LakewoodCoHomesForSale";
+import MorrisonCoHomesForSale from "./pages/MorrisonCoHomesForSale";
+import WestminsterCoHomesForSale from "./pages/WestminsterCoHomesForSale";
+import AdamsCoHomesForSale from "./pages/AdamsCoHomesForSale";
+import CommerceCityHomesForSale from "./pages/CommerceCityHomesForSale";
+import BrightonCoHomesForSale from "./pages/BrightonCoHomesForSale";
+import ThorntonCoHomesForSale from "./pages/ThorntonCoHomesForSale";
+import NorthglennCoHomesForSale from "./pages/NorthglennCoHomesForSale";
+import AdamsCountyVsJeffersonCounty from "./pages/AdamsCountyVsJeffersonCounty";
+import DouglasCountyVsWeldCounty from "./pages/DouglasCountyVsWeldCounty";
+import BoulderVsFortCollins from "./pages/BoulderVsFortCollins";
+import FlexibleListingPlans from "./pages/FlexibleListingPlans";
+import MilitaryRelocation from "./pages/MilitaryRelocation";
+import PcsColorado from "./pages/PcsColorado";
+import VaHomeLoansColorado from "./pages/VaHomeLoansColorado";
+import FortCarson from "./pages/FortCarson";
+import PetersonSpaceForceBase from "./pages/PetersonSpaceForceBase";
+import SchrieverSpaceForceBase from "./pages/SchrieverSpaceForceBase";
+import BuckleySpaceForceBase from "./pages/BuckleySpaceForceBase";
+import Usafa from "./pages/Usafa";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -65,6 +120,12 @@ function Router() {
       <Route path={"/castle-rock-co-homes-for-sale"} component={CastleRockCoHomesForSale} />
       <Route path={"/littleton-co-homes-for-sale"} component={LittletonCoHomesForSale} />
       <Route path={"/arvada-co-homes-for-sale"} component={ArvadaCoHomesForSale} />
+      <Route path={"/wash-park-denver-buyer-guide"} component={WashParkDenverBuyerGuide} />
+      <Route path={"/cherry-creek-denver-buyer-guide"} component={CherryCreekDenverBuyerGuide} />
+      <Route path={"/lohi-denver-buyer-guide"} component={LohiDenverBuyerGuide} />
+      <Route path={"/rino-denver-buyer-guide"} component={RiNoDenverBuyerGuide} />
+      <Route path={"/central-park-denver-buyer-guide"} component={CentralParkDenverBuyerGuide} />
+      <Route path={"/sloan-lake-denver-buyer-guide"} component={SloanLakeDenverBuyerGuide} />
       <Route path={"/buying-a-home-in-denver"} component={BuyingAHomeInDenver} />
       <Route path={"/first-time-home-buyer-denver"} component={FirstTimeHomeBuyerDenver} />
       <Route path={"/denver-home-buying-process"} component={DenverHomeBuyingProcess} />
@@ -72,6 +133,55 @@ function Router() {
       <Route path={"/relocation/relocating-to-denver-colorado"} component={RelocatingToDenverColorado} />
       <Route path={"/denver-vs-colorado-springs"} component={DenverVsColoradoSprings} />
       <Route path={"/denver-vs-boulder"} component={DenverVsBoulder} />
+      <Route path={"/denver-vs-fort-collins"} component={DenverVsFortCollins} />
+      <Route path={"/boulder-co-homes-for-sale"} component={BoulderCoHomesForSale} />
+      <Route path={"/boulder-homes-for-sale"} component={BoulderHomesForSale} />
+      <Route path={"/lafayette-co-homes-for-sale"} component={LafayetteCoHomesForSale} />
+      <Route path={"/longmont-co-homes-for-sale"} component={LongmontCoHomesForSale} />
+      <Route path={"/niwot-co-homes-for-sale"} component={NiwotCoHomesForSale} />
+      <Route path={"/colorado-springs-co-homes-for-sale"} component={ColoradoSpringsCoHomesForSale} />
+      <Route path={"/colorado-springs-homes-for-sale"} component={ColoradoSpringsHomesForSale} />
+      <Route path={"/manitou-springs-co-homes-for-sale"} component={ManitouSpringsCoHomesForSale} />
+      <Route path={"/widefield-co-homes-for-sale"} component={WidefieldCoHomesForSale} />
+      <Route path={"/palmer-lake-co-homes-for-sale"} component={PalmerLakeCoHomesForSale} />
+      <Route path={"/fort-collins-co-homes-for-sale"} component={FortCollinsCoHomesForSale} />
+      <Route path={"/fort-collins-homes-for-sale"} component={FortCollinsHomesForSale} />
+      <Route path={"/loveland-co-homes-for-sale"} component={LovelandCoHomesForSale} />
+      <Route path={"/windsor-co-homes-for-sale"} component={WindsorCoHomesForSale} />
+      <Route path={"/johnstown-co-homes-for-sale"} component={JohnstownCoHomesForSale} />
+      <Route path={"/pueblo-county-home-search-coming-soon"} component={PuebloCountyHomeSearchComingSoon} />
+      <Route path={"/pueblo-home-search-coming-soon"} component={PuebloHomeSearchComingSoon} />
+      <Route path={"/greeley-co-homes-for-sale"} component={GreeleyCoHomesForSale} />
+      <Route path={"/greeley-homes-for-sale"} component={GreeleyHomesForSale} />
+      <Route path={"/evans-co-homes-for-sale"} component={EvansCoHomesForSale} />
+      <Route path={"/platteville-co-homes-for-sale"} component={PlattevilleCoHomesForSale} />
+      <Route path={"/lasalle-co-homes-for-sale"} component={LaSalleCoHomesForSale} />
+      <Route path={"/douglas-co-homes-for-sale"} component={DouglasCoHomesForSale} />
+      <Route path={"/castle-pines-co-homes-for-sale"} component={CastlePinesCoHomesForSale} />
+      <Route path={"/centennial-co-homes-for-sale"} component={CentennialCoHomesForSale} />
+      <Route path={"/lone-tree-co-homes-for-sale"} component={LoneTreeCoHomesForSale} />
+      <Route path={"/jefferson-co-homes-for-sale"} component={JeffersonCoHomesForSale} />
+      <Route path={"/golden-homes-for-sale"} component={GoldenHomesForSale} />
+      <Route path={"/lakewood-co-homes-for-sale"} component={LakewoodCoHomesForSale} />
+      <Route path={"/morrison-co-homes-for-sale"} component={MorrisonCoHomesForSale} />
+      <Route path={"/westminster-co-homes-for-sale"} component={WestminsterCoHomesForSale} />
+      <Route path={"/adams-co-homes-for-sale"} component={AdamsCoHomesForSale} />
+      <Route path={"/commerce-city-homes-for-sale"} component={CommerceCityHomesForSale} />
+      <Route path={"/brighton-co-homes-for-sale"} component={BrightonCoHomesForSale} />
+      <Route path={"/thornton-co-homes-for-sale"} component={ThorntonCoHomesForSale} />
+      <Route path={"/northglenn-co-homes-for-sale"} component={NorthglennCoHomesForSale} />
+      <Route path={"/adams-county-vs-jefferson-county"} component={AdamsCountyVsJeffersonCounty} />
+      <Route path={"/douglas-county-vs-weld-county"} component={DouglasCountyVsWeldCounty} />
+      <Route path={"/boulder-vs-fort-collins"} component={BoulderVsFortCollins} />
+      <Route path={"/flexible-listing-plans"} component={FlexibleListingPlans} />
+      <Route path={"/military-relocation/"} component={MilitaryRelocation} />
+      <Route path={"/military-relocation/pcs-colorado/"} component={PcsColorado} />
+      <Route path={"/military-relocation/va-home-loans-colorado/"} component={VaHomeLoansColorado} />
+      <Route path={"/military-relocation/fort-carson/"} component={FortCarson} />
+      <Route path={"/military-relocation/peterson-space-force-base/"} component={PetersonSpaceForceBase} />
+      <Route path={"/military-relocation/schriever-space-force-base/"} component={SchrieverSpaceForceBase} />
+      <Route path={"/military-relocation/buckley-space-force-base/"} component={BuckleySpaceForceBase} />
+      <Route path={"/military-relocation/usafa/"} component={Usafa} />
       <Route path={"/workshop-draft"}>{() => { window.location.href = "/colorado-home-buying-workshop"; return null; }}</Route>
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

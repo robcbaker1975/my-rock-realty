@@ -22,6 +22,9 @@ import {
   ChevronDown,
 } from "lucide-react";
 
+/* Hero Background Image — Approved Denver metro aerial view */
+const DENVER_HERO_BG = "/images/denver-rowhouses-hero.jpg";
+
 /* ─── FAQ Content ─── */
 const faqContent = [
   {
@@ -87,7 +90,7 @@ export default function DenverLuxuryHomesForSale() {
         metadata={{
           title: "Denver Luxury Homes for Sale | Luxury Real Estate in Denver, Colorado",
           description:
-            "Explore Denver luxury homes for sale, high-end neighborhoods, upscale home features, luxury market considerations, and helpful resources for buying luxury real estate in Denver.",
+            "Luxury homes for sale in Denver. Browse high-end neighborhoods, upscale features, market insights, and expert resources for luxury real estate buyers.",
           canonicalUrl: "https://www.myrockhomes.com/denver-luxury-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
@@ -107,7 +110,19 @@ export default function DenverLuxuryHomesForSale() {
           1. HERO — Denver Luxury Homes for Sale
       ═══════════════════════════════════════════════════ */}
       <section className="relative bg-charcoal overflow-hidden">
-        <div className="container py-16 sm:py-20 md:py-24">
+        {/* Hero Background Image */}
+        <img
+          src={DENVER_HERO_BG}
+          alt="Row houses along a residential street in Denver"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
+        />
+        {/* Gradient Overlay — ensures text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
+        <div className="container relative z-10 py-16 sm:py-20 md:py-24">
           <motion.div
             initial="hidden"
             animate="visible"

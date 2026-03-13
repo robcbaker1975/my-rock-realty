@@ -30,6 +30,9 @@ import {
   Calendar,
 } from "lucide-react";
 
+/* Hero Background Image — Approved Denver metro aerial view */
+const DENVER_HERO_BG = "/images/denver-rowhouses-hero.jpg";
+
 
 
 /* ─── FAQ Content ─── */
@@ -152,6 +155,17 @@ export default function DenverHomesForSale() {
           1. HERO — Denver Homes for Sale
       ═══════════════════════════════════════════════════ */}
       <section className="relative bg-charcoal overflow-hidden">
+        {/* Hero Background Image */}
+        <img
+          src={DENVER_HERO_BG}
+          alt="Row houses along a residential street in Denver"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
+        />
+        {/* Gradient Overlay — ensures text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
         <div className="container relative z-10 py-14 sm:py-20 lg:py-24">
           <div className="max-w-3xl mx-auto text-center">

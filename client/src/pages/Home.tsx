@@ -12,8 +12,10 @@ import HeroSection from "@/components/HeroSection";
 import TrustSection from "@/components/TrustSection";
 import BuyersSection from "@/components/BuyersSection";
 import SellersSection from "@/components/SellersSection";
+import FlexibleListingPlansSection from "@/components/FlexibleListingPlansSection";
 import LandSection from "@/components/LandSection";
 import RelocationsSection from "@/components/RelocationsSection";
+import MilitaryRelocationSection from "@/components/MilitaryRelocationSection";
 import HomeTestimonialsSection from "@/components/HomeTestimonialsSection";
 import WorkshopSection from "@/components/WorkshopSection";
 import AboutSection from "@/components/AboutSection";
@@ -73,8 +75,10 @@ export default function Home() {
         <TrustSection />
         <BuyersSection />
         <SellersSection />
+        <FlexibleListingPlansSection />
         <LandSection />
         <RelocationsSection />
+        <MilitaryRelocationSection />
         <HomeTestimonialsSection />
         <WorkshopSection />
         <AboutSection />

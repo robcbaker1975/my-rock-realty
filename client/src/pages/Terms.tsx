@@ -8,7 +8,7 @@ import SeoHead from "@/components/seo/SeoHead";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 
-const LOGO_URL = "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663410368883/MyFokdbFMWxFfHiY.png?Expires=1804373851&Signature=tX8Nz-0U25wCRVcyN~gH7soBhlF3NkZUa-fhbO66r4~ix6wF5QJgpPopSr1AHJBk3LYrKIvxfO7YD9vTdqjZjlu3cRO~lkYxkxZTjoEnC4lRTtjG5BAb93p2PDrMuu2aVHq7bLQju4D-2XQxrn4CTm9kL1SbUQFUO-A84x7mFMo~GuyOHMKwN5Y8FJn7Ab31FwMwmSPPSt250S-gmfDDE641SKapGELse-4gAkYO2Uy7HOgsFPNinIzISyHmorDYolNCgA0fVXih1zjLlPmv4tUT4theY~IW3Wg5cuPbxYCSFRkYITYhEoeW1oC1OSZByxIaTDBAmvXWZN~bb7cNlA__&Key-Pair-Id=K2HSFNDJXOU9YS";
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/ChatGPTImageMar2,2026,04_52_22PM_09be1014.png";
 
 export default function Terms() {
   return (
@@ -24,7 +24,7 @@ export default function Terms() {
       <header className="bg-charcoal">
         <div className="container py-5 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <img src={LOGO_URL} alt="My Rock Realty" className="h-12 sm:h-14 w-auto" />
+            <img src={LOGO_URL} alt="My Rock Realty" className="h-12 sm:h-14 w-auto" width="56" height="56" loading="lazy" decoding="async" />
           </Link>
           <Link
             href="/"

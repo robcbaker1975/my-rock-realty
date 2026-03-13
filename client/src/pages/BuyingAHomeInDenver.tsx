@@ -24,6 +24,9 @@ import {
   Compass,
 } from "lucide-react";
 
+/* Hero Background Image — Approved Denver metro aerial view */
+const DENVER_HERO_BG = "/images/denver-rowhouses-hero.jpg";
+
 /* ─── FAQ Content ─── */
 const faqContent = [
   {
@@ -50,6 +53,21 @@ const faqContent = [
     question: "Why is local market guidance helpful when buying in Denver?",
     answer:
       "Local guidance can help buyers compare neighborhoods, understand market patterns, prepare stronger search strategies, and make more confident decisions in a competitive metro-area market.",
+  },
+  {
+    question: "What should buyers know about making an offer in Denver?",
+    answer:
+      "Buyers should understand current market conditions, comparable prices, contingency options, earnest money expectations, and timing considerations. A strong offer balances competitiveness with protection and realistic terms.",
+  },
+  {
+    question: "How important is the home inspection in the Denver buying process?",
+    answer:
+      "Home inspections are crucial for identifying potential issues, understanding maintenance needs, and making informed decisions. They provide a professional assessment that can guide negotiations and reveal hidden problems.",
+  },
+  {
+    question: "What should buyers do if they encounter multiple offers on a property?",
+    answer:
+      "In a multiple-offer situation, buyers should prepare a competitive offer with strong terms, consider waiving certain contingencies if comfortable, and be ready to decide quickly. Working with a local real estate professional helps navigate these competitive scenarios.",
   },
 ];
 
@@ -115,7 +133,19 @@ export default function BuyingAHomeInDenver() {
           1. HERO — Buying a Home in Denver
       ═══════════════════════════════════════════════════ */}
       <section className="relative bg-charcoal overflow-hidden">
-        <div className="container py-16 sm:py-20 md:py-24">
+        {/* Hero Background Image */}
+        <img
+          src={DENVER_HERO_BG}
+          alt="Row houses along a residential street in Denver"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
+        />
+        {/* Gradient Overlay — ensures text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
+        <div className="container relative z-10 py-16 sm:py-20 md:py-24">
           <motion.div
             initial="hidden"
             animate="visible"

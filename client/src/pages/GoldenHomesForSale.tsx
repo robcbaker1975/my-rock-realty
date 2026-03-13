@@ -161,6 +161,11 @@ export default function GoldenHomesForSale() {
           src={GOLDEN_HERO_BG}
           alt="Residential neighborhood in Golden, Colorado"
           className="absolute inset-0 w-full h-full object-cover object-center"
+        
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/85" />
         <motion.div

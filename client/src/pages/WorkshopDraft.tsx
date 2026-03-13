@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown, Clock, MapPin, DollarSign, Star, ArrowRight, Phone, Mail, Shield, Users, TrendingUp, Award, Home as HomeIcon, Landmark, Wrench, Banknote, BadgeCheck, Globe } from "lucide-react";
 
-const LOGO_URL = "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663410368883/MyFokdbFMWxFfHiY.png?Expires=1804373851&Signature=tX8Nz-0U25wCRVcyN~gH7soBhlF3NkZUa-fhbO66r4~ix6wF5QJgpPopSr1AHJBk3LYrKIvxfO7YD9vTdqjZjlu3cRO~lkYxkxZTjoEnC4lRTtjG5BAb93p2PDrMuu2aVHq7bLQju4D-2XQxrn4CTm9kL1SbUQFUO-A84x7mFMo~GuyOHMKwN5Y8FJn7Ab31FwMwmSPPSt250S-gmfDDE641SKapGELse-4gAkYO2Uy7HOgsFPNinIzISyHmorDYolNCgA0fVXih1zjLlPmv4tUT4theY~IW3Wg5cuPbxYCSFRkYITYhEoeW1oC1OSZByxIaTDBAmvXWZN~bb7cNlA__&Key-Pair-Id=K2HSFNDJXOU9YS";
-const HEADSHOT_URL = "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663410368883/daNVlPqvwXbwkTQz.png?Expires=1804384152&Signature=jZDznTIANoEiBOoHj25iwt4TpWQc5i4A4OIbszucwQcMb-Gpy~FHBqxpq~CWtxVmmhEEThAzrOvOhrg078TNI9S~yyEglVcq-TeGL74eLGgH6I7bk6bOhsr41R5AF-0Z2FEXt3tTfMei81ZyquIUhzv1eyNAeU6StCUimTSoR47XPCk0dsAGLsU97g33GyRX1rm4xC2WPPdEFyremPPiKeeDhewZrIKm9ZM8XMpDSD8SeLcY1PrOBp2hfGwBnU7BUDnMztc3iWXEPLH2TOTph9Mx--TYq3QCj8hy5f1w0KSM7xNWicmLfFc6ncKQTG9cdH9Rto1vSqy5mKE16-8aWQ__&Key-Pair-Id=K2HSFNDJXOU9YS";
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/ChatGPTImageMar2,2026,04_52_22PM_09be1014.png";
+const HEADSHOT_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/RobHeadshotNoBackground_877c31b9.jpg";
 const WORKSHOP_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/workshop-section-Yp8jnnKmpb9X4Au9XRWi4s.webp";
 
 const fadeUp = {
@@ -87,7 +87,7 @@ export default function WorkshopDraft() {
       <header className="bg-charcoal">
         <div className="container flex items-center justify-center sm:justify-between py-3 sm:py-4">
           <a href="/" className="flex items-center">
-            <img src={LOGO_URL} alt="My Rock Realty" className="h-[7rem] sm:h-[6.5rem] md:h-[7rem] lg:h-[7.5rem] w-auto drop-shadow-lg" />
+            <img src={LOGO_URL} alt="My Rock Realty" className="h-[7rem] sm:h-[6.5rem] md:h-[7rem] lg:h-[7.5rem] w-auto drop-shadow-lg" width="120" height="120" fetchPriority="high" />
           </a>
           <a
             href="/"
@@ -307,6 +307,10 @@ export default function WorkshopDraft() {
                   alt="Rob Baker"
                   className="w-full h-full object-cover object-top"
                   style={{ objectPosition: "50% 15%" }}
+                  width="224"
+                  height="224"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="mt-3 text-center">
@@ -512,7 +516,7 @@ export default function WorkshopDraft() {
           <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6">
             {/* Left: Logo + business info */}
             <div className="text-center sm:text-left">
-              <img src={LOGO_URL} alt="My Rock Realty" className="h-16 sm:h-20 w-auto mx-auto sm:mx-0 mb-3" />
+              <img src={LOGO_URL} alt="My Rock Realty" className="h-16 sm:h-20 w-auto mx-auto sm:mx-0 mb-3" width="80" height="80" loading="lazy" decoding="async" />
               <p className="text-cream/50 text-xs leading-relaxed">
                 My Rock Realty, LLC<br />
                 Lic. ER100078487

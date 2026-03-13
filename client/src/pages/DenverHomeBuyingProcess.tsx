@@ -22,6 +22,9 @@ import {
   Compass,
 } from "lucide-react";
 
+/* Hero Background Image — Approved Denver metro aerial view */
+const DENVER_HERO_BG = "/images/denver-rowhouses-hero.jpg";
+
 /* ─── FAQ Content ─── */
 const faqContent = [
   {
@@ -48,6 +51,21 @@ const faqContent = [
     question: "Why is it helpful to understand the process before searching?",
     answer:
       "Understanding the process helps buyers make better decisions, reduce surprises, and stay organized from the earliest search stage through closing.",
+  },
+  {
+    question: "What is an appraisal and why does it matter in the Denver home buying process?",
+    answer:
+      "An appraisal is an independent assessment of the home's value by a licensed professional. It matters because lenders use it to ensure the loan amount is appropriate for the property value, and it can affect financing terms and closing timeline.",
+  },
+  {
+    question: "What are contingencies and how do they protect Denver buyers?",
+    answer:
+      "Contingencies are conditions in the offer that allow buyers to back out under specific circumstances, such as inspection issues, appraisal shortfalls, or financing problems. They protect buyers by providing exit options if significant problems arise.",
+  },
+  {
+    question: "How long does closing typically take in Denver?",
+    answer:
+      "Closing typically takes 30-45 days from offer acceptance, though timelines vary based on financing, inspections, appraisal, title work, and any issues that arise. Staying organized and responsive helps keep the process on track.",
   },
 ];
 
@@ -85,7 +103,7 @@ export default function DenverHomeBuyingProcess() {
         metadata={{
           title: "Denver Home Buying Process | Steps to Buy a Home in Denver",
           description:
-            "Learn the Denver home buying process, including financing preparation, home search strategy, offer considerations, inspections, and closing steps for Denver-area buyers.",
+            "Denver home buying process explained. Understand each step, financing options, and expert resources to navigate your purchase successfully.",
           canonicalUrl: "https://www.myrockhomes.com/denver-home-buying-process",
           breadcrumbs: breadcrumbItems,
         }}
@@ -101,7 +119,19 @@ export default function DenverHomeBuyingProcess() {
 
       {/* 1. HERO */}
       <section className="relative bg-charcoal overflow-hidden">
-        <div className="container py-16 sm:py-20 md:py-24">
+        {/* Hero Background Image */}
+        <img
+          src={DENVER_HERO_BG}
+          alt="Row houses along a residential street in Denver"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
+        />
+        {/* Gradient Overlay — ensures text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
+        <div className="container relative z-10 py-16 sm:py-20 md:py-24">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} className="max-w-2xl">
             <h1
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
@@ -330,6 +360,8 @@ export default function DenverHomeBuyingProcess() {
           </div>
           <div className="grid md:grid-cols-2 gap-6 mt-6 max-w-2xl mx-auto">
             {[
+              { title: "Parker Homes", link: "/parker-co-homes-for-sale" },
+              { title: "Highlands Ranch Homes", link: "/highlands-ranch-co-homes-for-sale" },
               { title: "LoHi Denver Homes", link: "/lohi-denver-homes-for-sale" },
               { title: "RiNo Denver Homes", link: "/rino-denver-homes-for-sale" },
               { title: "Castle Rock Homes", link: "/castle-rock-co-homes-for-sale" },

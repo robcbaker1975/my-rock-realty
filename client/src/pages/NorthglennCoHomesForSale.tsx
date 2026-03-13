@@ -1,0 +1,313 @@
+/**
+ * Northglenn CO Homes for Sale — My Rock Realty
+ * Adams County cluster suburb spoke page — focused suburb page for Northglenn search intent
+ * Design: Front Range Modern — matches existing site design system
+ * Palette: Warm charcoal (#292524), cream (#F5F0EB), antique gold (#C9A96E)
+ * Typography: Outfit (display) + Libre Franklin (body)
+ */
+import { useState } from "react";
+import SeoHead from "@/components/seo/SeoHead";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import { buildFAQPageSchema } from "@/lib/seo/schema";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Home,
+  MapPin,
+  CheckCircle2,
+  Phone,
+  Mail,
+  ChevronDown,
+} from "lucide-react";
+/* Hero Background Image — Approved Denver metro aerial view */
+const DENVER_HERO_BG = "/images/denver-rowhouses-hero.jpg";
+/* ─── FAQ Content ─── */
+const faqContent = [
+  {
+    question: "What is Northglenn known for in the Adams County area?",
+    answer:
+      "Northglenn is a city in Adams County located north of Denver, adjacent to Thornton. It is a distinct municipality with its own city government, community character, and housing stock. Northglenn has primarily established residential neighborhoods with a mix of housing types.",
+  },
+  {
+    question: "What types of homes can buyers find in Northglenn?",
+    answer:
+      "Buyers may find a range of housing options in Northglenn, including single-family homes in established neighborhoods, townhomes, and options across a variety of price ranges. Northglenn is a more established community with a mix of housing styles and ages.",
+  },
+  {
+    question: "Why do buyers consider Northglenn when searching in Adams County?",
+    answer:
+      "Buyers often consider Northglenn for its location north of Denver, its proximity to Thornton and other Adams County communities, and housing options that may differ in price point and character from other areas. Northglenn is a separate city with its own community identity while remaining connected to the Denver metro.",
+  },
+  {
+    question: "How far is Northglenn from Denver?",
+    answer:
+      "Northglenn is located north of Denver, adjacent to the Denver city limits. Commute times can vary depending on traffic, route, and time of day. Buyers should research specific commute considerations based on their employment location and preferred travel routes.",
+  },
+  {
+    question: "What should buyers pay attention to when considering homes in Northglenn?",
+    answer:
+      "Buyers should pay attention to neighborhood location, home condition, proximity to Denver and other Front Range communities, lot characteristics, and how individual properties compare within the area. Buyers should independently research schools, commute options, and other community factors important to them.",
+  },
+];
+/* ─── Build FAQ Schema ─── */
+const faqSchema = buildFAQPageSchema(faqContent);
+/* ─── Breadcrumb Items ─── */
+const breadcrumbItems = [
+  { label: "Home", url: "/" },
+  { label: "Adams County, CO Homes for Sale", url: "/adams-co-homes-for-sale" },
+  { label: "Northglenn CO Homes for Sale", url: "/northglenn-co-homes-for-sale" },
+];
+/* ─── Reusable LinkCard ─── */
+function LinkCard({ href, label }: { href: string; label: string }) {
+  return (
+    <a
+      href={href}
+      className="flex items-center justify-between px-4 py-3 bg-cream border border-gold/30 rounded hover:bg-gold/10 transition-colors group"
+    >
+      <span className="text-charcoal font-medium text-sm">{label}</span>
+      <ArrowRight className="w-4 h-4 text-gold group-hover:translate-x-1 transition-transform" />
+    </a>
+  );
+}
+/* ─── FAQ Accordion Item ─── */
+function FAQItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b border-gold/20 last:border-0">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-start justify-between gap-4 py-4 text-left"
+        aria-expanded={open}
+      >
+        <span className="text-[15px] sm:text-base font-semibold text-charcoal leading-snug">
+          {question}
+        </span>
+        <ChevronDown
+          className={`w-5 h-5 text-gold flex-shrink-0 mt-0.5 transition-transform ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+      {open && (
+        <div className="pb-5 px-1 text-charcoal/70 text-sm leading-relaxed">
+          {answer}
+        </div>
+      )}
+    </div>
+  );
+}
+/* ═══════════════════════════════════════════════════
+   PAGE COMPONENT
+═══════════════════════════════════════════════════ */
+export default function NorthglennCoHomesForSale() {
+  return (
+    <div className="min-h-screen bg-cream font-body">
+      {/* ── SEO Head ── */}
+      <SeoHead
+        title="Northglenn CO Homes for Sale | My Rock Realty"
+        description="Explore homes for sale in Northglenn, CO — an Adams County city north of Denver. Browse housing options, buyer guidance, and local context for Northglenn real estate."
+        canonical="https://www.myrockhomes.com/northglenn-co-homes-for-sale"
+        openGraph={{
+          title: "Northglenn CO Homes for Sale | My Rock Realty",
+          description:
+            "Explore homes for sale in Northglenn, CO — an Adams County city north of Denver. Browse housing options, buyer guidance, and local context for Northglenn real estate.",
+          url: "https://www.myrockhomes.com/northglenn-co-homes-for-sale",
+          type: "website",
+          breadcrumbs: breadcrumbItems,
+        }}
+        schema={faqSchema ? [faqSchema] : []}
+      />
+
+      {/* ── Breadcrumbs ── */}
+      <div className="bg-charcoal/5 border-b border-gold/10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-2">
+          <Breadcrumbs items={breadcrumbItems} />
+        </div>
+      </div>
+
+      {/* ── Hero ── */}
+      <section
+        className="relative min-h-[340px] sm:min-h-[420px] flex items-end"
+        style={{
+          backgroundImage: `url(${DENVER_HERO_BG})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-charcoal/60" />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 pb-10 pt-20 w-full">
+          <div className="flex items-center gap-2 text-gold text-sm font-medium mb-3">
+            <MapPin className="w-4 h-4" />
+            <span>Adams County, Colorado</span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-bold text-cream mt-4 leading-tight font-display">
+            Northglenn CO Homes for Sale
+          </h1>
+          <p className="text-cream/80 mt-4 text-lg max-w-2xl">
+            Northglenn is an Adams County city located north of Denver, adjacent to Thornton. Explore housing options and buyer guidance for Northglenn real estate.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Intro Section ── */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-2xl sm:text-3xl font-bold text-charcoal font-display mb-4">
+            About Northglenn, Colorado
+          </h2>
+          <p className="text-charcoal/70 leading-relaxed mb-4">
+            Northglenn is a city in Adams County situated north of Denver, adjacent to Thornton. As a distinct municipality, Northglenn has its own city government, community character, and housing stock. The city is primarily an established residential community with a mix of housing styles and ages.
+          </p>
+          <p className="text-charcoal/70 leading-relaxed mb-4">
+            Buyers considering Northglenn may find housing options that differ in price point and character from other Adams County communities. Northglenn is connected to the broader Denver metro area, though buyers should research specific commute considerations based on their employment location.
+          </p>
+          <p className="text-charcoal/70 leading-relaxed">
+            As with any community, buyers are encouraged to research neighborhoods, home conditions, and local factors independently before making purchasing decisions. Information on this page is provided for general orientation only and is not guaranteed to be current or complete.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* ── Buyer Guidance ── */}
+      <section className="bg-charcoal/5 py-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-charcoal font-display mb-8">
+            Buyer Guidance for Northglenn
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {[
+              {
+                icon: <Home className="w-5 h-5 text-gold" />,
+                title: "Housing Mix",
+                body: "Northglenn offers a range of housing types, including single-family homes in established neighborhoods and townhomes across various price ranges. The community has primarily established residential areas.",
+              },
+              {
+                icon: <MapPin className="w-5 h-5 text-gold" />,
+                title: "Location Context",
+                body: "Northglenn is located north of Denver, adjacent to Thornton. Buyers should research commute options and proximity to employment centers based on their specific needs.",
+              },
+              {
+                icon: <CheckCircle2 className="w-5 h-5 text-gold" />,
+                title: "Adams County Community",
+                body: "Northglenn is an Adams County city and a distinct municipality with its own city government and services. Buyers may find it useful to explore multiple Adams County communities when searching.",
+              },
+              {
+                icon: <ArrowRight className="w-5 h-5 text-gold" />,
+                title: "Research Independently",
+                body: "Buyers should independently research schools, neighborhood conditions, commute times, and other factors that matter to them. Market conditions can change and are not guaranteed.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-cream p-5 border border-gold/20"
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  {item.icon}
+                  <h3 className="font-semibold text-charcoal">{item.title}</h3>
+                </div>
+                <p className="text-charcoal/65 text-sm leading-relaxed">{item.body}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Adams County Communities ── */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+        <h2 className="text-2xl font-bold text-charcoal font-display mb-6">
+          Explore Adams County Communities
+        </h2>
+        <p className="text-charcoal/70 text-sm mb-6">
+          Northglenn is one of several communities in Adams County. Buyers often explore multiple areas before deciding on a location.
+        </p>
+        <div className="grid sm:grid-cols-2 gap-3">
+          <LinkCard href="/adams-co-homes-for-sale" label="Adams County Homes for Sale" />
+          <LinkCard href="/commerce-city-homes-for-sale" label="Commerce City Homes for Sale" />
+          <LinkCard href="/brighton-co-homes-for-sale" label="Brighton CO Homes for Sale" />
+          <LinkCard href="/thornton-co-homes-for-sale" label="Thornton CO Homes for Sale" />
+          <LinkCard href="/denver-homes-for-sale" label="Denver Homes for Sale" />
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="bg-charcoal/5 py-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-charcoal font-display mb-8">
+            Frequently Asked Questions — Northglenn CO
+          </h2>
+          <div className="bg-cream border border-gold/20 rounded px-4 sm:px-6">
+            {faqContent.map((item, i) => (
+              <FAQItem key={i} question={item.question} answer={item.answer} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+        <div className="bg-charcoal text-cream p-8 sm:p-10">
+          <h2 className="text-2xl sm:text-3xl font-bold font-display mb-3">
+            Interested in Northglenn Homes?
+          </h2>
+          <p className="text-cream/75 mb-6 max-w-xl">
+            Rob Baker and the My Rock Realty team can help you navigate the Northglenn and Adams County market. Reach out to start a conversation about your home search.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="tel:+17203577604"
+              className="inline-flex items-center gap-2 bg-gold text-charcoal font-semibold px-6 py-3 hover:bg-gold/90 transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              (720) 357-7604
+            </a>
+            <a
+              href="mailto:rob@myrockhomes.com"
+              className="inline-flex items-center gap-2 border border-cream/30 text-cream px-6 py-3 hover:bg-cream/10 transition-colors"
+            >
+              <Mail className="w-4 h-4" />
+              rob@myrockhomes.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Footer Disclaimer ── */}
+      <footer className="border-t border-gold/20 bg-charcoal/5 py-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center text-xs text-charcoal/50 leading-relaxed">
+          <p>
+            My Rock Realty | Rob Baker, Colorado Real Estate Broker |{" "}
+            <a href="tel:+17203577604" className="underline hover:text-charcoal/70">
+              (720) 357-7604
+            </a>{" "}
+            |{" "}
+            <a href="mailto:rob@myrockhomes.com" className="underline hover:text-charcoal/70">
+              rob@myrockhomes.com
+            </a>
+          </p>
+          <p className="mt-2">
+            Information provided on this page is for general informational purposes only and is not guaranteed to be accurate, current, or complete. Market conditions, availability, and community characteristics change over time. Buyers should independently verify all information relevant to their home search and consult with a licensed real estate professional before making any purchasing decisions.
+          </p>
+          <p className="mt-2">
+            <a href="/fair-housing" className="underline hover:text-charcoal/70">
+              Fair Housing Notice
+            </a>{" "}
+            |{" "}
+            <a href="/privacy" className="underline hover:text-charcoal/70">
+              Privacy Policy
+            </a>{" "}
+            |{" "}
+            <a href="/accessibility" className="underline hover:text-charcoal/70">
+              Accessibility
+            </a>
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}

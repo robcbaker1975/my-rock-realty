@@ -22,32 +22,40 @@ import {
   Home,
 } from "lucide-react";
 
+/* Hero Background Image — Approved Denver metro aerial view */
+const DENVER_HERO_BG = "/images/denver-rowhouses-hero.jpg";
+
 /* ─── FAQ Content ─── */
 const faqContent = [
   {
-    question: "How do buyers decide between Denver and Boulder?",
+    question: "Is Denver or Boulder better for buying a home?",
     answer:
-      "Buyers often compare Denver and Boulder based on lifestyle, commute needs, housing preferences, budget, and which type of Colorado market best fits their goals.",
+      "Neither is better across the board. Denver works well for people who want a broader city search with many neighborhood options. Boulder is a strong option for those who want a smaller city map with a very distinct setting.",
   },
   {
-    question: "Is the housing experience the same in Denver and Boulder?",
+    question: "What is the biggest difference between Denver and Boulder homes for sale?",
     answer:
-      "No. The two markets differ in neighborhood patterns, housing types, commute structure, and how buyers evaluate tradeoffs between central areas, surrounding communities, and daily lifestyle needs.",
+      "The biggest difference is scale and setting. Denver is a much larger city with more neighborhood-by-neighborhood variation. Boulder covers less ground and is more immediately shaped by its foothills location.",
   },
   {
-    question: "Why do some buyers compare Denver and Boulder before moving?",
+    question: "Should I compare Denver and Boulder at the city level or neighborhood level?",
     answer:
-      "Buyers may compare the two cities to understand differences in pace, housing options, lifestyle priorities, and how each location fits work, family, or long-term planning needs.",
+      "Start at the city level if you are still deciding between the two. If Denver stays in the mix, neighborhood comparison becomes important quickly. In Boulder, many buyers can stay at the city level a little longer before narrowing to specific areas.",
   },
   {
-    question: "What should buyers evaluate besides home price when comparing Denver and Boulder?",
+    question: "Are the homes in Denver very different from the homes in Boulder?",
     answer:
-      "Buyers should also evaluate commute patterns, neighborhood fit, total ownership costs, access to amenities, housing stock, and long-term lifestyle preferences.",
+      "There is overlap in both cities, including condos, townhomes, and single-family homes. The bigger difference is how the housing mix is spread across each city and how strongly location within the city shapes the search.",
   },
   {
-    question: "Why is local guidance helpful when comparing Denver and Boulder?",
+    question: "Does Denver always mean a more urban home search?",
     answer:
-      "Local guidance can help buyers understand practical tradeoffs, avoid oversimplified assumptions, and make more informed decisions based on how each market actually fits their needs.",
+      "Not always. Denver includes plenty of residential neighborhoods with very different housing patterns. Still, the city overall is larger and more neighborhood-driven than Boulder.",
+  },
+  {
+    question: "Is Boulder basically one type of market or neighborhood?",
+    answer:
+      "No. Boulder includes distinct areas like Downtown Boulder, North Boulder, South Boulder, Table Mesa, and Gunbarrel. Even so, the city is easier to read as one map than Denver, which is why many people can narrow Boulder a little faster.",
   },
 ];
 
@@ -85,7 +93,7 @@ export default function DenverVsBoulder() {
         metadata={{
           title: "Denver vs Boulder | Colorado City Comparison for Home Buyers",
           description:
-            "Compare Denver vs Boulder for home buyers, including housing considerations, lifestyle tradeoffs, location factors, and practical guidance for choosing between the two markets.",
+            "Denver vs Boulder comparison for home buyers. Compare neighborhoods, markets, lifestyle, costs, and find which city fits your needs.",
           canonicalUrl: "https://www.myrockhomes.com/denver-vs-boulder",
           breadcrumbs: breadcrumbItems,
         }}
@@ -101,7 +109,19 @@ export default function DenverVsBoulder() {
 
       {/* 1. HERO */}
       <section className="relative bg-charcoal overflow-hidden">
-        <div className="container py-16 sm:py-20 md:py-24">
+        {/* Hero Background Image */}
+        <img
+          src={DENVER_HERO_BG}
+          alt="Row houses along a residential street in Denver"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
+        />
+        {/* Gradient Overlay — ensures text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
+        <div className="container relative z-10 py-16 sm:py-20 md:py-24">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} className="max-w-2xl">
             <h1
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
@@ -110,9 +130,12 @@ export default function DenverVsBoulder() {
               Denver vs Boulder
             </h1>
             <p className="text-lg text-cream/80 mb-8 leading-relaxed">
-              A practical overview of the tradeoffs between Denver and Boulder for home buyers —
-              covering housing, lifestyle, location, and decision factors for buyers evaluating
-              both Front Range markets.
+              If you are comparing Denver vs Boulder homes for sale, you are probably deciding
+              whether your search belongs in the middle of the metro or in a city at the base of
+              the Flatirons. Denver gives you a much larger city, a long list of neighborhoods,
+              and a home search that can change quickly from one part of town to the next.
+              Boulder is smaller on the map, but the neighborhoods and housing choices still
+              vary quite a bit across town.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton />
@@ -136,24 +159,24 @@ export default function DenverVsBoulder() {
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Why Buyers Compare These Two Markets
+            How the Areas Differ
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 icon: Scale,
-                title: "Different Market Scales",
-                desc: "Denver and Boulder offer different metro scales, community densities, and neighborhood patterns that affect how buyers evaluate each location.",
+                title: "Different Sides of the Metro",
+                desc: "Denver sits in the middle of the Front Range metro. Boulder is positioned to the northwest, closer to the foothills. That difference in location shapes how buyers think about each city from the start.",
               },
               {
                 icon: MapPin,
-                title: "Lifestyle Priorities",
-                desc: "Buyers comparing the two cities often weigh differences in pace, access to amenities, outdoor recreation, and community character.",
+                title: "Community Character Varies",
+                desc: "Denver is a large city with many distinct neighborhoods that can feel very different from each other. Boulder is smaller, but it still has distinct areas — Downtown Boulder, North Boulder, South Boulder, Table Mesa, and Gunbarrel each have their own character.",
               },
               {
                 icon: Compass,
-                title: "Long-Term Planning",
-                desc: "Work location, family needs, and long-term lifestyle goals often drive buyers to evaluate both Front Range markets before committing to one area.",
+                title: "Terrain and Setting",
+                desc: "Boulder sits closer to the foothills and the Flatirons are a constant visual reference. Denver is flatter and more spread out. Buyers who have a strong preference for one setting or the other often find that it narrows the decision fairly quickly.",
               },
             ].map((item, idx) => (
               <motion.div
@@ -174,14 +197,14 @@ export default function DenverVsBoulder() {
         </div>
       </section>
 
-      {/* 3. Housing and Neighborhood Tradeoffs */}
+      {/* 3. Types of Homes and Communities */}
       <section className="py-16 sm:py-20 bg-charcoal">
         <div className="container max-w-2xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Housing and Neighborhood Tradeoffs
+            Types of Homes and Communities You May See
           </h2>
           <motion.div
             initial="hidden"
@@ -190,24 +213,25 @@ export default function DenverVsBoulder() {
             className="bg-cream/10 rounded-lg p-8 border border-cream/20 mb-8"
           >
             <p className="text-cream/90 leading-relaxed mb-6">
-              The two markets differ in neighborhood patterns, housing types, and how buyers
-              evaluate tradeoffs between central areas, surrounding communities, and daily
-              lifestyle needs. Denver offers a wider range of urban neighborhoods and suburbs,
-              while Boulder has a distinct community structure with different housing stock and
-              pricing dynamics.
+              That difference shows up fast once you start looking at listings side by side.
+              Someone comparing homes near Wash Park, Park Hill, or Sloan’s Lake is working
+              through a very different map than someone looking around Downtown Boulder, North
+              Boulder, Table Mesa, or Gunbarrel. Both cities offer a mix of home styles and
+              neighborhood types, but the way you sort through the options is not the same.
             </p>
             <p className="text-cream/90 leading-relaxed">
-              Buyers focused on Denver can explore neighborhoods like Wash Park and Cherry Creek,
-              or suburbs like Parker and Highlands Ranch, depending on lifestyle and commute
-              priorities.
+              In Denver, the search can shift quickly from one neighborhood to the next —
+              City Park, Cherry Creek, and downtown each have distinct housing patterns. In
+              Boulder, the city is smaller and easier to read at the city level for longer
+              before narrowing to a specific area.
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
               { label: "Wash Park Denver Homes", link: "/wash-park-denver-homes-for-sale" },
               { label: "Cherry Creek Denver Homes", link: "/cherry-creek-denver-homes-for-sale" },
-              { label: "Parker Homes", link: "/parker-co-homes-for-sale" },
-              { label: "Highlands Ranch Homes", link: "/highlands-ranch-co-homes-for-sale" },
+              { label: "Boulder Homes for Sale", link: "/boulder-homes-for-sale" },
+              { label: "Boulder CO Homes for Sale", link: "/boulder-co-homes-for-sale" },
             ].map((item, idx) => (
               <motion.a
                 key={idx}
@@ -225,24 +249,24 @@ export default function DenverVsBoulder() {
         </div>
       </section>
 
-      {/* 4. Lifestyle and Location Considerations */}
+      {/* 4. Which Search May Fit Different Priorities */}
       <section className="py-16 sm:py-20 bg-cream">
         <div className="container max-w-2xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Lifestyle and Location Considerations
+            Which Search May Fit Different Priorities
           </h2>
           <div className="space-y-4">
             {[
-              "Metro scale and community pace differ between Denver and Boulder",
-              "Outdoor recreation access varies by location within each city",
-              "Urban amenities and walkability differ between the two markets",
-              "School district options and community structures vary across both cities",
-              "Employment centers and commute patterns are distinct in each market",
-              "Neighborhood feel and community character differ significantly",
-              "Long-term lifestyle fit depends on individual priorities and goals",
+              "Denver may work well for buyers who want a broader city search with many neighborhood options at different price points",
+              "Boulder may appeal to buyers who want a smaller city map with a very distinct setting and a more contained search area",
+              "Buyers who want to stay closer to the foothills may find Boulder easier to orient to quickly",
+              "Buyers who want more neighborhood variety or a wider range of housing types may find Denver gives them more to work with",
+              "Both cities include condos, townhomes, and single-family homes — the mix and how it is distributed across the city is different",
+              "Buyers who are still deciding between the two may benefit from starting at the city level before narrowing to specific neighborhoods",
+              "Local guidance can help buyers understand how the map actually works in each city before committing to a search direction",
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -259,36 +283,36 @@ export default function DenverVsBoulder() {
         </div>
       </section>
 
-      {/* 5. Cost, Commute, and Practical Decision Factors */}
+      {/* 5. What Buyers May Want to Think About */}
       <section className="py-16 sm:py-20 bg-charcoal">
         <div className="container">
           <h2
             className="text-3xl sm:text-4xl font-bold text-cream mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Cost, Commute, and Practical Decision Factors
+            What Buyers May Want to Think About
           </h2>
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {[
               {
-                icon: DollarSign,
-                title: "Total Ownership Costs",
-                desc: "Beyond purchase price, buyers should evaluate property taxes, HOA fees, maintenance costs, and other ownership factors in each market.",
+                icon: MapPin,
+                title: "Where Your Search Starts",
+                desc: "If you are still deciding between Denver and Boulder, it can help to look at both cities at the city level before narrowing to specific neighborhoods. The two maps are very different in scale.",
               },
               {
                 icon: Compass,
-                title: "Commute Structure",
-                desc: "Commute patterns differ between the two markets. Buyers should evaluate where employment is located relative to target neighborhoods in each city.",
+                title: "How Wide You Want to Search",
+                desc: "Denver gives buyers more ground to cover. Boulder is more contained. Buyers who want to narrow quickly may find Boulder easier to read early. Buyers who want more options may find Denver gives them more to work with.",
               },
               {
                 icon: Home,
-                title: "Housing Stock",
-                desc: "The range of housing types, lot sizes, and property ages varies between Denver and Boulder, affecting buyer options at different price points.",
+                title: "Housing Types and Mix",
+                desc: "Both cities have condos, townhomes, and single-family homes. The bigger difference is how the housing mix is spread across each city and how strongly location within the city shapes what you find.",
               },
               {
-                icon: MapPin,
-                title: "Access to Amenities",
-                desc: "Proximity to dining, retail, healthcare, and recreation varies between the two cities and within different areas of each market.",
+                icon: Scale,
+                title: "Moving Past County Labels",
+                desc: "Buyers sometimes start with county or city names and then find the actual neighborhoods that fit. That process works differently in Denver than in Boulder, and local guidance can help.",
               },
             ].map((item, idx) => (
               <motion.div
@@ -330,22 +354,22 @@ export default function DenverVsBoulder() {
         </div>
       </section>
 
-      {/* 6. How Buyers Can Narrow the Right Fit */}
+      {/* 6. Conclusion */}
       <section className="py-16 sm:py-20 bg-cream">
         <div className="container max-w-2xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            How Buyers Can Narrow the Right Fit
+            How to Narrow the Right Fit
           </h2>
           <div className="space-y-4">
             {[
-              { step: "1", title: "Define Priorities", desc: "Clarify lifestyle preferences, commute needs, housing type, and budget before comparing the two markets." },
-              { step: "2", title: "Research Both Markets", desc: "Understand the neighborhood and community options in each city to narrow the comparison to specific areas." },
-              { step: "3", title: "Evaluate Commute Patterns", desc: "Identify where employment is located and how commute structure differs between Denver and Boulder." },
-              { step: "4", title: "Compare Total Costs", desc: "Look beyond purchase price to evaluate total ownership costs in each market and at different price points." },
-              { step: "5", title: "Use Local Guidance", desc: "Local expertise helps buyers understand practical tradeoffs and avoid oversimplified assumptions about either market." },
+              { step: "1", title: "Follow the Map", desc: "Start by looking at both cities at the city level. Denver is a large metro-scale city. Boulder is smaller and more contained. That difference alone can help narrow the direction." },
+              { step: "2", title: "Denver Direction", desc: "If Denver stays in the mix, neighborhood comparison becomes important quickly. Wash Park, Park Hill, Sloan’s Lake, City Park, Cherry Creek, and downtown each have distinct housing patterns and price ranges." },
+              { step: "3", title: "Boulder Direction", desc: "If Boulder stays in the mix, many buyers can stay at the city level a little longer before narrowing. Downtown Boulder, North Boulder, South Boulder, Table Mesa, and Gunbarrel are the main areas to understand." },
+              { step: "4", title: "Move Past City Labels", desc: "Buyers sometimes start with city names and then find the actual neighborhoods that fit. That process works differently in Denver than in Boulder, and it is worth understanding both before committing to a direction." },
+              { step: "5", title: "Use Local Guidance", desc: "Local expertise can help buyers understand how the map actually works in each city, avoid oversimplified assumptions, and build a realistic search plan for whichever market fits their needs." },
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -381,9 +405,9 @@ export default function DenverVsBoulder() {
             className="bg-cream/10 rounded-lg p-8 border border-cream/20"
           >
             <p className="text-cream/90 leading-relaxed mb-6">
-              Buyers comparing Denver and Boulder benefit from understanding the Denver home
-              buying process, relocation considerations, and cost of living tradeoffs before
-              narrowing their search.
+              Buyers comparing Denver and Boulder may also find it useful to review the Denver
+              home buying process, relocation considerations, and how Denver compares to other
+              Front Range cities before narrowing their search.
             </p>
             <div className="space-y-3 mb-8">
               {[
@@ -393,6 +417,7 @@ export default function DenverVsBoulder() {
                 { title: "Cost of Living in Denver Colorado", link: "/cost-of-living-in-denver-colorado" },
                 { title: "Relocating to Denver Colorado", link: "/relocation/relocating-to-denver-colorado" },
                 { title: "Denver vs Colorado Springs", link: "/denver-vs-colorado-springs" },
+                { title: "Denver vs Fort Collins", link: "/denver-vs-fort-collins" },
               ].map((guide, idx) => (
                 <a
                   key={idx}

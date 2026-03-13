@@ -22,6 +22,9 @@ import {
   Compass,
 } from "lucide-react";
 
+/* Hero Background Image — Approved Denver metro aerial view */
+const DENVER_HERO_BG = "/images/denver-rowhouses-hero.jpg";
+
 /* ─── FAQ Content ─── */
 const faqContent = [
   {
@@ -48,6 +51,21 @@ const faqContent = [
     question: "Why is local guidance helpful for first-time buyers in Denver?",
     answer:
       "Local guidance can help first-time buyers compare locations, understand tradeoffs, avoid common mistakes, and make more confident choices in a competitive market.",
+  },
+  {
+    question: "How much should first-time buyers plan for a down payment in Denver?",
+    answer:
+      "Down payment amounts vary based on loan type, credit profile, and lender requirements. First-time buyers often explore options ranging from 3-20% of purchase price, plus closing costs. Speaking with a lender helps determine realistic targets for your situation.",
+  },
+  {
+    question: "What are common mistakes first-time buyers make in Denver?",
+    answer:
+      "Common mistakes include overextending budget, skipping pre-approval, making large purchases before closing, ignoring property condition, not understanding HOA fees, and rushing decisions. Planning ahead and seeking guidance helps avoid these pitfalls.",
+  },
+  {
+    question: "Should first-time buyers get pre-approved before searching?",
+    answer:
+      "Yes. Pre-approval strengthens your position, clarifies your budget, speeds up the offer process, and shows sellers you are a serious buyer. It also helps you understand monthly payment comfort before investing time in the search.",
   },
 ];
 
@@ -85,7 +103,7 @@ export default function FirstTimeHomeBuyerDenver() {
         metadata={{
           title: "First-Time Home Buyer Denver | Denver First-Time Buyer Guide",
           description:
-            "Explore first-time home buyer guidance in Denver, including financing preparation, neighborhood strategy, market considerations, and practical steps for entering the Denver market.",
+            "First-time home buyer guide for Denver. Understand financing, the buying process, and get expert resources to navigate your purchase confidently.",
           canonicalUrl: "https://www.myrockhomes.com/first-time-home-buyer-denver",
           breadcrumbs: breadcrumbItems,
         }}
@@ -101,7 +119,19 @@ export default function FirstTimeHomeBuyerDenver() {
 
       {/* 1. HERO */}
       <section className="relative bg-charcoal overflow-hidden">
-        <div className="container py-16 sm:py-20 md:py-24">
+        {/* Hero Background Image */}
+        <img
+          src={DENVER_HERO_BG}
+          alt="Row houses along a residential street in Denver"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
+        />
+        {/* Gradient Overlay — ensures text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
+        <div className="container relative z-10 py-16 sm:py-20 md:py-24">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} className="max-w-2xl">
             <h1
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
@@ -322,6 +352,11 @@ export default function FirstTimeHomeBuyerDenver() {
             {[
               { title: "Denver Condos for Sale", link: "/denver-condos-for-sale" },
               { title: "Denver Townhomes for Sale", link: "/denver-townhomes-for-sale" },
+              { title: "Denver Luxury Homes", link: "/denver-luxury-homes-for-sale" },
+              { title: "Denver New Construction", link: "/denver-new-construction-homes" },
+              { title: "Cherry Creek Denver", link: "/cherry-creek-denver-homes-for-sale" },
+              { title: "Wash Park Denver", link: "/wash-park-denver-homes-for-sale" },
+              { title: "LoHi Denver Homes", link: "/lohi-denver-homes-for-sale" },
               { title: "Denver Homes Hub", link: "/denver-homes-for-sale" },
             ].map((resource, idx) => (
               <motion.a

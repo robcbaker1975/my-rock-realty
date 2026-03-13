@@ -120,6 +120,10 @@ export default function ParkerCoHomesForSale() {
           src={DENVER_HERO_BG}
           alt="Row houses along a residential street in Denver"
           className="absolute inset-0 w-full h-full object-cover object-center"
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
         />
         {/* Gradient Overlay — ensures text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />

@@ -22,6 +22,9 @@ import {
   ChevronDown,
 } from "lucide-react";
 
+/* Hero Background Image — Approved Denver metro aerial view */
+const DENVER_HERO_BG = "/images/denver-rowhouses-hero.jpg";
+
 /* ─── FAQ Content ─── */
 const faqContent = [
   {
@@ -87,7 +90,7 @@ export default function DenverTownhomesForSale() {
         metadata={{
           title: "Denver Townhomes for Sale | Townhouses in Denver, Colorado",
           description:
-            "Explore Denver townhomes for sale, townhome living in Denver neighborhoods, common lifestyle benefits, ownership considerations, and helpful Denver townhome buying resources.",
+            "Denver townhomes for sale. Explore townhome living, lifestyle benefits, ownership considerations, and expert resources for townhome buyers.",
           canonicalUrl: "https://www.myrockhomes.com/denver-townhomes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
@@ -107,7 +110,19 @@ export default function DenverTownhomesForSale() {
           1. HERO — Denver Townhomes for Sale
       ═══════════════════════════════════════════════════ */}
       <section className="relative bg-charcoal overflow-hidden">
-        <div className="container py-16 sm:py-20 md:py-24">
+        {/* Hero Background Image */}
+        <img
+          src={DENVER_HERO_BG}
+          alt="Row houses along a residential street in Denver"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
+        />
+        {/* Gradient Overlay — ensures text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
+        <div className="container relative z-10 py-16 sm:py-20 md:py-24">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -353,6 +368,8 @@ export default function DenverTownhomesForSale() {
               { label: "Denver Condos for Sale", href: "/denver-condos-for-sale" },
               { label: "Denver Luxury Homes", href: "/denver-luxury-homes-for-sale" },
               { label: "Denver New Construction", href: "/denver-new-construction-homes" },
+              { label: "Buying a Home in Denver", href: "/buying-a-home-in-denver" },
+              { label: "First-Time Home Buyer Denver", href: "/first-time-home-buyer-denver" },
             ].map((item, idx) => (
               <a
                 key={idx}

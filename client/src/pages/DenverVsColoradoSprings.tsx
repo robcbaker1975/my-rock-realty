@@ -23,6 +23,9 @@ import {
   BookOpen,
 } from "lucide-react";
 
+/* Hero Background Image — Approved Denver metro aerial view */
+const DENVER_HERO_BG = "/images/denver-rowhouses-hero.jpg";
+
 /* ─── FAQ Content ─── */
 const faqContent = [
   {
@@ -86,7 +89,7 @@ export default function DenverVsColoradoSprings() {
         metadata={{
           title: "Denver vs Colorado Springs | Colorado City Comparison for Home Buyers",
           description:
-            "Compare Denver vs Colorado Springs for home buyers, including housing considerations, lifestyle tradeoffs, location factors, and practical guidance for choosing between the two markets.",
+            "Denver vs Colorado Springs comparison for home buyers. Compare neighborhoods, markets, lifestyle, costs, and find which city fits your needs.",
           canonicalUrl: "https://www.myrockhomes.com/denver-vs-colorado-springs",
           breadcrumbs: breadcrumbItems,
         }}
@@ -102,7 +105,19 @@ export default function DenverVsColoradoSprings() {
 
       {/* 1. HERO */}
       <section className="relative bg-charcoal overflow-hidden">
-        <div className="container py-16 sm:py-20 md:py-24">
+        {/* Hero Background Image */}
+        <img
+          src={DENVER_HERO_BG}
+          alt="Row houses along a residential street in Denver"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
+        />
+        {/* Gradient Overlay — ensures text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
+        <div className="container relative z-10 py-16 sm:py-20 md:py-24">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} className="max-w-2xl">
             <h1
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
@@ -387,6 +402,7 @@ export default function DenverVsColoradoSprings() {
             </p>
             <div className="space-y-3 mb-8">
               {[
+                { title: "Denver vs Boulder", link: "/denver-vs-boulder" },
                 { title: "Buying a Home in Denver", link: "/buying-a-home-in-denver" },
                 { title: "First-Time Home Buyer Denver", link: "/first-time-home-buyer-denver" },
                 { title: "Denver Home Buying Process", link: "/denver-home-buying-process" },

@@ -36,9 +36,9 @@ import {
 } from "lucide-react";
 
 const LOGO_URL =
-  "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663410368883/MyFokdbFMWxFfHiY.png?Expires=1804373851&Signature=tX8Nz-0U25wCRVcyN~gH7soBhlF3NkZUa-fhbO66r4~ix6wF5QJgpPopSr1AHJBk3LYrKIvxfO7YD9vTdqjZjlu3cRO~lkYxkxZTjoEnC4lRTtjG5BAb93p2PDrMuu2aVHq7bLQju4D-2XQxrn4CTm9kL1SbUQFUO-A84x7mFMo~GuyOHMKwN5Y8FJn7Ab31FwMwmSPPSt250S-gmfDDE641SKapGELse-4gAkYO2Uy7HOgsFPNinIzISyHmorDYolNCgA0fVXih1zjLlPmv4tUT4theY~IW3Wg5cuPbxYCSFRkYITYhEoeW1oC1OSZByxIaTDBAmvXWZN~bb7cNlA__&Key-Pair-Id=K2HSFNDJXOU9YS";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/ChatGPTImageMar2,2026,04_52_22PM_09be1014.png";
 const HEADSHOT_URL =
-  "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663410368883/daNVlPqvwXbwkTQz.png?Expires=1804384152&Signature=jZDznTIANoEiBOoHj25iwt4TpWQc5i4A4OIbszucwQcMb-Gpy~FHBqxpq~CWtxVmmhEEThAzrOvOhrg078TNI9S~yyEglVcq-TeGL74eLGgH6I7bk6bOhsr41R5AF-0Z2FEXt3tTfMei81ZyquIUhzv1eyNAeU6StCUimTSoR47XPCk0dsAGLsU97g33GyRX1rm4xC2WPPdEFyremPPiKeeDhewZrIKm9ZM8XMpDSD8SeLcY1PrOBp2hfGwBnU7BUDnMztc3iWXEPLH2TOTph9Mx--TYq3QCj8hy5f1w0KSM7xNWicmLfFc6ncKQTG9cdH9Rto1vSqy5mKE16-8aWQ__&Key-Pair-Id=K2HSFNDJXOU9YS";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/RobHeadshotNoBackground_877c31b9.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -115,6 +115,9 @@ export default function Coaching() {
               src={LOGO_URL}
               alt="My Rock Realty"
               className="h-[7rem] sm:h-[6.5rem] md:h-[7rem] lg:h-[7.5rem] w-auto drop-shadow-lg"
+              width="120"
+              height="120"
+              fetchPriority="high"
             />
           </a>
           <a
@@ -585,6 +588,10 @@ export default function Coaching() {
                   src={HEADSHOT_URL}
                   alt="Rob Baker"
                   className="w-full h-full object-cover"
+                  width="144"
+                  height="144"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <p
@@ -737,10 +744,11 @@ export default function Coaching() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-charcoal/60 uppercase tracking-wide mb-1.5">
+                    <label htmlFor="coaching-license-status" className="block text-xs font-semibold text-charcoal/60 uppercase tracking-wide mb-1.5">
                       License Status
                     </label>
                     <select
+                      id="coaching-license-status"
                       value={formData.type}
                       onChange={(e) => setFormData({ ...formData, type: e.target.value })}
                       className="w-full px-4 py-2.5 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base focus:border-gold/50 focus:outline-none transition-colors"
@@ -855,6 +863,10 @@ export default function Coaching() {
                 src={LOGO_URL}
                 alt="My Rock Realty"
                 className="h-16 sm:h-20 w-auto mx-auto sm:mx-0 mb-3"
+                width="80"
+                height="80"
+                loading="lazy"
+                decoding="async"
               />
               <p className="text-cream/50 text-xs leading-relaxed">
                 My Rock Realty, LLC

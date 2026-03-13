@@ -22,6 +22,9 @@ import {
   ChevronDown,
 } from "lucide-react";
 
+/* Hero Background Image — Approved Denver metro aerial view */
+const DENVER_HERO_BG = "/images/denver-rowhouses-hero.jpg";
+
 /* ─── FAQ Content ─── */
 const faqContent = [
   {
@@ -113,7 +116,19 @@ export default function WashParkDenverHomesForSale() {
           1. HERO — Wash Park Denver Homes for Sale
       ═══════════════════════════════════════════════════ */}
       <section className="relative bg-charcoal overflow-hidden">
-        <div className="container py-16 sm:py-20 md:py-24">
+        {/* Hero Background Image */}
+        <img
+          src={DENVER_HERO_BG}
+          alt="Row houses along a residential street in Denver"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
+        />
+        {/* Gradient Overlay — ensures text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
+        <div className="container relative z-10 py-16 sm:py-20 md:py-24">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -340,6 +355,14 @@ export default function WashParkDenverHomesForSale() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
+              {
+                title: "Cherry Creek Denver Homes",
+                link: "/cherry-creek-denver-homes-for-sale",
+              },
+              {
+                title: "LoHi Denver Homes",
+                link: "/lohi-denver-homes-for-sale",
+              },
               {
                 title: "Denver Condos for Sale",
                 link: "/denver-condos-for-sale",

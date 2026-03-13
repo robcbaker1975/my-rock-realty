@@ -22,6 +22,9 @@ import {
   Compass,
 } from "lucide-react";
 
+/* Hero Background Image — Approved Denver metro aerial view */
+const DENVER_HERO_BG = "/images/denver-rowhouses-hero.jpg";
+
 /* ─── FAQ Content ─── */
 const faqContent = [
   {
@@ -48,6 +51,21 @@ const faqContent = [
     question: "Why is cost of living important when comparing Denver and surrounding areas?",
     answer:
       "It helps buyers evaluate tradeoffs between housing choice, monthly affordability, location, and lifestyle priorities before making a purchase decision.",
+  },
+  {
+    question: "How much do property taxes cost in Denver compared to surrounding areas?",
+    answer:
+      "Property tax rates vary by location and county. Denver and surrounding areas have different assessment rates and mill levies. Comparing specific properties and neighborhoods helps buyers understand the tax impact on total ownership cost.",
+  },
+  {
+    question: "What are typical homeowners insurance costs in Denver?",
+    answer:
+      "Homeowners insurance costs depend on home value, location, age, construction type, and coverage level. Denver insurance rates vary by neighborhood and risk factors. Getting quotes from multiple insurers helps buyers budget accurately.",
+  },
+  {
+    question: "How should buyers budget for maintenance and repairs?",
+    answer:
+      "A common guideline is to budget 1-2% of home value annually for maintenance and repairs. Older homes, larger properties, and homes with specific features may require higher reserves. Understanding property condition helps estimate realistic maintenance costs.",
   },
 ];
 
@@ -85,7 +103,7 @@ export default function CostOfLivingInDenverColorado() {
         metadata={{
           title: "Cost of Living in Denver Colorado | Denver Buyer Cost Guide",
           description:
-            "Explore the cost of living in Denver Colorado, including housing considerations, ownership costs, lifestyle tradeoffs, and location factors that matter to Denver-area buyers.",
+            "Cost of living in Denver, Colorado. Compare housing costs, expenses by neighborhood, and budget resources for relocating or buying in Denver.",
           canonicalUrl: "https://www.myrockhomes.com/cost-of-living-in-denver-colorado",
           breadcrumbs: breadcrumbItems,
         }}
@@ -101,7 +119,20 @@ export default function CostOfLivingInDenverColorado() {
 
       {/* 1. HERO */}
       <section className="relative bg-charcoal overflow-hidden">
-        <div className="container py-16 sm:py-20 md:py-24">
+        {/* Hero Background Image */}
+        <img
+          src={DENVER_HERO_BG}
+          alt="Row houses along a residential street in Denver"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
+        />
+        {/* Gradient Overlay — ensures text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
+        <div className="container relative z-10 py-16 sm:py-20 md:py-24">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} className="max-w-2xl">
             <h1
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
@@ -319,9 +350,12 @@ export default function CostOfLivingInDenverColorado() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
+              { title: "Cherry Creek Denver Homes", link: "/cherry-creek-denver-homes-for-sale" },
+              { title: "Wash Park Denver Homes", link: "/wash-park-denver-homes-for-sale" },
               { title: "Denver Condos for Sale", link: "/denver-condos-for-sale" },
               { title: "Denver Luxury Homes for Sale", link: "/denver-luxury-homes-for-sale" },
               { title: "Denver Homes Hub", link: "/denver-homes-for-sale" },
+              { title: "Denver vs Colorado Springs", link: "/denver-vs-colorado-springs" },
             ].map((resource, idx) => (
               <motion.a
                 key={idx}
