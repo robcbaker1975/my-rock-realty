@@ -104,7 +104,7 @@ export default function VaHomeLoansColorado() {
         description="Educational overview of VA home loan benefits for eligible veterans and active-duty buyers in Colorado. Covers key concepts, the homebuying process, and common questions. Not financial advice."
         canonicalUrl="https://www.myrockhomes.com/military-relocation/va-home-loans-colorado/"
         ogImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp"
-        schema={faqSchema}
+        schema={faqSchema ? [faqSchema] : []}
       />
 
       {/* ─── Breadcrumbs ─── */}

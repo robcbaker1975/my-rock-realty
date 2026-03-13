@@ -94,7 +94,7 @@ export default function PuebloHomeSearchComingSoon() {
         title="Pueblo Home Search — Coming Soon | My Rock Realty"
         description="Pueblo home search coverage is being prepared. Learn about the city of Pueblo, connect with a local buyer resource, and reach out directly for current assistance."
         canonical="https://www.myrockhomes.com/pueblo-home-search-coming-soon"
-        schema={faqSchema}
+        schema={faqSchema ? [faqSchema] : []}
         breadcrumbs={breadcrumbItems}
       />
 

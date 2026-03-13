@@ -93,7 +93,7 @@ export default function PuebloCountyHomeSearchComingSoon() {
         title="Pueblo County Home Search — Coming Soon | My Rock Realty"
         description="Pueblo County home search coverage is being prepared. Learn about the Pueblo County area, connect with a local buyer resource, and reach out directly for current assistance."
         canonical="https://www.myrockhomes.com/pueblo-county-home-search-coming-soon"
-        schema={faqSchema}
+        schema={faqSchema ? [faqSchema] : []}
         breadcrumbs={breadcrumbItems}
       />
 

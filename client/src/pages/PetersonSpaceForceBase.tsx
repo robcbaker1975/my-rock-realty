@@ -76,7 +76,7 @@ export default function PetersonSpaceForceBase() {
         description="Practical relocation guidance for buyers moving to Peterson Space Force Base and the Colorado Springs area. PCS planning, neighborhood orientation, and local market context for military families."
         canonicalUrl="https://www.myrockhomes.com/military-relocation/peterson-space-force-base/"
         ogImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp"
-        schema={faqSchema}
+        schema={faqSchema ? [faqSchema] : []}
       />
 
       <div className="bg-charcoal/95 border-b border-white/5">
