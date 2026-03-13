@@ -19,7 +19,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/ChatGPTImageMar2_2026_04_52_22PM_7d2e4b91.png";
+const LOGO_URL = "/assets/logo.png";
 
 /* ─── Tier data ─── */
 const tiers = [

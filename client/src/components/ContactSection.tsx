@@ -196,10 +196,11 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="block text-cream/60 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                  <label htmlFor="contact-type" className="block text-cream/60 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
                     I'm interested in...
                   </label>
                   <select
+                    id="contact-type"
                     value={formData.type}
                     onChange={(e) => setFormData({ ...formData, type: e.target.value })}
                     className="w-full px-4 py-3.5 sm:py-3 bg-white/5 border border-white/15 rounded-lg sm:rounded text-white text-base focus:border-gold/50 focus:outline-none transition-colors appearance-none"

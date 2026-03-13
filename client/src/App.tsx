@@ -89,7 +89,16 @@ import FortCarson from "./pages/FortCarson";
 import PetersonSpaceForceBase from "./pages/PetersonSpaceForceBase";
 import SchrieverSpaceForceBase from "./pages/SchrieverSpaceForceBase";
 import BuckleySpaceForceBase from "./pages/BuckleySpaceForceBase";
-import Usafa from "./pages/Usafa";
+import UsAirForceAcademy from "./pages/UsAirForceAcademy";
+import MilitarySpousesBuyingColorado from "./pages/MilitarySpousesBuyingColorado";
+import VeteransBuyingColorado from "./pages/VeteransBuyingColorado";
+import PcsTimelineChecklist from "./pages/PcsTimelineChecklist";
+import TemporaryHousingColoradoSprings from "./pages/TemporaryHousingColoradoSprings";
+import RemoteHomeTours from "./pages/RemoteHomeTours";
+import BestCommunitiesNearFortCarson from "./pages/BestCommunitiesNearFortCarson";
+import BestCommunitiesNearPetersonSpaceForceBase from "./pages/BestCommunitiesNearPetersonSpaceForceBase";
+import BestCommunitiesNearSchrieverSpaceForceBase from "./pages/BestCommunitiesNearSchrieverSpaceForceBase";
+import BestCommunitiesNearBuckleySpaceForceBase from "./pages/BestCommunitiesNearBuckleySpaceForceBase";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -181,7 +190,16 @@ function Router() {
       <Route path={"/military-relocation/peterson-space-force-base/"} component={PetersonSpaceForceBase} />
       <Route path={"/military-relocation/schriever-space-force-base/"} component={SchrieverSpaceForceBase} />
       <Route path={"/military-relocation/buckley-space-force-base/"} component={BuckleySpaceForceBase} />
-      <Route path={"/military-relocation/usafa/"} component={Usafa} />
+      <Route path={"/military-relocation/us-air-force-academy/"} component={UsAirForceAcademy} />
+      <Route path={"/military-relocation/military-spouses-buying-colorado/"} component={MilitarySpousesBuyingColorado} />
+      <Route path={"/military-relocation/veterans-buying-colorado/"} component={VeteransBuyingColorado} />
+      <Route path={"/military-relocation/pcs-timeline-checklist/"} component={PcsTimelineChecklist} />
+      <Route path={"/military-relocation/temporary-housing-colorado-springs/"} component={TemporaryHousingColoradoSprings} />
+      <Route path={"/military-relocation/remote-home-tours/"} component={RemoteHomeTours} />
+      <Route path={"/military-relocation/best-communities-near-fort-carson/"} component={BestCommunitiesNearFortCarson} />
+      <Route path={"/military-relocation/best-communities-near-peterson-space-force-base/"} component={BestCommunitiesNearPetersonSpaceForceBase} />
+      <Route path={"/military-relocation/best-communities-near-schriever-space-force-base/"} component={BestCommunitiesNearSchrieverSpaceForceBase} />
+      <Route path={"/military-relocation/best-communities-near-buckley-space-force-base/"} component={BestCommunitiesNearBuckleySpaceForceBase} />
       <Route path={"/workshop-draft"}>{() => { window.location.href = "/colorado-home-buying-workshop"; return null; }}</Route>
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

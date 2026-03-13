@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, MapPin } from "lucide-react";
 
-const LOGO_URL = "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663410368883/MyFokdbFMWxFfHiY.png?Expires=1804373851&Signature=tX8Nz-0U25wCRVcyN~gH7soBhlF3NkZUa-fhbO66r4~ix6wF5QJgpPopSr1AHJBk3LYrKIvxfO7YD9vTdqjZjlu3cRO~lkYxkxZTjoEnC4lRTtjG5BAb93p2PDrMuu2aVHq7bLQju4D-2XQxrn4CTm9kL1SbUQFUO-A84x7mFMo~GuyOHMKwN5Y8FJn7Ab31FwMwmSPPSt250S-gmfDDE641SKapGELse-4gAkYO2Uy7HOgsFPNinIzISyHmorDYolNCgA0fVXih1zjLlPmv4tUT4theY~IW3Wg5cuPbxYCSFRkYITYhEoeW1oC1OSZByxIaTDBAmvXWZN~bb7cNlA__&Key-Pair-Id=K2HSFNDJXOU9YS";
+const LOGO_URL = "/assets/logo.png";
 
 const navLinks = [
   { label: "Home", href: "#hero" },
@@ -14,13 +14,74 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+const marketLinks = [
+  { label: "Denver", href: "/denver-homes-for-sale" },
+  { label: "Boulder", href: "/boulder-homes-for-sale" },
+  { label: "Colorado Springs", href: "/colorado-springs-homes-for-sale" },
+  { label: "Fort Collins", href: "/fort-collins-homes-for-sale" },
+];
+
 // Secondary links — not part of main consumer funnel
 const JOIN_HREF = "/join-us";
 const COACHING_HREF = "/coaching";
 
+/** Inline Markets dropdown for desktop nav rows */
+function MarketsDropdown({ textClass }: { textClass: string }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className={`flex items-center gap-1 px-3 py-2 text-sm font-medium tracking-wide transition-colors rounded hover:text-gold ${textClass}`}
+        style={{ fontFamily: "'Outfit', sans-serif" }}
+        aria-haspopup="true"
+        aria-expanded={open}
+      >
+        Markets
+        <ChevronDown size={14} className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.15 }}
+            className="absolute left-0 top-full mt-1 w-48 bg-charcoal/98 backdrop-blur-md border border-white/10 rounded-lg shadow-xl z-50 py-1.5"
+          >
+            {marketLinks.map((m) => (
+              <a
+                key={m.href}
+                href={m.href}
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-2 px-4 py-2.5 text-sm text-cream/75 hover:text-gold hover:bg-white/5 transition-colors"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                <MapPin size={12} className="text-gold/60 shrink-0" />
+                {m.label}
+              </a>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [marketsExpanded, setMarketsExpanded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -71,6 +132,9 @@ export default function Navbar() {
               src={LOGO_URL}
               alt="My Rock Realty"
               className="h-14 sm:h-16 md:h-[4.5rem] w-auto"
+              width="72"
+              height="72"
+              decoding="async"
             />
           </a>
 
@@ -87,6 +151,8 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+            {/* Markets dropdown */}
+            <MarketsDropdown textClass="text-cream/80" />
             {/* Secondary links — subtle, non-dominant */}
             <a
               href={JOIN_HREF}
@@ -136,6 +202,9 @@ export default function Navbar() {
               src={LOGO_URL}
               alt="My Rock Realty"
               className="h-[8rem] sm:h-[7.5rem] md:h-[8rem] lg:h-[8.5rem] w-auto drop-shadow-lg"
+              width="136"
+              height="136"
+              fetchPriority="high"
             />
           </a>
 
@@ -162,6 +231,8 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          {/* Markets dropdown */}
+          <MarketsDropdown textClass="text-white/80" />
           {/* Secondary links — subtle, non-dominant */}
           <a
             href={JOIN_HREF}
@@ -204,6 +275,9 @@ export default function Navbar() {
                 src={LOGO_URL}
                 alt="My Rock Realty"
                 className="h-20 w-auto"
+                width="80"
+                height="80"
+                decoding="async"
               />
               <button
                 onClick={() => setMobileOpen(false)}
@@ -229,11 +303,51 @@ export default function Navbar() {
                   {link.label}
                 </motion.a>
               ))}
+              {/* Markets — expandable section in mobile */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navLinks.length * 0.05 }}
+                className="border-b border-white/5"
+              >
+                <button
+                  onClick={() => setMarketsExpanded((v) => !v)}
+                  className="w-full flex items-center justify-between px-4 py-4 text-cream/90 hover:text-gold text-lg font-medium transition-colors rounded-lg active:bg-white/5"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  Markets
+                  <ChevronDown size={18} className={`transition-transform duration-200 ${marketsExpanded ? "rotate-180" : ""}`} />
+                </button>
+                <AnimatePresence>
+                  {marketsExpanded && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden"
+                    >
+                      {marketLinks.map((m) => (
+                        <a
+                          key={m.href}
+                          href={m.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="flex items-center gap-2 px-8 py-3 text-cream/65 hover:text-gold text-base transition-colors"
+                          style={{ fontFamily: "'Outfit', sans-serif" }}
+                        >
+                          <MapPin size={12} className="text-gold/50 shrink-0" />
+                          {m.label}
+                        </a>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
               {/* Secondary links — subtle in mobile menu */}
               <motion.a
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navLinks.length * 0.05 }}
+                transition={{ delay: (navLinks.length + 1) * 0.05 }}
                 href={JOIN_HREF}
                 onClick={() => setMobileOpen(false)}
                 className="px-4 py-3 text-cream/45 hover:text-gold/80 text-sm font-medium transition-colors rounded-lg active:bg-white/5 border-t border-white/5 mt-1"
@@ -244,7 +358,7 @@ export default function Navbar() {
               <motion.a
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: (navLinks.length + 1) * 0.05 }}
+                transition={{ delay: (navLinks.length + 2) * 0.05 }}
                 href={COACHING_HREF}
                 onClick={() => setMobileOpen(false)}
                 className="px-4 py-3 text-cream/45 hover:text-gold/80 text-sm font-medium transition-colors rounded-lg active:bg-white/5"

@@ -8,7 +8,7 @@ import SeoHead from "@/components/seo/SeoHead";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/ChatGPTImageMar2,2026,04_52_22PM_09be1014.png";
+const LOGO_URL = "/assets/logo.png";
 
 export default function Terms() {
   return (

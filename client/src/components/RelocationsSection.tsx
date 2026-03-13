@@ -76,6 +76,10 @@ export default function RelocationsSection() {
               src={RELOCATIONS_IMG}
               alt="Map of the United States with Colorado highlighted, showing referral network connections to all 50 states"
               className="w-full h-auto rounded shadow-xl"
+              width="800"
+              height="600"
+              loading="lazy"
+              decoding="async"
             />
           </motion.div>
         </div>

@@ -100,10 +100,10 @@ export default function PcsColorado() {
           title: "PCS to Colorado: Military Homebuying Guide | My Rock Realty",
           description: "Practical guidance for military buyers PCS-ing to Colorado. Covers PCS timing, rent vs. buy decisions, Colorado market orientation, and why local guidance matters.",
           canonicalUrl: "https://www.myrockhomes.com/military-relocation/pcs-colorado/",
-          image: { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp" },
+          image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
-        schema={faqSchema ? [faqSchema] : []}
-      />
+        schema={[faqSchema]}
+        />
 
       {/* ─── Breadcrumbs ─── */}
       <div className="bg-charcoal/95 border-b border-white/5">

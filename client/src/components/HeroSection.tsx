@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { useLocation } from "wouter";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/hero-bg-dyEKuHhWXn8eKxpjETtCvy.webp";
-const HEADSHOT_URL = "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663410368883/daNVlPqvwXbwkTQz.png?Expires=1804384152&Signature=jZDznTIANoEiBOoHj25iwt4TpWQc5i4A4OIbszucwQcMb-Gpy~FHBqxpq~CWtxVmmhEEThAzrOvOhrg078TNI9S~yyEglVcq-TeGL74eLGgH6I7bk6bOhsr41R5AF-0Z2FEXt3tTfMei81ZyquIUhzv1eyNAeU6StCUimTSoR47XPCk0dsAGLsU97g33GyRX1rm4xC2WPPdEFyremPPiKeeDhewZrIKm9ZM8XMpDSD8SeLcY1PrOBp2hfGwBnU7BUDnMztc3iWXEPLH2TOTph9Mx--TYq3QCj8hy5f1w0KSM7xNWicmLfFc6ncKQTG9cdH9Rto1vSqy5mKE16-8aWQ__&Key-Pair-Id=K2HSFNDJXOU9YS";
+const HEADSHOT_URL = "/assets/rob-headshot.jpg";
 
 export default function HeroSection() {
   const [, setLocation] = useLocation();
@@ -23,6 +23,10 @@ export default function HeroSection() {
           src={HERO_BG}
           alt="Colorado Front Range mountains at golden hour"
           className="w-full h-full object-cover object-[55%_40%] sm:object-[50%_45%] md:object-center"
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
         />
         {/* Layer 1: Strong left-to-right darkness for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/[0.97] via-charcoal/85 to-charcoal/40 sm:from-charcoal/[0.93] sm:via-charcoal/70 sm:to-charcoal/25" />
@@ -46,7 +50,7 @@ export default function HeroSection() {
             >
               <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gold animate-pulse" />
               <span className="text-gold text-[11px] sm:text-xs font-medium tracking-[0.15em] uppercase" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                Serving Colorado — Referrals Nationwide
+                Built on Local Knowledge. Backed by Rock-Solid Guidance.
               </span>
             </motion.div>
 
@@ -114,7 +118,7 @@ export default function HeroSection() {
               className="mt-4 sm:mt-5 text-[12px] sm:text-[13px] text-white/45 tracking-wide"
               style={{ fontFamily: "'Libre Franklin', sans-serif" }}
             >
-              Helping buyers, sellers, land clients, and relocations across Colorado — with referrals nationwide.
+              Proudly serving Colorado buyers, sellers, land clients, and relocating families.
             </motion.p>
           </div>
 
@@ -135,6 +139,10 @@ export default function HeroSection() {
                   src={HEADSHOT_URL}
                   alt="Rob Baker, Broker/Owner of My Rock Realty"
                   className="w-full h-full object-cover object-[center_15%]"
+                  width="320"
+                  height="320"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               {/* Name badge below headshot */}
@@ -160,6 +168,10 @@ export default function HeroSection() {
               src={HEADSHOT_URL}
               alt="Rob Baker"
               className="w-full h-full object-cover object-[center_15%]"
+              width="80"
+              height="80"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div>

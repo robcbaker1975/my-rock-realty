@@ -37,9 +37,9 @@ import {
 } from "lucide-react";
 
 const LOGO_URL =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/ChatGPTImageMar2,2026,04_52_22PM_09be1014.png";
+  "/assets/logo.png";
 const HEADSHOT_URL =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/RobHeadshotNoBackground_877c31b9.jpg";
+  "/assets/rob-headshot.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -102,8 +102,8 @@ export default function JoinUs() {
     <div className="min-h-screen bg-warm-white">
       <SeoHead
         metadata={{
-          title: "Join My Rock Realty | Colorado Real Estate Careers",
-          description: "Explore real estate career opportunities with My Rock Realty. A boutique Colorado brokerage offering support, strategy, systems, and leadership access.",
+          title: "Join My Rock Realty | Colorado Real Estate Agent Opportunities",
+          description: "Licensed Colorado real estate agents: explore career opportunities with My Rock Realty. A boutique brokerage offering real training, accessible leadership, and a structure built for agent growth.",
           canonicalUrl: "https://www.myrockhomes.com/join-us",
           breadcrumbs: [
             { label: "Join Us", href: "/join-us" },
@@ -174,7 +174,7 @@ export default function JoinUs() {
                 className="text-gold text-xs sm:text-sm font-semibold tracking-wide"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                BOUTIQUE BROKERAGE · COLORADO
+                LICENSED AGENTS · COLORADO BROKERAGE
               </span>
             </div>
 
@@ -185,7 +185,7 @@ export default function JoinUs() {
               A Better Place to Build Your Real Estate Business
             </h1>
             <p className="text-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
-              My Rock Realty is a selective, strategy-driven brokerage for agents who want real training, accessible leadership, modern tools, and a structure designed to help them grow — not just a place to hang a license.
+              My Rock Realty is a selective, strategy-driven Colorado brokerage for licensed agents who want real training, accessible leadership, modern tools, and a structure designed to help them grow — not just a place to hang a license. This page is for agents who hold an active Colorado real estate license, or who are actively working toward one.
             </p>
 
             <CTAButton />
@@ -707,7 +707,7 @@ export default function JoinUs() {
                   className="text-xl sm:text-2xl font-bold text-charcoal leading-tight"
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
-                  Tell Us About Your Background
+                  Tell Rob About Your Situation
                 </h3>
               </div>
 
@@ -785,7 +785,7 @@ export default function JoinUs() {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={4}
                     className="w-full px-4 py-2.5 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors resize-none"
-                    placeholder="Tell Rob about your goals, experience, current market, or anything else that would help him understand your situation..."
+                    placeholder="Tell Rob about your current situation — where you're licensed, how long you've been active, what you're looking for in a brokerage, and what's driving the conversation..."
                   />
                 </div>
 

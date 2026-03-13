@@ -1,6 +1,6 @@
 /**
- * Peterson Space Force Base Relocation Guide — My Rock Realty
- * /military-relocation/peterson-space-force-base/
+ * US Air Force Academy Relocation Guide — My Rock Realty
+ * /military-relocation/us-air-force-academy/
  * Design: Front Range Modern — matches existing site design system
  */
 import { useState } from "react";
@@ -14,24 +14,24 @@ const HERO_BG = "/images/denver-rowhouses-hero.jpg";
 
 const faqContent = [
   {
-    question: "What communities do buyers relocating to Peterson Space Force Base typically consider?",
+    question: "What communities do buyers relocating to US Air Force Academy typically consider?",
     answer:
-      "Peterson Space Force Base is located on the east side of Colorado Springs. Buyers commonly look at east Colorado Springs neighborhoods, Falcon, Peyton, and Schriever-adjacent communities. The right fit depends on commute preferences, school priorities, and budget.",
+      "US Air Force Academy is located north of Colorado Springs near Monument and the Air Force Academy. Buyers commonly look at Monument, Black Forest, north Colorado Springs, and communities along the I-25 corridor. The right fit depends on commute preferences, school priorities, and budget.",
   },
   {
-    question: "Is Peterson Space Force Base close to Schriever Space Force Base?",
+    question: "Is US Air Force Academy close to Colorado Springs?",
     answer:
-      "Peterson Space Force Base and Schriever Space Force Base are both in the Colorado Springs area. Some buyers assigned to one installation consider communities that provide reasonable access to both, depending on their situation.",
+      "US Air Force Academy is located on the northern edge of Colorado Springs, near Monument. Buyers assigned to the Academy often look at communities in north Colorado Springs and Monument for shorter commutes, as well as central Colorado Springs for more amenities.",
   },
   {
-    question: "Can Rob help me buy near Peterson Space Force Base if I'm still out of state?",
+    question: "Can Rob help me buy near US Air Force Academy if I'm still out of state?",
     answer:
       "Yes. Rob works with buyers planning a PCS move from out of state. He can provide market orientation, neighborhood guidance, and support for buyers navigating the process remotely before they arrive.",
   },
   {
-    question: "How competitive is the Colorado Springs market for buyers?",
+    question: "How competitive is the market in communities near US Air Force Academy?",
     answer:
-      "Colorado Springs has been an active market, particularly in price ranges common for military buyers. Understanding current inventory, pricing trends, and neighborhood dynamics before you start searching helps you move efficiently when the right home appears.",
+      "The Monument and north Colorado Springs areas have been active markets with consistent demand. Understanding current inventory, pricing trends, and neighborhood dynamics before you start searching helps you move efficiently when the right home appears.",
   },
   {
     question: "Does Rob work with VA financing?",
@@ -45,19 +45,19 @@ const faqSchema = buildFAQPageSchema(faqContent);
 const breadcrumbItems = [
   { label: "Home", url: "/" },
   { label: "Military & PCS Relocation", url: "/military-relocation/" },
-  { label: "Peterson Space Force Base", url: "/military-relocation/peterson-space-force-base/" },
+  { label: "US Air Force Academy", url: "/military-relocation/us-air-force-academy/" },
 ];
 
 const orientationPoints = [
   {
     icon: MapPin,
     title: "Location & Commute Context",
-    text: "Peterson Space Force Base sits on the east side of Colorado Springs near Colorado Springs Airport. Buyers typically look at east-side neighborhoods, Falcon, and Peyton for shorter commutes, as well as central Colorado Springs for more urban amenities.",
+    text: "US Air Force Academy sits on the northern edge of Colorado Springs near Monument. Buyers typically look at Monument, Black Forest, and north Colorado Springs neighborhoods for shorter commutes, as well as central Colorado Springs for more urban amenities.",
   },
   {
     icon: Home,
     title: "Housing Market Overview",
-    text: "Colorado Springs offers a range of housing types and price points. East-side communities near Peterson tend to offer newer construction and more suburban options, while central Colorado Springs provides more established neighborhoods.",
+    text: "The Monument and north Colorado Springs area offers a range of housing types and price points. Monument tends to offer more suburban and semi-rural options, while north Colorado Springs provides more established neighborhoods with easier access to city amenities.",
   },
   {
     icon: Compass,
@@ -66,27 +66,48 @@ const orientationPoints = [
   },
 ];
 
-export default function PetersonSpaceForceBase() {
+const relatedGuides = [
+  {
+    title: "Fort Carson Relocation Guide",
+    desc: "Buyer guidance for Fort Carson and the Colorado Springs area.",
+    href: "/military-relocation/fort-carson/",
+  },
+  {
+    title: "Peterson Space Force Base Relocation Guide",
+    desc: "Buyer guidance for Peterson Space Force Base and the Colorado Springs area.",
+    href: "/military-relocation/peterson-space-force-base/",
+  },
+  {
+    title: "Schriever Space Force Base Relocation Guide",
+    desc: "Buyer guidance for Schriever Space Force Base east of Colorado Springs.",
+    href: "/military-relocation/schriever-space-force-base/",
+  },
+  {
+    title: "PCS Colorado Buyer Guide",
+    desc: "General PCS relocation guidance for Colorado buyers.",
+    href: "/military-relocation/pcs-colorado/",
+  },
+];
+
+export default function UsAirForceAcademy() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
       <SeoHead
         metadata={{
-          title: "Peterson Space Force Base Relocation Guide | Colorado Springs Real Estate | My Rock Realty",
-          description: "Practical relocation guidance for buyers moving to Peterson Space Force Base and the Colorado Springs area. PCS planning, neighborhood orientation, and local market context for military families.",
-          canonicalUrl: "https://www.myrockhomes.com/military-relocation/peterson-space-force-base/",
+          title: "US Air Force Academy Relocation Guide | Colorado Springs Real Estate | My Rock Realty",
+          description: "Practical relocation guidance for buyers moving to the US Air Force Academy and the Colorado Springs area. PCS planning, neighborhood orientation, and local market context for military families.",
+          canonicalUrl: "https://www.myrockhomes.com/military-relocation/us-air-force-academy/",
           image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
         schema={[faqSchema]}
         />
-
       <div className="bg-charcoal/95 border-b border-white/5">
         <div className="container py-3">
           <Breadcrumbs items={breadcrumbItems} />
         </div>
       </div>
-
       <section
         className="relative py-16 sm:py-24 md:py-32 bg-charcoal overflow-hidden"
         style={{ backgroundImage: `url(${HERO_BG})`, backgroundSize: "cover", backgroundPosition: "center" }}
@@ -105,134 +126,94 @@ export default function PetersonSpaceForceBase() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-5 max-w-3xl"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Relocating to <span className="text-gold">Peterson Space Force Base</span>
+            Relocating to <span className="text-gold">US Air Force Academy</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-            className="text-cream/80 text-[15px] sm:text-lg leading-relaxed max-w-2xl mb-8"
+            className="text-cream/75 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-8"
           >
-            Practical real estate guidance for buyers relocating to Peterson Space Force Base and
-            the Colorado Springs area. Local market orientation built for military timelines.
+            Practical real estate guidance for buyers relocating to the US Air Force Academy and
+            the Colorado Springs area. Market orientation, neighborhood context, and PCS planning support.
           </motion.p>
-          <motion.div
+          <motion.a
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-3"
-          >
-            <a
-              href="#contact-rob"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Talk to Rob About Peterson Space Force Base
-              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-            </a>
-            <a
-              href="/military-relocation/"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-cream/80 font-medium rounded-lg transition-all hover:border-gold/40 hover:text-gold text-[15px] sm:text-base"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Military Relocation Hub
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </a>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-12 sm:py-20 bg-white">
-        <div className="container">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
+            href="#contact-rob"
+            className="group inline-flex items-center gap-2 px-6 py-3 bg-gold text-charcoal font-semibold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-[15px]"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            What Buyers Should Know Before Searching
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
-            className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-10"
+            Talk to Rob About US Air Force Academy
+            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+          </motion.a>
+        </div>
+      </section>
+      <section className="py-12 sm:py-20 bg-cream">
+        <div className="container max-w-4xl">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="text-2xl sm:text-3xl font-bold text-charcoal mb-8"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Peterson Space Force Base buyers face compressed timelines and an unfamiliar market. Understanding
-            the basics before you start searching gives you a meaningful advantage.
-          </motion.p>
-          <div className="grid sm:grid-cols-3 gap-5 sm:gap-7">
+            Orientation for US Air Force Academy Buyers
+          </motion.h2>
+          <div className="grid sm:grid-cols-3 gap-6">
             {orientationPoints.map((pt, i) => (
               <motion.div
-                key={pt.title}
+                key={i}
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 * i }}
-                className="p-6 sm:p-7 rounded bg-cream border border-cream-dark/50"
+                className="p-6 bg-white border border-cream-dark/50 rounded"
               >
-                <div className="w-11 h-11 rounded flex items-center justify-center bg-gold/10 text-gold-dark mb-4">
-                  <pt.icon size={22} strokeWidth={1.8} />
-                </div>
-                <h3 className="text-lg font-semibold text-charcoal mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>{pt.title}</h3>
+                <pt.icon size={22} className="text-gold mb-3" />
+                <h3 className="font-semibold text-charcoal mb-2 text-[15px]" style={{ fontFamily: "'Outfit', sans-serif" }}>{pt.title}</h3>
                 <p className="text-charcoal-light/70 text-sm leading-relaxed">{pt.text}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-
-      <section className="py-12 sm:py-20 bg-cream">
-        <div className="container">
+      <section className="py-12 sm:py-20 bg-charcoal/5 border-y border-cream-dark/30">
+        <div className="container max-w-4xl">
           <motion.h2
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
+            className="text-2xl sm:text-3xl font-bold text-charcoal mb-8"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Communities Near Peterson Space Force Base
+            Neighborhood Orientation
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
-            className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-8"
-          >
-            Buyers relocating to Peterson Space Force Base typically consider communities on the east side of
-            Colorado Springs and surrounding areas.
-          </motion.p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { name: "East Colorado Springs", note: "Closest to Peterson Space Force Base with a range of established neighborhoods and price points." },
-              { name: "Falcon / Peyton", note: "East of Colorado Springs with newer construction, more space, and suburban character." },
-              { name: "Central Colorado Springs", note: "More urban options with proximity to amenities; slightly longer commute to Peterson." },
-              { name: "Security-Widefield", note: "South of Colorado Springs, convenient to both Peterson and Fort Carson." },
-              { name: "Fountain", note: "Affordable options south of the city with reasonable access to east-side installations." },
-              { name: "Schriever-Adjacent", note: "If dual-installation access matters, communities between Peterson and Schriever Space Force Base." },
-            ].map((c, i) => (
+              { name: "Monument", note: "North of US Air Force Academy along I-25. Suburban character with strong demand." },
+              { name: "Black Forest", note: "Northeast of US Air Force Academy. More rural character with larger lots." },
+              { name: "North Colorado Springs", note: "Established neighborhoods with easy access to US Air Force Academy and city amenities." },
+              { name: "Central Colorado Springs", note: "More urban options with a longer commute to the Academy." },
+            ].map((n, i) => (
               <motion.div
-                key={c.name}
-                initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.07 * i }}
-                className="p-5 rounded bg-white border border-cream-dark/50"
+                key={i}
+                initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 * i }}
+                className="p-4 bg-white border border-cream-dark/50 rounded"
               >
-                <h3 className="text-base font-semibold text-charcoal mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>{c.name}</h3>
-                <p className="text-charcoal-light/65 text-sm leading-relaxed">{c.note}</p>
+                <p className="font-semibold text-charcoal text-[15px] mb-1" style={{ fontFamily: "'Outfit', sans-serif" }}>{n.name}</p>
+                <p className="text-charcoal-light/65 text-sm">{n.note}</p>
               </motion.div>
             ))}
           </div>
-          <p className="text-charcoal-light/50 text-xs mt-5 leading-relaxed">
-            Community descriptions are general orientation only. Commute times, pricing, and inventory vary. Confirm current conditions with Rob before making decisions.
-          </p>
         </div>
       </section>
-
-      <section className="py-10 sm:py-16 bg-white">
-        <div className="container">
+      <section className="py-12 sm:py-20 bg-cream">
+        <div className="container max-w-4xl">
           <motion.h2
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="text-xl sm:text-2xl font-bold text-charcoal mb-6"
+            className="text-2xl sm:text-3xl font-bold text-charcoal mb-8"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Related Military Relocation Resources
+            Related Military Relocation Guides
           </motion.h2>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {[
-              { title: "Military & PCS Relocation Hub", href: "/military-relocation/", desc: "Overview of all military relocation resources and support areas." },
-              { title: "PCS Colorado Guide", href: "/military-relocation/pcs-colorado/", desc: "Planning your PCS move to Colorado — timelines, rent vs. buy, and market orientation." },
-              { title: "VA Home Loans in Colorado", href: "/military-relocation/va-home-loans-colorado/", desc: "Educational overview of VA homebuying benefits and how the process works in Colorado." },
-            ].map((r, i) => (
+          <div className="grid sm:grid-cols-2 gap-4">
+            {relatedGuides.map((r, i) => (
               <motion.a
-                key={r.title} href={r.href}
+                key={i}
+                href={r.href}
                 initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 * i }}
-                className="group block p-5 rounded bg-cream border border-cream-dark/50 hover:border-gold/40 transition-all hover:shadow-md"
-              >
+                className="group block p-5 rounded bg-cream border border-cream-dark/50 hover:border-gold/40 transition-all hover:shadow-md">
                 <h3 className="text-base font-semibold text-charcoal mb-2 group-hover:text-gold-dark transition-colors" style={{ fontFamily: "'Outfit', sans-serif" }}>{r.title}</h3>
                 <p className="text-charcoal-light/65 text-sm leading-relaxed mb-3">{r.desc}</p>
                 <span className="inline-flex items-center gap-1.5 text-gold-dark text-sm font-medium group-hover:gap-2.5 transition-all">View Guide <ArrowRight size={14} /></span>
@@ -241,7 +222,6 @@ export default function PetersonSpaceForceBase() {
           </div>
         </div>
       </section>
-
       <section className="py-12 sm:py-20 bg-cream">
         <div className="container max-w-3xl">
           <motion.h2
@@ -249,7 +229,7 @@ export default function PetersonSpaceForceBase() {
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-8"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Common Questions — Peterson Space Force Base Relocation
+            Common Questions — US Air Force Academy Relocation
           </motion.h2>
           <div className="space-y-3">
             {faqContent.map((item, i) => (
@@ -276,7 +256,6 @@ export default function PetersonSpaceForceBase() {
           </div>
         </div>
       </section>
-
       <section id="contact-rob" className="py-12 sm:py-20 bg-charcoal">
         <div className="container max-w-2xl text-center">
           <motion.h2
@@ -284,7 +263,7 @@ export default function PetersonSpaceForceBase() {
             className="text-2xl sm:text-3xl font-bold text-white mb-4"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Ready to Plan Your Peterson Space Force Base Move?
+            Ready to Plan Your US Air Force Academy Move?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
@@ -313,11 +292,10 @@ export default function PetersonSpaceForceBase() {
           </div>
         </div>
       </section>
-
       <div className="bg-cream border-t border-cream-dark/40 py-5">
         <div className="container">
           <a href="/military-relocation/" className="inline-flex items-center gap-2 text-charcoal-light/60 hover:text-gold-dark text-sm transition-colors">
-            ← Back to Military & PCS Relocation
+            ← Back to Military &amp; PCS Relocation
           </a>
         </div>
       </div>

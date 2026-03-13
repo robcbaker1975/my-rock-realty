@@ -1,6 +1,16 @@
 import { Link } from "wouter";
 
-const LOGO_URL = "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663410368883/MyFokdbFMWxFfHiY.png?Expires=1804373851&Signature=tX8Nz-0U25wCRVcyN~gH7soBhlF3NkZUa-fhbO66r4~ix6wF5QJgpPopSr1AHJBk3LYrKIvxfO7YD9vTdqjZjlu3cRO~lkYxkxZTjoEnC4lRTtjG5BAb93p2PDrMuu2aVHq7bLQju4D-2XQxrn4CTm9kL1SbUQFUO-A84x7mFMo~GuyOHMKwN5Y8FJn7Ab31FwMwmSPPSt250S-gmfDDE641SKapGELse-4gAkYO2Uy7HOgsFPNinIzISyHmorDYolNCgA0fVXih1zjLlPmv4tUT4theY~IW3Wg5cuPbxYCSFRkYITYhEoeW1oC1OSZByxIaTDBAmvXWZN~bb7cNlA__&Key-Pair-Id=K2HSFNDJXOU9YS";
+const LOGO_URL = "/assets/logo.png";
+
+// Military & PCS spoke links for footer discoverability
+const militaryLinks = [
+  { label: "Military & PCS Hub", href: "/military-relocation/" },
+  { label: "PCS Moves to Colorado", href: "/military-relocation/pcs-colorado/" },
+  { label: "VA Home Loans", href: "/military-relocation/va-home-loans-colorado/" },
+  { label: "Fort Carson", href: "/military-relocation/fort-carson/" },
+  { label: "Peterson Space Force Base", href: "/military-relocation/peterson-space-force-base/" },
+  { label: "Remote Home Tours", href: "/military-relocation/remote-home-tours/" },
+];
 
 // Navigation links for footer — page routes use <a href>, anchors use scrollTo
 const siteLinks = [
@@ -11,6 +21,29 @@ const siteLinks = [
   { label: "Workshop", href: "/colorado-home-buying-workshop", isRoute: true },
   { label: "About", href: "#about", isRoute: false },
   { label: "Contact", href: "#contact", isRoute: false },
+];
+
+const marketLinks = [
+  { label: "Denver", href: "/denver-homes-for-sale" },
+  { label: "Boulder", href: "/boulder-homes-for-sale" },
+  { label: "Colorado Springs", href: "/colorado-springs-homes-for-sale" },
+  { label: "Fort Collins", href: "/fort-collins-homes-for-sale" },
+];
+
+// Representative buyer guides — existing pages only
+const buyerGuideLinks = [
+  { label: "Wash Park Buyer Guide", href: "/wash-park-denver-buyer-guide" },
+  { label: "Cherry Creek Buyer Guide", href: "/cherry-creek-denver-buyer-guide" },
+  { label: "LoHi Buyer Guide", href: "/lohi-denver-buyer-guide" },
+  { label: "RiNo Buyer Guide", href: "/rino-denver-buyer-guide" },
+];
+
+// Representative comparison guides — existing pages only
+const comparisonLinks = [
+  { label: "Denver vs Boulder", href: "/denver-vs-boulder" },
+  { label: "Denver vs Colorado Springs", href: "/denver-vs-colorado-springs" },
+  { label: "Denver vs Fort Collins", href: "/denver-vs-fort-collins" },
+  { label: "Boulder vs Fort Collins", href: "/boulder-vs-fort-collins" },
 ];
 
 function EqualHousingLogo({ className = "w-10 h-10" }: { className?: string }) {
@@ -34,11 +67,11 @@ export default function Footer() {
   return (
     <footer className="bg-charcoal border-t border-white/5">
       <div className="container py-8 sm:py-14">
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10 mb-7 sm:mb-10">
-          {/* Brand & Contact Info */}
-          <div className="sm:col-span-2 lg:col-span-1">
-            <img src={LOGO_URL} alt="My Rock Realty" className="h-16 sm:h-18 w-auto mb-4" />
+        {/* Main Footer Grid — 7 columns on large screens */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-6 sm:gap-8 mb-7 sm:mb-10">
+          {/* Brand & Contact Info — spans 2 cols on lg */}
+          <div className="sm:col-span-2 lg:col-span-2">
+            <img src={LOGO_URL} alt="My Rock Realty" className="h-16 sm:h-18 w-auto mb-4" width="72" height="72" loading="lazy" decoding="async" />
             <p className="text-cream/50 text-[13px] sm:text-sm leading-relaxed max-w-xs mb-3">
               Strategic real estate guidance for Colorado buyers, sellers, and relocation clients.
             </p>
@@ -62,12 +95,12 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4
+            <h3
               className="text-white font-semibold mb-4 text-sm"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Navigation
-            </h4>
+            </h3>
             <div className="space-y-2.5">
               {siteLinks.map((link) =>
                 link.isRoute ? (
@@ -92,20 +125,100 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Resources */}
+          {/* Markets */}
           <div>
-            <h4
+            <h3
               className="text-white font-semibold mb-4 text-sm"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Resources
-            </h4>
+              Markets
+            </h3>
+            <div className="space-y-2.5 text-sm">
+              {marketLinks.map((m) => (
+                <a
+                  key={m.href}
+                  href={m.href}
+                  className="block text-cream/50 hover:text-gold transition-colors"
+                >
+                  {m.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Guides */}
+          <div>
+            <h3
+              className="text-white font-semibold mb-4 text-sm"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Buyer Guides
+            </h3>
+            <div className="space-y-2.5 text-sm">
+              {buyerGuideLinks.map((g) => (
+                <a
+                  key={g.href}
+                  href={g.href}
+                  className="block text-cream/50 hover:text-gold transition-colors"
+                >
+                  {g.label}
+                </a>
+              ))}
+            </div>
+            <h3
+              className="text-white font-semibold mt-6 mb-4 text-sm"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Compare Cities
+            </h3>
+            <div className="space-y-2.5 text-sm">
+              {comparisonLinks.map((c) => (
+                <a
+                  key={c.href}
+                  href={c.href}
+                  className="block text-cream/50 hover:text-gold transition-colors"
+                >
+                  {c.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Military & PCS */}
+          <div>
+            <h3
+              className="text-white font-semibold mb-4 text-sm"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Military &amp; PCS
+            </h3>
+            <div className="space-y-2.5 text-sm">
+              {militaryLinks.map((m) => (
+                <a
+                  key={m.href}
+                  href={m.href}
+                  className="block text-cream/50 hover:text-gold transition-colors"
+                >
+                  {m.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3
+              className="text-white font-semibold mb-4 text-sm"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Resources &amp; Legal
+            </h3>
             <div className="space-y-2.5 text-sm">
               <a
                 href="/colorado-home-buying-workshop"
                 className="block text-cream/50 hover:text-gold transition-colors"
               >
-                Colorado Home Buying Workshop
+                Home Buying Workshop
               </a>
               <a
                 href="/join-us"
@@ -119,18 +232,6 @@ export default function Footer() {
               >
                 Coaching
               </a>
-            </div>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h4
-              className="text-white font-semibold mb-4 text-sm"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Legal
-            </h4>
-            <div className="space-y-2.5 text-sm">
               <Link href="/privacy" className="block text-cream/50 hover:text-gold transition-colors">
                 Privacy Policy
               </Link>
@@ -158,7 +259,7 @@ export default function Footer() {
               </span>
             </div>
             {/* Brokerage Disclosure */}
-            <p className="text-cream/30 text-xs leading-relaxed">
+            <p className="text-cream/50 text-xs leading-relaxed">
               My Rock Realty, LLC &middot; Rob Baker, Broker/Owner &middot; Colorado Real Estate License ER100078487. All real estate services are provided in compliance with applicable federal, state, and local laws, including the Fair Housing Act and the Colorado Anti-Discrimination Act.
             </p>
           </div>
@@ -166,10 +267,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-cream/30 text-xs">
+          <p className="text-cream/50 text-xs">
             &copy; {new Date().getFullYear()} My Rock Realty, LLC. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-cream/30 text-xs">
+          <div className="flex items-center gap-4 text-cream/50 text-xs">
             <Link href="/privacy" className="hover:text-cream/50 transition-colors">
               Privacy
             </Link>

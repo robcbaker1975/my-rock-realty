@@ -34,6 +34,29 @@ async function startServer() {
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
+  // 301 redirect: enforce www canonical hostname in production
+  // Redirects: http://myrockhomes.com/*, http://www.myrockhomes.com/*, https://myrockhomes.com/* → https://www.myrockhomes.com/*
+  app.use((req, res, next) => {
+    if (process.env.NODE_ENV !== "production") return next();
+    const host = req.headers.host || "";
+    const proto = req.headers["x-forwarded-proto"] || req.protocol;
+    const isWww = host.startsWith("www.");
+    const isHttps = proto === "https";
+    if (!isWww || !isHttps) {
+      const wwwHost = isWww ? host : `www.${host.replace(/^www\./, "")}`;
+      return res.redirect(301, `https://${wwwHost}${req.originalUrl}`);
+    }
+    next();
+  });
+
+  // 301 redirects: Academy alternate slugs → canonical URL
+  app.get(["/military-relocation/usafa", "/military-relocation/usafa/"], (_req, res) =>
+    res.redirect(301, "/military-relocation/us-air-force-academy/")
+  );
+  app.get(["/military-relocation/air-force-academy", "/military-relocation/air-force-academy/"], (_req, res) =>
+    res.redirect(301, "/military-relocation/us-air-force-academy/")
+  );
+
   // OAuth callback under /api/oauth/callback
   registerOAuthRoutes(app);
   // Chat API with streaming and tool calling

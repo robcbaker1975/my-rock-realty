@@ -21,6 +21,9 @@ import {
   Compass,
   Users,
   BookOpen,
+  Video,
+  Map,
+  ClipboardList,
 } from "lucide-react";
 
 const DENVER_HERO_BG = "/images/denver-rowhouses-hero.jpg";
@@ -61,8 +64,8 @@ const breadcrumbItems = [
   { label: "Military & PCS Relocation", url: "/military-relocation/" },
 ];
 
-/* ─── Support Paths ─── */
-const supportPaths = [
+/* ─── Core Planning Guides ─── */
+const corePlanningPaths = [
   {
     icon: MapPin,
     title: "PCS Moves to Colorado",
@@ -78,6 +81,83 @@ const supportPaths = [
       "Educational overview of VA homebuying benefits, how the process works in Colorado, and what buyers should know before starting their search.",
     href: "/military-relocation/va-home-loans-colorado/",
     cta: "VA Homebuying Guide",
+  },
+  {
+    icon: ClipboardList,
+    title: "PCS Timeline Checklist",
+    description:
+      "A phase-by-phase checklist covering early planning through closing and settlement for military buyers relocating to Colorado.",
+    href: "/military-relocation/pcs-timeline-checklist/",
+    cta: "PCS Timeline Checklist",
+  },
+];
+
+/* ─── Support Resources ─── */
+const supportResourcePaths = [
+  {
+    icon: Users,
+    title: "Military Spouses Buying in Colorado",
+    description:
+      "Practical guidance for military spouses navigating PCS moves, deployment timelines, and the Colorado homebuying process independently or remotely.",
+    href: "/military-relocation/military-spouses-buying-colorado/",
+    cta: "Military Spouses Guide",
+  },
+  {
+    icon: Shield,
+    title: "Veterans Buying in Colorado",
+    description:
+      "Educational homebuying guidance for veterans considering a Colorado purchase, including VA loan context and market orientation.",
+    href: "/military-relocation/veterans-buying-colorado/",
+    cta: "Veterans Buying Guide",
+  },
+  {
+    icon: Home,
+    title: "Temporary Housing — Colorado Springs",
+    description:
+      "Planning guidance on temporary housing timing, rent-vs-buy decisions, and transition considerations for PCS buyers arriving in Colorado Springs.",
+    href: "/military-relocation/temporary-housing-colorado-springs/",
+    cta: "Temporary Housing Guide",
+  },
+  {
+    icon: Video,
+    title: "Remote Home Tours",
+    description:
+      "Recorded video tours, live virtual tours, and in-person tour blocks for military and PCS buyers who are not yet local to Colorado.",
+    href: "/military-relocation/remote-home-tours/",
+    cta: "Remote Home Tours",
+  },
+];
+
+/* ─── Base-Specific Community Guides ─── */
+const baseGuideLinks = [
+  { label: "Fort Carson", sub: "Colorado Springs area", href: "/military-relocation/fort-carson/" },
+  { label: "Peterson Space Force Base", sub: "Colorado Springs area", href: "/military-relocation/peterson-space-force-base/" },
+  { label: "Schriever Space Force Base", sub: "Colorado Springs area", href: "/military-relocation/schriever-space-force-base/" },
+  { label: "Buckley Space Force Base", sub: "Denver metro / Aurora", href: "/military-relocation/buckley-space-force-base/" },
+  { label: "US Air Force Academy", sub: "Colorado Springs / Monument area", href: "/military-relocation/us-air-force-academy/" },
+];
+
+/* ─── Best Communities Near Base ─── */
+const bestCommunitiesLinks = [
+  {
+    label: "Near Fort Carson",
+    href: "/military-relocation/best-communities-near-fort-carson/",
+    context: "Colorado Springs south-side & Fountain corridor",
+  },
+  {
+    label: "Near Peterson Space Force Base",
+    href: "/military-relocation/best-communities-near-peterson-space-force-base/",
+    context: "Colorado Springs east-side & Falcon corridor",
+  },
+  {
+    label: "Near Schriever Space Force Base",
+    href: "/military-relocation/best-communities-near-schriever-space-force-base/",
+    context: "Falcon, Peyton & east-of-city planning",
+  },
+  {
+    label: "Near Buckley Space Force Base",
+    href: "/military-relocation/best-communities-near-buckley-space-force-base/",
+    context: "Aurora & Denver metro planning",
   },
 ];
 
@@ -105,6 +185,27 @@ const audiences = [
   },
 ];
 
+/* ─── Shared link card component ─── */
+function LinkCard({ label, sub, href }: { label: string; sub: string; href: string }) {
+  return (
+    <a
+      href={href}
+      className="group flex items-center justify-between p-4 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-md hover:shadow-gold/5"
+    >
+      <div>
+        <span
+          className="block font-medium text-charcoal text-[15px] group-hover:text-gold-dark transition-colors"
+          style={{ fontFamily: "'Outfit', sans-serif" }}
+        >
+          {label}
+        </span>
+        <span className="text-charcoal-light/50 text-xs mt-0.5 block">{sub}</span>
+      </div>
+      <ArrowRight size={16} className="text-gold-dark opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+    </a>
+  );
+}
+
 export default function MilitaryRelocation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -115,10 +216,10 @@ export default function MilitaryRelocation() {
           title: "Military & PCS Relocation in Colorado | My Rock Realty",
           description: "Colorado real estate support for active duty, veterans, military spouses, and PCS buyers. VA homebuying guidance, PCS planning, and local market expertise across Denver, Colorado Springs, and Fort Collins.",
           canonicalUrl: "https://www.myrockhomes.com/military-relocation/",
-          image: { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp" },
+          image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
-        schema={faqSchema ? [faqSchema] : []}
-      />
+        schema={[faqSchema]}
+        />
 
       {/* ─── Breadcrumbs ─── */}
       <div className="bg-charcoal/95 border-b border-white/5">
@@ -181,7 +282,7 @@ export default function MilitaryRelocation() {
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="#support-paths"
+              href="#resources"
               className="group inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-cream/80 font-medium rounded-lg transition-all hover:border-gold/40 hover:text-gold text-[15px] sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
@@ -241,100 +342,164 @@ export default function MilitaryRelocation() {
         </div>
       </section>
 
-      {/* ─── Support Paths ─── */}
-      <section id="support-paths" className="py-12 sm:py-20 bg-cream">
+      {/* ─── Resources ─── */}
+      <section id="resources" className="py-12 sm:py-20 bg-cream">
         <div className="container">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Current Support Areas
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-10"
-          >
-            These guides cover the most common questions and planning considerations for
-            military buyers in Colorado. Additional resources — including base-specific
-            community guides and remote tour support — are in development.
-          </motion.p>
-          <div className="grid sm:grid-cols-2 gap-5 sm:gap-7 mb-10">
-            {supportPaths.map((path, i) => (
-              <motion.a
-                key={path.title}
-                href={path.href}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 * i }}
-                className="group block p-6 sm:p-8 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-lg hover:shadow-gold/5"
-              >
-                <div className="w-12 h-12 rounded flex items-center justify-center bg-gold/10 text-gold-dark mb-5">
-                  <path.icon size={24} strokeWidth={1.8} />
-                </div>
-                <h3
-                  className="text-xl font-semibold text-charcoal mb-3 group-hover:text-gold-dark transition-colors"
-                  style={{ fontFamily: "'Outfit', sans-serif" }}
-                >
-                  {path.title}
-                </h3>
-                <p className="text-charcoal-light/70 leading-relaxed mb-5 text-[15px]">
-                  {path.description}
-                </p>
-                <span className="inline-flex items-center gap-2 text-gold-dark font-medium text-sm group-hover:gap-3 transition-all">
-                  {path.cta}
-                  <ArrowRight size={16} />
-                </span>
-              </motion.a>
-            ))}
-          </div>
 
-          {/* Base-Specific Guides Grid */}
+          {/* ── Group 1: Core Planning ── */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-4"
+            className="mb-14"
           >
-            <h3
-              className="text-lg font-semibold text-charcoal mb-4"
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-xs font-semibold tracking-widest uppercase text-gold-dark" style={{ fontFamily: "'Outfit', sans-serif" }}>Core Planning</span>
+            </div>
+            <h2
+              className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Base-Specific Community Guides
-            </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                { label: "Fort Carson", sub: "Colorado Springs area", href: "/military-relocation/fort-carson/" },
-                { label: "Peterson Space Force Base", sub: "Colorado Springs area", href: "/military-relocation/peterson-space-force-base/" },
-                { label: "Schriever Space Force Base", sub: "Colorado Springs area", href: "/military-relocation/schriever-space-force-base/" },
-                { label: "Buckley Space Force Base", sub: "Denver metro / Aurora", href: "/military-relocation/buckley-space-force-base/" },
-                { label: "USAFA", sub: "Colorado Springs / Monument area", href: "/military-relocation/usafa/" },
-              ].map((base) => (
-                <a
-                  key={base.href}
-                  href={base.href}
-                  className="group flex items-center justify-between p-4 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-md hover:shadow-gold/5"
+              PCS Planning &amp; VA Homebuying
+            </h2>
+            <p className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-8">
+              Start here if you're planning a PCS move to Colorado, exploring VA financing, or
+              building your homebuying timeline.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
+              {corePlanningPaths.map((path, i) => (
+                <motion.a
+                  key={path.title}
+                  href={path.href}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * i }}
+                  className="group block p-6 sm:p-8 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-lg hover:shadow-gold/5"
                 >
-                  <div>
-                    <span
-                      className="block font-medium text-charcoal text-[15px] group-hover:text-gold-dark transition-colors"
-                      style={{ fontFamily: "'Outfit', sans-serif" }}
-                    >
-                      {base.label}
-                    </span>
-                    <span className="text-charcoal-light/50 text-xs mt-0.5 block">{base.sub}</span>
+                  <div className="w-12 h-12 rounded flex items-center justify-center bg-gold/10 text-gold-dark mb-5">
+                    <path.icon size={24} strokeWidth={1.8} />
                   </div>
-                  <ArrowRight size={16} className="text-gold-dark opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-                </a>
+                  <h3
+                    className="text-xl font-semibold text-charcoal mb-3 group-hover:text-gold-dark transition-colors"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    {path.title}
+                  </h3>
+                  <p className="text-charcoal-light/70 leading-relaxed mb-5 text-[15px]">
+                    {path.description}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-gold-dark font-medium text-sm group-hover:gap-3 transition-all">
+                    {path.cta}
+                    <ArrowRight size={16} />
+                  </span>
+                </motion.a>
               ))}
             </div>
           </motion.div>
+
+          {/* ── Group 2: Support Resources ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-14"
+          >
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-xs font-semibold tracking-widest uppercase text-gold-dark" style={{ fontFamily: "'Outfit', sans-serif" }}>Support Resources</span>
+            </div>
+            <h2
+              className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Specialized Guidance
+            </h2>
+            <p className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-8">
+              Guides for specific situations — military spouses, veterans, buyers arriving from
+              out of state, and those navigating temporary housing transitions.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-5 sm:gap-7">
+              {supportResourcePaths.map((path, i) => (
+                <motion.a
+                  key={path.title}
+                  href={path.href}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.08 * i }}
+                  className="group block p-6 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-lg hover:shadow-gold/5"
+                >
+                  <div className="w-10 h-10 rounded flex items-center justify-center bg-gold/10 text-gold-dark mb-4">
+                    <path.icon size={20} strokeWidth={1.8} />
+                  </div>
+                  <h3
+                    className="text-lg font-semibold text-charcoal mb-2 group-hover:text-gold-dark transition-colors"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    {path.title}
+                  </h3>
+                  <p className="text-charcoal-light/70 leading-relaxed mb-4 text-[14px]">
+                    {path.description}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-gold-dark font-medium text-sm group-hover:gap-3 transition-all">
+                    {path.cta}
+                    <ArrowRight size={15} />
+                  </span>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* ── Group 3: Community Orientation ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-xs font-semibold tracking-widest uppercase text-gold-dark" style={{ fontFamily: "'Outfit', sans-serif" }}>Community Orientation</span>
+            </div>
+            <h2
+              className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Bases &amp; Nearby Communities
+            </h2>
+            <p className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-8">
+              Installation-specific guides and community orientation pages for Colorado's major
+              military bases — covering commute tradeoffs, neighborhood character, and planning
+              considerations for each area.
+            </p>
+
+            {/* Base Guides */}
+            <h3
+              className="text-base font-semibold text-charcoal mb-4 flex items-center gap-2"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              <MapPin size={15} className="text-gold-dark" />
+              Installation Guides
+            </h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+              {baseGuideLinks.map((base) => (
+                <LinkCard key={base.href} label={base.label} sub={base.sub} href={base.href} />
+              ))}
+            </div>
+
+            {/* Best Communities */}
+            <h3
+              className="text-base font-semibold text-charcoal mb-4 flex items-center gap-2"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              <Map size={15} className="text-gold-dark" />
+              Best Communities Near Each Base
+            </h3>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {bestCommunitiesLinks.map((link) => (
+                <LinkCard key={link.href} label={link.label} sub={link.context} href={link.href} />
+              ))}
+            </div>
+          </motion.div>
+
         </div>
       </section>
 

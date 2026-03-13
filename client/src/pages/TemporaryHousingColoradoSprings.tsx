@@ -1,44 +1,42 @@
 /**
- * Fort Carson Relocation Guide — My Rock Realty
- * /military-relocation/fort-carson/
+ * Temporary Housing — Colorado Springs — My Rock Realty
+ * /military-relocation/temporary-housing-colorado-springs/
  * Design: Front Range Modern — matches existing site design system
- * Palette: Warm charcoal (#292524), cream (#F5F0EB), antique gold (#C9A96E)
- * Typography: Outfit (display) + Libre Franklin (body)
  */
 import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Home, ChevronDown, Phone, Mail, Compass } from "lucide-react";
+import { ArrowRight, Home, ChevronDown, Phone, Mail, MapPin, Calendar } from "lucide-react";
 
 const HERO_BG = "/images/denver-rowhouses-hero.jpg";
 
 const faqContent = [
   {
-    question: "What communities do buyers relocating to Fort Carson typically consider?",
+    question: "What temporary housing options are available near Colorado Springs military installations?",
     answer:
-      "Buyers relocating to Fort Carson most commonly look at Colorado Springs neighborhoods and surrounding communities including Fountain, Security-Widefield, Pueblo West, and Peyton. The right fit depends on commute preferences, school priorities, and budget.",
+      "Colorado Springs has a range of short-term housing options including extended-stay hotels, furnished apartment rentals, and short-term lease arrangements. On-post lodging through the installation is also an option for eligible service members. Availability and pricing vary by season and demand, so planning ahead is advisable.",
   },
   {
-    question: "How far in advance should I start my home search before a Fort Carson PCS?",
+    question: "How long should I plan for temporary housing before buying?",
     answer:
-      "Starting 3–6 months before your report date gives you the most flexibility. Colorado Springs is a competitive market, and having time to understand neighborhoods, get pre-approved, and make informed decisions reduces stress significantly.",
+      "The right temporary housing duration depends on your homebuying timeline, current market conditions, and how quickly you can get under contract. Some buyers close within 30–60 days of arriving; others need 90 days or more. Having a realistic timeline conversation with your agent before you arrive helps set expectations.",
   },
   {
-    question: "Can Rob help me buy a home near Fort Carson if I'm still out of state?",
+    question: "Should I rent temporarily or try to buy before arriving in Colorado Springs?",
     answer:
-      "Yes. Rob works with buyers who are planning a PCS move from out of state. He can provide market orientation, neighborhood guidance, and support for buyers navigating the process remotely before they arrive.",
+      "Both approaches have merit depending on your situation. Buying before arrival requires strong remote decision-making support and confidence in your target neighborhood. Renting temporarily gives you time to get oriented before committing. Rob can help you think through which approach makes more sense given your timeline and priorities.",
   },
   {
-    question: "Is the Colorado Springs market competitive for buyers?",
+    question: "Can temporary housing costs affect my homebuying budget?",
     answer:
-      "Colorado Springs has been an active market, particularly in price ranges common for military buyers. Understanding current inventory, pricing trends, and neighborhood dynamics before you start searching helps you move efficiently when the right home appears.",
+      "Yes. Extended temporary housing costs — especially in furnished rentals — can add up quickly and affect your overall relocation budget. Understanding the likely duration of your temporary stay and factoring it into your financial planning is an important part of PCS preparation.",
   },
   {
-    question: "Does Rob work with VA financing?",
+    question: "Does Rob help with finding temporary housing?",
     answer:
-      "Rob provides educational guidance on VA homebuying and works with buyers using VA financing. For specific VA loan questions, buyers should work directly with a VA-approved lender.",
+      "Rob's focus is on the homebuying process, not temporary housing placement. However, he can help you think through the timing of your temporary stay relative to your home search, and provide context on how long buyers typically take to get under contract in the current Colorado Springs market.",
   },
 ];
 
@@ -47,37 +45,42 @@ const faqSchema = buildFAQPageSchema(faqContent);
 const breadcrumbItems = [
   { label: "Home", url: "/" },
   { label: "Military & PCS Relocation", url: "/military-relocation/" },
-  { label: "Fort Carson", url: "/military-relocation/fort-carson/" },
+  { label: "Temporary Housing — Colorado Springs", url: "/military-relocation/temporary-housing-colorado-springs/" },
 ];
 
-const orientationPoints = [
+const planningPoints = [
+  {
+    icon: Calendar,
+    title: "Timing Your Temporary Stay",
+    text: "The duration of your temporary housing stay should be tied to a realistic homebuying timeline. Understanding how long it typically takes to find, offer on, and close a home in Colorado Springs helps you plan your temporary housing duration without over- or under-estimating.",
+  },
   {
     icon: MapPin,
-    title: "Location & Commute Context",
-    text: "Fort Carson is located on the south side of Colorado Springs. Buyers typically look at communities ranging from south Colorado Springs to Fountain, Security-Widefield, and Pueblo West, depending on commute tolerance and housing preferences.",
+    title: "Location Relative to Your Installation",
+    text: "Choosing temporary housing near your installation or target neighborhoods lets you get oriented to the area before committing to a purchase. Familiarity with commute routes, school districts, and neighborhood character is valuable before making a long-term decision.",
   },
   {
     icon: Home,
-    title: "Housing Market Overview",
-    text: "Colorado Springs offers a range of housing types and price points. Understanding current inventory and neighborhood dynamics before you start your search helps you make confident decisions on a military timeline.",
+    title: "Rent-vs-Buy Timing Context",
+    text: "Some buyers arrive in Colorado Springs ready to buy immediately; others benefit from a short rental period to get oriented. The right approach depends on your tour length, financial readiness, and how much you already know about the market and your target neighborhoods.",
   },
   {
-    icon: Compass,
-    title: "Planning for PCS Timing",
-    text: "PCS moves often compress the homebuying process. Starting your market orientation early — even before orders are finalized — gives you a significant advantage in a competitive market.",
+    icon: Calendar,
+    title: "Budgeting for the Transition Period",
+    text: "Temporary housing costs — especially in furnished rentals — can be significant over 60–90 days. Factoring these costs into your overall relocation budget, alongside moving expenses and closing costs, helps you arrive with a realistic financial picture.",
   },
 ];
 
-export default function FortCarson() {
+export default function TemporaryHousingColoradoSprings() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
       <SeoHead
         metadata={{
-          title: "Fort Carson Relocation Guide | Colorado Springs Real Estate | My Rock Realty",
-          description: "Practical relocation guidance for buyers moving to Fort Carson and the Colorado Springs area. PCS planning, neighborhood orientation, and local market context for military families.",
-          canonicalUrl: "https://www.myrockhomes.com/military-relocation/fort-carson/",
+          title: "Temporary Housing During PCS — Colorado Springs | My Rock Realty",
+          description: "Practical guidance on temporary housing timing, rent-vs-buy decisions, and relocation planning for military buyers arriving in Colorado Springs. Buyer-focused support for PCS moves.",
+          canonicalUrl: "https://www.myrockhomes.com/military-relocation/temporary-housing-colorado-springs/",
           image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
         schema={[faqSchema]}
@@ -107,7 +110,7 @@ export default function FortCarson() {
             className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Military Relocation Guide
+            PCS Relocation Support
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -116,8 +119,8 @@ export default function FortCarson() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-5 max-w-3xl"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Relocating to{" "}
-            <span className="text-gold">Fort Carson</span>
+            Temporary Housing{" "}
+            <span className="text-gold">During a PCS to Colorado Springs</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -125,9 +128,10 @@ export default function FortCarson() {
             transition={{ delay: 0.2 }}
             className="text-cream/80 text-[15px] sm:text-lg leading-relaxed max-w-2xl mb-8"
           >
-            Practical real estate guidance for buyers relocating to Fort Carson and the Colorado
-            Springs area. Whether you're PCS-ing on orders or planning ahead, local market
-            orientation makes the difference.
+            For many military buyers, temporary housing is a bridge between arriving in
+            Colorado Springs and closing on a permanent home. This guide covers the
+            planning considerations that matter most — timing, budgeting, and the
+            rent-vs-buy decision — without overpromising on inventory or services.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -140,7 +144,7 @@ export default function FortCarson() {
               className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Talk to Rob About Fort Carson
+              Talk to Rob About Your Move
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </a>
             <a
@@ -155,7 +159,7 @@ export default function FortCarson() {
         </div>
       </section>
 
-      {/* ─── Orientation Points ─── */}
+      {/* ─── Planning Points ─── */}
       <section className="py-12 sm:py-20 bg-white">
         <div className="container">
           <motion.h2
@@ -165,7 +169,7 @@ export default function FortCarson() {
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            What Buyers Should Know Before Searching
+            Planning Your Temporary Stay
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -174,137 +178,92 @@ export default function FortCarson() {
             transition={{ delay: 0.1 }}
             className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-10"
           >
-            Fort Carson buyers face a unique combination of compressed timelines, competitive
-            inventory, and unfamiliar geography. Understanding the basics before you start
-            searching gives you a meaningful advantage.
+            Temporary housing is a relocation tool, not a destination. These are the
+            planning considerations that most affect how smoothly the transition from
+            temporary to permanent housing goes.
           </motion.p>
-          <div className="grid sm:grid-cols-3 gap-5 sm:gap-7">
-            {orientationPoints.map((pt, i) => (
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+            {planningPoints.map((point, i) => (
               <motion.div
-                key={pt.title}
+                key={point.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.1 * i }}
-                className="p-6 sm:p-7 rounded bg-cream border border-cream-dark/50"
+                transition={{ delay: 0.08 * i }}
+                className="flex gap-5"
               >
-                <div className="w-11 h-11 rounded flex items-center justify-center bg-gold/10 text-gold-dark mb-4">
-                  <pt.icon size={22} strokeWidth={1.8} />
+                <div className="w-11 h-11 rounded flex items-center justify-center bg-gold/10 text-gold-dark shrink-0 mt-0.5">
+                  <point.icon size={20} strokeWidth={1.8} />
                 </div>
-                <h3
-                  className="text-lg font-semibold text-charcoal mb-2"
-                  style={{ fontFamily: "'Outfit', sans-serif" }}
-                >
-                  {pt.title}
-                </h3>
-                <p className="text-charcoal-light/70 text-sm leading-relaxed">{pt.text}</p>
+                <div>
+                  <h3
+                    className="text-base font-semibold text-charcoal mb-2"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    {point.title}
+                  </h3>
+                  <p className="text-charcoal-light/70 text-[15px] leading-relaxed">{point.text}</p>
+                </div>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ─── Nearby Communities ─── */}
-      <section className="py-12 sm:py-20 bg-cream">
-        <div className="container">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+          {/* Scope note */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
+            className="mt-10 p-5 rounded bg-cream border border-cream-dark/50"
           >
-            Communities Near Fort Carson
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-8"
-          >
-            Buyers relocating to Fort Carson typically consider a range of communities in and
-            around Colorado Springs. The right fit depends on your commute preferences, family
-            priorities, and housing budget.
-          </motion.p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { name: "Colorado Springs", note: "Broad range of neighborhoods, price points, and school options within the city." },
-              { name: "Fountain", note: "South of Fort Carson with more affordable price points and direct access to the installation." },
-              { name: "Security-Widefield", note: "Established community between Fort Carson and Fountain with a range of housing options." },
-              { name: "Pueblo West", note: "Further south with larger lots and lower price points; longer commute to post." },
-              { name: "Peyton / Falcon", note: "East of Colorado Springs with newer construction and more space, longer commute." },
-              { name: "Manitou Springs / Old Colorado City", note: "West side options with character and proximity to the mountains; varied price points." },
-            ].map((c, i) => (
-              <motion.div
-                key={c.name}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.07 * i }}
-                className="p-5 rounded bg-white border border-cream-dark/50"
-              >
-                <h3
-                  className="text-base font-semibold text-charcoal mb-1.5"
-                  style={{ fontFamily: "'Outfit', sans-serif" }}
-                >
-                  {c.name}
-                </h3>
-                <p className="text-charcoal-light/65 text-sm leading-relaxed">{c.note}</p>
-              </motion.div>
-            ))}
-          </div>
-          <p className="text-charcoal-light/50 text-xs mt-5 leading-relaxed">
-            Community descriptions are general orientation only. Commute times, pricing, and inventory vary. Confirm current conditions with Rob before making decisions.
-          </p>
+            <p className="text-charcoal-light/70 text-[15px] leading-relaxed">
+              <strong className="text-charcoal font-semibold">A note on scope:</strong> Rob's
+              focus is on the homebuying process. This guide covers temporary housing as a
+              relocation planning topic — not as a rental placement or property-management
+              service. For specific short-term rental listings, extended-stay options, or
+              on-post lodging availability, contact your installation's housing office or
+              search directly through short-term rental platforms.
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* ─── Related Resources ─── */}
-      <section className="py-10 sm:py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-cream border-t border-cream-dark/40">
         <div className="container">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-xl sm:text-2xl font-bold text-charcoal mb-6"
+          <h3
+            className="text-lg font-semibold text-charcoal mb-5"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Related Military Relocation Resources
-          </motion.h2>
-          <div className="grid sm:grid-cols-3 gap-4">
+          </h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { title: "Military & PCS Relocation Hub", href: "/military-relocation/", desc: "Overview of all military relocation resources and support areas." },
-              { title: "PCS Colorado Guide", href: "/military-relocation/pcs-colorado/", desc: "Planning your PCS move to Colorado — timelines, rent vs. buy, and market orientation." },
-              { title: "VA Home Loans in Colorado", href: "/military-relocation/va-home-loans-colorado/", desc: "Educational overview of VA homebuying benefits and how the process works in Colorado." },
-            ].map((r, i) => (
-              <motion.a
-                key={r.title}
-                href={r.href}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 * i }}
-                className="group block p-5 rounded bg-cream border border-cream-dark/50 hover:border-gold/40 transition-all hover:shadow-md"
+              { label: "Military & PCS Relocation Hub", href: "/military-relocation/" },
+              { label: "PCS Moves to Colorado", href: "/military-relocation/pcs-colorado/" },
+              { label: "PCS Timeline Checklist", href: "/military-relocation/pcs-timeline-checklist/" },
+              { label: "Fort Carson Relocation Guide", href: "/military-relocation/fort-carson/" },
+              { label: "US Air Force Academy Relocation Guide", href: "/military-relocation/us-air-force-academy/" },
+            ].map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="group flex items-center justify-between p-4 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-md hover:shadow-gold/5"
               >
-                <h3
-                  className="text-base font-semibold text-charcoal mb-2 group-hover:text-gold-dark transition-colors"
+                <span
+                  className="font-medium text-charcoal text-[15px] group-hover:text-gold-dark transition-colors"
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
-                  {r.title}
-                </h3>
-                <p className="text-charcoal-light/65 text-sm leading-relaxed mb-3">{r.desc}</p>
-                <span className="inline-flex items-center gap-1.5 text-gold-dark text-sm font-medium group-hover:gap-2.5 transition-all">
-                  View Guide <ArrowRight size={14} />
+                  {link.label}
                 </span>
-              </motion.a>
+                <ArrowRight size={16} className="text-gold-dark opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+              </a>
             ))}
           </div>
         </div>
       </section>
 
       {/* ─── FAQ ─── */}
-      <section className="py-12 sm:py-20 bg-cream">
+      <section className="py-12 sm:py-20 bg-white">
         <div className="container max-w-3xl">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -313,7 +272,7 @@ export default function FortCarson() {
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-8"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Common Questions — Fort Carson Relocation
+            Common Questions — Temporary Housing During PCS
           </motion.h2>
           <div className="space-y-3">
             {faqContent.map((item, i) => (
@@ -364,7 +323,7 @@ export default function FortCarson() {
             className="text-2xl sm:text-3xl font-bold text-white mb-4"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Ready to Plan Your Fort Carson Move?
+            Ready to Plan Your Colorado Springs Move?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -373,8 +332,9 @@ export default function FortCarson() {
             transition={{ delay: 0.1 }}
             className="text-cream/70 text-[15px] sm:text-base leading-relaxed mb-8"
           >
-            Whether you're months out from your PCS or actively searching, Rob can help you
-            understand the Colorado Springs market and plan your next move with confidence.
+            Whether you're arriving soon or planning months ahead, Rob can help you
+            understand the Colorado Springs market and make confident decisions about
+            your next home.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

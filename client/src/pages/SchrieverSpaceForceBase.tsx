@@ -1,5 +1,5 @@
 /**
- * Schriever SFB Relocation Guide — My Rock Realty
+ * Schriever Space Force Base Relocation Guide — My Rock Realty
  * /military-relocation/schriever-space-force-base/
  * Design: Front Range Modern — matches existing site design system
  */
@@ -14,22 +14,22 @@ const HERO_BG = "/images/denver-rowhouses-hero.jpg";
 
 const faqContent = [
   {
-    question: "Where do most buyers relocating to Schriever SFB look for homes?",
+    question: "Where do most buyers relocating to Schriever Space Force Base look for homes?",
     answer:
-      "Schriever SFB is located east of Colorado Springs. Buyers commonly look at Falcon, Peyton, and east Colorado Springs neighborhoods for shorter commutes. Some buyers also consider central Colorado Springs for more amenities despite the longer drive.",
+      "Schriever Space Force Base is located east of Colorado Springs. Buyers commonly look at Falcon, Peyton, and east Colorado Springs neighborhoods for shorter commutes. Some buyers also consider central Colorado Springs for more amenities despite the longer drive.",
   },
   {
-    question: "Is Schriever SFB far from Colorado Springs?",
+    question: "Is Schriever Space Force Base far from Colorado Springs?",
     answer:
-      "Schriever SFB is approximately 10–15 miles east of Colorado Springs. Commute times vary depending on where in the city you live and traffic conditions. Buyers often prioritize east-side communities to keep commutes manageable.",
+      "Schriever Space Force Base is approximately 10–15 miles east of Colorado Springs. Commute times vary depending on where in the city you live and traffic conditions. Buyers often prioritize east-side communities to keep commutes manageable.",
   },
   {
-    question: "Can Rob help me buy near Schriever SFB if I'm still out of state?",
+    question: "Can Rob help me buy near Schriever Space Force Base if I'm still out of state?",
     answer:
       "Yes. Rob works with buyers planning a PCS move from out of state. He can provide market orientation, neighborhood guidance, and support for buyers navigating the process remotely before they arrive.",
   },
   {
-    question: "How competitive is the market in communities near Schriever SFB?",
+    question: "How competitive is the market in communities near Schriever Space Force Base?",
     answer:
       "Falcon and east Colorado Springs have seen strong demand, particularly for newer construction. Understanding current inventory and pricing before you start searching helps you move efficiently when the right home appears.",
   },
@@ -52,7 +52,7 @@ const orientationPoints = [
   {
     icon: MapPin,
     title: "Location & Commute Context",
-    text: "Schriever SFB sits east of Colorado Springs, making Falcon and Peyton natural choices for buyers who want shorter commutes. East Colorado Springs neighborhoods also offer reasonable access without the rural character of Falcon.",
+    text: "Schriever Space Force Base sits east of Colorado Springs, making Falcon and Peyton natural choices for buyers who want shorter commutes. East Colorado Springs neighborhoods also offer reasonable access without the rural character of Falcon.",
   },
   {
     icon: Home,
@@ -73,13 +73,13 @@ export default function SchrieverSpaceForceBase() {
     <div className="min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
       <SeoHead
         metadata={{
-          title: "Schriever SFB Relocation Guide | Colorado Springs Real Estate | My Rock Realty",
+          title: "Schriever Space Force Base Relocation Guide | Colorado Springs Real Estate | My Rock Realty",
           description: "Practical relocation guidance for buyers moving to Schriever Space Force Base and the Colorado Springs area. PCS planning, neighborhood orientation, and local market context for military families.",
           canonicalUrl: "https://www.myrockhomes.com/military-relocation/schriever-space-force-base/",
-          image: { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp" },
+          image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
-        schema={faqSchema ? [faqSchema] : []}
-      />
+        schema={[faqSchema]}
+        />
 
       <div className="bg-charcoal/95 border-b border-white/5">
         <div className="container py-3">
@@ -101,7 +101,7 @@ export default function SchrieverSpaceForceBase() {
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-5 max-w-3xl"
             style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Relocating to <span className="text-gold">Schriever SFB</span>
+            Relocating to <span className="text-gold">Schriever Space Force Base</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
             className="text-cream/80 text-[15px] sm:text-lg leading-relaxed max-w-2xl mb-8">
@@ -113,7 +113,7 @@ export default function SchrieverSpaceForceBase() {
             <a href="#contact-rob"
               className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}>
-              Talk to Rob About Schriever SFB
+              Talk to Rob About Schriever Space Force Base
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </a>
             <a href="/military-relocation/"
@@ -134,7 +134,7 @@ export default function SchrieverSpaceForceBase() {
           </motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
             className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-10">
-            Schriever SFB buyers face compressed timelines and an unfamiliar market. Understanding
+            Schriever Space Force Base buyers face compressed timelines and an unfamiliar market. Understanding
             the basics before you start searching gives you a meaningful advantage.
           </motion.p>
           <div className="grid sm:grid-cols-3 gap-5 sm:gap-7">
@@ -156,11 +156,11 @@ export default function SchrieverSpaceForceBase() {
         <div className="container">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Communities Near Schriever SFB
+            Communities Near Schriever Space Force Base
           </motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
             className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-8">
-            Buyers relocating to Schriever SFB typically consider communities east of Colorado Springs
+            Buyers relocating to Schriever Space Force Base typically consider communities east of Colorado Springs
             and surrounding areas for manageable commutes.
           </motion.p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -213,7 +213,7 @@ export default function SchrieverSpaceForceBase() {
         <div className="container max-w-3xl">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Common Questions — Schriever SFB Relocation
+            Common Questions — Schriever Space Force Base Relocation
           </motion.h2>
           <div className="space-y-3">
             {faqContent.map((item, i) => (
@@ -240,7 +240,7 @@ export default function SchrieverSpaceForceBase() {
         <div className="container max-w-2xl text-center">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="text-2xl sm:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Ready to Plan Your Schriever SFB Move?
+            Ready to Plan Your Schriever Space Force Base Move?
           </motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
             className="text-cream/70 text-[15px] sm:text-base leading-relaxed mb-8">

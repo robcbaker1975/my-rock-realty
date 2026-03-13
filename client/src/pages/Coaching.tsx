@@ -36,9 +36,9 @@ import {
 } from "lucide-react";
 
 const LOGO_URL =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/ChatGPTImageMar2,2026,04_52_22PM_09be1014.png";
+  "/assets/logo.png";
 const HEADSHOT_URL =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/RobHeadshotNoBackground_877c31b9.jpg";
+  "/assets/rob-headshot.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -97,8 +97,8 @@ export default function Coaching() {
     <div className="min-h-screen bg-warm-white">
       <SeoHead
         metadata={{
-          title: "Real Estate Coaching for Agents Nationwide | My Rock Realty",
-          description: "Real estate coaching and mentorship for agents at any stage. Get practical systems, negotiation training, and direct access to an experienced Colorado broker.",
+          title: "Real Estate Coaching for Licensed Agents | My Rock Realty",
+          description: "Practical real estate coaching for licensed agents nationwide. Strategy, negotiation, client consultation, and business systems coaching from a former Zillow Agent Coach.",
           canonicalUrl: "https://www.myrockhomes.com/real-estate-coaching",
           breadcrumbs: [
             { label: "Coaching", href: "/real-estate-coaching" },
@@ -169,7 +169,7 @@ export default function Coaching() {
                 className="text-gold text-xs sm:text-sm font-semibold tracking-wide"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                REAL ESTATE COACHING · NATIONWIDE
+                COACHING FOR LICENSED AGENTS · NATIONWIDE
               </span>
             </div>
 
@@ -177,10 +177,10 @@ export default function Coaching() {
               className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cream leading-tight mb-5"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Strategy, Support, and Real-World Coaching for Agents Who Want to Improve
+              Practical Coaching to Help Licensed Agents Serve Clients Better and Build a More Consistent Business
             </h1>
             <p className="text-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
-              Practical, customized coaching built around actual transaction experience and agent development — not motivational scripts or one-size-fits-all programs.
+              Customized coaching built around actual transaction experience — not motivational scripts or one-size-fits-all programs. This page is for licensed agents. If you're exploring a real estate career or pre-license education, the Join Us page may be a better starting point.
             </p>
 
             <CTAButton />
@@ -228,10 +228,10 @@ export default function Coaching() {
               className="text-xl sm:text-3xl font-bold text-charcoal leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Coaching for Agents at Different Stages
+              Coaching for Licensed Agents at Different Stages
             </h2>
             <p className="text-charcoal/65 text-base leading-relaxed mt-4 max-w-2xl mx-auto">
-              Whether you're building your foundation or sharpening an already-active business, the focus is on practical improvement — not generic advice.
+              Whether you're a newer agent building your foundation or an experienced agent sharpening an already-active business, the focus is on practical improvement grounded in real transaction experience — not generic advice.
             </p>
           </motion.div>
 
@@ -508,7 +508,7 @@ export default function Coaching() {
               {
                 step: "03",
                 title: "Determine Fit and Scope",
-                desc: "Coaching options are customized based on the level of support, goals, and type of coaching needed. The right approach depends on your situation.",
+                desc: "Coaching structure, cadence, and focus are customized based on your goals and current stage. Options range from targeted single-session work on a specific area to ongoing engagement across multiple topics. The right approach depends on your situation.",
               },
               {
                 step: "04",

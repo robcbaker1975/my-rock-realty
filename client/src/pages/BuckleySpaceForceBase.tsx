@@ -1,5 +1,5 @@
 /**
- * Buckley SFB Relocation Guide — My Rock Realty
+ * Buckley Space Force Base Relocation Guide — My Rock Realty
  * /military-relocation/buckley-space-force-base/
  * Design: Front Range Modern — matches existing site design system
  */
@@ -14,17 +14,17 @@ const HERO_BG = "/images/denver-rowhouses-hero.jpg";
 
 const faqContent = [
   {
-    question: "What communities do buyers relocating to Buckley SFB typically consider?",
+    question: "What communities do buyers relocating to Buckley Space Force Base typically consider?",
     answer:
-      "Buckley SFB is located in Aurora, east of Denver. Buyers commonly look at Aurora neighborhoods, as well as communities in the southeast Denver metro including Centennial, Parker, and Highlands Ranch. The right fit depends on commute preferences, school priorities, and budget.",
+      "Buckley Space Force Base is located in Aurora, east of Denver. Buyers commonly look at Aurora neighborhoods, as well as communities in the southeast Denver metro including Centennial, Parker, and Highlands Ranch. The right fit depends on commute preferences, school priorities, and budget.",
   },
   {
-    question: "Is Buckley SFB close to downtown Denver?",
+    question: "Is Buckley Space Force Base close to downtown Denver?",
     answer:
-      "Buckley SFB is approximately 15–20 miles east of downtown Denver. Buyers who want urban Denver access often look at Aurora neighborhoods that balance commute to the base with proximity to the city.",
+      "Buckley Space Force Base is approximately 15–20 miles east of downtown Denver. Buyers who want urban Denver access often look at Aurora neighborhoods that balance commute to the base with proximity to the city.",
   },
   {
-    question: "Can Rob help me buy near Buckley SFB if I'm still out of state?",
+    question: "Can Rob help me buy near Buckley Space Force Base if I'm still out of state?",
     answer:
       "Yes. Rob works with buyers planning a PCS move from out of state. He can provide market orientation, neighborhood guidance, and support for buyers navigating the Denver metro market remotely before they arrive.",
   },
@@ -52,7 +52,7 @@ const orientationPoints = [
   {
     icon: MapPin,
     title: "Location & Commute Context",
-    text: "Buckley SFB is in Aurora, east of Denver. Buyers typically look at Aurora neighborhoods for the shortest commutes, as well as Centennial, Parker, and southeast Denver suburbs for more options while maintaining reasonable access.",
+    text: "Buckley Space Force Base is in Aurora, east of Denver. Buyers typically look at Aurora neighborhoods for the shortest commutes, as well as Centennial, Parker, and southeast Denver suburbs for more options while maintaining reasonable access.",
   },
   {
     icon: Home,
@@ -73,13 +73,13 @@ export default function BuckleySpaceForceBase() {
     <div className="min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
       <SeoHead
         metadata={{
-          title: "Buckley SFB Relocation Guide | Aurora & Denver Metro Real Estate | My Rock Realty",
+          title: "Buckley Space Force Base Relocation Guide | Aurora & Denver Metro Real Estate | My Rock Realty",
           description: "Practical relocation guidance for buyers moving to Buckley Space Force Base in Aurora and the Denver metro area. PCS planning, neighborhood orientation, and local market context for military families.",
           canonicalUrl: "https://www.myrockhomes.com/military-relocation/buckley-space-force-base/",
-          image: { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp" },
+          image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
-        schema={faqSchema ? [faqSchema] : []}
-      />
+        schema={[faqSchema]}
+        />
 
       <div className="bg-charcoal/95 border-b border-white/5">
         <div className="container py-3">
@@ -101,7 +101,7 @@ export default function BuckleySpaceForceBase() {
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-5 max-w-3xl"
             style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Relocating to <span className="text-gold">Buckley SFB</span>
+            Relocating to <span className="text-gold">Buckley Space Force Base</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
             className="text-cream/80 text-[15px] sm:text-lg leading-relaxed max-w-2xl mb-8">
@@ -113,7 +113,7 @@ export default function BuckleySpaceForceBase() {
             <a href="#contact-rob"
               className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}>
-              Talk to Rob About Buckley SFB
+              Talk to Rob About Buckley Space Force Base
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </a>
             <a href="/military-relocation/"
@@ -134,7 +134,7 @@ export default function BuckleySpaceForceBase() {
           </motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
             className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-10">
-            Buckley SFB buyers face compressed timelines and the Denver metro's competitive market.
+            Buckley Space Force Base buyers face compressed timelines and the Denver metro's competitive market.
             Understanding the basics before you start searching gives you a meaningful advantage.
           </motion.p>
           <div className="grid sm:grid-cols-3 gap-5 sm:gap-7">
@@ -156,16 +156,16 @@ export default function BuckleySpaceForceBase() {
         <div className="container">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Communities Near Buckley SFB
+            Communities Near Buckley Space Force Base
           </motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
             className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-8">
-            Buyers relocating to Buckley SFB typically consider Aurora and surrounding Denver metro
+            Buyers relocating to Buckley Space Force Base typically consider Aurora and surrounding Denver metro
             communities depending on commute tolerance and lifestyle priorities.
           </motion.p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { name: "Aurora", note: "Directly adjacent to Buckley SFB with the shortest commutes; broad range of neighborhoods and price points." },
+              { name: "Aurora", note: "Directly adjacent to Buckley Space Force Base with the shortest commutes; broad range of neighborhoods and price points." },
               { name: "Centennial", note: "Southeast of Denver with suburban character, good schools, and reasonable access to Buckley." },
               { name: "Parker", note: "Further southeast with newer construction, more space, and a distinct small-town feel." },
               { name: "Highlands Ranch", note: "Planned community south of Denver with strong schools and suburban amenities; longer commute to Buckley." },
@@ -213,7 +213,7 @@ export default function BuckleySpaceForceBase() {
         <div className="container max-w-3xl">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Common Questions — Buckley SFB Relocation
+            Common Questions — Buckley Space Force Base Relocation
           </motion.h2>
           <div className="space-y-3">
             {faqContent.map((item, i) => (
@@ -240,7 +240,7 @@ export default function BuckleySpaceForceBase() {
         <div className="container max-w-2xl text-center">
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="text-2xl sm:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Ready to Plan Your Buckley SFB Move?
+            Ready to Plan Your Buckley Space Force Base Move?
           </motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
             className="text-cream/70 text-[15px] sm:text-base leading-relaxed mb-8">

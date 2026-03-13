@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const HEADSHOT_URL = "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663410368883/daNVlPqvwXbwkTQz.png?Expires=1804384152&Signature=jZDznTIANoEiBOoHj25iwt4TpWQc5i4A4OIbszucwQcMb-Gpy~FHBqxpq~CWtxVmmhEEThAzrOvOhrg078TNI9S~yyEglVcq-TeGL74eLGgH6I7bk6bOhsr41R5AF-0Z2FEXt3tTfMei81ZyquIUhzv1eyNAeU6StCUimTSoR47XPCk0dsAGLsU97g33GyRX1rm4xC2WPPdEFyremPPiKeeDhewZrIKm9ZM8XMpDSD8SeLcY1PrOBp2hfGwBnU7BUDnMztc3iWXEPLH2TOTph9Mx--TYq3QCj8hy5f1w0KSM7xNWicmLfFc6ncKQTG9cdH9Rto1vSqy5mKE16-8aWQ__&Key-Pair-Id=K2HSFNDJXOU9YS";
+const HEADSHOT_URL = "/assets/rob-about.png";
 
 const stats = [
   { value: "25+", label: "Years in Sales & Negotiations" },
@@ -31,6 +31,10 @@ export default function AboutSection() {
                   alt="Rob Baker, founder and owner of My Rock Realty, wearing a cowboy hat with Colorado flag motif"
                   className="w-full h-auto object-cover"
                   style={{ objectPosition: "center top" }}
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               {/* Name card */}

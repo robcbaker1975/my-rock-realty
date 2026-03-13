@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown, Clock, MapPin, DollarSign, Star, ArrowRight, Phone, Mail, Shield, Users, TrendingUp, Award, Home as HomeIcon, Landmark, Wrench, Banknote, BadgeCheck, Globe } from "lucide-react";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/ChatGPTImageMar2,2026,04_52_22PM_09be1014.png";
-const HEADSHOT_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/RobHeadshotNoBackground_877c31b9.jpg";
+const LOGO_URL = "/assets/logo.png";
+const HEADSHOT_URL = "/assets/rob-headshot.jpg";
 const WORKSHOP_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/workshop-section-Yp8jnnKmpb9X4Au9XRWi4s.webp";
 
 const fadeUp = {

@@ -1,6 +1,7 @@
 /*
  * Fort Collins Homes for Sale — My Rock Realty
- * Primary Fort Collins city spoke page — focused neighborhood page for Fort Collins search intent
+ * Lifestyle and buyer-fit page for Fort Collins — Old Town character, college-town energy, who it's for
+ * Distinct from /fort-collins-co-homes-for-sale (county authority hub)
  * Design: Front Range Modern — matches existing site design system
  * Palette: Warm charcoal (#292524), cream (#F5F0EB), antique gold (#C9A96E)
  * Typography: Outfit (display) + Libre Franklin (body)
@@ -28,29 +29,29 @@ const FC_HERO_BG = "/images/denver-rowhouses-hero.jpg";
 /* ─── FAQ Content ─── */
 const faqContent = [
   {
-    question: "What is Fort Collins known for in Colorado?",
+    question: "Who tends to love living in Fort Collins?",
     answer:
-      "Fort Collins is known for its walkable Old Town district, access to outdoor recreation in the Rocky Mountain foothills, Colorado State University, diverse neighborhoods, and a community character that attracts a range of residents and buyers.",
+      "Fort Collins consistently attracts buyers who value walkability, outdoor access, and a community with genuine character. Old Town is a particular draw for buyers who want to live within walking distance of local restaurants, breweries, and community events. CSU's presence gives the city a college-town energy that appeals to buyers who enjoy that kind of community fabric.",
   },
   {
-    question: "What types of homes can buyers find in Fort Collins?",
+    question: "Is Fort Collins a good fit for buyers who want walkability and local character?",
     answer:
-      "Buyers may find a mix of historic homes in Old Town, newer construction in suburban neighborhoods, condos, townhomes, and single-family homes depending on the neighborhood and price range they are exploring.",
+      "Yes — particularly near Old Town. Fort Collins' Old Town district is one of the more walkable areas on the northern Front Range, with local businesses, restaurants, and community events within easy reach. Buyers who prioritize walkability should focus their search on neighborhoods within reasonable distance of Old Town.",
   },
   {
-    question: "Why do buyers consider Fort Collins when searching in Colorado?",
+    question: "How does Fort Collins' college-town character affect the community feel?",
     answer:
-      "Buyers often consider Fort Collins for its Old Town character, outdoor recreation access, Front Range location, community amenities, and housing options available at various price points along the northern Front Range.",
+      "Colorado State University gives Fort Collins a college-town energy that shows up in the local restaurant scene, community events, and neighborhood culture. Buyers who enjoy that kind of engaged, active community tend to find it appealing. Buyers who prefer a quieter, more suburban setting may prefer neighborhoods further from the university.",
   },
   {
-    question: "Is Fort Collins a good fit for buyers who want outdoor access?",
+    question: "How does Fort Collins compare to other northern Front Range cities for lifestyle?",
     answer:
-      "Fort Collins can be a strong fit for buyers who prioritize outdoor recreation, access to hiking and cycling trails, and proximity to the Rocky Mountain foothills. Buyers should research specific neighborhoods to find the best match for their priorities.",
+      "Fort Collins has more walkable character and Old Town identity than Greeley, and a stronger college-town feel than Loveland. It's generally more affordable than Boulder while offering some of the same outdoor access and community character that Boulder buyers value.",
   },
   {
-    question: "What should buyers pay attention to when considering homes in Fort Collins?",
+    question: "What should lifestyle-focused buyers evaluate before choosing Fort Collins?",
     answer:
-      "Buyers should pay attention to neighborhood location, home condition, proximity to Old Town or outdoor recreation, commute considerations, and how a property compares with nearby alternatives. Buyers should independently research schools, crime data, and other community factors important to them.",
+      "Buyers should evaluate proximity to Old Town, access to trails and outdoor recreation, and how the CSU presence aligns with their preferences. Fort Collins rewards buyers who understand which neighborhoods fit their daily routine rather than treating the city as a single uniform market.",
   },
 ];
 
@@ -95,9 +96,9 @@ export default function FortCollinsHomesForSale() {
     <div className="min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
-          title: "Fort Collins Homes for Sale | Fort Collins, Colorado Real Estate",
+          title: "Fort Collins Homes for Sale | Old Town Lifestyle, College-Town Character & Buyer Fit",
           description:
-            "Explore Fort Collins homes for sale, neighborhood character, housing styles, outdoor lifestyle advantages, and helpful resources for buying in Fort Collins.",
+            "Thinking about buying in Fort Collins? Explore who the city tends to attract, what Old Town living is like, and whether Fort Collins' character and community fit what you're looking for.",
           canonicalUrl: "https://www.myrockhomes.com/fort-collins-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
@@ -141,10 +142,10 @@ export default function FortCollinsHomesForSale() {
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Fort Collins Homes for Sale
+              Fort Collins: Old Town Character, College-Town Energy
             </h1>
             <p className="text-lg text-cream/80 mb-8 leading-relaxed">
-              Explore homes in Fort Collins — a Front Range city with a walkable Old Town district, outdoor recreation access, and a range of neighborhoods and housing options. The city's character and location make it an option worth considering for buyers exploring northern Colorado.
+              Fort Collins has a community identity that's hard to replicate on the northern Front Range — a walkable Old Town, a college-town energy from CSU, and outdoor access that rivals larger Colorado cities. This page is about who Fort Collins tends to suit and what living there is actually like.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton />
@@ -170,24 +171,24 @@ export default function FortCollinsHomesForSale() {
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Why Buyers Consider Fort Collins
+            Who Fort Collins Tends to Attract
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: Trees,
-                title: "Outdoor Recreation Access",
-                desc: "Fort Collins provides access to hiking, cycling, fishing, and outdoor activities in the Rocky Mountain foothills and nearby natural areas, appealing to buyers who value outdoor access.",
+                icon: Home,
+                title: "Old Town Walkability Buyers",
+                desc: "Buyers who want to walk to local restaurants, breweries, and community events find Old Town Fort Collins genuinely compelling. It's one of the more walkable areas on the northern Front Range with real neighborhood character.",
               },
               {
-                icon: Home,
-                title: "Old Town Character",
-                desc: "Fort Collins' Old Town district offers a walkable area with local businesses, restaurants, and community events, providing a distinct neighborhood character for buyers who value walkability.",
+                icon: Trees,
+                title: "Outdoor-Oriented Buyers",
+                desc: "Fort Collins offers trail access, cycling infrastructure, and proximity to the Rocky Mountain foothills. Buyers who want outdoor recreation as part of their daily routine find the city's trail network and location a meaningful advantage.",
               },
               {
                 icon: MapPin,
-                title: "Front Range Location",
-                desc: "Fort Collins sits along the northern Front Range, providing access to mountain recreation and natural scenery while remaining connected to the broader Colorado Front Range corridor.",
+                title: "College-Town Community Buyers",
+                desc: "CSU gives Fort Collins an engaged, active community culture. Buyers who enjoy that kind of neighborhood energy — local events, a diverse restaurant scene, and a community that feels alive — tend to find Fort Collins a strong fit.",
               },
             ].map((item, idx) => (
               <motion.div
@@ -224,7 +225,7 @@ export default function FortCollinsHomesForSale() {
             className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Neighborhood Character and Lifestyle
+            The Old Town Lifestyle Advantage
           </h2>
           <motion.div
             initial="hidden"
@@ -233,10 +234,10 @@ export default function FortCollinsHomesForSale() {
             className="bg-cream/10 rounded-lg p-8 border border-cream/20"
           >
             <p className="text-cream/90 leading-relaxed mb-6">
-              Fort Collins has a community character shaped by its Old Town district, Colorado State University presence, outdoor recreation access, and a range of neighborhood identities from historic areas to newer suburban developments. Buyers are drawn to the city's combination of walkability, outdoor access, and community amenities.
+              Old Town Fort Collins is the city's defining feature for lifestyle-focused buyers. It's a walkable district with local restaurants, craft breweries, community events, and a neighborhood character that feels genuinely distinct from suburban development. Buyers who prioritize walkability and local culture tend to anchor their search here.
             </p>
             <p className="text-cream/90 leading-relaxed">
-              The city attracts a range of buyers — from those prioritizing Old Town walkability and community atmosphere to outdoor enthusiasts seeking trail access and mountain recreation. Buyers should research specific neighborhoods to find the best fit for their lifestyle and priorities.
+              Beyond Old Town, Fort Collins has a range of neighborhood identities — from historic areas near the university to newer suburban developments on the city's edges. Buyers who understand which neighborhood aligns with their priorities tend to find Fort Collins a strong long-term fit. The city attracts a range of buyers — from those prioritizing Old Town walkability and community atmosphere to outdoor enthusiasts seeking trail access and mountain recreation. Buyers should research specific neighborhoods to find the best fit for their lifestyle and priorities.
             </p>
           </motion.div>
         </div>

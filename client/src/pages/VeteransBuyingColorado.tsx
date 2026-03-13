@@ -1,44 +1,42 @@
 /**
- * Fort Carson Relocation Guide — My Rock Realty
- * /military-relocation/fort-carson/
+ * Veterans Buying in Colorado — My Rock Realty
+ * /military-relocation/veterans-buying-colorado/
  * Design: Front Range Modern — matches existing site design system
- * Palette: Warm charcoal (#292524), cream (#F5F0EB), antique gold (#C9A96E)
- * Typography: Outfit (display) + Libre Franklin (body)
  */
 import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Home, ChevronDown, Phone, Mail, Compass } from "lucide-react";
+import { ArrowRight, Home, ChevronDown, Phone, Mail, Shield, MapPin, Compass } from "lucide-react";
 
 const HERO_BG = "/images/denver-rowhouses-hero.jpg";
 
 const faqContent = [
   {
-    question: "What communities do buyers relocating to Fort Carson typically consider?",
+    question: "Can veterans use VA loan benefits to buy in Colorado?",
     answer:
-      "Buyers relocating to Fort Carson most commonly look at Colorado Springs neighborhoods and surrounding communities including Fountain, Security-Widefield, Pueblo West, and Peyton. The right fit depends on commute preferences, school priorities, and budget.",
+      "Yes. Eligible veterans can use VA loan benefits to purchase a primary residence in Colorado. VA financing offers meaningful advantages including no down payment requirement and no private mortgage insurance. For specific eligibility and loan questions, veterans should work directly with a VA-approved lender.",
   },
   {
-    question: "How far in advance should I start my home search before a Fort Carson PCS?",
+    question: "What Colorado markets do veterans most commonly consider?",
     answer:
-      "Starting 3–6 months before your report date gives you the most flexibility. Colorado Springs is a competitive market, and having time to understand neighborhoods, get pre-approved, and make informed decisions reduces stress significantly.",
+      "Colorado's major veteran communities are concentrated around Colorado Springs, the Denver metro, and the northern Front Range. Each area has distinct price points, neighborhoods, and community dynamics. Getting oriented to the market before starting your search helps you focus your efforts efficiently.",
   },
   {
-    question: "Can Rob help me buy a home near Fort Carson if I'm still out of state?",
+    question: "Is the Colorado market competitive for buyers using VA financing?",
     answer:
-      "Yes. Rob works with buyers who are planning a PCS move from out of state. He can provide market orientation, neighborhood guidance, and support for buyers navigating the process remotely before they arrive.",
+      "Colorado's major markets are active and competitive. VA financing is a legitimate and strong offer when structured well. Rob works with buyers using VA financing and can help you understand how to position your offer effectively in the current market.",
   },
   {
-    question: "Is the Colorado Springs market competitive for buyers?",
+    question: "What should veterans know about the Colorado homebuying process?",
     answer:
-      "Colorado Springs has been an active market, particularly in price ranges common for military buyers. Understanding current inventory, pricing trends, and neighborhood dynamics before you start searching helps you move efficiently when the right home appears.",
+      "The Colorado homebuying process follows standard real estate practices, with some nuances around VA appraisals and property condition requirements. Getting pre-approved, understanding current market conditions, and working with an agent familiar with VA transactions helps the process run smoothly.",
   },
   {
-    question: "Does Rob work with VA financing?",
+    question: "Does Rob work specifically with veteran buyers?",
     answer:
-      "Rob provides educational guidance on VA homebuying and works with buyers using VA financing. For specific VA loan questions, buyers should work directly with a VA-approved lender.",
+      "Rob works with all buyer types, including veterans using VA financing. He provides educational guidance on the VA homebuying process and can connect buyers with VA-approved lenders. His focus is on helping buyers make informed, confident decisions — not on pushing a transaction.",
   },
 ];
 
@@ -47,37 +45,42 @@ const faqSchema = buildFAQPageSchema(faqContent);
 const breadcrumbItems = [
   { label: "Home", url: "/" },
   { label: "Military & PCS Relocation", url: "/military-relocation/" },
-  { label: "Fort Carson", url: "/military-relocation/fort-carson/" },
+  { label: "Veterans Buying in Colorado", url: "/military-relocation/veterans-buying-colorado/" },
 ];
 
-const orientationPoints = [
+const considerationPoints = [
+  {
+    icon: Shield,
+    title: "VA Loan Benefits in Colorado",
+    text: "Eligible veterans can use VA loan benefits to purchase a primary residence with no down payment and no private mortgage insurance requirement. For specific eligibility and loan questions, veterans should work directly with a VA-approved lender.",
+  },
   {
     icon: MapPin,
-    title: "Location & Commute Context",
-    text: "Fort Carson is located on the south side of Colorado Springs. Buyers typically look at communities ranging from south Colorado Springs to Fountain, Security-Widefield, and Pueblo West, depending on commute tolerance and housing preferences.",
+    title: "Choosing the Right Colorado Market",
+    text: "Colorado's veteran communities span Colorado Springs, the Denver metro, and the Front Range. Each area has different price points, neighborhood character, and proximity to VA services. Understanding these differences helps you focus your search on the right area.",
   },
   {
     icon: Home,
-    title: "Housing Market Overview",
-    text: "Colorado Springs offers a range of housing types and price points. Understanding current inventory and neighborhood dynamics before you start your search helps you make confident decisions on a military timeline.",
+    title: "Market Orientation Before You Search",
+    text: "Colorado's major markets are competitive. Getting oriented to current inventory, pricing trends, and neighborhood dynamics before you start searching helps you move confidently when the right home appears.",
   },
   {
     icon: Compass,
-    title: "Planning for PCS Timing",
-    text: "PCS moves often compress the homebuying process. Starting your market orientation early — even before orders are finalized — gives you a significant advantage in a competitive market.",
+    title: "Long-Term Fit for Colorado Living",
+    text: "Many veterans choose Colorado for its outdoor access, quality of life, and strong veteran community. Understanding what matters most to you — commute, school districts, neighborhood character — helps narrow the search to homes that will serve you well over time.",
   },
 ];
 
-export default function FortCarson() {
+export default function VeteransBuyingColorado() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
       <SeoHead
         metadata={{
-          title: "Fort Carson Relocation Guide | Colorado Springs Real Estate | My Rock Realty",
-          description: "Practical relocation guidance for buyers moving to Fort Carson and the Colorado Springs area. PCS planning, neighborhood orientation, and local market context for military families.",
-          canonicalUrl: "https://www.myrockhomes.com/military-relocation/fort-carson/",
+          title: "Veterans Buying a Home in Colorado | My Rock Realty",
+          description: "Educational homebuying guidance for veterans considering a Colorado purchase. VA loan context, market orientation, and buyer-focused support across Colorado Springs and the Denver metro.",
+          canonicalUrl: "https://www.myrockhomes.com/military-relocation/veterans-buying-colorado/",
           image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
         schema={[faqSchema]}
@@ -107,7 +110,7 @@ export default function FortCarson() {
             className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Military Relocation Guide
+            Military Relocation Support
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -116,8 +119,8 @@ export default function FortCarson() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-5 max-w-3xl"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Relocating to{" "}
-            <span className="text-gold">Fort Carson</span>
+            Veterans{" "}
+            <span className="text-gold">Buying in Colorado</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -125,9 +128,10 @@ export default function FortCarson() {
             transition={{ delay: 0.2 }}
             className="text-cream/80 text-[15px] sm:text-lg leading-relaxed max-w-2xl mb-8"
           >
-            Practical real estate guidance for buyers relocating to Fort Carson and the Colorado
-            Springs area. Whether you're PCS-ing on orders or planning ahead, local market
-            orientation makes the difference.
+            Colorado is home to a large and growing veteran community. Whether you're
+            relocating after service, returning to a familiar area, or buying for the
+            first time, this guide covers the practical considerations for veteran buyers
+            in Colorado's current market.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -140,7 +144,7 @@ export default function FortCarson() {
               className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Talk to Rob About Fort Carson
+              Talk to Rob About Your Move
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </a>
             <a
@@ -155,7 +159,7 @@ export default function FortCarson() {
         </div>
       </section>
 
-      {/* ─── Orientation Points ─── */}
+      {/* ─── Considerations ─── */}
       <section className="py-12 sm:py-20 bg-white">
         <div className="container">
           <motion.h2
@@ -165,7 +169,7 @@ export default function FortCarson() {
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            What Buyers Should Know Before Searching
+            What Veteran Buyers Are Thinking Through
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -174,137 +178,74 @@ export default function FortCarson() {
             transition={{ delay: 0.1 }}
             className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-10"
           >
-            Fort Carson buyers face a unique combination of compressed timelines, competitive
-            inventory, and unfamiliar geography. Understanding the basics before you start
-            searching gives you a meaningful advantage.
+            These are the planning considerations Rob most commonly helps veteran buyers
+            work through when considering a Colorado purchase.
           </motion.p>
-          <div className="grid sm:grid-cols-3 gap-5 sm:gap-7">
-            {orientationPoints.map((pt, i) => (
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+            {considerationPoints.map((point, i) => (
               <motion.div
-                key={pt.title}
+                key={point.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.1 * i }}
-                className="p-6 sm:p-7 rounded bg-cream border border-cream-dark/50"
+                transition={{ delay: 0.08 * i }}
+                className="flex gap-5"
               >
-                <div className="w-11 h-11 rounded flex items-center justify-center bg-gold/10 text-gold-dark mb-4">
-                  <pt.icon size={22} strokeWidth={1.8} />
+                <div className="w-11 h-11 rounded flex items-center justify-center bg-gold/10 text-gold-dark shrink-0 mt-0.5">
+                  <point.icon size={20} strokeWidth={1.8} />
                 </div>
-                <h3
-                  className="text-lg font-semibold text-charcoal mb-2"
-                  style={{ fontFamily: "'Outfit', sans-serif" }}
-                >
-                  {pt.title}
-                </h3>
-                <p className="text-charcoal-light/70 text-sm leading-relaxed">{pt.text}</p>
+                <div>
+                  <h3
+                    className="text-base font-semibold text-charcoal mb-2"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    {point.title}
+                  </h3>
+                  <p className="text-charcoal-light/70 text-[15px] leading-relaxed">{point.text}</p>
+                </div>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ─── Nearby Communities ─── */}
-      <section className="py-12 sm:py-20 bg-cream">
-        <div className="container">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Communities Near Fort Carson
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-8"
-          >
-            Buyers relocating to Fort Carson typically consider a range of communities in and
-            around Colorado Springs. The right fit depends on your commute preferences, family
-            priorities, and housing budget.
-          </motion.p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { name: "Colorado Springs", note: "Broad range of neighborhoods, price points, and school options within the city." },
-              { name: "Fountain", note: "South of Fort Carson with more affordable price points and direct access to the installation." },
-              { name: "Security-Widefield", note: "Established community between Fort Carson and Fountain with a range of housing options." },
-              { name: "Pueblo West", note: "Further south with larger lots and lower price points; longer commute to post." },
-              { name: "Peyton / Falcon", note: "East of Colorado Springs with newer construction and more space, longer commute." },
-              { name: "Manitou Springs / Old Colorado City", note: "West side options with character and proximity to the mountains; varied price points." },
-            ].map((c, i) => (
-              <motion.div
-                key={c.name}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.07 * i }}
-                className="p-5 rounded bg-white border border-cream-dark/50"
-              >
-                <h3
-                  className="text-base font-semibold text-charcoal mb-1.5"
-                  style={{ fontFamily: "'Outfit', sans-serif" }}
-                >
-                  {c.name}
-                </h3>
-                <p className="text-charcoal-light/65 text-sm leading-relaxed">{c.note}</p>
-              </motion.div>
-            ))}
-          </div>
-          <p className="text-charcoal-light/50 text-xs mt-5 leading-relaxed">
-            Community descriptions are general orientation only. Commute times, pricing, and inventory vary. Confirm current conditions with Rob before making decisions.
-          </p>
         </div>
       </section>
 
       {/* ─── Related Resources ─── */}
-      <section className="py-10 sm:py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-cream border-t border-cream-dark/40">
         <div className="container">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-xl sm:text-2xl font-bold text-charcoal mb-6"
+          <h3
+            className="text-lg font-semibold text-charcoal mb-5"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Related Military Relocation Resources
-          </motion.h2>
-          <div className="grid sm:grid-cols-3 gap-4">
+          </h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { title: "Military & PCS Relocation Hub", href: "/military-relocation/", desc: "Overview of all military relocation resources and support areas." },
-              { title: "PCS Colorado Guide", href: "/military-relocation/pcs-colorado/", desc: "Planning your PCS move to Colorado — timelines, rent vs. buy, and market orientation." },
-              { title: "VA Home Loans in Colorado", href: "/military-relocation/va-home-loans-colorado/", desc: "Educational overview of VA homebuying benefits and how the process works in Colorado." },
-            ].map((r, i) => (
-              <motion.a
-                key={r.title}
-                href={r.href}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 * i }}
-                className="group block p-5 rounded bg-cream border border-cream-dark/50 hover:border-gold/40 transition-all hover:shadow-md"
+              { label: "Military & PCS Relocation Hub", href: "/military-relocation/" },
+              { label: "VA Home Loans in Colorado", href: "/military-relocation/va-home-loans-colorado/" },
+              { label: "PCS Moves to Colorado", href: "/military-relocation/pcs-colorado/" },
+              { label: "Military Spouses Buying in Colorado", href: "/military-relocation/military-spouses-buying-colorado/" },
+              { label: "PCS Timeline Checklist", href: "/military-relocation/pcs-timeline-checklist/" },
+            ].map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="group flex items-center justify-between p-4 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-md hover:shadow-gold/5"
               >
-                <h3
-                  className="text-base font-semibold text-charcoal mb-2 group-hover:text-gold-dark transition-colors"
+                <span
+                  className="font-medium text-charcoal text-[15px] group-hover:text-gold-dark transition-colors"
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
-                  {r.title}
-                </h3>
-                <p className="text-charcoal-light/65 text-sm leading-relaxed mb-3">{r.desc}</p>
-                <span className="inline-flex items-center gap-1.5 text-gold-dark text-sm font-medium group-hover:gap-2.5 transition-all">
-                  View Guide <ArrowRight size={14} />
+                  {link.label}
                 </span>
-              </motion.a>
+                <ArrowRight size={16} className="text-gold-dark opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+              </a>
             ))}
           </div>
         </div>
       </section>
 
       {/* ─── FAQ ─── */}
-      <section className="py-12 sm:py-20 bg-cream">
+      <section className="py-12 sm:py-20 bg-white">
         <div className="container max-w-3xl">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -313,7 +254,7 @@ export default function FortCarson() {
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-8"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Common Questions — Fort Carson Relocation
+            Common Questions — Veterans Buying in Colorado
           </motion.h2>
           <div className="space-y-3">
             {faqContent.map((item, i) => (
@@ -364,7 +305,7 @@ export default function FortCarson() {
             className="text-2xl sm:text-3xl font-bold text-white mb-4"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Ready to Plan Your Fort Carson Move?
+            Ready to Explore Colorado?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -373,8 +314,9 @@ export default function FortCarson() {
             transition={{ delay: 0.1 }}
             className="text-cream/70 text-[15px] sm:text-base leading-relaxed mb-8"
           >
-            Whether you're months out from your PCS or actively searching, Rob can help you
-            understand the Colorado Springs market and plan your next move with confidence.
+            Whether you're actively searching or just starting to think through your options,
+            Rob can help you understand the Colorado market and plan your next move with
+            confidence.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

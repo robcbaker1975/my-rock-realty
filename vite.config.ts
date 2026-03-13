@@ -167,6 +167,7 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    chunkSizeWarningLimit: 2000, // Suppress chunk size warning for large app
   },
   server: {
     host: true,

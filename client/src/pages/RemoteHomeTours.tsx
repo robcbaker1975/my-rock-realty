@@ -1,44 +1,47 @@
 /**
- * Fort Carson Relocation Guide — My Rock Realty
- * /military-relocation/fort-carson/
+ * Remote Home Tours — My Rock Realty
+ * /military-relocation/remote-home-tours/
  * Design: Front Range Modern — matches existing site design system
- * Palette: Warm charcoal (#292524), cream (#F5F0EB), antique gold (#C9A96E)
- * Typography: Outfit (display) + Libre Franklin (body)
  */
 import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Home, ChevronDown, Phone, Mail, Compass } from "lucide-react";
+import { ArrowRight, ChevronDown, Phone, Mail, Video, Monitor, MapPin } from "lucide-react";
 
 const HERO_BG = "/images/denver-rowhouses-hero.jpg";
 
 const faqContent = [
   {
-    question: "What communities do buyers relocating to Fort Carson typically consider?",
+    question: "Who is remote home touring designed for?",
     answer:
-      "Buyers relocating to Fort Carson most commonly look at Colorado Springs neighborhoods and surrounding communities including Fountain, Security-Widefield, Pueblo West, and Peyton. The right fit depends on commute preferences, school priorities, and budget.",
+      "Remote home touring is designed primarily for military and PCS buyers who are not yet local to Colorado Springs or the Denver metro. If you're relocating on orders, managing a compressed timeline, or need to make decisions before you can visit in person, remote touring options help you stay informed and move with confidence.",
   },
   {
-    question: "How far in advance should I start my home search before a Fort Carson PCS?",
+    question: "How does a live virtual tour work?",
     answer:
-      "Starting 3–6 months before your report date gives you the most flexibility. Colorado Springs is a competitive market, and having time to understand neighborhoods, get pre-approved, and make informed decisions reduces stress significantly.",
+      "A live virtual tour is a real-time video walkthrough of a property conducted by Rob while you participate remotely via video call. You can ask questions, request specific views, and get Rob's on-the-ground observations as the tour happens. Availability depends on property access and scheduling.",
   },
   {
-    question: "Can Rob help me buy a home near Fort Carson if I'm still out of state?",
+    question: "What is a recorded video tour?",
     answer:
-      "Yes. Rob works with buyers who are planning a PCS move from out of state. He can provide market orientation, neighborhood guidance, and support for buyers navigating the process remotely before they arrive.",
+      "A recorded video tour is a detailed walkthrough of a property captured on video and delivered to you for review at your convenience. Rob narrates the tour with observations relevant to your priorities — condition, layout, neighborhood context, and anything that would be hard to assess from listing photos alone.",
   },
   {
-    question: "Is the Colorado Springs market competitive for buyers?",
+    question: "What are in-person tour blocks?",
     answer:
-      "Colorado Springs has been an active market, particularly in price ranges common for military buyers. Understanding current inventory, pricing trends, and neighborhood dynamics before you start searching helps you move efficiently when the right home appears.",
+      "An in-person tour block is a scheduled session where Rob tours multiple properties on your behalf in a single outing, documenting each with video and notes. This format is efficient for buyers who want to evaluate several options in a compressed timeframe without being present.",
   },
   {
-    question: "Does Rob work with VA financing?",
+    question: "Can I make an offer on a home I've only seen remotely?",
     answer:
-      "Rob provides educational guidance on VA homebuying and works with buyers using VA financing. For specific VA loan questions, buyers should work directly with a VA-approved lender.",
+      "Yes. Military buyers regularly make offers on homes they haven't seen in person, particularly when timelines are compressed. Rob can provide the context and documentation you need to make an informed decision remotely. Inspection contingencies and other standard buyer protections remain available and are discussed as part of the process.",
+  },
+  {
+    question: "How do I get started with remote home touring?",
+    answer:
+      "The best starting point is a conversation with Rob about your timeline, target neighborhoods, and what you need to feel confident making a decision remotely. From there, he can explain which format makes the most sense for your situation and what to expect from the process.",
   },
 ];
 
@@ -47,37 +50,43 @@ const faqSchema = buildFAQPageSchema(faqContent);
 const breadcrumbItems = [
   { label: "Home", url: "/" },
   { label: "Military & PCS Relocation", url: "/military-relocation/" },
-  { label: "Fort Carson", url: "/military-relocation/fort-carson/" },
+  { label: "Remote Home Tours", url: "/military-relocation/remote-home-tours/" },
 ];
 
-const orientationPoints = [
+const tourFormats = [
+  {
+    icon: Video,
+    title: "Recorded Video Tours",
+    description:
+      "Rob tours the property on your behalf and delivers a detailed narrated video walkthrough. Covers layout, condition, neighborhood context, and anything that matters to your search — reviewed on your schedule.",
+    note: "Available for properties with confirmed access. Delivery timing depends on scheduling and property availability.",
+  },
+  {
+    icon: Monitor,
+    title: "Live Virtual Tours",
+    description:
+      "A real-time video walkthrough conducted by Rob while you participate remotely. Ask questions, request specific views, and get live observations as the tour happens — as close to being there as possible without being local.",
+    note: "Requires scheduling coordination and confirmed property access. Best for buyers with some timeline flexibility.",
+  },
   {
     icon: MapPin,
-    title: "Location & Commute Context",
-    text: "Fort Carson is located on the south side of Colorado Springs. Buyers typically look at communities ranging from south Colorado Springs to Fountain, Security-Widefield, and Pueblo West, depending on commute tolerance and housing preferences.",
-  },
-  {
-    icon: Home,
-    title: "Housing Market Overview",
-    text: "Colorado Springs offers a range of housing types and price points. Understanding current inventory and neighborhood dynamics before you start your search helps you make confident decisions on a military timeline.",
-  },
-  {
-    icon: Compass,
-    title: "Planning for PCS Timing",
-    text: "PCS moves often compress the homebuying process. Starting your market orientation early — even before orders are finalized — gives you a significant advantage in a competitive market.",
+    title: "In-Person Tour Blocks",
+    description:
+      "Rob tours multiple properties in a single scheduled session, documenting each with video and notes. Efficient for buyers evaluating several options in a compressed timeframe who want thorough coverage without being present.",
+    note: "Best suited for buyers with a defined shortlist. Scope and number of properties are discussed in advance.",
   },
 ];
 
-export default function FortCarson() {
+export default function RemoteHomeTours() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
       <SeoHead
         metadata={{
-          title: "Fort Carson Relocation Guide | Colorado Springs Real Estate | My Rock Realty",
-          description: "Practical relocation guidance for buyers moving to Fort Carson and the Colorado Springs area. PCS planning, neighborhood orientation, and local market context for military families.",
-          canonicalUrl: "https://www.myrockhomes.com/military-relocation/fort-carson/",
+          title: "Remote Home Tours for Military & PCS Buyers | My Rock Realty",
+          description: "Remote home touring support for military and PCS buyers relocating to Colorado Springs and the Denver metro. Recorded video tours, live virtual tours, and in-person tour blocks for buyers who aren't yet local.",
+          canonicalUrl: "https://www.myrockhomes.com/military-relocation/remote-home-tours/",
           image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
         schema={[faqSchema]}
@@ -107,7 +116,7 @@ export default function FortCarson() {
             className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Military Relocation Guide
+            Military Relocation Support
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -116,8 +125,8 @@ export default function FortCarson() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-5 max-w-3xl"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Relocating to{" "}
-            <span className="text-gold">Fort Carson</span>
+            Remote Home Tours{" "}
+            <span className="text-gold">for Military & PCS Buyers</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -125,9 +134,10 @@ export default function FortCarson() {
             transition={{ delay: 0.2 }}
             className="text-cream/80 text-[15px] sm:text-lg leading-relaxed max-w-2xl mb-8"
           >
-            Practical real estate guidance for buyers relocating to Fort Carson and the Colorado
-            Springs area. Whether you're PCS-ing on orders or planning ahead, local market
-            orientation makes the difference.
+            When you're relocating to Colorado on military orders, being physically present
+            for every home tour isn't always possible. Remote home touring gives you the
+            information and perspective you need to make confident decisions — without
+            requiring you to be local first.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -140,7 +150,7 @@ export default function FortCarson() {
               className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Talk to Rob About Fort Carson
+              Talk to Rob About Your Move
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </a>
             <a
@@ -155,7 +165,7 @@ export default function FortCarson() {
         </div>
       </section>
 
-      {/* ─── Orientation Points ─── */}
+      {/* ─── Tour Formats ─── */}
       <section className="py-12 sm:py-20 bg-white">
         <div className="container">
           <motion.h2
@@ -165,7 +175,7 @@ export default function FortCarson() {
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            What Buyers Should Know Before Searching
+            Current Remote Tour Formats
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -174,137 +184,95 @@ export default function FortCarson() {
             transition={{ delay: 0.1 }}
             className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-10"
           >
-            Fort Carson buyers face a unique combination of compressed timelines, competitive
-            inventory, and unfamiliar geography. Understanding the basics before you start
-            searching gives you a meaningful advantage.
+            Three formats are currently available depending on your timeline, how many
+            properties you're evaluating, and how much real-time interaction you need.
+            Availability and scope depend on property access, scheduling, and your
+            representation context — discussed at the start of the process.
           </motion.p>
-          <div className="grid sm:grid-cols-3 gap-5 sm:gap-7">
-            {orientationPoints.map((pt, i) => (
+          <div className="grid sm:grid-cols-3 gap-6 sm:gap-8">
+            {tourFormats.map((format, i) => (
               <motion.div
-                key={pt.title}
-                initial={{ opacity: 0, y: 20 }}
+                key={format.title}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * i }}
-                className="p-6 sm:p-7 rounded bg-cream border border-cream-dark/50"
+                className="p-6 sm:p-8 rounded bg-cream border border-cream-dark/60"
               >
-                <div className="w-11 h-11 rounded flex items-center justify-center bg-gold/10 text-gold-dark mb-4">
-                  <pt.icon size={22} strokeWidth={1.8} />
+                <div className="w-12 h-12 rounded flex items-center justify-center bg-gold/10 text-gold-dark mb-5">
+                  <format.icon size={24} strokeWidth={1.8} />
                 </div>
                 <h3
-                  className="text-lg font-semibold text-charcoal mb-2"
+                  className="text-lg font-semibold text-charcoal mb-3"
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
-                  {pt.title}
+                  {format.title}
                 </h3>
-                <p className="text-charcoal-light/70 text-sm leading-relaxed">{pt.text}</p>
+                <p className="text-charcoal-light/70 leading-relaxed mb-4 text-[15px]">
+                  {format.description}
+                </p>
+                <p className="text-charcoal-light/50 text-xs leading-relaxed border-t border-cream-dark/50 pt-3 mt-3">
+                  {format.note}
+                </p>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ─── Nearby Communities ─── */}
-      <section className="py-12 sm:py-20 bg-cream">
-        <div className="container">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+          {/* Expectation-setting note */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
+            className="mt-10 p-5 rounded bg-cream border border-cream-dark/50"
           >
-            Communities Near Fort Carson
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-8"
-          >
-            Buyers relocating to Fort Carson typically consider a range of communities in and
-            around Colorado Springs. The right fit depends on your commute preferences, family
-            priorities, and housing budget.
-          </motion.p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { name: "Colorado Springs", note: "Broad range of neighborhoods, price points, and school options within the city." },
-              { name: "Fountain", note: "South of Fort Carson with more affordable price points and direct access to the installation." },
-              { name: "Security-Widefield", note: "Established community between Fort Carson and Fountain with a range of housing options." },
-              { name: "Pueblo West", note: "Further south with larger lots and lower price points; longer commute to post." },
-              { name: "Peyton / Falcon", note: "East of Colorado Springs with newer construction and more space, longer commute." },
-              { name: "Manitou Springs / Old Colorado City", note: "West side options with character and proximity to the mountains; varied price points." },
-            ].map((c, i) => (
-              <motion.div
-                key={c.name}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.07 * i }}
-                className="p-5 rounded bg-white border border-cream-dark/50"
-              >
-                <h3
-                  className="text-base font-semibold text-charcoal mb-1.5"
-                  style={{ fontFamily: "'Outfit', sans-serif" }}
-                >
-                  {c.name}
-                </h3>
-                <p className="text-charcoal-light/65 text-sm leading-relaxed">{c.note}</p>
-              </motion.div>
-            ))}
-          </div>
-          <p className="text-charcoal-light/50 text-xs mt-5 leading-relaxed">
-            Community descriptions are general orientation only. Commute times, pricing, and inventory vary. Confirm current conditions with Rob before making decisions.
-          </p>
+            <p className="text-charcoal-light/70 text-[15px] leading-relaxed">
+              <strong className="text-charcoal font-semibold">A note on scope and availability:</strong>{" "}
+              Remote touring formats, scheduling, and structure are discussed at the start of
+              the working relationship. Availability depends on property access, market
+              conditions, and representation context. Rob will be direct about what's
+              realistic for your specific situation and timeline.
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* ─── Related Resources ─── */}
-      <section className="py-10 sm:py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-cream border-t border-cream-dark/40">
         <div className="container">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-xl sm:text-2xl font-bold text-charcoal mb-6"
+          <h3
+            className="text-lg font-semibold text-charcoal mb-5"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Related Military Relocation Resources
-          </motion.h2>
-          <div className="grid sm:grid-cols-3 gap-4">
+          </h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { title: "Military & PCS Relocation Hub", href: "/military-relocation/", desc: "Overview of all military relocation resources and support areas." },
-              { title: "PCS Colorado Guide", href: "/military-relocation/pcs-colorado/", desc: "Planning your PCS move to Colorado — timelines, rent vs. buy, and market orientation." },
-              { title: "VA Home Loans in Colorado", href: "/military-relocation/va-home-loans-colorado/", desc: "Educational overview of VA homebuying benefits and how the process works in Colorado." },
-            ].map((r, i) => (
-              <motion.a
-                key={r.title}
-                href={r.href}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 * i }}
-                className="group block p-5 rounded bg-cream border border-cream-dark/50 hover:border-gold/40 transition-all hover:shadow-md"
+              { label: "Military & PCS Relocation Hub", href: "/military-relocation/" },
+              { label: "PCS Moves to Colorado", href: "/military-relocation/pcs-colorado/" },
+              { label: "PCS Timeline Checklist", href: "/military-relocation/pcs-timeline-checklist/" },
+              { label: "Military Spouses Buying in Colorado", href: "/military-relocation/military-spouses-buying-colorado/" },
+              { label: "Temporary Housing — Colorado Springs", href: "/military-relocation/temporary-housing-colorado-springs/" },
+            ].map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="group flex items-center justify-between p-4 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-md hover:shadow-gold/5"
               >
-                <h3
-                  className="text-base font-semibold text-charcoal mb-2 group-hover:text-gold-dark transition-colors"
+                <span
+                  className="font-medium text-charcoal text-[15px] group-hover:text-gold-dark transition-colors"
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
-                  {r.title}
-                </h3>
-                <p className="text-charcoal-light/65 text-sm leading-relaxed mb-3">{r.desc}</p>
-                <span className="inline-flex items-center gap-1.5 text-gold-dark text-sm font-medium group-hover:gap-2.5 transition-all">
-                  View Guide <ArrowRight size={14} />
+                  {link.label}
                 </span>
-              </motion.a>
+                <ArrowRight size={16} className="text-gold-dark opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+              </a>
             ))}
           </div>
         </div>
       </section>
 
       {/* ─── FAQ ─── */}
-      <section className="py-12 sm:py-20 bg-cream">
+      <section className="py-12 sm:py-20 bg-white">
         <div className="container max-w-3xl">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -313,7 +281,7 @@ export default function FortCarson() {
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-8"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Common Questions — Fort Carson Relocation
+            Common Questions — Remote Home Tours
           </motion.h2>
           <div className="space-y-3">
             {faqContent.map((item, i) => (
@@ -364,7 +332,7 @@ export default function FortCarson() {
             className="text-2xl sm:text-3xl font-bold text-white mb-4"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Ready to Plan Your Fort Carson Move?
+            Ready to Start Your Remote Search?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -373,8 +341,10 @@ export default function FortCarson() {
             transition={{ delay: 0.1 }}
             className="text-cream/70 text-[15px] sm:text-base leading-relaxed mb-8"
           >
-            Whether you're months out from your PCS or actively searching, Rob can help you
-            understand the Colorado Springs market and plan your next move with confidence.
+            The first step is a conversation about your timeline, target area, and what
+            you need to feel confident making decisions remotely. Rob can explain what
+            remote touring looks like for your specific situation and what to expect
+            from the process.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -96,6 +96,10 @@ export default function WorkshopSection() {
                 src={WORKSHOP_IMG}
                 alt="Professional workshop setting with mountain views"
                 className="w-full h-auto object-cover aspect-[4/3]"
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/30 to-transparent" />
             </div>

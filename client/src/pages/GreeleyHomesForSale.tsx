@@ -1,6 +1,7 @@
 /**
  * Greeley Homes for Sale — My Rock Realty
- * Primary Greeley city spoke page — focused neighborhood page for Greeley search intent
+ * Lifestyle and buyer-fit page for Greeley — university community, practical northern Colorado living, who it's for
+ * Distinct from /greeley-co-homes-for-sale (county authority hub)
  * Design: Front Range Modern — matches existing site design system
  * Palette: Warm charcoal (#292524), cream (#F5F0EB), antique gold (#C9A96E)
  * Typography: Outfit (display) + Libre Franklin (body)
@@ -28,29 +29,29 @@ const GREELEY_HERO_BG = "/images/denver-rowhouses-hero.jpg";
 /* ─── FAQ Content ─── */
 const faqContent = [
   {
-    question: "What is Greeley known for in Colorado?",
+    question: "Who tends to buy homes in Greeley?",
     answer:
-      "Greeley is known as the county seat of Weld County and home to the University of Northern Colorado. The city has a mix of established neighborhoods, newer suburban developments, and a community character shaped by its agricultural heritage, university presence, and northern Colorado location.",
+      "Greeley attracts buyers who are connected to the University of Northern Colorado — faculty, staff, and families affiliated with UNC — as well as buyers seeking practical northern Colorado living at price points more accessible than Fort Collins or Boulder. The city's agricultural heritage and Weld County location also attract buyers who want more land or a different pace than the Front Range's larger metros.",
   },
   {
-    question: "What types of homes can buyers find in Greeley?",
+    question: "Is Greeley a good fit for buyers connected to UNC?",
     answer:
-      "Buyers may find a mix of older established homes, newer construction in suburban neighborhoods, condos, townhomes, and single-family homes depending on the neighborhood and price range they are exploring. Greeley offers options across a range of price points.",
+      "Yes. The University of Northern Colorado is a central part of Greeley's community identity. Buyers affiliated with UNC — faculty, staff, graduate students, and families — often find neighborhoods near the university a practical and convenient fit. Proximity to campus is a meaningful factor worth evaluating specifically.",
   },
   {
-    question: "Why do buyers consider Greeley when searching in Colorado?",
+    question: "How does Greeley compare to Fort Collins for practical northern Colorado living?",
     answer:
-      "Buyers often consider Greeley for its Weld County location, University of Northern Colorado presence, range of housing options, and price points relative to other northern Colorado communities. Buyers should research specific neighborhoods to find the best fit for their priorities.",
+      "Greeley generally offers more accessible price points than Fort Collins and a different community character. It lacks Fort Collins' Old Town walkability but has its own neighborhood variety and the UNC presence. Buyers who are price-sensitive or specifically connected to UNC often find Greeley a more practical fit than Fort Collins.",
   },
   {
-    question: "Is Greeley a good fit for buyers who want a university town setting?",
+    question: "What kind of buyer tends to find Greeley a strong fit?",
     answer:
-      "Greeley can be a strong fit for buyers who value a university town setting, community amenities, and access to northern Colorado. Buyers should research specific neighborhoods to understand how proximity to the University of Northern Colorado aligns with their priorities.",
+      "Buyers who value practical northern Colorado living, UNC community connection, or more accessible price points relative to Fort Collins and Boulder tend to find Greeley a strong fit. It's not a lifestyle destination in the same way as Boulder or Fort Collins' Old Town, but it offers real value for buyers whose priorities align with what the city offers.",
   },
   {
-    question: "What should buyers pay attention to when considering homes in Greeley?",
+    question: "What should buyers evaluate before choosing Greeley?",
     answer:
-      "Buyers should pay attention to neighborhood location, home condition, proximity to the university or downtown, commute considerations, and how a property compares with nearby alternatives. Buyers should independently research schools, crime data, and other community factors important to them.",
+      "Buyers should evaluate proximity to UNC if that's relevant, neighborhood character (older established areas vs. newer suburban development), commute patterns to Fort Collins or other employment centers, and how Greeley's price points compare to nearby alternatives. Understanding what you're optimizing for helps identify whether Greeley is the right fit.",
   },
 ];
 
@@ -95,9 +96,9 @@ export default function GreeleyHomesForSale() {
     <div className="min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
-          title: "Greeley Homes for Sale | Greeley, Colorado Real Estate",
+          title: "Greeley Homes for Sale | University Community, Practical Northern Colorado Living & Buyer Fit",
           description:
-            "Explore Greeley homes for sale, neighborhood character, housing styles, university town setting, and helpful resources for buying in Greeley, Colorado.",
+            "Thinking about buying in Greeley? Explore who the city tends to attract, what the UNC community connection means for buyers, and whether Greeley's practical northern Colorado character fits your priorities.",
           canonicalUrl: "https://www.myrockhomes.com/greeley-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
@@ -141,10 +142,10 @@ export default function GreeleyHomesForSale() {
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Greeley Homes for Sale
+              Greeley: University Community & Practical Northern Colorado Living
             </h1>
             <p className="text-lg text-cream/80 mb-8 leading-relaxed">
-              Explore homes in Greeley — a Weld County city with the University of Northern Colorado, established and newer neighborhoods, and a range of housing options. Greeley's location and community character make it an option worth considering for buyers exploring northern Colorado.
+              Greeley has a distinct identity on the northern Front Range — shaped by the University of Northern Colorado, its agricultural heritage, and a practical community character that appeals to buyers who want northern Colorado living without the price premium of Fort Collins or Boulder. This page is about who Greeley tends to suit and what living there is actually like.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton />
@@ -170,24 +171,24 @@ export default function GreeleyHomesForSale() {
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Why Buyers Consider Greeley
+            Who Greeley Tends to Attract
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: Trees,
-                title: "University Town Setting",
-                desc: "The University of Northern Colorado is located in Greeley and influences certain neighborhoods and segments of the housing market. Buyers should research how proximity to the university aligns with their priorities.",
-              },
-              {
                 icon: Home,
-                title: "Neighborhood Variety",
-                desc: "Greeley offers a range of neighborhoods from older established areas to newer suburban developments, providing options across different housing styles, price points, and community settings.",
+                title: "UNC-Connected Buyers",
+                desc: "Faculty, staff, graduate students, and families affiliated with the University of Northern Colorado often find Greeley a practical and convenient fit. Proximity to campus is a meaningful factor for this buyer profile.",
               },
               {
                 icon: MapPin,
-                title: "Weld County Location",
-                desc: "Greeley serves as the county seat of Weld County and a regional hub for northern Colorado, providing access to services, employment, and amenities for the surrounding area.",
+                title: "Value-Focused Northern Colorado Buyers",
+                desc: "Buyers who want northern Colorado living at more accessible price points than Fort Collins or Boulder often find Greeley a practical alternative. The city offers real value for buyers whose priorities align with what it offers.",
+              },
+              {
+                icon: Trees,
+                title: "Buyers Seeking a Different Pace",
+                desc: "Greeley's agricultural heritage and Weld County character appeal to buyers who want a different pace than the Front Range's larger metros — more space, a quieter setting, and a community identity that reflects northern Colorado's roots.",
               },
             ].map((item, idx) => (
               <motion.div
@@ -223,8 +224,7 @@ export default function GreeleyHomesForSale() {
           <h2
             className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Neighborhood Character and Lifestyle
+          >            The University Community Advantage
           </h2>
           <motion.div
             initial="hidden"
@@ -233,9 +233,10 @@ export default function GreeleyHomesForSale() {
             className="bg-cream/10 rounded-lg p-8 border border-cream/20"
           >
             <p className="text-cream/90 leading-relaxed mb-6">
-              Greeley has a community character shaped by the University of Northern Colorado, its agricultural heritage, established neighborhoods, and newer suburban growth. The city offers a range of neighborhood identities from older areas near the university to newer developments on the city's edges.
+              The University of Northern Colorado is Greeley's most distinctive community asset for buyers. Neighborhoods near UNC have a different character than the city's newer suburban edges — more walkable, more community-oriented, and shaped by the rhythms of university life. For buyers affiliated with UNC, proximity to campus is worth evaluating specifically.
             </p>
-            <p className="text-cream/90 leading-relaxed">
+            <p className="text-cream/
+90 leading-relaxed">
               Buyers are drawn to Greeley for different reasons — from those seeking a university town setting and community amenities to buyers looking for more affordable options in northern Colorado. Buyers should research specific neighborhoods to find the best fit for their lifestyle and priorities.
             </p>
           </motion.div>

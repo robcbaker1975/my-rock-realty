@@ -104,6 +104,10 @@ export default function SellersSection() {
                 src={SELLERS_IMG}
                 alt="Beautiful Colorado mountain home interior"
                 className="w-full h-auto object-cover aspect-[4/3]"
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="absolute -top-3 -left-3 w-full h-full border border-gold/20 rounded -z-10" />
