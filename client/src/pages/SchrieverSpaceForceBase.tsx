@@ -72,10 +72,12 @@ export default function SchrieverSpaceForceBase() {
   return (
     <div className="min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
       <SeoHead
-        title="Schriever SFB Relocation Guide | Colorado Springs Real Estate | My Rock Realty"
-        description="Practical relocation guidance for buyers moving to Schriever Space Force Base and the Colorado Springs area. PCS planning, neighborhood orientation, and local market context for military families."
-        canonicalUrl="https://www.myrockhomes.com/military-relocation/schriever-space-force-base/"
-        ogImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp"
+        metadata={{
+          title: "Schriever SFB Relocation Guide | Colorado Springs Real Estate | My Rock Realty",
+          description: "Practical relocation guidance for buyers moving to Schriever Space Force Base and the Colorado Springs area. PCS planning, neighborhood orientation, and local market context for military families.",
+          canonicalUrl: "https://www.myrockhomes.com/military-relocation/schriever-space-force-base/",
+          image: { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp" },
+        }}
         schema={faqSchema ? [faqSchema] : []}
       />
 

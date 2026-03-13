@@ -111,10 +111,12 @@ export default function MilitaryRelocation() {
   return (
     <div className="min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
       <SeoHead
-        title="Military & PCS Relocation in Colorado | My Rock Realty"
-        description="Colorado real estate support for active duty, veterans, military spouses, and PCS buyers. VA homebuying guidance, PCS planning, and local market expertise across Denver, Colorado Springs, and Fort Collins."
-        canonicalUrl="https://www.myrockhomes.com/military-relocation/"
-        ogImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp"
+        metadata={{
+          title: "Military & PCS Relocation in Colorado | My Rock Realty",
+          description: "Colorado real estate support for active duty, veterans, military spouses, and PCS buyers. VA homebuying guidance, PCS planning, and local market expertise across Denver, Colorado Springs, and Fort Collins.",
+          canonicalUrl: "https://www.myrockhomes.com/military-relocation/",
+          image: { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp" },
+        }}
         schema={faqSchema ? [faqSchema] : []}
       />
 
