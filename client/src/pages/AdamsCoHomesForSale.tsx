@@ -140,13 +140,7 @@ export default function AdamsCoHomesForSale() {
     document.title = "Adams County Homes for Sale | My Rock Realty";
   }, []);
 
-  const seoData = {
-    title: "Adams County Homes for Sale | My Rock Realty",
-    description:
-      "Explore homes for sale in Adams County, Colorado. Practical buyer guidance for Commerce City and communities across the northeast Denver metro area.",
-    canonicalUrl: "https://www.myrockhomes.com/adams-co-homes-for-sale",
-    structuredData: buildFAQPageSchema(faqContent),
-  };
+  const faqSchema = buildFAQPageSchema(faqContent);
 
   const breadcrumbs = [
     { label: "Home", href: "/" },
@@ -155,7 +149,14 @@ export default function AdamsCoHomesForSale() {
 
   return (
     <>
-      <SeoHead {...seoData} />
+      <SeoHead
+        metadata={{
+          title: "Adams County Homes for Sale | My Rock Realty",
+          description: "Explore homes for sale in Adams County, Colorado. Practical buyer guidance for Commerce City and communities across the northeast Denver metro area.",
+          canonicalUrl: "https://www.myrockhomes.com/adams-co-homes-for-sale",
+        }}
+        schema={faqSchema ? [faqSchema] : []}
+      />
       <div
         className="min-h-screen"
         style={{
