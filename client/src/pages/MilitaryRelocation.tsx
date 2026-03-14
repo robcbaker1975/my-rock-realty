@@ -126,6 +126,14 @@ const supportResourcePaths = [
     href: "/military-relocation/remote-home-tours/",
     cta: "Remote Home Tours",
   },
+  {
+    icon: Map,
+    title: "PCS Relocation Tour Support",
+    description:
+      "Structured remote consultation packages for PCS families evaluating housing options in Colorado Springs or Denver before arrival. 5-Tour and 10-Tour packages available.",
+    href: "/military-relocation/pcs-relocation-tour-support/",
+    cta: "Tour Support Packages",
+  },
 ];
 
 /* ─── Base-Specific Community Guides ─── */

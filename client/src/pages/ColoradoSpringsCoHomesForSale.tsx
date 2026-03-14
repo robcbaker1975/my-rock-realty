@@ -346,93 +346,15 @@ export default function ColoradoSpringsCoHomesForSale() {
       {/* ═══════════════════════════════════════════════════
           6. COLORADO SPRINGS NEIGHBORHOODS & COMMUNITIES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Colorado Springs Neighborhoods &amp; Communities
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Explore homes by Colorado Springs neighborhood and nearby communities.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <LinkCard href="/colorado-springs-homes-for-sale" label="Colorado Springs City" />
-            <LinkCard href="/manitou-springs-co-homes-for-sale" label="Manitou Springs" />
-            <LinkCard href="/widefield-co-homes-for-sale" label="Widefield" />
-            <LinkCard href="/palmer-lake-co-homes-for-sale" label="Palmer Lake" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           7. COLORADO SPRINGS PROPERTY TYPES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-charcoal/3">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Colorado Springs Property Types
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Browse Colorado Springs homes by property type.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <LinkCard href="/denver-condos-for-sale" label="Colorado Springs Condos" />
-            <LinkCard href="/denver-townhomes-for-sale" label="Colorado Springs Townhomes" />
-            <LinkCard href="/denver-luxury-homes-for-sale" label="Colorado Springs Luxury Homes" />
-            <LinkCard href="/denver-new-construction-homes" label="New Construction" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           8. COLORADO SPRINGS VS OTHER COLORADO CITIES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Colorado Springs vs Other Colorado Cities
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Comparing Colorado Springs to other Colorado markets.
-          </p>
-          <div className="grid sm:grid-cols-2 gap-3">
-            <LinkCard href="/denver-vs-colorado-springs" label="Denver vs Colorado Springs" />
-            <LinkCard href="/denver-vs-boulder" label="Colorado Springs vs Boulder" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           9. COLORADO SPRINGS HOME BUYING RESOURCES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-charcoal/3">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Colorado Springs Home Buying Resources
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Guides and resources for Colorado Springs home buyers.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <LinkCard href="/buying-a-home-in-denver" label="Buying a Home in Colorado Springs" />
-            <LinkCard href="/first-time-home-buyer-denver" label="First-Time Home Buyer Colorado Springs" />
-            <LinkCard href="/denver-home-buying-process" label="Colorado Springs Home Buying Process" />
-            <LinkCard href="/cost-of-living-in-denver-colorado" label="Cost of Living in Colorado Springs" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           10. BROWSE COLORADO SPRINGS HOMES BY PRICE
       ═══════════════════════════════════════════════════ */}

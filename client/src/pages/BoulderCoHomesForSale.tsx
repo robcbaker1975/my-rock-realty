@@ -349,93 +349,15 @@ export default function BoulderCoHomesForSale() {
       {/* ═══════════════════════════════════════════════════
           6. BOULDER NEIGHBORHOODS & COMMUNITIES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Boulder Neighborhoods & Communities
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Explore homes by Boulder neighborhood and nearby communities.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <LinkCard href="/boulder-homes-for-sale" label="Boulder City" />
-            <LinkCard href="/lafayette-co-homes-for-sale" label="Lafayette" />
-            <LinkCard href="/longmont-co-homes-for-sale" label="Longmont" />
-            <LinkCard href="/niwot-co-homes-for-sale" label="Niwot" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           7. BOULDER PROPERTY TYPES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-charcoal/3">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Boulder Property Types
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Browse Boulder homes by property type.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <LinkCard href="/denver-condos-for-sale" label="Boulder Condos" />
-            <LinkCard href="/denver-townhomes-for-sale" label="Boulder Townhomes" />
-            <LinkCard href="/denver-luxury-homes-for-sale" label="Boulder Luxury Homes" />
-            <LinkCard href="/denver-new-construction-homes" label="New Construction" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           8. BOULDER VS OTHER COLORADO CITIES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Boulder vs Other Colorado Cities
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Comparing Boulder to other Colorado markets.
-          </p>
-          <div className="grid sm:grid-cols-2 gap-3">
-            <LinkCard href="/denver-vs-boulder" label="Denver vs Boulder" />
-            <LinkCard href="/denver-vs-colorado-springs" label="Boulder vs Colorado Springs" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           9. BOULDER HOME BUYING RESOURCES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-charcoal/3">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Boulder Home Buying Resources
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Guides and resources for Boulder home buyers.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <LinkCard href="/buying-a-home-in-denver" label="Buying a Home in Boulder" />
-            <LinkCard href="/first-time-home-buyer-denver" label="First-Time Home Buyer Boulder" />
-            <LinkCard href="/denver-home-buying-process" label="Boulder Home Buying Process" />
-            <LinkCard href="/cost-of-living-in-denver-colorado" label="Cost of Living in Boulder, CO" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           10. BROWSE BOULDER HOMES BY PRICE
       ═══════════════════════════════════════════════════ */}

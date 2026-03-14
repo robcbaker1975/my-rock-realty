@@ -1,6 +1,7 @@
 /**
  * Colorado Springs Homes for Sale — My Rock Realty
- * Primary Colorado Springs city spoke page — focused neighborhood page for Colorado Springs search intent
+ * Lifestyle and buyer-fit page for Colorado Springs — who it's for, what living there is like
+ * Distinct from /colorado-springs-co-homes-for-sale (county authority hub)
  * Design: Front Range Modern — matches existing site design system
  * Palette: Warm charcoal (#292524), cream (#F5F0EB), antique gold (#C9A96E)
  * Typography: Outfit (display) + Libre Franklin (body)
@@ -28,29 +29,29 @@ const CS_HERO_BG = "/images/denver-rowhouses-hero.jpg";
 /* ─── FAQ Content ─── */
 const faqContent = [
   {
-    question: "What is Colorado Springs known for in Colorado?",
+    question: "Who tends to relocate to Colorado Springs?",
     answer:
-      "Colorado Springs is known for its mountain setting near Pikes Peak, access to outdoor recreation, Garden of the Gods, diverse neighborhoods, and a strong community character that attracts residents from a variety of backgrounds.",
+      "Colorado Springs attracts a wide range of buyers — families drawn to its neighborhood variety and outdoor access, buyers relocating from larger metros seeking more space and a different pace, and people who want mountain views and outdoor recreation without the price premium of Boulder or Denver's core neighborhoods.",
   },
   {
-    question: "What types of homes can buyers find in Colorado Springs?",
+    question: "How does the lifestyle in Colorado Springs compare to Denver?",
     answer:
-      "Buyers may find a mix of historic homes, modern residences, newer construction, condos, townhomes, and properties with mountain views depending on the neighborhood and price range.",
+      "Colorado Springs is generally more spread out than Denver, with a stronger emphasis on outdoor recreation and a more suburban feel in most neighborhoods. It offers mountain views and access to Pikes Peak, Garden of the Gods, and extensive trail systems — at price points that are often more accessible than comparable Denver-area properties.",
   },
   {
-    question: "Why do buyers consider Colorado Springs when searching in Colorado?",
+    question: "What neighborhood feel should buyers expect in Colorado Springs?",
     answer:
-      "Buyers often consider Colorado Springs for its outdoor recreation access, mountain views, community character, range of neighborhoods, and housing options available at various price points.",
+      "Colorado Springs has distinct neighborhood identities — from older established areas near downtown to newer suburban developments on the city's edges. Buyers should research specific neighborhoods to understand which community character best fits their lifestyle priorities.",
   },
   {
-    question: "Is Colorado Springs a good fit for buyers who want outdoor access and mountain views?",
+    question: "Is Colorado Springs a good fit for buyers relocating from out of state?",
     answer:
-      "Colorado Springs can be a strong fit for buyers who prioritize outdoor recreation, mountain scenery, and access to hiking and outdoor activities. Buyers should research specific neighborhoods to find the best match for their lifestyle.",
+      "Colorado Springs is a common destination for buyers relocating to Colorado, particularly those drawn to the mountain setting, outdoor recreation access, and a range of housing options. Buyers relocating from out of state should plan to research neighborhoods carefully, as the city covers a large geographic area with varied community characters.",
   },
   {
-    question: "What should buyers pay attention to when considering homes in Colorado Springs?",
+    question: "What lifestyle factors should buyers evaluate before choosing Colorado Springs?",
     answer:
-      "Buyers should pay attention to neighborhood location, home condition, mountain views and lot characteristics, proximity to outdoor recreation, and how a property compares with nearby alternatives. Buyers should independently research schools, crime data, and other community factors important to them.",
+      "Buyers should evaluate proximity to outdoor recreation, commute patterns, neighborhood density, and which areas of the city align with their daily routine. Colorado Springs rewards buyers who take time to understand its distinct neighborhood identities rather than treating it as a single uniform market.",
   },
 ];
 
@@ -95,9 +96,9 @@ export default function ColoradoSpringsHomesForSale() {
     <div className="min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
-          title: "Colorado Springs Homes for Sale | Colorado Springs, Colorado Real Estate",
+          title: "Colorado Springs Homes for Sale | Lifestyle, Relocation & Neighborhood Fit — My Rock Realty",
           description:
-            "Explore Colorado Springs homes for sale, neighborhood character, housing styles, outdoor lifestyle advantages, and helpful resources for buying in Colorado Springs.",
+            "Thinking about buying or relocating to Colorado Springs? Explore who the city tends to attract, what living there is like, and how to find the neighborhood that fits your lifestyle.",
           canonicalUrl: "https://www.myrockhomes.com/colorado-springs-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
@@ -141,10 +142,10 @@ export default function ColoradoSpringsHomesForSale() {
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Colorado Springs Homes for Sale
+              Colorado Springs: Lifestyle, Character & Fit
             </h1>
             <p className="text-lg text-cream/80 mb-8 leading-relaxed">
-              Explore homes in Colorado Springs — a mountain city with diverse neighborhoods, outdoor recreation access, and a range of housing options. Mountain views, community character, and proximity to natural attractions make Colorado Springs an option worth considering for buyers seeking an active lifestyle.
+              Colorado Springs is a large, diverse city — and finding the right neighborhood matters more than the city name alone. This page is about who Colorado Springs tends to attract, what living there is actually like, and how to think about neighborhood fit before you start your search.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton />
@@ -170,24 +171,24 @@ export default function ColoradoSpringsHomesForSale() {
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Why Buyers Consider Colorado Springs
+            Who Colorado Springs Tends to Attract
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 icon: Trees,
-                title: "Mountain Access",
-                desc: "Colorado Springs sits near Pikes Peak and provides access to hiking, climbing, and outdoor recreation. Garden of the Gods and other natural attractions are nearby.",
+                title: "Outdoor-First Buyers",
+                desc: "Buyers who want mountain views, trail access, and proximity to Pikes Peak and Garden of the Gods find Colorado Springs hard to match at its price points. Outdoor access is woven into the city's geography.",
               },
               {
                 icon: Home,
-                title: "Diverse Neighborhoods",
-                desc: "Colorado Springs features a range of neighborhoods with different characters, housing styles, and price points, offering buyers options across various budgets and preferences.",
+                title: "Relocating Families",
+                desc: "Colorado Springs is a common relocation destination for families seeking more space, a mountain setting, and neighborhood variety at price points that are often more accessible than Denver or Boulder.",
               },
               {
                 icon: MapPin,
-                title: "Outdoor Lifestyle",
-                desc: "The city is known for its outdoor recreation culture, mountain setting, and access to year-round outdoor activities that appeal to buyers who value an active lifestyle.",
+                title: "Buyers Seeking Space",
+                desc: "Buyers coming from denser metros often find Colorado Springs appealing for its combination of mountain access, neighborhood variety, and the ability to get more home for their budget.",
               },
             ].map((item, idx) => (
               <motion.div
@@ -224,7 +225,7 @@ export default function ColoradoSpringsHomesForSale() {
             className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Neighborhood Character and Lifestyle
+            Living in Colorado Springs: What the Experience Is Like
           </h2>
           <motion.div
             initial="hidden"
@@ -233,10 +234,10 @@ export default function ColoradoSpringsHomesForSale() {
             className="bg-cream/10 rounded-lg p-8 border border-cream/20"
           >
             <p className="text-cream/90 leading-relaxed mb-6">
-              Colorado Springs has a diverse community character built around mountain access, outdoor recreation, and a range of neighborhood identities. Buyers are drawn to the city's combination of mountain views, outdoor lifestyle opportunities, and varied housing options.
+              Colorado Springs is a city where the outdoor setting is genuinely part of daily life — not just a backdrop. Pikes Peak is visible from much of the city, Garden of the Gods is a short drive from most neighborhoods, and the trail network is extensive. For buyers who want that as part of their routine, it's a meaningful quality-of-life factor.
             </p>
             <p className="text-cream/90 leading-relaxed">
-              The city attracts a range of buyers — from outdoor enthusiasts prioritizing mountain access and recreation to those seeking diverse neighborhoods and community amenities. Buyers should research specific neighborhoods to find the best fit for their lifestyle and priorities.
+              The city covers a large geographic area with distinct neighborhood identities. Buyers who take time to understand which neighborhoods align with their priorities — commute, outdoor access, community feel — tend to find Colorado Springs a strong fit. Buyers who treat it as a single uniform market sometimes end up in the wrong part of a very large city.
             </p>
           </motion.div>
         </div>
@@ -266,10 +267,6 @@ export default function ColoradoSpringsHomesForSale() {
               {
                 name: "Broadmoor Area",
                 link: "/colorado-springs-homes-for-sale",
-              },
-              {
-                name: "Colorado Springs County Homes Hub",
-                link: "/colorado-springs-co-homes-for-sale",
               },
             ].map((neighborhood, idx) => (
               <motion.a
@@ -335,63 +332,6 @@ export default function ColoradoSpringsHomesForSale() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════
-          6. Explore Colorado Springs Real Estate Options
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-cream">
-        <div className="container">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Explore Colorado Springs Real Estate Options
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Colorado Springs Condos for Sale",
-                link: "/denver-condos-for-sale",
-              },
-              {
-                title: "Colorado Springs Townhomes for Sale",
-                link: "/denver-townhomes-for-sale",
-              },
-              {
-                title: "Colorado Springs Luxury Homes",
-                link: "/denver-luxury-homes-for-sale",
-              },
-              {
-                title: "Colorado Springs New Construction",
-                link: "/denver-new-construction-homes",
-              },
-              {
-                title: "Colorado Springs County Homes",
-                link: "/colorado-springs-co-homes-for-sale",
-              },
-            ].map((resource, idx) => (
-              <motion.a
-                key={idx}
-                href={resource.link}
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeUp}
-                className="bg-white hover:shadow-lg rounded-lg p-6 border border-charcoal/10 transition-all group"
-              >
-                <h3 className="text-lg font-bold text-charcoal mb-3 group-hover:text-gold transition-colors">
-                  {resource.title}
-                </h3>
-                <div className="flex items-center gap-2 text-gold">
-                  <span className="text-sm font-semibold">Explore</span>
-                  <ArrowRight
-                    size={16}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </div>
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ═══════════════════════════════════════════════════
           7. Colorado Springs Buyer Resources
@@ -434,13 +374,6 @@ export default function ColoradoSpringsHomesForSale() {
                 </a>
               ))}
             </div>
-            <a
-              href="/colorado-springs-co-homes-for-sale"
-              className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors font-semibold"
-            >
-              Back to Colorado Springs County Homes Hub
-              <ArrowRight size={16} />
-            </a>
           </motion.div>
         </div>
       </section>

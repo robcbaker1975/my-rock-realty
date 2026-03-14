@@ -267,27 +267,6 @@ export default function AdamsCoHomesForSale() {
         </section>
 
         {/* ── Communities ── */}
-        <section className="bg-white py-14">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2
-              className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Adams County Communities
-            </h2>
-            <p className="text-charcoal/65 mb-8 text-sm leading-relaxed">
-              Explore homes in Adams County communities. Each area has its own character and
-              market dynamics — buyers should research individual communities to find the right fit.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-3">
-              <LinkCard href="/commerce-city-homes-for-sale" label="Commerce City Homes for Sale" />
-              <LinkCard href="/brighton-co-homes-for-sale" label="Brighton CO Homes for Sale" />
-              <LinkCard href="/thornton-co-homes-for-sale" label="Thornton CO Homes for Sale" />
-              <LinkCard href="/northglenn-co-homes-for-sale" label="Northglenn CO Homes for Sale" />
-            </div>
-          </div>
-        </section>
-
         {/* ── Buyer Guidance ── */}
         <section className="max-w-4xl mx-auto px-6 py-14">
           <h2
@@ -418,23 +397,6 @@ export default function AdamsCoHomesForSale() {
         </section>
 
         {/* ── Related Resources ── */}
-        <section className="bg-white py-14">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2
-              className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Related Resources
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-3">
-              <LinkCard href="/denver-homes-for-sale" label="Denver Homes for Sale" />
-              <LinkCard href="/buying-a-home-in-denver" label="Buying a Home in Denver" />
-              <LinkCard href="/first-time-home-buyer-denver" label="First-Time Home Buyer Guide" />
-              <LinkCard href="/denver-home-buying-process" label="Denver Home Buying Process" />
-            </div>
-          </div>
-        </section>
-
         {/* ── FAQ ── */}
         <section className="max-w-4xl mx-auto px-6 py-14">
           <h2

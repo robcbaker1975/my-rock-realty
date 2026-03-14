@@ -100,14 +100,6 @@ export default function HeroSection() {
                 Attend the Free Workshop
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </button>
-              {/* SECONDARY CTA */}
-              <button
-                onClick={() => scrollTo("#buyers")}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:px-7 sm:py-3.5 border border-white/25 text-white/80 font-medium rounded-lg transition-all hover:border-gold/50 hover:text-gold backdrop-blur-sm active:bg-white/5 text-[15px] sm:text-base"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                Explore Buying &amp; Selling in Colorado
-              </button>
             </motion.div>
 
             {/* Supporting trust line */}

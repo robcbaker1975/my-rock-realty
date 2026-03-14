@@ -95,10 +95,12 @@ import VeteransBuyingColorado from "./pages/VeteransBuyingColorado";
 import PcsTimelineChecklist from "./pages/PcsTimelineChecklist";
 import TemporaryHousingColoradoSprings from "./pages/TemporaryHousingColoradoSprings";
 import RemoteHomeTours from "./pages/RemoteHomeTours";
+import PcsRelocationTourSupport from "./pages/PcsRelocationTourSupport";
 import BestCommunitiesNearFortCarson from "./pages/BestCommunitiesNearFortCarson";
 import BestCommunitiesNearPetersonSpaceForceBase from "./pages/BestCommunitiesNearPetersonSpaceForceBase";
 import BestCommunitiesNearSchrieverSpaceForceBase from "./pages/BestCommunitiesNearSchrieverSpaceForceBase";
 import BestCommunitiesNearBuckleySpaceForceBase from "./pages/BestCommunitiesNearBuckleySpaceForceBase";
+import AgentPartner from "./pages/AgentPartner";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -196,10 +198,13 @@ function Router() {
       <Route path={"/military-relocation/pcs-timeline-checklist/"} component={PcsTimelineChecklist} />
       <Route path={"/military-relocation/temporary-housing-colorado-springs/"} component={TemporaryHousingColoradoSprings} />
       <Route path={"/military-relocation/remote-home-tours/"} component={RemoteHomeTours} />
+      <Route path={"/military-relocation/pcs-relocation-tour-support/"} component={PcsRelocationTourSupport} />
       <Route path={"/military-relocation/best-communities-near-fort-carson/"} component={BestCommunitiesNearFortCarson} />
       <Route path={"/military-relocation/best-communities-near-peterson-space-force-base/"} component={BestCommunitiesNearPetersonSpaceForceBase} />
       <Route path={"/military-relocation/best-communities-near-schriever-space-force-base/"} component={BestCommunitiesNearSchrieverSpaceForceBase} />
       <Route path={"/military-relocation/best-communities-near-buckley-space-force-base/"} component={BestCommunitiesNearBuckleySpaceForceBase} />
+      {/* Secondary: direct-link agent landing page — noindex, not in sitemap, not in public nav */}
+      <Route path={"/for-colorado-agents"} component={AgentPartner} />
       <Route path={"/workshop-draft"}>{() => { window.location.href = "/colorado-home-buying-workshop"; return null; }}</Route>
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

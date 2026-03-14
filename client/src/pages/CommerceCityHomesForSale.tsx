@@ -336,34 +336,6 @@ export default function CommerceCityHomesForSale() {
         </section>
 
         {/* ── Adams County Communities ── */}
-        <section className="bg-white py-14">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2
-              className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Adams County Communities
-            </h2>
-            <p
-              className="text-charcoal/70 text-sm mb-6 leading-relaxed"
-              style={{ fontFamily: "'Libre Franklin', sans-serif" }}
-            >
-              Commerce City is one of several communities in Adams County. Buyers often compare
-              multiple areas before deciding on a location.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-3">
-              <LinkCard href="/adams-co-homes-for-sale" label="Adams County Homes for Sale" />
-              <LinkCard href="/brighton-co-homes-for-sale" label="Brighton CO Homes for Sale" />
-              <LinkCard href="/thornton-co-homes-for-sale" label="Thornton CO Homes for Sale" />
-              <LinkCard href="/northglenn-co-homes-for-sale" label="Northglenn CO Homes for Sale" />
-            </div>
-            <div className="grid sm:grid-cols-2 gap-3 mt-3">
-              <LinkCard href="/denver-homes-for-sale" label="Denver Homes for Sale" />
-              <LinkCard href="/buying-a-home-in-denver" label="Buying a Home in Denver" />
-            </div>
-          </div>
-        </section>
-
         {/* ── FAQ ── */}
         <section className="max-w-4xl mx-auto px-6 py-14">
           <h2

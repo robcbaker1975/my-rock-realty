@@ -367,92 +367,15 @@ export default function GreeleyCoHomesForSale() {
       {/* ═══════════════════════════════════════════════════
           6. GREELEY NEIGHBORHOODS & COMMUNITIES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Greeley Neighborhoods &amp; Communities
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Explore homes by Greeley neighborhood and nearby communities.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <LinkCard href="/greeley-homes-for-sale" label="Greeley City" />
-            <LinkCard href="/fort-collins-co-homes-for-sale" label="Fort Collins Area" />
-            <LinkCard href="/denver-homes-for-sale" label="Denver Metro" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           7. GREELEY PROPERTY TYPES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-charcoal/3">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Greeley Property Types
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Browse Greeley homes by property type.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <LinkCard href="/denver-condos-for-sale" label="Greeley Condos" />
-            <LinkCard href="/denver-townhomes-for-sale" label="Greeley Townhomes" />
-            <LinkCard href="/denver-luxury-homes-for-sale" label="Greeley Luxury Homes" />
-            <LinkCard href="/denver-new-construction-homes" label="New Construction" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           8. GREELEY VS OTHER COLORADO CITIES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Greeley vs Other Colorado Cities
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Comparing Greeley to other Colorado markets.
-          </p>
-          <div className="grid sm:grid-cols-2 gap-3">
-            <LinkCard href="/denver-homes-for-sale" label="Greeley vs Denver" />
-            <LinkCard href="/fort-collins-co-homes-for-sale" label="Greeley vs Fort Collins" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           9. GREELEY HOME BUYING RESOURCES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-charcoal/3">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Greeley Home Buying Resources
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Guides and resources for Greeley home buyers.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <LinkCard href="/buying-a-home-in-denver" label="Buying a Home in Colorado" />
-            <LinkCard href="/first-time-home-buyer-denver" label="First-Time Home Buyer Guide" />
-            <LinkCard href="/denver-home-buying-process" label="Colorado Home Buying Process" />
-            <LinkCard href="/cost-of-living-in-denver-colorado" label="Cost of Living in Colorado" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           10. BROWSE GREELEY HOMES BY PRICE
       ═══════════════════════════════════════════════════ */}

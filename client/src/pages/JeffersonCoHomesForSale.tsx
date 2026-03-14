@@ -413,49 +413,9 @@ export default function JeffersonCoHomesForSale() {
       {/* ═══════════════════════════════════════════════════
           6. JEFFERSON COUNTY COMMUNITIES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Jefferson County Communities
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Explore homes by Jefferson County community.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <LinkCard href="/golden-homes-for-sale" label="Golden Homes for Sale" />
-            <LinkCard href="/lakewood-co-homes-for-sale" label="Lakewood Homes for Sale" />
-            <LinkCard href="/morrison-co-homes-for-sale" label="Morrison Homes for Sale" />
-            <LinkCard href="/westminster-co-homes-for-sale" label="Westminster Homes for Sale" />
-            <LinkCard href="/denver-homes-for-sale" label="Denver Metro" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           7. JEFFERSON COUNTY PROPERTY TYPES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-charcoal/3">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Jefferson County Property Types
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Browse Jefferson County homes by property type.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <LinkCard href="/denver-homes-for-sale" label="Single-Family Homes" />
-            <LinkCard href="/denver-condos-for-sale" label="Condos &amp; Townhomes" />
-            <LinkCard href="/denver-new-construction-homes" label="New Construction" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           8. FAQ
       ═══════════════════════════════════════════════════ */}

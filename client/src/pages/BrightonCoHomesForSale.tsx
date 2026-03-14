@@ -213,22 +213,6 @@ export default function BrightonCoHomesForSale() {
       </section>
 
       {/* ── Adams County Communities ── */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-        <h2 className="text-2xl font-bold text-charcoal font-display mb-6">
-          Explore Adams County Communities
-        </h2>
-        <p className="text-charcoal/70 text-sm mb-6">
-          Brighton is one of several communities in Adams County. Buyers often explore multiple areas before deciding on a location.
-        </p>
-        <div className="grid sm:grid-cols-2 gap-3">
-          <LinkCard href="/adams-co-homes-for-sale" label="Adams County Homes for Sale" />
-          <LinkCard href="/commerce-city-homes-for-sale" label="Commerce City Homes for Sale" />
-          <LinkCard href="/thornton-co-homes-for-sale" label="Thornton CO Homes for Sale" />
-          <LinkCard href="/northglenn-co-homes-for-sale" label="Northglenn CO Homes for Sale" />
-          <LinkCard href="/denver-homes-for-sale" label="Denver Homes for Sale" />
-        </div>
-      </section>
-
       {/* ── FAQ ── */}
       <section className="bg-charcoal/5 py-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">

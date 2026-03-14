@@ -348,41 +348,6 @@ export default function DenverTownhomesForSale() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════
-          6. Explore Denver Townhome Options
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-cream">
-        <div className="container">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-charcoal mb-4 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Explore Denver Townhome Options
-          </h2>
-          <p className="text-charcoal/60 text-center mb-12 max-w-xl mx-auto">
-            Browse related Denver property types and compare your options.
-          </p>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {[
-              { label: "Denver Homes for Sale", href: "/denver-homes-for-sale" },
-              { label: "Denver Condos for Sale", href: "/denver-condos-for-sale" },
-              { label: "Denver Luxury Homes", href: "/denver-luxury-homes-for-sale" },
-              { label: "Denver New Construction", href: "/denver-new-construction-homes" },
-              { label: "Buying a Home in Denver", href: "/buying-a-home-in-denver" },
-              { label: "First-Time Home Buyer Denver", href: "/first-time-home-buyer-denver" },
-            ].map((item, idx) => (
-              <a
-                key={idx}
-                href={item.href}
-                className="block bg-white border border-charcoal/10 rounded-lg px-4 py-3 text-sm font-medium text-charcoal hover:border-gold hover:text-gold transition-colors duration-150"
-                style={{ fontFamily: "'Libre Franklin', sans-serif" }}
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ═══════════════════════════════════════════════════
           7. Denver Townhome Buyer Resources

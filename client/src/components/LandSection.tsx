@@ -96,7 +96,7 @@ export default function LandSection() {
               className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 border border-gold/50 text-gold font-semibold rounded-lg sm:rounded transition-all hover:bg-gold hover:text-charcoal active:scale-[0.98] text-[15px] sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Explore Your Options
+              Schedule a Land Consultation
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </button>
           </motion.div>

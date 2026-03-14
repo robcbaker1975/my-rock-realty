@@ -489,6 +489,7 @@ export default function JoinUs() {
                   "Modern tools, including AI-assisted resources",
                   "Accountability and a culture of professionalism",
                   "A brokerage that invests in your growth — whether you're newer or producing",
+                  "For the right agents, custom website support may be available as part of your growth plan",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-[14px] text-cream/75 leading-relaxed">
                     <span className="text-gold mt-0.5 shrink-0">·</span>

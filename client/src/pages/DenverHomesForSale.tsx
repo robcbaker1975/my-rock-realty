@@ -333,119 +333,18 @@ export default function DenverHomesForSale() {
       {/* ═══════════════════════════════════════════════════
           6. POPULAR DENVER NEIGHBORHOODS
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Popular Denver Neighborhoods
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Explore homes by Denver neighborhood.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <LinkCard href="/wash-park-denver-homes-for-sale" label="Wash Park" />
-            <LinkCard href="/cherry-creek-denver-homes-for-sale" label="Cherry Creek" />
-            <LinkCard href="/lohi-denver-homes-for-sale" label="LoHi" />
-            <LinkCard href="/rino-denver-homes-for-sale" label="RiNo" />
-            <LinkCard href="/central-park-denver-homes-for-sale" label="Central Park" />
-            <LinkCard href="/sloan-lake-denver-homes-for-sale" label="Sloan Lake" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           7. TOP DENVER SUBURBS FOR HOME BUYERS
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-charcoal/3">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Top Denver Suburbs for Home Buyers
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Many buyers explore the broader Denver metro area for more space, value, or specific community features.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            <LinkCard href="/parker-co-homes-for-sale" label="Parker" />
-            <LinkCard href="/highlands-ranch-co-homes-for-sale" label="Highlands Ranch" />
-            <LinkCard href="/castle-rock-co-homes-for-sale" label="Castle Rock" />
-            <LinkCard href="/littleton-co-homes-for-sale" label="Littleton" />
-            <LinkCard href="/arvada-co-homes-for-sale" label="Arvada" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           8. DENVER PROPERTY TYPES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Denver Property Types
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Browse Denver homes by property type.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <LinkCard href="/denver-condos-for-sale" label="Denver Condos" />
-            <LinkCard href="/denver-townhomes-for-sale" label="Denver Townhomes" />
-            <LinkCard href="/denver-luxury-homes-for-sale" label="Denver Luxury Homes" />
-            <LinkCard href="/denver-new-construction-homes" label="New Construction" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           9. DENVER VS OTHER COLORADO CITIES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-charcoal/3">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Denver vs Other Colorado Cities
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Comparing Denver to other Colorado markets.
-          </p>
-          <div className="grid sm:grid-cols-2 gap-3">
-            <LinkCard href="/denver-vs-colorado-springs" label="Denver vs Colorado Springs" />
-            <LinkCard href="/denver-vs-boulder" label="Denver vs Boulder" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           10. DENVER HOME BUYING RESOURCES
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Denver Home Buying Resources
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Guides and resources for Denver home buyers.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <LinkCard href="/buying-a-home-in-denver" label="Buying a Home in Denver" />
-            <LinkCard href="/first-time-home-buyer-denver" label="First-Time Home Buyer Denver" />
-            <LinkCard href="/denver-home-buying-process" label="Denver Home Buying Process" />
-            <LinkCard href="/cost-of-living-in-denver-colorado" label="Cost of Living in Denver, Colorado" />
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════
           11. BROWSE DENVER HOMES BY PRICE
       ═══════════════════════════════════════════════════ */}

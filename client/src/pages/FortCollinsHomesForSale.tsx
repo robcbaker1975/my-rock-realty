@@ -268,10 +268,6 @@ export default function FortCollinsHomesForSale() {
                 name: "Southeast Fort Collins",
                 link: "/fort-collins-homes-for-sale",
               },
-              {
-                name: "Fort Collins County Homes Hub",
-                link: "/fort-collins-co-homes-for-sale",
-              },
             ].map((neighborhood, idx) => (
               <motion.a
                 key={idx}
@@ -336,63 +332,6 @@ export default function FortCollinsHomesForSale() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════
-          6. Explore Fort Collins Real Estate Options
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-cream">
-        <div className="container">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Explore Fort Collins Real Estate Options
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Fort Collins Condos for Sale",
-                link: "/denver-condos-for-sale",
-              },
-              {
-                title: "Fort Collins Townhomes for Sale",
-                link: "/denver-townhomes-for-sale",
-              },
-              {
-                title: "Fort Collins Luxury Homes",
-                link: "/denver-luxury-homes-for-sale",
-              },
-              {
-                title: "Fort Collins New Construction",
-                link: "/denver-new-construction-homes",
-              },
-              {
-                title: "Fort Collins County Homes",
-                link: "/fort-collins-co-homes-for-sale",
-              },
-            ].map((resource, idx) => (
-              <motion.a
-                key={idx}
-                href={resource.link}
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeUp}
-                className="bg-white hover:shadow-lg rounded-lg p-6 border border-charcoal/10 transition-all group"
-              >
-                <h3 className="text-lg font-bold text-charcoal mb-3 group-hover:text-gold transition-colors">
-                  {resource.title}
-                </h3>
-                <div className="flex items-center gap-2 text-gold">
-                  <span className="text-sm font-semibold">Explore</span>
-                  <ArrowRight
-                    size={16}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </div>
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ═══════════════════════════════════════════════════
           7. Fort Collins Buyer Resources
@@ -435,13 +374,6 @@ export default function FortCollinsHomesForSale() {
                 </a>
               ))}
             </div>
-            <a
-              href="/fort-collins-co-homes-for-sale"
-              className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors font-semibold"
-            >
-              Back to Fort Collins County Homes Hub
-              <ArrowRight size={16} />
-            </a>
           </motion.div>
         </div>
       </section>

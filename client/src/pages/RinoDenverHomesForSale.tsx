@@ -343,55 +343,6 @@ export default function RinoDenverHomesForSale() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════
-          6. Explore RiNo Real Estate Options
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-cream">
-        <div className="container">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Explore RiNo Real Estate Options
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Denver Condos for Sale",
-                link: "/denver-condos-for-sale",
-              },
-              {
-                title: "Denver Townhomes for Sale",
-                link: "/denver-townhomes-for-sale",
-              },
-              {
-                title: "Denver New Construction Homes",
-                link: "/denver-new-construction-homes",
-              },
-            ].map((resource, idx) => (
-              <motion.a
-                key={idx}
-                href={resource.link}
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeUp}
-                className="bg-white hover:shadow-lg rounded-lg p-6 border border-charcoal/10 transition-all group"
-              >
-                <h3 className="text-lg font-bold text-charcoal mb-3 group-hover:text-gold transition-colors">
-                  {resource.title}
-                </h3>
-                <div className="flex items-center gap-2 text-gold">
-                  <span className="text-sm font-semibold">Explore</span>
-                  <ArrowRight
-                    size={16}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </div>
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ═══════════════════════════════════════════════════
           7. RiNo Buyer Resources
