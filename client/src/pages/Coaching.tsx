@@ -48,7 +48,8 @@ const fadeUp = {
 function CTAButton({ className = "", label = "Start a Coaching Conversation" }: { className?: string; label?: string }) {
   return (
     <a
-      href="mailto:coaching@myrockhomes.com?subject=Coaching Inquiry — My Rock Realty"
+      href="#coaching-contact"
+      onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('coaching-contact')?.scrollIntoView({ behavior: 'smooth' }); }}
       className={`inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 bg-gold text-charcoal hover:bg-gold-light hover:shadow-lg px-7 py-4 text-[15px] sm:text-base no-underline ${className}`}
       style={{ fontFamily: "'Outfit', sans-serif" }}
     >
@@ -89,6 +90,7 @@ export default function Coaching() {
     }
     contactMutation.mutate({
       ...formData,
+      source: "Coaching",
       message: `[Coaching Inquiry]\nLicense Status: ${formData.type}\n\n${formData.message}`,
     });
   };
@@ -651,7 +653,7 @@ export default function Coaching() {
       {/* ═══════════════════════════════════════════════════
           INQUIRY FORM
       ═══════════════════════════════════════════════════ */}
-      <section className="py-12 sm:py-16 md:py-20 bg-warm-white border-t border-gold/10">
+      <section id="coaching-contact" className="py-12 sm:py-16 md:py-20 bg-warm-white border-t border-gold/10">
         <div className="container max-w-3xl">
           {submitted ? (
             <motion.div

@@ -8,6 +8,7 @@ export interface ContactFormData {
   type?: string;
   interests: string[];
   message?: string;
+  source?: string;
 }
 
 /**
@@ -23,6 +24,10 @@ function buildEmailBody(data: ContactFormData): string {
 
   if (data.phone) {
     lines.push(`Phone: ${data.phone}`);
+  }
+
+  if (data.source) {
+    lines.push(`Page: ${data.source}`);
   }
 
   if (data.type) {
@@ -66,9 +71,17 @@ function buildHtmlBody(data: ContactFormData): string {
         </tr>`;
   }
 
-  if (data.type) {
+  if (data.source) {
     html += `
         <tr style="background: #f9f7f4;">
+          <td style="padding: 8px 12px; font-weight: bold; color: #555;">Page</td>
+          <td style="padding: 8px 12px; color: #292524;">${data.source}</td>
+        </tr>`;
+  }
+
+  if (data.type) {
+    html += `
+        <tr>
           <td style="padding: 8px 12px; font-weight: bold; color: #555;">Interested In</td>
           <td style="padding: 8px 12px; color: #292524;">${data.type}</td>
         </tr>`;
@@ -76,7 +89,7 @@ function buildHtmlBody(data: ContactFormData): string {
 
   if (data.interests.length > 0) {
     html += `
-        <tr>
+        <tr style="background: #f9f7f4;">
           <td style="padding: 8px 12px; font-weight: bold; color: #555;">Topics</td>
           <td style="padding: 8px 12px; color: #292524;">${data.interests.join(", ")}</td>
         </tr>`;
@@ -111,10 +124,12 @@ export async function sendContactEmail(data: ContactFormData): Promise<boolean> 
   const smtpPass = process.env.SMTP_PASS;
   const recipientEmails = process.env.CONTACT_EMAILS || "robbakerre@gmail.com,7203636544@vtext.com";
 
+  const sourceLabel = data.source ? ` [${data.source}]` : "";
+
   // Also send an in-app notification to the project owner
   try {
     await notifyOwner({
-      title: `New Lead: ${data.name} — ${data.type || "General Inquiry"}`,
+      title: `New Lead: ${data.name} — ${data.type || "General Inquiry"}${sourceLabel}`,
       content: buildEmailBody(data),
     });
   } catch (err) {
@@ -136,7 +151,7 @@ export async function sendContactEmail(data: ContactFormData): Promise<boolean> 
         from: `"My Rock Realty" <${smtpUser}>`,
         to: recipientEmails,
         replyTo: data.email,
-        subject: `New Lead: ${data.name} — ${data.type || "General Inquiry"}`,
+        subject: `New Lead: ${data.name} — ${data.type || "General Inquiry"}${sourceLabel}`,
         text: buildEmailBody(data),
         html: buildHtmlBody(data),
       });

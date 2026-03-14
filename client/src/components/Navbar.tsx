@@ -267,7 +267,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden fixed inset-0 top-0 bg-charcoal/[0.98] backdrop-blur-md z-40"
+            className="lg:hidden fixed inset-0 top-0 bg-charcoal/[0.98] backdrop-blur-md z-[60]"
           >
             {/* Close button at top */}
             <div className="container flex items-center justify-between pt-5 pb-3">

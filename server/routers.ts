@@ -12,6 +12,7 @@ const contactInputSchema = z.object({
   type: z.string().optional(),
   interests: z.array(z.string()),
   message: z.string().optional(),
+  source: z.string().optional(),
 });
 
 export const appRouter = router({

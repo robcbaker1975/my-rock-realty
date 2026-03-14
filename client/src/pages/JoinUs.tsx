@@ -49,7 +49,8 @@ const fadeUp = {
 function CTAButton({ className = "" }: { className?: string }) {
   return (
     <a
-      href="mailto:join@myrockhomes.com?subject=Joining My Rock Realty — Let's Talk"
+      href="#joinus-contact"
+      onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('joinus-contact')?.scrollIntoView({ behavior: 'smooth' }); }}
       className={`inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 bg-gold text-charcoal hover:bg-gold-light hover:shadow-lg px-7 py-4 text-[15px] sm:text-base no-underline ${className}`}
       style={{ fontFamily: "'Outfit', sans-serif" }}
     >
@@ -93,6 +94,7 @@ export default function JoinUs() {
       type: "Agent Inquiry",
       interests: formData.interests,
       message: formData.message || undefined,
+      source: "Join Us",
     });
   };
 
@@ -669,7 +671,7 @@ export default function JoinUs() {
       {/* ═══════════════════════════════════════════════════
           AGENT INQUIRY FORM
       ═══════════════════════════════════════════════════ */}
-      <section className="py-12 sm:py-16 md:py-20 bg-warm-white border-t border-gold/10">
+      <section id="joinus-contact" className="py-12 sm:py-16 md:py-20 bg-warm-white border-t border-gold/10">
         <div className="container max-w-3xl">
           {submitted ? (
             <motion.div

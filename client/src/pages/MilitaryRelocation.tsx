@@ -10,6 +10,8 @@ import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 import {
   ArrowRight,
   Shield,
@@ -24,6 +26,9 @@ import {
   Video,
   Map,
   ClipboardList,
+  Send,
+  Loader2,
+  CheckCircle,
 } from "lucide-react";
 
 const DENVER_HERO_BG = "/images/denver-rowhouses-hero.jpg";
@@ -216,6 +221,40 @@ function LinkCard({ label, sub, href }: { label: string; sub: string; href: stri
 
 export default function MilitaryRelocation() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const contactMutation = trpc.contact.submit.useMutation({
+    onSuccess: () => {
+      setSubmitted(true);
+      toast.success("Thank you! Rob will be in touch soon.");
+    },
+    onError: (error) => {
+      toast.error(error.message || "Something went wrong. Please try again.");
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name.trim() || !formData.email.trim()) {
+      toast.error("Please provide your name and email.");
+      return;
+    }
+    contactMutation.mutate({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || undefined,
+      type: "Military Relocation",
+      interests: ["Military Relocation"],
+      source: "Military Relocation",
+      message: `[Military Relocation Inquiry]\n\n${formData.message}`,
+    });
+  };
 
   return (
     <div className="min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
@@ -262,47 +301,74 @@ export default function MilitaryRelocation() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-5 max-w-3xl"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Military &amp; PCS Relocation{" "}
-            <span className="text-gold">in Colorado</span>
+            Military &amp; PCS Relocation in Colorado
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-cream/80 text-[15px] sm:text-lg leading-relaxed max-w-2xl mb-8"
+            className="text-cream/75 text-base sm:text-lg leading-relaxed max-w-2xl mb-8"
           >
-            Colorado real estate guidance designed for active duty, veterans, military spouses,
-            and PCS buyers. Whether you're planning months ahead or moving on short notice,
-            Rob provides practical, local support for the unique demands of military homebuying.
+            Colorado real estate support for active duty, veterans, military spouses, and PCS buyers.
+            Practical guidance for navigating the Colorado market — whether you're months out or actively searching.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-3"
+            className="flex flex-col sm:flex-row gap-4"
           >
             <a
               href="#contact-rob"
+              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { e.preventDefault(); document.getElementById('contact-rob')?.scrollIntoView({ behavior: 'smooth' }); }}
               className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Talk to Rob About Your Move
+              Schedule a Consultation
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-            </a>
-            <a
-              href="#resources"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-cream/80 font-medium rounded-lg transition-all hover:border-gold/40 hover:text-gold text-[15px] sm:text-base"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Explore Resources
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </a>
           </motion.div>
         </div>
       </section>
 
       {/* ─── Who This Is For ─── */}
-      <section className="py-12 sm:py-20 bg-white">
+      <section className="py-10 sm:py-14 bg-white border-b border-cream-dark/40">
+        <div className="container">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-xl sm:text-2xl font-bold text-charcoal mb-6 text-center"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            Who This Resource Center Serves
+          </motion.h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {audiences.map((a, i) => (
+              <motion.div
+                key={a.label}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.05 * i }}
+                className="flex flex-col items-start p-5 rounded bg-cream border border-cream-dark/50"
+              >
+                <a.icon size={22} className="text-gold-dark mb-3" />
+                <span
+                  className="font-semibold text-charcoal text-[15px] mb-1.5"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  {a.label}
+                </span>
+                <p className="text-charcoal-light/70 text-sm leading-relaxed">{a.text}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Core Planning Paths ─── */}
+      <section className="py-12 sm:py-20 bg-cream">
         <div className="container">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -311,203 +377,144 @@ export default function MilitaryRelocation() {
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Who This Resource Center Serves
+            Core Planning Guides
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-10"
+            className="text-charcoal-light/70 text-base mb-8 max-w-2xl"
           >
-            Military homebuying comes with unique timing pressures, financing options, and planning
-            considerations. This resource center is designed to help military families navigate
-            the Colorado market with clarity and confidence.
+            Start here for PCS planning, VA homebuying, and timeline guidance.
           </motion.p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {audiences.map((a, i) => (
-              <motion.div
-                key={a.label}
+          <div className="grid sm:grid-cols-3 gap-6">
+            {corePlanningPaths.map((path, i) => (
+              <motion.a
+                key={path.href}
+                href={path.href}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.08 * i }}
-                className="p-5 sm:p-6 rounded bg-cream border border-cream-dark/50"
+                className="group flex flex-col p-6 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-lg hover:shadow-gold/5"
               >
-                <div className="w-10 h-10 rounded flex items-center justify-center bg-gold/10 text-gold-dark mb-3">
-                  <a.icon size={20} strokeWidth={1.8} />
-                </div>
+                <path.icon size={24} className="text-gold-dark mb-4" />
                 <h3
-                  className="text-base font-semibold text-charcoal mb-2"
+                  className="font-semibold text-charcoal text-[15px] mb-2 group-hover:text-gold-dark transition-colors"
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
-                  {a.label}
+                  {path.title}
                 </h3>
-                <p className="text-charcoal-light/70 text-sm leading-relaxed">{a.text}</p>
-              </motion.div>
+                <p className="text-charcoal-light/70 text-sm leading-relaxed mb-4 flex-1">{path.description}</p>
+                <span className="inline-flex items-center gap-1.5 text-gold-dark text-sm font-medium group-hover:gap-2.5 transition-all">
+                  {path.cta} <ArrowRight size={14} />
+                </span>
+              </motion.a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── Resources ─── */}
-      <section id="resources" className="py-12 sm:py-20 bg-cream">
+      {/* ─── Support Resources ─── */}
+      <section className="py-12 sm:py-20 bg-white border-t border-cream-dark/40">
         <div className="container">
-
-          {/* ── Group 1: Core Planning ── */}
-          <motion.div
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-14"
+            className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            <div className="flex items-center gap-3 mb-2">
-              <span className="text-xs font-semibold tracking-widest uppercase text-gold-dark" style={{ fontFamily: "'Outfit', sans-serif" }}>Core Planning</span>
-            </div>
-            <h2
-              className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              PCS Planning &amp; VA Homebuying
-            </h2>
-            <p className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-8">
-              Start here if you're planning a PCS move to Colorado, exploring VA financing, or
-              building your homebuying timeline.
-            </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
-              {corePlanningPaths.map((path, i) => (
-                <motion.a
-                  key={path.title}
-                  href={path.href}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 * i }}
-                  className="group block p-6 sm:p-8 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-lg hover:shadow-gold/5"
+            Support Resources
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-charcoal-light/70 text-base mb-8 max-w-2xl"
+          >
+            Specialized guidance for military spouses, veterans, remote buyers, and PCS families.
+          </motion.p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {supportResourcePaths.map((path, i) => (
+              <motion.a
+                key={path.href}
+                href={path.href}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.06 * i }}
+                className="group flex flex-col p-6 rounded bg-cream border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-lg hover:shadow-gold/5"
+              >
+                <path.icon size={22} className="text-gold-dark mb-3" />
+                <h3
+                  className="font-semibold text-charcoal text-[15px] mb-2 group-hover:text-gold-dark transition-colors"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
-                  <div className="w-12 h-12 rounded flex items-center justify-center bg-gold/10 text-gold-dark mb-5">
-                    <path.icon size={24} strokeWidth={1.8} />
-                  </div>
-                  <h3
-                    className="text-xl font-semibold text-charcoal mb-3 group-hover:text-gold-dark transition-colors"
-                    style={{ fontFamily: "'Outfit', sans-serif" }}
-                  >
-                    {path.title}
-                  </h3>
-                  <p className="text-charcoal-light/70 leading-relaxed mb-5 text-[15px]">
-                    {path.description}
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-gold-dark font-medium text-sm group-hover:gap-3 transition-all">
-                    {path.cta}
-                    <ArrowRight size={16} />
-                  </span>
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
+                  {path.title}
+                </h3>
+                <p className="text-charcoal-light/70 text-sm leading-relaxed mb-4 flex-1">{path.description}</p>
+                <span className="inline-flex items-center gap-1.5 text-gold-dark text-sm font-medium group-hover:gap-2.5 transition-all">
+                  {path.cta} <ArrowRight size={14} />
+                </span>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          {/* ── Group 2: Support Resources ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-14"
-          >
-            <div className="flex items-center gap-3 mb-2">
-              <span className="text-xs font-semibold tracking-widest uppercase text-gold-dark" style={{ fontFamily: "'Outfit', sans-serif" }}>Support Resources</span>
-            </div>
-            <h2
-              className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
+      {/* ─── Base-Specific Guides ─── */}
+      <section className="py-12 sm:py-20 bg-cream border-t border-cream-dark/40">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
             >
-              Specialized Guidance
-            </h2>
-            <p className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-8">
-              Guides for specific situations — military spouses, veterans, buyers arriving from
-              out of state, and those navigating temporary housing transitions.
-            </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-5 sm:gap-7">
-              {supportResourcePaths.map((path, i) => (
-                <motion.a
-                  key={path.title}
-                  href={path.href}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.08 * i }}
-                  className="group block p-6 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-lg hover:shadow-gold/5"
-                >
-                  <div className="w-10 h-10 rounded flex items-center justify-center bg-gold/10 text-gold-dark mb-4">
-                    <path.icon size={20} strokeWidth={1.8} />
-                  </div>
-                  <h3
-                    className="text-lg font-semibold text-charcoal mb-2 group-hover:text-gold-dark transition-colors"
-                    style={{ fontFamily: "'Outfit', sans-serif" }}
-                  >
-                    {path.title}
-                  </h3>
-                  <p className="text-charcoal-light/70 leading-relaxed mb-4 text-[14px]">
-                    {path.description}
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-gold-dark font-medium text-sm group-hover:gap-3 transition-all">
-                    {path.cta}
-                    <ArrowRight size={15} />
-                  </span>
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
+              <h2
+                className="text-xl sm:text-2xl font-bold text-charcoal mb-2 flex items-center gap-2"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                <BookOpen size={20} className="text-gold-dark" />
+                Base-Specific Guides
+              </h2>
+              <p className="text-charcoal-light/70 text-sm mb-5">
+                Community and housing guidance for Colorado's major military installations.
+              </p>
+              <div className="grid gap-3">
+                {baseGuideLinks.map((link) => (
+                  <LinkCard key={link.href} label={link.label} sub={link.sub} href={link.href} />
+                ))}
+              </div>
+            </motion.div>
 
-          {/* ── Group 3: Community Orientation ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex items-center gap-3 mb-2">
-              <span className="text-xs font-semibold tracking-widest uppercase text-gold-dark" style={{ fontFamily: "'Outfit', sans-serif" }}>Community Orientation</span>
-            </div>
-            <h2
-              className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
             >
-              Bases &amp; Nearby Communities
-            </h2>
-            <p className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-8">
-              Installation-specific guides and community orientation pages for Colorado's major
-              military bases — covering commute tradeoffs, neighborhood character, and planning
-              considerations for each area.
-            </p>
+              <h3
+                className="text-xl sm:text-2xl font-bold text-charcoal mb-2 flex items-center gap-2"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                <Map size={20} className="text-gold-dark" />
+                Best Communities Near Each Base
+              </h3>
+              <p className="text-charcoal-light/70 text-sm mb-5">
+                Neighborhood planning guides for PCS buyers evaluating communities near each installation.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {bestCommunitiesLinks.map((link) => (
+                  <LinkCard key={link.href} label={link.label} sub={link.context} href={link.href} />
+                ))}
+              </div>
+            </motion.div>
 
-            {/* Base Guides */}
-            <h3
-              className="text-base font-semibold text-charcoal mb-4 flex items-center gap-2"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              <MapPin size={15} className="text-gold-dark" />
-              Installation Guides
-            </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-              {baseGuideLinks.map((base) => (
-                <LinkCard key={base.href} label={base.label} sub={base.sub} href={base.href} />
-              ))}
-            </div>
-
-            {/* Best Communities */}
-            <h3
-              className="text-base font-semibold text-charcoal mb-4 flex items-center gap-2"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              <Map size={15} className="text-gold-dark" />
-              Best Communities Near Each Base
-            </h3>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {bestCommunitiesLinks.map((link) => (
-                <LinkCard key={link.href} label={link.label} sub={link.context} href={link.href} />
-              ))}
-            </div>
-          </motion.div>
-
+          </div>
         </div>
       </section>
 
@@ -562,14 +569,14 @@ export default function MilitaryRelocation() {
         </div>
       </section>
 
-      {/* ─── Contact CTA ─── */}
+      {/* ─── Contact Form ─── */}
       <section id="contact-rob" className="py-12 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl text-center">
+        <div className="container max-w-2xl">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl sm:text-3xl font-bold text-white mb-4"
+            className="text-2xl sm:text-3xl font-bold text-white mb-4 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Ready to Talk Through Your Colorado Move?
@@ -579,28 +586,110 @@ export default function MilitaryRelocation() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-cream/70 text-[15px] sm:text-base leading-relaxed mb-8"
+            className="text-cream/70 text-[15px] sm:text-base leading-relaxed mb-8 text-center"
           >
             Whether you're months out from a PCS or actively searching, Rob can help you
             understand the Colorado market and plan your next move with confidence.
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
-          >
-            <a
-              href="/#contact"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
+
+          {submitted ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.97 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="text-center py-10"
             >
-              Schedule a Consultation
-              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-            </a>
-          </motion.div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-cream/50 text-sm">
+              <CheckCircle size={40} className="text-gold mx-auto mb-4" />
+              <h3
+                className="text-xl font-bold text-white mb-2"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                Message Received
+              </h3>
+              <p className="text-cream/70 text-base leading-relaxed max-w-md mx-auto">
+                Thanks for reaching out. Rob will review your message and get back to you shortly.
+              </p>
+            </motion.div>
+          ) : (
+            <motion.form
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              onSubmit={handleSubmit}
+              className="bg-white/5 border border-white/10 rounded-lg p-5 sm:p-8 space-y-4 sm:space-y-5"
+            >
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
+                <div>
+                  <label className="block text-xs font-semibold text-cream/60 uppercase tracking-wide mb-1.5">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full px-4 py-2.5 bg-white/10 border border-white/15 rounded-lg text-white text-base placeholder-white/30 focus:border-gold/50 focus:outline-none transition-colors"
+                    placeholder="Your full name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold text-cream/60 uppercase tracking-wide mb-1.5">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full px-4 py-2.5 bg-white/10 border border-white/15 rounded-lg text-white text-base placeholder-white/30 focus:border-gold/50 focus:outline-none transition-colors"
+                    placeholder="you@email.com"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-cream/60 uppercase tracking-wide mb-1.5">
+                  Phone
+                </label>
+                <input
+                  type="tel"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  className="w-full px-4 py-2.5 bg-white/10 border border-white/15 rounded-lg text-white text-base placeholder-white/30 focus:border-gold/50 focus:outline-none transition-colors"
+                  placeholder="(555) 123-4567"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-cream/60 uppercase tracking-wide mb-1.5">
+                  How can Rob help?
+                </label>
+                <textarea
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  rows={4}
+                  className="w-full px-4 py-2.5 bg-white/10 border border-white/15 rounded-lg text-white text-base placeholder-white/30 focus:border-gold/50 focus:outline-none transition-colors resize-none"
+                  placeholder="Tell Rob about your situation — PCS timeline, base, questions about the Colorado market..."
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={contactMutation.isPending}
+                className="w-full inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base disabled:opacity-60 disabled:cursor-not-allowed"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                {contactMutation.isPending ? (
+                  <>
+                    <Loader2 size={18} className="animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send size={18} />
+                    Send Message
+                  </>
+                )}
+              </button>
+            </motion.form>
+          )}
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-cream/50 text-sm mt-8">
             <a href="tel:7203636544" className="flex items-center gap-2 hover:text-gold transition-colors">
               <Phone size={15} />
               (720) 363-6544
