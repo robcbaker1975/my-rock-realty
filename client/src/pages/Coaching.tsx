@@ -5,12 +5,10 @@
  * Typography: Outfit (display) + Libre Franklin (body)
  */
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { motion } from "framer-motion";
-import { toast } from "sonner";
-import { trpc } from "@/lib/trpc";
 import {
   ArrowRight,
   ArrowLeft,
@@ -26,14 +24,12 @@ import {
   CheckCircle2,
   Phone,
   Mail,
-  Send,
-  Loader2,
-  CheckCircle,
   Handshake,
   BarChart3,
   ClipboardList,
   GraduationCap,
 } from "lucide-react";
+import LeadForm from "@/components/LeadForm";
 
 const LOGO_URL =
   "/assets/logo.png";
@@ -61,39 +57,6 @@ function CTAButton({ className = "", label = "Start a Coaching Conversation" }: 
 
 export default function Coaching() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
-
-  const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    type: "agent",
-    interests: ["Coaching"],
-    message: "",
-  });
-
-  const contactMutation = trpc.contact.submit.useMutation({
-    onSuccess: () => {
-      setSubmitted(true);
-      toast.success("Thank you! Rob will be in touch soon.");
-    },
-    onError: (error) => {
-      toast.error(error.message || "Something went wrong. Please try again.");
-    },
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name.trim() || !formData.email.trim()) {
-      toast.error("Please provide your name and email.");
-      return;
-    }
-    contactMutation.mutate({
-      ...formData,
-      source: "Coaching",
-      message: `[Coaching Inquiry]\nLicense Status: ${formData.type}\n\n${formData.message}`,
-    });
-  };
 
   return (
     <div className="min-h-screen bg-warm-white">
@@ -655,150 +618,39 @@ export default function Coaching() {
       ═══════════════════════════════════════════════════ */}
       <section id="coaching-contact" className="py-12 sm:py-16 md:py-20 bg-warm-white border-t border-gold/10">
         <div className="container max-w-3xl">
-          {submitted ? (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="text-center py-8 sm:py-12"
-            >
-              <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-6">
-                <CheckCircle size={32} className="text-gold" />
-              </div>
-              <h3
-                className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="mb-8 text-center">
+              <p
+                className="text-gold text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                Message Received
-              </h3>
-              <p className="text-charcoal/70 text-base leading-relaxed max-w-md mx-auto">
-                Thanks for your interest in coaching. Rob will review your message and get back to you shortly.
+                Get in Touch
               </p>
-            </motion.div>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="mb-8 text-center">
-                <p
-                  className="text-gold text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3"
-                  style={{ fontFamily: "'Outfit', sans-serif" }}
-                >
-                  Get in Touch
-                </p>
-                <h3
-                  className="text-xl sm:text-3xl font-bold text-charcoal leading-tight"
-                  style={{ fontFamily: "'Outfit', sans-serif" }}
-                >
-                  Tell Rob About<br className="hidden sm:block" /> Your Situation
-                </h3>
-                <p className="text-charcoal/60 text-sm sm:text-base mt-3 max-w-xl mx-auto">
-                  A brief message about where you are in your business and what you're hoping to improve is the best starting point.
-                </p>
-              </div>
-
-              <form
-                onSubmit={handleSubmit}
-                className="bg-white rounded-xl border border-charcoal/8 shadow-sm p-5 sm:p-8"
+              <h3
+                className="text-xl sm:text-3xl font-bold text-charcoal leading-tight"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 mb-4 sm:mb-5">
-                  <div>
-                    <label className="block text-xs font-semibold text-charcoal/60 uppercase tracking-wide mb-1.5">
-                      Full Name <span className="text-gold">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-semibold text-charcoal/60 uppercase tracking-wide mb-1.5">
-                      Email <span className="text-gold">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors"
-                      placeholder="you@email.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 mb-4 sm:mb-5">
-                  <div>
-                    <label className="block text-xs font-semibold text-charcoal/60 uppercase tracking-wide mb-1.5">
-                      Phone
-                    </label>
-                    <input
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors"
-                      placeholder="(555) 123-4567"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="coaching-license-status" className="block text-xs font-semibold text-charcoal/60 uppercase tracking-wide mb-1.5">
-                      License Status
-                    </label>
-                    <select
-                      id="coaching-license-status"
-                      value={formData.type}
-                      onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base focus:border-gold/50 focus:outline-none transition-colors"
-                    >
-                      <option value="Active Agent">Active Agent</option>
-                      <option value="Broker/Manager">Broker/Manager</option>
-                      <option value="Exploring Real Estate">Exploring Real Estate</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="mb-4 sm:mb-5">
-                  <label className="block text-xs font-semibold text-charcoal/60 uppercase tracking-wide mb-1.5">
-                    What are you hoping to improve or work on?
-                  </label>
-                  <textarea
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={4}
-                    className="w-full px-4 py-2.5 bg-white border border-charcoal/15 rounded-lg text-charcoal text-base placeholder-charcoal/30 focus:border-gold/50 focus:outline-none transition-colors resize-none"
-                    placeholder="Tell Rob about your current situation, what areas you'd like to improve, and what you're hoping to get out of coaching..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={contactMutation.isPending}
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-gold text-charcoal font-bold text-base rounded-lg transition-all hover:bg-gold-light hover:shadow-lg active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
-                  style={{ fontFamily: "'Outfit', sans-serif" }}
-                >
-                  {contactMutation.isPending ? (
-                    <>
-                      <Loader2 size={16} className="animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <Send size={16} />
-                      Send My Information
-                    </>
-                  )}
-                </button>
-              </form>
-            </motion.div>
-          )}
+                Tell Rob About<br className="hidden sm:block" /> Your Situation
+              </h3>
+              <p className="text-charcoal/60 text-sm sm:text-base mt-3 max-w-xl mx-auto">
+                A brief message about where you are in your business and what you're hoping to improve is the best starting point.
+              </p>
+            </div>
+              <LeadForm
+                variant="coaching"
+                source="Coaching"
+                titleOverride=""
+                subtitleOverride=""
+              />
+          </motion.div>
         </div>
       </section>
+
 
       {/* ═══════════════════════════════════════════════════
           FINAL CTA

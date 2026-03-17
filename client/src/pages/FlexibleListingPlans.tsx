@@ -8,14 +8,11 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "wouter";
 import SeoHead from "@/components/seo/SeoHead";
+import LeadForm from "@/components/LeadForm";
 import {
-  ArrowRight,
   ArrowLeft,
   CheckCircle2,
-  Phone,
-  Mail,
   ChevronDown,
 } from "lucide-react";
 
@@ -389,72 +386,17 @@ export default function FlexibleListingPlans() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          SELLER CONSULTATION CTA
+          SELLER CONSULTATION FORM
       ═══════════════════════════════════════════════════ */}
       <section
         id="seller-consultation"
         className="py-12 sm:py-20 bg-charcoal"
       >
-        <div className="container max-w-2xl text-center">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <h2
-              className="text-2xl sm:text-3xl font-bold text-white mb-4"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Not Sure Which Plan Fits Your Home?
-            </h2>
-            <p
-              className="text-cream/65 text-[15px] sm:text-base leading-relaxed mb-8"
-              style={{ fontFamily: "'Libre Franklin', sans-serif" }}
-            >
-              A quick conversation is the best way to figure it out. Rob will review your home, your goals, and your timeline — and help you choose the right level of service before you commit to anything.
-            </p>
-
-            {/* CTA placeholder — ready for GHL form hookup */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <a
-                href="/#contact"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-gold text-charcoal font-bold rounded-lg transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base no-underline"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                Schedule a Seller Consultation
-                <ArrowRight size={17} />
-              </a>
-              <a
-                href="tel:7203636544"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 border border-cream/25 text-cream font-semibold rounded-lg transition-all hover:border-cream/50 hover:bg-white/5 text-[15px] sm:text-base no-underline"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                <Phone size={16} strokeWidth={1.8} />
-                Call Rob Directly
-              </a>
-            </div>
-
-            {/* Contact details */}
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-cream/45 text-sm">
-              <a
-                href="tel:7203636544"
-                className="inline-flex items-center gap-2 hover:text-gold transition-colors no-underline"
-                style={{ fontFamily: "'Libre Franklin', sans-serif" }}
-              >
-                <Phone size={14} />
-                (720) 363-6544
-              </a>
-              <a
-                href="mailto:rob@myrockhomes.com"
-                className="inline-flex items-center gap-2 hover:text-gold transition-colors no-underline"
-                style={{ fontFamily: "'Libre Franklin', sans-serif" }}
-              >
-                <Mail size={14} />
-                rob@myrockhomes.com
-              </a>
-            </div>
-          </motion.div>
+        <div className="container max-w-2xl">
+          <LeadForm
+            variant="seller"
+            source="Flexible Listing Plans"
+          />
         </div>
       </section>
 

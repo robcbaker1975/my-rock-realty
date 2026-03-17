@@ -10,7 +10,8 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import SeoHead from "@/components/seo/SeoHead";
-import { Mail, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import LeadForm from "@/components/LeadForm";
 
 const LOGO_URL = "/assets/logo.png";
 
@@ -288,7 +289,7 @@ export default function AgentPartner() {
               If this feels relevant to your market, let's talk.
             </motion.h2>
             <motion.p
-              className="text-cream/65 text-base mb-10 leading-relaxed"
+              className="text-cream/65 text-base mb-8 leading-relaxed"
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
@@ -297,18 +298,21 @@ export default function AgentPartner() {
             >
               Tell us about your market and what you're looking for. We'll follow up directly.
             </motion.p>
-            <motion.a
-              href="mailto:rob@myrockhomes.com?subject=Agent%20Website%20Conversation&body=Hi%20Rob%2C%0A%0AHere%27s%20a%20bit%20about%20my%20market%20and%20what%20I%27m%20looking%20for%3A%0A%0A"
-              className="inline-flex items-center gap-3 bg-gold hover:bg-[#b8903e] text-charcoal font-display font-semibold text-base px-9 py-4 transition-colors"
+            <motion.div
+              className="text-left"
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               custom={3}
             >
-              <Mail className="w-5 h-5" />
-              Request a conversation
-            </motion.a>
+              <LeadForm
+                variant="agent"
+                source="For Colorado Agents"
+                titleOverride=""
+                subtitleOverride=""
+              />
+            </motion.div>
           </div>
         </section>
 

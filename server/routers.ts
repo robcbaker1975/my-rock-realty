@@ -5,14 +5,37 @@ import { publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import { sendContactEmail } from "./contact";
 
+/**
+ * contactInputSchema
+ * Shared input schema for all 7 lead form variants.
+ * Visible fields are variant-specific (controlled by the frontend LeadForm component).
+ * Hidden attribution fields are always collected and included in the submission payload.
+ */
 const contactInputSchema = z.object({
+  // Core visible fields
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Valid email is required"),
   phone: z.string().optional(),
-  type: z.string().optional(),
-  interests: z.array(z.string()),
+
+  // Variant routing
+  type: z.string().optional(),       // Human-readable form type label
+  form_type: z.string().optional(),  // Explicit form type identifier
+
+  // Variant-specific visible fields (packed into interests array by frontend)
+  interests: z.array(z.string()).default([]),
+
+  // Message
   message: z.string().optional(),
-  source: z.string().optional(),
+
+  // Attribution fields
+  source: z.string().optional(),       // Page name / source label
+  page_url: z.string().optional(),     // Full URL of the page where form was submitted
+  page_title: z.string().optional(),   // Document title of the page
+  utm_source: z.string().optional(),   // UTM source param
+  utm_medium: z.string().optional(),   // UTM medium param
+  utm_campaign: z.string().optional(), // UTM campaign param
+  referrer: z.string().optional(),     // HTTP referrer
+  timestamp: z.string().optional(),    // ISO 8601 submission timestamp
 });
 
 export const appRouter = router({

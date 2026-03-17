@@ -1,5 +1,6 @@
 // Workshop popup integration verified
 import SeoHead from "@/components/seo/SeoHead";
+import LeadForm from "@/components/LeadForm";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -481,6 +482,37 @@ export default function WorkshopDraft() {
           <p className="text-[14px] sm:text-[15px] text-charcoal/70 leading-relaxed text-center">
             <span className="font-semibold text-charcoal">My Rock Realty, LLC is not a mortgage lender.</span> Loan options, approval, rates, and program eligibility are determined by licensed lenders and may vary based on qualifications and current guidelines.
           </p>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          WORKSHOP INTAKE FORM
+      ═══════════════════════════════════════════════════ */}
+      <section id="workshop-contact" className="py-12 sm:py-16 md:py-20 bg-warm-white border-t border-gold/10">
+        <div className="container max-w-3xl">
+          <div className="mb-8 text-center">
+            <p
+              className="text-gold text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Stay Connected
+            </p>
+            <h3
+              className="text-xl sm:text-3xl font-bold text-charcoal leading-tight"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Have Questions Before the Workshop?
+            </h3>
+            <p className="text-charcoal/60 text-sm sm:text-base mt-3 max-w-xl mx-auto">
+              Send Rob a message and he'll get back to you before the next session.
+            </p>
+          </div>
+          <LeadForm
+            variant="workshop"
+            source="Workshop"
+            titleOverride=""
+            subtitleOverride=""
+          />
         </div>
       </section>
 

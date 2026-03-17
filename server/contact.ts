@@ -6,18 +6,37 @@ export interface ContactFormData {
   email: string;
   phone?: string;
   type?: string;
+  form_type?: string;
   interests: string[];
   message?: string;
+  // Attribution fields
   source?: string;
+  page_url?: string;
+  page_title?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  referrer?: string;
+  timestamp?: string;
 }
 
 /**
- * Build a nicely formatted email body from the contact form submission
+ * Resolve the best form type label from the payload.
+ * Prefers form_type, falls back to type, then "General Inquiry".
+ */
+function resolveFormType(data: ContactFormData): string {
+  return data.form_type || data.type || "General Inquiry";
+}
+
+/**
+ * Build a nicely formatted plain-text email body from the contact form submission.
  */
 function buildEmailBody(data: ContactFormData): string {
+  const formType = resolveFormType(data);
   const lines: string[] = [
-    `New Contact Form Submission — My Rock Realty`,
+    `New Lead Submission — My Rock Realty`,
     ``,
+    `Form Type: ${formType}`,
     `Name: ${data.name}`,
     `Email: ${data.email}`,
   ];
@@ -30,74 +49,84 @@ function buildEmailBody(data: ContactFormData): string {
     lines.push(`Page: ${data.source}`);
   }
 
-  if (data.type) {
-    lines.push(`Interested In: ${data.type}`);
-  }
-
-  if (data.interests.length > 0) {
-    lines.push(`Topics: ${data.interests.join(", ")}`);
+  // Variant-specific fields (packed into interests array by frontend)
+  if (data.interests && data.interests.length > 0) {
+    lines.push(``, `--- Form Details ---`);
+    for (const item of data.interests) {
+      lines.push(item);
+    }
   }
 
   if (data.message) {
-    lines.push(``, `Message:`, data.message);
+    lines.push(``, `--- Message ---`, data.message);
   }
 
-  lines.push(``, `---`, `Sent from MyRockRealty.com contact form`);
+  // Attribution section
+  const hasAttribution =
+    data.page_url || data.utm_source || data.utm_medium || data.utm_campaign || data.referrer;
 
+  if (hasAttribution) {
+    lines.push(``, `--- Attribution ---`);
+    if (data.page_url) lines.push(`Page URL: ${data.page_url}`);
+    if (data.utm_source) lines.push(`UTM Source: ${data.utm_source}`);
+    if (data.utm_medium) lines.push(`UTM Medium: ${data.utm_medium}`);
+    if (data.utm_campaign) lines.push(`UTM Campaign: ${data.utm_campaign}`);
+    if (data.referrer) lines.push(`Referrer: ${data.referrer}`);
+    if (data.timestamp) lines.push(`Submitted: ${data.timestamp}`);
+  }
+
+  lines.push(``, `---`, `Sent from MyRockRealty.com`);
   return lines.join("\n");
 }
 
+/**
+ * Build a nicely formatted HTML email body from the contact form submission.
+ */
 function buildHtmlBody(data: ContactFormData): string {
-  let html = `
-    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #292524; border-bottom: 2px solid #C9A96E; padding-bottom: 10px;">
-        New Contact Form Submission
-      </h2>
-      <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
-        <tr>
-          <td style="padding: 8px 12px; font-weight: bold; color: #555; width: 140px;">Name</td>
-          <td style="padding: 8px 12px; color: #292524;">${data.name}</td>
-        </tr>
-        <tr style="background: #f9f7f4;">
-          <td style="padding: 8px 12px; font-weight: bold; color: #555;">Email</td>
-          <td style="padding: 8px 12px; color: #292524;"><a href="mailto:${data.email}">${data.email}</a></td>
+  const formType = resolveFormType(data);
+
+  const row = (label: string, value: string, bg = false) => `
+        <tr${bg ? ' style="background: #f9f7f4;"' : ""}>
+          <td style="padding: 8px 12px; font-weight: bold; color: #555; width: 160px; vertical-align: top;">${label}</td>
+          <td style="padding: 8px 12px; color: #292524;">${value}</td>
         </tr>`;
 
+  let html = `
+    <div style="font-family: Arial, sans-serif; max-width: 640px; margin: 0 auto;">
+      <h2 style="color: #292524; border-bottom: 2px solid #C9A96E; padding-bottom: 10px;">
+        New Lead: ${formType}
+      </h2>
+      <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
+        ${row("Form Type", formType)}
+        ${row("Name", data.name, true)}
+        ${row("Email", `<a href="mailto:${data.email}">${data.email}</a>`)}`;
+
   if (data.phone) {
-    html += `
-        <tr>
-          <td style="padding: 8px 12px; font-weight: bold; color: #555;">Phone</td>
-          <td style="padding: 8px 12px; color: #292524;"><a href="tel:${data.phone}">${data.phone}</a></td>
-        </tr>`;
+    html += row("Phone", `<a href="tel:${data.phone}">${data.phone}</a>`, true);
   }
 
   if (data.source) {
-    html += `
-        <tr style="background: #f9f7f4;">
-          <td style="padding: 8px 12px; font-weight: bold; color: #555;">Page</td>
-          <td style="padding: 8px 12px; color: #292524;">${data.source}</td>
-        </tr>`;
-  }
-
-  if (data.type) {
-    html += `
-        <tr>
-          <td style="padding: 8px 12px; font-weight: bold; color: #555;">Interested In</td>
-          <td style="padding: 8px 12px; color: #292524;">${data.type}</td>
-        </tr>`;
-  }
-
-  if (data.interests.length > 0) {
-    html += `
-        <tr style="background: #f9f7f4;">
-          <td style="padding: 8px 12px; font-weight: bold; color: #555;">Topics</td>
-          <td style="padding: 8px 12px; color: #292524;">${data.interests.join(", ")}</td>
-        </tr>`;
+    html += row("Page / Source", data.source);
   }
 
   html += `
       </table>`;
 
+  // Variant-specific fields
+  if (data.interests && data.interests.length > 0) {
+    html += `
+      <h3 style="color: #292524; margin-top: 24px; margin-bottom: 8px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;">Form Details</h3>
+      <table style="width: 100%; border-collapse: collapse;">`;
+    let altRow = false;
+    for (const item of data.interests) {
+      const [label, ...rest] = item.split(": ");
+      html += row(label, rest.join(": "), altRow);
+      altRow = !altRow;
+    }
+    html += `</table>`;
+  }
+
+  // Message
   if (data.message) {
     html += `
       <div style="margin-top: 20px; padding: 16px; background: #f9f7f4; border-left: 3px solid #C9A96E; border-radius: 4px;">
@@ -106,9 +135,26 @@ function buildHtmlBody(data: ContactFormData): string {
       </div>`;
   }
 
+  // Attribution
+  const hasAttribution =
+    data.page_url || data.utm_source || data.utm_medium || data.utm_campaign || data.referrer;
+
+  if (hasAttribution) {
+    html += `
+      <h3 style="color: #292524; margin-top: 24px; margin-bottom: 8px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;">Attribution</h3>
+      <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #888;">`;
+    if (data.page_url) html += row("Page URL", `<a href="${data.page_url}" style="color: #888;">${data.page_url}</a>`);
+    if (data.utm_source) html += row("UTM Source", data.utm_source, true);
+    if (data.utm_medium) html += row("UTM Medium", data.utm_medium);
+    if (data.utm_campaign) html += row("UTM Campaign", data.utm_campaign, true);
+    if (data.referrer) html += row("Referrer", data.referrer);
+    if (data.timestamp) html += row("Submitted", data.timestamp, true);
+    html += `</table>`;
+  }
+
   html += `
       <p style="margin-top: 24px; font-size: 12px; color: #999;">
-        Sent from MyRockRealty.com contact form
+        Sent from MyRockRealty.com
       </p>
     </div>`;
 
@@ -116,27 +162,29 @@ function buildHtmlBody(data: ContactFormData): string {
 }
 
 /**
- * Send the contact form submission via email to both configured addresses.
- * Uses Gmail SMTP with an App Password.
+ * Send the lead form submission via email and in-app notification.
+ * Supports all 7 form variants via form_type routing.
  */
 export async function sendContactEmail(data: ContactFormData): Promise<boolean> {
   const smtpUser = process.env.SMTP_USER;
   const smtpPass = process.env.SMTP_PASS;
   const recipientEmails = process.env.CONTACT_EMAILS || "robbakerre@gmail.com,7203636544@vtext.com";
 
+  const formType = resolveFormType(data);
   const sourceLabel = data.source ? ` [${data.source}]` : "";
+  const subjectLine = `New Lead: ${data.name} — ${formType}${sourceLabel}`;
 
-  // Also send an in-app notification to the project owner
+  // In-app notification to the project owner
   try {
     await notifyOwner({
-      title: `New Lead: ${data.name} — ${data.type || "General Inquiry"}${sourceLabel}`,
+      title: subjectLine,
       content: buildEmailBody(data),
     });
   } catch (err) {
     console.warn("[Contact] Owner notification failed:", err);
   }
 
-  // If SMTP credentials are configured, send actual emails
+  // Email delivery via SMTP if configured
   if (smtpUser && smtpPass) {
     try {
       const transporter = nodemailer.createTransport({
@@ -151,12 +199,12 @@ export async function sendContactEmail(data: ContactFormData): Promise<boolean> 
         from: `"My Rock Realty" <${smtpUser}>`,
         to: recipientEmails,
         replyTo: data.email,
-        subject: `New Lead: ${data.name} — ${data.type || "General Inquiry"}${sourceLabel}`,
+        subject: subjectLine,
         text: buildEmailBody(data),
         html: buildHtmlBody(data),
       });
 
-      console.log("[Contact] Email sent successfully to:", recipientEmails);
+      console.log(`[Contact] Email sent: ${formType} from ${data.name} <${data.email}>`);
       return true;
     } catch (err) {
       console.error("[Contact] Email send failed:", err);
@@ -164,6 +212,6 @@ export async function sendContactEmail(data: ContactFormData): Promise<boolean> 
     }
   } else {
     console.warn("[Contact] SMTP not configured — submission logged via notification only.");
-    return true; // Still return true since notification was sent
+    return true;
   }
 }
