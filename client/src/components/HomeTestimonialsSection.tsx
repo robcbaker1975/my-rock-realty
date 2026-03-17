@@ -19,7 +19,7 @@ const testimonials = [
 
 export default function HomeTestimonialsSection() {
   return (
-    <section className="py-14 sm:py-20 md:py-24 bg-charcoal">
+    <section className="py-14 sm:py-20 md:py-24 bg-warm-white">
       <div className="container">
         {/* Header */}
         <div className="max-w-xl mb-10 sm:mb-14">
@@ -27,7 +27,7 @@ export default function HomeTestimonialsSection() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-gold text-xs font-semibold tracking-widest uppercase mb-3 block"
+            className="text-gold-dark text-xs font-semibold tracking-widest uppercase mb-3 block"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Client Experiences
@@ -37,7 +37,7 @@ export default function HomeTestimonialsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-cream leading-tight mb-3"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal leading-tight mb-3"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             What Clients Say
@@ -47,7 +47,7 @@ export default function HomeTestimonialsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.14 }}
-            className="text-cream/60 text-base leading-relaxed"
+            className="text-charcoal/60 text-base leading-relaxed"
             style={{ fontFamily: "'Libre Franklin', sans-serif" }}
           >
             Trusted guidance, clear strategy, and a more confident buying or
@@ -64,16 +64,16 @@ export default function HomeTestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.1 }}
-              className="flex flex-col gap-4 p-6 sm:p-7 rounded bg-white/4 border border-white/8 hover:border-gold/25 transition-colors"
+              className="flex flex-col gap-4 p-6 sm:p-7 rounded bg-white border border-charcoal/10 hover:border-gold/30 transition-colors shadow-sm"
             >
               <p
-                className="text-cream/80 text-[15px] leading-relaxed flex-1"
+                className="text-charcoal/80 text-[15px] leading-relaxed flex-1"
                 style={{ fontFamily: "'Libre Franklin', sans-serif" }}
               >
                 "{t.quote}"
               </p>
               <p
-                className="text-gold/70 text-xs font-semibold tracking-wide uppercase"
+                className="text-gold-dark text-xs font-semibold tracking-wide uppercase"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
                 {t.attribution}
@@ -91,7 +91,7 @@ export default function HomeTestimonialsSection() {
         >
           <button
             onClick={() => {}}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded border border-gold/40 text-gold text-sm font-semibold tracking-wide hover:bg-gold/8 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded border border-gold/60 text-gold-dark text-sm font-semibold tracking-wide hover:bg-gold/10 transition-colors"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             View More Reviews

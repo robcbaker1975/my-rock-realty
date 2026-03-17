@@ -67,10 +67,27 @@ function buildContactPayload(data: ContactFormData, locationId: string): Record<
     payload.phone = data.phone;
   }
 
-  // Include notes as a single string — GHL accepts this on contact creation
-  payload.customField = {
+  // Include notes and SMS consent values as GHL custom contact fields
+  // GHL custom checkbox fields are referenced by their exact field name
+  const customFields: Record<string, unknown> = {
     notes: noteLines.join("\n"),
   };
+
+  // Map SMS consent booleans to GHL custom contact checkbox fields
+  // Field names match the existing GHL custom fields exactly
+  if (data.smsTransactionalConsent !== undefined) {
+    customFields["MRR Transactional SMS Consent"] = data.smsTransactionalConsent;
+  } else {
+    customFields["MRR Transactional SMS Consent"] = false;
+  }
+
+  if (data.smsMarketingConsent !== undefined) {
+    customFields["MRR Marketing SMS Consent"] = data.smsMarketingConsent;
+  } else {
+    customFields["MRR Marketing SMS Consent"] = false;
+  }
+
+  payload.customField = customFields;
 
   return payload;
 }

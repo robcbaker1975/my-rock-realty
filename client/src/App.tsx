@@ -5,6 +5,9 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import IdxTest from "./pages/IdxTest";
+import ListingResults from "./pages/ListingResults";
+import ListingDetails from "./pages/ListingDetails";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import FairHousing from "./pages/FairHousing";
@@ -205,6 +208,10 @@ function Router() {
       <Route path={"/military-relocation/best-communities-near-buckley-space-force-base/"} component={BestCommunitiesNearBuckleySpaceForceBase} />
       {/* Secondary: direct-link agent landing page — noindex, not in sitemap, not in public nav */}
       <Route path={"/for-colorado-agents"} component={AgentPartner} />
+      {/* Buying Buddy test pages — noindex, not in sitemap, not in public nav/footer/homepage — direct-link only */}
+      <Route path={"/idx-test"} component={IdxTest} />
+      <Route path={"/listing-results"} component={ListingResults} />
+      <Route path={"/listing-details"} component={ListingDetails} />
       <Route path={"/workshop-draft"}>{() => { window.location.href = "/colorado-home-buying-workshop"; return null; }}</Route>
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

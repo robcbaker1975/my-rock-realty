@@ -19,6 +19,9 @@ export interface ContactFormData {
   utm_campaign?: string;
   referrer?: string;
   timestamp?: string;
+  // SMS consent fields — maps to GHL custom contact checkbox fields
+  smsTransactionalConsent?: boolean; // MRR Transactional SMS Consent
+  smsMarketingConsent?: boolean;     // MRR Marketing SMS Consent
 }
 
 /**

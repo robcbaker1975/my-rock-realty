@@ -105,6 +105,10 @@ export default function LeadForm({
   const [coachingInterest, setCoachingInterest] = useState("");
   const [marketsOfInterest, setMarketsOfInterest] = useState("");
 
+  // SMS consent state
+  const [smsTransactionalConsent, setSmsTransactionalConsent] = useState(false);
+  const [smsMarketingConsent, setSmsMarketingConsent] = useState(false);
+
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -158,6 +162,9 @@ export default function LeadForm({
       utm_campaign: meta.utm_campaign,
       referrer: meta.referrer,
       timestamp: new Date().toISOString(),
+      // SMS consent values — only included when the variant shows the respective checkbox
+      smsTransactionalConsent: config.smsConsent.transactional ? smsTransactionalConsent : undefined,
+      smsMarketingConsent: config.smsConsent.marketing ? smsMarketingConsent : undefined,
     };
 
     contactMutation.mutate(payload);
@@ -430,6 +437,59 @@ export default function LeadForm({
             placeholder="Anything else you'd like us to know?"
             rows={4}
           />
+        </div>
+      )}
+
+      {/* SMS Consent Checkboxes */}
+      {(config.smsConsent.transactional || config.smsConsent.marketing) && (
+        <div className={`flex flex-col gap-3 pt-1 border-t ${dark ? "border-white/10" : "border-charcoal/10"}`}>
+          {config.smsConsent.transactional && (
+            <label className="flex items-start gap-2.5 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={smsTransactionalConsent}
+                onChange={e => setSmsTransactionalConsent(e.target.checked)}
+                className="mt-0.5 shrink-0 accent-[#C9A96E] w-4 h-4"
+              />
+              <span className={`text-xs leading-relaxed ${dark ? "text-[#F5F0EB]/70" : "text-charcoal/60"}`}>
+                I consent to receive non-marketing text messages from My Rock Realty, LLC about my inquiry, appointments, scheduling, and service-related updates. Message frequency may vary. Message and data rates may apply. Text HELP for assistance, reply STOP to opt out.
+              </span>
+            </label>
+          )}
+          {config.smsConsent.marketing && (
+            <label className="flex items-start gap-2.5 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={smsMarketingConsent}
+                onChange={e => setSmsMarketingConsent(e.target.checked)}
+                className="mt-0.5 shrink-0 accent-[#C9A96E] w-4 h-4"
+              />
+              <span className={`text-xs leading-relaxed ${dark ? "text-[#F5F0EB]/70" : "text-charcoal/60"}`}>
+                I consent to receive marketing text messages from My Rock Realty, LLC about educational events, market updates, and occasional promotions. Consent is not a condition of purchase. Message frequency may vary. Message and data rates may apply. Text HELP for assistance, reply STOP to opt out.
+              </span>
+            </label>
+          )}
+          <p className={`text-[11px] leading-relaxed ${dark ? "text-[#F5F0EB]/50" : "text-charcoal/40"}`}>
+            By submitting this form, you agree to our{" "}
+            <a
+              href="/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`underline underline-offset-2 ${dark ? "text-[#F5F0EB]/60 hover:text-[#F5F0EB]/80" : "text-charcoal/50 hover:text-charcoal/70"}`}
+            >
+              Privacy Policy
+            </a>
+            {" "}and{" "}
+            <a
+              href="/terms"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`underline underline-offset-2 ${dark ? "text-[#F5F0EB]/60 hover:text-[#F5F0EB]/80" : "text-charcoal/50 hover:text-charcoal/70"}`}
+            >
+              Terms &amp; Conditions
+            </a>
+            .
+          </p>
         </div>
       )}
 

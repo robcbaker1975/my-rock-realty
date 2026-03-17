@@ -17,6 +17,13 @@ export type FormVariant =
   | "coaching"
   | "agent";
 
+export interface SmsConsentConfig {
+  /** Whether to show the transactional SMS consent checkbox */
+  transactional: boolean;
+  /** Whether to show the marketing SMS consent checkbox */
+  marketing: boolean;
+}
+
 export interface FormVariantConfig {
   /** Internal form type identifier — sent as form_type hidden field */
   form_type: string;
@@ -28,6 +35,8 @@ export interface FormVariantConfig {
   submitLabel: string;
   /** Success message shown after submission */
   successMessage: string;
+  /** Which SMS consent checkboxes to show */
+  smsConsent: SmsConsentConfig;
   /** Which optional visible fields to show */
   fields: {
     phone: boolean;
@@ -54,6 +63,7 @@ export const FORM_VARIANTS: Record<FormVariant, FormVariantConfig> = {
     subtitle: "Tell us a little about what you're looking for.",
     submitLabel: "Send My Inquiry",
     successMessage: "Thank you! Rob will be in touch with you shortly.",
+    smsConsent: { transactional: true, marketing: true },
     fields: {
       phone: true,
       propertyType: true,
@@ -78,6 +88,7 @@ export const FORM_VARIANTS: Record<FormVariant, FormVariantConfig> = {
     subtitle: "Share a few details and Rob will reach out to discuss your options.",
     submitLabel: "Send My Inquiry",
     successMessage: "Thank you! Rob will be in touch with you shortly.",
+    smsConsent: { transactional: true, marketing: true },
     fields: {
       phone: true,
       propertyType: false,
@@ -102,6 +113,7 @@ export const FORM_VARIANTS: Record<FormVariant, FormVariantConfig> = {
     subtitle: "We specialize in military relocations. Let us help make your move easier.",
     submitLabel: "Send My Inquiry",
     successMessage: "Thank you! Rob will be in touch with you shortly.",
+    smsConsent: { transactional: true, marketing: true },
     fields: {
       phone: true,
       propertyType: false,
@@ -126,6 +138,7 @@ export const FORM_VARIANTS: Record<FormVariant, FormVariantConfig> = {
     subtitle: "Interested in attending a homebuying workshop? Let us know.",
     submitLabel: "Reserve My Spot",
     successMessage: "Thank you! We'll follow up with workshop details shortly.",
+    smsConsent: { transactional: true, marketing: true },
     fields: {
       phone: true,
       propertyType: false,
@@ -150,6 +163,7 @@ export const FORM_VARIANTS: Record<FormVariant, FormVariantConfig> = {
     subtitle: "Know someone who needs help buying or selling? We'd love to help.",
     submitLabel: "Submit Referral",
     successMessage: "Thank you for the referral! We'll follow up shortly.",
+    smsConsent: { transactional: true, marketing: false },
     fields: {
       phone: true,
       propertyType: false,
@@ -174,6 +188,7 @@ export const FORM_VARIANTS: Record<FormVariant, FormVariantConfig> = {
     subtitle: "Ready to take your real estate career to the next level? Let's connect.",
     submitLabel: "Send My Inquiry",
     successMessage: "Thank you! Rob will be in touch with you shortly.",
+    smsConsent: { transactional: true, marketing: true },
     fields: {
       phone: true,
       propertyType: false,
@@ -198,6 +213,7 @@ export const FORM_VARIANTS: Record<FormVariant, FormVariantConfig> = {
     subtitle: "Interested in working with My Rock Realty? Tell us about yourself.",
     submitLabel: "Send My Inquiry",
     successMessage: "Thank you! We'll be in touch about opportunities with our team.",
+    smsConsent: { transactional: true, marketing: false },
     fields: {
       phone: true,
       propertyType: false,

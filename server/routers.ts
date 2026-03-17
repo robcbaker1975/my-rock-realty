@@ -36,6 +36,10 @@ const contactInputSchema = z.object({
   utm_campaign: z.string().optional(), // UTM campaign param
   referrer: z.string().optional(),     // HTTP referrer
   timestamp: z.string().optional(),    // ISO 8601 submission timestamp
+
+  // SMS consent fields — maps to GHL custom contact checkbox fields
+  smsTransactionalConsent: z.boolean().optional(), // MRR Transactional SMS Consent
+  smsMarketingConsent: z.boolean().optional(),     // MRR Marketing SMS Consent
 });
 
 export const appRouter = router({
