@@ -2,8 +2,12 @@
  * /listing-details — Buying Buddy hidden foundation Property Details page
  * INTERNAL TEST ONLY — noindex, not in sitemap, not in public nav/footer/homepage
  * Direct-link access only. Required by Buying Buddy as the SearchDetails foundation page.
+ *
+ * Uses the BuyingBuddyWidget imperative wrapper for reliable React rendering.
+ * Contains only the SearchDetails foundation widget (plus Disclaimer).
  */
 import { useEffect } from "react";
+import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 
 export default function ListingDetails() {
   useEffect(() => {
@@ -28,14 +32,12 @@ export default function ListingDetails() {
       </p>
       <h1 style={{ fontSize: 24, marginBottom: 24 }}>Property Details</h1>
 
-      {/* Buying Buddy SearchDetails foundation widget */}
-      {/* @ts-ignore */}
-      <bb-widget data-type="SearchDetails"></bb-widget>
+      {/* SearchDetails foundation widget — rendered via React-safe imperative wrapper */}
+      <BuyingBuddyWidget type="SearchDetails" />
 
       <div style={{ marginTop: 48, borderTop: "1px solid #e5e5e5", paddingTop: 16 }}>
-        {/* Buying Buddy disclaimer widget */}
-        {/* @ts-ignore */}
-        <bb-widget data-type="Disclaimer"></bb-widget>
+        {/* Disclaimer widget — rendered via React-safe imperative wrapper */}
+        <BuyingBuddyWidget type="Disclaimer" />
       </div>
     </div>
   );

@@ -2,12 +2,15 @@
  * /idx-test — Buying Buddy hidden test page
  * INTERNAL TEST ONLY — noindex, not in sitemap, not in public nav/footer/homepage
  * Direct-link access only.
+ *
+ * Uses the BuyingBuddyWidget imperative wrapper for reliable React rendering.
  */
 import { useEffect } from "react";
+import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 
 export default function IdxTest() {
   useEffect(() => {
-    document.title = "IDX Test | My Rock Realty (Internal)";
+    document.title = "IDX Search Test | My Rock Realty (Internal)";
     // Inject noindex meta tag for this page
     let meta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
     if (!meta) {
@@ -17,7 +20,6 @@ export default function IdxTest() {
     }
     meta.content = "noindex, nofollow";
     return () => {
-      // Restore on unmount
       if (meta) meta.content = "index, follow";
     };
   }, []);
@@ -33,14 +35,12 @@ export default function IdxTest() {
         It is not linked in public navigation, footer, or homepage.
       </p>
 
-      {/* Basic Buying Buddy search widget */}
-      {/* @ts-ignore */}
-      <bb-widget data-type="Search"></bb-widget>
+      {/* SearchForm widget — rendered via React-safe imperative wrapper */}
+      <BuyingBuddyWidget type="SearchForm" />
 
       <div style={{ marginTop: 48, borderTop: "1px solid #e5e5e5", paddingTop: 16 }}>
-        {/* Buying Buddy disclaimer widget */}
-        {/* @ts-ignore */}
-        <bb-widget data-type="Disclaimer"></bb-widget>
+        {/* Disclaimer widget — rendered via React-safe imperative wrapper */}
+        <BuyingBuddyWidget type="Disclaimer" />
       </div>
     </div>
   );
