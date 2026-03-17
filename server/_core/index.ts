@@ -35,10 +35,17 @@ async function startServer() {
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
   // 301 redirect: enforce www canonical hostname in production
-  // Redirects: http://myrockhomes.com/*, http://www.myrockhomes.com/*, https://myrockhomes.com/* → https://www.myrockhomes.com/*
+  // Uses x-forwarded-host (set by the CDN/load balancer) to determine the
+  // original custom domain. Falls back to host header only if x-forwarded-host
+  // is absent. API routes (/api/*) are excluded to prevent POST redirects.
+  // Redirects: http://myrockhomes.com/*, https://myrockhomes.com/* → https://www.myrockhomes.com/*
   app.use((req, res, next) => {
     if (process.env.NODE_ENV !== "production") return next();
-    const host = req.headers.host || "";
+    // Skip API routes — POST redirects break browser fetch
+    if (req.path.startsWith("/api/")) return next();
+    // Prefer x-forwarded-host (custom domain) over host header (Cloud Run hostname)
+    const forwardedHost = req.headers["x-forwarded-host"];
+    const host = (Array.isArray(forwardedHost) ? forwardedHost[0] : forwardedHost) || req.headers.host || "";
     const proto = req.headers["x-forwarded-proto"] || req.protocol;
     const isWww = host.startsWith("www.");
     const isHttps = proto === "https";

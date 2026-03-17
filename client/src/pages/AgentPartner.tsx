@@ -8,14 +8,14 @@
  * Typography: Outfit (display) + Libre Franklin (body)
  */
 import { useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import SeoHead from "@/components/seo/SeoHead";
 import { ExternalLink } from "lucide-react";
 import LeadForm from "@/components/LeadForm";
 
 const LOGO_URL = "/assets/logo.png";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 18 },
   visible: (i: number) => ({
     opacity: 1,

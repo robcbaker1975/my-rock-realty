@@ -104,7 +104,7 @@ export function buildRobotsContent(robots?: RobotsDirectives): string {
 }
 
 export function resolveOpenGraphImage(
-  image: OpenGraphImage | undefined,
+  image: string | OpenGraphImage | undefined,
   siteConfig?: Partial<SiteConfig>,
 ): OpenGraphImage | undefined {
   const config = resolveSiteConfig(siteConfig);
@@ -112,11 +112,14 @@ export function resolveOpenGraphImage(
 
   if (!image && !fallback) return undefined;
 
-  const resolvedImage = image || { url: fallback as string };
+  const normalized: OpenGraphImage =
+    typeof image === 'string'
+      ? { url: image }
+      : image || { url: fallback as string };
 
   return {
-    ...resolvedImage,
-    url: toAbsoluteUrl(resolvedImage.url, config.siteUrl),
+    ...normalized,
+    url: toAbsoluteUrl(normalized.url, config.siteUrl),
   };
 }
 

@@ -108,7 +108,7 @@ export interface MetaProps {
   description: string;
   path?: string;
   canonicalUrl?: string;
-  image?: OpenGraphImage;
+  image?: string | OpenGraphImage;
   openGraph?: OpenGraphInput;
   twitter?: TwitterInput;
   robots?: RobotsDirectives;
@@ -128,7 +128,7 @@ export interface ResolvedSeoMetadata {
 export interface SeoHeadProps {
   metadata: MetaProps;
   siteConfig?: Partial<SiteConfig>;
-  schema?: SchemaNode[];
+  schema?: (SchemaNode | null)[];
   includeAgentSchema?: boolean;
   includeWebsiteSchema?: boolean;
 }
