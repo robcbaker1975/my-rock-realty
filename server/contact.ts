@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 import { notifyOwner } from "./_core/notification";
+import { sendToGHL } from "./_core/ghl";
 
 export interface ContactFormData {
   name: string;
@@ -182,6 +183,13 @@ export async function sendContactEmail(data: ContactFormData): Promise<boolean> 
     });
   } catch (err) {
     console.warn("[Contact] Owner notification failed:", err);
+  }
+
+  // GHL handoff — third channel, runs after notification, does not block submission
+  try {
+    await sendToGHL(data);
+  } catch (err) {
+    console.error("[Contact] GHL handoff threw unexpectedly:", err);
   }
 
   // Email delivery via SMTP if configured
