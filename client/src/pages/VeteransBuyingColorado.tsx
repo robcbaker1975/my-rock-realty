@@ -5,10 +5,11 @@
  */
 import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
+import LeadForm from "@/components/LeadForm";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
-import { ArrowRight, Home, ChevronDown, Phone, Mail, Shield, MapPin, Compass } from "lucide-react";
+import { ArrowRight, Home, ChevronDown, Shield, MapPin, Compass } from "lucide-react";
 
 const HERO_BG = "/images/denver-rowhouses-hero.jpg";
 
@@ -297,54 +298,12 @@ export default function VeteransBuyingColorado() {
 
       {/* ─── Contact CTA ─── */}
       <section id="contact-rob" className="py-12 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl sm:text-3xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Ready to Explore Colorado?
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-cream/70 text-[15px] sm:text-base leading-relaxed mb-8"
-          >
-            Whether you're actively searching or just starting to think through your options,
-            Rob can help you understand the Colorado market and plan your next move with
-            confidence.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
-          >
-            <a
-              href="/#contact"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Schedule a Consultation
-              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-            </a>
-          </motion.div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-cream/50 text-sm">
-            <a href="tel:7203636544" className="flex items-center gap-2 hover:text-gold transition-colors">
-              <Phone size={15} />
-              (720) 363-6544
-            </a>
-            <span className="hidden sm:block">·</span>
-            <a href="mailto:rob@myrockhomes.com" className="flex items-center gap-2 hover:text-gold transition-colors">
-              <Mail size={15} />
-              rob@myrockhomes.com
-            </a>
-          </div>
+        <div className="container max-w-2xl">
+          <LeadForm
+            variant="pcs"
+            source="Veterans Buying Colorado"
+            dark
+          />
         </div>
       </section>
 

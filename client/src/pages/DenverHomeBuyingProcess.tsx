@@ -6,6 +6,7 @@
 
 import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
+import LeadForm from "@/components/LeadForm";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
@@ -14,8 +15,6 @@ import {
   Home,
   MapPin,
   CheckCircle2,
-  Phone,
-  Mail,
   ChevronDown,
   BookOpen,
   DollarSign,
@@ -84,7 +83,8 @@ const fadeUp = {
 function CTAButton({ label = "Schedule a Denver Home Buying Consultation", className = "" }: { label?: string; className?: string }) {
   return (
     <a
-      href="mailto:rob@myrockhomes.com?subject=Denver Home Buying Consultation"
+      href="#contact-rob"
+      onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('contact-rob')?.scrollIntoView({ behavior: 'smooth' }); }}
       className={`inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 bg-gold text-charcoal hover:bg-gold-light hover:shadow-lg px-7 py-4 text-[15px] sm:text-base no-underline ${className}`}
       style={{ fontFamily: "'Outfit', sans-serif" }}
     >
@@ -464,41 +464,13 @@ export default function DenverHomeBuyingProcess() {
       </section>
 
       {/* 9. Final CTA */}
-      <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl text-center">
-          <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
-            <h2
-              className="text-3xl sm:text-4xl font-bold text-cream mb-6"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Ready to Start the Denver Home Buying Process?
-            </h2>
-            <p className="text-lg text-cream/80 mb-8">
-              Schedule a consultation to discuss your goals and understand what to expect at each
-              stage of the Denver home buying process.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <CTAButton />
-              <a
-                href="/denver-homes-for-sale"
-                className="inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 border-2 border-gold text-gold hover:bg-gold hover:text-charcoal px-7 py-4 text-[15px] sm:text-base no-underline"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                Explore Denver Homes for Sale
-                <ArrowRight size={18} />
-              </a>
-            </div>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center text-cream/50 text-xs">
-              <a href="tel:+17203636544" className="inline-flex items-center gap-1.5 hover:text-gold transition-colors">
-                <Phone size={12} />
-                720-363-6544
-              </a>
-              <a href="mailto:rob@myrockhomes.com" className="inline-flex items-center gap-1.5 hover:text-gold transition-colors">
-                <Mail size={12} />
-                rob@myrockhomes.com
-              </a>
-            </div>
-          </motion.div>
+      <section id="contact-rob" className="py-16 sm:py-20 bg-charcoal">
+        <div className="container max-w-2xl">
+          <LeadForm
+            variant="buyer"
+            source="Denver Home Buying Process"
+            dark
+          />
         </div>
       </section>
     </div>

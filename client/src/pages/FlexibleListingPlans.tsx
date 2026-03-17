@@ -396,6 +396,7 @@ export default function FlexibleListingPlans() {
           <LeadForm
             variant="seller"
             source="Flexible Listing Plans"
+            dark
           />
         </div>
       </section>

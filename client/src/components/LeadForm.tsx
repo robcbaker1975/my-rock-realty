@@ -48,6 +48,11 @@ interface LeadFormProps {
   subtitleOverride?: string;
   /** Optional CSS class for the outer container */
   className?: string;
+  /**
+   * Set to true when the form is placed on a dark background (bg-charcoal).
+   * Switches title, subtitle, and label text to cream-toned colors for readability.
+   */
+  dark?: boolean;
 }
 
 /** Collect UTM params and referrer from the current browser context */
@@ -72,6 +77,7 @@ export default function LeadForm({
   titleOverride,
   subtitleOverride,
   className = "",
+  dark = false,
 }: LeadFormProps) {
   const config = FORM_VARIANTS[variant];
 
@@ -161,7 +167,7 @@ export default function LeadForm({
     return (
       <div className={`flex flex-col items-center justify-center py-10 text-center ${className}`}>
         <CheckCircle className="w-12 h-12 text-[#C9A96E] mb-4" />
-        <p className="text-lg font-semibold text-[#292524]">{config.successMessage}</p>
+        <p className={`text-lg font-semibold ${dark ? "text-[#F5F0EB]" : "text-[#292524]"}`}>{config.successMessage}</p>
       </div>
     );
   }
@@ -171,11 +177,11 @@ export default function LeadForm({
   const f = config.fields;
 
   return (
-    <form onSubmit={handleSubmit} className={`flex flex-col gap-4 ${className}`}>
+    <form onSubmit={handleSubmit} className={`flex flex-col gap-4 ${dark ? "text-[#F5F0EB]" : ""} ${className}`}>
       {title && (
         <div className="mb-2">
-          <h3 className="text-xl font-semibold text-[#292524]">{title}</h3>
-          {subtitle && <p className="text-sm text-[#6b6560] mt-1">{subtitle}</p>}
+          <h3 className={`text-xl font-semibold ${dark ? "text-[#F5F0EB]" : "text-[#292524]"}`}>{title}</h3>
+          {subtitle && <p className={`text-sm mt-1 ${dark ? "text-[#F5F0EB]/70" : "text-[#6b6560]"}`}>{subtitle}</p>}
         </div>
       )}
 

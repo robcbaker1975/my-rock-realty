@@ -359,6 +359,7 @@ export default function PcsColorado() {
           <LeadForm
             variant="pcs"
             source="PCS Colorado"
+            dark
           />
         </div>
       </section>

@@ -83,7 +83,8 @@ const fadeUp = {
 function CTAButton({ label = "Schedule a Denver Home Buying Consultation", className = "" }: { label?: string; className?: string }) {
   return (
     <a
-      href="mailto:rob@myrockhomes.com?subject=Denver Home Buying Consultation"
+      href="#contact-rob"
+      onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('contact-rob')?.scrollIntoView({ behavior: 'smooth' }); }}
       className={`inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 bg-gold text-charcoal hover:bg-gold-light hover:shadow-lg px-7 py-4 text-[15px] sm:text-base no-underline ${className}`}
       style={{ fontFamily: "'Outfit', sans-serif" }}
     >
@@ -465,6 +466,7 @@ export default function FirstTimeHomeBuyerDenver() {
           <LeadForm
             variant="buyer"
             source="First-Time Home Buyer Denver"
+            dark
           />
         </div>
       </section>
