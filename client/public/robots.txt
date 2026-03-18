@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.myrockhomes.com/sitemap.xml
+Sitemap: https://myrockhomes.com/sitemap.xml
