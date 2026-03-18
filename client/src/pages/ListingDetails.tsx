@@ -1,7 +1,7 @@
 /**
- * /listing-details — Buying Buddy hidden foundation Property Details page
- * INTERNAL TEST ONLY — noindex, not in sitemap, not in public nav/footer/homepage
- * Direct-link access only. Required by Buying Buddy as the SearchDetails foundation page.
+ * /listing-details — Buying Buddy foundation Property Details page
+ * noindex — not in public nav/footer/sitemap. Reachable via direct link and email alerts.
+ * Required by Buying Buddy as the SearchDetails foundation page.
  *
  * Uses the BuyingBuddyWidget imperative wrapper for reliable React rendering.
  * Contains only the SearchDetails foundation widget (plus Disclaimer).
@@ -11,8 +11,8 @@ import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 
 export default function ListingDetails() {
   useEffect(() => {
-    document.title = "Listing Details | My Rock Realty (Internal)";
-    // Inject noindex meta tag for this page
+    document.title = "Property Details | My Rock Realty";
+    // Inject noindex meta tag — foundation page, not intended for search engine indexing
     let meta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
     if (!meta) {
       meta = document.createElement("meta");
@@ -27,11 +27,6 @@ export default function ListingDetails() {
 
   return (
     <div style={{ fontFamily: "sans-serif", maxWidth: 1100, margin: "40px auto", padding: "0 20px" }}>
-      <p style={{ fontSize: 12, color: "#999", marginBottom: 8 }}>
-        [INTERNAL TEST PAGE — NOT FOR PUBLIC USE]
-      </p>
-      <h1 style={{ fontSize: 24, marginBottom: 24 }}>Property Details</h1>
-
       {/* SearchDetails foundation widget — rendered via React-safe imperative wrapper */}
       <BuyingBuddyWidget type="SearchDetails" />
 
