@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 
 const LOGO_URL = "/assets/logo.png";
 
@@ -246,6 +247,11 @@ export default function Footer() {
               </Link>
             </div>
           </div>
+        </div>
+
+        {/* MLS Disclaimer — rendered via React-safe imperative wrapper */}
+        <div className="pt-4 pb-2">
+          <BuyingBuddyWidget type="Disclaimer" className="text-cream/50 text-xs leading-relaxed" />
         </div>
 
         {/* Compliance / Disclosures Bar */}
