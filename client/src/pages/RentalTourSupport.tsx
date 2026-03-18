@@ -1,6 +1,6 @@
 /**
- * PCS Relocation Tour Support — My Rock Realty
- * /military-relocation/pcs-relocation-tour-support/
+ * Rental Tour Support — My Rock Realty
+ * /rental-tour-support/
  * Design: Front Range Modern — matches existing site design system
  * Palette: Warm charcoal (#292524), cream (#F5F0EB), antique gold (#C9A96E)
  * Typography: Outfit (display) + Libre Franklin (body)
@@ -19,8 +19,8 @@ import {
   CheckCircle,
   Clock,
   Compass,
-  Users,
   Star,
+  Key,
 } from "lucide-react";
 
 const HERO_BG = "/images/denver-rowhouses-hero.jpg";
@@ -30,20 +30,15 @@ const faqContent = [
   {
     question: "What exactly happens during a tour session?",
     answer:
-      "Each tour is a structured showing session — in-person property access and guided walkthrough where available, or a 15–30 minute virtual or recorded tour support session where in-person access is not available. Rob provides neighborhood context, market guidance, and practical relocation considerations to help you evaluate each property.",
-  },
-  {
-    question: "Can I use tours for both rental properties and homes for purchase?",
-    answer:
-      "Yes. Tour support is available for PCS families evaluating rental options, homes for purchase, or both. The goal is to help you make a well-informed housing decision before you arrive — regardless of whether you plan to rent or buy.",
+      "Each tour is a structured showing session — in-person property access and guided walkthrough where available, or a 15–30 minute virtual or recorded tour support session where in-person access is not available. Rob provides neighborhood context, market guidance, and practical observations to help you evaluate each property.",
   },
   {
     question: "What areas does this service cover?",
     answer:
-      "Tour support is available within a 25-mile radius of downtown Denver and a 25-mile radius of downtown Colorado Springs — covering Fort Carson, Peterson Space Force Base, Schriever Space Force Base, the U.S. Air Force Academy, and Buckley Space Force Base. Properties outside the standard service area may be available by custom quote.",
+      "Tour support is available within a 25-mile radius of downtown Denver and a 25-mile radius of downtown Colorado Springs. Properties outside these service areas may be available by custom quote — contact Rob before purchasing if you're unsure whether your target area is covered.",
   },
   {
-    question: "Does this service include representation or lease negotiation?",
+    question: "Does this service include tenant representation or lease negotiation?",
     answer:
       "No. This is a tour support and guidance service only. It does not create a tenant representation relationship, buyer representation relationship, agency relationship, or any brokerage relationship. Lease negotiation, application assistance, and approval guarantees are not included. You remain unrepresented unless you sign a separate written agreement with My Rock Realty.",
   },
@@ -58,14 +53,19 @@ const faqContent = [
       "Same-day cancellations (less than 24 hours' notice) forfeit that day's showings and 3 showing credits. Arrival more than 15 minutes late without notice may result in forfeiture of that day's showings at My Rock Realty's discretion. Access delays or last-minute cancellations outside My Rock Realty's control restore the showing credit and may be rescheduled.",
   },
   {
-    question: "What if I find a home before using all my showing days?",
+    question: "What if I find a rental before using all my showing days?",
     answer:
-      "If you find the right home before using all your showing days, that's a good outcome — the service did its job. Unused showing days and credits expire at the end of your package validity period and do not carry over.",
+      "If you find the right rental before using all your showing days, that's a good outcome — the service did its job. Unused showing days and credits expire at the end of your package validity period and do not carry over.",
   },
   {
-    question: "Can I transfer my package to another family?",
+    question: "Can I transfer my package to someone else?",
     answer:
       "No. Tour packages are non-transferable and not shareable. Attempted transfer or sharing will result in immediate forfeiture of remaining days and showing credits.",
+  },
+  {
+    question: "What should I know about Colorado rental application fees?",
+    answer:
+      "Colorado law may allow portable tenant screening reports and may limit certain application-related fees. Verify current requirements directly with the property manager or landlord, as rules and policies can change. My Rock Realty can provide general guidance, but you should independently confirm all requirements.",
   },
   {
     question: "What is the future home purchase credit?",
@@ -78,8 +78,7 @@ const faqSchema = buildFAQPageSchema(faqContent);
 
 const breadcrumbItems = [
   { label: "Home", url: "/" },
-  { label: "Military & PCS Relocation", url: "/military-relocation/" },
-  { label: "PCS Relocation Tour Support", url: "/military-relocation/pcs-relocation-tour-support/" },
+  { label: "Rental Tour Support", url: "/rental-tour-support/" },
 ];
 
 /* ─── How It Works Steps ─── */
@@ -87,12 +86,12 @@ const steps = [
   {
     number: "01",
     title: "Contact Rob",
-    body: "Reach out to discuss your PCS situation, timeline, and housing priorities. Rob will confirm availability and service fit before you purchase.",
+    body: "Reach out to discuss your rental search criteria, timeline, and target neighborhoods. Rob will confirm availability and service fit before you purchase.",
   },
   {
     number: "02",
     title: "Purchase Your Package",
-    body: "Select the package that fits your timeline and the number of properties or neighborhoods you want to evaluate. Military and veteran pricing applied automatically.",
+    body: "Select the package that fits your search scope and timeline. Packages are prepaid with no hidden fees.",
   },
   {
     number: "03",
@@ -102,7 +101,7 @@ const steps = [
   {
     number: "04",
     title: "Evaluate and Decide",
-    body: "Use your showing days to gather real information about properties and neighborhoods before you arrive. Make your housing decision with confidence.",
+    body: "Use your showing days to gather real information about properties and neighborhoods. Make your rental decision with confidence.",
   },
 ];
 
@@ -130,35 +129,32 @@ const notIncluded = [
 const packages = [
   {
     name: "1 Showing Day",
-    price: "$349",
-    standardPrice: "$499",
+    price: "$499",
     homes: "Up to 3 homes",
     showingDays: "1 showing day",
-    validity: "Valid for 45 days from purchase",
+    validity: "Valid for 30 days from purchase",
     description:
-      "Ideal for PCS families with a focused search and a clear top choice.",
+      "Ideal for renters with a focused search and a clear top choice.",
     recommended: false,
   },
   {
     name: "2 Showing Days",
-    price: "$549",
-    standardPrice: "$799",
+    price: "$799",
     homes: "Up to 6 homes",
     showingDays: "Up to 2 showing days",
-    validity: "Valid for 90 days from purchase",
+    validity: "Valid for 45 days from purchase",
     description:
-      "Ideal for PCS families evaluating a broader set of properties or neighborhoods.",
+      "Ideal for renters evaluating a broader set of properties or neighborhoods.",
     recommended: true,
   },
   {
     name: "3 Showing Days",
-    price: "$849",
-    standardPrice: "$999",
+    price: "$999",
     homes: "Up to 10 homes",
     showingDays: "Up to 3 showing days",
-    validity: "Valid for 120 days from purchase",
+    validity: "Valid for 90 days from purchase",
     description:
-      "Ideal for PCS families with a wider search area or longer decision timeline.",
+      "Ideal for renters with a wider search area or longer decision timeline.",
     recommended: false,
   },
 ];
@@ -167,18 +163,18 @@ const packages = [
 const trustPoints = [
   {
     icon: Compass,
-    title: "Colorado Market Knowledge",
-    body: "Rob has deep familiarity with the Colorado Springs and Denver metro markets — the neighborhoods, commute corridors, and practical considerations that matter for military families.",
+    title: "Local Market Knowledge",
+    body: "Rob has deep familiarity with the Denver and Colorado Springs metro markets — the neighborhoods, commute corridors, and practical considerations that matter for renters.",
   },
   {
     icon: Shield,
-    title: "Military-Aware Guidance",
-    body: "Rob regularly works with PCS families navigating compressed timelines, remote searches, and the unique pressures of military relocation. He understands the context.",
+    title: "Clear, Structured Guidance",
+    body: "Each showing day is structured and focused. You get professional observations and market context — not generic advice.",
   },
   {
-    icon: Users,
-    title: "Structured, Professional Support",
-    body: "Each showing day is structured and focused. You get professional observations and market context — not generic advice.",
+    icon: Key,
+    title: "No Representation Pressure",
+    body: "This service is designed to help you evaluate properties on your own terms. No agency relationship is created. You remain in control of your rental decision.",
   },
 ];
 
@@ -214,20 +210,17 @@ function FaqItem({ question, answer, isOpen, onToggle }: {
   );
 }
 
-export default function PcsRelocationTourSupport() {
+export default function RentalTourSupport() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
       <SeoHead
         metadata={{
-          title: "PCS Relocation Tour Support | Military Housing Guidance | My Rock Realty",
+          title: "Rental Tour Support | Find the Right Rental in Colorado | My Rock Realty",
           description:
-            "PCS families relocating to Colorado Springs or Denver can evaluate housing before they arrive. Structured in-person showings and neighborhood guidance — military and veteran pricing available. My Rock Realty.",
-          canonicalUrl:
-            "https://myrockhomes.com/military-relocation/pcs-relocation-tour-support/",
-          image:
-            "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
+            "Evaluating rental properties in Denver or Colorado Springs? Rental Tour Support gives you structured, professional guidance — in-person showings and neighborhood context without representation pressure. My Rock Realty.",
+          canonicalUrl: "https://myrockhomes.com/rental-tour-support/",
         }}
         schema={[faqSchema]}
       />
@@ -260,21 +253,21 @@ export default function PcsRelocationTourSupport() {
               className="inline-flex items-center gap-2 text-gold text-xs font-semibold tracking-widest uppercase mb-6"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              <Shield className="w-3.5 h-3.5" />
-              PCS RELOCATION · COLORADO
+              <Home className="w-3.5 h-3.5" />
+              RENTAL TOUR SUPPORT · COLORADO
             </div>
             <h1
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream leading-tight mb-6"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Evaluate Colorado Homes Before You Arrive
+              Find the Right Rental — With Professional Guidance
             </h1>
             <p className="text-cream/80 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
-              PCS households often have to make housing decisions before they arrive — evaluating properties and neighborhoods remotely, under a compressed timeline, without local knowledge. This service gives you structured, professional guidance on Colorado Springs and Denver so you're not deciding blind.
+              Evaluating rental properties in Denver or Colorado Springs takes time, local knowledge, and the ability to see past the listing photos. Rental Tour Support gives you structured, in-person showings and professional neighborhood context — so you can make a confident decision without guessing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="mailto:rob@myrockhomes.com?subject=PCS%20Relocation%20Tour%20Support%20Inquiry"
+                href="mailto:rob@myrockhomes.com?subject=Rental%20Tour%20Support%20Inquiry"
                 className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-charcoal font-semibold px-8 py-4 rounded transition-colors"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
@@ -282,11 +275,11 @@ export default function PcsRelocationTourSupport() {
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="/military-relocation/"
+                href="/"
                 className="inline-flex items-center gap-2 border border-cream/30 hover:border-cream/60 text-cream px-8 py-4 rounded transition-colors"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                View PCS Resources
+                Back to Home
               </a>
             </div>
           </motion.div>
@@ -301,14 +294,13 @@ export default function PcsRelocationTourSupport() {
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-4"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              What PCS Relocation Tour Support Is
+              What Rental Tour Support Is
             </h2>
             <p className="text-charcoal/70 text-base sm:text-lg leading-relaxed">
-              PCS Relocation Tour Support is a structured showing and guidance service designed to
-              help military families evaluate housing options in Colorado before they arrive. Rob
-              Baker provides in-person property access and guided showings where available, plus
-              neighborhood context and general Colorado market guidance — helping you understand
-              your options before you commit.
+              Rental Tour Support is a structured showing and guidance service. Rob Baker provides
+              in-person property access and guided showings where available, plus neighborhood
+              context and general Colorado market guidance — helping you evaluate your options
+              before committing.
             </p>
           </div>
 
@@ -374,13 +366,13 @@ export default function PcsRelocationTourSupport() {
             {[
               {
                 icon: MapPin,
-                region: "Colorado Springs Area",
-                detail: "25-mile radius from downtown Colorado Springs — Fort Carson, Peterson SFB, Schriever SFB, USAFA",
+                region: "Denver Metro",
+                detail: "25-mile radius from downtown Denver",
               },
               {
                 icon: MapPin,
-                region: "Denver / Aurora Area",
-                detail: "25-mile radius from downtown Denver — Buckley Space Force Base",
+                region: "Colorado Springs",
+                detail: "25-mile radius from downtown Colorado Springs",
               },
             ].map((area, i) => (
               <div key={i} className="bg-white/5 border border-white/10 rounded-lg p-6 flex items-start gap-4">
@@ -393,63 +385,13 @@ export default function PcsRelocationTourSupport() {
             ))}
           </div>
           <p className="text-center text-cream/50 text-[13px] mt-6">
-            Outside the standard service area? <a href="mailto:rob@myrockhomes.com?subject=PCS%20Tour%20Support%20Custom%20Quote" className="text-gold hover:underline">Contact Rob for a custom quote.</a>
+            Outside the standard service area? <a href="mailto:rob@myrockhomes.com?subject=Rental%20Tour%20Support%20Custom%20Quote" className="text-gold hover:underline">Contact Rob for a custom quote.</a>
           </p>
         </div>
       </section>
 
-      {/* ─── Who It's For ─── */}
-      <section className="py-16 sm:py-20 bg-cream">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2
-              className="text-3xl sm:text-4xl font-bold text-charcoal mb-4"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Who It's For
-            </h2>
-            <p className="text-charcoal/70 text-base sm:text-lg leading-relaxed">
-              This service is designed for PCS households who need to evaluate Colorado housing
-              options before they're local — and want structured, professional guidance rather than
-              searching blind.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {[
-              {
-                icon: Compass,
-                title: "Active Duty PCS Families",
-                body: "Relocating to Colorado Springs or Denver on military orders and need to evaluate housing options before your report date.",
-              },
-              {
-                icon: Users,
-                title: "Military Spouses Managing the Search",
-                body: "Handling the housing search independently while your service member is unavailable — and need reliable, structured guidance.",
-              },
-              {
-                icon: Home,
-                title: "Buyers and Renters Evaluating Options",
-                body: "Considering both rental and purchase options and want professional context on properties and neighborhoods before committing.",
-              },
-            ].map((card, i) => (
-              <div key={i} className="bg-charcoal/5 border border-cream-dark/40 rounded-lg p-7">
-                <card.icon className="w-8 h-8 text-gold mb-4" />
-                <h3
-                  className="text-base font-bold text-charcoal mb-2"
-                  style={{ fontFamily: "'Outfit', sans-serif" }}
-                >
-                  {card.title}
-                </h3>
-                <p className="text-charcoal/65 text-[14px] leading-relaxed">{card.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ─── How It Works ─── */}
-      <section className="py-16 sm:py-20 bg-charcoal/5 border-y border-cream-dark/30">
+      <section className="py-16 sm:py-20 bg-cream">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2
@@ -483,24 +425,18 @@ export default function PcsRelocationTourSupport() {
       </section>
 
       {/* ─── Pricing & Packages ─── */}
-      <section className="py-16 sm:py-20 bg-cream">
+      <section className="py-16 sm:py-20 bg-charcoal/5 border-y border-cream-dark/30">
         <div className="container">
-          <div className="max-w-3xl mx-auto text-center mb-4">
+          <div className="max-w-3xl mx-auto text-center mb-12">
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-4"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Military &amp; Veteran Pricing
+              Pricing &amp; Packages
             </h2>
             <p className="text-charcoal/65 text-base leading-relaxed">
-              Discounted pricing for active duty military, veterans, and their families. Prepaid packages. No hidden fees.
+              Prepaid packages. No hidden fees. Full terms provided at the time of purchase.
             </p>
-          </div>
-          <div className="max-w-3xl mx-auto text-center mb-10">
-            <span className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold-dark text-xs font-semibold tracking-wide uppercase px-4 py-2 rounded">
-              <Shield className="w-3.5 h-3.5" />
-              Military &amp; Veteran Rates — Standard pricing shown for reference
-            </span>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -519,7 +455,7 @@ export default function PcsRelocationTourSupport() {
                     style={{ fontFamily: "'Outfit', sans-serif" }}
                   >
                     <Star className="w-3 h-3" />
-                    Most Flexible
+                    Most Popular
                   </div>
                 )}
                 <h3
@@ -528,18 +464,11 @@ export default function PcsRelocationTourSupport() {
                 >
                   {pkg.name}
                 </h3>
-                <div className="flex items-baseline gap-2 mb-1">
-                  <div
-                    className={`text-4xl font-bold ${pkg.recommended ? "text-gold" : "text-charcoal"}`}
-                    style={{ fontFamily: "'Outfit', sans-serif" }}
-                  >
-                    {pkg.price}
-                  </div>
-                  <div
-                    className={`text-sm line-through ${pkg.recommended ? "text-cream/40" : "text-charcoal/35"}`}
-                  >
-                    {pkg.standardPrice}
-                  </div>
+                <div
+                  className={`text-4xl font-bold mb-1 ${pkg.recommended ? "text-gold" : "text-charcoal"}`}
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  {pkg.price}
                 </div>
                 <div className={`text-xs font-medium mb-1 ${pkg.recommended ? "text-cream/60" : "text-charcoal/50"}`}>
                   {pkg.homes} · {pkg.showingDays}
@@ -556,7 +485,7 @@ export default function PcsRelocationTourSupport() {
                   {pkg.description}
                 </p>
                 <a
-                  href="mailto:rob@myrockhomes.com?subject=PCS%20Relocation%20Tour%20Support%20Inquiry"
+                  href="mailto:rob@myrockhomes.com?subject=Rental%20Tour%20Support%20Inquiry"
                   className={`inline-flex items-center gap-2 font-semibold px-6 py-3 rounded transition-colors text-sm ${
                     pkg.recommended
                       ? "bg-gold hover:bg-gold-dark text-charcoal"
@@ -570,14 +499,11 @@ export default function PcsRelocationTourSupport() {
               </div>
             ))}
           </div>
-          <p className="text-center text-charcoal/45 text-[12px] mt-6">
-            Full terms provided at the time of purchase. Outside the standard service area? <a href="mailto:rob@myrockhomes.com?subject=PCS%20Tour%20Support%20Custom%20Quote" className="text-gold-dark hover:underline">Contact Rob for a custom quote.</a>
-          </p>
         </div>
       </section>
 
       {/* ─── Future Home Purchase Credit ─── */}
-      <section className="py-14 sm:py-18 bg-charcoal/5 border-y border-cream-dark/30">
+      <section className="py-14 sm:py-18 bg-cream border-b border-cream-dark/30">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <div className="bg-charcoal rounded-lg p-8 sm:p-10">
@@ -719,14 +645,14 @@ export default function PcsRelocationTourSupport() {
               className="text-3xl sm:text-4xl font-bold text-cream mb-4"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Ready to Start Your Housing Search?
+              Ready to Start Your Rental Search?
             </h2>
             <p className="text-cream/70 text-base sm:text-lg leading-relaxed mb-8">
-              Contact Rob to discuss your PCS timeline and confirm availability before purchasing.
+              Contact Rob to discuss your search criteria and confirm availability before purchasing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:rob@myrockhomes.com?subject=PCS%20Relocation%20Tour%20Support%20Inquiry"
+                href="mailto:rob@myrockhomes.com?subject=Rental%20Tour%20Support%20Inquiry"
                 className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-charcoal font-semibold px-8 py-4 rounded transition-colors"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >

@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
         metadata={{
           title: "Privacy Policy | My Rock Realty",
           description: "Learn how My Rock Realty collects, uses, and protects your personal information. Our privacy policy outlines our commitment to your data security and transparency.",
-          canonicalUrl: "https://www.myrockhomes.com/privacy",
+          canonicalUrl: "https://myrockhomes.com/privacy",
         }}
       />
       {/* Header */}
@@ -63,6 +63,7 @@ export default function PrivacyPolicy() {
                 <li>Your real estate interests and preferences (e.g., buying, selling, relocating)</li>
                 <li>Any additional information you provide in messages or form submissions</li>
                 <li>Technical data such as browser type, IP address, and pages visited (collected automatically via standard web analytics)</li>
+                <li>Tour Services scheduling preferences, property criteria, and related communications when you purchase or inquire about a Tour Services package</li>
               </ul>
             </section>
 
@@ -154,7 +155,16 @@ export default function PrivacyPolicy() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                11. Contact Us
+                11. Tour Support Services — Data Use
+              </h2>
+              <p>
+                When you purchase or inquire about a Tour Services package (Rental Tour Support or PCS Relocation Tour Support), we collect and use your contact information, property criteria, and scheduling preferences solely to coordinate and deliver the tour support service. This information is not sold or shared with third parties for marketing purposes. It may be retained for recordkeeping and to facilitate any future home purchase credit as described in our Terms &amp; Conditions. Tour Services data is handled in accordance with the general terms of this Privacy Policy.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                12. Contact Us
               </h2>
               <p>
                 If you have questions about this Privacy Policy or how your information is handled, please contact:

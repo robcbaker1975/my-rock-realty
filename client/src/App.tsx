@@ -99,6 +99,7 @@ import PcsTimelineChecklist from "./pages/PcsTimelineChecklist";
 import TemporaryHousingColoradoSprings from "./pages/TemporaryHousingColoradoSprings";
 import RemoteHomeTours from "./pages/RemoteHomeTours";
 import PcsRelocationTourSupport from "./pages/PcsRelocationTourSupport";
+import RentalTourSupport from "./pages/RentalTourSupport";
 import BestCommunitiesNearFortCarson from "./pages/BestCommunitiesNearFortCarson";
 import BestCommunitiesNearPetersonSpaceForceBase from "./pages/BestCommunitiesNearPetersonSpaceForceBase";
 import BestCommunitiesNearSchrieverSpaceForceBase from "./pages/BestCommunitiesNearSchrieverSpaceForceBase";
@@ -202,6 +203,7 @@ function Router() {
       <Route path={"/military-relocation/temporary-housing-colorado-springs/"} component={TemporaryHousingColoradoSprings} />
       <Route path={"/military-relocation/remote-home-tours/"} component={RemoteHomeTours} />
       <Route path={"/military-relocation/pcs-relocation-tour-support/"} component={PcsRelocationTourSupport} />
+      <Route path={"/rental-tour-support/"} component={RentalTourSupport} />
       <Route path={"/military-relocation/best-communities-near-fort-carson/"} component={BestCommunitiesNearFortCarson} />
       <Route path={"/military-relocation/best-communities-near-peterson-space-force-base/"} component={BestCommunitiesNearPetersonSpaceForceBase} />
       <Route path={"/military-relocation/best-communities-near-schriever-space-force-base/"} component={BestCommunitiesNearSchrieverSpaceForceBase} />

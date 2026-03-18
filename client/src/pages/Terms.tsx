@@ -17,7 +17,7 @@ export default function Terms() {
         metadata={{
           title: "Terms & Conditions | My Rock Realty",
           description: "Review the terms and conditions governing your use of My Rock Realty's website and services. Understand your rights and responsibilities when working with us.",
-          canonicalUrl: "https://www.myrockhomes.com/terms",
+          canonicalUrl: "https://myrockhomes.com/terms",
         }}
       />
       {/* Header */}
@@ -203,7 +203,51 @@ export default function Terms() {
 
             <section>
               <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                14. Contact
+                15. Tour Support Services
+              </h2>
+              <p className="mb-3">
+                My Rock Realty offers prepaid tour support services, including Rental Tour Support and PCS Relocation Tour Support (collectively, "Tour Services"). The following terms apply to all Tour Services purchases.
+              </p>
+              <p className="mb-3 font-medium text-charcoal">
+                15.1 No Representation Created
+              </p>
+              <p className="mb-3">
+                Purchase of a Tour Services package does not create a tenant representation relationship, buyer representation relationship, agency relationship, fiduciary duty, or any brokerage relationship. You remain unrepresented unless and until you sign a separate written representation agreement with My Rock Realty. Tour Services are guidance and access services only.
+              </p>
+              <p className="mb-3 font-medium text-charcoal">
+                15.2 Package Terms
+              </p>
+              <ul className="list-disc pl-5 space-y-2 mb-3">
+                <li>Packages are non-transferable and not shareable. Attempted transfer or sharing results in immediate forfeiture of all remaining showing days and credits without refund.</li>
+                <li>Package validity begins on the purchase date. Unused showing days and credits expire at the end of the stated validity period and do not carry over.</li>
+                <li>Same-day cancellations (less than 24 hours' notice) forfeit that day's showings and 3 showing credits.</li>
+                <li>Arrival more than 15 minutes late without notice may result in forfeiture of that day's showings at My Rock Realty's discretion.</li>
+                <li>Weather calls are made in good faith by My Rock Realty. Access delays or last-minute cancellations outside My Rock Realty's control restore the showing credit and may be rescheduled.</li>
+                <li>Standard service area: 25-mile radius from downtown Denver or downtown Colorado Springs. Properties outside the standard area are available by custom quote only and must be confirmed before purchase.</li>
+              </ul>
+              <p className="mb-3 font-medium text-charcoal">
+                15.3 Customer Responsibility
+              </p>
+              <p className="mb-3">
+                You are solely responsible for independently verifying all material facts before signing any lease, application, or purchase agreement, including but not limited to: rental requirements, application standards, school boundaries, commute needs, pet policies, lease terms, HOA restrictions, property conditions, and applicable fees. My Rock Realty provides general guidance only and does not warrant the accuracy or completeness of any information provided during Tour Services.
+              </p>
+              <p className="mb-3 font-medium text-charcoal">
+                15.4 Future Home Purchase Credit
+              </p>
+              <p className="mb-3">
+                If you later enter into a separate written buyer representation agreement with My Rock Realty and successfully close on a home purchase through us within 60 months of your Tour Services purchase, your paid tour fee may be credited in full at closing, where permitted and as outlined in the separate written agreement, subject to brokerage policy, applicable law, lender approval, and successful closing. This credit applies to a future home purchase only, requires a separate written buyer representation agreement at that time, and does not apply to rental transactions or guarantee closing or approval.
+              </p>
+              <p className="mb-3 font-medium text-charcoal">
+                15.5 No Guarantees
+              </p>
+              <p>
+                My Rock Realty does not guarantee that Tour Services will result in a successful rental application, lease approval, or home purchase. Tour Services are provided on an as-is basis. My Rock Realty's total liability for Tour Services shall not exceed the amount paid for the applicable package.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                16. Contact
               </h2>
               <p>
                 If you have questions about these Terms & Conditions, please contact:
