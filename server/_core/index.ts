@@ -34,11 +34,11 @@ async function startServer() {
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
-  // 301 redirect: enforce www canonical hostname in production
+  // 301 redirect: enforce non-www canonical hostname in production
   // Uses x-forwarded-host (set by the CDN/load balancer) to determine the
   // original custom domain. Falls back to host header only if x-forwarded-host
   // is absent. API routes (/api/*) are excluded to prevent POST redirects.
-  // Redirects: http://myrockhomes.com/*, https://myrockhomes.com/* → https://www.myrockhomes.com/*
+  // Redirects: http://myrockhomes.com/*, http://www.myrockhomes.com/*, https://www.myrockhomes.com/* → https://myrockhomes.com/*
   app.use((req, res, next) => {
     if (process.env.NODE_ENV !== "production") return next();
     // Skip API routes — POST redirects break browser fetch
@@ -49,9 +49,9 @@ async function startServer() {
     const proto = req.headers["x-forwarded-proto"] || req.protocol;
     const isWww = host.startsWith("www.");
     const isHttps = proto === "https";
-    if (!isWww || !isHttps) {
-      const wwwHost = isWww ? host : `www.${host.replace(/^www\./, "")}`;
-      return res.redirect(301, `https://${wwwHost}${req.originalUrl}`);
+    if (isWww || !isHttps) {
+      const nonWwwHost = host.replace(/^www\./, "");
+      return res.redirect(301, `https://${nonWwwHost}${req.originalUrl}`);
     }
     next();
   });

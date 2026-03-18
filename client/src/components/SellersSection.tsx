@@ -69,12 +69,12 @@ export default function SellersSection() {
                     <s.icon size={20} />
                   </div>
                   <div>
-                    <h4
-                      className="text-charcoal font-semibold mb-1"
+                    <h3
+                      className="text-charcoal font-semibold mb-1 text-base"
                       style={{ fontFamily: "'Outfit', sans-serif" }}
                     >
                       {s.title}
-                    </h4>
+                    </h3>
                     <p className="text-charcoal-light/70 text-sm leading-relaxed">{s.text}</p>
                   </div>
                 </motion.div>

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const HEADSHOT_URL = "/assets/rob-about.png";
+const HEADSHOT_URL = "/assets/rob-about.jpg";
 
 const stats = [
   { value: "25+", label: "Years in Sales & Negotiations" },

@@ -8,14 +8,14 @@ import type {
 
 export const DEFAULT_SITE_CONFIG: SiteConfig = {
   siteName: 'MyRockHomes.com',
-  siteUrl: 'https://www.myrockhomes.com',
+  siteUrl: 'https://myrockhomes.com',
   brandName: 'My Rock Realty',
   organizationName: 'My Rock Realty',
   defaultLocale: 'en_US',
   defaultTitle: 'MyRockHomes.com',
   defaultDescription:
     'Denver-first real estate authority platform for homes, neighborhoods, suburbs, property types, guides, comparisons, and relocation.',
-  defaultImage: 'https://www.myrockhomes.com/og/default.jpg',
+  defaultImage: 'https://myrockhomes.com/og/default.jpg',
   twitterHandle: '@myrockhomes',
 };
 

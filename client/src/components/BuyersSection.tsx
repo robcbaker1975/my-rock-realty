@@ -94,12 +94,12 @@ export default function BuyersSection() {
                     <b.icon size={20} />
                   </div>
                   <div>
-                    <h4
-                      className="text-white font-semibold mb-1"
+                    <h3
+                      className="text-white font-semibold mb-1 text-base"
                       style={{ fontFamily: "'Outfit', sans-serif" }}
                     >
                       {b.title}
-                    </h4>
+                    </h3>
                     <p className="text-cream/60 text-sm leading-relaxed">{b.text}</p>
                   </div>
                 </motion.div>

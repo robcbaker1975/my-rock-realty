@@ -72,10 +72,10 @@ export default function Footer() {
           {/* Brand & Contact Info — spans 2 cols on lg */}
           <div className="sm:col-span-2 lg:col-span-2">
             <img src={LOGO_URL} alt="My Rock Realty" className="h-16 sm:h-18 w-auto mb-4" width="72" height="72" loading="lazy" decoding="async" />
-            <p className="text-cream/50 text-[13px] sm:text-sm leading-relaxed max-w-xs mb-3">
+            <p className="text-cream/70 text-[13px] sm:text-sm leading-relaxed max-w-xs mb-3">
               Strategic real estate guidance for Colorado buyers, sellers, and relocation clients.
             </p>
-            <div className="space-y-1.5 text-cream/40 text-sm">
+            <div className="space-y-1.5 text-cream/60 text-sm">
               <p className="text-cream/60 font-medium">Rob Baker, Broker/Owner</p>
               <p>My Rock Realty, LLC</p>
               <p>Lic. ER100078487</p>
@@ -107,7 +107,7 @@ export default function Footer() {
                   <a
                     key={link.href}
                     href={link.href}
-                    className="block text-cream/50 text-sm hover:text-gold transition-colors"
+                    className="block text-cream/70 text-sm hover:text-gold transition-colors"
                   >
                     {link.label}
                   </a>
@@ -116,7 +116,7 @@ export default function Footer() {
                     key={link.href}
                     href={link.href}
                     onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
-                    className="block text-cream/50 text-sm hover:text-gold transition-colors"
+                    className="block text-cream/70 text-sm hover:text-gold transition-colors"
                   >
                     {link.label}
                   </a>
@@ -138,7 +138,7 @@ export default function Footer() {
                 <a
                   key={m.href}
                   href={m.href}
-                  className="block text-cream/50 hover:text-gold transition-colors"
+                  className="block text-cream/70 hover:text-gold transition-colors"
                 >
                   {m.label}
                 </a>
@@ -159,7 +159,7 @@ export default function Footer() {
                 <a
                   key={g.href}
                   href={g.href}
-                  className="block text-cream/50 hover:text-gold transition-colors"
+                  className="block text-cream/70 hover:text-gold transition-colors"
                 >
                   {g.label}
                 </a>
@@ -176,7 +176,7 @@ export default function Footer() {
                 <a
                   key={c.href}
                   href={c.href}
-                  className="block text-cream/50 hover:text-gold transition-colors"
+                  className="block text-cream/70 hover:text-gold transition-colors"
                 >
                   {c.label}
                 </a>
@@ -197,7 +197,7 @@ export default function Footer() {
                 <a
                   key={m.href}
                   href={m.href}
-                  className="block text-cream/50 hover:text-gold transition-colors"
+                  className="block text-cream/70 hover:text-gold transition-colors"
                 >
                   {m.label}
                 </a>
@@ -216,32 +216,32 @@ export default function Footer() {
             <div className="space-y-2.5 text-sm">
               <a
                 href="/colorado-home-buying-workshop"
-                className="block text-cream/50 hover:text-gold transition-colors"
+                className="block text-cream/70 hover:text-gold transition-colors"
               >
                 Home Buying Workshop
               </a>
               <a
                 href="/join-us"
-                className="block text-cream/50 hover:text-gold transition-colors"
+                className="block text-cream/70 hover:text-gold transition-colors"
               >
                 Join Our Team
               </a>
               <a
                 href="/coaching"
-                className="block text-cream/50 hover:text-gold transition-colors"
+                className="block text-cream/70 hover:text-gold transition-colors"
               >
                 Coaching
               </a>
-              <Link href="/privacy" className="block text-cream/50 hover:text-gold transition-colors">
+              <Link href="/privacy" className="block text-cream/70 hover:text-gold transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="block text-cream/50 hover:text-gold transition-colors">
+              <Link href="/terms" className="block text-cream/70 hover:text-gold transition-colors">
                 Terms &amp; Conditions
               </Link>
-              <Link href="/fair-housing" className="block text-cream/50 hover:text-gold transition-colors">
+              <Link href="/fair-housing" className="block text-cream/70 hover:text-gold transition-colors">
                 Fair Housing Statement
               </Link>
-              <Link href="/accessibility" className="block text-cream/50 hover:text-gold transition-colors">
+              <Link href="/accessibility" className="block text-cream/70 hover:text-gold transition-colors">
                 Accessibility Statement
               </Link>
             </div>
@@ -252,14 +252,14 @@ export default function Footer() {
         <div className="pt-6 sm:pt-8 border-t border-white/5 mb-6 sm:mb-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
             {/* Equal Housing Logo */}
-            <div className="flex items-center gap-3 text-cream/40 shrink-0">
+            <div className="flex items-center gap-3 text-cream/60 shrink-0">
               <EqualHousingLogo className="w-10 h-10 sm:w-12 sm:h-12" />
               <span className="text-xs leading-tight max-w-[200px]">
                 Equal Housing Opportunity
               </span>
             </div>
             {/* Brokerage Disclosure */}
-            <p className="text-cream/50 text-xs leading-relaxed">
+            <p className="text-cream/70 text-xs leading-relaxed">
               My Rock Realty, LLC &middot; Rob Baker, Broker/Owner &middot; Colorado Real Estate License ER100078487. All real estate services are provided in compliance with applicable federal, state, and local laws, including the Fair Housing Act and the Colorado Anti-Discrimination Act.
             </p>
           </div>
@@ -267,23 +267,23 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-cream/50 text-xs">
+          <p className="text-cream/70 text-xs">
             &copy; {new Date().getFullYear()} My Rock Realty, LLC. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-cream/50 text-xs">
-            <Link href="/privacy" className="hover:text-cream/50 transition-colors">
+          <div className="flex items-center gap-4 text-cream/70 text-xs">
+            <Link href="/privacy" className="hover:text-white transition-colors">
               Privacy
             </Link>
             <span>&middot;</span>
-            <Link href="/terms" className="hover:text-cream/50 transition-colors">
+            <Link href="/terms" className="hover:text-white transition-colors">
               Terms
             </Link>
             <span>&middot;</span>
-            <Link href="/fair-housing" className="hover:text-cream/50 transition-colors">
+            <Link href="/fair-housing" className="hover:text-white transition-colors">
               Fair Housing
             </Link>
             <span>&middot;</span>
-            <Link href="/accessibility" className="hover:text-cream/50 transition-colors">
+            <Link href="/accessibility" className="hover:text-white transition-colors">
               Accessibility
             </Link>
           </div>

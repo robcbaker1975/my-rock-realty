@@ -74,12 +74,12 @@ export default function LandSection() {
                 className="p-5 sm:p-6 rounded border border-charcoal/10 bg-white text-left hover:border-gold/40 transition-colors shadow-sm"
               >
                 <card.icon size={24} className="text-gold mb-3" />
-                <h4
-                  className="text-charcoal font-semibold mb-2"
+                <h3
+                  className="text-charcoal font-semibold mb-2 text-base"
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
                   {card.title}
-                </h4>
+                </h3>
                 <p className="text-charcoal/60 text-sm leading-relaxed">{card.text}</p>
               </motion.div>
             ))}
