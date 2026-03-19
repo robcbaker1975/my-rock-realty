@@ -6,7 +6,6 @@
  */
 
 import SeoHead from "@/components/seo/SeoHead";
-import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -73,11 +72,6 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <section className="py-8 sm:py-10 md:py-12 bg-charcoal border-b border-white/8">
-          <div className="container">
-            <BuyingBuddyWidget type="QuickSearch" filter="formType:simple2" />
-          </div>
-        </section>
         <TrustSection />
         <BuyersSection />
         <SellersSection />

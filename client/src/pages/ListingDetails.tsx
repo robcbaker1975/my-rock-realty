@@ -20,8 +20,12 @@ export default function ListingDetails() {
       document.head.appendChild(meta);
     }
     meta.content = "noindex, nofollow";
+    // Prevent horizontal scrolling caused by wide BB widget content on mobile
+    const prevHtmlOverflow = document.documentElement.style.overflowX;
+    document.documentElement.style.overflowX = "hidden";
     return () => {
       if (meta) meta.content = "index, follow";
+      document.documentElement.style.overflowX = prevHtmlOverflow;
     };
   }, []);
 
