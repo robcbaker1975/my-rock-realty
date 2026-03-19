@@ -93,7 +93,7 @@ export default function HeroSection() {
             >
               {/* PRIMARY CTA: Search Homes */}
               <button
-                onClick={() => setLocation("/listing-results")}
+                onClick={() => setLocation("/listing-results?searchParams%5Bmappos%5D=39.7392%2C-104.9903&searchParams%5Bmapzoom%5D=11")}
                 className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 sm:px-8 sm:py-4 bg-gold text-charcoal font-bold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-base sm:text-[17px]"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
