@@ -37,7 +37,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content — two-column on desktop: text left, headshot right */}
-      <div className="relative container pt-40 pb-16 sm:pt-44 sm:pb-20 md:pt-48 md:pb-28">
+      <div className="relative container pt-48 pb-16 sm:pt-52 sm:pb-20 md:pt-56 md:pb-28">
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
           {/* Left column: Text content */}
           <div className="lg:col-span-3">
