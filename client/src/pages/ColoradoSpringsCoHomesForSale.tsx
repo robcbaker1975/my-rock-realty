@@ -398,7 +398,7 @@ export default function ColoradoSpringsCoHomesForSale() {
             Featured Colorado Springs Listings
           </h2>
           {/* ── LIVE IDX LISTING FEED ── */}
-          <BuyingBuddyWidget type="SearchResults" filter="city:Colorado Springs" />
+          <BuyingBuddyWidget type="SearchResults" filter="city:Colorado Springs mappos:38.8339,-104.8214 mapzoom:11" />
           {/* ── END IDX LISTING FEED ── */}
         </div>
       </section>

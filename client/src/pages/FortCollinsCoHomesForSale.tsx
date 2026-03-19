@@ -419,7 +419,7 @@ export default function FortCollinsCoHomesForSale() {
             Featured Fort Collins Listings
           </h2>
           {/* ── LIVE IDX LISTING FEED ── */}
-          <BuyingBuddyWidget type="SearchResults" filter="city:Fort Collins" />
+          <BuyingBuddyWidget type="SearchResults" filter="city:Fort Collins mappos:40.5853,-105.0844 mapzoom:12" />
           {/* ── END IDX LISTING FEED ── */}
         </div>
       </section>

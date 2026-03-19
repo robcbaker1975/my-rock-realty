@@ -401,7 +401,7 @@ export default function BoulderCoHomesForSale() {
             Featured Boulder Listings
           </h2>
           {/* ── LIVE IDX LISTING FEED ── */}
-          <BuyingBuddyWidget type="SearchResults" filter="city:Boulder" />
+          <BuyingBuddyWidget type="SearchResults" filter="city:Boulder mappos:40.01499,-105.27055 mapzoom:12" />
           {/* ── END IDX LISTING FEED ── */}
         </div>
       </section>

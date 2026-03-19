@@ -388,7 +388,7 @@ export default function DenverHomesForSale() {
             Featured Denver Listings
           </h2>
           {/* ── LIVE IDX LISTING FEED ── */}
-          <BuyingBuddyWidget type="SearchResults" filter="city:Denver" />
+          <BuyingBuddyWidget type="SearchResults" filter="city:Denver mappos:39.7392,-104.9903 mapzoom:11" />
           {/* ── END IDX LISTING FEED ── */}
         </div>
       </section>

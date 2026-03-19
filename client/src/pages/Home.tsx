@@ -3,6 +3,11 @@
  * Design: "Front Range Modern" — Colorado Contemporary Architecture meets Digital Craft
  * Palette: Warm charcoal (#292524), warm cream (#F5F0EB), antique gold (#C9A96E)
  * Typography: Outfit (display) + Libre Franklin (body)
+ *
+ * Homepage structure (simplified):
+ * Hero → Trust → Buyers → Sellers → Relocations/Renters → Workshop (secondary) →
+ * Additional Services (compact) → Testimonials → About → Process →
+ * Contact → Final CTA → FAQ
  */
 
 import SeoHead from "@/components/seo/SeoHead";
@@ -12,15 +17,12 @@ import HeroSection from "@/components/HeroSection";
 import TrustSection from "@/components/TrustSection";
 import BuyersSection from "@/components/BuyersSection";
 import SellersSection from "@/components/SellersSection";
-import FlexibleListingPlansSection from "@/components/FlexibleListingPlansSection";
-import LandSection from "@/components/LandSection";
 import RelocationsSection from "@/components/RelocationsSection";
-import MilitaryRelocationSection from "@/components/MilitaryRelocationSection";
-import HomeTestimonialsSection from "@/components/HomeTestimonialsSection";
 import WorkshopSection from "@/components/WorkshopSection";
+import AdditionalServicesSection from "@/components/AdditionalServicesSection";
+import HomeTestimonialsSection from "@/components/HomeTestimonialsSection";
 import AboutSection from "@/components/AboutSection";
 import ProcessSection from "@/components/ProcessSection";
-import HomeColoradoExpertiseSection from "@/components/HomeColoradoExpertiseSection";
 import ContactSection from "@/components/ContactSection";
 import HomeFinalCTASection from "@/components/HomeFinalCTASection";
 import FAQSection from "@/components/FAQSection";
@@ -71,19 +73,25 @@ export default function Home() {
       />
       <Navbar />
       <main>
+        {/* ── PRIMARY PATHS ── */}
         <HeroSection />
         <TrustSection />
         <BuyersSection />
         <SellersSection />
-        <FlexibleListingPlansSection />
-        <LandSection />
         <RelocationsSection />
-        <MilitaryRelocationSection />
-        <HomeTestimonialsSection />
+
+        {/* ── SECONDARY TRUST / EDUCATION ── */}
         <WorkshopSection />
+
+        {/* ── COMPACT SECONDARY OFFERS ── */}
+        <AdditionalServicesSection />
+
+        {/* ── PROOF + CREDIBILITY ── */}
+        <HomeTestimonialsSection />
         <AboutSection />
         <ProcessSection />
-        <HomeColoradoExpertiseSection />
+
+        {/* ── CONVERSION ── */}
         <ContactSection />
         <HomeFinalCTASection />
         <FAQSection />
