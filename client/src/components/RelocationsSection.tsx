@@ -1,23 +1,22 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowRightLeft, UserCheck, MapPinned } from "lucide-react";
-
-const RELOCATIONS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp";
+import { ArrowRight, Home, MapPin, Shield } from "lucide-react";
+import { Link } from "wouter";
 
 const scenarios = [
   {
-    icon: MapPinned,
-    title: "Moving to Colorado",
-    text: "Rob helps relocation clients navigate the Colorado market, timing, and property search process so they can move forward with a clearer plan and greater confidence.",
+    icon: Home,
+    title: "Rental Showings & Tour Support",
+    text: "Need to see properties before you commit? Rob coordinates in-person and remote tours so you can evaluate options on your timeline — no pressure, no rush.",
   },
   {
-    icon: ArrowRightLeft,
-    title: "Moving Out of Colorado",
-    text: "Rob connects you with a vetted, trusted agent in your destination — personally screened for quality and professionalism.",
+    icon: MapPin,
+    title: "Relocating to Colorado",
+    text: "Rob helps relocation clients understand the Colorado market, neighborhoods, and buying process so they can move forward with a clearer plan — even from a distance.",
   },
   {
-    icon: UserCheck,
-    title: "Refer a Friend or Family Member",
-    text: "Know someone buying or selling anywhere in the U.S.? Rob connects your people with a strong, reliable agent — no matter the state.",
+    icon: Shield,
+    title: "Military & PCS Families",
+    text: "VA homebuying, PCS timing, and Colorado market orientation — designed for the unique needs of military families navigating a move on a tight timeline.",
   },
 ];
 
@@ -28,7 +27,7 @@ export default function RelocationsSection() {
   };
 
   return (
-    <section id="relocations" className="py-12 sm:py-20 md:py-28 bg-cream relative overflow-hidden">
+    <section id="rental-tour-support" className="py-12 sm:py-20 md:py-28 bg-cream relative overflow-hidden">
       <div className="container">
         {/* Section Header */}
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-12 lg:gap-16 items-start mb-7 sm:mb-14">
@@ -40,7 +39,7 @@ export default function RelocationsSection() {
               className="text-gold-dark text-sm font-semibold tracking-widest uppercase mb-3 block"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Relocations & Referrals
+              Rental · Tour Support · Relocation
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -50,63 +49,61 @@ export default function RelocationsSection() {
               className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal leading-tight mb-4 sm:mb-5"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Trusted Agent Connections in{" "}
-              <span className="text-gold-dark">All 50 States</span>
+              Rental Showings, Tours &{" "}
+              <span className="text-gold-dark">Relocation Support</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-charcoal-light/80 text-[15px] sm:text-lg leading-relaxed"
+              className="text-charcoal-light/80 text-[15px] sm:text-lg leading-relaxed mb-5"
             >
-              Real estate doesn't stop at state lines. Rob's nationwide referral network ensures smooth handoffs to trusted, vetted professionals — whether you're moving into Colorado, leaving the state, or connecting someone you care about with a strong agent elsewhere.
+              Whether you're evaluating rentals, planning a move to Colorado, or navigating a PCS relocation, Rob provides practical, no-pressure support designed around your timeline and situation.
             </motion.p>
-          </div>
-
-          {/* Map Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
-          >
-            <img
-              src={RELOCATIONS_IMG}
-              alt="Map of the United States with Colorado highlighted, showing referral network connections to all 50 states"
-              className="w-full h-auto rounded shadow-xl"
-              width="800"
-              height="600"
-              loading="lazy"
-              decoding="async"
-            />
-          </motion.div>
-        </div>
-
-        {/* Scenario Cards */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 mb-7 sm:mb-10">
-          {scenarios.map((s, i) => (
             <motion.div
-              key={s.title}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 * i }}
-              className="p-4 sm:p-7 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-lg hover:shadow-gold/5"
+              transition={{ delay: 0.3 }}
             >
-              <div className="w-12 h-12 rounded flex items-center justify-center bg-gold/10 text-gold-dark mb-4">
-                <s.icon size={24} strokeWidth={1.8} />
-              </div>
-              <h3
-                className="text-xl font-semibold text-charcoal mb-3"
+              <Link
+                href="/rental-tour-support/"
+                className="group inline-flex items-center gap-2 text-gold-dark font-semibold text-[15px] hover:text-gold transition-colors"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                {s.title}
-              </h3>
-              <p className="text-charcoal-light/70 leading-relaxed">{s.text}</p>
+                Rental & Tour Support Details
+                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+              </Link>
             </motion.div>
-          ))}
+          </div>
+
+          {/* Scenario Cards */}
+          <div className="grid gap-3 sm:gap-4">
+            {scenarios.map((s, i) => (
+              <motion.div
+                key={s.title}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 * i }}
+                className="flex gap-4 p-4 sm:p-5 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-md hover:shadow-gold/5"
+              >
+                <div className="w-10 h-10 rounded flex items-center justify-center bg-gold/10 text-gold-dark shrink-0 mt-0.5">
+                  <s.icon size={20} strokeWidth={1.8} />
+                </div>
+                <div>
+                  <h3
+                    className="text-base font-semibold text-charcoal mb-1"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    {s.title}
+                  </h3>
+                  <p className="text-charcoal-light/70 text-sm leading-relaxed">{s.text}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Callout Box */}
@@ -122,10 +119,10 @@ export default function RelocationsSection() {
               className="text-2xl font-bold text-white mb-2"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Need a Trusted Agent Referral?
+              Planning a Move or Need a Showing?
             </h3>
             <p className="text-cream/70 max-w-lg">
-              Rob connects you or someone you know with a vetted, reliable agent — anywhere in the U.S.
+              Get in touch to discuss your timeline, situation, and what kind of support would be most useful — no commitment required.
             </p>
           </div>
           <button
@@ -133,7 +130,7 @@ export default function RelocationsSection() {
             className="group shrink-0 inline-flex items-center justify-center gap-2 w-full md:w-auto px-6 py-3 border border-cream/25 text-cream/80 font-medium rounded-lg transition-all hover:border-gold/50 hover:text-gold active:bg-white/5 text-[15px] sm:text-base"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Request a Referral
+            Get in Touch
             <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
           </button>
         </motion.div>

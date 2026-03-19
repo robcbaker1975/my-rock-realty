@@ -4,9 +4,9 @@
  * Palette: Warm charcoal (#292524), warm cream (#F5F0EB), antique gold (#C9A96E)
  * Typography: Outfit (display) + Libre Franklin (body)
  *
- * Homepage structure (simplified):
- * Hero → Trust → Buyers → Sellers → Relocations/Renters → Workshop (secondary) →
- * Additional Services (compact) → Testimonials → About → Process →
+ * Homepage structure (final polish):
+ * Hero → Trust → Buyers → Sellers → Rental/Tour Support (incl. PCS) → Workshop (secondary) →
+ * Additional Services compact (Land, Referrals, Flexible Listing Plans) → Testimonials → About → Process →
  * Contact → Final CTA → FAQ
  */
 
@@ -78,6 +78,7 @@ export default function Home() {
         <TrustSection />
         <BuyersSection />
         <SellersSection />
+        {/* Rental / Tour Support — includes PCS/Military mention, links to /rental-tour-support/ */}
         <RelocationsSection />
 
         {/* ── SECONDARY TRUST / EDUCATION ── */}

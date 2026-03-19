@@ -1,12 +1,11 @@
 /**
  * AdditionalServicesSection — My Rock Realty
- * Compact "Additional Ways We Help" callout section
- * Replaces standalone LandSection, MilitaryRelocationSection, and FlexibleListingPlansSection
- * on the homepage. Links preserved to their dedicated pages.
+ * Compact "Additional Ways We Help" callout section.
+ * Cards: Land & Investment, Referrals, Flexible Listing Plans.
+ * Military/PCS is now covered in RelocationsSection (Rental/Tour Support).
  */
 import { motion } from "framer-motion";
-
-import { ArrowRight, Mountain, Shield, LayoutList } from "lucide-react";
+import { ArrowRight, Mountain, Users, LayoutList } from "lucide-react";
 
 const services = [
   {
@@ -19,13 +18,13 @@ const services = [
     internal: false,
   },
   {
-    icon: Shield,
-    label: "Military & PCS",
-    headline: "Military Families & PCS Buyers",
-    desc: "Practical support for VA homebuying, PCS timing, and Colorado market orientation — designed for the unique needs of military families.",
-    href: "/military-relocation/",
-    cta: "Military Relocation Resources",
-    internal: true,
+    icon: Users,
+    label: "Referrals",
+    headline: "Trusted Agent Connections in All 50 States",
+    desc: "Know someone buying or selling anywhere in the U.S.? Rob connects your people with a vetted, reliable agent — no matter the state.",
+    href: "#contact",
+    cta: "Request a Referral",
+    internal: false,
   },
   {
     icon: LayoutList,

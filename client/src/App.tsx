@@ -106,6 +106,7 @@ import BestCommunitiesNearPetersonSpaceForceBase from "./pages/BestCommunitiesNe
 import BestCommunitiesNearSchrieverSpaceForceBase from "./pages/BestCommunitiesNearSchrieverSpaceForceBase";
 import BestCommunitiesNearBuckleySpaceForceBase from "./pages/BestCommunitiesNearBuckleySpaceForceBase";
 import AgentPartner from "./pages/AgentPartner";
+import Listing4810BasaltRidgeCircle from "./pages/Listing4810BasaltRidgeCircle";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -210,6 +211,8 @@ function Router() {
       <Route path={"/military-relocation/best-communities-near-peterson-space-force-base/"} component={BestCommunitiesNearPetersonSpaceForceBase} />
       <Route path={"/military-relocation/best-communities-near-schriever-space-force-base/"} component={BestCommunitiesNearSchrieverSpaceForceBase} />
       <Route path={"/military-relocation/best-communities-near-buckley-space-force-base/"} component={BestCommunitiesNearBuckleySpaceForceBase} />
+      {/* Featured listing pages — individual property showcase pages */}
+      <Route path={"/featured/4810-basalt-ridge-circle-castle-rock-co"} component={Listing4810BasaltRidgeCircle} />
       {/* Secondary: direct-link agent landing page — noindex, not in sitemap, not in public nav */}
       <Route path={"/for-colorado-agents"} component={AgentPartner} />
       {/* Buying Buddy test pages — noindex, not in sitemap, not in public nav/footer/homepage — direct-link only */}
