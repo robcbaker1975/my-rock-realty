@@ -49,7 +49,7 @@ export default function FlexibleListingPlansSection() {
               className="text-cream/60 text-[14px] sm:text-[15px] leading-relaxed mb-7 sm:mb-9"
               style={{ fontFamily: "'Libre Franklin', sans-serif" }}
             >
-              Not every seller wants the same listing strategy. Some want a streamlined path to market with the essentials covered. Others want broader exposure, stronger marketing, and more hands-on guidance from start to finish. Either way, you choose the level that fits your goals — with full transparency on what's included.
+              Choose the level that fits your goals — from a streamlined path to market to full-service marketing and strategy. Full transparency on what's included at every tier.
             </p>
 
             {/* Trust line */}
@@ -72,10 +72,10 @@ export default function FlexibleListingPlansSection() {
               </button>
               <button
                 onClick={() => setLocation("/flexible-listing-plans#seller-consultation")}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-cream/25 text-cream/80 font-medium rounded-lg transition-all hover:border-gold/50 hover:text-gold backdrop-blur-sm active:bg-white/5 text-[15px] sm:text-base"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-cream/20 text-cream/60 font-medium rounded-lg transition-all hover:border-gold/40 hover:text-cream/80 active:bg-white/5 text-[15px] sm:text-base"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                Talk Through Your Selling Options
+                Talk Through Your Options
               </button>
             </div>
           </motion.div>

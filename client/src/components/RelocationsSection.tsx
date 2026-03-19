@@ -125,17 +125,16 @@ export default function RelocationsSection() {
               Need a Trusted Agent Referral?
             </h3>
             <p className="text-cream/70 max-w-lg">
-              Whether it's across the street or across the country, Rob can connect
-              you or someone you know with a vetted, reliable real estate professional.
+              Rob connects you or someone you know with a vetted, reliable agent — anywhere in the U.S.
             </p>
           </div>
           <button
             onClick={() => scrollTo("#contact")}
-            className="group shrink-0 inline-flex items-center justify-center gap-2 w-full md:w-auto px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
+            className="group shrink-0 inline-flex items-center justify-center gap-2 w-full md:w-auto px-6 py-3 border border-cream/25 text-cream/80 font-medium rounded-lg transition-all hover:border-gold/50 hover:text-gold active:bg-white/5 text-[15px] sm:text-base"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Request a Referral
-            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
           </button>
         </motion.div>
       </div>

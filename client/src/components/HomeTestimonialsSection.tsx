@@ -3,17 +3,21 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     quote:
-      "Rob provided incredible guidance during our home search and negotiation process.",
-    attribution: "Home Buyer",
-  },
-  {
-    quote: "Working with Rob made the buying process far less stressful.",
-    attribution: "Seller Client",
+      "Rob has been my go-to for years. He's helped me sell, buy, and even sell again — and each time it's been smoother than I imagined. He got me into a beautiful new home at under 4% interest. I trust him completely because he always delivers results that feel impossible until he makes them happen.",
+    name: "Holly T.",
+    context: "Repeat Buyer & Seller, Johnstown CO",
   },
   {
     quote:
-      "Professional, strategic, and extremely knowledgeable about the Colorado market.",
-    attribution: "Colorado Relocation Client",
+      "Buying from another state felt overwhelming, but Rob made it easy. He did video walkthroughs so I could shop from Missouri, and when I found the one, he negotiated everything so I only brought about $2,000 to closing. Now I'm living in my dream home in Bailey, Colorado.",
+    name: "Mark B.",
+    context: "Out-of-State Buyer, Bailey CO",
+  },
+  {
+    quote:
+      "Rob helped us buy our first home with zero down, which was life-changing for us. When it was time to move, he sold that same home in just 5 weeks — and we got well over asking! He truly looks out for his clients.",
+    name: "Brandon & Logan T.",
+    context: "First-Time Buyers",
   },
 ];
 
@@ -40,7 +44,7 @@ export default function HomeTestimonialsSection() {
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal leading-tight mb-3"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            What Clients Say
+            What Clients Say About Working With Rob
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -50,13 +54,12 @@ export default function HomeTestimonialsSection() {
             className="text-charcoal/60 text-base leading-relaxed"
             style={{ fontFamily: "'Libre Franklin', sans-serif" }}
           >
-            Trusted guidance, clear strategy, and a more confident buying or
-            selling experience.
+            Real outcomes from buyers, sellers, and relocating families across Colorado.
           </motion.p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 mb-10 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
@@ -67,36 +70,28 @@ export default function HomeTestimonialsSection() {
               className="flex flex-col gap-4 p-6 sm:p-7 rounded bg-white border border-charcoal/10 hover:border-gold/30 transition-colors shadow-sm"
             >
               <p
-                className="text-charcoal/80 text-[15px] leading-relaxed flex-1"
+                className="text-charcoal/80 text-[15px] leading-relaxed flex-1 italic"
                 style={{ fontFamily: "'Libre Franklin', sans-serif" }}
               >
                 "{t.quote}"
               </p>
-              <p
-                className="text-gold-dark text-xs font-semibold tracking-wide uppercase"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                {t.attribution}
-              </p>
+              <div>
+                <p
+                  className="text-charcoal font-semibold text-sm"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  {t.name}
+                </p>
+                <p
+                  className="text-gold-dark text-xs font-medium tracking-wide uppercase mt-0.5"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  {t.context}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-        >
-          <button
-            onClick={() => {}}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded border border-gold/60 text-gold-dark text-sm font-semibold tracking-wide hover:bg-gold/10 transition-colors"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            View More Reviews
-          </button>
-        </motion.div>
       </div>
     </section>
   );

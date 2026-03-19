@@ -6,6 +6,7 @@
  * Typography: Outfit (display) + Libre Franklin (body)
  */
 import { useState } from "react";
+import { trpc } from "@/lib/trpc";
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
@@ -216,6 +217,39 @@ function FaqItem({ question, answer, isOpen, onToggle }: {
 
 export default function PcsRelocationTourSupport() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  /* ─── Inquiry Form State ─── */
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    preferredArea: "",
+    timeframe: "",
+    message: "",
+  });
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const inquiryMutation = trpc.contact.submit.useMutation({
+    onSuccess: () => setFormSubmitted(true),
+  });
+
+  const handleInquirySubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email) return;
+    inquiryMutation.mutate({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || undefined,
+      form_type: "PCS Tour Support Inquiry",
+      message: [
+        formData.preferredArea ? `Preferred Area: ${formData.preferredArea}` : "",
+        formData.timeframe ? `Timeframe: ${formData.timeframe}` : "",
+        formData.message ? `Notes: ${formData.message}` : "",
+      ].filter(Boolean).join("\n"),
+      source: "PCS Relocation Tour Support Page",
+      page_url: "https://myrockhomes.com/military-relocation/pcs-relocation-tour-support/",
+    });
+  };
 
   return (
     <div className="min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
@@ -594,6 +628,143 @@ export default function PcsRelocationTourSupport() {
                 This credit applies to a future home purchase only and requires a separate written buyer representation agreement at that time. It does not apply to rental transactions and does not guarantee closing or approval.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Inquiry Form ─── */}
+      <section className="py-16 sm:py-20 bg-cream border-t border-cream-dark/30">
+        <div className="container">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-10">
+              <h2
+                className="text-3xl sm:text-4xl font-bold text-charcoal mb-3"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                Request Tour Support
+              </h2>
+              <p className="text-charcoal/65 text-[15px] leading-relaxed">
+                Fill out the form below and Rob will follow up to confirm availability and discuss your PCS timeline.
+              </p>
+            </div>
+
+            {formSubmitted ? (
+              <div className="bg-charcoal rounded-lg p-10 text-center">
+                <CheckCircle className="w-10 h-10 text-gold mx-auto mb-4" />
+                <h3
+                  className="text-xl font-bold text-cream mb-2"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  Request Received
+                </h3>
+                <p className="text-cream/70 text-[14px]">
+                  Rob will be in touch shortly to confirm availability and next steps.
+                </p>
+              </div>
+            ) : (
+              <form
+                onSubmit={handleInquirySubmit}
+                className="bg-white rounded-lg border border-cream-dark/40 p-8 sm:p-10 space-y-5"
+              >
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-charcoal/70 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                      Full Name <span className="text-gold">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Your full name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-4 py-3 rounded border border-cream-dark/50 bg-cream/50 text-charcoal text-[14px] placeholder:text-charcoal/35 focus:outline-none focus:border-gold/60 transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-charcoal/70 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                      Email <span className="text-gold">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      placeholder="you@email.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-4 py-3 rounded border border-cream-dark/50 bg-cream/50 text-charcoal text-[14px] placeholder:text-charcoal/35 focus:outline-none focus:border-gold/60 transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-charcoal/70 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                      Phone
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="(555) 123-4567"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-4 py-3 rounded border border-cream-dark/50 bg-cream/50 text-charcoal text-[14px] placeholder:text-charcoal/35 focus:outline-none focus:border-gold/60 transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-charcoal/70 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                      Preferred Area / City
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Colorado Springs, Denver"
+                      value={formData.preferredArea}
+                      onChange={(e) => setFormData({ ...formData, preferredArea: e.target.value })}
+                      className="w-full px-4 py-3 rounded border border-cream-dark/50 bg-cream/50 text-charcoal text-[14px] placeholder:text-charcoal/35 focus:outline-none focus:border-gold/60 transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-charcoal/70 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                    Timeframe
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. PCS in June 2025, need housing by May"
+                    value={formData.timeframe}
+                    onChange={(e) => setFormData({ ...formData, timeframe: e.target.value })}
+                    className="w-full px-4 py-3 rounded border border-cream-dark/50 bg-cream/50 text-charcoal text-[14px] placeholder:text-charcoal/35 focus:outline-none focus:border-gold/60 transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-charcoal/70 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                    Brief Notes
+                  </label>
+                  <textarea
+                    rows={4}
+                    placeholder="Tell Rob about your situation, priorities, or questions..."
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full px-4 py-3 rounded border border-cream-dark/50 bg-cream/50 text-charcoal text-[14px] placeholder:text-charcoal/35 focus:outline-none focus:border-gold/60 transition-colors resize-none"
+                  />
+                </div>
+
+                {inquiryMutation.isError && (
+                  <p className="text-red-600 text-[13px]">
+                    Something went wrong. Please try again or email rob@myrockhomes.com directly.
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={inquiryMutation.isPending}
+                  className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark disabled:opacity-60 text-charcoal font-semibold px-8 py-4 rounded transition-colors"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  {inquiryMutation.isPending ? "Sending..." : "Request Tour Support"}
+                  {!inquiryMutation.isPending && <ArrowRight className="w-4 h-4" />}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>

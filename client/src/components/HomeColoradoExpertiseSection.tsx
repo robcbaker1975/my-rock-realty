@@ -61,8 +61,7 @@ export default function HomeColoradoExpertiseSection() {
             className="text-charcoal-light/75 text-base leading-relaxed"
             style={{ fontFamily: "'Libre Franklin', sans-serif" }}
           >
-            Strategic guidance for buyers, sellers, and relocating clients
-            navigating Colorado's market with more clarity and confidence.
+            Specialized capabilities that set My Rock Realty apart across Colorado's most active markets.
           </motion.p>
         </div>
 

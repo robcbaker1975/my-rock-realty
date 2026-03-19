@@ -75,7 +75,7 @@ export default function WorkshopSection() {
             {/* Homepage CTA → navigates to workshop page */}
             <a
               href="/colorado-home-buying-workshop"
-              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 bg-gold text-charcoal font-semibold rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
+              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 border border-cream/25 text-cream/80 font-medium rounded-lg sm:rounded transition-all hover:border-gold/50 hover:text-gold active:bg-white/5 text-[15px] sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Learn More About the Workshop

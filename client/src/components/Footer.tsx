@@ -251,7 +251,11 @@ export default function Footer() {
 
         {/* MLS Disclaimer — rendered via React-safe imperative wrapper */}
         <div className="pt-4 pb-2">
-          <BuyingBuddyWidget type="Disclaimer" className="text-cream/50 text-xs leading-relaxed" />
+          <BuyingBuddyWidget
+            type="Disclaimer"
+            className="text-cream/50 text-xs leading-relaxed"
+            widgetStyle="--bbw-body-text-color:#F5F0EB;--bbw-disclaimer-bg-color-rgba:255,255,255,0;--bbw-disclaimer-bg-border-radius:0.5rem"
+          />
         </div>
 
         {/* Compliance / Disclosures Bar */}

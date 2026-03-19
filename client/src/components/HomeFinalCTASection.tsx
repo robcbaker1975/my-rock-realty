@@ -16,7 +16,7 @@ export default function HomeFinalCTASection() {
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal leading-tight mb-4"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Ready to Start Your Colorado Home Search?
+            Ready to Find Your Colorado Home?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -26,8 +26,7 @@ export default function HomeFinalCTASection() {
             className="text-charcoal/60 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10"
             style={{ fontFamily: "'Libre Franklin', sans-serif" }}
           >
-            Join the next Colorado Home Buying Workshop or schedule a strategy
-            conversation.
+            Search active listings now, or reach out to start a conversation about buying, selling, or relocating.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -37,11 +36,11 @@ export default function HomeFinalCTASection() {
             className="flex flex-col sm:flex-row gap-3 sm:gap-4"
           >
             <button
-              onClick={() => setLocation("/colorado-home-buying-workshop")}
+              onClick={() => setLocation("/listing-results")}
               className="inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-gold text-charcoal font-bold rounded-lg transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Attend the Free Workshop
+              Search Homes
               <ArrowRight size={17} />
             </button>
             <a

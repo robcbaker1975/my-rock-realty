@@ -7,6 +7,7 @@
  */
 
 import { useState, useEffect } from "react";
+import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
@@ -407,7 +408,7 @@ export default function FortCollinsCoHomesForSale() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          11. FEATURED FORT COLLINS LISTINGS (FUTURE IDX PLACEHOLDER)
+          11. FEATURED FORT COLLINS LISTINGS
       ═══════════════════════════════════════════════════ */}
       <section className="py-14 sm:py-16 bg-charcoal/3">
         <div className="container max-w-4xl mx-auto">
@@ -417,20 +418,9 @@ export default function FortCollinsCoHomesForSale() {
           >
             Featured Fort Collins Listings
           </h2>
-          {/* ── FUTURE IDX PLACEHOLDER ── */}
-          <div className="bg-charcoal/4 border-2 border-dashed border-charcoal/20 rounded-lg p-10 text-center">
-            <Building2 size={32} className="text-charcoal/30 mx-auto mb-3" />
-            <p
-              className="text-sm font-semibold text-charcoal/40 mb-1"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              IDX LISTING FEED — FUTURE INTEGRATION
-            </p>
-            <p className="text-xs text-charcoal/30">
-              Live MLS listings for Fort Collins homes will appear here once IDX integration is configured.
-            </p>
-          </div>
-          {/* ── END IDX PLACEHOLDER ── */}
+          {/* ── LIVE IDX LISTING FEED ── */}
+          <BuyingBuddyWidget type="SearchResults" filter="city:Fort Collins" />
+          {/* ── END IDX LISTING FEED ── */}
         </div>
       </section>
 

@@ -91,10 +91,19 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.35 }}
               className="flex flex-col sm:flex-row gap-3.5 sm:gap-4"
             >
-              {/* PRIMARY CTA */}
+              {/* PRIMARY CTA: Search Homes */}
+              <button
+                onClick={() => setLocation("/listing-results")}
+                className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 sm:px-8 sm:py-4 bg-gold text-charcoal font-bold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-base sm:text-[17px]"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                Search Homes
+                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+              </button>
+              {/* SECONDARY CTA: Workshop — de-emphasized outline style */}
               <button
                 onClick={() => setLocation("/colorado-home-buying-workshop")}
-                className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 sm:px-8 sm:py-4 bg-gold text-charcoal font-bold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-base sm:text-[17px]"
+                className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 sm:px-8 sm:py-4 bg-transparent border-2 border-gold/70 text-gold font-semibold rounded-lg transition-all hover:border-gold hover:bg-gold/10 active:scale-[0.98] text-base sm:text-[17px]"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
                 Attend the Free Workshop

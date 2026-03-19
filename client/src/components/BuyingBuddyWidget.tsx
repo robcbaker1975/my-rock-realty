@@ -27,6 +27,12 @@ interface BuyingBuddyWidgetProps {
   style?: React.CSSProperties;
   /** Optional className for the container div */
   className?: string;
+  /**
+   * Optional inline style string set directly on the bb-widget element (not the container div).
+   * Use this for Buying Buddy CSS variable overrides, e.g.:
+   * "--bbw-body-text-color:#F5F0EB;--bbw-disclaimer-bg-color-rgba:255,255,255,0"
+   */
+  widgetStyle?: string;
 }
 
 export default function BuyingBuddyWidget({
@@ -34,6 +40,7 @@ export default function BuyingBuddyWidget({
   filter,
   style,
   className,
+  widgetStyle,
 }: BuyingBuddyWidgetProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -50,6 +57,9 @@ export default function BuyingBuddyWidget({
     if (filter) {
       widget.setAttribute("data-filter", filter);
     }
+    if (widgetStyle) {
+      widget.setAttribute("style", widgetStyle);
+    }
 
     // Append after attributes are set — this is the reliable pattern for custom elements
     container.appendChild(widget);
@@ -60,7 +70,7 @@ export default function BuyingBuddyWidget({
         container.innerHTML = "";
       }
     };
-  }, [type, filter]);
+  }, [type, filter, widgetStyle]);
 
   return (
     <div
