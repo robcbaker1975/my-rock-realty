@@ -22,15 +22,18 @@ export default function ListingResults() {
     meta.content = "noindex, nofollow";
     // Prevent horizontal scrolling caused by wide BB widget content on mobile
     const prevHtmlOverflow = document.documentElement.style.overflowX;
+    const prevBodyOverflow = document.body.style.overflowX;
     document.documentElement.style.overflowX = "hidden";
+    document.body.style.overflowX = "hidden";
     return () => {
       if (meta) meta.content = "index, follow";
       document.documentElement.style.overflowX = prevHtmlOverflow;
+      document.body.style.overflowX = prevBodyOverflow;
     };
   }, []);
 
   return (
-    <div style={{ fontFamily: "sans-serif", maxWidth: 1100, margin: "40px auto", padding: "0 20px", width: "100%", boxSizing: "border-box", overflowX: "hidden" }}>
+    <div style={{ fontFamily: "sans-serif", maxWidth: 1100, margin: "40px auto", padding: "0 20px", width: "100%", boxSizing: "border-box", overflowX: "hidden", backgroundColor: "#faf7f4" }}>
       {/* ListingResults foundation widget — rendered via React-safe imperative wrapper */}
       <BuyingBuddyWidget type="ListingResults" />
 

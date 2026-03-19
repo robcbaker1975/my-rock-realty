@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { useEffect } from "react";
 import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 
 const LOGO_URL = "/assets/logo.png";
@@ -64,6 +65,44 @@ export default function Footer() {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
+
+  // Inject a targeted style override into the BB Disclaimer widget's shadow DOM
+  // to neutralize the hard-coded white panel background from the BB theme stylesheet.
+  // This is necessary because external CSS cannot pierce shadow DOM boundaries.
+  useEffect(() => {
+    const injectDisclaimerStyle = () => {
+      const bbWidget = document.querySelector('bb-widget[data-type="Disclaimer"]') as Element & { shadowRoot: ShadowRoot | null };
+      if (!bbWidget?.shadowRoot) return false;
+      // Only inject once
+      if (bbWidget.shadowRoot.querySelector('style[data-myrr-override]')) return true;
+      const style = document.createElement('style');
+      style.setAttribute('data-myrr-override', '1');
+      style.textContent = [
+        '.bfg-disclaimer-container {',
+        '  background: transparent !important;',
+        '  background-color: transparent !important;',
+        '  border-radius: 0 !important;',
+        '  padding: 0 !important;',
+        '}',
+        '.bfg-disclaimer-section,',
+        '.disclaimer-text1,',
+        '.disclaimer-text2 {',
+        '  color: rgba(245, 240, 235, 0.6) !important;',
+        '}',
+      ].join('\n');
+      bbWidget.shadowRoot.appendChild(style);
+      return true;
+    };
+
+    // Try immediately, then poll until the shadow root is populated
+    if (!injectDisclaimerStyle()) {
+      let attempts = 0;
+      const interval = setInterval(() => {
+        if (injectDisclaimerStyle() || attempts++ > 30) clearInterval(interval);
+      }, 300);
+      return () => clearInterval(interval);
+    }
+  }, []);
 
   return (
     <footer className="bg-charcoal border-t border-white/5">
