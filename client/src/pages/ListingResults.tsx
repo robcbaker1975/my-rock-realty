@@ -26,7 +26,7 @@ export default function ListingResults() {
   }, []);
 
   return (
-    <div style={{ fontFamily: "sans-serif", maxWidth: 1100, margin: "40px auto", padding: "0 20px" }}>
+    <div style={{ fontFamily: "sans-serif", maxWidth: 1100, margin: "40px auto", padding: "0 20px", width: "100%", boxSizing: "border-box", overflowX: "hidden" }}>
       {/* ListingResults foundation widget — rendered via React-safe imperative wrapper */}
       <BuyingBuddyWidget type="ListingResults" />
 
