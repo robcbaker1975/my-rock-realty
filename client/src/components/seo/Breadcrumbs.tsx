@@ -36,7 +36,7 @@ export default function Breadcrumbs({
       <nav aria-label={ariaLabel} className={joinClassNames('w-full', className)}>
         <ol
           className={joinClassNames(
-            'flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-600',
+            'flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-cream/60',
             listClassName,
           )}
         >
@@ -51,18 +51,18 @@ export default function Breadcrumbs({
                 {item.href && !isLast ? (
                   <a
                     href={item.href}
-                    className="transition-colors hover:text-slate-900 hover:underline"
+                    className="transition-colors text-cream/70 hover:text-gold hover:underline"
                   >
                     {item.label}
                   </a>
                 ) : (
-                  <span aria-current="page" className="font-medium text-slate-900">
+                  <span aria-current="page" className="font-medium text-cream">
                     {item.label}
                   </span>
                 )}
 
                 {!isLast ? (
-                  <span aria-hidden="true" className="text-slate-400">
+                  <span aria-hidden="true" className="text-cream/30">
                     {separator}
                   </span>
                 ) : null}

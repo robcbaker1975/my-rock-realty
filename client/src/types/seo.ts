@@ -53,6 +53,8 @@ export interface TwitterInput {
 export interface BreadcrumbItemInput {
   label: string;
   href?: string;
+  /** Alias for href — accepted for backwards compatibility */
+  url?: string;
 }
 
 export interface BreadcrumbItem {

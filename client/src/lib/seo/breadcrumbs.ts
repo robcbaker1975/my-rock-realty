@@ -39,7 +39,8 @@ export function buildBreadcrumbs(
     .filter((item) => item && normalizeLabel(item.label).length > 0)
     .map((item) => ({
       label: normalizeLabel(item.label),
-      href: normalizeHref(item.href, siteUrl),
+      // Accept both `href` and `url` — many pages use `url` as the field name
+      href: normalizeHref(item.href ?? item.url, siteUrl),
     }));
 
   const withHome = includeHome

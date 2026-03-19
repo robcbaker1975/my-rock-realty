@@ -60,7 +60,7 @@ const faqContent = [
 export default function Home() {
   const faqSchema = buildFAQPageSchema(faqContent);
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <SeoHead
         metadata={{
           title: "Colorado Real Estate | My Rock Realty",
