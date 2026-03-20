@@ -10,7 +10,7 @@ import { defineConfig } from "vite";
 // vitePluginManusDebugCollector wrote browser logs to .manus-logs/ (dev-only).
 // Neither plugin affects production page rendering, routing, contact flow, GHL,
 // SMTP, Buying Buddy embeds, or any other business-critical runtime path.
-// The package can be removed from package.json devDependencies when ready.
+// The package has already been removed from package.json devDependencies.
 
 const plugins = [react(), tailwindcss(), jsxLocPlugin()];
 

@@ -3,7 +3,7 @@
 # This is a staging config only. Do not use for production cutover without
 # completing OAuth replacement and Forge API replacement first.
 #
-# See .env.example for required environment variables.
+# See STAGING_ENV.md for required environment variables.
 
 services:
   - type: web
@@ -17,4 +17,4 @@ services:
       - key: NODE_ENV
         value: production
       # All other required env vars must be set manually in the Render dashboard.
-      # See .env.example for the full list of required variable names.
+      # See STAGING_ENV.md for the full list of required variable names.

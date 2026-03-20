@@ -40,12 +40,12 @@ On Manus, all of these are auto-injected by the platform.
 
 ---
 
-## Auto-Injected by Render (do not set manually)
+## Set by render.yaml / Render Platform (do not set manually)
 
-| Variable | Notes |
-|---|---|
-| `NODE_ENV` | Set to `production` automatically |
-| `PORT` | Injected by Render; server reads `process.env.PORT` |
+| Variable | Source | Notes |
+|---|---|---|
+| `NODE_ENV` | `render.yaml` (explicit) | Set to `production` via `envVars` in render.yaml |
+| `PORT` | Render platform (auto-injected) | Injected by Render at runtime; server reads `process.env.PORT` |
 
 ---
 
