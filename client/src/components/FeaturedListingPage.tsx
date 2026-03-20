@@ -184,11 +184,6 @@ export default function FeaturedListingPage({ listing }: { listing: FeaturedList
         {/* LEFT — gallery + description */}
         <div className="flex-1 min-w-0">
 
-          {/* Short overview */}
-          <p className="text-cream/80 text-lg leading-relaxed mb-8 italic border-l-2 border-gold/40 pl-4">
-            {listing.shortOverview}
-          </p>
-
           {/* Gallery */}
           <Gallery photos={allGalleryPhotos} heroAlt={listing.heroPhoto.alt} />
 
