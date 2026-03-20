@@ -106,7 +106,7 @@ export default function JoinUs() {
         metadata={{
           title: "Join My Rock Realty | Colorado Real Estate Agent Opportunities",
           description: "Licensed Colorado real estate agents: explore career opportunities with My Rock Realty. A boutique brokerage offering real training, accessible leadership, and a structure built for agent growth.",
-          canonicalUrl: "https://www.myrockhomes.com/join-us",
+          canonicalUrl: "https://myrockhomes.com/join-us",
           breadcrumbs: [
             { label: "Join Us", href: "/join-us" },
           ],
@@ -147,7 +147,7 @@ export default function JoinUs() {
             items={[
               { label: "Join Us", href: "/join-us" },
             ]}
-            siteUrl="https://www.myrockhomes.com"
+            siteUrl="https://myrockhomes.com"
             className="py-0"
             listClassName="text-xs sm:text-sm text-charcoal/60"
             itemClassName="text-charcoal/60"

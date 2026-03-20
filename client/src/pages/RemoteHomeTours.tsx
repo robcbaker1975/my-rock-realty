@@ -86,7 +86,7 @@ export default function RemoteHomeTours() {
         metadata={{
           title: "Remote Home Tours for Military & PCS Buyers | My Rock Realty",
           description: "Remote home touring support for military and PCS buyers relocating to Colorado Springs and the Denver metro. Recorded video tours, live virtual tours, and in-person tour blocks for buyers who aren't yet local.",
-          canonicalUrl: "https://www.myrockhomes.com/military-relocation/remote-home-tours/",
+          canonicalUrl: "https://myrockhomes.com/military-relocation/remote-home-tours/",
           image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
         schema={[faqSchema]}

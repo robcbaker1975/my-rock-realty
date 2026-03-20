@@ -97,7 +97,7 @@ export default function PalmerLakeCoHomesForSale() {
           title: "Palmer Lake CO Homes for Sale | Palmer Lake Colorado Real Estate",
           description:
             "Explore Palmer Lake CO homes for sale, neighborhood character, housing styles, small-town mountain appeal, and helpful resources for buying in Palmer Lake, Colorado.",
-          canonicalUrl: "https://www.myrockhomes.com/palmer-lake-co-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/palmer-lake-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

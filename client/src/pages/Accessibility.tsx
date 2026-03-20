@@ -15,7 +15,7 @@ export default function Accessibility() {
         metadata={{
           title: "Accessibility Statement | My Rock Realty",
           description: "My Rock Realty is committed to web accessibility. Learn about our accessibility features and how to contact us with accessibility concerns.",
-          canonicalUrl: "https://www.myrockhomes.com/accessibility",
+          canonicalUrl: "https://myrockhomes.com/accessibility",
         }}
       />
       {/* ═══════════════════════════════════════════════════

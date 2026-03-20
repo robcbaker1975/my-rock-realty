@@ -99,7 +99,7 @@ export default function DenverNewConstructionHomes() {
           description:
             "Explore Denver new construction homes, new build communities, modern home features, builder considerations, and helpful resources for buying new construction in Denver.",
           canonicalUrl:
-            "https://www.myrockhomes.com/denver-new-construction-homes",
+            "https://myrockhomes.com/denver-new-construction-homes",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

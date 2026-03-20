@@ -104,7 +104,7 @@ export default function CostOfLivingInDenverColorado() {
           title: "Cost of Living in Denver Colorado | Denver Buyer Cost Guide",
           description:
             "Cost of living in Denver, Colorado. Compare housing costs, expenses by neighborhood, and budget resources for relocating or buying in Denver.",
-          canonicalUrl: "https://www.myrockhomes.com/cost-of-living-in-denver-colorado",
+          canonicalUrl: "https://myrockhomes.com/cost-of-living-in-denver-colorado",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

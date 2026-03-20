@@ -97,7 +97,7 @@ export default function ManitouSpringsCoHomesForSale() {
           title: "Manitou Springs CO Homes for Sale | Manitou Springs Colorado Real Estate",
           description:
             "Explore Manitou Springs CO homes for sale, neighborhood character, housing styles, mountain community appeal, and helpful resources for buying in Manitou Springs, Colorado.",
-          canonicalUrl: "https://www.myrockhomes.com/manitou-springs-co-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/manitou-springs-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

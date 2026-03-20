@@ -91,7 +91,7 @@ export default function DenverLuxuryHomesForSale() {
           title: "Denver Luxury Homes for Sale | Luxury Real Estate in Denver, Colorado",
           description:
             "Luxury homes for sale in Denver. Browse high-end neighborhoods, upscale features, market insights, and expert resources for luxury real estate buyers.",
-          canonicalUrl: "https://www.myrockhomes.com/denver-luxury-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/denver-luxury-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

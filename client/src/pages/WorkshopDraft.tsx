@@ -76,7 +76,7 @@ export default function WorkshopDraft() {
         metadata={{
           title: "Free Colorado Home Buying Workshop | My Rock Realty",
           description: "Attend the free Colorado Home Buying Workshop with Rob Baker. Learn how to buy a home in Colorado with clear strategy, no pressure, and real-world guidance.",
-          canonicalUrl: "https://www.myrockhomes.com/colorado-home-buying-workshop",
+          canonicalUrl: "https://myrockhomes.com/colorado-home-buying-workshop",
           breadcrumbs: [
             { label: "Workshop", href: "/colorado-home-buying-workshop" },
           ],
@@ -109,7 +109,7 @@ export default function WorkshopDraft() {
             items={[
               { label: "Workshop", href: "/colorado-home-buying-workshop" },
             ]}
-            siteUrl="https://www.myrockhomes.com"
+            siteUrl="https://myrockhomes.com"
             className="py-0"
             listClassName="text-xs sm:text-sm text-charcoal/60"
             itemClassName="text-charcoal/60"

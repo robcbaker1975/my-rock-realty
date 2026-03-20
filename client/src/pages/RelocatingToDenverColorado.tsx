@@ -90,7 +90,7 @@ export default function RelocatingToDenverColorado() {
           title: "Relocating to Denver Colorado | Denver Relocation Guide",
           description:
             "Relocating to Denver, Colorado? Explore neighborhoods, market insights, buying process, costs, and resources for relocating families.",
-          canonicalUrl: "https://www.myrockhomes.com/relocation/relocating-to-denver-colorado",
+          canonicalUrl: "https://myrockhomes.com/relocation/relocating-to-denver-colorado",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

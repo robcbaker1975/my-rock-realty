@@ -96,7 +96,7 @@ export default function DenverVsFortCollins() {
           title: "Denver vs Fort Collins Homes for Sale | Colorado City Comparison for Buyers",
           description:
             "Denver vs Fort Collins comparison for home buyers. Compare scale, housing mix, neighborhoods, and buyer tradeoffs between these two Colorado Front Range cities.",
-          canonicalUrl: "https://www.myrockhomes.com/denver-vs-fort-collins",
+          canonicalUrl: "https://myrockhomes.com/denver-vs-fort-collins",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

@@ -114,6 +114,10 @@ export default function BuyersSection() {
               Ask About Buyer Programs
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </button>
+            <p className="mt-4 text-sm text-cream/50" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              Ready to start searching?{" "}
+              <a href="/denver-homes-for-sale" className="text-gold hover:underline">Browse Denver homes for sale</a>.
+            </p>
           </motion.div>
         </div>
       </div>

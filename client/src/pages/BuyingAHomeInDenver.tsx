@@ -114,7 +114,7 @@ export default function BuyingAHomeInDenver() {
           title: "Buying a Home in Denver | Denver Home Buyer Guide",
           description:
             "Learn about buying a home in Denver, including neighborhood search strategy, financing preparation, market considerations, and practical steps for Denver-area buyers.",
-          canonicalUrl: "https://www.myrockhomes.com/buying-a-home-in-denver",
+          canonicalUrl: "https://myrockhomes.com/buying-a-home-in-denver",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

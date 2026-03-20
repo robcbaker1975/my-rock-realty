@@ -80,7 +80,7 @@ export default function TemporaryHousingColoradoSprings() {
         metadata={{
           title: "Temporary Housing During PCS — Colorado Springs | My Rock Realty",
           description: "Practical guidance on temporary housing timing, rent-vs-buy decisions, and relocation planning for military buyers arriving in Colorado Springs. Buyer-focused support for PCS moves.",
-          canonicalUrl: "https://www.myrockhomes.com/military-relocation/temporary-housing-colorado-springs/",
+          canonicalUrl: "https://myrockhomes.com/military-relocation/temporary-housing-colorado-springs/",
           image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
         schema={[faqSchema]}

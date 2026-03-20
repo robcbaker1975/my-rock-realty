@@ -64,7 +64,7 @@ export default function Coaching() {
         metadata={{
           title: "Real Estate Coaching for Licensed Agents | My Rock Realty",
           description: "Practical real estate coaching for licensed agents nationwide. Strategy, negotiation, client consultation, and business systems coaching from a former Zillow Agent Coach.",
-          canonicalUrl: "https://www.myrockhomes.com/real-estate-coaching",
+          canonicalUrl: "https://myrockhomes.com/real-estate-coaching",
           breadcrumbs: [
             { label: "Coaching", href: "/real-estate-coaching" },
           ],
@@ -105,7 +105,7 @@ export default function Coaching() {
             items={[
               { label: "Coaching", href: "/real-estate-coaching" },
             ]}
-            siteUrl="https://www.myrockhomes.com"
+            siteUrl="https://myrockhomes.com"
             className="py-0"
             listClassName="text-xs sm:text-sm text-charcoal/60"
             itemClassName="text-charcoal/60"

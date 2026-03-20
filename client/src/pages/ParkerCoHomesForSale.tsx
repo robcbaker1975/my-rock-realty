@@ -96,7 +96,7 @@ export default function ParkerCoHomesForSale() {
           title: "Parker CO Homes for Sale | Parker Colorado Real Estate",
           description:
             "Explore Parker CO homes for sale, neighborhood character, housing styles, local lifestyle appeal, and helpful resources for buying in Parker, Colorado.",
-          canonicalUrl: "https://www.myrockhomes.com/parker-co-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/parker-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

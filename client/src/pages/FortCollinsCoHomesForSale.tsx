@@ -147,7 +147,7 @@ export default function FortCollinsCoHomesForSale() {
           title: "Fort Collins, CO Homes for Sale | Fort Collins Real Estate & Larimer County Homes",
           description:
             "Explore Fort Collins homes for sale, popular neighborhoods, nearby communities, property types, and local home buying resources for the Fort Collins and Larimer County area.",
-          canonicalUrl: "https://www.myrockhomes.com/fort-collins-co-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/fort-collins-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

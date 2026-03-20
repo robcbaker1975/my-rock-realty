@@ -97,7 +97,7 @@ export default function WashParkDenverHomesForSale() {
           title: "Wash Park Denver Homes for Sale | Washington Park Real Estate",
           description:
             "Explore Wash Park Denver homes for sale, neighborhood character, housing styles, local lifestyle advantages, and helpful resources for buying in Washington Park.",
-          canonicalUrl: "https://www.myrockhomes.com/wash-park-denver-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/wash-park-denver-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}
