@@ -97,7 +97,7 @@ export default function RinoDenverHomesForSale() {
           title: "RiNo Denver Homes for Sale | RiNo Real Estate",
           description:
             "Explore RiNo Denver homes for sale, neighborhood character, housing styles, lifestyle appeal, and helpful resources for buying in Denver's River North area.",
-          canonicalUrl: "https://myrockhomes.com/rino-denver-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/rino-denver-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

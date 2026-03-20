@@ -136,7 +136,7 @@ export default function ColoradoSpringsCoHomesForSale() {
           title: "Colorado Springs, CO Homes for Sale | Colorado Springs Real Estate & El Paso County Homes",
           description:
             "Explore Colorado Springs homes for sale, popular neighborhoods, nearby communities, property types, and local home buying resources for the Colorado Springs and El Paso County area.",
-          canonicalUrl: "https://myrockhomes.com/colorado-springs-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/colorado-springs-co-homes-for-sale",
         }}
         schema={faqSchema ? [faqSchema] : []}
       />

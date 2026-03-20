@@ -97,7 +97,7 @@ export default function EvansCoHomesForSale() {
           title: "Evans CO Homes for Sale | Evans Colorado Real Estate",
           description:
             "Explore Evans CO homes for sale, neighborhood character, housing styles, proximity to Greeley, and helpful resources for buying in Evans, Colorado.",
-          canonicalUrl: "https://myrockhomes.com/evans-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/evans-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

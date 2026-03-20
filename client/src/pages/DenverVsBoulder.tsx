@@ -94,7 +94,7 @@ export default function DenverVsBoulder() {
           title: "Denver vs Boulder | Colorado City Comparison for Home Buyers",
           description:
             "Denver vs Boulder comparison for home buyers. Compare neighborhoods, markets, lifestyle, costs, and find which city fits your needs.",
-          canonicalUrl: "https://myrockhomes.com/denver-vs-boulder",
+          canonicalUrl: "https://www.myrockhomes.com/denver-vs-boulder",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

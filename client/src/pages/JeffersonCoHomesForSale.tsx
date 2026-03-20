@@ -145,7 +145,7 @@ export default function JeffersonCoHomesForSale() {
           title: "Jefferson County, CO Homes for Sale | Jefferson County Real Estate",
           description:
             "Explore Jefferson County homes for sale, communities, property types, and local home buying resources for Golden and the broader Jefferson County area.",
-          canonicalUrl: "https://myrockhomes.com/jefferson-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/jefferson-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

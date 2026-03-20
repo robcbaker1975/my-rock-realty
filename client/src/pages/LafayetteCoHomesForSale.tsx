@@ -96,7 +96,7 @@ export default function LafayetteCoHomesForSale() {
           title: "Lafayette CO Homes for Sale | Lafayette Colorado Real Estate",
           description:
             "Explore Lafayette CO homes for sale, neighborhood character, housing styles, local lifestyle appeal, and helpful resources for buying in Lafayette, Colorado.",
-          canonicalUrl: "https://myrockhomes.com/lafayette-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/lafayette-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

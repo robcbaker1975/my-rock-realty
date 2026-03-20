@@ -99,7 +99,7 @@ export default function FortCollinsHomesForSale() {
           title: "Fort Collins Homes for Sale | Old Town Lifestyle, College-Town Character & Buyer Fit",
           description:
             "Thinking about buying in Fort Collins? Explore who the city tends to attract, what Old Town living is like, and whether Fort Collins' character and community fit what you're looking for.",
-          canonicalUrl: "https://myrockhomes.com/fort-collins-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/fort-collins-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

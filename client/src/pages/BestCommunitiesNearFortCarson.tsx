@@ -88,7 +88,7 @@ export default function BestCommunitiesNearFortCarson() {
         metadata={{
           title: "Best Communities Near Fort Carson | Military Relocation | My Rock Realty",
           description: "Community orientation for military and PCS buyers relocating near Fort Carson in Colorado Springs. Practical guidance on neighborhoods, tradeoffs, and planning considerations — not a ranking list.",
-          canonicalUrl: "https://myrockhomes.com/military-relocation/best-communities-near-fort-carson/",
+          canonicalUrl: "https://www.myrockhomes.com/military-relocation/best-communities-near-fort-carson/",
           image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
         schema={[faqSchema]}

@@ -97,7 +97,7 @@ export default function CherryCreekDenverHomesForSale() {
           title: "Cherry Creek Denver Homes for Sale | Cherry Creek Real Estate",
           description:
             "Explore Cherry Creek Denver homes for sale, neighborhood character, housing styles, local lifestyle appeal, and helpful resources for buying in Cherry Creek.",
-          canonicalUrl: "https://myrockhomes.com/cherry-creek-denver-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/cherry-creek-denver-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

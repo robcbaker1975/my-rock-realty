@@ -81,7 +81,7 @@ export default function VeteransBuyingColorado() {
         metadata={{
           title: "Veterans Buying a Home in Colorado | My Rock Realty",
           description: "Educational homebuying guidance for veterans considering a Colorado purchase. VA loan context, market orientation, and buyer-focused support across Colorado Springs and the Denver metro.",
-          canonicalUrl: "https://myrockhomes.com/military-relocation/veterans-buying-colorado/",
+          canonicalUrl: "https://www.myrockhomes.com/military-relocation/veterans-buying-colorado/",
           image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
         schema={[faqSchema]}

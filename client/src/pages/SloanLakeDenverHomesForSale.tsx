@@ -97,7 +97,7 @@ export default function SloanLakeDenverHomesForSale() {
           title: "Sloan Lake Denver Homes for Sale | Sloan Lake Real Estate",
           description:
             "Explore Sloan Lake Denver homes for sale, neighborhood character, housing styles, lifestyle appeal, and helpful resources for buying near Sloan Lake.",
-          canonicalUrl: "https://myrockhomes.com/sloan-lake-denver-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/sloan-lake-denver-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

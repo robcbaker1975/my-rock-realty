@@ -97,7 +97,7 @@ export default function CentralParkDenverHomesForSale() {
           title: "Central Park Denver Homes for Sale | Central Park Real Estate",
           description:
             "Explore Central Park Denver homes for sale, neighborhood character, housing styles, local lifestyle appeal, and helpful resources for buying in Central Park.",
-          canonicalUrl: "https://myrockhomes.com/central-park-denver-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/central-park-denver-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

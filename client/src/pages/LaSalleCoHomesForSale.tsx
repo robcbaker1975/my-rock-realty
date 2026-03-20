@@ -97,7 +97,7 @@ export default function LaSalleCoHomesForSale() {
           title: "LaSalle CO Homes for Sale | LaSalle Colorado Real Estate",
           description:
             "Explore LaSalle CO homes for sale, small community character, housing styles, South Platte River proximity, and helpful resources for buying in LaSalle, Colorado.",
-          canonicalUrl: "https://myrockhomes.com/lasalle-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/lasalle-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

@@ -108,7 +108,7 @@ export default function Usafa() {
         metadata={{
           title: "USAFA Relocation Guide | Colorado Springs Real Estate | My Rock Realty",
           description: "Practical relocation guidance for buyers moving to the US Air Force Academy and the Colorado Springs area. PCS planning, neighborhood orientation, and local market context for military families.",
-          canonicalUrl: "https://myrockhomes.com/military-relocation/usafa/",
+          canonicalUrl: "https://www.myrockhomes.com/military-relocation/usafa/",
           image: { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp" },
         }}
         schema={faqSchema ? [faqSchema] : []}

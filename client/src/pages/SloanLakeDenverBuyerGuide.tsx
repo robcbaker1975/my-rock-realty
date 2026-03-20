@@ -86,7 +86,7 @@ export default function SloanLakeDenverBuyerGuide() {
           title: "Sloan's Lake Denver Buyer Guide | Sloan Lake Home Search",
           description:
             "A practical buyer guide for Sloan's Lake in Denver. Learn how proximity to Sloan's Lake Park, block choice, and the surrounding neighborhood streets shape the Sloan's Lake home search.",
-          canonicalUrl: "https://myrockhomes.com/sloan-lake-denver-buyer-guide",
+          canonicalUrl: "https://www.myrockhomes.com/sloan-lake-denver-buyer-guide",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

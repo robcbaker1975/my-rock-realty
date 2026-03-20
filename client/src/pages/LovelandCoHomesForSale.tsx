@@ -97,7 +97,7 @@ export default function LovelandCoHomesForSale() {
           title: "Loveland CO Homes for Sale | Loveland Colorado Real Estate",
           description:
             "Explore Loveland CO homes for sale, neighborhood character, housing styles, outdoor recreation access, and helpful resources for buying in Loveland, Colorado.",
-          canonicalUrl: "https://myrockhomes.com/loveland-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/loveland-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

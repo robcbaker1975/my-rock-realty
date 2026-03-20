@@ -91,7 +91,7 @@ export default function DenverTownhomesForSale() {
           title: "Denver Townhomes for Sale | Townhouses in Denver, Colorado",
           description:
             "Denver townhomes for sale. Explore townhome living, lifestyle benefits, ownership considerations, and expert resources for townhome buyers.",
-          canonicalUrl: "https://myrockhomes.com/denver-townhomes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/denver-townhomes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

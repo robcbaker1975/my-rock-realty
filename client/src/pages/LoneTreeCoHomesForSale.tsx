@@ -97,7 +97,7 @@ export default function LoneTreeCoHomesForSale() {
           title: "Lone Tree CO Homes for Sale | Lone Tree Colorado Real Estate",
           description:
             "Explore Lone Tree CO homes for sale, neighborhood character, housing styles, proximity to Douglas County communities, and helpful resources for buying in Lone Tree, Colorado.",
-          canonicalUrl: "https://myrockhomes.com/lone-tree-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/lone-tree-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

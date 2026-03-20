@@ -68,7 +68,7 @@ export default function Home() {
         metadata={{
           title: "Colorado Real Estate | My Rock Realty",
           description: "Strategic real estate guidance for Colorado buyers, sellers, and relocating families. Work with My Rock Realty — serving Colorado.",
-          canonicalUrl: "https://myrockhomes.com/",
+          canonicalUrl: "https://www.myrockhomes.com/",
         }}
         schema={faqSchema ? [faqSchema] : []}
       />

@@ -105,7 +105,7 @@ export default function ThorntonCoHomesForSale() {
         metadata={{
           title: "Thornton CO Homes for Sale | My Rock Realty",
           description: "Explore homes for sale in Thornton, CO — a major Adams County city north of Denver. Browse housing options, buyer guidance, and local context for Thornton real estate.",
-          canonicalUrl: "https://myrockhomes.com/thornton-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/thornton-co-homes-for-sale",
         }}
         schema={faqSchema ? [faqSchema] : []}
       />

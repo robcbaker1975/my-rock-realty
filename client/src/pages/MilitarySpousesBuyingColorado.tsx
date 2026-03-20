@@ -81,7 +81,7 @@ export default function MilitarySpousesBuyingColorado() {
         metadata={{
           title: "Military Spouses Buying a Home in Colorado | My Rock Realty",
           description: "Practical homebuying guidance for military spouses navigating PCS moves, deployment timelines, and Colorado real estate. Buyer-focused support for military families across Colorado Springs and the Denver metro.",
-          canonicalUrl: "https://myrockhomes.com/military-relocation/military-spouses-buying-colorado/",
+          canonicalUrl: "https://www.myrockhomes.com/military-relocation/military-spouses-buying-colorado/",
           image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
         schema={[faqSchema]}

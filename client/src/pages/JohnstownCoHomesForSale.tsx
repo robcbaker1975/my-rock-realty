@@ -97,7 +97,7 @@ export default function JohnstownCoHomesForSale() {
           title: "Johnstown CO Homes for Sale | Johnstown Colorado Real Estate",
           description:
             "Explore Johnstown CO homes for sale, neighborhood character, housing styles, community amenities, and helpful resources for buying in Johnstown, Colorado.",
-          canonicalUrl: "https://myrockhomes.com/johnstown-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/johnstown-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

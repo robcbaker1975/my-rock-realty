@@ -96,7 +96,7 @@ export default function LittletonCoHomesForSale() {
           title: "Littleton CO Homes for Sale | Littleton Colorado Real Estate",
           description:
             "Explore Littleton CO homes for sale, neighborhood character, housing styles, local lifestyle appeal, and helpful resources for buying in Littleton, Colorado.",
-          canonicalUrl: "https://myrockhomes.com/littleton-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/littleton-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

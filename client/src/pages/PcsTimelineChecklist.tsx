@@ -121,7 +121,7 @@ export default function PcsTimelineChecklist() {
         metadata={{
           title: "PCS Timeline Checklist for Colorado | My Rock Realty",
           description: "A practical PCS homebuying checklist for military buyers relocating to Colorado. Phase-by-phase planning guidance from early preparation through closing and settlement.",
-          canonicalUrl: "https://myrockhomes.com/military-relocation/pcs-timeline-checklist/",
+          canonicalUrl: "https://www.myrockhomes.com/military-relocation/pcs-timeline-checklist/",
           image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
         schema={[faqSchema]}

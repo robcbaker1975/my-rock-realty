@@ -96,7 +96,7 @@ export default function HighlandsRanchCoHomesForSale() {
           title: "Highlands Ranch CO Homes for Sale | Highlands Ranch Colorado Real Estate",
           description:
             "Explore Highlands Ranch CO homes for sale, neighborhood character, housing styles, local lifestyle appeal, and helpful resources for buying in Highlands Ranch, Colorado.",
-          canonicalUrl: "https://myrockhomes.com/highlands-ranch-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/highlands-ranch-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

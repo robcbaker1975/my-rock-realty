@@ -99,7 +99,7 @@ export default function GreeleyHomesForSale() {
           title: "Greeley Homes for Sale | University Community, Practical Northern Colorado Living & Buyer Fit",
           description:
             "Thinking about buying in Greeley? Explore who the city tends to attract, what the UNC community connection means for buyers, and whether Greeley's practical northern Colorado character fits your priorities.",
-          canonicalUrl: "https://myrockhomes.com/greeley-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/greeley-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

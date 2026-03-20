@@ -87,7 +87,7 @@ export default function CherryCreekDenverBuyerGuide() {
           title: "Cherry Creek Denver Buyer Guide | Cherry Creek Home Search",
           description:
             "A practical buyer guide for Cherry Creek in Denver. Learn how Cherry Creek North shapes the search, why block and building choice matters, and how to narrow your home search in this compact neighborhood.",
-          canonicalUrl: "https://myrockhomes.com/cherry-creek-denver-buyer-guide",
+          canonicalUrl: "https://www.myrockhomes.com/cherry-creek-denver-buyer-guide",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

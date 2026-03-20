@@ -97,7 +97,7 @@ export default function LohiDenverHomesForSale() {
           title: "LoHi Denver Homes for Sale | LoHi Real Estate",
           description:
             "Explore LoHi Denver homes for sale, neighborhood character, housing styles, lifestyle appeal, and helpful resources for buying in Denver's Lower Highlands area.",
-          canonicalUrl: "https://myrockhomes.com/lohi-denver-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/lohi-denver-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

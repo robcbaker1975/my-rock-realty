@@ -96,7 +96,7 @@ export default function CastleRockCoHomesForSale() {
           title: "Castle Rock CO Homes for Sale | Castle Rock Colorado Real Estate",
           description:
             "Explore Castle Rock CO homes for sale, neighborhood character, housing styles, local lifestyle appeal, and helpful resources for buying in Castle Rock, Colorado.",
-          canonicalUrl: "https://myrockhomes.com/castle-rock-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/castle-rock-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

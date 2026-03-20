@@ -105,7 +105,7 @@ export default function BrightonCoHomesForSale() {
         metadata={{
           title: "Brighton CO Homes for Sale | My Rock Realty",
           description: "Explore homes for sale in Brighton, CO — the Adams County seat. Browse housing options, buyer guidance, and local context for Brighton real estate.",
-          canonicalUrl: "https://myrockhomes.com/brighton-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/brighton-co-homes-for-sale",
         }}
         schema={faqSchema ? [faqSchema] : []}
       />

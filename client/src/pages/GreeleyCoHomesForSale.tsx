@@ -146,7 +146,7 @@ export default function GreeleyCoHomesForSale() {
           title: "Greeley, CO Homes for Sale | Greeley Real Estate & Weld County Homes",
           description:
             "Explore Greeley homes for sale, popular neighborhoods, nearby communities, property types, and local home buying resources for the Greeley and Weld County area.",
-          canonicalUrl: "https://myrockhomes.com/greeley-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/greeley-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

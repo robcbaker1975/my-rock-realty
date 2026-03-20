@@ -17,8 +17,6 @@ const scenarios = [
     icon: Shield,
     title: "Military & PCS Families",
     text: "VA homebuying, PCS timing, and Colorado market orientation — designed for the unique needs of military families navigating a move on a tight timeline.",
-    href: "/military-relocation/",
-    linkLabel: "Military & PCS Resources",
   },
 ];
 
@@ -102,16 +100,6 @@ export default function RelocationsSection() {
                     {s.title}
                   </h3>
                   <p className="text-charcoal-light/70 text-sm leading-relaxed">{s.text}</p>
-                  {'href' in s && s.href && (
-                    <a
-                      href={s.href}
-                      className="inline-flex items-center gap-1 mt-2 text-gold-dark text-sm font-medium hover:text-gold transition-colors"
-                      style={{ fontFamily: "'Outfit', sans-serif" }}
-                    >
-                      {s.linkLabel}
-                      <ArrowRight size={13} />
-                    </a>
-                  )}
                 </div>
               </motion.div>
             ))}

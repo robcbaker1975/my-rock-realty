@@ -4,6 +4,11 @@
 # completing OAuth replacement and Forge API replacement first.
 #
 # See STAGING_ENV.md for required environment variables.
+#
+# NOTE: pnpm db:push is intentionally omitted from the smoke-test build command.
+# This allows the first staging deployment to prove build/start/public-page
+# behavior without requiring DATABASE_URL at build time.
+# Add `pnpm db:push &&` before `pnpm build` once DATABASE_URL is available.
 
 services:
   - type: web
@@ -11,10 +16,12 @@ services:
     runtime: node
     region: oregon
     plan: free
-    buildCommand: pnpm install && pnpm db:push && pnpm build
+    buildCommand: pnpm install && pnpm build
     startCommand: pnpm start
     envVars:
       - key: NODE_ENV
         value: production
       # All other required env vars must be set manually in the Render dashboard.
       # See STAGING_ENV.md for the full list of required variable names.
+      # For this initial smoke test, DATABASE_URL may be omitted.
+      # Public pages will respond; authenticated/DB-dependent features will not.

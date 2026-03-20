@@ -119,7 +119,7 @@ export default function LakewoodCoHomesForSale() {
           title: "Lakewood CO Homes for Sale | Lakewood Colorado Real Estate | My Rock Realty",
           description:
             "Explore homes for sale in Lakewood, Colorado. Browse Lakewood neighborhoods, buyer resources, and connect with a local agent familiar with Jefferson County.",
-          canonicalUrl: "https://myrockhomes.com/lakewood-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/lakewood-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

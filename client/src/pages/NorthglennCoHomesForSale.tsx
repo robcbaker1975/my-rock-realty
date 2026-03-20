@@ -105,7 +105,7 @@ export default function NorthglennCoHomesForSale() {
         metadata={{
           title: "Northglenn CO Homes for Sale | My Rock Realty",
           description: "Explore homes for sale in Northglenn, CO — an Adams County city north of Denver. Browse housing options, buyer guidance, and local context for Northglenn real estate.",
-          canonicalUrl: "https://myrockhomes.com/northglenn-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/northglenn-co-homes-for-sale",
         }}
         schema={faqSchema ? [faqSchema] : []}
       />

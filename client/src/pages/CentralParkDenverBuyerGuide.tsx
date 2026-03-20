@@ -86,7 +86,7 @@ export default function CentralParkDenverBuyerGuide() {
           title: "Central Park Denver Buyer Guide | Central Park Home Search",
           description:
             "A practical buyer guide for Central Park in Denver. Learn how section choice, proximity to parks, the recreation center, and the town center shape the Central Park home search.",
-          canonicalUrl: "https://myrockhomes.com/central-park-denver-buyer-guide",
+          canonicalUrl: "https://www.myrockhomes.com/central-park-denver-buyer-guide",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

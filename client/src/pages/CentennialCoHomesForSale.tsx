@@ -98,7 +98,7 @@ export default function CentennialCoHomesForSale() {
           title: "Centennial CO Homes for Sale | Centennial Colorado Real Estate",
           description:
             "Explore Centennial CO homes for sale, neighborhood character, housing styles, south Denver metro proximity, and helpful resources for buying in Centennial, Colorado.",
-          canonicalUrl: "https://myrockhomes.com/centennial-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/centennial-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

@@ -99,7 +99,7 @@ export default function BoulderHomesForSale() {
           title: "Boulder Homes for Sale | Lifestyle, Character & Buyer Fit — My Rock Realty",
           description:
             "Thinking about buying in Boulder? Explore who Boulder is for, what living there is actually like, and whether the lifestyle and community fit what you're looking for.",
-          canonicalUrl: "https://myrockhomes.com/boulder-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/boulder-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

@@ -156,7 +156,7 @@ export default function FlexibleListingPlans() {
           title: "Flexible Listing Plans for Colorado Sellers | My Rock Realty",
           description:
             "Choose from 1% Essential, 2% Enhanced, 3% Premium, or 4% Concierge listing plans. Clear service levels, transparent expectations, and no pressure to choose more than you need.",
-          canonicalUrl: "https://myrockhomes.com/flexible-listing-plans",
+          canonicalUrl: "https://www.myrockhomes.com/flexible-listing-plans",
         }}
         schema={[]}
       />

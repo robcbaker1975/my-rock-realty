@@ -97,7 +97,7 @@ export default function WidefieldCoHomesForSale() {
           title: "Widefield CO Homes for Sale | Widefield Colorado Real Estate",
           description:
             "Explore Widefield CO homes for sale, neighborhood character, housing styles, suburban appeal, and helpful resources for buying in Widefield, Colorado.",
-          canonicalUrl: "https://myrockhomes.com/widefield-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/widefield-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

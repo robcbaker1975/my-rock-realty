@@ -120,7 +120,7 @@ export default function WestminsterCoHomesForSale() {
           title: "Westminster CO Homes for Sale | Westminster Colorado Real Estate | My Rock Realty",
           description:
             "Explore homes for sale in Westminster, Colorado. Browse Westminster neighborhoods, buyer resources, and connect with a local agent familiar with the Jefferson County area.",
-          canonicalUrl: "https://myrockhomes.com/westminster-co-homes-for-sale",
+          canonicalUrl: "https://www.myrockhomes.com/westminster-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

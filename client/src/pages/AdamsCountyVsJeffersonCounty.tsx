@@ -96,7 +96,7 @@ export default function AdamsCountyVsJeffersonCounty() {
           title: "Adams County vs Jefferson County | Colorado County Comparison for Home Buyers",
           description:
             "Adams County vs Jefferson County comparison for home buyers. Compare location, housing types, communities, and buyer tradeoffs across both Denver metro counties.",
-          canonicalUrl: "https://myrockhomes.com/adams-county-vs-jefferson-county",
+          canonicalUrl: "https://www.myrockhomes.com/adams-county-vs-jefferson-county",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}
