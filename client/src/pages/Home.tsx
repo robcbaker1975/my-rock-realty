@@ -20,6 +20,7 @@ import SellersSection from "@/components/SellersSection";
 import RelocationsSection from "@/components/RelocationsSection";
 import WorkshopSection from "@/components/WorkshopSection";
 import AdditionalServicesSection from "@/components/AdditionalServicesSection";
+import FeaturedListingPromo from "@/components/FeaturedListingPromo";
 import HomeTestimonialsSection from "@/components/HomeTestimonialsSection";
 import AboutSection from "@/components/AboutSection";
 import ProcessSection from "@/components/ProcessSection";
@@ -86,6 +87,9 @@ export default function Home() {
 
         {/* ── COMPACT SECONDARY OFFERS ── */}
         <AdditionalServicesSection />
+
+        {/* ── FEATURED LISTING PROMO ── */}
+        <FeaturedListingPromo />
 
         {/* ── PROOF + CREDIBILITY ── */}
         <HomeTestimonialsSection />
