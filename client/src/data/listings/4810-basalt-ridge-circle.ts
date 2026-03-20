@@ -101,13 +101,15 @@ const listing: FeaturedListingData = {
   shortOverview:
     "Beautifully appointed and filled with natural light, this exceptional home in Castle Rock's sought-after Terrain community offers the perfect balance of refined design, everyday comfort, and Colorado lifestyle.",
 
-  mainDescription: `This beautifully designed home blends style, functionality, and livability in one of Castle Rock's most desirable communities. The kitchen is both elegant and practical, featuring granite countertops, abundant white cabinetry, stainless steel appliances, a custom KitchenAid range with hood, combo oven/microwave, and a large island that opens seamlessly into the spacious great room with fireplace.
+  mainDescription: `$12,500 SELLER CONCESSION OFFERED! Beautifully designed and filled with natural light, this exceptional home in Castle Rock's sought-after Terrain community offers the perfect balance of refined design, everyday comfort, and Colorado lifestyle.
 
-A dramatic dining area with soaring ceilings and walls of glass creates an elevated setting for gatherings, while the main-floor office provides flexibility for remote work or additional living space. The home is prewired for sound in the living room, ready for speaker installation.
+The kitchen is both stylish and functional, featuring granite countertops, abundant white cabinetry, stainless steel appliances, a custom KitchenAid range with hood, combo oven/microwave, and a large island that anchors the heart of the home and opens seamlessly to the spacious great room with fireplace. A dramatic dining area with soaring ceilings and walls of glass creates an airy, elevated backdrop for gatherings, while the main-floor office offers the flexibility today's buyers expect. The living room is prewired for sound, ready for speaker installation.
 
-Upstairs, a versatile loft offers additional living space, while the private primary suite features a tray ceiling, dual vanities, and a custom shower. The unfinished basement provides excellent potential for future expansion.
+Upstairs, a versatile loft provides additional living space, and the private primary retreat offers a tray ceiling, dual vanities, and a custom shower. The unfinished basement offers exceptional potential for future expansion, and the covered patio opens to a fenced backyard ready for your personal landscaping vision. Additional features include a VacuFlo home vacuum system ready for installation of a power unit.
 
-Step outside to a covered patio and fenced backyard, ready for your personal landscaping vision. Located just a short walk to the Ravenwood pool and community trails, residents enjoy access to a clubhouse, parks, dog park, playgrounds, and miles of scenic trails — all with convenient access to Downtown Castle Rock, dining, shopping, and outdoor recreation.`,
+Ideally located just a 2-minute walk to the Ravenwood pool and about a 5-minute walk to the community trail system, Terrain residents also enjoy a clubhouse, dog park, parks, playgrounds, and miles of trails throughout the neighborhood, with easy access to Downtown Castle Rock, local dining and shopping, open space, Castlewood Canyon, and Loveland Ski Area. Served by Douglas County School District.
+
+Seller concessions may be used for an interest rate buydown, closing costs, prepaid items, and other allowable buyer closing expenses, subject to lender approval.`,
 
   sellerConcession:
     "$12,500 seller concession available — may be used for interest rate buydown, closing costs, prepaid items, and other allowable buyer closing expenses, subject to lender approval.",
