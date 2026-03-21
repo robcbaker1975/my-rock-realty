@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 import { notifyOwner } from "./_core/notification";
-import { sendToGHL } from "./_core/ghl";
+import { sendToGHL, type GHLDiag } from "./_core/ghl";
 
 export interface ContactFormData {
   name: string;
@@ -22,6 +22,16 @@ export interface ContactFormData {
   // SMS consent fields — maps to GHL custom contact checkbox fields
   smsTransactionalConsent?: boolean; // MRR Transactional SMS Consent
   smsMarketingConsent?: boolean;     // MRR Marketing SMS Consent
+}
+
+export interface ContactResult {
+  success: boolean;
+  /** Only present when STAGING_DIAG=true — never sent in production */
+  _diag?: {
+    ghl: GHLDiag;
+    emailAttempted: boolean;
+    emailSuccess: boolean;
+  };
 }
 
 /**
@@ -168,15 +178,19 @@ function buildHtmlBody(data: ContactFormData): string {
 /**
  * Send the lead form submission via email and in-app notification.
  * Supports all 7 form variants via form_type routing.
+ * When STAGING_DIAG=true, returns a _diag field with GHL and email result details.
  */
-export async function sendContactEmail(data: ContactFormData): Promise<boolean> {
+export async function sendContactEmail(data: ContactFormData): Promise<ContactResult> {
   const smtpUser = process.env.SMTP_USER;
   const smtpPass = process.env.SMTP_PASS;
   const recipientEmails = process.env.CONTACT_EMAILS || "robbakerre@gmail.com,7203636544@vtext.com";
+  const stagingDiag = process.env.STAGING_DIAG === "true";
 
   const formType = resolveFormType(data);
   const sourceLabel = data.source ? ` [${data.source}]` : "";
   const subjectLine = `New Lead: ${data.name} — ${formType}${sourceLabel}`;
+
+  console.log(`[Contact] Submission received: formType="${formType}" name="${data.name}" email="${data.email}" source="${data.source || "(none)"}"`);
 
   // In-app notification to the project owner
   try {
@@ -189,14 +203,24 @@ export async function sendContactEmail(data: ContactFormData): Promise<boolean> 
   }
 
   // GHL handoff — third channel, runs after notification, does not block submission
+  console.log("[Contact] GHL handoff: starting");
+  let ghlDiag: GHLDiag = { status: "skipped", reason: "not run" };
   try {
-    await sendToGHL(data);
+    ghlDiag = await sendToGHL(data);
+    console.log(`[Contact] GHL handoff: completed status=${ghlDiag.status}`);
   } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    ghlDiag = { status: "error", reason: msg };
     console.error("[Contact] GHL handoff threw unexpectedly:", err);
   }
 
   // Email delivery via SMTP if configured
+  let emailAttempted = false;
+  let emailSuccess = false;
+
   if (smtpUser && smtpPass) {
+    emailAttempted = true;
+    console.log(`[Contact] Email: attempting SMTP send to "${recipientEmails}"`);
     try {
       const transporter = nodemailer.createTransport({
         service: "gmail",
@@ -215,14 +239,28 @@ export async function sendContactEmail(data: ContactFormData): Promise<boolean> 
         html: buildHtmlBody(data),
       });
 
-      console.log(`[Contact] Email sent: ${formType} from ${data.name} <${data.email}>`);
-      return true;
+      emailSuccess = true;
+      console.log(`[Contact] Email: sent OK — formType="${formType}" from "${data.name}" <${data.email}>`);
+      console.log(`[Contact] Submission complete: result=true`);
+
+      return {
+        success: true,
+        ...(stagingDiag ? { _diag: { ghl: ghlDiag, emailAttempted, emailSuccess } } : {}),
+      };
     } catch (err) {
-      console.error("[Contact] Email send failed:", err);
-      return false;
+      console.error("[Contact] Email: send failed:", err);
+      console.log(`[Contact] Submission complete: result=false`);
+      return {
+        success: false,
+        ...(stagingDiag ? { _diag: { ghl: ghlDiag, emailAttempted, emailSuccess } } : {}),
+      };
     }
   } else {
-    console.warn("[Contact] SMTP not configured — submission logged via notification only.");
-    return true;
+    console.warn("[Contact] Email: SMTP not configured (SMTP_USER/SMTP_PASS missing) — submission logged via notification only.");
+    console.log(`[Contact] Submission complete: result=true (no SMTP)`);
+    return {
+      success: true,
+      ...(stagingDiag ? { _diag: { ghl: ghlDiag, emailAttempted, emailSuccess } } : {}),
+    };
   }
 }

@@ -111,11 +111,16 @@ export default function LeadForm({
 
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [stagingDiag, setStagingDiag] = useState<Record<string, unknown> | null>(null);
 
   const contactMutation = trpc.contact.submit.useMutation({
-    onSuccess: () => {
+    onSuccess: (data) => {
       setSubmitted(true);
       setError(null);
+      // Staging-only: surface _diag field if present (only when STAGING_DIAG=true on server)
+      if (data && typeof data === "object" && "_diag" in data && data._diag) {
+        setStagingDiag(data._diag as Record<string, unknown>);
+      }
     },
     onError: (err) => {
       setError(err.message || "Something went wrong. Please try again.");
@@ -175,6 +180,26 @@ export default function LeadForm({
       <div className={`flex flex-col items-center justify-center py-10 text-center ${className}`}>
         <CheckCircle className="w-12 h-12 text-[#C9A96E] mb-4" />
         <p className={`text-lg font-semibold ${dark ? "text-[#F5F0EB]" : "text-[#292524]"}`}>{config.successMessage}</p>
+        {/* Staging-only diagnostic block — only renders when server returns _diag (STAGING_DIAG=true) */}
+        {stagingDiag && (
+          <pre
+            style={{
+              marginTop: "16px",
+              padding: "12px",
+              background: "#1a1a1a",
+              color: "#a8ff78",
+              fontSize: "11px",
+              textAlign: "left",
+              borderRadius: "6px",
+              maxWidth: "480px",
+              overflowX: "auto",
+              whiteSpace: "pre-wrap",
+              wordBreak: "break-all",
+            }}
+          >
+            {"[STAGING DIAG]\n" + JSON.stringify(stagingDiag, null, 2)}
+          </pre>
+        )}
       </div>
     );
   }

@@ -59,8 +59,8 @@ export const appRouter = router({
     submit: publicProcedure
       .input(contactInputSchema)
       .mutation(async ({ input }) => {
-        const success = await sendContactEmail(input);
-        return { success };
+        const result = await sendContactEmail(input);
+        return result;
       }),
   }),
 });

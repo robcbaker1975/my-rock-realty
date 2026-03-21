@@ -24,6 +24,16 @@ import type { ContactFormData } from "../contact";
 const GHL_API_VERSION = "2021-07-28";
 
 /**
+ * Structured diagnostic result from a GHL handoff attempt.
+ * Returned by sendToGHL() and surfaced in staging-only _diag response field.
+ */
+export type GHLDiag =
+  | { status: "skipped"; reason: string }
+  | { status: "success"; contactId: string }
+  | { status: "failed"; httpStatus: number; body: string }
+  | { status: "error"; reason: string };
+
+/**
  * Build the GHL contact payload from the LeadForm submission.
  * Maps core contact fields and packs variant-specific data into tags and notes.
  */
@@ -67,27 +77,19 @@ function buildContactPayload(data: ContactFormData, locationId: string): Record<
     payload.phone = data.phone;
   }
 
-  // Include notes and SMS consent values as GHL custom contact fields
-  // GHL custom checkbox fields are referenced by their exact field name
-  const customFields: Record<string, unknown> = {
-    notes: noteLines.join("\n"),
-  };
+  // GHL API requires customFields as an array of { id, key, field_value } objects.
+  // We only send the notes field here using the standard contact.notes key.
+  // SMS consent custom fields require the exact GHL custom field ID from the account;
+  // those are omitted until IDs are confirmed to avoid 422 on upsert.
+  const customFields: Array<{ id: string; key: string; field_value: unknown }> = [
+    {
+      id: "",          // GHL custom field ID — not required when using key-only lookup
+      key: "contact.notes",
+      field_value: noteLines.join("\n"),
+    },
+  ];
 
-  // Map SMS consent booleans to GHL custom contact checkbox fields
-  // Field names match the existing GHL custom fields exactly
-  if (data.smsTransactionalConsent !== undefined) {
-    customFields["MRR Transactional SMS Consent"] = data.smsTransactionalConsent;
-  } else {
-    customFields["MRR Transactional SMS Consent"] = false;
-  }
-
-  if (data.smsMarketingConsent !== undefined) {
-    customFields["MRR Marketing SMS Consent"] = data.smsMarketingConsent;
-  } else {
-    customFields["MRR Marketing SMS Consent"] = false;
-  }
-
-  payload.customField = customFields;
+  payload.customFields = customFields;
 
   return payload;
 }
@@ -102,10 +104,13 @@ async function upsertGHLContact(
   apiBaseUrl: string,
   apiKey: string,
   locationId: string
-): Promise<{ contactId: string | null; error?: string }> {
+): Promise<{ contactId: string | null; httpStatus?: number; body?: string; error?: string }> {
   const payload = buildContactPayload(data, locationId);
+  const url = `${apiBaseUrl}/contacts/upsert`;
 
-  const res = await fetch(`${apiBaseUrl}/contacts/upsert`, {
+  console.log(`[GHL] Contact upsert: POST ${url} email="${data.email}"`);
+
+  const res = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -117,14 +122,13 @@ async function upsertGHLContact(
 
   if (!res.ok) {
     const body = await res.text().catch(() => "(unreadable)");
-    return {
-      contactId: null,
-      error: `GHL contact upsert failed: HTTP ${res.status} — ${body}`,
-    };
+    console.error(`[GHL] Contact upsert failed: HTTP ${res.status} — ${body}`);
+    return { contactId: null, httpStatus: res.status, body };
   }
 
   const json = (await res.json()) as { contact?: { id?: string } };
   const contactId = json?.contact?.id ?? null;
+  console.log(`[GHL] Contact upsert OK: contactId="${contactId}" email="${data.email}"`);
   return { contactId };
 }
 
@@ -147,8 +151,9 @@ async function createGHLOpportunity(
   const stageId = stageMap[formType];
 
   if (!pipelineId || !stageId) {
-    // Not a blocker — opportunity creation skipped for this form_type
-    return { success: false, error: `No pipeline/stage mapping for form_type: "${formType}"` };
+    const reason = `No pipeline/stage mapping for form_type: "${formType}"`;
+    console.log(`[GHL] Opportunity skipped: ${reason}`);
+    return { success: false, error: reason };
   }
 
   const opportunityPayload = {
@@ -160,6 +165,8 @@ async function createGHLOpportunity(
     source: data.source || "My Rock Realty Website",
     status: "open",
   };
+
+  console.log(`[GHL] Opportunity create: contactId="${contactId}" pipelineId="${pipelineId}" stageId="${stageId}"`);
 
   const res = await fetch(`${apiBaseUrl}/opportunities/`, {
     method: "POST",
@@ -173,26 +180,40 @@ async function createGHLOpportunity(
 
   if (!res.ok) {
     const body = await res.text().catch(() => "(unreadable)");
-    return { success: false, error: `GHL opportunity creation failed: HTTP ${res.status} — ${body}` };
+    const errMsg = `HTTP ${res.status} — ${body}`;
+    console.error(`[GHL] Opportunity create failed: ${errMsg}`);
+    return { success: false, error: `GHL opportunity creation failed: ${errMsg}` };
   }
 
+  console.log(`[GHL] Opportunity created OK for contactId="${contactId}"`);
   return { success: true };
 }
 
 /**
  * Main GHL handoff function.
  * Sends the lead to GHL as a third submission channel.
- * Returns true on success, false on any failure.
+ * Returns a GHLDiag describing the outcome.
  * All errors are logged but never thrown — GHL failure does not break the main flow.
  */
-export async function sendToGHL(data: ContactFormData): Promise<boolean> {
+export async function sendToGHL(data: ContactFormData): Promise<GHLDiag> {
   const apiBaseUrl = (process.env.GHL_API_BASE_URL || "").replace(/\/$/, "");
   const apiKey = process.env.GHL_API_KEY || "";
   const locationId = process.env.GHL_LOCATION_ID || "";
 
+  // Log which vars are present (mask key value)
+  console.log(
+    `[GHL] Env check: GHL_API_BASE_URL="${apiBaseUrl || "(missing)"}" GHL_API_KEY=${apiKey ? "(set)" : "(missing)"} GHL_LOCATION_ID="${locationId || "(missing)"}"`
+  );
+
   if (!apiBaseUrl || !apiKey || !locationId) {
-    console.warn("[GHL] Skipped — GHL_API_BASE_URL, GHL_API_KEY, or GHL_LOCATION_ID not configured.");
-    return false;
+    const missing = [
+      !apiBaseUrl && "GHL_API_BASE_URL",
+      !apiKey && "GHL_API_KEY",
+      !locationId && "GHL_LOCATION_ID",
+    ].filter(Boolean).join(", ");
+    const reason = `Missing required env vars: ${missing}`;
+    console.warn(`[GHL] Skipped — ${reason}`);
+    return { status: "skipped", reason };
   }
 
   // Parse optional pipeline/stage maps from env
@@ -211,14 +232,19 @@ export async function sendToGHL(data: ContactFormData): Promise<boolean> {
   }
 
   // Step 1: Upsert contact
-  const { contactId, error: contactError } = await upsertGHLContact(data, apiBaseUrl, apiKey, locationId);
+  const { contactId, httpStatus, body: upsertBody, error: contactError } = await upsertGHLContact(
+    data,
+    apiBaseUrl,
+    apiKey,
+    locationId
+  );
 
-  if (contactError || !contactId) {
-    console.error(`[GHL] Contact upsert failed: ${contactError ?? "No contact ID returned"}`);
-    return false;
+  if (!contactId) {
+    if (httpStatus !== undefined && upsertBody !== undefined) {
+      return { status: "failed", httpStatus, body: upsertBody };
+    }
+    return { status: "error", reason: contactError ?? "No contact ID returned" };
   }
-
-  console.log(`[GHL] Contact upserted: ${contactId} for ${data.email} (${data.form_type || data.type})`);
 
   // Step 2: Create opportunity if pipeline/stage config is available
   if (Object.keys(pipelineMap).length > 0 && Object.keys(stageMap).length > 0) {
@@ -235,12 +261,10 @@ export async function sendToGHL(data: ContactFormData): Promise<boolean> {
     if (!oppSuccess) {
       // Log but do not fail — opportunity creation is best-effort in v1
       console.warn(`[GHL] Opportunity creation skipped or failed: ${oppError}`);
-    } else {
-      console.log(`[GHL] Opportunity created for contact: ${contactId}`);
     }
   } else {
     console.log("[GHL] No pipeline/stage map configured — opportunity creation skipped.");
   }
 
-  return true;
+  return { status: "success", contactId };
 }
