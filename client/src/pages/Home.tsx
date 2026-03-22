@@ -18,6 +18,7 @@ import TrustSection from "@/components/TrustSection";
 import BuyersSection from "@/components/BuyersSection";
 import SellersSection from "@/components/SellersSection";
 import RelocationsSection from "@/components/RelocationsSection";
+import TrustProofSection from "@/components/TrustProofSection";
 import WorkshopSection from "@/components/WorkshopSection";
 import AdditionalServicesSection from "@/components/AdditionalServicesSection";
 import FeaturedListingPromo from "@/components/FeaturedListingPromo";
@@ -81,6 +82,9 @@ export default function Home() {
         <SellersSection />
         {/* Rental / Tour Support — includes PCS/Military mention, links to /rental-tour-support/ */}
         <RelocationsSection />
+
+        {/* ── TRUST / PROOF — inserted below path-selection, above secondary content ── */}
+        <TrustProofSection />
 
         {/* ── SECONDARY TRUST / EDUCATION ── */}
         <WorkshopSection />
