@@ -211,7 +211,7 @@ export default function Navbar() {
           {/* Mobile hamburger — absolute right */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden absolute right-4 sm:right-6 p-3 rounded-lg active:bg-white/10 text-white"
+            className="lg:hidden absolute right-4 sm:right-6 p-3 rounded-lg active:bg-white/10 text-white z-10"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={28} /> : <Menu size={28} />}

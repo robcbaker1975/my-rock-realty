@@ -141,7 +141,7 @@ export default function JoinUs() {
       {/* ═══════════════════════════════════════════════════
           BREADCRUMBS
       ═══════════════════════════════════════════════════ */}
-      <div className="bg-warm-white border-b border-charcoal/5">
+      <div className="bg-charcoal/95 border-b border-white/10">
         <div className="container py-3 sm:py-4">
           <Breadcrumbs
             items={[
@@ -149,8 +149,8 @@ export default function JoinUs() {
             ]}
             siteUrl="https://www.myrockhomes.com"
             className="py-0"
-            listClassName="text-xs sm:text-sm text-charcoal/60"
-            itemClassName="text-charcoal/60"
+            listClassName="text-xs sm:text-sm text-cream/60"
+            itemClassName="text-cream/60"
             separator="/"
           />
         </div>
