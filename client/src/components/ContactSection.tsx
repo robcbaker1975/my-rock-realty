@@ -15,6 +15,8 @@ const interestOptions = [
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [smsTransactionalConsent, setSmsTransactionalConsent] = useState(false);
+  const [smsMarketingConsent, setSmsMarketingConsent] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -56,6 +58,8 @@ export default function ContactSection() {
       type: formData.type || undefined,
       interests: formData.interests,
       message: formData.message || undefined,
+      smsTransactionalConsent,
+      smsMarketingConsent,
     });
   };
 
@@ -252,6 +256,53 @@ export default function ContactSection() {
                     className="w-full px-4 py-3.5 sm:py-3 bg-white/5 border border-white/15 rounded-lg sm:rounded text-white text-base placeholder-white/30 focus:border-gold/50 focus:outline-none transition-colors resize-none"
                   placeholder="Tell Rob about your goals, timeline, or questions..."
                 />
+              </div>
+
+              {/* SMS Consent Checkboxes */}
+              <div className="flex flex-col gap-3 pt-1 border-t border-white/10">
+                <label className="flex items-start gap-2.5 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={smsTransactionalConsent}
+                    onChange={e => setSmsTransactionalConsent(e.target.checked)}
+                    className="mt-0.5 shrink-0 accent-[#C9A96E] w-4 h-4"
+                  />
+                  <span className="text-xs leading-relaxed text-cream/70">
+                    I consent to receive non-marketing text messages from My Rock Realty, LLC about my inquiry, appointments, scheduling, and service-related updates. Message frequency may vary. Message and data rates may apply. Text HELP for assistance, reply STOP to opt out.
+                  </span>
+                </label>
+                <label className="flex items-start gap-2.5 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={smsMarketingConsent}
+                    onChange={e => setSmsMarketingConsent(e.target.checked)}
+                    className="mt-0.5 shrink-0 accent-[#C9A96E] w-4 h-4"
+                  />
+                  <span className="text-xs leading-relaxed text-cream/70">
+                    I consent to receive marketing text messages from My Rock Realty, LLC about educational events, market updates, and occasional promotions. Consent is not a condition of purchase. Message frequency may vary. Message and data rates may apply. Text HELP for assistance, reply STOP to opt out.
+                  </span>
+                </label>
+                <p className="text-[11px] leading-relaxed text-cream/50">
+                  By submitting this form, you agree to our{" "}
+                  <a
+                    href="/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 text-cream/60 hover:text-cream/80"
+                  >
+                    Privacy Policy
+                  </a>
+                  {" "}and{" "}
+                  <a
+                    href="/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 text-cream/60 hover:text-cream/80"
+                  >
+                    Terms &amp; Conditions
+                  </a>
+                  .
+                </p>
               </div>
 
               {/* Submit */}
