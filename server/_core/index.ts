@@ -83,11 +83,20 @@ async function startServer() {
     serveStatic(app);
   }
 
-  const preferredPort = parseInt(process.env.PORT || "3000");
-  const port = await findAvailablePort(preferredPort);
-
-  if (port !== preferredPort) {
-    console.log(`Port ${preferredPort} is busy, using port ${port} instead`);
+  // In production (Render), use PORT directly — do not scan for an alternative.
+  // Render assigns a specific port and watches only that port for the open signal.
+  // Port-scanning in production causes the server to bind on a different port
+  // that Render never detects, triggering a port scan timeout.
+  // In development, scan for an available port to handle local conflicts.
+  let port: number;
+  if (process.env.NODE_ENV === "production") {
+    port = parseInt(process.env.PORT || "3000");
+  } else {
+    const preferredPort = parseInt(process.env.PORT || "3000");
+    port = await findAvailablePort(preferredPort);
+    if (port !== preferredPort) {
+      console.log(`Port ${preferredPort} is busy, using port ${port} instead`);
+    }
   }
 
   server.listen(port, () => {
