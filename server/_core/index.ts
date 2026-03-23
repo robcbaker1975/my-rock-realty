@@ -99,9 +99,20 @@ async function startServer() {
     }
   }
 
-  server.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}/`);
-  });
+  // Explicitly bind to 0.0.0.0 in production.
+  // Node.js defaults to '::' (IPv6 wildcard) when no host is given.
+  // Render's port scanner uses IPv4 — binding only on '::' without dual-stack
+  // means Render cannot detect the open port, causing a port scan timeout.
+  // In development, keep the default behavior (no host restriction).
+  if (process.env.NODE_ENV === "production") {
+    server.listen(port, "0.0.0.0", () => {
+      console.log(`Server running on http://0.0.0.0:${port}/`);
+    });
+  } else {
+    server.listen(port, () => {
+      console.log(`Server running on http://localhost:${port}/`);
+    });
+  }
 }
 
 startServer().catch(console.error);
