@@ -4,6 +4,16 @@ import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 
+/** Maps ContactSection dropdown values to GHL-compatible form_type keys */
+const TYPE_TO_FORM_TYPE: Record<string, string> = {
+  buying: "Buyer Intake",
+  selling: "Seller Intake",
+  relocating: "PCS Relocation",
+  referral: "Referral Intake",
+  workshop: "Workshop Intake",
+  land: "General Inquiry",
+};
+
 const interestOptions = [
   "Buyer programs",
   "Selling my home",
@@ -56,6 +66,7 @@ export default function ContactSection() {
       email: formData.email,
       phone: formData.phone || undefined,
       type: formData.type || undefined,
+      form_type: formData.type ? (TYPE_TO_FORM_TYPE[formData.type] ?? "General Inquiry") : undefined,
       interests: formData.interests,
       message: formData.message || undefined,
       smsTransactionalConsent,
