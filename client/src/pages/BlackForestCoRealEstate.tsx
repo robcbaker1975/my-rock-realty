@@ -133,7 +133,7 @@ export default function BlackForestCoRealEstate() {
           {/* What Black Forest feels like */}
           <section>
             <h2 className="text-2xl font-bold text-stone-900 mb-4">What Black Forest feels like</h2>
-            <p className="mb-4">Black Forest usually feels more like a property decision than a town decision.</p>
+            <p className="mb-4">Black Forest usually feels more tied to the property and setting than to any real town feel.</p>
             <p className="mb-4">That matters.</p>
             <p className="mb-4">It is not known for a strong downtown identity or a highly structured neighborhood feel. It makes more sense as a wooded, more spread-out part of the broader Colorado Springs market where buyers are often choosing privacy, land, and setting before they are choosing convenience.</p>
             <p className="mb-4">That is also what makes it different from Monument.</p>
@@ -147,7 +147,7 @@ export default function BlackForestCoRealEstate() {
             <p className="mb-4">It gives buyers a version of the Colorado Springs-area search that feels more private, more wooded, and less shaped by a standard subdivision rhythm.</p>
             <p className="mb-4">For the right buyer, that is exactly the point.</p>
             <p className="mb-4">This is often where people land when they know they do not want a more typical north-side or east-side neighborhood pattern, but they also do not want to leave the broader Colorado Springs orbit completely.</p>
-            <p>That is a useful lane to own.</p>
+            <p>That is a useful part of the map for the site to cover.</p>
           </section>
 
           {/* Who Black Forest tends to fit */}
@@ -191,7 +191,7 @@ export default function BlackForestCoRealEstate() {
               <li>sometimes <strong>Peyton</strong> when the buyer wants room but not necessarily the same wooded feel</li>
             </ul>
             <p className="mb-4">That is why Black Forest matters in the cluster.</p>
-            <p>It is not just another outer-edge name. It represents a more land-and-setting-driven version of the Colorado Springs decision.</p>
+            <p>It is one of the clearest places in the Springs area for buyers who care more about land and setting than neighborhood structure.</p>
           </section>
 
           {/* The tradeoffs are the whole point */}
