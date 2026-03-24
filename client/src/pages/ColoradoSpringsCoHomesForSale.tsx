@@ -1,90 +1,77 @@
 /**
  * Colorado Springs, CO Homes for Sale — My Rock Realty
- * Primary El Paso County authority hub page for the Colorado Springs SEO cluster
- * Design: Front Range Modern — matches existing site design system
+ * Lean transactional search page — approved package implementation
  * Palette: Warm charcoal, cream, antique gold
  * Typography: Outfit (display) + Libre Franklin (body)
  */
 
 import { useState, useEffect } from "react";
-import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 import SeoHead from "@/components/seo/SeoHead";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
-import {
-  ArrowRight,
-  ArrowLeft,
-  MapPin,
-  Home as HomeIcon,
-  TrendingUp,
-  Users,
-  Globe,
-  ChevronDown,
-  Phone,
-  Mail,
-  Building2,
-  Trees,
-  Star,
-  Compass,
-  BookOpen,
-  Bell,
-  Calendar,
-} from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 
-/* Hero Background Image — Approved Denver metro aerial view */
-const CS_HERO_BG = "/images/denver-rowhouses-hero.jpg";
-
-/* ─── FAQ Content ─── */
+/* ─── FAQ Content (approved lean version) ─── */
 const faqContent = [
-  {
-    question: "What are the most popular neighborhoods for buying a home in Colorado Springs?",
-    answer:
-      "Popular Colorado Springs neighborhoods for buyers include Downtown Colorado Springs, Old Colorado City, Broadmoor, Briargate, Northgate, Powers Corridor, and the surrounding foothills areas. Each neighborhood has its own character and price range.",
-  },
-  {
-    question: "Are there good suburbs near Colorado Springs for home buyers?",
-    answer:
-      "Yes. Many buyers looking in the Colorado Springs area also explore nearby communities like Manitou Springs, Widefield, Palmer Lake, and other surrounding areas that offer different price points and community characteristics.",
-  },
   {
     question: "What types of homes can buyers find in Colorado Springs?",
     answer:
-      "Buyers can find a wide range of housing options in Colorado Springs, including historic homes, modern residences, newer construction, condos, townhomes, and properties with mountain views across a variety of neighborhoods and price ranges.",
+      "Buyers can find condos, townhomes, newer single-family homes, older homes in more established areas, and properties with more land. What fits best usually depends on budget, area, and how much upkeep or updating you are comfortable with.",
   },
   {
-    question: "Is Colorado Springs a competitive real estate market?",
+    question: "Is Colorado Springs a good place to buy a home?",
     answer:
-      "Colorado Springs market conditions vary by neighborhood, price range, and season. Inventory levels and demand shift over time, so buyers should research current conditions and work with an agent familiar with the local market.",
+      "For a lot of buyers, yes. But it usually works best when the search is built around budget, area fit, commute, and home style instead of just whatever listings appear first.",
   },
   {
-    question: "Where should I start if I want to buy a home in Colorado Springs?",
+    question: "Should I rent before buying in Colorado Springs?",
     answer:
-      "A good place to start is understanding your budget, getting pre-approved, learning about Colorado Springs neighborhoods, and narrowing down areas that fit your lifestyle and financial goals.",
+      "Sometimes. If you already know the map and feel clear on where you want to be, buying first can make sense. If you are still figuring out area fit or timing, rental tour support can be a better first step.",
+    answerLink: { text: "rental tour support", href: "/rental-tour-support/" },
   },
   {
-    question: "What makes Colorado Springs different from Denver for home buyers?",
+    question: "Is Colorado Springs a good market for military buyers?",
     answer:
-      "Colorado Springs offers a different community character, mountain setting, and generally different price points compared to Denver. The two cities attract different buyer profiles and offer distinct lifestyle options. Buyers should research both to find the best fit.",
+      "Often, yes. Installation access, commute, and timing shape a lot of buying decisions here, especially for buyers connected to Fort Carson, Peterson, Schriever, or the Air Force Academy.",
   },
   {
-    question: "How does the Colorado Springs real estate market compare to surrounding areas?",
+    question: "What should I do before touring homes in Colorado Springs?",
     answer:
-      "Colorado Springs tends to have different price points and inventory levels than nearby communities. Buyers often compare Colorado Springs to surrounding areas to find the best fit for their budget and lifestyle preferences.",
-  },
-  {
-    question: "What should I know about Colorado Springs' school districts?",
-    answer:
-      "Colorado Springs is served by multiple school districts including Colorado Springs School District 11, Academy School District 20, and others. Buyers should independently research specific schools and districts to understand what matters most for their family.",
+      "Get clear on your budget, financing, preferred part of town, and the type of home you actually want. If you are still learning the area, read the Moving to Colorado Springs page first.",
+    answerLink: { text: "Moving to Colorado Springs", href: "/moving-to-colorado-springs/" },
   },
 ];
 
 /* ─── FAQ Accordion ─── */
-function FAQItem({ question, answer }: { question: string; answer: string }) {
+function FAQItem({
+  question,
+  answer,
+  answerLink,
+}: {
+  question: string;
+  answer: string;
+  answerLink?: { text: string; href: string };
+}) {
   const [open, setOpen] = useState(false);
+
+  const renderAnswer = () => {
+    if (!answerLink) return answer;
+    const parts = answer.split(answerLink.text);
+    return (
+      <>
+        {parts[0]}
+        <a href={answerLink.href} className="text-gold underline underline-offset-2 hover:opacity-80 transition-opacity">
+          {answerLink.text}
+        </a>
+        {parts[1]}
+      </>
+    );
+  };
+
   return (
     <div className="border-b border-charcoal/10 last:border-0">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-5 px-1 text-left gap-4 group"
+        className="w-full flex items-center justify-between py-5 px-1 text-left gap-4"
       >
         <span
           className="text-[15px] sm:text-base font-semibold text-charcoal leading-snug"
@@ -101,24 +88,10 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         className={`overflow-hidden transition-all duration-300 ${open ? "max-h-60 pb-5" : "max-h-0"}`}
       >
         <p className="text-[14px] sm:text-[15px] text-charcoal/70 leading-relaxed px-1">
-          {answer}
+          {renderAnswer()}
         </p>
       </div>
     </div>
-  );
-}
-
-/* ─── Internal Link Card ─── */
-function LinkCard({ href, label }: { href: string; label: string }) {
-  return (
-    <a
-      href={href}
-      className="block bg-white border border-charcoal/10 rounded-lg px-4 py-3 text-sm font-medium text-charcoal hover:border-gold hover:text-gold transition-colors duration-150"
-      style={{ fontFamily: "'Outfit', sans-serif" }}
-    >
-      {label}
-      <ArrowRight size={13} className="inline ml-1.5 opacity-60" />
-    </a>
   );
 }
 
@@ -133,9 +106,9 @@ export default function ColoradoSpringsCoHomesForSale() {
     <div className="min-h-screen bg-warm-white">
       <SeoHead
         metadata={{
-          title: "Colorado Springs, CO Homes for Sale | Colorado Springs Real Estate & El Paso County Homes",
+          title: "Colorado Springs, CO Homes for Sale | My Rock Realty",
           description:
-            "Explore Colorado Springs homes for sale, popular neighborhoods, nearby communities, property types, and local home buying resources for the Colorado Springs and El Paso County area.",
+            "Searching for homes for sale in Colorado Springs? Start with a clearer search strategy — budget, part of town, home type, and commute. My Rock Realty helps Colorado Springs buyers find the right fit.",
           canonicalUrl: "https://www.myrockhomes.com/colorado-springs-co-homes-for-sale",
         }}
         schema={faqSchema ? [faqSchema] : []}
@@ -158,96 +131,188 @@ export default function ColoradoSpringsCoHomesForSale() {
             className="absolute top-4 right-4 sm:static text-cream/70 hover:text-gold text-xs sm:text-sm font-medium transition-colors inline-flex items-center gap-1.5"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            <ArrowLeft size={14} />
+            <ArrowRight size={13} className="rotate-180" />
             Back to Main Site
           </a>
         </div>
       </header>
 
       {/* ═══════════════════════════════════════════════════
-          1. HERO — Colorado Springs Homes for Sale
+          BREADCRUMB
       ═══════════════════════════════════════════════════ */}
-      <section className="relative bg-charcoal overflow-hidden">
-        {/* Hero Background Image */}
-        <img
-          src={CS_HERO_BG}
-          alt="Row houses along a residential street in Colorado Springs"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        
-          width="1600"
-          height="900"
-          fetchPriority="high"
-          decoding="async"
-        />
-        {/* Gradient Overlay — ensures text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
-        <div className="container relative z-10 py-14 sm:py-20 lg:py-24">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-gold/15 border border-gold/30 rounded-full px-4 py-1.5 mb-6">
-              <MapPin size={13} className="text-gold" />
-              <span
-                className="text-gold text-xs sm:text-sm font-semibold tracking-wide"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                EL PASO COUNTY · COLORADO
-              </span>
-            </div>
-            <h1
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cream leading-tight mb-5"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Colorado Springs, CO Homes for Sale
-            </h1>
-            <p className="text-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
-              Explore Colorado Springs neighborhoods, surrounding communities, and property types. Whether you're buying your first home, relocating, or investing in El Paso County, this is your starting point.
+      <div className="bg-charcoal/95 border-b border-white/5">
+        <div className="container py-2.5">
+          <nav className="text-xs text-cream/50" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            <a href="/" className="hover:text-cream transition-colors">Home</a>
+            <span className="mx-2">/</span>
+            <span className="text-cream/80">Colorado Springs Homes for Sale</span>
+          </nav>
+        </div>
+      </div>
+
+      {/* ═══════════════════════════════════════════════════
+          HERO
+      ═══════════════════════════════════════════════════ */}
+      <section className="bg-charcoal pt-12 pb-14 sm:pt-16 sm:pb-18">
+        <div className="container max-w-3xl">
+          <p
+            className="text-gold/80 text-xs font-semibold uppercase tracking-widest mb-4"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            Colorado Springs Real Estate
+          </p>
+          <h1
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream leading-tight mb-5"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            Colorado Springs, CO Homes for Sale
+          </h1>
+          <p
+            className="text-cream/70 text-base sm:text-lg leading-relaxed max-w-2xl"
+            style={{ fontFamily: "'Libre Franklin', sans-serif" }}
+          >
+            Searching for homes for sale in Colorado Springs gets easier once you stop trying to search the whole city at once.
+          </p>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          INTRO
+      ═══════════════════════════════════════════════════ */}
+      <section className="py-12 sm:py-16">
+        <div className="container max-w-3xl">
+          <div className="prose prose-charcoal max-w-none" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            <p className="text-charcoal/80 text-base sm:text-[17px] leading-relaxed mb-4">
+              Colorado Springs is a broad market, and the right search usually starts with a few practical things first: your budget, your commute, the kind of home you want, and what part of town fits the way you actually live.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="mailto:rob@myrockhomes.com?subject=Colorado Springs Home Buying Consultation"
-                className="inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 bg-gold text-charcoal hover:bg-gold-light hover:shadow-lg px-7 py-4 text-[15px] sm:text-base no-underline"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                <Calendar size={16} />
-                Schedule a Home Buying Consultation
+            <p className="text-charcoal/80 text-base sm:text-[17px] leading-relaxed mb-4">
+              This page is here to help you start that search more clearly.
+            </p>
+            <p className="text-charcoal/80 text-base sm:text-[17px] leading-relaxed">
+              If you're still figuring out what different parts of town feel like, what to know before moving, or whether it makes more sense to rent or buy first, start with our guide to{" "}
+              <a href="/moving-to-colorado-springs/" className="text-gold underline underline-offset-2 hover:opacity-80 transition-opacity">
+                moving to Colorado Springs
               </a>
-              <a
-                href="mailto:rob@myrockhomes.com?subject=New Colorado Springs Listings — Alert Request"
-                className="inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 border-2 border-gold text-gold hover:bg-gold hover:text-charcoal px-6 py-3 text-sm no-underline"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                <Bell size={15} />
-                Get Alerts for New Colorado Springs Homes
-              </a>
-            </div>
+              .
+            </p>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          2. LIVING IN COLORADO SPRINGS: LIFESTYLE & AMENITIES
+          START HERE
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-4xl mx-auto">
+      <section className="bg-charcoal/5 border-y border-charcoal/8 py-10 sm:py-12">
+        <div className="container max-w-3xl">
           <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-4"
+            className="text-xl sm:text-2xl font-bold text-charcoal mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Living in Colorado Springs: Lifestyle &amp; Amenities
+            Start Here
           </h2>
-          <p className="text-charcoal/70 leading-relaxed mb-6">
-            Colorado Springs offers a combination of mountain access, outdoor recreation, diverse neighborhoods, and a strong community character. The city sits at the base of Pikes Peak and provides residents with access to hiking, outdoor activities, and natural attractions throughout the year.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <ul className="space-y-3" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
             {[
-              { icon: Trees, label: "Mountain Access" },
-              { icon: Building2, label: "Diverse Neighborhoods" },
-              { icon: Compass, label: "Outdoor Recreation" },
-              { icon: Star, label: "Community Character" },
-            ].map(({ icon: Icon, label }) => (
-              <div key={label} className="bg-white border border-charcoal/8 rounded-lg p-4 text-center">
-                <Icon size={22} className="text-gold mx-auto mb-2" />
-                <p className="text-xs sm:text-sm font-medium text-charcoal" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                  {label}
+              { label: "New to the area? Read", linkText: "Moving to Colorado Springs", href: "/moving-to-colorado-springs/" },
+              { label: "Comparing Front Range options? See", linkText: "Denver vs. Colorado Springs", href: "/denver-vs-colorado-springs" },
+              { label: "Not ready to buy yet? Explore", linkText: "Rental Tour Support", href: "/rental-tour-support/" },
+              { label: "Moving on military timing? Start with", linkText: "Military Relocation", href: "/military-relocation/", secondLinkText: "PCS Relocation Tour Support", secondHref: "/military-relocation/pcs-relocation-tour-support/" },
+              { label: "Want a clearer buying plan first? Join the", linkText: "Colorado Home Buying Workshop", href: "/colorado-home-buying-workshop" },
+            ].map((item, i) => (
+              <li key={i} className="flex items-start gap-2 text-charcoal/80 text-[15px]">
+                <ArrowRight size={15} className="text-gold shrink-0 mt-0.5" />
+                <span>
+                  {item.label}{" "}
+                  <a href={item.href} className="text-gold underline underline-offset-2 hover:opacity-80 transition-opacity font-medium">
+                    {item.linkText}
+                  </a>
+                  {item.secondLinkText && (
+                    <>
+                      {" "}or{" "}
+                      <a href={item.secondHref} className="text-gold underline underline-offset-2 hover:opacity-80 transition-opacity font-medium">
+                        {item.secondLinkText}
+                      </a>
+                    </>
+                  )}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          HOW TO SEARCH
+      ═══════════════════════════════════════════════════ */}
+      <section className="py-12 sm:py-16">
+        <div className="container max-w-3xl">
+          <h2
+            className="text-xl sm:text-2xl font-bold text-charcoal mb-5"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            How to Search Colorado Springs Homes More Clearly
+          </h2>
+          <p className="text-charcoal/80 text-base leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            Most buyers narrow this market best by getting clear on four things early:
+          </p>
+          <ul className="space-y-2 mb-6" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            {["price range", "part of town", "home type", "commute"].map((item) => (
+              <li key={item} className="flex items-center gap-2 text-charcoal/80 text-[15px]">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="text-charcoal/80 text-base leading-relaxed mb-3" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            That matters because Colorado Springs is not one simple search. A condo, a newer home in a more predictable area, an older home in a more established part of town, and a property with more land all create different searches.
+          </p>
+          <p className="text-charcoal/80 text-base leading-relaxed" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            The fastest way to waste time here is to search too broadly for too long.
+          </p>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          WHAT CHANGES THE SEARCH FASTEST
+      ═══════════════════════════════════════════════════ */}
+      <section className="bg-charcoal py-12 sm:py-16">
+        <div className="container max-w-3xl">
+          <h2
+            className="text-xl sm:text-2xl font-bold text-cream mb-8"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            What Usually Changes the Search Fastest
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {[
+              {
+                heading: "Part of town",
+                body: "Where you live can change your routine more than people expect.",
+              },
+              {
+                heading: "Home age and condition",
+                body: "Some buyers want something easier to compare and more move-in ready. Others are open to older homes or more variation.",
+              },
+              {
+                heading: "Property type",
+                body: "Condos, townhomes, single-family homes, and properties with more land all create different tradeoffs.",
+              },
+              {
+                heading: "Recurring drives",
+                body: "Commute, school, errands, and installation access can make one part of the market fit much better than another.",
+              },
+            ].map((item) => (
+              <div key={item.heading} className="border-l-2 border-gold/40 pl-4">
+                <h3
+                  className="text-cream font-semibold text-base mb-1.5"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  {item.heading}
+                </h3>
+                <p
+                  className="text-cream/65 text-sm leading-relaxed"
+                  style={{ fontFamily: "'Libre Franklin', sans-serif" }}
+                >
+                  {item.body}
                 </p>
               </div>
             ))}
@@ -256,220 +321,116 @@ export default function ColoradoSpringsCoHomesForSale() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          3. WHY PEOPLE CHOOSE TO LIVE IN COLORADO SPRINGS
+          NEARBY AREAS
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-charcoal/3">
-        <div className="container max-w-4xl mx-auto">
+      <section className="py-12 sm:py-16">
+        <div className="container max-w-3xl">
           <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-4"
+            className="text-xl sm:text-2xl font-bold text-charcoal mb-5"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Why People Choose to Live in Colorado Springs
+            Nearby Areas Buyers Also Consider
           </h2>
-          <div className="grid sm:grid-cols-2 gap-5">
-            {[
-              { title: "Outdoor Lifestyle", body: "Colorado Springs provides access to hiking, climbing, and outdoor recreation near Pikes Peak, Garden of the Gods, and the Rocky Mountains. The area offers year-round outdoor opportunities." },
-              { title: "Community & Culture", body: "Colorado Springs has a growing arts scene, community events, diverse neighborhoods, and a strong sense of local identity that attracts residents from a variety of backgrounds." },
-              { title: "Neighborhood Variety", body: "From historic districts to newer developments, Colorado Springs offers a range of neighborhood characters and housing styles to suit different buyer preferences and budgets." },
-              { title: "Mountain Setting", body: "Colorado Springs is known for its scenic mountain backdrop, views of Pikes Peak, and proximity to natural attractions that appeal to buyers who value outdoor access and natural scenery." },
-            ].map(({ title, body }) => (
-              <div key={title} className="bg-white border border-charcoal/8 rounded-lg p-5">
-                <h3 className="text-base font-semibold text-charcoal mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                  {title}
-                </h3>
-                <p className="text-sm text-charcoal/70 leading-relaxed">{body}</p>
-              </div>
+          <p className="text-charcoal/80 text-base leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            Some buyers start in Colorado Springs and then widen the search.
+          </p>
+          <p className="text-charcoal/80 text-base leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            That can bring places like Manitou Springs, Monument, Palmer Lake, Falcon, Peyton, Fountain, Woodland Park, Calhan, or Black Forest into the conversation, depending on commute, space, privacy, and day-to-day fit.
+          </p>
+          <p className="text-charcoal/80 text-base leading-relaxed" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            If you're still deciding whether Colorado Springs itself is the right move, the full{" "}
+            <a href="/moving-to-colorado-springs/" className="text-gold underline underline-offset-2 hover:opacity-80 transition-opacity">
+              relocation guide
+            </a>{" "}
+            will help more than browsing listings alone.
+          </p>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          FAQ
+      ═══════════════════════════════════════════════════ */}
+      <section className="bg-charcoal/5 border-y border-charcoal/8 py-12 sm:py-16">
+        <div className="container max-w-3xl">
+          <h2
+            className="text-xl sm:text-2xl font-bold text-charcoal mb-8"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            Colorado Springs Homes FAQ
+          </h2>
+          <div className="bg-white rounded-xl border border-charcoal/10 px-4 sm:px-6">
+            {faqContent.map((item) => (
+              <FAQItem key={item.question} {...item} />
             ))}
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          4. RELOCATING TO COLORADO SPRINGS
+          CTA
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-4xl mx-auto">
+      <section className="py-14 sm:py-18">
+        <div className="container max-w-3xl">
           <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-4"
+            className="text-xl sm:text-2xl font-bold text-charcoal mb-4"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Relocating to Colorado Springs
+            Ready to Start Your Search?
           </h2>
-          <p className="text-charcoal/70 leading-relaxed mb-5">
-            Relocating to Colorado Springs from another state involves more than finding the right home. Understanding the market, neighborhoods, outdoor access, and buying process from a distance requires a clear strategy.
+          <p className="text-charcoal/75 text-base leading-relaxed mb-6" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            If you're ready to search Colorado Springs homes, the next step is usually getting clear on the right part of the market before you get too attached to a specific listing.
           </p>
-          <p className="text-charcoal/70 leading-relaxed mb-6">
-            Buyers should independently research schools, crime data, neighborhood characteristics, demographics, and other community factors that are important to them.
+          <p className="text-charcoal/75 text-base leading-relaxed mb-8" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            My Rock Homes can help you narrow the search with clear strategy, real-world guidance, and a no-pressure conversation.
           </p>
           <a
-            href="/relocation/relocating-to-denver-colorado"
-            className="inline-flex items-center gap-2 text-gold font-semibold text-sm hover:underline"
+            href="/#contact"
+            className="inline-flex items-center gap-2 bg-gold text-charcoal font-semibold text-sm px-6 py-3 rounded-lg hover:bg-gold/90 transition-colors mb-8"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Relocating to Colorado — Home Buying Guide
-            <ArrowRight size={14} />
+            Talk to Rob About Colorado Springs
+            <ArrowRight size={15} />
           </a>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          5. COLORADO SPRINGS REAL ESTATE MARKET OVERVIEW
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-charcoal/3">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-4"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Colorado Springs Real Estate Market Overview
-          </h2>
-          <p className="text-charcoal/70 leading-relaxed mb-5">
-            The Colorado Springs real estate market varies by neighborhood, price range, and season. Buyers should research current conditions and work with an agent familiar with local market dynamics to understand what to expect.
-          </p>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {[
-              { icon: TrendingUp, label: "Market Conditions", body: "Colorado Springs market conditions shift over time. Preparation, research, and working with a knowledgeable agent can help buyers navigate the process." },
-              { icon: HomeIcon, label: "Price Ranges", body: "Colorado Springs offers options from entry-level condos and townhomes to larger single-family homes and properties with mountain views across a range of price points." },
-              { icon: Users, label: "Buyer Considerations", body: "Well-priced homes in desirable areas can move quickly. Strategy, preparation, and understanding neighborhood-specific dynamics are important for buyers." },
-            ].map(({ icon: Icon, label, body }) => (
-              <div key={label} className="bg-white border border-charcoal/8 rounded-lg p-5">
-                <Icon size={20} className="text-gold mb-3" />
-                <h3 className="text-sm font-semibold text-charcoal mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                  {label}
-                </h3>
-                <p className="text-xs text-charcoal/70 leading-relaxed">{body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          6. COLORADO SPRINGS NEIGHBORHOODS & COMMUNITIES
-      ═══════════════════════════════════════════════════ */}
-      {/* ═══════════════════════════════════════════════════
-          7. COLORADO SPRINGS PROPERTY TYPES
-      ═══════════════════════════════════════════════════ */}
-      {/* ═══════════════════════════════════════════════════
-          8. COLORADO SPRINGS VS OTHER COLORADO CITIES
-      ═══════════════════════════════════════════════════ */}
-      {/* ═══════════════════════════════════════════════════
-          9. COLORADO SPRINGS HOME BUYING RESOURCES
-      ═══════════════════════════════════════════════════ */}
-      {/* ═══════════════════════════════════════════════════
-          10. BROWSE COLORADO SPRINGS HOMES BY PRICE
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Browse Colorado Springs Homes by Price
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Price range browsing will be available here. Contact Rob to discuss what fits your budget.
-          </p>
-          <div className="bg-white border border-charcoal/10 rounded-lg p-6 text-center">
-            <p className="text-sm text-charcoal/60 mb-4">
-              Looking for homes in a specific price range? Rob can help you understand what's available and what to expect at each price point in the Colorado Springs market.
+          <div className="border-t border-charcoal/10 pt-6">
+            <p className="text-charcoal/60 text-sm mb-3" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              You can also:
             </p>
-            <a
-              href="mailto:rob@myrockhomes.com?subject=Colorado Springs Homes — Price Range Question"
-              className="inline-flex items-center gap-2 text-gold font-semibold text-sm hover:underline"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              <Mail size={14} />
-              Ask About Colorado Springs Home Prices
-            </a>
+            <ul className="space-y-2" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              {[
+                { text: "browse Colorado Springs homes for sale", href: "/colorado-springs-co-homes-for-sale" },
+                { text: "join the Colorado Home Buying Workshop", href: "/colorado-home-buying-workshop" },
+                { text: "explore military relocation help", href: "/military-relocation/" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-gold underline underline-offset-2 hover:opacity-80 transition-opacity text-sm"
+                  >
+                    {link.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          11. FEATURED COLORADO SPRINGS LISTINGS
+          FOOTER
       ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-charcoal/3">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
+      <footer className="bg-charcoal border-t border-white/10 py-8">
+        <div className="container text-center">
+          <p
+            className="text-cream/40 text-xs"
+            style={{ fontFamily: "'Libre Franklin', sans-serif" }}
           >
-            Featured Colorado Springs Listings
-          </h2>
-          {/* ── LIVE IDX LISTING FEED ── */}
-          <BuyingBuddyWidget type="SearchResults" filter="city:Colorado Springs mappos:38.8339,-104.8214 mapzoom:11" />
-          {/* ── END IDX LISTING FEED ── */}
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          12. COLORADO SPRINGS REAL ESTATE FAQs
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-3xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-8"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Colorado Springs Real Estate FAQs
-          </h2>
-          <div className="bg-white border border-charcoal/8 rounded-xl px-6 py-2">
-            {faqContent.map((item) => (
-              <FAQItem key={item.question} question={item.question} answer={item.answer} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          13. FINAL CTA
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl mx-auto text-center">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-cream mb-4"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Ready to Explore Colorado Springs Homes?
-          </h2>
-          <p className="text-cream/70 text-base leading-relaxed mb-8">
-            Rob Baker works with Colorado Springs buyers, sellers, and relocating families. Schedule a consultation to discuss your goals and get a clear plan for the Colorado Springs market.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="mailto:rob@myrockhomes.com?subject=Colorado Springs Home Buying Consultation"
-              className="inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 bg-gold text-charcoal hover:bg-gold-light hover:shadow-lg px-7 py-4 text-[15px] sm:text-base no-underline"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              <Calendar size={16} />
-              Schedule a Home Buying Consultation
-            </a>
-            <a
-              href="mailto:rob@myrockhomes.com?subject=New Colorado Springs Listings — Browse Request"
-              className="inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 border-2 border-gold text-gold hover:bg-gold hover:text-charcoal px-6 py-3 text-sm no-underline"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Browse New Colorado Springs Listings
-              <ArrowRight size={14} />
-            </a>
-          </div>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center text-cream/50 text-xs">
-            <a href="tel:+17203636544" className="inline-flex items-center gap-1.5 hover:text-gold transition-colors">
-              <Phone size={12} />
-              720-363-6544
-            </a>
-            <a href="mailto:rob@myrockhomes.com" className="inline-flex items-center gap-1.5 hover:text-gold transition-colors">
-              <Mail size={12} />
-              rob@myrockhomes.com
-            </a>
-            <a href="/" className="inline-flex items-center gap-1.5 hover:text-gold transition-colors">
-              <Globe size={12} />
+            © {new Date().getFullYear()} My Rock Realty · Colorado Springs, CO ·{" "}
+            <a href="/" className="hover:text-cream/70 transition-colors">
               myrockhomes.com
             </a>
-          </div>
+          </p>
         </div>
-      </section>
+      </footer>
     </div>
   );
 }
