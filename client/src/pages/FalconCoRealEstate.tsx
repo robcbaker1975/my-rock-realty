@@ -190,7 +190,7 @@ export default function FalconCoRealEstate() {
               <li><strong>Briargate / Northgate / Flying Horse</strong> when the buyer realizes they still want more neighborhood structure than they first thought</li>
             </ul>
             <p className="mb-4">That is why Falcon matters in the cluster.</p>
-            <p className="mb-4">It is not just another outer-area name. It gives buyers a version of "more space" that often feels simpler than Black Forest and less town-centered than Monument.</p>
+            <p className="mb-4">It gives buyers more space in a way that often feels simpler than Black Forest and less town-focused than Monument.</p>
             <p>That difference is useful.</p>
           </section>
 
