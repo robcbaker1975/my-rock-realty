@@ -51,6 +51,7 @@ import LafayetteCoHomesForSale from "./pages/LafayetteCoHomesForSale";
 import LongmontCoHomesForSale from "./pages/LongmontCoHomesForSale";
 import NiwotCoHomesForSale from "./pages/NiwotCoHomesForSale";
 import ColoradoSpringsCoHomesForSale from "./pages/ColoradoSpringsCoHomesForSale";
+import MovingToColoradoSprings from "./pages/MovingToColoradoSprings";
 import ColoradoSpringsHomesForSale from "./pages/ColoradoSpringsHomesForSale";
 import ManitouSpringsCoHomesForSale from "./pages/ManitouSpringsCoHomesForSale";
 import WidefieldCoHomesForSale from "./pages/WidefieldCoHomesForSale";
@@ -156,6 +157,7 @@ function Router() {
       <Route path={"/lafayette-co-homes-for-sale"} component={LafayetteCoHomesForSale} />
       <Route path={"/longmont-co-homes-for-sale"} component={LongmontCoHomesForSale} />
       <Route path={"/niwot-co-homes-for-sale"} component={NiwotCoHomesForSale} />
+      <Route path={"/moving-to-colorado-springs/"} component={MovingToColoradoSprings} />
       <Route path={"/colorado-springs-co-homes-for-sale"} component={ColoradoSpringsCoHomesForSale} />
       <Route path={"/colorado-springs-homes-for-sale"} component={ColoradoSpringsHomesForSale} />
       <Route path={"/manitou-springs-co-homes-for-sale"} component={ManitouSpringsCoHomesForSale} />
