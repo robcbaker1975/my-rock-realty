@@ -58,6 +58,7 @@ import NorthgateColoradoSpringsRealEstate from "./pages/NorthgateColoradoSprings
 import FlyingHorseColoradoSpringsRealEstate from "./pages/FlyingHorseColoradoSpringsRealEstate";
 import BlackForestCoRealEstate from "./pages/BlackForestCoRealEstate";
 import FalconCoRealEstate from "./pages/FalconCoRealEstate";
+import BanningLewisRanchColoradoSpringsRealEstate from "./pages/BanningLewisRanchColoradoSpringsRealEstate";
 import ColoradoSpringsHomesForSale from "./pages/ColoradoSpringsHomesForSale";
 import ManitouSpringsCoHomesForSale from "./pages/ManitouSpringsCoHomesForSale";
 import WidefieldCoHomesForSale from "./pages/WidefieldCoHomesForSale";
@@ -170,6 +171,7 @@ function Router() {
       <Route path={"/flying-horse-colorado-springs-real-estate/"} component={FlyingHorseColoradoSpringsRealEstate} />
       <Route path={"/black-forest-co-real-estate/"} component={BlackForestCoRealEstate} />
       <Route path={"/falcon-co-real-estate/"} component={FalconCoRealEstate} />
+      <Route path={"/banning-lewis-ranch-colorado-springs-real-estate/"} component={BanningLewisRanchColoradoSpringsRealEstate} />
       <Route path={"/colorado-springs-co-homes-for-sale"} component={ColoradoSpringsCoHomesForSale} />
       <Route path={"/colorado-springs-homes-for-sale"} component={ColoradoSpringsHomesForSale} />
       <Route path={"/manitou-springs-co-homes-for-sale"} component={ManitouSpringsCoHomesForSale} />
