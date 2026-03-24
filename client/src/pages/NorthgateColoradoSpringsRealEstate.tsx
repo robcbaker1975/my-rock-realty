@@ -297,7 +297,7 @@ export default function NorthgateColoradoSpringsRealEstate() {
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-stone-500 text-sm">
           <span>© {new Date().getFullYear()} My Rock Realty · Rob Baker, Broker/Owner</span>
           <div className="flex gap-4">
-            <a href="/privacy-policy" className="hover:text-stone-300 transition-colors">Privacy Policy</a>
+            <a href="/privacy" className="hover:text-stone-300 transition-colors">Privacy Policy</a>
             <a href="/terms" className="hover:text-stone-300 transition-colors">Terms</a>
             <a href="/fair-housing" className="hover:text-stone-300 transition-colors">Fair Housing</a>
             <a href="/accessibility" className="hover:text-stone-300 transition-colors">Accessibility</a>
