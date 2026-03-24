@@ -54,6 +54,7 @@ import ColoradoSpringsCoHomesForSale from "./pages/ColoradoSpringsCoHomesForSale
 import MovingToColoradoSprings from "./pages/MovingToColoradoSprings";
 import MonumentCoRealEstate from "./pages/MonumentCoRealEstate";
 import BriargateColoradoSpringsRealEstate from "./pages/BriargateColoradoSpringsRealEstate";
+import NorthgateColoradoSpringsRealEstate from "./pages/NorthgateColoradoSpringsRealEstate";
 import ColoradoSpringsHomesForSale from "./pages/ColoradoSpringsHomesForSale";
 import ManitouSpringsCoHomesForSale from "./pages/ManitouSpringsCoHomesForSale";
 import WidefieldCoHomesForSale from "./pages/WidefieldCoHomesForSale";
@@ -162,6 +163,7 @@ function Router() {
       <Route path={"/moving-to-colorado-springs/"} component={MovingToColoradoSprings} />
       <Route path={"/monument-co-real-estate/"} component={MonumentCoRealEstate} />
       <Route path={"/briargate-colorado-springs-real-estate/"} component={BriargateColoradoSpringsRealEstate} />
+      <Route path={"/northgate-colorado-springs-real-estate/"} component={NorthgateColoradoSpringsRealEstate} />
       <Route path={"/colorado-springs-co-homes-for-sale"} component={ColoradoSpringsCoHomesForSale} />
       <Route path={"/colorado-springs-homes-for-sale"} component={ColoradoSpringsHomesForSale} />
       <Route path={"/manitou-springs-co-homes-for-sale"} component={ManitouSpringsCoHomesForSale} />
