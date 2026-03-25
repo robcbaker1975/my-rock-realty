@@ -236,7 +236,11 @@ export default function MountainShadowsColoradoSpringsRealEstate() {
               <a href="/old-colorado-city-colorado-springs-real-estate/" className="text-amber-700 hover:underline">
                 Old Colorado City
               </a>{" "}
-              may fit better. If you want a more tucked-away foothills feel, Peregrine may fit better.
+              may fit better. If you want a more tucked-away foothills feel,{" "}
+              <a href="/peregrine-colorado-springs-real-estate/" className="text-amber-700 hover:underline">
+                Peregrine
+              </a>{" "}
+              may fit better.
             </p>
             <p>That does not make Mountain Shadows weak.</p>
             <p>It just means the upside and the tradeoff are tied together.</p>
@@ -262,7 +266,14 @@ export default function MountainShadowsColoradoSpringsRealEstate() {
             <p>That is where the real comparisons come in:</p>
             <ul>
               <li><strong>Mountain Shadows</strong> for a more scenic, established, west-side neighborhood move</li>
-              <li><strong>Peregrine</strong> for a more tucked-away and foothills-driven version of the search</li>
+              <li>
+                <strong>
+                  <a href="/peregrine-colorado-springs-real-estate/" className="text-amber-700 hover:underline">
+                    Peregrine
+                  </a>
+                </strong>{" "}
+                for a more tucked-away and foothills-driven version of the search
+              </li>
               <li>
                 <strong>
                   <a href="/old-colorado-city-colorado-springs-real-estate/" className="text-amber-700 hover:underline">

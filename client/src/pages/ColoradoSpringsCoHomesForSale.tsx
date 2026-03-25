@@ -348,6 +348,57 @@ export default function ColoradoSpringsCoHomesForSale() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
+          NEIGHBORHOODS
+      ═══════════════════════════════════════════════════ */}
+      <section className="bg-charcoal/5 border-y border-charcoal/8 py-12 sm:py-16">
+        <div className="container max-w-3xl">
+          <h2
+            className="text-xl sm:text-2xl font-bold text-charcoal mb-5"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            Colorado Springs Neighborhoods
+          </h2>
+          <p className="text-charcoal/80 text-base leading-relaxed mb-6" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            If you already know which part of Colorado Springs fits you best, these pages go deeper on specific neighborhoods and nearby areas.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-2" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            {[
+              { label: "Briargate", href: "/briargate-colorado-springs-real-estate/" },
+              { label: "Northgate", href: "/northgate-colorado-springs-real-estate/" },
+              { label: "Flying Horse", href: "/flying-horse-colorado-springs-real-estate/" },
+              { label: "Cordera", href: "/cordera-colorado-springs-real-estate/" },
+              { label: "Pine Creek", href: "/pine-creek-colorado-springs-real-estate/" },
+              { label: "Banning Lewis Ranch", href: "/banning-lewis-ranch-colorado-springs-real-estate/" },
+              { label: "Old Colorado City", href: "/old-colorado-city-colorado-springs-real-estate/" },
+              { label: "Old North End", href: "/old-north-end-colorado-springs-real-estate/" },
+              { label: "Broadmoor / Cheyenne Mountain", href: "/broadmoor-cheyenne-mountain-colorado-springs-real-estate/" },
+              { label: "Mountain Shadows", href: "/mountain-shadows-colorado-springs-real-estate/" },
+              { label: "Peregrine", href: "/peregrine-colorado-springs-real-estate/" },
+              { label: "Black Forest", href: "/black-forest-co-real-estate/" },
+              { label: "Falcon", href: "/falcon-co-real-estate/" },
+              { label: "Monument", href: "/monument-co-real-estate/" },
+              { label: "Manitou Springs", href: "/manitou-springs-co-real-estate/" },
+              { label: "Fountain", href: "/fountain-co-real-estate/" },
+              { label: "Palmer Lake", href: "/palmer-lake-co-real-estate/" },
+              { label: "Woodland Park", href: "/woodland-park-co-real-estate/" },
+              { label: "Peyton", href: "/peyton-co-real-estate/" },
+              { label: "Calhan", href: "/calhan-co-real-estate/" },
+            ].map((n) => (
+              <div key={n.href} className="flex items-center gap-2 py-1">
+                <ArrowRight size={13} className="text-gold shrink-0" />
+                <a
+                  href={n.href}
+                  className="text-gold underline underline-offset-2 hover:opacity-80 transition-opacity text-[15px]"
+                >
+                  {n.label}
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
           FAQ
       ═══════════════════════════════════════════════════ */}
       <section className="bg-charcoal/5 border-y border-charcoal/8 py-12 sm:py-16">

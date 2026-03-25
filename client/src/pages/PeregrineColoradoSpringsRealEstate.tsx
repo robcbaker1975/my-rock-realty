@@ -342,7 +342,12 @@ export default function PeregrineColoradoSpringsRealEstate() {
               Cordera usually feels newer and more intentionally connected from the start. Peregrine
               usually feels more shaped by foothills and open-space access.
             </p>
-            <p>That is also what separates it from Mountain Shadows.</p>
+            <p>
+              That is also what separates it from{" "}
+              <a href="/mountain-shadows-colorado-springs-real-estate/" className="text-amber-700 hover:underline">
+                Mountain Shadows
+              </a>.
+            </p>
             <p>
               Mountain Shadows often feels more scenic and more visibly west-side. Peregrine usually
               feels more tucked in and a little more secluded.
@@ -358,7 +363,10 @@ export default function PeregrineColoradoSpringsRealEstate() {
 
             <h3 className="text-xl font-semibold text-[#292524] mt-6">Peregrine vs Mountain Shadows</h3>
             <p>
-              Mountain Shadows usually makes more sense when someone wants west-side scenery and
+              <a href="/mountain-shadows-colorado-springs-real-estate/" className="text-amber-700 hover:underline">
+                Mountain Shadows
+              </a>{" "}
+              usually makes more sense when someone wants west-side scenery and
               neighborhood feel without quite as much of the tucked-away effect.
             </p>
             <p>
