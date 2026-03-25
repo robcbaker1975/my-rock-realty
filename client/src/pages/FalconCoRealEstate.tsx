@@ -265,7 +265,7 @@ export default function FalconCoRealEstate() {
             <p className="mb-4">For the wrong buyer, it can feel a little too broad, a little too shaped by newer growth, or a little too removed from the kind of place identity they actually wanted.</p>
             <p className="mb-4">That is why the real question is not whether Falcon is good.</p>
             <p className="mb-4">It is whether Falcon fits the way you actually want to live.</p>
-            <p>If you are trying to sort out Falcon versus Black Forest, Monument, or the broader Colorado Springs map, My Rock Homes can help you narrow that down before you get too attached to a specific house.</p>
+            <p>If you are trying to sort out Falcon versus Black Forest, Monument, or the broader Colorado Springs map, My Rock Realty can help you narrow that down before you get too attached to a specific house.</p>
           </section>
 
           {/* CTA */}

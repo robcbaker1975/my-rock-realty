@@ -79,7 +79,7 @@ export default function BroadmoorCheyenneMountainColoradoSpringsRealEstate() {
       <SeoHead
         metadata={{
           title:
-            "Broadmoor / Cheyenne Mountain, Colorado Springs Real Estate | My Rock Homes",
+            "Broadmoor / Cheyenne Mountain, Colorado Springs Real Estate | My Rock Realty",
           description:
             "Broadmoor / Cheyenne Mountain offers one of the more established, scenic, and polished neighborhood searches in Colorado Springs. Here is what the search usually looks like.",
           canonicalUrl:
@@ -538,7 +538,7 @@ export default function BroadmoorCheyenneMountainColoradoSpringsRealEstate() {
                 <p>
                   If you are trying to sort out Broadmoor / Cheyenne Mountain
                   versus Old North End, Old Colorado City, Banning Lewis Ranch,
-                  or the broader Colorado Springs map, My Rock Homes can help
+                  or the broader Colorado Springs map, My Rock Realty can help
                   you narrow that down before you get too attached to a specific
                   house.
                 </p>
@@ -551,7 +551,7 @@ export default function BroadmoorCheyenneMountainColoradoSpringsRealEstate() {
                 Ready to explore Broadmoor / Cheyenne Mountain?
               </h2>
               <p className="text-stone-300">
-                My Rock Homes can help you figure out whether Broadmoor /
+                My Rock Realty can help you figure out whether Broadmoor /
                 Cheyenne Mountain fits your search — or whether another part of
                 Colorado Springs makes more sense.
               </p>
@@ -577,7 +577,7 @@ export default function BroadmoorCheyenneMountainColoradoSpringsRealEstate() {
         <footer className="border-t border-stone-700 px-6 py-8 mt-8">
           <div className="max-w-3xl mx-auto text-center text-stone-500 text-sm space-y-2">
             <p>
-              © {new Date().getFullYear()} My Rock Homes · Rob Baker,
+              © {new Date().getFullYear()} My Rock Realty · Rob Baker,
               Broker/Owner
             </p>
             <div className="flex justify-center gap-4 flex-wrap">

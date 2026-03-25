@@ -599,7 +599,7 @@ export default function MovingToColoradoSprings() {
               That means narrowing down the parts of town that fit your budget, your commute, and the kind of home you actually want, then looking at homes inside the right search area.
             </p>
             <p className="text-cream/75 text-base leading-relaxed mb-8 max-w-xl mx-auto">
-              If you want help sorting through that, My Rock Homes can help with clear strategy, real-world guidance, and a no-pressure conversation.
+              If you want help sorting through that, My Rock Realty can help with clear strategy, real-world guidance, and a no-pressure conversation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <CTAButton label="Talk to Rob About Colorado Springs" />

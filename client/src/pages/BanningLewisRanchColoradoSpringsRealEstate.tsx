@@ -262,7 +262,7 @@ export default function BanningLewisRanchColoradoSpringsRealEstate() {
             <p className="mb-4">For the wrong buyer, it can feel a little too new, a little too planned, or a little too uniform.</p>
             <p className="mb-4">That is why the real question is not whether Banning Lewis Ranch is good.</p>
             <p className="mb-4">It is whether Banning Lewis Ranch fits the way you actually want to live.</p>
-            <p>If you are trying to sort out Banning Lewis Ranch versus Briargate, Flying Horse, Falcon, or the broader Colorado Springs map, My Rock Homes can help you narrow that down before you get too attached to a specific house.</p>
+            <p>If you are trying to sort out Banning Lewis Ranch versus Briargate, Flying Horse, Falcon, or the broader Colorado Springs map, My Rock Realty can help you narrow that down before you get too attached to a specific house.</p>
           </section>
 
           {/* CTA */}

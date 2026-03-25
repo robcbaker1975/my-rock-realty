@@ -381,7 +381,7 @@ export default function ColoradoSpringsCoHomesForSale() {
             If you're ready to search Colorado Springs homes, the next step is usually getting clear on the right part of the market before you get too attached to a specific listing.
           </p>
           <p className="text-charcoal/75 text-base leading-relaxed mb-8" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
-            My Rock Homes can help you narrow the search with clear strategy, real-world guidance, and a no-pressure conversation.
+            My Rock Realty can help you narrow the search with clear strategy, real-world guidance, and a no-pressure conversation.
           </p>
           <a
             href="/#contact"

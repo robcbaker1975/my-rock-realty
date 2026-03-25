@@ -75,7 +75,7 @@ export default function ManitouSpringsCoRealEstate() {
       <SeoHead
         metadata={{
           title:
-            "Manitou Springs, CO Real Estate | Living in Manitou Springs | My Rock Homes",
+            "Manitou Springs, CO Real Estate | Living in Manitou Springs | My Rock Realty",
           description:
             "Manitou Springs offers one of the most distinct, town-like, mountain-edge living options near Colorado Springs. Here is what the search usually looks like.",
           canonicalUrl:
@@ -529,7 +529,7 @@ export default function ManitouSpringsCoRealEstate() {
                 <p>
                   If you are trying to sort out Manitou Springs versus Old
                   Colorado City, Old North End, Broadmoor / Cheyenne Mountain,
-                  or the broader Colorado Springs map, My Rock Homes can help
+                  or the broader Colorado Springs map, My Rock Realty can help
                   you narrow that down before you get too attached to a specific
                   house.
                 </p>
@@ -542,7 +542,7 @@ export default function ManitouSpringsCoRealEstate() {
                 Ready to explore Manitou Springs?
               </h2>
               <p className="text-stone-300">
-                My Rock Homes can help you figure out whether Manitou Springs
+                My Rock Realty can help you figure out whether Manitou Springs
                 fits your search — or whether another part of the Colorado
                 Springs area makes more sense.
               </p>
@@ -568,7 +568,7 @@ export default function ManitouSpringsCoRealEstate() {
         <footer className="border-t border-stone-700 px-6 py-8 mt-8">
           <div className="max-w-3xl mx-auto text-center text-stone-500 text-sm space-y-2">
             <p>
-              © {new Date().getFullYear()} My Rock Homes · Rob Baker,
+              © {new Date().getFullYear()} My Rock Realty · Rob Baker,
               Broker/Owner
             </p>
             <div className="flex justify-center gap-4 flex-wrap">

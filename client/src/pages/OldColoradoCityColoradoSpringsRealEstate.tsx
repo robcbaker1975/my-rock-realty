@@ -81,7 +81,7 @@ function FAQItem({
 /* ─── Page Component ─── */
 export default function OldColoradoCityColoradoSpringsRealEstate() {
   const pageTitle =
-    "Old Colorado City, Colorado Springs Real Estate | My Rock Homes";
+    "Old Colorado City, Colorado Springs Real Estate | My Rock Realty";
   const pageDescription =
     "Old Colorado City offers one of the more established, walkable, character-driven neighborhood searches in Colorado Springs. Here is what the search usually looks like.";
   const canonicalUrl =
@@ -536,7 +536,7 @@ export default function OldColoradoCityColoradoSpringsRealEstate() {
                 <p>
                   If you are trying to sort out Old Colorado City versus Manitou
                   Springs, Briargate, Banning Lewis Ranch, or the broader
-                  Colorado Springs map, My Rock Homes can help you narrow that
+                  Colorado Springs map, My Rock Realty can help you narrow that
                   down before you get too attached to a specific house.
                 </p>
               </div>
@@ -548,7 +548,7 @@ export default function OldColoradoCityColoradoSpringsRealEstate() {
                 Ready to explore Old Colorado City?
               </h2>
               <p className="text-stone-300">
-                My Rock Homes can help you figure out whether Old Colorado City
+                My Rock Realty can help you figure out whether Old Colorado City
                 fits your search — or whether another part of Colorado Springs
                 makes more sense.
               </p>
@@ -574,7 +574,7 @@ export default function OldColoradoCityColoradoSpringsRealEstate() {
         <footer className="border-t border-stone-700 px-6 py-8 mt-8">
           <div className="max-w-3xl mx-auto text-center text-stone-500 text-sm space-y-2">
             <p>
-              © {new Date().getFullYear()} My Rock Homes · Rob Baker, Broker/Owner
+              © {new Date().getFullYear()} My Rock Realty · Rob Baker, Broker/Owner
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
               <a href="/privacy" className="hover:text-gold transition-colors">

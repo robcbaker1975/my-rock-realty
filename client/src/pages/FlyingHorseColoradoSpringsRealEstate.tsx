@@ -259,7 +259,7 @@ export default function FlyingHorseColoradoSpringsRealEstate() {
             <p className="mb-4">For the wrong buyer, it can feel more branded or more specific than they really wanted.</p>
             <p className="mb-4">That is why the real question is not whether Flying Horse is good.</p>
             <p className="mb-4">It is whether Flying Horse fits the way you want Colorado Springs to work once the move is real.</p>
-            <p>If you are trying to sort out Flying Horse versus Briargate, Northgate, Monument, or the broader Colorado Springs map, My Rock Homes can help you narrow that down before you get too attached to a specific house.</p>
+            <p>If you are trying to sort out Flying Horse versus Briargate, Northgate, Monument, or the broader Colorado Springs map, My Rock Realty can help you narrow that down before you get too attached to a specific house.</p>
           </section>
 
           {/* CTA */}

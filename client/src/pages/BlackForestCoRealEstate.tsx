@@ -265,7 +265,7 @@ export default function BlackForestCoRealEstate() {
             <p className="mb-4">For the wrong buyer, it can feel like more upkeep, more spread, and more property than they really wanted.</p>
             <p className="mb-4">That is why the real question is not whether Black Forest is good.</p>
             <p className="mb-4">It is whether Black Forest fits the way you actually want to live.</p>
-            <p>If you are trying to sort out Black Forest versus Monument, Falcon, or the broader Colorado Springs map, My Rock Homes can help you narrow that down before you get too attached to a specific property.</p>
+            <p>If you are trying to sort out Black Forest versus Monument, Falcon, or the broader Colorado Springs map, My Rock Realty can help you narrow that down before you get too attached to a specific property.</p>
           </section>
 
           {/* CTA */}

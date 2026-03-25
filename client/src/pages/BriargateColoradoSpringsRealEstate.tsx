@@ -399,7 +399,7 @@ export default function BriargateColoradoSpringsRealEstate() {
             </p>
             <p>
               If you are trying to sort out Briargate versus Northgate, Flying Horse, Banning Lewis
-              Ranch, or the broader Colorado Springs map, My Rock Homes can help you narrow that down
+              Ranch, or the broader Colorado Springs map, My Rock Realty can help you narrow that down
               before you get too attached to a specific house.
             </p>
           </div>

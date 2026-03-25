@@ -405,7 +405,7 @@ export default function MonumentCoRealEstate() {
               <p>It is whether Monument fits the way you actually want to live.</p>
               <p>
                 If you are trying to sort out whether Monument, north Colorado Springs, or another
-                nearby area makes the most sense, My Rock Homes can help you get clear on the map
+                nearby area makes the most sense, My Rock Realty can help you get clear on the map
                 before you get too far into the house search.
               </p>
             </div>
