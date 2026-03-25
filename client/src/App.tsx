@@ -66,6 +66,7 @@ import ManitouSpringsCoRealEstate from "./pages/ManitouSpringsCoRealEstate";
 import PeytonCoRealEstate from "./pages/PeytonCoRealEstate";
 import WoodlandParkCoRealEstate from "./pages/WoodlandParkCoRealEstate";
 import FountainCoRealEstate from "./pages/FountainCoRealEstate";
+import CalhanCoRealEstate from "./pages/CalhanCoRealEstate";
 import ColoradoSpringsHomesForSale from "./pages/ColoradoSpringsHomesForSale";
 import ManitouSpringsCoHomesForSale from "./pages/ManitouSpringsCoHomesForSale";
 import WidefieldCoHomesForSale from "./pages/WidefieldCoHomesForSale";
@@ -186,6 +187,7 @@ function Router() {
       <Route path={"/peyton-co-real-estate/"} component={PeytonCoRealEstate} />
       <Route path={"/woodland-park-co-real-estate/"} component={WoodlandParkCoRealEstate} />
       <Route path={"/fountain-co-real-estate/"} component={FountainCoRealEstate} />
+      <Route path={"/calhan-co-real-estate/"} component={CalhanCoRealEstate} />
       <Route path={"/colorado-springs-co-homes-for-sale"} component={ColoradoSpringsCoHomesForSale} />
       <Route path={"/colorado-springs-homes-for-sale"} component={ColoradoSpringsHomesForSale} />
       <Route path={"/manitou-springs-co-homes-for-sale"} component={ManitouSpringsCoHomesForSale} />
