@@ -334,6 +334,12 @@ export default function MovingToColoradoSprings() {
                     "That often comes with a stronger sense of place, but also more variation in condition, updating, layout, and lot setup.",
                     "For the right buyer, this part of the market can be a great fit. It just helps to know the search usually feels a little less predictable.",
                   ],
+                  extra: (
+                    <p className="text-charcoal/80 text-base leading-relaxed mt-3">
+                      See:{" "}
+                      <a href="/old-north-end-colorado-springs-real-estate/" className="text-gold underline hover:text-gold-light">Old North End</a>
+                    </p>
+                  ),
                 },
                 {
                   title: "West-Side and Foothill-Adjacent Neighborhoods",
@@ -342,6 +348,13 @@ export default function MovingToColoradoSprings() {
                     "These neighborhoods often have more varied terrain, more visual character, and a stronger connection to the landscape. Places like Old Colorado City help explain why the west side has such a strong pull for some buyers. That can make these areas feel more distinctive right away.",
                     "It can also mean older homes, more property-level differences, and a search that takes a little more attention. For some buyers, this part of Colorado Springs feels like exactly what they had in mind. It just helps to look closely and understand the property, not just the backdrop.",
                   ],
+                  extra: (
+                    <p className="text-charcoal/80 text-base leading-relaxed mt-3">
+                      See:{" "}
+                      <a href="/old-colorado-city-colorado-springs-real-estate/" className="text-gold underline hover:text-gold-light">Old Colorado City</a>,{" "}
+                      <a href="/broadmoor-cheyenne-mountain-colorado-springs-real-estate/" className="text-gold underline hover:text-gold-light">Broadmoor / Cheyenne Mountain</a>
+                    </p>
+                  ),
                 },
                 {
                   title: "North-Side Areas",
@@ -351,6 +364,14 @@ export default function MovingToColoradoSprings() {
                     "That's a big part of the appeal.",
                     "The tradeoff is that these neighborhoods can feel more planned and more predictable. If you're looking for older character or a less uniform feel, you may find the north side feels a little too consistent.",
                   ],
+                  extra: (
+                    <p className="text-charcoal/80 text-base leading-relaxed mt-3">
+                      See:{" "}
+                      <a href="/briargate-colorado-springs-real-estate/" className="text-gold underline hover:text-gold-light">Briargate</a>,{" "}
+                      <a href="/northgate-colorado-springs-real-estate/" className="text-gold underline hover:text-gold-light">Northgate</a>,{" "}
+                      <a href="/flying-horse-colorado-springs-real-estate/" className="text-gold underline hover:text-gold-light">Flying Horse</a>
+                    </p>
+                  ),
                 },
                 {
                   title: "East and Northeast Growth Areas",
@@ -360,6 +381,12 @@ export default function MovingToColoradoSprings() {
                     "That's part of the appeal.",
                     "The tradeoff is usually about feel. Some buyers like the consistency and ease. Others decide they want more variation, more mature landscaping, or a little more of an established feel.",
                   ],
+                  extra: (
+                    <p className="text-charcoal/80 text-base leading-relaxed mt-3">
+                      See:{" "}
+                      <a href="/banning-lewis-ranch-colorado-springs-real-estate/" className="text-gold underline hover:text-gold-light">Banning Lewis Ranch</a>
+                    </p>
+                  ),
                 },
                 {
                   title: "South and Southeast Areas",
@@ -391,6 +418,12 @@ export default function MovingToColoradoSprings() {
                     "The tradeoff is just as clear. More land usually means more upkeep. More distance often means more driving. And the search itself can feel a little less predictable from one property to the next.",
                     "For some buyers, that's exactly the point. For others, it ends up being more than they really wanted to take on once the move becomes real.",
                   ],
+                  extra: (
+                    <p className="text-charcoal/80 text-base leading-relaxed mt-3">
+                      See:{" "}
+                      <a href="/black-forest-co-real-estate/" className="text-gold underline hover:text-gold-light">Black Forest</a>
+                    </p>
+                  ),
                 },
                 {
                   title: "Nearby Communities Some Buyers Also Consider",
@@ -399,6 +432,19 @@ export default function MovingToColoradoSprings() {
                     "That can mean places like Manitou Springs, Monument, Palmer Lake, Falcon, Peyton, Fountain, Black Forest, Woodland Park, or Calhan, depending on what matters most to them.",
                     "Sometimes the draw is a different setting. Sometimes it's more space, more privacy, a different commute, or a different kind of day-to-day feel. That doesn't make these communities better or worse than Colorado Springs. It just means some buyers end up finding the right fit a little outside the city itself.",
                   ],
+                  extra: (
+                    <p className="text-charcoal/80 text-base leading-relaxed mt-3">
+                      See:{" "}
+                      <a href="/manitou-springs-co-real-estate/" className="text-gold underline hover:text-gold-light">Manitou Springs</a>,{" "}
+                      <a href="/monument-co-real-estate/" className="text-gold underline hover:text-gold-light">Monument</a>,{" "}
+                      <a href="/palmer-lake-co-real-estate/" className="text-gold underline hover:text-gold-light">Palmer Lake</a>,{" "}
+                      <a href="/falcon-co-real-estate/" className="text-gold underline hover:text-gold-light">Falcon</a>,{" "}
+                      <a href="/peyton-co-real-estate/" className="text-gold underline hover:text-gold-light">Peyton</a>,{" "}
+                      <a href="/fountain-co-real-estate/" className="text-gold underline hover:text-gold-light">Fountain</a>,{" "}
+                      <a href="/woodland-park-co-real-estate/" className="text-gold underline hover:text-gold-light">Woodland Park</a>,{" "}
+                      <a href="/calhan-co-real-estate/" className="text-gold underline hover:text-gold-light">Calhan</a>
+                    </p>
+                  ),
                 },
               ].map((area, i) => (
                 <div key={i}>
