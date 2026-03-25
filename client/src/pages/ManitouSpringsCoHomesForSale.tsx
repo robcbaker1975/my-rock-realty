@@ -256,7 +256,7 @@ export default function ManitouSpringsCoHomesForSale() {
             {[
               {
                 name: "Colorado Springs",
-                link: "/colorado-springs-homes-for-sale",
+                link: "/colorado-springs-co-homes-for-sale",
               },
               {
                 name: "Widefield",
@@ -349,7 +349,7 @@ export default function ManitouSpringsCoHomesForSale() {
             {[
               {
                 title: "Colorado Springs Homes",
-                link: "/colorado-springs-homes-for-sale",
+                link: "/colorado-springs-co-homes-for-sale",
               },
               {
                 title: "Widefield Homes",

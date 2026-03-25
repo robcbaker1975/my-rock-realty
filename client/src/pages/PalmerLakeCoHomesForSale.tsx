@@ -256,7 +256,7 @@ export default function PalmerLakeCoHomesForSale() {
             {[
               {
                 name: "Colorado Springs",
-                link: "/colorado-springs-homes-for-sale",
+                link: "/colorado-springs-co-homes-for-sale",
               },
               {
                 name: "Manitou Springs",
@@ -349,7 +349,7 @@ export default function PalmerLakeCoHomesForSale() {
             {[
               {
                 title: "Colorado Springs Homes",
-                link: "/colorado-springs-homes-for-sale",
+                link: "/colorado-springs-co-homes-for-sale",
               },
               {
                 title: "Manitou Springs Homes",

@@ -18,7 +18,7 @@ const navLinks = [
 const marketLinks = [
   { label: "Denver", href: "/denver-homes-for-sale" },
   { label: "Boulder", href: "/boulder-homes-for-sale" },
-  { label: "Colorado Springs", href: "/colorado-springs-homes-for-sale" },
+  { label: "Colorado Springs", href: "/colorado-springs-co-homes-for-sale" },
   { label: "Fort Collins", href: "/fort-collins-homes-for-sale" },
 ];
 

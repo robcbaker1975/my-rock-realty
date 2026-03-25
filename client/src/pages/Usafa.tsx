@@ -80,22 +80,22 @@ const nearbyMarkets = [
   {
     name: "Colorado Springs",
     description: "The primary metro area near USAFA, offering a wide range of neighborhoods, price points, and amenities.",
-    href: "/colorado-springs-homes-for-sale",
+    href: "/colorado-springs-co-homes-for-sale",
   },
   {
     name: "Monument & Tri-Lakes",
     description: "Communities directly adjacent to USAFA along I-25 — popular with Academy families for short commutes and quality schools.",
-    href: "/colorado-springs-homes-for-sale",
+    href: "/colorado-springs-co-homes-for-sale",
   },
   {
     name: "Black Forest",
     description: "A semi-rural area northeast of USAFA known for larger lots, wooded settings, and a quieter lifestyle.",
-    href: "/colorado-springs-homes-for-sale",
+    href: "/colorado-springs-co-homes-for-sale",
   },
   {
     name: "Northern Colorado Springs",
     description: "Established and newer neighborhoods in north Colorado Springs offering more urban amenities with reasonable USAFA commutes.",
-    href: "/colorado-springs-homes-for-sale",
+    href: "/colorado-springs-co-homes-for-sale",
   },
 ];
 
