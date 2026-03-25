@@ -56,6 +56,11 @@ async function startServer() {
     next();
   });
 
+  // 301 redirect: Colorado Springs homes duplicate → canonical URL
+  app.get(["/colorado-springs-homes-for-sale", "/colorado-springs-homes-for-sale/"], (_req, res) =>
+    res.redirect(301, "/colorado-springs-co-homes-for-sale")
+  );
+
   // 301 redirects: Academy alternate slugs → canonical URL
   app.get(["/military-relocation/usafa", "/military-relocation/usafa/"], (_req, res) =>
     res.redirect(301, "/military-relocation/us-air-force-academy/")
