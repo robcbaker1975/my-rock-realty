@@ -38,6 +38,8 @@ const buyerGuideLinks = [
   { label: "Cherry Creek Buyer Guide", href: "/cherry-creek-denver-buyer-guide" },
   { label: "LoHi Buyer Guide", href: "/lohi-denver-buyer-guide" },
   { label: "RiNo Buyer Guide", href: "/rino-denver-buyer-guide" },
+  { label: "Central Park Buyer Guide", href: "/central-park-denver-buyer-guide" },
+  { label: "Sloan Lake Buyer Guide", href: "/sloan-lake-denver-buyer-guide" },
 ];
 
 // Representative comparison guides — existing pages only
