@@ -22,6 +22,29 @@ const marketLinks = [
   { label: "Fort Collins", href: "/fort-collins-homes-for-sale" },
 ];
 
+const coloradoSpringsNeighborhoods = [
+  { label: "Briargate", href: "/briargate-colorado-springs-real-estate/" },
+  { label: "Northgate", href: "/northgate-colorado-springs-real-estate/" },
+  { label: "Flying Horse", href: "/flying-horse-colorado-springs-real-estate/" },
+  { label: "Cordera", href: "/cordera-colorado-springs-real-estate/" },
+  { label: "Pine Creek", href: "/pine-creek-colorado-springs-real-estate/" },
+  { label: "Banning Lewis Ranch", href: "/banning-lewis-ranch-colorado-springs-real-estate/" },
+  { label: "Old Colorado City", href: "/old-colorado-city-colorado-springs-real-estate/" },
+  { label: "Old North End", href: "/old-north-end-colorado-springs-real-estate/" },
+  { label: "Broadmoor / Cheyenne Mtn", href: "/broadmoor-cheyenne-mountain-colorado-springs-real-estate/" },
+  { label: "Mountain Shadows", href: "/mountain-shadows-colorado-springs-real-estate/" },
+  { label: "Peregrine", href: "/peregrine-colorado-springs-real-estate/" },
+  { label: "Black Forest", href: "/black-forest-co-real-estate/" },
+  { label: "Falcon", href: "/falcon-co-real-estate/" },
+  { label: "Monument", href: "/monument-co-real-estate/" },
+  { label: "Manitou Springs", href: "/manitou-springs-co-real-estate/" },
+  { label: "Fountain", href: "/fountain-co-real-estate/" },
+  { label: "Palmer Lake", href: "/palmer-lake-co-real-estate/" },
+  { label: "Woodland Park", href: "/woodland-park-co-real-estate/" },
+  { label: "Peyton", href: "/peyton-co-real-estate/" },
+  { label: "Calhan", href: "/calhan-co-real-estate/" },
+];
+
 // Secondary links — not part of main consumer funnel
 const JOIN_HREF = "/join-us";
 const COACHING_HREF = "/coaching";
@@ -58,7 +81,7 @@ function MarketsDropdown({ textClass }: { textClass: string }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.15 }}
-            className="absolute left-0 top-full mt-1 w-48 bg-charcoal/98 backdrop-blur-md border border-white/10 rounded-lg shadow-xl z-50 py-1.5"
+            className="absolute left-0 top-full mt-1 w-56 bg-charcoal/98 backdrop-blur-md border border-white/10 rounded-lg shadow-xl z-50 py-1.5"
           >
             {marketLinks.map((m) => (
               <a
@@ -72,6 +95,24 @@ function MarketsDropdown({ textClass }: { textClass: string }) {
                 {m.label}
               </a>
             ))}
+            {/* Colorado Springs Neighborhoods subsection */}
+            <div className="border-t border-white/10 mt-1 pt-1">
+              <p className="px-4 py-1.5 text-xs text-cream/35 uppercase tracking-widest" style={{ fontFamily: "'Outfit', sans-serif" }}>CS Neighborhoods</p>
+              <div className="max-h-56 overflow-y-auto">
+                {coloradoSpringsNeighborhoods.map((n) => (
+                  <a
+                    key={n.href}
+                    href={n.href}
+                    onClick={() => setOpen(false)}
+                    className="flex items-center gap-2 px-4 py-2 text-xs text-cream/60 hover:text-gold hover:bg-white/5 transition-colors"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    <MapPin size={10} className="text-gold/40 shrink-0" />
+                    {n.label}
+                  </a>
+                ))}
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -198,6 +239,22 @@ export default function Navbar() {
                         {m.label}
                       </a>
                     ))}
+                    {/* CS Neighborhoods subsection in mobile */}
+                    <div className="border-t border-white/10 mt-1 pt-1">
+                      <p className="px-8 py-1.5 text-xs text-cream/30 uppercase tracking-widest" style={{ fontFamily: "'Outfit', sans-serif" }}>CS Neighborhoods</p>
+                      {coloradoSpringsNeighborhoods.map((n) => (
+                        <a
+                          key={n.href}
+                          href={n.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="flex items-center gap-2 px-10 py-2.5 text-cream/50 hover:text-gold text-sm transition-colors"
+                          style={{ fontFamily: "'Outfit', sans-serif" }}
+                        >
+                          <MapPin size={10} className="text-gold/40 shrink-0" />
+                          {n.label}
+                        </a>
+                      ))}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>

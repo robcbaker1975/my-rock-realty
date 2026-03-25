@@ -85,12 +85,12 @@ const nearbyMarkets = [
   {
     name: "Monument & Tri-Lakes",
     description: "Communities directly adjacent to USAFA along I-25 — popular with Academy families for short commutes and quality schools.",
-    href: "/colorado-springs-co-homes-for-sale",
+    href: "/monument-co-real-estate/",
   },
   {
     name: "Black Forest",
     description: "A semi-rural area northeast of USAFA known for larger lots, wooded settings, and a quieter lifestyle.",
-    href: "/colorado-springs-co-homes-for-sale",
+    href: "/black-forest-co-real-estate/",
   },
   {
     name: "Northern Colorado Springs",
