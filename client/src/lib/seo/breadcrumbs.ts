@@ -43,7 +43,11 @@ export function buildBreadcrumbs(
       href: normalizeHref(item.href ?? item.url, siteUrl),
     }));
 
-  const withHome = includeHome
+  // Deduplication guard: do not prepend Home if the first item already represents Home
+  const firstItemIsHome = normalizedItems.length > 0 &&
+    normalizedItems[0].label.toLowerCase() === homeLabel.toLowerCase();
+
+  const withHome = includeHome && !firstItemIsHome
     ? [{ label: homeLabel, href: normalizeHref('/', siteUrl) }, ...normalizedItems]
     : normalizedItems;
 
