@@ -76,7 +76,7 @@ export default function BriargateColoradoSpringsRealEstate() {
           title: "Living in Briargate, Colorado Springs: Real Estate, Tradeoffs, and What It's Like",
           description:
             "Thinking about living in Briargate, Colorado Springs? Learn what Briargate is actually like, who it fits, the real tradeoffs, and how it compares with Northgate, Flying Horse, and Banning Lewis Ranch.",
-          canonicalUrl: "https://www.myrockhomes.com/briargate-colorado-springs-real-estate/",
+          canonicalUrl: "https://myrockhomes.com/briargate-colorado-springs-real-estate/",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

@@ -138,7 +138,7 @@ export default function CommerceCityHomesForSale() {
           title: "Commerce City Homes for Sale | My Rock Realty",
           description:
             "Explore homes for sale in Commerce City, Colorado. Practical buyer guidance for one of Adams County's primary cities in the northeast Denver metro area.",
-          canonicalUrl: "https://www.myrockhomes.com/commerce-city-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/commerce-city-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

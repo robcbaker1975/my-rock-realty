@@ -145,7 +145,7 @@ export default function DouglasCoHomesForSale() {
           title: "Douglas County, CO Homes for Sale | Douglas County Real Estate",
           description:
             "Explore Douglas County homes for sale, communities, property types, and local home buying resources for Parker and the broader Douglas County area.",
-          canonicalUrl: "https://www.myrockhomes.com/douglas-co-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/douglas-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

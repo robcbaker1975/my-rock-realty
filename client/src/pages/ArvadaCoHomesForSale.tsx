@@ -96,7 +96,7 @@ export default function ArvadaCoHomesForSale() {
           title: "Arvada CO Homes for Sale | Arvada Colorado Real Estate",
           description:
             "Explore Arvada CO homes for sale, neighborhood character, housing styles, local lifestyle appeal, and helpful resources for buying in Arvada, Colorado.",
-          canonicalUrl: "https://www.myrockhomes.com/arvada-co-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/arvada-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

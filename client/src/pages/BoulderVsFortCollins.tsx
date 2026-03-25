@@ -93,7 +93,7 @@ export default function BoulderVsFortCollins() {
           title: "Boulder vs Fort Collins Homes for Sale | Colorado City Comparison",
           description:
             "Boulder vs Fort Collins comparison for home buyers. Compare neighborhoods, housing mix, setting, and find which Northern Colorado city fits your search.",
-          canonicalUrl: "https://www.myrockhomes.com/boulder-vs-fort-collins",
+          canonicalUrl: "https://myrockhomes.com/boulder-vs-fort-collins",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

@@ -97,7 +97,7 @@ export default function WindsorCoHomesForSale() {
           title: "Windsor CO Homes for Sale | Windsor Colorado Real Estate",
           description:
             "Explore Windsor CO homes for sale, neighborhood character, housing styles, community amenities, and helpful resources for buying in Windsor, Colorado.",
-          canonicalUrl: "https://www.myrockhomes.com/windsor-co-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/windsor-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

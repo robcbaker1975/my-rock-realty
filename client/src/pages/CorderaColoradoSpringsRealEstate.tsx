@@ -77,7 +77,7 @@ export default function CorderaColoradoSpringsRealEstate() {
           title: "Living in Cordera, Colorado Springs: Real Estate, Tradeoffs, and What It's Like",
           description:
             "Thinking about living in Cordera, Colorado Springs? Learn what Cordera is actually like, who it fits, the real tradeoffs, and how it compares with Briargate, Flying Horse, and Banning Lewis Ranch.",
-          canonicalUrl: "https://www.myrockhomes.com/cordera-colorado-springs-real-estate/",
+          canonicalUrl: "https://myrockhomes.com/cordera-colorado-springs-real-estate/",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

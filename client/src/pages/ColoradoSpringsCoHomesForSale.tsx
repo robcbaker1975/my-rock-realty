@@ -109,7 +109,7 @@ export default function ColoradoSpringsCoHomesForSale() {
           title: "Colorado Springs, CO Homes for Sale | My Rock Realty",
           description:
             "Searching for homes for sale in Colorado Springs? Start with a clearer search strategy — budget, part of town, home type, and commute. My Rock Realty helps Colorado Springs buyers find the right fit.",
-          canonicalUrl: "https://www.myrockhomes.com/colorado-springs-co-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/colorado-springs-co-homes-for-sale",
         }}
         schema={faqSchema ? [faqSchema] : []}
       />

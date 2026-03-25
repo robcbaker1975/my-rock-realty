@@ -77,7 +77,7 @@ export default function PeregrineColoradoSpringsRealEstate() {
           title: "Living in Peregrine, Colorado Springs: Real Estate, Tradeoffs, and What It's Like",
           description:
             "Thinking about living in Peregrine, Colorado Springs? Learn what Peregrine is actually like, who it fits, the real tradeoffs, and how it compares with Mountain Shadows, Old Colorado City, and Cordera.",
-          canonicalUrl: "https://www.myrockhomes.com/peregrine-colorado-springs-real-estate/",
+          canonicalUrl: "https://myrockhomes.com/peregrine-colorado-springs-real-estate/",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

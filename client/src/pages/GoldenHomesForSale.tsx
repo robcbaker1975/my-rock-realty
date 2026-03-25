@@ -122,7 +122,7 @@ export default function GoldenHomesForSale() {
           title: "Golden Homes for Sale | Golden CO Real Estate | My Rock Realty",
           description:
             "Explore homes for sale in Golden, Colorado. Browse Golden neighborhoods, buyer resources, and connect with a local agent familiar with Jefferson County.",
-          canonicalUrl: "https://www.myrockhomes.com/golden-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/golden-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

@@ -17,7 +17,7 @@ export default function FairHousing() {
         metadata={{
           title: "Fair Housing & Equal Opportunity | My Rock Realty",
           description: "My Rock Realty is committed to fair housing practices. We comply with all federal, state, and local fair housing laws and equal opportunity regulations.",
-          canonicalUrl: "https://www.myrockhomes.com/fair-housing",
+          canonicalUrl: "https://myrockhomes.com/fair-housing",
         }}
       />
       {/* Header */}

@@ -99,7 +99,7 @@ export default function ColoradoSpringsHomesForSale() {
           title: "Colorado Springs Homes for Sale | Lifestyle, Relocation & Neighborhood Fit — My Rock Realty",
           description:
             "Thinking about buying or relocating to Colorado Springs? Explore who the city tends to attract, what living there is like, and how to find the neighborhood that fits your lifestyle.",
-          canonicalUrl: "https://www.myrockhomes.com/colorado-springs-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/colorado-springs-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

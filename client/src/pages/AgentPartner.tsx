@@ -206,7 +206,7 @@ export default function AgentPartner() {
               The site is live. You can see exactly how it's structured, how the market pages are built, and how the positioning works in practice. The execution speaks for itself.
             </motion.p>
             <motion.a
-              href="https://www.myrockhomes.com"
+              href="https://myrockhomes.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-charcoal font-display font-semibold text-sm border-b-2 border-gold pb-0.5 hover:text-gold transition-colors"

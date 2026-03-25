@@ -104,7 +104,7 @@ export default function MovingToColoradoSprings() {
           title: "Moving to Colorado Springs: Neighborhoods, Costs, and Tradeoffs",
           description:
             "Thinking about moving to Colorado Springs? Learn what to know about costs, different neighborhoods, commutes, and whether it makes sense to rent or buy first.",
-          canonicalUrl: "https://www.myrockhomes.com/moving-to-colorado-springs/",
+          canonicalUrl: "https://myrockhomes.com/moving-to-colorado-springs/",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

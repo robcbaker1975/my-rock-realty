@@ -75,7 +75,7 @@ export default function BuckleySpaceForceBase() {
         metadata={{
           title: "Buckley Space Force Base Relocation Guide | Aurora & Denver Metro Real Estate | My Rock Realty",
           description: "Practical relocation guidance for buyers moving to Buckley Space Force Base in Aurora and the Denver metro area. PCS planning, neighborhood orientation, and local market context for military families.",
-          canonicalUrl: "https://www.myrockhomes.com/military-relocation/buckley-space-force-base/",
+          canonicalUrl: "https://myrockhomes.com/military-relocation/buckley-space-force-base/",
           image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
         schema={[faqSchema]}

@@ -139,7 +139,7 @@ export default function BoulderCoHomesForSale() {
           title: "Boulder, CO Homes for Sale | Boulder Real Estate & Boulder County Homes",
           description:
             "Explore Boulder homes for sale, popular Boulder neighborhoods, nearby suburbs, property types, and local home buying resources for the Boulder County area.",
-          canonicalUrl: "https://www.myrockhomes.com/boulder-co-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/boulder-co-homes-for-sale",
         }}
         schema={faqSchema ? [faqSchema] : []}
       />

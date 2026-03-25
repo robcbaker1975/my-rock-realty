@@ -104,7 +104,7 @@ export default function DenverHomeBuyingProcess() {
           title: "Denver Home Buying Process | Steps to Buy a Home in Denver",
           description:
             "Denver home buying process explained. Understand each step, financing options, and expert resources to navigate your purchase successfully.",
-          canonicalUrl: "https://www.myrockhomes.com/denver-home-buying-process",
+          canonicalUrl: "https://myrockhomes.com/denver-home-buying-process",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

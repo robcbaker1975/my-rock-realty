@@ -119,7 +119,7 @@ export default function MorrisonCoHomesForSale() {
           title: "Morrison CO Homes for Sale | Morrison Colorado Real Estate | My Rock Realty",
           description:
             "Explore homes for sale in Morrison, Colorado. Browse Morrison neighborhoods, buyer resources, and connect with a local agent familiar with Jefferson County.",
-          canonicalUrl: "https://www.myrockhomes.com/morrison-co-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/morrison-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

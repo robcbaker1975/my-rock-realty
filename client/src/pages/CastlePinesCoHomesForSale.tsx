@@ -97,7 +97,7 @@ export default function CastlePinesCoHomesForSale() {
           title: "Castle Pines CO Homes for Sale | Castle Pines Colorado Real Estate",
           description:
             "Explore Castle Pines CO homes for sale, neighborhood character, housing styles, proximity to Douglas County communities, and helpful resources for buying in Castle Pines, Colorado.",
-          canonicalUrl: "https://www.myrockhomes.com/castle-pines-co-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/castle-pines-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

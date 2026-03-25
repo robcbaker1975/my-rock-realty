@@ -88,7 +88,7 @@ export default function RiNoDenverBuyerGuide() {
           title: "RiNo Denver Buyer Guide | River North Art District Home Search",
           description:
             "A practical buyer guide for RiNo (River North Art District) in Denver. Learn how block choice, Brighton Boulevard, and the Larimer and Walnut side of the neighborhood shape the RiNo home search.",
-          canonicalUrl: "https://www.myrockhomes.com/rino-denver-buyer-guide",
+          canonicalUrl: "https://myrockhomes.com/rino-denver-buyer-guide",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

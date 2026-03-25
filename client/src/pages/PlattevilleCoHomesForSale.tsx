@@ -97,7 +97,7 @@ export default function PlattevilleCoHomesForSale() {
           title: "Platteville CO Homes for Sale | Platteville Colorado Real Estate",
           description:
             "Explore Platteville CO homes for sale, small-town character, housing styles, South Platte River proximity, and helpful resources for buying in Platteville, Colorado.",
-          canonicalUrl: "https://www.myrockhomes.com/platteville-co-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/platteville-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

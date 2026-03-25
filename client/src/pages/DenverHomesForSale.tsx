@@ -124,7 +124,7 @@ export default function DenverHomesForSale() {
           title: "Denver Homes for Sale | Denver Real Estate & Denver Metro Homes",
           description:
             "Explore Denver homes for sale, popular Denver neighborhoods, top nearby suburbs, property types, and local home buying resources for the Denver metro area.",
-          canonicalUrl: "https://www.myrockhomes.com/denver-homes-for-sale",
+          canonicalUrl: "https://myrockhomes.com/denver-homes-for-sale",
         }}
         schema={faqSchema ? [faqSchema] : []}
       />

@@ -97,7 +97,7 @@ export default function DenverCondosForSale() {
           title: "Denver Condos for Sale | Condominiums in Denver, Colorado",
           description:
             "Explore Denver condos for sale, condo living in Denver neighborhoods, common condo price ranges, amenities, lifestyle benefits, and helpful condo-buying resources.",
-          canonicalUrl: "https://www.myrockhomes.com/denver-condos-for-sale",
+          canonicalUrl: "https://myrockhomes.com/denver-condos-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

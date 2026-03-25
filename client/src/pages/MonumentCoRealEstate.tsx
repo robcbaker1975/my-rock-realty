@@ -76,7 +76,7 @@ export default function MonumentCoRealEstate() {
           title: "Living in Monument, CO: Real Estate, Tradeoffs, and What It's Like",
           description:
             "Thinking about living in Monument, CO? Learn what Monument is actually like, who it fits, the real tradeoffs, and how it compares with north Colorado Springs.",
-          canonicalUrl: "https://www.myrockhomes.com/monument-co-real-estate/",
+          canonicalUrl: "https://myrockhomes.com/monument-co-real-estate/",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

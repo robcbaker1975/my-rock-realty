@@ -90,7 +90,7 @@ export default function DenverVsColoradoSprings() {
           title: "Denver vs Colorado Springs | Colorado City Comparison for Home Buyers",
           description:
             "Denver vs Colorado Springs comparison for home buyers. Compare neighborhoods, markets, lifestyle, costs, and find which city fits your needs.",
-          canonicalUrl: "https://www.myrockhomes.com/denver-vs-colorado-springs",
+          canonicalUrl: "https://myrockhomes.com/denver-vs-colorado-springs",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

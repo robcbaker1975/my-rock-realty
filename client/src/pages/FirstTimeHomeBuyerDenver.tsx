@@ -104,7 +104,7 @@ export default function FirstTimeHomeBuyerDenver() {
           title: "First-Time Home Buyer Denver | Denver First-Time Buyer Guide",
           description:
             "First-time home buyer guide for Denver. Understand financing, the buying process, and get expert resources to navigate your purchase confidently.",
-          canonicalUrl: "https://www.myrockhomes.com/first-time-home-buyer-denver",
+          canonicalUrl: "https://myrockhomes.com/first-time-home-buyer-denver",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

@@ -87,7 +87,7 @@ export default function LohiDenverBuyerGuide() {
           title: "LoHi Denver Buyer Guide | Lower Highlands Home Search",
           description:
             "A practical buyer guide for LoHi in Denver. Learn how proximity to the bridges, busy corridors, and the downtown side of the neighborhood shapes the LoHi home search.",
-          canonicalUrl: "https://www.myrockhomes.com/lohi-denver-buyer-guide",
+          canonicalUrl: "https://myrockhomes.com/lohi-denver-buyer-guide",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

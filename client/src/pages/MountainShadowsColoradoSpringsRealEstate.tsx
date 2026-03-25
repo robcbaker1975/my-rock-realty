@@ -77,7 +77,7 @@ export default function MountainShadowsColoradoSpringsRealEstate() {
           title: "Living in Mountain Shadows, Colorado Springs: Real Estate, Tradeoffs, and What It's Like",
           description:
             "Thinking about living in Mountain Shadows, Colorado Springs? Learn what Mountain Shadows is actually like, who it fits, the real tradeoffs, and how it compares with Peregrine, Old Colorado City, and Cordera.",
-          canonicalUrl: "https://www.myrockhomes.com/mountain-shadows-colorado-springs-real-estate/",
+          canonicalUrl: "https://myrockhomes.com/mountain-shadows-colorado-springs-real-estate/",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

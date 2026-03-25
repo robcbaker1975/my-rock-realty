@@ -88,7 +88,7 @@ export default function WashParkDenverBuyerGuide() {
           title: "Washington Park Denver Buyer Guide | Wash Park Home Search",
           description:
             "A practical buyer guide for Washington Park in Denver. Learn how block choice, proximity to the park, and South Gaylord and South Pearl shape the Wash Park home search.",
-          canonicalUrl: "https://www.myrockhomes.com/wash-park-denver-buyer-guide",
+          canonicalUrl: "https://myrockhomes.com/wash-park-denver-buyer-guide",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

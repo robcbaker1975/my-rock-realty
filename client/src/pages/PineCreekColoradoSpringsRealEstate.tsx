@@ -77,7 +77,7 @@ export default function PineCreekColoradoSpringsRealEstate() {
           title: "Living in Pine Creek, Colorado Springs: Real Estate, Tradeoffs, and What It's Like",
           description:
             "Thinking about living in Pine Creek, Colorado Springs? Learn what Pine Creek is actually like, who it fits, the real tradeoffs, and how it compares with Cordera, Briargate, and Flying Horse.",
-          canonicalUrl: "https://www.myrockhomes.com/pine-creek-colorado-springs-real-estate/",
+          canonicalUrl: "https://myrockhomes.com/pine-creek-colorado-springs-real-estate/",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

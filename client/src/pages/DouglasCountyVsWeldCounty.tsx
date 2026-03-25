@@ -91,7 +91,7 @@ export default function DouglasCountyVsWeldCounty() {
           title: "Douglas County vs Weld County | Colorado County Comparison for Home Buyers",
           description:
             "Douglas County vs Weld County comparison for home buyers. Compare location, housing types, communities, and buyer tradeoffs across both Colorado counties.",
-          canonicalUrl: "https://www.myrockhomes.com/douglas-county-vs-weld-county",
+          canonicalUrl: "https://myrockhomes.com/douglas-county-vs-weld-county",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}

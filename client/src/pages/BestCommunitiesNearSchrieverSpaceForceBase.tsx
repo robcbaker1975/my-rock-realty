@@ -88,7 +88,7 @@ export default function BestCommunitiesNearSchrieverSpaceForceBase() {
         metadata={{
           title: "Best Communities Near Schriever Space Force Base | Military Relocation | My Rock Realty",
           description: "Community orientation for military and PCS buyers relocating near Schriever Space Force Base east of Colorado Springs. Practical guidance on east-side neighborhoods, tradeoffs, and planning considerations.",
-          canonicalUrl: "https://www.myrockhomes.com/military-relocation/best-communities-near-schriever-space-force-base/",
+          canonicalUrl: "https://myrockhomes.com/military-relocation/best-communities-near-schriever-space-force-base/",
           image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
         schema={[faqSchema]}
