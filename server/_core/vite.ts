@@ -61,9 +61,11 @@ export function serveStatic(app: Express) {
   // IL-01: Serve prerendered HTML for /denver-homes-for-sale before express.static.
   // Must be registered BEFORE app.use(express.static(...)) to prevent express.static
   // from redirecting /denver-homes-for-sale → /denver-homes-for-sale/ (which hits SPA fallback).
+  // IL-01 fix: Read from dist/prerendered/ (co-located with compiled server) instead of repo-root server/
+  // This ensures the prerendered file exists in dist-only production runtime
   // This is a one-route PoC. Do not expand without an explicit patch plan.
   app.get("/denver-homes-for-sale", (_req, res) => {
-    const prerendered = path.resolve(import.meta.dirname, "../server/prerendered/denver-homes-for-sale.html");
+    const prerendered = path.resolve(import.meta.dirname, "prerendered/denver-homes-for-sale.html");
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
     } else {

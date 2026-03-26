@@ -78,8 +78,10 @@ async function prerenderDenver() {
     `<div id="root">${html}</div>`
   );
 
-  // Step 5: Write to server/prerendered/denver-homes-for-sale.html
-  const outputDir = resolve(ROOT, "server/prerendered");
+  // Step 5: Write to dist/prerendered/denver-homes-for-sale.html
+  // IL-01 fix: Write to dist/ (co-located with compiled server) instead of repo-root server/
+  // This ensures the prerendered file exists in dist-only production runtime
+  const outputDir = resolve(ROOT, "dist/prerendered");
   const outputPath = resolve(outputDir, "denver-homes-for-sale.html");
   mkdirSync(outputDir, { recursive: true });
   writeFileSync(outputPath, prerenderedShell, "utf-8");
