@@ -78,9 +78,9 @@ async function prerenderDenver() {
     `<div id="root">${html}</div>`
   );
 
-  // Step 5: Write to dist/public/denver-homes-for-sale/index.html
-  const outputDir = resolve(ROOT, "dist/public/denver-homes-for-sale");
-  const outputPath = resolve(outputDir, "index.html");
+  // Step 5: Write to server/prerendered/denver-homes-for-sale.html
+  const outputDir = resolve(ROOT, "server/prerendered");
+  const outputPath = resolve(outputDir, "denver-homes-for-sale.html");
   mkdirSync(outputDir, { recursive: true });
   writeFileSync(outputPath, prerenderedShell, "utf-8");
 

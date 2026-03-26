@@ -4,7 +4,6 @@
 
 # Build outputs
 dist/
-!dist/public/denver-homes-for-sale/
 build/
 *.dist
 

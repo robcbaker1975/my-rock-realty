@@ -63,7 +63,7 @@ export function serveStatic(app: Express) {
   // from redirecting /denver-homes-for-sale → /denver-homes-for-sale/ (which hits SPA fallback).
   // This is a one-route PoC. Do not expand without an explicit patch plan.
   app.get("/denver-homes-for-sale", (_req, res) => {
-    const prerendered = path.resolve(distPath, "denver-homes-for-sale", "index.html");
+    const prerendered = path.resolve(import.meta.dirname, "../", "prerendered", "denver-homes-for-sale.html");
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
     } else {
