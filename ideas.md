@@ -113,3 +113,4 @@
 This approach best matches the brand brief: modern, confident, Colorado-grounded, and architecturally precise without being generic or overly luxurious. The warm charcoal + cream + antique gold palette directly aligns with the requested color direction. The alternating dark/light sections create visual rhythm and keep users engaged through the long one-page format. The architectural precision communicates Rob's strategic, data-driven approach.
 
 
+
