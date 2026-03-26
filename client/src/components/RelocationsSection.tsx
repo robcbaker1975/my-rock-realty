@@ -1,22 +1,22 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Home, MapPin, Shield } from "lucide-react";
+import { ArrowRight, Globe, Users, CheckCircle } from "lucide-react";
 import { Link } from "wouter";
 
 const scenarios = [
   {
-    icon: Home,
-    title: "Rental Showings & Tour Support",
-    text: "Need to see properties before you commit? Rob coordinates in-person and remote tours so you can evaluate options on your timeline — no pressure, no rush.",
+    icon: Globe,
+    title: "Moving to Colorado",
+    text: "Relocating to Colorado? Rob helps you navigate the market, understand neighborhoods, and connect with trusted local expertise to make your move confident and informed.",
   },
   {
-    icon: MapPin,
-    title: "Relocating to Colorado",
-    text: "Rob helps relocation clients understand the Colorado market, neighborhoods, and buying process so they can move forward with a clearer plan — even from a distance.",
+    icon: Globe,
+    title: "Moving From Colorado",
+    text: "Leaving Colorado? Rob's nationwide referral network connects you with vetted agents in your destination state who share his commitment to client success and strategic guidance.",
   },
   {
-    icon: Shield,
-    title: "Military & PCS Families",
-    text: "VA homebuying, PCS timing, and Colorado market orientation — designed for the unique needs of military families navigating a move on a tight timeline.",
+    icon: Users,
+    title: "Referring Friends & Family",
+    text: "Need to connect someone with a trusted agent elsewhere? Rob's 50-state network means you can confidently refer colleagues, clients, or loved ones to agents who deliver the same strategic approach.",
   },
 ];
 
@@ -27,7 +27,7 @@ export default function RelocationsSection() {
   };
 
   return (
-    <section id="rental-tour-support" className="py-12 sm:py-20 md:py-28 bg-cream relative overflow-hidden">
+    <section id="relocations-referrals" className="py-12 sm:py-20 md:py-28 bg-cream relative overflow-hidden">
       <div className="container">
         {/* Section Header */}
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-12 lg:gap-16 items-start mb-7 sm:mb-14">
@@ -39,7 +39,7 @@ export default function RelocationsSection() {
               className="text-gold-dark text-sm font-semibold tracking-widest uppercase mb-3 block"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Rental · Tour Support · Relocation
+              Relocations · Referrals · Nationwide Network
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -49,8 +49,8 @@ export default function RelocationsSection() {
               className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal leading-tight mb-4 sm:mb-5"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Rental Showings, Tours &{" "}
-              <span className="text-gold-dark">Relocation Support</span>
+              Trusted Agent Referrals in{" "}
+              <span className="text-gold-dark">All 50 States</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ export default function RelocationsSection() {
               transition={{ delay: 0.2 }}
               className="text-charcoal-light/80 text-[15px] sm:text-lg leading-relaxed mb-5"
             >
-              Whether you're evaluating rentals, planning a move to Colorado, or navigating a PCS relocation, Rob provides practical, no-pressure support designed around your timeline and situation.
+              Whether you're moving to Colorado, relocating elsewhere, or need to connect someone with a trusted agent, Rob's nationwide network of vetted professionals delivers the same strategic guidance and client-first approach you'd get working directly with him.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -67,14 +67,14 @@ export default function RelocationsSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <Link
-                href="/rental-tour-support/"
+              <button
+                onClick={() => scrollTo("#contact")}
                 className="group inline-flex items-center gap-2 text-gold-dark font-semibold text-[15px] hover:text-gold transition-colors"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                Rental & Tour Support Details
+                Need a Trusted Agent Referral?
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-              </Link>
+              </button>
             </motion.div>
           </div>
 
@@ -106,28 +106,66 @@ export default function RelocationsSection() {
           </div>
         </div>
 
-        {/* Callout Box */}
+        {/* Value Proposition Callout */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="bg-charcoal rounded-lg p-5 sm:p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6"
+          className="bg-charcoal rounded-lg p-5 sm:p-8 md:p-10"
         >
-          <div className="text-center md:text-left">
-            <h3
-              className="text-2xl font-bold text-white mb-2"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Planning a Move or Need a Showing?
-            </h3>
-            <p className="text-cream/70 max-w-lg">
-              Get in touch to discuss your timeline, situation, and what kind of support would be most useful — no commitment required.
-            </p>
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              {
+                title: "Smooth Handoffs",
+                desc: "Direct connections with vetted agents who understand your situation and priorities from day one.",
+              },
+              {
+                title: "Trusted Approach",
+                desc: "Every referral partner shares Rob's commitment to strategic guidance, transparency, and client success.",
+              },
+              {
+                title: "Nationwide Coverage",
+                desc: "Whether you're moving to a major market or a smaller community, Rob has trusted connections ready to help.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 * i }}
+                className="flex gap-3"
+              >
+                <CheckCircle size={24} className="text-gold shrink-0 mt-0.5" strokeWidth={1.5} />
+                <div>
+                  <h3
+                    className="text-white font-semibold mb-1"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className="text-cream/70 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="mt-8 sm:mt-12 text-center"
+        >
+          <p className="text-charcoal-light/80 text-[15px] sm:text-lg mb-5">
+            Ready to make a move or connect someone with the right agent?
+          </p>
           <button
             onClick={() => scrollTo("#contact")}
-            className="group shrink-0 inline-flex items-center justify-center gap-2 w-full md:w-auto px-6 py-3 border border-cream/25 text-cream/80 font-medium rounded-lg transition-all hover:border-gold/50 hover:text-gold active:bg-white/5 text-[15px] sm:text-base"
+            className="group inline-flex items-center justify-center gap-2 px-7 py-3 bg-gold-dark text-white font-semibold rounded-lg hover:bg-gold transition-colors text-[15px] sm:text-base"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Get in Touch
