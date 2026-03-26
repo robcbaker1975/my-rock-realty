@@ -60,6 +60,17 @@ export function serveStatic(app: Express) {
 
   app.use(express.static(distPath));
 
+  // IL-01: Serve prerendered HTML for /denver-homes-for-sale before SPA fallback.
+  // This is a one-route PoC. Do not expand without an explicit patch plan.
+  app.get("/denver-homes-for-sale", (_req, res) => {
+    const prerendered = path.resolve(distPath, "denver-homes-for-sale", "index.html");
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
     res.sendFile(path.resolve(distPath, "index.html"));
