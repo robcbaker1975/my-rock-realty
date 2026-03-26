@@ -97,6 +97,7 @@ export default function PuebloHomeSearchComingSoon() {
           description: "Pueblo home search coverage is being prepared. Learn about the city of Pueblo, connect with a local buyer resource, and reach out directly for current assistance.",
           canonicalUrl: "https://myrockhomes.com/pueblo-home-search-coming-soon",
           breadcrumbs: breadcrumbItems,
+          robots: { index: false, follow: false },
         }}
         schema={[faqSchema]}
         />
