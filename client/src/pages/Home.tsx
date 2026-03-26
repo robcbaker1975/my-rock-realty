@@ -71,6 +71,13 @@ export default function Home() {
           description: "Strategic real estate guidance for Colorado buyers, sellers, and relocating families. Work with My Rock Realty — serving Colorado.",
           canonicalUrl: "https://myrockhomes.com/",
         }}
+        agentSchemaOptions={{
+          telephone: "720-363-6544",
+          email: "rob@myrockhomes.com",
+          description: "Strategic real estate guidance for Colorado buyers, sellers, and relocating families. My Rock Realty is a boutique Colorado brokerage offering clear strategy, negotiation expertise, and real-world guidance.",
+          areaServed: "Colorado",
+          sameAs: ["https://myrockhomes.com/"],
+        }}
         schema={faqSchema ? [faqSchema] : []}
       />
       <Navbar />

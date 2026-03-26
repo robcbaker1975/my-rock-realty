@@ -101,6 +101,7 @@ export default function SeoHead({
   schema = [],
   includeAgentSchema = true,
   includeWebsiteSchema = true,
+  agentSchemaOptions,
 }: SeoHeadProps): null {
   const previousTitleRef = useRef<string | null>(null);
 
@@ -121,7 +122,7 @@ export default function SeoHead({
 
     return mergeSchemas(
       buildOrganizationSchema(resolvedConfig),
-      includeAgentSchema ? buildRealEstateAgentSchema(undefined, resolvedConfig) : null,
+      includeAgentSchema ? buildRealEstateAgentSchema(agentSchemaOptions, resolvedConfig) : null,
       includeWebsiteSchema ? buildWebsiteSchema(resolvedConfig) : null,
       buildWebPageSchema(resolvedMetadata, resolvedConfig),
       breadcrumbItems.length ? buildBreadcrumbListSchema(breadcrumbItems) : null,

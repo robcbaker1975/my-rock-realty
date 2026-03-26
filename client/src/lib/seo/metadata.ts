@@ -51,7 +51,11 @@ export function toAbsoluteUrl(pathOrUrl: string | undefined, siteUrl?: string): 
   const base = stripTrailingSlash(siteUrl || DEFAULT_SITE_CONFIG.siteUrl);
 
   if (!pathOrUrl) return base;
-  if (/^https?:\/\//i.test(pathOrUrl)) return stripTrailingSlash(pathOrUrl);
+  if (/^https?:\/\//i.test(pathOrUrl)) {
+    // Preserve trailing slash on root URLs (e.g. https://myrockhomes.com/) but strip from paths
+    const isRootUrl = /^https?:\/\/[^\/]+\/?$/.test(pathOrUrl);
+    return isRootUrl ? pathOrUrl.replace(/\/*$/, '/') : stripTrailingSlash(pathOrUrl);
+  }
 
   return `${base}${ensureLeadingSlash(pathOrUrl)}`;
 }

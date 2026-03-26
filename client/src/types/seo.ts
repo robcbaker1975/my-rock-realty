@@ -133,6 +133,7 @@ export interface SeoHeadProps {
   schema?: (SchemaNode | null)[];
   includeAgentSchema?: boolean;
   includeWebsiteSchema?: boolean;
+  agentSchemaOptions?: Partial<RealEstateSchemaOptions>;
 }
 
 export interface BreadcrumbsProps extends BreadcrumbOptions {
