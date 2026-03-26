@@ -83,6 +83,21 @@ export function serveStatic(app: Express) {
     }
   });
 
+  // IL-02: Serve prerendered HTML for /colorado-springs-co-homes-for-sale before express.static.
+  // Identical dual-path resolution pattern as IL-01 Denver handler.
+  // Primary: server/prerendered/colorado-springs-co-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/colorado-springs-co-homes-for-sale.html — build artifact.
+  app.get("/colorado-springs-co-homes-for-sale", (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/colorado-springs-co-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/colorado-springs-co-homes-for-sale.html");
+    const prerendered = fs.existsSync(distPrerendered) ? distPrerendered : srcPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist
