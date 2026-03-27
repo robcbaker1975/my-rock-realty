@@ -438,6 +438,76 @@ export function serveStatic(app: Express) {
     }
   });
 
+  // IL-27: Serve prerendered HTML for /briargate-colorado-springs-real-estate (+ trailing-slash form).
+  // Primary: server/prerendered/briargate-colorado-springs-real-estate.html — committed to git.
+  // Fallback: dist/prerendered/briargate-colorado-springs-real-estate.html — build artifact.
+  app.get(["/briargate-colorado-springs-real-estate", "/briargate-colorado-springs-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/briargate-colorado-springs-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/briargate-colorado-springs-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-28: Serve prerendered HTML for /northgate-colorado-springs-real-estate (+ trailing-slash form).
+  // Primary: server/prerendered/northgate-colorado-springs-real-estate.html — committed to git.
+  // Fallback: dist/prerendered/northgate-colorado-springs-real-estate.html — build artifact.
+  app.get(["/northgate-colorado-springs-real-estate", "/northgate-colorado-springs-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/northgate-colorado-springs-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/northgate-colorado-springs-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-29: Serve prerendered HTML for /flying-horse-colorado-springs-real-estate (+ trailing-slash form).
+  // Primary: server/prerendered/flying-horse-colorado-springs-real-estate.html — committed to git.
+  // Fallback: dist/prerendered/flying-horse-colorado-springs-real-estate.html — build artifact.
+  app.get(["/flying-horse-colorado-springs-real-estate", "/flying-horse-colorado-springs-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/flying-horse-colorado-springs-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/flying-horse-colorado-springs-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-30: Serve prerendered HTML for /cordera-colorado-springs-real-estate (+ trailing-slash form).
+  // Primary: server/prerendered/cordera-colorado-springs-real-estate.html — committed to git.
+  // Fallback: dist/prerendered/cordera-colorado-springs-real-estate.html — build artifact.
+  app.get(["/cordera-colorado-springs-real-estate", "/cordera-colorado-springs-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/cordera-colorado-springs-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/cordera-colorado-springs-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-31: Serve prerendered HTML for /pine-creek-colorado-springs-real-estate (+ trailing-slash form).
+  // Primary: server/prerendered/pine-creek-colorado-springs-real-estate.html — committed to git.
+  // Fallback: dist/prerendered/pine-creek-colorado-springs-real-estate.html — build artifact.
+  app.get(["/pine-creek-colorado-springs-real-estate", "/pine-creek-colorado-springs-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/pine-creek-colorado-springs-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/pine-creek-colorado-springs-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist
