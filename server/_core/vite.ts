@@ -1024,6 +1024,67 @@ export function serveStatic(app: Express) {
     }
   });
 
+
+  // IL-72: /military-relocation/pcs-timeline-checklist/
+  app.get(["/military-relocation/pcs-timeline-checklist", "/military-relocation/pcs-timeline-checklist/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/pcs-timeline-checklist.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/pcs-timeline-checklist.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-73: /military-relocation/temporary-housing-colorado-springs/
+  app.get(["/military-relocation/temporary-housing-colorado-springs", "/military-relocation/temporary-housing-colorado-springs/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/temporary-housing-colorado-springs.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/temporary-housing-colorado-springs.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-74: /military-relocation/remote-home-tours/
+  app.get(["/military-relocation/remote-home-tours", "/military-relocation/remote-home-tours/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/remote-home-tours.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/remote-home-tours.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-75: /military-relocation/pcs-relocation-tour-support/
+  app.get(["/military-relocation/pcs-relocation-tour-support", "/military-relocation/pcs-relocation-tour-support/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/pcs-relocation-tour-support.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/pcs-relocation-tour-support.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-76: /military-relocation/best-communities-near-fort-carson/
+  app.get(["/military-relocation/best-communities-near-fort-carson", "/military-relocation/best-communities-near-fort-carson/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/best-communities-near-fort-carson.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/best-communities-near-fort-carson.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
   app.use(express.static(distPath));
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
