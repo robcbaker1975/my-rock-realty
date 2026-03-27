@@ -898,6 +898,71 @@ export function serveStatic(app: Express) {
       res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
+  // IL-62: Serve prerendered HTML for /military-relocation/ (+ trailing-slash form).
+  // Primary: server/prerendered/military-relocation.html — committed to git.
+  // Fallback: dist/prerendered/military-relocation.html — build artifact.
+  app.get(["/military-relocation", "/military-relocation/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/military-relocation.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/military-relocation.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-63: Serve prerendered HTML for /military-relocation/pcs-colorado/ (+ trailing-slash form).
+  // Primary: server/prerendered/pcs-colorado.html — committed to git.
+  // Fallback: dist/prerendered/pcs-colorado.html — build artifact.
+  app.get(["/military-relocation/pcs-colorado", "/military-relocation/pcs-colorado/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/pcs-colorado.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/pcs-colorado.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-64: Serve prerendered HTML for /military-relocation/fort-carson/ (+ trailing-slash form).
+  // Primary: server/prerendered/fort-carson.html — committed to git.
+  // Fallback: dist/prerendered/fort-carson.html — build artifact.
+  app.get(["/military-relocation/fort-carson", "/military-relocation/fort-carson/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/fort-carson.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/fort-carson.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-65: Serve prerendered HTML for /military-relocation/peterson-space-force-base/ (+ trailing-slash form).
+  // Primary: server/prerendered/peterson-space-force-base.html — committed to git.
+  // Fallback: dist/prerendered/peterson-space-force-base.html — build artifact.
+  app.get(["/military-relocation/peterson-space-force-base", "/military-relocation/peterson-space-force-base/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/peterson-space-force-base.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/peterson-space-force-base.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-66: Serve prerendered HTML for /military-relocation/schriever-space-force-base/ (+ trailing-slash form).
+  // Primary: server/prerendered/schriever-space-force-base.html — committed to git.
+  // Fallback: dist/prerendered/schriever-space-force-base.html — build artifact.
+  app.get(["/military-relocation/schriever-space-force-base", "/military-relocation/schriever-space-force-base/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/schriever-space-force-base.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/schriever-space-force-base.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
   app.use(express.static(distPath));
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {

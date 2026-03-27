@@ -1,0 +1,39 @@
+/**
+ * IL-62 Selective Prerender — SSR Entry for /military-relocation/
+ * Scope: /military-relocation/ only. Do not add other routes here.
+ * Note: Requires tRPC + QueryClient providers because page uses trpc.contact.submit.
+ */
+import React from "react";
+import { renderToString } from "react-dom/server";
+import { Router } from "wouter";
+import { memoryLocation } from "wouter/memory-location";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { trpc } from "./lib/trpc";
+import { httpBatchLink } from "@trpc/client";
+import superjson from "superjson";
+import MilitaryRelocation from "./pages/MilitaryRelocation";
+export function renderMilitaryRelocation(): string {
+  const { hook } = memoryLocation({ path: "/military-relocation/", static: true });
+  const queryClient = new QueryClient();
+  const trpcClient = trpc.createClient({
+    links: [
+      httpBatchLink({
+        url: "http://localhost:5000/api/trpc",
+        transformer: superjson,
+      }),
+    ],
+  });
+  const html = renderToString(
+    <trpc.Provider client={trpcClient} queryClient={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider defaultTheme="light">
+          <Router hook={hook}>
+            <MilitaryRelocation />
+          </Router>
+        </ThemeProvider>
+      </QueryClientProvider>
+    </trpc.Provider>
+  );
+  return html;
+}
