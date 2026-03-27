@@ -98,6 +98,21 @@ export function serveStatic(app: Express) {
     }
   });
 
+  // IL-03: Serve prerendered HTML for /boulder-co-homes-for-sale before express.static.
+  // Identical dual-path resolution pattern as IL-01 and IL-02 handlers.
+  // Primary: server/prerendered/boulder-co-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/boulder-co-homes-for-sale.html — build artifact.
+  app.get("/boulder-co-homes-for-sale", (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/boulder-co-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/boulder-co-homes-for-sale.html");
+    const prerendered = fs.existsSync(distPrerendered) ? distPrerendered : srcPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist
