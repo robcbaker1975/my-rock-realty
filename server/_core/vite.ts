@@ -798,8 +798,72 @@ export function serveStatic(app: Express) {
       res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
+   // IL-52: Serve prerendered HTML for /sloan-lake-denver-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/sloan-lake-denver-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/sloan-lake-denver-homes-for-sale.html — build artifact.
+  app.get(["/sloan-lake-denver-homes-for-sale", "/sloan-lake-denver-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/sloan-lake-denver-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/sloan-lake-denver-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-53: Serve prerendered HTML for /jefferson-co-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/jefferson-co-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/jefferson-co-homes-for-sale.html — build artifact.
+  app.get(["/jefferson-co-homes-for-sale", "/jefferson-co-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/jefferson-co-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/jefferson-co-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-54: Serve prerendered HTML for /golden-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/golden-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/golden-homes-for-sale.html — build artifact.
+  app.get(["/golden-homes-for-sale", "/golden-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/golden-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/golden-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-55: Serve prerendered HTML for /lakewood-co-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/lakewood-co-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/lakewood-co-homes-for-sale.html — build artifact.
+  app.get(["/lakewood-co-homes-for-sale", "/lakewood-co-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/lakewood-co-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/lakewood-co-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-56: Serve prerendered HTML for /morrison-co-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/morrison-co-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/morrison-co-homes-for-sale.html — build artifact.
+  app.get(["/morrison-co-homes-for-sale", "/morrison-co-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/morrison-co-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/morrison-co-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
   app.use(express.static(distPath));
-
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
     res.sendFile(path.resolve(distPath, "index.html"));
