@@ -113,6 +113,51 @@ export function serveStatic(app: Express) {
     }
   });
 
+  // IL-04: Serve prerendered HTML for /black-forest-co-real-estate (+ trailing-slash form).
+  // App.tsx registers this route with trailing slash, so both forms must be handled.
+  // Primary: server/prerendered/black-forest-co-real-estate.html — committed to git.
+  // Fallback: dist/prerendered/black-forest-co-real-estate.html — build artifact.
+  app.get(["/black-forest-co-real-estate", "/black-forest-co-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/black-forest-co-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/black-forest-co-real-estate.html");
+    const prerendered = fs.existsSync(distPrerendered) ? distPrerendered : srcPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-05: Serve prerendered HTML for /peyton-co-real-estate (+ trailing-slash form).
+  // App.tsx registers this route with trailing slash, so both forms must be handled.
+  // Primary: server/prerendered/peyton-co-real-estate.html — committed to git.
+  // Fallback: dist/prerendered/peyton-co-real-estate.html — build artifact.
+  app.get(["/peyton-co-real-estate", "/peyton-co-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/peyton-co-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/peyton-co-real-estate.html");
+    const prerendered = fs.existsSync(distPrerendered) ? distPrerendered : srcPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-06: Serve prerendered HTML for /palmer-lake-co-real-estate (+ trailing-slash form).
+  // App.tsx registers this route with trailing slash, so both forms must be handled.
+  // Primary: server/prerendered/palmer-lake-co-real-estate.html — committed to git.
+  // Fallback: dist/prerendered/palmer-lake-co-real-estate.html — build artifact.
+  app.get(["/palmer-lake-co-real-estate", "/palmer-lake-co-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/palmer-lake-co-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/palmer-lake-co-real-estate.html");
+    const prerendered = fs.existsSync(distPrerendered) ? distPrerendered : srcPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist
