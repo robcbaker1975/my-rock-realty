@@ -1200,6 +1200,116 @@ export function serveStatic(app: Express) {
       res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
+  // IL-87: /niwot-co-homes-for-sale
+  app.get(["/niwot-co-homes-for-sale", "/niwot-co-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/niwot-co-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/niwot-co-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-88: /denver-condos-for-sale
+  app.get(["/denver-condos-for-sale", "/denver-condos-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/denver-condos-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/denver-condos-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-89: /denver-townhomes-for-sale
+  app.get(["/denver-townhomes-for-sale", "/denver-townhomes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/denver-townhomes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/denver-townhomes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-90: /denver-luxury-homes-for-sale
+  app.get(["/denver-luxury-homes-for-sale", "/denver-luxury-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/denver-luxury-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/denver-luxury-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-91: /denver-new-construction-homes
+  app.get(["/denver-new-construction-homes", "/denver-new-construction-homes/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/denver-new-construction-homes.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/denver-new-construction-homes.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-92: /adams-county-vs-jefferson-county
+  app.get(["/adams-county-vs-jefferson-county", "/adams-county-vs-jefferson-county/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/adams-county-vs-jefferson-county.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/adams-county-vs-jefferson-county.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-93: /douglas-county-vs-weld-county
+  app.get(["/douglas-county-vs-weld-county", "/douglas-county-vs-weld-county/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/douglas-county-vs-weld-county.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/douglas-county-vs-weld-county.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-94: /boulder-vs-fort-collins
+  app.get(["/boulder-vs-fort-collins", "/boulder-vs-fort-collins/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/boulder-vs-fort-collins.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/boulder-vs-fort-collins.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-95: /blog/denver-real-estate-market-report-2025/
+  app.get(["/blog/denver-real-estate-market-report-2025", "/blog/denver-real-estate-market-report-2025/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/denver-real-estate-market-report-2025.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/denver-real-estate-market-report-2025.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-96: /denver-vs-colorado-springs
+  app.get(["/denver-vs-colorado-springs", "/denver-vs-colorado-springs/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/denver-vs-colorado-springs.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/denver-vs-colorado-springs.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
   app.use(express.static(distPath));
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {

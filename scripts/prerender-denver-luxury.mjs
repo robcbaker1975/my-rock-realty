@@ -1,0 +1,52 @@
+/**
+ * IL-90 Selective Prerender Script — /denver-luxury-homes-for-sale
+ * Scope: ONE route only. Do not add other routes.
+ */
+import { build } from "vite";
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
+import { resolve, dirname } from "path";
+import { fileURLToPath } from "url";
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = resolve(__dirname, "..");
+async function prerenderDenverLuxury() {
+  console.log("[prerender-denver-luxury] Starting SSR build for /denver-luxury-homes-for-sale...");
+  await build({
+    root: resolve(ROOT, "client"),
+    configFile: resolve(ROOT, "vite.config.ts"),
+    build: {
+      ssr: resolve(ROOT, "client/src/entry-server-denver-luxury.tsx"),
+      outDir: resolve(ROOT, "dist/server"),
+      emptyOutDir: false,
+      rollupOptions: {
+        output: { format: "esm", entryFileNames: "entry-server-denver-luxury.js" },
+      },
+    },
+    css: {},
+  });
+  console.log("[prerender-denver-luxury] SSR build complete. Rendering HTML...");
+  const ssrModule = await import(resolve(ROOT, "dist/server/entry-server-denver-luxury.js"));
+  const html = ssrModule.renderDenverLuxuryHomesForSale();
+  console.log(`[prerender-denver-luxury] Rendered HTML length: ${html.length} chars`);
+  const shellPath = resolve(ROOT, "dist/public/index.html");
+  if (!existsSync(shellPath)) throw new Error(`[prerender-denver-luxury] dist/public/index.html not found.`);
+  const shell = readFileSync(shellPath, "utf-8");
+  const PLACEHOLDER = '<div id="root"></div>';
+  if (!shell.includes(PLACEHOLDER)) throw new Error(`[prerender-denver-luxury] Placeholder not found.`);
+  const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+  const distOutputDir = resolve(ROOT, "dist/prerendered");
+  mkdirSync(distOutputDir, { recursive: true });
+  writeFileSync(resolve(distOutputDir, "denver-luxury-homes-for-sale.html"), prerenderedShell, "utf-8");
+  const srcOutputDir = resolve(ROOT, "server/prerendered");
+  mkdirSync(srcOutputDir, { recursive: true });
+  const srcOutputPath = resolve(srcOutputDir, "denver-luxury-homes-for-sale.html");
+  writeFileSync(srcOutputPath, prerenderedShell, "utf-8");
+  console.log(`[prerender-denver-luxury] Committed artifact: ${srcOutputPath}`);
+  const written = readFileSync(srcOutputPath, "utf-8");
+  const hasH1 = /<h1[\s>]/.test(written);
+  const rootNotEmpty = !written.includes('<div id="root"></div>');
+  const anchors = (written.match(/<a\s/g) || []).length;
+  console.log(`[prerender-denver-luxury] Sanity: rootNotEmpty=${rootNotEmpty}, hasH1=${hasH1}, anchors=${anchors}`);
+  if (!rootNotEmpty) throw new Error("[prerender-denver-luxury] FAIL: Root div still empty.");
+  console.log("[prerender-denver-luxury] Done.");
+}
+prerenderDenverLuxury().catch((err) => { console.error("[prerender-denver-luxury] FAILED:", err.message); process.exit(1); });
