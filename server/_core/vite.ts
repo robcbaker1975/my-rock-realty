@@ -966,51 +966,61 @@ export function serveStatic(app: Express) {
 
   // IL-67: /military-relocation/va-home-loans-colorado/
   app.get(["/military-relocation/va-home-loans-colorado", "/military-relocation/va-home-loans-colorado/"], (_req, res) => {
-    const prerendered = path.join(distPath, "prerendered", "va-home-loans-colorado.html");
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/va-home-loans-colorado.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/va-home-loans-colorado.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
     } else {
-      res.sendFile(path.join(distPath, "index.html"));
+      res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
 
   // IL-68: /military-relocation/buckley-space-force-base/
   app.get(["/military-relocation/buckley-space-force-base", "/military-relocation/buckley-space-force-base/"], (_req, res) => {
-    const prerendered = path.join(distPath, "prerendered", "buckley-space-force-base.html");
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/buckley-space-force-base.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/buckley-space-force-base.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
     } else {
-      res.sendFile(path.join(distPath, "index.html"));
+      res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
 
   // IL-69: /military-relocation/us-air-force-academy/
   app.get(["/military-relocation/us-air-force-academy", "/military-relocation/us-air-force-academy/"], (_req, res) => {
-    const prerendered = path.join(distPath, "prerendered", "us-air-force-academy.html");
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/us-air-force-academy.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/us-air-force-academy.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
     } else {
-      res.sendFile(path.join(distPath, "index.html"));
+      res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
 
   // IL-70: /military-relocation/military-spouses-buying-colorado/
   app.get(["/military-relocation/military-spouses-buying-colorado", "/military-relocation/military-spouses-buying-colorado/"], (_req, res) => {
-    const prerendered = path.join(distPath, "prerendered", "military-spouses-buying-colorado.html");
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/military-spouses-buying-colorado.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/military-spouses-buying-colorado.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
     } else {
-      res.sendFile(path.join(distPath, "index.html"));
+      res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
 
   // IL-71: /military-relocation/veterans-buying-colorado/
   app.get(["/military-relocation/veterans-buying-colorado", "/military-relocation/veterans-buying-colorado/"], (_req, res) => {
-    const prerendered = path.join(distPath, "prerendered", "veterans-buying-colorado.html");
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/veterans-buying-colorado.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/veterans-buying-colorado.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
     } else {
-      res.sendFile(path.join(distPath, "index.html"));
+      res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
 
