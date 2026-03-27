@@ -644,6 +644,12 @@ export function serveStatic(app: Express) {
   app.get(["/buying-a-home-in-denver", "/buying-a-home-in-denver/"], (_req, res) => {
     const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/buying-a-home-in-denver.html");
     const distPrerendered = path.resolve(import.meta.dirname, "prerendered/buying-a-home-in-denver.html");
+  // IL-42: Serve prerendered HTML for /adams-co-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/adams-co-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/adams-co-homes-for-sale.html — build artifact.
+  app.get(["/adams-co-homes-for-sale", "/adams-co-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/adams-co-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/adams-co-homes-for-sale.html");
     const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
@@ -657,6 +663,12 @@ export function serveStatic(app: Express) {
   app.get(["/first-time-home-buyer-denver", "/first-time-home-buyer-denver/"], (_req, res) => {
     const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/first-time-home-buyer-denver.html");
     const distPrerendered = path.resolve(import.meta.dirname, "prerendered/first-time-home-buyer-denver.html");
+  // IL-43: Serve prerendered HTML for /commerce-city-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/commerce-city-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/commerce-city-homes-for-sale.html — build artifact.
+  app.get(["/commerce-city-homes-for-sale", "/commerce-city-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/commerce-city-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/commerce-city-homes-for-sale.html");
     const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
@@ -670,6 +682,12 @@ export function serveStatic(app: Express) {
   app.get(["/denver-home-buying-process", "/denver-home-buying-process/"], (_req, res) => {
     const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/denver-home-buying-process.html");
     const distPrerendered = path.resolve(import.meta.dirname, "prerendered/denver-home-buying-process.html");
+  // IL-44: Serve prerendered HTML for /brighton-co-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/brighton-co-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/brighton-co-homes-for-sale.html — build artifact.
+  app.get(["/brighton-co-homes-for-sale", "/brighton-co-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/brighton-co-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/brighton-co-homes-for-sale.html");
     const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
@@ -683,6 +701,12 @@ export function serveStatic(app: Express) {
   app.get(["/cost-of-living-in-denver-colorado", "/cost-of-living-in-denver-colorado/"], (_req, res) => {
     const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/cost-of-living-in-denver-colorado.html");
     const distPrerendered = path.resolve(import.meta.dirname, "prerendered/cost-of-living-in-denver-colorado.html");
+  // IL-45: Serve prerendered HTML for /thornton-co-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/thornton-co-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/thornton-co-homes-for-sale.html — build artifact.
+  app.get(["/thornton-co-homes-for-sale", "/thornton-co-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/thornton-co-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/thornton-co-homes-for-sale.html");
     const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
@@ -696,6 +720,12 @@ export function serveStatic(app: Express) {
   app.get(["/relocation/relocating-to-denver-colorado", "/relocation/relocating-to-denver-colorado/"], (_req, res) => {
     const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/relocating-to-denver-colorado.html");
     const distPrerendered = path.resolve(import.meta.dirname, "prerendered/relocating-to-denver-colorado.html");
+  // IL-46: Serve prerendered HTML for /northglenn-co-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/northglenn-co-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/northglenn-co-homes-for-sale.html — build artifact.
+  app.get(["/northglenn-co-homes-for-sale", "/northglenn-co-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/northglenn-co-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/northglenn-co-homes-for-sale.html");
     const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
