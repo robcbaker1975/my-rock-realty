@@ -1085,6 +1085,66 @@ export function serveStatic(app: Express) {
     }
   });
 
+  // IL-77: /military-relocation/best-communities-near-peterson-space-force-base/
+  app.get(["/military-relocation/best-communities-near-peterson-space-force-base/", "/military-relocation/best-communities-near-peterson-space-force-base"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/best-communities-near-peterson-space-force-base.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/best-communities-near-peterson-space-force-base.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-78: /military-relocation/best-communities-near-schriever-space-force-base/
+  app.get(["/military-relocation/best-communities-near-schriever-space-force-base/", "/military-relocation/best-communities-near-schriever-space-force-base"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/best-communities-near-schriever-space-force-base.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/best-communities-near-schriever-space-force-base.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-79: /military-relocation/best-communities-near-buckley-space-force-base/
+  app.get(["/military-relocation/best-communities-near-buckley-space-force-base/", "/military-relocation/best-communities-near-buckley-space-force-base"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/best-communities-near-buckley-space-force-base.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/best-communities-near-buckley-space-force-base.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-80: /moving-to-colorado-springs/
+  app.get(["/moving-to-colorado-springs/", "/moving-to-colorado-springs"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/moving-to-colorado-springs.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/moving-to-colorado-springs.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-81: /widefield-co-homes-for-sale
+  app.get(["/widefield-co-homes-for-sale", "/widefield-co-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/widefield-co-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/widefield-co-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
   app.use(express.static(distPath));
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
