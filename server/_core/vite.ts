@@ -1145,6 +1145,61 @@ export function serveStatic(app: Express) {
     }
   });
 
+  // IL-82: /banning-lewis-ranch-colorado-springs-real-estate
+  app.get(["/banning-lewis-ranch-colorado-springs-real-estate", "/banning-lewis-ranch-colorado-springs-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/banning-lewis-ranch-colorado-springs-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/banning-lewis-ranch-colorado-springs-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-83: /calhan-co-real-estate
+  app.get(["/calhan-co-real-estate", "/calhan-co-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/calhan-co-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/calhan-co-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-84: /boulder-homes-for-sale
+  app.get(["/boulder-homes-for-sale", "/boulder-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/boulder-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/boulder-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-85: /longmont-co-homes-for-sale
+  app.get(["/longmont-co-homes-for-sale", "/longmont-co-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/longmont-co-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/longmont-co-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-86: /lafayette-co-homes-for-sale
+  app.get(["/lafayette-co-homes-for-sale", "/lafayette-co-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/lafayette-co-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/lafayette-co-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
   app.use(express.static(distPath));
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
