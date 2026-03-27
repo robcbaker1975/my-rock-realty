@@ -573,6 +573,71 @@ export function serveStatic(app: Express) {
       res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
+  // IL-37: Serve prerendered HTML for /wash-park-denver-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/wash-park-denver-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/wash-park-denver-homes-for-sale.html — build artifact.
+  app.get(["/wash-park-denver-homes-for-sale", "/wash-park-denver-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/wash-park-denver-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/wash-park-denver-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-38: Serve prerendered HTML for /cherry-creek-denver-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/cherry-creek-denver-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/cherry-creek-denver-homes-for-sale.html — build artifact.
+  app.get(["/cherry-creek-denver-homes-for-sale", "/cherry-creek-denver-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/cherry-creek-denver-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/cherry-creek-denver-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-39: Serve prerendered HTML for /lohi-denver-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/lohi-denver-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/lohi-denver-homes-for-sale.html — build artifact.
+  app.get(["/lohi-denver-homes-for-sale", "/lohi-denver-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/lohi-denver-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/lohi-denver-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-40: Serve prerendered HTML for /rino-denver-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/rino-denver-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/rino-denver-homes-for-sale.html — build artifact.
+  app.get(["/rino-denver-homes-for-sale", "/rino-denver-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/rino-denver-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/rino-denver-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-41: Serve prerendered HTML for /central-park-denver-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/central-park-denver-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/central-park-denver-homes-for-sale.html — build artifact.
+  app.get(["/central-park-denver-homes-for-sale", "/central-park-denver-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/central-park-denver-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/central-park-denver-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist
