@@ -368,6 +368,76 @@ export function serveStatic(app: Express) {
     }
   });
 
+  // IL-22: Serve prerendered HTML for /monument-co-real-estate (+ trailing-slash form).
+  // Primary: server/prerendered/monument-co-real-estate.html — committed to git.
+  // Fallback: dist/prerendered/monument-co-real-estate.html — build artifact.
+  app.get(["/monument-co-real-estate", "/monument-co-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/monument-co-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/monument-co-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-23: Serve prerendered HTML for /falcon-co-real-estate (+ trailing-slash form).
+  // Primary: server/prerendered/falcon-co-real-estate.html — committed to git.
+  // Fallback: dist/prerendered/falcon-co-real-estate.html — build artifact.
+  app.get(["/falcon-co-real-estate", "/falcon-co-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/falcon-co-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/falcon-co-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-24: Serve prerendered HTML for /fountain-co-real-estate (+ trailing-slash form).
+  // Primary: server/prerendered/fountain-co-real-estate.html — committed to git.
+  // Fallback: dist/prerendered/fountain-co-real-estate.html — build artifact.
+  app.get(["/fountain-co-real-estate", "/fountain-co-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/fountain-co-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/fountain-co-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-25: Serve prerendered HTML for /woodland-park-co-real-estate (+ trailing-slash form).
+  // Primary: server/prerendered/woodland-park-co-real-estate.html — committed to git.
+  // Fallback: dist/prerendered/woodland-park-co-real-estate.html — build artifact.
+  app.get(["/woodland-park-co-real-estate", "/woodland-park-co-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/woodland-park-co-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/woodland-park-co-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
+  // IL-26: Serve prerendered HTML for /manitou-springs-co-real-estate (+ trailing-slash form).
+  // Primary: server/prerendered/manitou-springs-co-real-estate.html — committed to git.
+  // Fallback: dist/prerendered/manitou-springs-co-real-estate.html — build artifact.
+  app.get(["/manitou-springs-co-real-estate", "/manitou-springs-co-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/manitou-springs-co-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/manitou-springs-co-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist
