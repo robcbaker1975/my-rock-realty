@@ -638,6 +638,71 @@ export function serveStatic(app: Express) {
       res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
+  // IL-42: Serve prerendered HTML for /buying-a-home-in-denver (+ trailing-slash form).
+  // Primary: server/prerendered/buying-a-home-in-denver.html — committed to git.
+  // Fallback: dist/prerendered/buying-a-home-in-denver.html — build artifact.
+  app.get(["/buying-a-home-in-denver", "/buying-a-home-in-denver/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/buying-a-home-in-denver.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/buying-a-home-in-denver.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-43: Serve prerendered HTML for /first-time-home-buyer-denver (+ trailing-slash form).
+  // Primary: server/prerendered/first-time-home-buyer-denver.html — committed to git.
+  // Fallback: dist/prerendered/first-time-home-buyer-denver.html — build artifact.
+  app.get(["/first-time-home-buyer-denver", "/first-time-home-buyer-denver/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/first-time-home-buyer-denver.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/first-time-home-buyer-denver.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-44: Serve prerendered HTML for /denver-home-buying-process (+ trailing-slash form).
+  // Primary: server/prerendered/denver-home-buying-process.html — committed to git.
+  // Fallback: dist/prerendered/denver-home-buying-process.html — build artifact.
+  app.get(["/denver-home-buying-process", "/denver-home-buying-process/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/denver-home-buying-process.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/denver-home-buying-process.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-45: Serve prerendered HTML for /cost-of-living-in-denver-colorado (+ trailing-slash form).
+  // Primary: server/prerendered/cost-of-living-in-denver-colorado.html — committed to git.
+  // Fallback: dist/prerendered/cost-of-living-in-denver-colorado.html — build artifact.
+  app.get(["/cost-of-living-in-denver-colorado", "/cost-of-living-in-denver-colorado/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/cost-of-living-in-denver-colorado.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/cost-of-living-in-denver-colorado.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-46: Serve prerendered HTML for /relocation/relocating-to-denver-colorado (+ trailing-slash form).
+  // Primary: server/prerendered/relocating-to-denver-colorado.html — committed to git.
+  // Fallback: dist/prerendered/relocating-to-denver-colorado.html — build artifact.
+  app.get(["/relocation/relocating-to-denver-colorado", "/relocation/relocating-to-denver-colorado/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/relocating-to-denver-colorado.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/relocating-to-denver-colorado.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist
