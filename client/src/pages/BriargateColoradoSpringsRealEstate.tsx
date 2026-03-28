@@ -15,24 +15,54 @@ import { ChevronDown } from "lucide-react";
 /* ─── FAQ Content ─── */
 const faqContent = [
   {
-    question: "Is Briargate a good area for someone new to Colorado Springs?",
+    question: "Why do buyers keep Briargate in the search once they start touring homes?",
     answer:
-      "Often, yes. Briargate tends to be one of the easier north-side areas to understand quickly, especially for buyers who want a practical search and a neighborhood pattern that feels more consistent.",
+      "A lot of buyers keep Briargate in the search once they actually start driving it because it usually feels easier to understand in person than it does online. Once you are in Briargate Colorado Springs, things like John Venezia Park, the Promenade Shops at Briargate, Memorial Hospital North, and the bigger north-side roads help people get a feel for how everyday life would work. For a lot of buyers, that starts to matter more than they expected.",
   },
   {
-    question: "Does Briargate feel different from Northgate or Flying Horse?",
+    question: "What makes living in Briargate different from living in Northgate?",
     answer:
-      "Yes. There is overlap, but Briargate usually feels a little more established and a little less branded than some of the farther-north or more explicitly master-planned alternatives.",
+      "Living in Briargate usually feels easier if you want more shopping, restaurants, parks, and normal weekly convenience close by. Northgate usually makes more sense if being farther north, being closer to I-25, and being closer to the Air Force Academy matter more. A lot of buyers think Briargate and Northgate are going to feel pretty similar at first, but once they drive both, that usually changes pretty quickly.",
   },
   {
-    question: "Is Briargate more established than Banning Lewis Ranch?",
+    question: "When does Briargate make more sense than Cordera?",
     answer:
-      "Usually, yes. Banning Lewis Ranch tends to represent the newer east/northeast growth pattern, while Briargate usually feels more settled in and more mature in its overall neighborhood rhythm.",
+      "Briargate usually starts making more sense than Cordera when a buyer wants something that feels more established and a little more lived in. Cordera usually feels a little newer and a little more planned from the start. Briargate often fits better when someone wants the north side to feel practical and settled instead of newer and more polished.",
   },
   {
-    question: "What makes Briargate practical?",
+    question: "How is Briargate different from Flying Horse?",
     answer:
-      "A big part of it is that the area is easy to read once you are there. John Venezia Community Park, Memorial Hospital North, and the Promenade Shops all reinforce that everyday practicality.",
+      "Briargate usually feels more practical, while Flying Horse usually feels more like buyers are choosing it because they want Flying Horse specifically. A lot of buyers looking at Briargate Colorado Springs are really trying to find an area that works well for everyday life. Buyers looking at Flying Horse are often also looking for a stronger neighborhood identity.",
+  },
+  {
+    question: "What kind of buyer usually ends up choosing Briargate?",
+    answer:
+      "Usually it is a buyer who wants the north side to feel established, convenient, and easier to live in day to day. A lot of the time they want parks, trails, shopping, restaurants, grocery stores, and an area that is not hard to get a feel for once they start driving it. They may not need the quietest area or the most unique area. They usually want an area that works well in real life.",
+  },
+  {
+    question: "What kind of buyer usually moves on from Briargate?",
+    answer:
+      "Usually it is someone who wants to be closer to the mountains, wants more west-side character, wants something quieter and farther north, or wants a neighborhood with a stronger identity. Some buyers also move on if they want a part of Colorado Springs that feels more unique from one area to the next. Briargate usually stays strongest for buyers who want practicality and convenience.",
+  },
+  {
+    question: "Is Briargate more about convenience or character?",
+    answer:
+      "Briargate is usually more about convenience than character. That is not a bad thing. For a lot of buyers, that is exactly why it works. Living in Briargate usually means having parks, trails, shopping, grocery stores, restaurants, and places like the Promenade Shops or Chapel Hills close enough to be part of normal life, and that tends to matter more once the search gets real.",
+  },
+  {
+    question: "Is Briargate a good fit if I want to stay near the Air Force Academy?",
+    answer:
+      "It can be. A lot of buyers looking at homes for sale in Briargate are also trying to stay in a part of town that works for north-side driving and Academy access. If being as far north as possible matters more, Northgate may make more sense. If you want a little more shopping, convenience, and a more established feel while still staying on the north side, Briargate often stays in a strong middle spot.",
+  },
+  {
+    question: "What starts to matter about Briargate once the search gets real?",
+    answer:
+      "Once the search gets real, a lot of buyers realize Briargate is less about making a big impression and more about how easy it is to live there. Things like John Venezia Park, Cottonwood Creek Park, shopping at the Promenade Shops, nearby healthcare, and the road layout all start mattering more once people picture normal life instead of just looking at listing photos. That is one reason homes for sale in Briargate keep getting attention from serious buyers.",
+  },
+  {
+    question: "Why do homes for sale in Briargate keep coming up for north-side buyers?",
+    answer:
+      "Homes for sale in Briargate keep coming up because Briargate usually checks a lot of boxes at once. It is established, practical, easier to understand than some other areas, and covers a lot of day to day needs. For buyers trying to narrow down the north side of Colorado Springs, Briargate often stays in the search because it makes everyday life feel simpler.",
   },
 ];
 
