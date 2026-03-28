@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { useLocation } from "wouter";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/hero-bg-dyEKuHhWXn8eKxpjETtCvy.webp";
-const HEADSHOT_URL = "/assets/rob-headshot.jpg";
+const HEADSHOT_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/rob-headshot_a6a8b976.jpg";
 
 export default function HeroSection() {
   const [, setLocation] = useLocation();

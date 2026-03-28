@@ -37,9 +37,9 @@ import {
 } from "lucide-react";
 
 const LOGO_URL =
-  "/assets/logo.png";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/logo_c4d99dfc.png";
 const HEADSHOT_URL =
-  "/assets/rob-headshot.jpg";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/rob-headshot_a6a8b976.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },

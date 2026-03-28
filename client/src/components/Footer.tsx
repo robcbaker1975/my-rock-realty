@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { useEffect } from "react";
 import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 
-const LOGO_URL = "/assets/logo.png";
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/logo_c4d99dfc.png";
 
 // Military & PCS spoke links for footer discoverability
 const militaryLinks = [

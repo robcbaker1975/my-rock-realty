@@ -23,7 +23,7 @@ import {
   Key,
 } from "lucide-react";
 
-const HERO_BG = "/images/denver-rowhouses-hero.jpg";
+const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/denver-rowhouses-hero_2f59d4ac.jpg";
 
 /* ─── FAQ Content ─── */
 const faqContent = [
