@@ -286,6 +286,33 @@ export default function NorthgateColoradoSpringsRealEstate() {
               >
                 Colorado Springs Relocation Guide →
               </a>
+              <a
+                href="/colorado-home-buying-workshop"
+                className="text-stone-400 hover:text-amber-400 text-sm underline transition-colors"
+              >
+                Colorado Home Buying Workshop →
+              </a>
+              <span className="text-[#C9A96E]/40 text-sm mx-1">·</span>
+              <a
+                href="/briargate-colorado-springs-real-estate/"
+                className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors"
+              >
+                Briargate →
+              </a>
+              <span className="text-[#C9A96E]/40 text-sm mx-1">·</span>
+              <a
+                href="/flying-horse-colorado-springs-real-estate/"
+                className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors"
+              >
+                Flying Horse →
+              </a>
+              <span className="text-[#C9A96E]/40 text-sm mx-1">·</span>
+              <a
+                href="/banning-lewis-ranch-colorado-springs-real-estate/"
+                className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors"
+              >
+                Banning Lewis Ranch →
+              </a>
             </div>
           </section>
 

@@ -292,6 +292,12 @@ export default function CalhanCoRealEstate() {
       <footer className="bg-stone-950 py-8 px-4 text-center text-stone-500 text-sm">
         <p className="mb-2">
           <a href="/moving-to-colorado-springs/" className="hover:text-amber-400 transition-colors">Colorado Springs Relocation Guide</a>
+              <a
+                href="/colorado-home-buying-workshop"
+                className="text-stone-400 hover:text-amber-400 text-sm underline transition-colors"
+              >
+                Colorado Home Buying Workshop →
+              </a>
           {" · "}
           <a href="/colorado-springs-co-homes-for-sale" className="hover:text-amber-400 transition-colors">Colorado Springs Homes for Sale</a>
         </p>

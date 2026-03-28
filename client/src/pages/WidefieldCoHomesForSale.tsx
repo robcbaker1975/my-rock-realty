@@ -260,7 +260,7 @@ export default function WidefieldCoHomesForSale() {
               },
               {
                 name: "Manitou Springs",
-                link: "/manitou-springs-co-homes-for-sale",
+                link: "/manitou-springs-co-real-estate/",
               },
               {
                 name: "Palmer Lake",
@@ -353,15 +353,15 @@ export default function WidefieldCoHomesForSale() {
               },
               {
                 title: "Manitou Springs Homes",
-                link: "/manitou-springs-co-homes-for-sale",
+                link: "/manitou-springs-co-real-estate/",
               },
               {
                 title: "Colorado Springs Condos for Sale",
-                link: "/denver-condos-for-sale",
+                link: "/colorado-springs-co-homes-for-sale",
               },
               {
                 title: "Colorado Springs Townhomes for Sale",
-                link: "/denver-townhomes-for-sale",
+                link: "/colorado-springs-co-homes-for-sale",
               },
               {
                 title: "Colorado Springs County Homes Hub",
@@ -415,12 +415,12 @@ export default function WidefieldCoHomesForSale() {
             <div className="space-y-3 mb-8">
               {[
                 {
-                  title: "Buying a Home in Colorado Springs",
-                  link: "/buying-a-home-in-denver",
+                  title: "Moving to Colorado Springs Guide",
+                  link: "/moving-to-colorado-springs/",
                 },
                 {
-                  title: "Colorado Springs Home Buying Process",
-                  link: "/denver-home-buying-process",
+                  title: "Colorado Home Buying Workshop",
+                  link: "/colorado-home-buying-workshop",
                 },
               ].map((guide, idx) => (
                 <a

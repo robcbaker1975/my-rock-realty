@@ -16,6 +16,7 @@ import { build } from "vite";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { buildSeoHeadBlock, injectSeoHead, BASE_SCHEMAS, buildBreadcrumbSchema, OG_IMAGE_DEFAULT, OG_IMAGE_MILITARY } from "./seo-inject.mjs";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 async function prerenderFortCarson() {
@@ -59,12 +60,31 @@ async function prerenderFortCarson() {
   const serverPrerenderedDir = resolve(ROOT, "server/prerendered");
   mkdirSync(serverPrerenderedDir, { recursive: true });
   const serverOutputPath = resolve(serverPrerenderedDir, "fort-carson.html");
-  writeFileSync(serverOutputPath, finalHtml, "utf-8");
+
+  // === SEO_INJECTED ===
+  const _seoBlock = buildSeoHeadBlock({
+    title: 'Fort Carson Relocation Guide | Colorado Springs Real Estate | My Rock Realty',
+    description: 'Practical relocation guidance for buyers moving to Fort Carson and the Colorado Springs area. PCS planning, VA loan context, and neighborhood orientation.',
+    canonical: 'https://myrockhomes.com/military-relocation/fort-carson/',
+    ogImage: OG_IMAGE_MILITARY,
+    schemas: [
+      ...BASE_SCHEMAS,
+      buildBreadcrumbSchema([
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+        { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
+        { "@type": "ListItem", position: 3, name: 'Fort Carson Relocation Guide', item: 'https://myrockhomes.com/military-relocation/fort-carson/' },
+      ]),
+    ],
+    slug: 'fort-carson',
+  });
+  const _injectedHtml = injectSeoHead(finalHtml, _seoBlock, 'https://myrockhomes.com/military-relocation/fort-carson/');
+
+  writeFileSync(serverOutputPath, _injectedHtml, "utf-8");
   console.log(`[prerender-fort-carson] Written to ${serverOutputPath} (${finalHtml.length} bytes)`);
   const distPrerenderedDir = resolve(ROOT, "dist/prerendered");
   mkdirSync(distPrerenderedDir, { recursive: true });
   const distOutputPath = resolve(distPrerenderedDir, "fort-carson.html");
-  writeFileSync(distOutputPath, finalHtml, "utf-8");
+  writeFileSync(distOutputPath, _injectedHtml, "utf-8");
   console.log(`[prerender-fort-carson] Written to ${distOutputPath} (fallback)`);
   console.log("[prerender-fort-carson] Done.");
 }

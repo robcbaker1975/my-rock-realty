@@ -5,6 +5,7 @@ import { build } from "vite";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { buildSeoHeadBlock, injectSeoHead, BASE_SCHEMAS, buildBreadcrumbSchema, OG_IMAGE_DEFAULT, OG_IMAGE_MILITARY } from "./seo-inject.mjs";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 async function prerender() {
@@ -38,12 +39,31 @@ async function prerender() {
   const serverDir = resolve(ROOT, "server/prerendered");
   mkdirSync(serverDir, { recursive: true });
   const serverOut = resolve(serverDir, "best-communities-near-fort-carson.html");
-  writeFileSync(serverOut, finalHtml, "utf-8");
+
+  // === SEO_INJECTED ===
+  const _seoBlock = buildSeoHeadBlock({
+    title: 'Best Communities Near Fort Carson | Military Relocation | My Rock Realty',
+    description: 'Community orientation for military and PCS buyers relocating near Fort Carson in Colorado Springs. Practical neighborhood comparisons and housing context.',
+    canonical: 'https://myrockhomes.com/military-relocation/best-communities-near-fort-carson/',
+    ogImage: OG_IMAGE_MILITARY,
+    schemas: [
+      ...BASE_SCHEMAS,
+      buildBreadcrumbSchema([
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+        { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
+        { "@type": "ListItem", position: 3, name: 'Best Communities Near Fort Carson', item: 'https://myrockhomes.com/military-relocation/best-communities-near-fort-carson/' },
+      ]),
+    ],
+    slug: 'best-communities-near-fort-carson',
+  });
+  const _injectedHtml = injectSeoHead(finalHtml, _seoBlock, 'https://myrockhomes.com/military-relocation/best-communities-near-fort-carson/');
+
+  writeFileSync(serverOut, _injectedHtml, "utf-8");
   console.log(`[prerender-best-communities-near-fort-carson] Written to ${serverOut} (${finalHtml.length} bytes)`);
   const distDir = resolve(ROOT, "dist/prerendered");
   mkdirSync(distDir, { recursive: true });
   const distOut = resolve(distDir, "best-communities-near-fort-carson.html");
-  writeFileSync(distOut, finalHtml, "utf-8");
+  writeFileSync(distOut, _injectedHtml, "utf-8");
   console.log(`[prerender-best-communities-near-fort-carson] Written to ${distOut} (fallback)`);
   console.log("[prerender-best-communities-near-fort-carson] Done.");
 }

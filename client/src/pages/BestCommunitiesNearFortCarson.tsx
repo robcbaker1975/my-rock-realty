@@ -386,6 +386,20 @@ export default function BestCommunitiesNearFortCarson() {
           >
             ← Back to Military & PCS Relocation
           </a>
+          <span className="text-charcoal-light/30 mx-2">·</span>
+          <a
+            href="/colorado-springs-co-homes-for-sale"
+            className="inline-flex items-center gap-2 text-charcoal-light/60 hover:text-gold-dark text-sm transition-colors"
+          >
+            Colorado Springs Homes for Sale
+          </a>
+          <span className="text-charcoal-light/30 mx-2">·</span>
+          <a
+            href="/moving-to-colorado-springs/"
+            className="inline-flex items-center gap-2 text-charcoal-light/60 hover:text-gold-dark text-sm transition-colors"
+          >
+            Moving to Colorado Springs
+          </a>
         </div>
       </div>
     </div>

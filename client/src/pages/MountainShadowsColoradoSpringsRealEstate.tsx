@@ -491,6 +491,12 @@ export default function MountainShadowsColoradoSpringsRealEstate() {
               >
                 Colorado Springs Relocation Guide →
               </a>
+              <a
+                href="/colorado-home-buying-workshop"
+                className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors"
+              >
+                Colorado Home Buying Workshop →
+              </a>
             </div>
           </div>
         </section>

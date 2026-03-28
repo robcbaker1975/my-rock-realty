@@ -16,6 +16,7 @@ import { build } from "vite";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { buildSeoHeadBlock, injectSeoHead, BASE_SCHEMAS, buildBreadcrumbSchema, OG_IMAGE_DEFAULT, OG_IMAGE_MILITARY } from "./seo-inject.mjs";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 async function prerenderPcsColorado() {
@@ -59,12 +60,31 @@ async function prerenderPcsColorado() {
   const serverPrerenderedDir = resolve(ROOT, "server/prerendered");
   mkdirSync(serverPrerenderedDir, { recursive: true });
   const serverOutputPath = resolve(serverPrerenderedDir, "pcs-colorado.html");
-  writeFileSync(serverOutputPath, finalHtml, "utf-8");
+
+  // === SEO_INJECTED ===
+  const _seoBlock = buildSeoHeadBlock({
+    title: 'PCS to Colorado: Military Homebuying Guide | My Rock Realty',
+    description: 'Practical guidance for military buyers PCS-ing to Colorado. Covers PCS timing, rent vs. buy decisions, VA loan use, and Colorado-specific housing context.',
+    canonical: 'https://myrockhomes.com/military-relocation/pcs-colorado/',
+    ogImage: OG_IMAGE_MILITARY,
+    schemas: [
+      ...BASE_SCHEMAS,
+      buildBreadcrumbSchema([
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+        { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
+        { "@type": "ListItem", position: 3, name: 'PCS to Colorado: Military Homebuying Guide', item: 'https://myrockhomes.com/military-relocation/pcs-colorado/' },
+      ]),
+    ],
+    slug: 'pcs-colorado',
+  });
+  const _injectedHtml = injectSeoHead(finalHtml, _seoBlock, 'https://myrockhomes.com/military-relocation/pcs-colorado/');
+
+  writeFileSync(serverOutputPath, _injectedHtml, "utf-8");
   console.log(`[prerender-pcs-colorado] Written to ${serverOutputPath} (${finalHtml.length} bytes)`);
   const distPrerenderedDir = resolve(ROOT, "dist/prerendered");
   mkdirSync(distPrerenderedDir, { recursive: true });
   const distOutputPath = resolve(distPrerenderedDir, "pcs-colorado.html");
-  writeFileSync(distOutputPath, finalHtml, "utf-8");
+  writeFileSync(distOutputPath, _injectedHtml, "utf-8");
   console.log(`[prerender-pcs-colorado] Written to ${distOutputPath} (fallback)`);
   console.log("[prerender-pcs-colorado] Done.");
 }

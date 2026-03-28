@@ -287,6 +287,33 @@ export default function FlyingHorseColoradoSpringsRealEstate() {
               >
                 Colorado Springs Relocation Guide →
               </a>
+              <a
+                href="/colorado-home-buying-workshop"
+                className="text-stone-400 hover:text-amber-400 text-sm underline transition-colors"
+              >
+                Colorado Home Buying Workshop →
+              </a>
+              <span className="text-[#C9A96E]/40 text-sm mx-1">·</span>
+              <a
+                href="/briargate-colorado-springs-real-estate/"
+                className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors"
+              >
+                Briargate →
+              </a>
+              <span className="text-[#C9A96E]/40 text-sm mx-1">·</span>
+              <a
+                href="/northgate-colorado-springs-real-estate/"
+                className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors"
+              >
+                Northgate →
+              </a>
+              <span className="text-[#C9A96E]/40 text-sm mx-1">·</span>
+              <a
+                href="/cordera-colorado-springs-real-estate/"
+                className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors"
+              >
+                Cordera →
+              </a>
             </div>
           </section>
 

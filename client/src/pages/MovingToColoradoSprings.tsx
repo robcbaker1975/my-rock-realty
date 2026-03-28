@@ -657,6 +657,12 @@ export default function MovingToColoradoSprings() {
                 Browse Colorado Springs Homes
                 <ArrowRight size={18} />
               </a>
+              <a
+                href="/colorado-home-buying-workshop"
+                className="text-gold hover:underline"
+              >
+                Colorado Home Buying Workshop
+              </a>
             </div>
           </motion.div>
         </div>

@@ -570,6 +570,15 @@ export default function BroadmoorCheyenneMountainColoradoSpringsRealEstate() {
                 </a>
               </div>
             </div>
+
+              <div className="mt-4 text-center">
+                <a
+                  href="/colorado-home-buying-workshop"
+                  className="text-stone-400 hover:text-amber-400 text-sm underline transition-colors"
+                >
+                  Colorado Home Buying Workshop →
+                </a>
+              </div>
           </div>
         </section>
 

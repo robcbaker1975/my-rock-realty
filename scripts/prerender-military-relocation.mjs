@@ -16,6 +16,7 @@ import { build } from "vite";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { buildSeoHeadBlock, injectSeoHead, BASE_SCHEMAS, buildBreadcrumbSchema, OG_IMAGE_DEFAULT, OG_IMAGE_MILITARY } from "./seo-inject.mjs";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 async function prerenderMilitaryRelocation() {
@@ -59,12 +60,31 @@ async function prerenderMilitaryRelocation() {
   const serverPrerenderedDir = resolve(ROOT, "server/prerendered");
   mkdirSync(serverPrerenderedDir, { recursive: true });
   const serverOutputPath = resolve(serverPrerenderedDir, "military-relocation.html");
-  writeFileSync(serverOutputPath, finalHtml, "utf-8");
+
+  // === SEO_INJECTED ===
+  const _seoBlock = buildSeoHeadBlock({
+    title: 'Military & PCS Relocation in Colorado | My Rock Realty',
+    description: 'Colorado real estate support for active duty, veterans, military spouses, and PCS buyers. VA homebuying guidance, base-specific relocation resources, and community orientation.',
+    canonical: 'https://myrockhomes.com/military-relocation/',
+    ogImage: OG_IMAGE_MILITARY,
+    schemas: [
+      ...BASE_SCHEMAS,
+      buildBreadcrumbSchema([
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+        { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
+        { "@type": "ListItem", position: 3, name: 'Military & PCS Relocation in Colorado', item: 'https://myrockhomes.com/military-relocation/' },
+      ]),
+    ],
+    slug: 'military-relocation',
+  });
+  const _injectedHtml = injectSeoHead(finalHtml, _seoBlock, 'https://myrockhomes.com/military-relocation/');
+
+  writeFileSync(serverOutputPath, _injectedHtml, "utf-8");
   console.log(`[prerender-military-relocation] Written to ${serverOutputPath} (${finalHtml.length} bytes)`);
   const distPrerenderedDir = resolve(ROOT, "dist/prerendered");
   mkdirSync(distPrerenderedDir, { recursive: true });
   const distOutputPath = resolve(distPrerenderedDir, "military-relocation.html");
-  writeFileSync(distOutputPath, finalHtml, "utf-8");
+  writeFileSync(distOutputPath, _injectedHtml, "utf-8");
   console.log(`[prerender-military-relocation] Written to ${distOutputPath} (fallback)`);
   console.log("[prerender-military-relocation] Done.");
 }

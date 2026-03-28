@@ -293,6 +293,12 @@ export default function FalconCoRealEstate() {
               >
                 Colorado Springs Relocation Guide →
               </a>
+              <a
+                href="/colorado-home-buying-workshop"
+                className="text-stone-400 hover:text-amber-400 text-sm underline transition-colors"
+              >
+                Colorado Home Buying Workshop →
+              </a>
             </div>
           </section>
 

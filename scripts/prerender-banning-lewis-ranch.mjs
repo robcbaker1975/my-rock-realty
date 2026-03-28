@@ -6,6 +6,7 @@ import { build } from "vite";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { buildSeoHeadBlock, injectSeoHead, BASE_SCHEMAS, buildBreadcrumbSchema, OG_IMAGE_DEFAULT, OG_IMAGE_MILITARY } from "./seo-inject.mjs";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 async function prerenderBanningLewisRanch() {
@@ -43,12 +44,31 @@ async function prerenderBanningLewisRanch() {
   }
   const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
   const distOutputDir = resolve(ROOT, "dist/prerendered");
+
+  // === SEO_INJECTED ===
+  const _seoBlock = buildSeoHeadBlock({
+    title: "Living in Banning Lewis Ranch, Colorado Springs: Real Estate, Tradeoffs, and What It's Like | MyRockHomes.com",
+    description: 'Banning Lewis Ranch stays in the Colorado Springs conversation because it makes the search feel newer, more open, and more affordable at the same time.',
+    canonical: 'https://myrockhomes.com/banning-lewis-ranch-colorado-springs-real-estate/',
+    ogImage: OG_IMAGE_DEFAULT,
+    schemas: [
+      ...BASE_SCHEMAS,
+      buildBreadcrumbSchema([
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+        { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
+        { "@type": "ListItem", position: 3, name: "Living in Banning Lewis Ranch, Colorado Springs: Real Estate, Tradeoffs, and What It's Like", item: 'https://myrockhomes.com/banning-lewis-ranch-colorado-springs-real-estate/' },
+      ]),
+    ],
+    slug: 'banning-lewis-ranch-colorado-springs-real-estate',
+  });
+  const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/banning-lewis-ranch-colorado-springs-real-estate/');
+
   mkdirSync(distOutputDir, { recursive: true });
   writeFileSync(resolve(distOutputDir, "banning-lewis-ranch-colorado-springs-real-estate.html"), prerenderedShell, "utf-8");
   const srcOutputDir = resolve(ROOT, "server/prerendered");
   mkdirSync(srcOutputDir, { recursive: true });
   const srcOutputPath = resolve(srcOutputDir, "banning-lewis-ranch-colorado-springs-real-estate.html");
-  writeFileSync(srcOutputPath, prerenderedShell, "utf-8");
+  writeFileSync(srcOutputPath, _injectedHtml, "utf-8");
   console.log(`[prerender-banning-lewis-ranch] Committed artifact written to: ${srcOutputPath}`);
   const written = readFileSync(srcOutputPath, "utf-8");
   const anchorCount = (written.match(/<a\s/g) || []).length;

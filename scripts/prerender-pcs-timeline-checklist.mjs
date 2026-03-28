@@ -5,6 +5,7 @@ import { build } from "vite";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { buildSeoHeadBlock, injectSeoHead, BASE_SCHEMAS, buildBreadcrumbSchema, OG_IMAGE_DEFAULT, OG_IMAGE_MILITARY } from "./seo-inject.mjs";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 async function prerender() {
@@ -38,12 +39,31 @@ async function prerender() {
   const serverDir = resolve(ROOT, "server/prerendered");
   mkdirSync(serverDir, { recursive: true });
   const serverOut = resolve(serverDir, "pcs-timeline-checklist.html");
-  writeFileSync(serverOut, finalHtml, "utf-8");
+
+  // === SEO_INJECTED ===
+  const _seoBlock = buildSeoHeadBlock({
+    title: 'PCS Timeline Checklist for Colorado | My Rock Realty',
+    description: 'A practical PCS homebuying checklist for military buyers relocating to Colorado. Phase-by-phase planning from orders to closing.',
+    canonical: 'https://myrockhomes.com/military-relocation/pcs-timeline-checklist/',
+    ogImage: OG_IMAGE_MILITARY,
+    schemas: [
+      ...BASE_SCHEMAS,
+      buildBreadcrumbSchema([
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+        { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
+        { "@type": "ListItem", position: 3, name: 'PCS Timeline Checklist for Colorado', item: 'https://myrockhomes.com/military-relocation/pcs-timeline-checklist/' },
+      ]),
+    ],
+    slug: 'pcs-timeline-checklist',
+  });
+  const _injectedHtml = injectSeoHead(finalHtml, _seoBlock, 'https://myrockhomes.com/military-relocation/pcs-timeline-checklist/');
+
+  writeFileSync(serverOut, _injectedHtml, "utf-8");
   console.log(`[prerender-pcs-timeline-checklist] Written to ${serverOut} (${finalHtml.length} bytes)`);
   const distDir = resolve(ROOT, "dist/prerendered");
   mkdirSync(distDir, { recursive: true });
   const distOut = resolve(distDir, "pcs-timeline-checklist.html");
-  writeFileSync(distOut, finalHtml, "utf-8");
+  writeFileSync(distOut, _injectedHtml, "utf-8");
   console.log(`[prerender-pcs-timeline-checklist] Written to ${distOut} (fallback)`);
   console.log("[prerender-pcs-timeline-checklist] Done.");
 }

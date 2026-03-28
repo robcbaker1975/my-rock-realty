@@ -6,6 +6,7 @@ import { build } from "vite";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { buildSeoHeadBlock, injectSeoHead, BASE_SCHEMAS, buildBreadcrumbSchema, OG_IMAGE_DEFAULT, OG_IMAGE_MILITARY } from "./seo-inject.mjs";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 async function prerenderOldColoradoCity() {
@@ -41,12 +42,31 @@ async function prerenderOldColoradoCity() {
   }
   const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
   const distOutputDir = resolve(ROOT, "dist/prerendered");
+
+  // === SEO_INJECTED ===
+  const _seoBlock = buildSeoHeadBlock({
+    title: 'Old Colorado City, Colorado Springs Real Estate | My Rock Realty',
+    description: 'Old Colorado City offers one of the more established, walkable, character-driven neighborhood searches in Colorado Springs. Here is what the search usually looks like.',
+    canonical: 'https://myrockhomes.com/old-colorado-city-colorado-springs-real-estate/',
+    ogImage: OG_IMAGE_DEFAULT,
+    schemas: [
+      ...BASE_SCHEMAS,
+      buildBreadcrumbSchema([
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+        { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
+        { "@type": "ListItem", position: 3, name: 'Old Colorado City, Colorado Springs Real Estate', item: 'https://myrockhomes.com/old-colorado-city-colorado-springs-real-estate/' },
+      ]),
+    ],
+    slug: 'old-colorado-city-colorado-springs-real-estate',
+  });
+  const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/old-colorado-city-colorado-springs-real-estate/');
+
   mkdirSync(distOutputDir, { recursive: true });
   writeFileSync(resolve(distOutputDir, "old-colorado-city-colorado-springs-real-estate.html"), prerenderedShell, "utf-8");
   const srcOutputDir = resolve(ROOT, "server/prerendered");
   mkdirSync(srcOutputDir, { recursive: true });
   const srcOutputPath = resolve(srcOutputDir, "old-colorado-city-colorado-springs-real-estate.html");
-  writeFileSync(srcOutputPath, prerenderedShell, "utf-8");
+  writeFileSync(srcOutputPath, _injectedHtml, "utf-8");
   console.log(`[prerender-old-colorado-city] Committed artifact written to: ${srcOutputPath}`);
   const written = readFileSync(srcOutputPath, "utf-8");
   const anchorCount = (written.match(/<a\s/g) || []).length;

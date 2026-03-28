@@ -6,6 +6,7 @@ import { build } from "vite";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { buildSeoHeadBlock, injectSeoHead, BASE_SCHEMAS, buildBreadcrumbSchema, OG_IMAGE_DEFAULT, OG_IMAGE_MILITARY } from "./seo-inject.mjs";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 async function prerenderDenverVsColoradoSprings() {
@@ -34,12 +35,31 @@ async function prerenderDenverVsColoradoSprings() {
   if (!shell.includes(PLACEHOLDER)) throw new Error(`[prerender-denver-vs-colorado-springs] Placeholder not found.`);
   const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
   const distOutputDir = resolve(ROOT, "dist/prerendered");
+
+  // === SEO_INJECTED ===
+  const _seoBlock = buildSeoHeadBlock({
+    title: 'Denver vs Colorado Springs | Colorado City Comparison for Home Buyers',
+    description: 'Denver vs Colorado Springs comparison for home buyers. Compare neighborhoods, markets, lifestyle, commute, and cost to decide which Colorado city fits your move.',
+    canonical: 'https://myrockhomes.com/denver-vs-colorado-springs',
+    ogImage: OG_IMAGE_DEFAULT,
+    schemas: [
+      ...BASE_SCHEMAS,
+      buildBreadcrumbSchema([
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+        { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
+        { "@type": "ListItem", position: 3, name: 'Denver vs Colorado Springs', item: 'https://myrockhomes.com/denver-vs-colorado-springs' },
+      ]),
+    ],
+    slug: 'denver-vs-colorado-springs',
+  });
+  const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/denver-vs-colorado-springs');
+
   mkdirSync(distOutputDir, { recursive: true });
   writeFileSync(resolve(distOutputDir, "denver-vs-colorado-springs.html"), prerenderedShell, "utf-8");
   const srcOutputDir = resolve(ROOT, "server/prerendered");
   mkdirSync(srcOutputDir, { recursive: true });
   const srcOutputPath = resolve(srcOutputDir, "denver-vs-colorado-springs.html");
-  writeFileSync(srcOutputPath, prerenderedShell, "utf-8");
+  writeFileSync(srcOutputPath, _injectedHtml, "utf-8");
   console.log(`[prerender-denver-vs-colorado-springs] Committed artifact: ${srcOutputPath}`);
   const written = readFileSync(srcOutputPath, "utf-8");
   const hasH1 = /<h1[\s>]/.test(written);

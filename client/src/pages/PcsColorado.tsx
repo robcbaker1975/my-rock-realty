@@ -375,10 +375,17 @@ export default function PcsColorado() {
           </a>
           <span className="hidden sm:block text-charcoal-light/30">·</span>
           <a
-            href="/"
+            href="/colorado-springs-co-homes-for-sale"
             className="inline-flex items-center gap-2 text-charcoal-light/60 hover:text-gold-dark text-sm transition-colors"
           >
-            My Rock Realty Home
+            Colorado Springs Homes for Sale
+          </a>
+          <span className="hidden sm:block text-charcoal-light/30">·</span>
+          <a
+            href="/moving-to-colorado-springs/"
+            className="inline-flex items-center gap-2 text-charcoal-light/60 hover:text-gold-dark text-sm transition-colors"
+          >
+            Moving to Colorado Springs
           </a>
         </div>
       </div>

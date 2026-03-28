@@ -17,6 +17,7 @@ import { build } from "vite";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { buildSeoHeadBlock, injectSeoHead, BASE_SCHEMAS, buildBreadcrumbSchema, OG_IMAGE_DEFAULT, OG_IMAGE_MILITARY } from "./seo-inject.mjs";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 
@@ -77,15 +78,34 @@ async function prerenderColoradoSprings() {
   // Step 5a: Write to dist/prerendered/ (build artifact, co-located with compiled server)
   const distOutputDir = resolve(ROOT, "dist/prerendered");
   const distOutputPath = resolve(distOutputDir, "colorado-springs-co-homes-for-sale.html");
+
+  // === SEO_INJECTED ===
+  const _seoBlock = buildSeoHeadBlock({
+    title: 'Colorado Springs, CO Homes for Sale | My Rock Realty',
+    description: 'Searching for homes for sale in Colorado Springs? Start with a clearer search strategy — budget, part of town, and what the tradeoffs actually are.',
+    canonical: 'https://myrockhomes.com/colorado-springs-co-homes-for-sale',
+    ogImage: OG_IMAGE_DEFAULT,
+    schemas: [
+      ...BASE_SCHEMAS,
+      buildBreadcrumbSchema([
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+        { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
+        { "@type": "ListItem", position: 3, name: 'Colorado Springs, CO Homes for Sale', item: 'https://myrockhomes.com/colorado-springs-co-homes-for-sale' },
+      ]),
+    ],
+    slug: 'colorado-springs-co-homes-for-sale',
+  });
+  const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/colorado-springs-co-homes-for-sale');
+
   mkdirSync(distOutputDir, { recursive: true });
-  writeFileSync(distOutputPath, prerenderedShell, "utf-8");
+  writeFileSync(distOutputPath, _injectedHtml, "utf-8");
   console.log(`[prerender-colorado-springs] Prerendered file written to: ${distOutputPath}`);
 
   // Step 5b: Also write to server/prerendered/ (committed to git, primary path for Render)
   const srcOutputDir = resolve(ROOT, "server/prerendered");
   const srcOutputPath = resolve(srcOutputDir, "colorado-springs-co-homes-for-sale.html");
   mkdirSync(srcOutputDir, { recursive: true });
-  writeFileSync(srcOutputPath, prerenderedShell, "utf-8");
+  writeFileSync(srcOutputPath, _injectedHtml, "utf-8");
   console.log(`[prerender-colorado-springs] Committed artifact written to: ${srcOutputPath}`);
 
   // Step 6: Quick sanity check
