@@ -3,6 +3,7 @@
  * Premium neighborhood SEO page
  * Slug: /briargate-colorado-springs-real-estate/
  * Design: Front Range Modern — matches existing site design system
+ * Content: Approved benchmark version
  */
 import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
@@ -131,240 +132,218 @@ export default function BriargateColoradoSpringsRealEstate() {
         {/* ─── Intro ─── */}
         <section className="py-12 px-6">
           <div className="max-w-3xl mx-auto prose prose-stone prose-lg">
-            <p>Briargate comes up early in a lot of Colorado Springs searches.</p>
-            <p>Usually, that is because it feels easier to understand than a lot of the map.</p>
-            <p>That may not sound exciting. But it is real.</p>
+            <p>Briargate is usually one of the first places buyers look when they are trying to narrow down the north side of Colorado Springs.</p>
+            <p>That makes sense.</p>
             <p>
-              A lot of buyers moving to Colorado Springs are not looking for the most dramatic
-              neighborhood story. They are looking for a place that feels practical, established, and
-              easier to sort through once the search gets real. Briargate often stays in the
-              conversation for exactly that reason.
+              It is laid out well, it is not hard to get a feel for, and it has a lot of the day to day things people usually end up wanting once the search gets real. Parks, trails, shopping, restaurants, grocery stores, and the normal weekly stuff are a big part of why Briargate stays in the conversation. A lot of that sits along the bigger roads, but for many buyers that is part of what makes the area practical.
             </p>
-            <p>
-              This is not the page for someone trying to understand all of Colorado Springs. The main{" "}
-              <a href="/moving-to-colorado-springs/" className="text-amber-700 hover:underline">
-                Colorado Springs relocation page
-              </a>{" "}
-              already handles that. This page is narrower on purpose.
-            </p>
-            <p>
-              The real question here is simpler:{" "}
-              <strong>does Briargate fit the way you want everyday life to work?</strong>
-            </p>
+            <p>That is really what Briargate does well.</p>
+            <p>It makes everyday life easier.</p>
           </div>
         </section>
 
-        {/* ─── Why Briargate Stays in the Conversation ─── */}
+        {/* ─── Who Briargate Usually Fits ─── */}
         <section className="py-10 px-6 bg-white">
           <div className="max-w-3xl mx-auto prose prose-stone prose-lg">
-            <h2 className="text-2xl font-bold text-[#292524]">Why Briargate stays in the conversation</h2>
+            <h2 className="text-2xl font-bold text-[#292524]">Who Briargate usually fits</h2>
             <p>
-              Briargate usually stays in the conversation because it feels more straightforward in a
-              good way.
+              Briargate usually fits buyers who want the north side to feel established, practical, and easier to live in once the move is real.
             </p>
-            <p>That is a big part of the appeal.</p>
             <p>
-              In real life, that often means the search feels less scattered. Buyers can compare homes
-              a little faster. The area makes sense quickly. And the day-to-day anchors are easier to
-              picture once you are actually living there.
+              A lot of people like it because it has a real neighborhood feel without feeling overdone. Once you start driving it, a lot of it makes sense pretty fast. You can usually see where the parks are, where the shopping is, how the roads lay out, and what day to day life would probably feel like.
             </p>
-            <p>That does not make Briargate the right fit for everyone.</p>
-            <p>It just means it solves a specific problem well.</p>
-          </div>
-        </section>
-
-        {/* ─── What Briargate Tends to Fit ─── */}
-        <section className="py-10 px-6">
-          <div className="max-w-3xl mx-auto prose prose-stone prose-lg">
-            <h2 className="text-2xl font-bold text-[#292524]">What Briargate tends to fit</h2>
-            <p>Briargate usually makes the most sense for buyers who want:</p>
+            <p>It can be a strong fit if you want:</p>
             <ul>
-              <li>a north-side location that feels easy to navigate</li>
-              <li>a more established suburban pattern</li>
-              <li>good everyday convenience built into the area</li>
-              <li>a search that feels easier to compare from one option to the next</li>
+              <li>a well known area on the north side</li>
+              <li>parks and trails nearby</li>
+              <li>shopping and restaurants close by</li>
+              <li>an area that is easier to get a feel for once you start driving it</li>
+              <li>a part of town that feels established and familiar</li>
+              <li>a location that still works if the Air Force Academy or north side driving matters to you</li>
             </ul>
             <p>
-              A lot of people who end up liking Briargate are not looking for the most unusual part
-              of Colorado Springs.
-            </p>
-            <p>They are looking for a part of town that makes daily life feel simpler.</p>
-            <p>That is usually the draw.</p>
-            <p>
-              It also helps that Briargate has a few practical anchors that make the area easy to
-              understand quickly. John Venezia Community Park sits right at Briargate Parkway and
-              Union, Memorial Hospital North is on Briargate Parkway, and the Promenade Shops at
-              Briargate remains one of the clearest retail nodes on this part of the north side.
-            </p>
-            <p>
-              Briargate also stays in the conversation for some military households because the north
-              side can make practical sense depending on the base. It is a more natural fit for buyers
-              who want easier access toward USAFA while still staying in an established Colorado
-              Springs neighborhood pattern. For households tied to Peterson, Schriever, or Fort
-              Carson, Briargate can still work, but the commute tradeoff usually matters more and
-              should be part of the decision.
+              For a lot of buyers, Briargate feels like an area they can settle into without having to work too hard to figure it out.
             </p>
           </div>
         </section>
 
-        {/* ─── Who May Not Love Briargate ─── */}
-        <section className="py-10 px-6 bg-white">
-          <div className="max-w-3xl mx-auto prose prose-stone prose-lg">
-            <h2 className="text-2xl font-bold text-[#292524]">Who may not love Briargate</h2>
-            <p>Briargate is not the best fit for everyone.</p>
-            <p>
-              If you want older architecture, more variation from block to block, more topographic
-              character, or a neighborhood that feels less planned, Briargate can start to feel a
-              little too predictable.
-            </p>
-            <p>That does not make it weak.</p>
-            <p>
-              Usually, it just means the same consistency that helps some buyers feel clearer can
-              make other buyers feel a little boxed in.
-            </p>
-            <p>That tradeoff is part of the point.</p>
-          </div>
-        </section>
-
-        {/* ─── What the Home Search Usually Turns Into ─── */}
+        {/* ─── What Living in Briargate Feels Like ─── */}
         <section className="py-10 px-6">
           <div className="max-w-3xl mx-auto prose prose-stone prose-lg">
-            <h2 className="text-2xl font-bold text-[#292524]">What the home search usually turns into</h2>
-            <p>A Briargate search usually gets specific pretty quickly.</p>
-            <p>That is one reason the area works well for relocators.</p>
+            <h2 className="text-2xl font-bold text-[#292524]">What living in Briargate feels like once you start looking around</h2>
             <p>
-              Instead of trying to understand the whole city at once, buyers here usually start
-              narrowing by a few practical questions: how far north they want to be, whether they
-              want something more established or a little newer, and whether they want to stay in
-              Briargate itself or widen into nearby north-side options.
+              Once you start touring Briargate, one thing a lot of buyers notice pretty quickly is that it usually feels settled.
+            </p>
+            <p>Not old in the way some central neighborhoods feel old. Just settled.</p>
+            <p>
+              It tends to feel like an area that has been lived in long enough for people to understand why they picked it in the first place. The parks are there. The trails are there. The shopping is there. The roads are familiar. A lot of buyers can picture normal life there pretty quickly, and that matters more than people think when they first start looking online.
+            </p>
+            <p>Briargate is also usually easier to compare than some nearby areas.</p>
+            <p>That helps.</p>
+            <p>A buyer can usually tell faster whether it fits them or not.</p>
+          </div>
+        </section>
+
+        {/* ─── What Buyers Usually Notice After a Few Tours ─── */}
+        <section className="py-10 px-6 bg-white">
+          <div className="max-w-3xl mx-auto prose prose-stone prose-lg">
+            <h2 className="text-2xl font-bold text-[#292524]">What buyers usually notice after a few tours</h2>
+            <p>After a few tours, Briargate usually starts standing out for a pretty simple reason.</p>
+            <p>It works.</p>
+            <p>That does not sound flashy, but it matters.</p>
+            <p>
+              <a href="/northgate-colorado-springs-real-estate/" className="text-amber-700 hover:underline">Northgate</a> is usually quieter in a lot of spots and can make more sense if being closer to I-25 and the Air Force Academy matters enough. <a href="/cordera-colorado-springs-real-estate/" className="text-amber-700 hover:underline">Cordera</a> usually feels a little newer and more planned out. <a href="/flying-horse-colorado-springs-real-estate/" className="text-amber-700 hover:underline">Flying Horse</a> usually feels more like people are choosing the neighborhood because they want that specific neighborhood.
+            </p>
+            <p>Briargate usually feels more practical than that.</p>
+            <p>
+              It is often the place buyers land when they want the north side to make sense without turning the whole move into one big neighborhood statement.
+            </p>
+            <p>That is a big reason it stays strong.</p>
+          </div>
+        </section>
+
+        {/* ─── North Side Breakdown CTA ─── */}
+        <section className="py-10 px-6">
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-[#292524] rounded-lg p-8">
+              <h2 className="text-xl font-bold text-[#F5F0EB] mb-3">Still trying to sort out Briargate, Northgate, Cordera, and Flying Horse?</h2>
+              <p className="text-[#C9A96E] mb-2">That is normal.</p>
+              <p className="text-stone-300 mb-6">
+                A lot of buyers start out thinking the north side is all going to feel pretty similar. Once they start driving homes, that usually changes fast.
+              </p>
+              <p className="text-stone-300 mb-6">
+                If you want, I can send you a simple breakdown of those four areas so you can see what usually matters, what tends to surprise people, and which one may fit you better.
+              </p>
+              <a
+                href="/#contact"
+                className="inline-block bg-[#C9A96E] text-[#292524] font-semibold px-8 py-3 rounded hover:bg-[#b8945a] transition-colors"
+              >
+                Send me the north side breakdown
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── What Briargate Is Not ─── */}
+        <section className="py-10 px-6 bg-white">
+          <div className="max-w-3xl mx-auto prose prose-stone prose-lg">
+            <h2 className="text-2xl font-bold text-[#292524]">What Briargate is not</h2>
+            <p>Briargate is usually not the area people pick because they want to be closer to the mountains.</p>
+            <p>It is also usually not the area people pick because they want the most unique part of Colorado Springs.</p>
+            <p>
+              And it is usually not where buyers end up if they want less commercial activity nearby or if they are trying to get closer to the west side, Garden of the Gods, Old Colorado City, Manitou Springs, or Woodland Park.
             </p>
             <p>
-              That is where places like Northgate, Flying Horse, Cordera, Pine Creek, and sometimes
-              Wolf Ranch start to come up.
-            </p>
-            <p>Usually, those comparisons tell you what the buyer is really trying to solve.</p>
-            <p>Usually, buyers are sorting through different versions of a similar north-side decision:</p>
-            <ul>
-              <li>Briargate for a more established, practical pattern</li>
-              <li>Northgate for a farther-north corridor feel</li>
-              <li>Flying Horse for a more branded or elevated version of the north-side search</li>
-              <li>newer northeast options when the buyer wants newer construction and easier comparison above almost everything else</li>
-            </ul>
-            <p>
-              That is why Briargate often appeals to buyers who want the map to make sense faster,
-              not just buyers chasing a particular house.
-            </p>
-            <p>
-              Cordera helps show how Briargate works in practice. It describes itself as "a
-              master-planned community in the heart of Briargate," which reinforces the idea that
-              Briargate functions more like a broader north-side neighborhood system than one tiny
-              pocket.
+              Briargate usually makes the most sense for buyers who want a north side area that feels established, works well for day to day life, and is not hard to understand once they start looking around.
             </p>
           </div>
         </section>
 
-        {/* ─── The Tradeoffs Are the Whole Point ─── */}
-        <section className="py-10 px-6 bg-white">
+        {/* ─── Tradeoffs ─── */}
+        <section className="py-10 px-6">
           <div className="max-w-3xl mx-auto prose prose-stone prose-lg">
-            <h2 className="text-2xl font-bold text-[#292524]">The tradeoffs are the whole point</h2>
+            <h2 className="text-2xl font-bold text-[#292524]">Tradeoffs that come with Briargate</h2>
+            <p>Like anywhere, Briargate has tradeoffs.</p>
             <p>
-              Briargate usually works best when the buyer values clarity, convenience, and
-              consistency.
+              One is that it can feel more predictable than some other parts of town. Some buyers really like that. It makes the search easier. Other buyers decide they want more variation, more character, or more of a different feel from one pocket to the next.
             </p>
-            <p>That is the upside.</p>
             <p>
-              The tradeoff is that it may feel a little too polished or a little too predictable for
-              buyers who want more variation, more distinct setting, or more of an older Colorado
-              Springs feel.
+              Another tradeoff is that while Briargate does a very good job with convenience, it is not going to give you the same mountain feel or west side feel you get in places like Old Colorado City, <a href="/mountain-shadows-colorado-springs-real-estate/" className="text-amber-700 hover:underline">Mountain Shadows</a>, or Broadmoor and Cheyenne Mountain.
             </p>
-            <p>That does not make Briargate "better."</p>
-            <p>It just means the tradeoff is easier to name.</p>
+            <p>
+              It is also not usually the quietest option on the north side, because some of what makes it useful is having shopping, restaurants, and major roads close by.
+            </p>
+            <p>So the real question is not whether Briargate is a good area.</p>
+            <p>It is whether this is the kind of area that fits the way you want to live.</p>
           </div>
         </section>
 
         {/* ─── Briargate vs Nearby Alternatives ─── */}
-        <section className="py-10 px-6">
+        <section className="py-10 px-6 bg-white">
           <div className="max-w-3xl mx-auto prose prose-stone prose-lg">
             <h2 className="text-2xl font-bold text-[#292524]">Briargate vs nearby alternatives</h2>
 
             <h3 className="text-xl font-semibold text-[#292524] mt-6">Briargate vs Northgate</h3>
+            <p>This is one of the more common north side comparisons.</p>
             <p>
-              Northgate often makes more sense when someone wants to be even farther north, closer to
-              the I-25 corridor, or more tied to that edge of the north-side search.
+              Briargate is usually easier for everyday shopping, restaurants, parks, trails, and the normal weekly things people use all the time. A lot of buyers feel like they can get a handle on Briargate pretty quickly because so much of what they need is nearby.
             </p>
             <p>
-              Briargate usually makes more sense when someone wants the north side to feel established
-              without feeling like they pushed all the way to the outer edge of the pattern.
+              <a href="/northgate-colorado-springs-real-estate/" className="text-amber-700 hover:underline">Northgate</a> usually starts making more sense if being closer to I-25 and the Air Force Academy matters more.
+            </p>
+            <p>So if day to day convenience matters more, Briargate often stays stronger.</p>
+            <p>If being farther north matters more, Northgate often starts looking better.</p>
+
+            <h3 className="text-xl font-semibold text-[#292524] mt-6">Briargate vs Cordera</h3>
+            <p><a href="/cordera-colorado-springs-real-estate/" className="text-amber-700 hover:underline">Cordera</a> usually feels a little newer and a little more put together.</p>
+            <p>Briargate usually feels more established and a little more lived in.</p>
+            <p>
+              A lot of buyers notice that pretty fast once they drive both. Briargate often feels more settled. Cordera often feels more planned from the start.
+            </p>
+            <p>Neither one is wrong.</p>
+            <p>
+              It usually just comes down to whether you want something that feels more established or something that feels a little newer and a little more polished.
             </p>
 
             <h3 className="text-xl font-semibold text-[#292524] mt-6">Briargate vs Flying Horse</h3>
+            <p><a href="/flying-horse-colorado-springs-real-estate/" className="text-amber-700 hover:underline">Flying Horse</a> usually has more of a specific identity.</p>
+            <p>A lot of buyers who pick Flying Horse are picking it because they want Flying Horse.</p>
+            <p>Briargate is usually different.</p>
             <p>
-              Flying Horse can make more sense when someone wants a more branded master-planned feel,
-              golf-oriented identity, or a more obviously elevated version of the north-side search.
+              It is more often about whether the area works well for the way someone lives. It usually feels less tied to one specific image and more tied to whether the area makes sense once everyday life starts.
             </p>
-            <p>
-              Briargate usually makes more sense when someone wants a strong north-side option without
-              needing the more luxury-leaning version of that experience.
-            </p>
-
-            <h3 className="text-xl font-semibold text-[#292524] mt-6">Briargate vs Banning Lewis Ranch</h3>
-            <p>This is one of the more useful comparisons.</p>
-            <p>
-              Both can appeal to buyers who want a search that feels easier to understand. But they
-              solve that in different ways.
-            </p>
-            <p>
-              Banning Lewis Ranch usually represents the newer east/northeast growth pattern: newer
-              construction, more modern layouts, and a more edge-of-growth feel. Briargate usually
-              feels more established and more settled in. That is a real difference in how the search
-              feels, even before you get into individual homes.
-            </p>
+            <p>If someone wants a stronger neighborhood identity, Flying Horse may make more sense.</p>
+            <p>If they want a north side area that works well and does not feel overdone, Briargate often fits better.</p>
           </div>
         </section>
 
-        {/* ─── What People Tend to Underestimate ─── */}
-        <section className="py-10 px-6 bg-white">
-          <div className="max-w-3xl mx-auto prose prose-stone prose-lg">
-            <h2 className="text-2xl font-bold text-[#292524]">What people tend to underestimate about Briargate</h2>
-            <p>
-              A lot of buyers underestimate how much easier Briargate can feel to search than other
-              parts of Colorado Springs.
-            </p>
-            <p>That is not because every home is the same.</p>
-            <p>It is because the neighborhood pattern is easier to read.</p>
-            <p>The roads make sense. The retail and medical anchors are obvious. The north-side routine is easier to picture.</p>
-            <p>The flip side is just as real.</p>
-            <p>
-              If what you really want is more variation, more texture, or more emotional pull from
-              the neighborhood itself, Briargate may feel a little more structured than what you had
-              in mind.
-            </p>
-          </div>
-        </section>
-
-        {/* ─── Is Briargate Better for Buying Now or Renting First? ─── */}
+        {/* ─── What Briargate Does Well ─── */}
         <section className="py-10 px-6">
           <div className="max-w-3xl mx-auto prose prose-stone prose-lg">
-            <h2 className="text-2xl font-bold text-[#292524]">Is Briargate better for buying now or renting first?</h2>
-            <p>Sometimes buying first makes a lot of sense here.</p>
+            <h2 className="text-2xl font-bold text-[#292524]">What Briargate does well</h2>
+            <p>Briargate does well for buyers who want the north side to feel easier.</p>
             <p>
-              Briargate is one of the easier parts of Colorado Springs to understand quickly, which
-              lowers the chance of picking the right house in the wrong kind of area.
+              It does well for people who want parks, trails, shopping, restaurants, and neighborhoods that are not hard to understand.
             </p>
             <p>
-              If you already know you want a practical north-side setup and feel good about the
-              tradeoffs, buying here can be pretty straightforward.
+              It also does well for buyers who are still narrowing things down and need an area that helps them get clearer on what matters before they start chasing homes all over the map.
             </p>
             <p>
-              If you are still deciding between Briargate and more character-driven, newer, or
-              farther-north alternatives, renting first can still help. But compared with some other
-              parts of town, Briargate is often one of the places people can understand faster.
+              If you are looking at{" "}
+              <a href="/colorado-springs-co-homes-for-sale" className="text-amber-700 hover:underline">
+                homes for sale in Briargate
+              </a>
+              , that is usually one of the main reasons it keeps coming up.
             </p>
+          </div>
+        </section>
+
+        {/* ─── Needs Wants Dreams CTA ─── */}
+        <section className="py-10 px-6 bg-white">
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-[#292524] rounded-lg p-8">
+              <h2 className="text-xl font-bold text-[#F5F0EB] mb-3">Not sure what fits your Needs, Wants, and Dreams?</h2>
+              <p className="text-stone-300 mb-4">
+                That is usually where the search gets more useful.
+              </p>
+              <p className="text-stone-300 mb-6">
+                A lot of buyers start with the house first. Most of the time, what helps more is getting clear on what area fits your needs, what would be nice to have, and what would make the move really feel right if everything lined up.
+              </p>
+              <p className="text-stone-300 mb-6">
+                If you want, send me your Needs, Wants, and Dreams list and I can help you figure out whether Briargate fits, or whether another part of town makes more sense.
+              </p>
+              <a
+                href="/#contact"
+                className="inline-block bg-[#C9A96E] text-[#292524] font-semibold px-8 py-3 rounded hover:bg-[#b8945a] transition-colors"
+              >
+                Send Rob my Needs, Wants, and Dreams
+              </a>
+            </div>
           </div>
         </section>
 
         {/* ─── FAQ ─── */}
-        <section className="py-12 px-6 bg-white">
+        <section className="py-12 px-6">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold text-[#292524] mb-6">FAQ about living in Briargate</h2>
             <div className="divide-y divide-stone-200">
@@ -376,31 +355,19 @@ export default function BriargateColoradoSpringsRealEstate() {
         </section>
 
         {/* ─── Final Thoughts ─── */}
-        <section className="py-12 px-6">
+        <section className="py-12 px-6 bg-white">
           <div className="max-w-3xl mx-auto prose prose-stone prose-lg">
-            <h2 className="text-2xl font-bold text-[#292524]">Final thoughts</h2>
-            <p>Briargate is usually not the page for someone chasing novelty.</p>
+            <h2 className="text-2xl font-bold text-[#292524]">Final thoughts on Briargate Colorado Springs</h2>
+            <p>Briargate stays in the search for a reason.</p>
             <p>
-              It is the page for someone trying to figure out whether a clearer, easier, more
-              established north-side neighborhood search is the right fit.
+              It is well known, it is laid out well, it covers a lot of everyday needs, and it usually gives buyers a pretty clear picture of what north side living can look like.
             </p>
-            <p>For the right buyer, that is exactly the appeal.</p>
+            <p>That does not mean it fits everybody.</p>
             <p>
-              Briargate can make Colorado Springs feel easier to understand, easier to compare, and
-              easier to live in day to day.
+              But if you want an established north side area that is easier to understand, easier to compare, and easier to live in once the move is real, Briargate usually deserves a serious look.
             </p>
             <p>
-              For the wrong buyer, it can feel a little too planned or a little too predictable.
-            </p>
-            <p>That is why the real question is not whether Briargate is good.</p>
-            <p>
-              It is whether Briargate fits the way you want Colorado Springs to work once the move
-              is real.
-            </p>
-            <p>
-              If you are trying to sort out Briargate versus Northgate, Flying Horse, Banning Lewis
-              Ranch, or the broader Colorado Springs map, My Rock Realty can help you narrow that down
-              before you get too attached to a specific house.
+              If you are trying to figure out whether Briargate really fits the way you live, it is usually better to sort that out early than after you have already spent a lot of time looking at homes in areas that may not fit as well as you thought.
             </p>
           </div>
         </section>
@@ -428,25 +395,19 @@ export default function BriargateColoradoSpringsRealEstate() {
                 Browse Colorado Springs Homes →
               </a>
             </div>
-            <div className="mt-6">
-              <a
-                href="/moving-to-colorado-springs/"
-                className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors"
-              >
-                Colorado Springs Relocation Guide →
-              </a>
-              <a
-                href="/colorado-home-buying-workshop"
-                className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors"
-              >
-                Colorado Home Buying Workshop →
-              </a>
-              <span className="text-[#C9A96E]/40 text-sm mx-1">·</span>
+            <div className="mt-6 flex flex-wrap justify-center gap-x-1 gap-y-2 items-center">
               <a
                 href="/northgate-colorado-springs-real-estate/"
                 className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors"
               >
                 Northgate →
+              </a>
+              <span className="text-[#C9A96E]/40 text-sm mx-1">·</span>
+              <a
+                href="/cordera-colorado-springs-real-estate/"
+                className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors"
+              >
+                Cordera →
               </a>
               <span className="text-[#C9A96E]/40 text-sm mx-1">·</span>
               <a
@@ -457,10 +418,24 @@ export default function BriargateColoradoSpringsRealEstate() {
               </a>
               <span className="text-[#C9A96E]/40 text-sm mx-1">·</span>
               <a
-                href="/cordera-colorado-springs-real-estate/"
+                href="/colorado-springs-co-homes-for-sale"
                 className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors"
               >
-                Cordera →
+                Colorado Springs homes for sale →
+              </a>
+              <span className="text-[#C9A96E]/40 text-sm mx-1">·</span>
+              <a
+                href="/moving-to-colorado-springs/"
+                className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors"
+              >
+                Moving to Colorado Springs →
+              </a>
+              <span className="text-[#C9A96E]/40 text-sm mx-1">·</span>
+              <a
+                href="/colorado-home-buying-workshop"
+                className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors"
+              >
+                Colorado Home Buying Workshop →
               </a>
             </div>
           </div>
