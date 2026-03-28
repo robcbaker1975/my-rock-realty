@@ -5,6 +5,7 @@ import { build } from "vite";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { buildSeoHeadBlock, injectSeoHead, BASE_SCHEMAS, buildBreadcrumbSchema, OG_IMAGE_DEFAULT, OG_IMAGE_MILITARY } from "./seo-inject.mjs";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 async function prerender() {
@@ -35,15 +36,33 @@ async function prerender() {
   const PLACEHOLDER = '<div id="root"></div>';
   if (!shell.includes(PLACEHOLDER)) throw new Error("[prerender-remote-home-tours] Placeholder not found.");
   const finalHtml = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+
+  // === SEO_INJECTED ===
+  const _seoBlock = buildSeoHeadBlock({
+    title: 'Remote Home Tours for Military & PCS Buyers | My Rock Realty',
+    description: "Remote home touring support for military and PCS buyers relocating to Colorado Springs and the Denver metro. Recorded video tours, live virtual tours, and in-person tour blocks for buyers who aren't yet local.",
+    canonical: 'https://myrockhomes.com/military-relocation/remote-home-tours/',
+    slug: 'military-relocation/remote-home-tours',
+    ogImage: OG_IMAGE_MILITARY,
+    schemas: [
+      ...BASE_SCHEMAS,
+      buildBreadcrumbSchema([
+        { name: 'Home', url: 'https://myrockhomes.com/' },
+        { name: 'Military Relocation', url: 'https://myrockhomes.com/military-relocation/' },
+        { name: 'Remote Home Tours', url: 'https://myrockhomes.com/military-relocation/remote-home-tours/' },
+      ]),
+    ],
+  });
+  const finalHtmlSeo = injectSeoHead(finalHtml, _seoBlock, 'https://myrockhomes.com/military-relocation/remote-home-tours/');
   const serverDir = resolve(ROOT, "server/prerendered");
   mkdirSync(serverDir, { recursive: true });
   const serverOut = resolve(serverDir, "remote-home-tours.html");
-  writeFileSync(serverOut, finalHtml, "utf-8");
+  writeFileSync(serverOut, finalHtmlSeo, "utf-8");
   console.log(`[prerender-remote-home-tours] Written to ${serverOut} (${finalHtml.length} bytes)`);
   const distDir = resolve(ROOT, "dist/prerendered");
   mkdirSync(distDir, { recursive: true });
   const distOut = resolve(distDir, "remote-home-tours.html");
-  writeFileSync(distOut, finalHtml, "utf-8");
+  writeFileSync(distOut, finalHtmlSeo, "utf-8");
   console.log(`[prerender-remote-home-tours] Written to ${distOut} (fallback)`);
   console.log("[prerender-remote-home-tours] Done.");
 }

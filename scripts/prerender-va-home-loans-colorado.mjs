@@ -2,6 +2,7 @@ import { build } from "vite";
 import { readFileSync, writeFileSync, mkdirSync, existsSync, copyFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { buildSeoHeadBlock, injectSeoHead, BASE_SCHEMAS, buildBreadcrumbSchema, OG_IMAGE_MILITARY } from "./seo-inject.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -33,7 +34,24 @@ const { renderVaHomeLoansColorado } = await import(
 
 const appHtml = renderVaHomeLoansColorado();
 const template = readFileSync(resolve(ROOT, "dist/public/index.html"), "utf-8");
-const html = template.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+const htmlRaw = template.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+// === SEO_INJECTED ===
+const _seoBlock = buildSeoHeadBlock({
+  title: 'VA Home Loans in Colorado: Educational Guide | My Rock Realty',
+  description: 'Educational overview of VA home loan benefits for eligible veterans and active-duty buyers in Colorado. Covers key concepts, the homebuying process, and common questions. Not financial advice.',
+  canonical: 'https://myrockhomes.com/military-relocation/va-home-loans-colorado/',
+  slug: 'military-relocation/va-home-loans-colorado',
+  ogImage: OG_IMAGE_MILITARY,
+  schemas: [
+    ...BASE_SCHEMAS,
+    buildBreadcrumbSchema([
+      { name: 'Home', url: 'https://myrockhomes.com/' },
+      { name: 'Military Relocation', url: 'https://myrockhomes.com/military-relocation/' },
+      { name: 'VA Home Loans Colorado', url: 'https://myrockhomes.com/military-relocation/va-home-loans-colorado/' },
+    ]),
+  ],
+});
+const html = injectSeoHead(htmlRaw, _seoBlock, 'https://myrockhomes.com/military-relocation/va-home-loans-colorado/');
 
 console.log(`[prerender-va-home-loans-colorado] Rendered HTML length: ${appHtml.length} chars`);
 

@@ -2,6 +2,7 @@ import { build } from "vite";
 import { readFileSync, writeFileSync, mkdirSync, copyFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { buildSeoHeadBlock, injectSeoHead, BASE_SCHEMAS, buildBreadcrumbSchema, OG_IMAGE_MILITARY } from "./seo-inject.mjs";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 const ROUTE = "/military-relocation/veterans-buying-colorado/";
@@ -12,7 +13,24 @@ console.log(`[prerender-veterans-buying-colorado] SSR build complete. Rendering 
 const { renderVeteransBuyingColorado } = await import(resolve(ROOT, "dist/server/entry-server-veterans-buying-colorado.js"));
 const appHtml = renderVeteransBuyingColorado();
 const template = readFileSync(resolve(ROOT, "dist/public/index.html"), "utf-8");
-const html = template.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+const htmlRaw = template.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+// === SEO_INJECTED ===
+const _seoBlock = buildSeoHeadBlock({
+  title: 'Veterans Buying a Home in Colorado | My Rock Realty',
+  description: 'Educational homebuying guidance for veterans considering a Colorado purchase. VA loan context, market orientation, and buyer-focused support across Colorado Springs and the Denver metro.',
+  canonical: 'https://myrockhomes.com/military-relocation/veterans-buying-colorado/',
+  slug: 'military-relocation/veterans-buying-colorado',
+  ogImage: OG_IMAGE_MILITARY,
+  schemas: [
+    ...BASE_SCHEMAS,
+    buildBreadcrumbSchema([
+      { name: 'Home', url: 'https://myrockhomes.com/' },
+      { name: 'Military Relocation', url: 'https://myrockhomes.com/military-relocation/' },
+      { name: 'Veterans Buying Colorado', url: 'https://myrockhomes.com/military-relocation/veterans-buying-colorado/' },
+    ]),
+  ],
+});
+const html = injectSeoHead(htmlRaw, _seoBlock, 'https://myrockhomes.com/military-relocation/veterans-buying-colorado/');
 console.log(`[prerender-veterans-buying-colorado] Rendered HTML length: ${appHtml.length} chars`);
 const prerenderedDir = resolve(ROOT, "server/prerendered");
 mkdirSync(prerenderedDir, { recursive: true });
