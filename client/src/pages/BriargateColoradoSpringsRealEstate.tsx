@@ -5,12 +5,10 @@
  * Design: Front Range Modern — matches existing site design system
  * Content: Approved benchmark version
  */
-import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 
 /* ─── FAQ Content ─── */
 const faqContent = [
@@ -79,22 +77,10 @@ const fadeUp = {
 };
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
-  const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-stone-200 last:border-0">
-      <button
-        className="w-full flex items-center justify-between py-4 text-left text-stone-800 font-medium hover:text-amber-700 transition-colors"
-        onClick={() => setOpen(!open)}
-        aria-expanded={open}
-      >
-        <span>{question}</span>
-        <ChevronDown
-          className={`w-5 h-5 flex-shrink-0 ml-4 transition-transform ${open ? "rotate-180" : ""}`}
-        />
-      </button>
-      {open && (
-        <p className="pb-4 text-stone-600 leading-relaxed">{answer}</p>
-      )}
+    <div className="border-b border-stone-200 last:border-0 py-5">
+      <p className="font-semibold text-stone-800 mb-2">{question}</p>
+      <p className="text-stone-600 leading-relaxed">{answer}</p>
     </div>
   );
 }
