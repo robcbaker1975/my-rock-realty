@@ -288,12 +288,10 @@ export default function BriargateColoradoSpringsRealEstate() {
           </div>
         </section>
 
-        {/* ─── Briargate vs Nearby Alternatives ─── */}
+        {/* ─── Briargate vs Northgate ─── */}
         <section className="py-10 px-6 bg-white">
           <div className="max-w-3xl mx-auto prose prose-stone prose-lg">
-            <h2 className="text-2xl font-bold text-[#292524]">Briargate vs nearby alternatives</h2>
-
-            <h3 className="text-xl font-semibold text-[#292524] mt-6">Briargate vs Northgate</h3>
+            <h2 className="text-2xl font-bold text-[#292524]">Briargate vs Northgate</h2>
             <p>This is one of the more common north side comparisons.</p>
             <p>
               Briargate is usually easier for everyday shopping, restaurants, parks, trails, and the normal weekly things people use all the time. A lot of buyers feel like they can get a handle on Briargate pretty quickly because so much of what they need is nearby.
@@ -304,7 +302,13 @@ export default function BriargateColoradoSpringsRealEstate() {
             <p>So if day to day convenience matters more, Briargate often stays stronger.</p>
             <p>If being farther north matters more, Northgate often starts looking better.</p>
 
-            <h3 className="text-xl font-semibold text-[#292524] mt-6">Briargate vs Cordera</h3>
+          </div>
+        </section>
+
+        {/* ─── Briargate vs Cordera ─── */}
+        <section className="py-10 px-6">
+          <div className="max-w-3xl mx-auto prose prose-stone prose-lg">
+            <h2 className="text-2xl font-bold text-[#292524]">Briargate vs Cordera</h2>
             <p><a href="/cordera-colorado-springs-real-estate/" className="text-amber-700 hover:underline">Cordera</a> usually feels a little newer and a little more put together.</p>
             <p>Briargate usually feels more established and a little more lived in.</p>
             <p>
@@ -315,7 +319,13 @@ export default function BriargateColoradoSpringsRealEstate() {
               It usually just comes down to whether you want something that feels more established or something that feels a little newer and a little more polished.
             </p>
 
-            <h3 className="text-xl font-semibold text-[#292524] mt-6">Briargate vs Flying Horse</h3>
+          </div>
+        </section>
+
+        {/* ─── Briargate vs Flying Horse ─── */}
+        <section className="py-10 px-6 bg-white">
+          <div className="max-w-3xl mx-auto prose prose-stone prose-lg">
+            <h2 className="text-2xl font-bold text-[#292524]">Briargate vs Flying Horse</h2>
             <p><a href="/flying-horse-colorado-springs-real-estate/" className="text-amber-700 hover:underline">Flying Horse</a> usually has more of a specific identity.</p>
             <p>A lot of buyers who pick Flying Horse are picking it because they want Flying Horse.</p>
             <p>Briargate is usually different.</p>
@@ -326,6 +336,7 @@ export default function BriargateColoradoSpringsRealEstate() {
             <p>If they want a north side area that works well and does not feel overdone, Briargate often fits better.</p>
           </div>
         </section>
+
 
         {/* ─── What Briargate Does Well ─── */}
         <section className="py-10 px-6">
@@ -339,11 +350,7 @@ export default function BriargateColoradoSpringsRealEstate() {
               It also does well for buyers who are still narrowing things down and need an area that helps them get clearer on what matters before they start chasing homes all over the map.
             </p>
             <p>
-              If you are looking at{" "}
-              <a href="/colorado-springs-co-homes-for-sale" className="text-amber-700 hover:underline">
-                homes for sale in Briargate
-              </a>
-              , that is usually one of the main reasons it keeps coming up.
+              If you are looking at homes for sale in Briargate, that is usually one of the main reasons it keeps coming up.
             </p>
           </div>
         </section>
