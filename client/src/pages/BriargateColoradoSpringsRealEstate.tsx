@@ -236,7 +236,7 @@ export default function BriargateColoradoSpringsRealEstate() {
         <section className="py-10 px-6">
           <div className="max-w-3xl mx-auto">
             <div className="bg-[#292524] rounded-lg p-8">
-              <h2 className="text-xl font-bold text-[#F5F0EB] mb-3">Still trying to sort out Briargate, Northgate, Cordera, and Flying Horse?</h2>
+              <h2 className="text-xl font-bold text-[#F5F0EB] mb-3">Still trying to sort out Briargate, <a href="/northgate-colorado-springs-real-estate/" className="text-[#C9A96E] hover:text-[#F5F0EB] underline">Northgate</a>, <a href="/cordera-colorado-springs-real-estate/" className="text-[#C9A96E] hover:text-[#F5F0EB] underline">Cordera</a>, and <a href="/flying-horse-colorado-springs-real-estate/" className="text-[#C9A96E] hover:text-[#F5F0EB] underline">Flying Horse</a>?</h2>
               <p className="text-[#C9A96E] mb-2">That is normal.</p>
               <p className="text-stone-300 mb-6">
                 A lot of buyers start out thinking the north side is all going to feel pretty similar. Once they start driving homes, that usually changes fast.
@@ -261,7 +261,7 @@ export default function BriargateColoradoSpringsRealEstate() {
             <p>Briargate is usually not the area people pick because they want to be closer to the mountains.</p>
             <p>It is also usually not the area people pick because they want the most unique part of Colorado Springs.</p>
             <p>
-              And it is usually not where buyers end up if they want less commercial activity nearby or if they are trying to get closer to the west side, Garden of the Gods, Old Colorado City, Manitou Springs, or Woodland Park.
+              And it is usually not where buyers end up if they want less commercial activity nearby or if they are trying to get closer to the west side, Garden of the Gods, <a href="/old-colorado-city-colorado-springs-real-estate/" className="text-amber-700 hover:underline">Old Colorado City</a>, <a href="/manitou-springs-co-real-estate/" className="text-amber-700 hover:underline">Manitou Springs</a>, or <a href="/woodland-park-co-real-estate/" className="text-amber-700 hover:underline">Woodland Park</a>.
             </p>
             <p>
               Briargate usually makes the most sense for buyers who want a north side area that feels established, works well for day to day life, and is not hard to understand once they start looking around.
@@ -367,7 +367,7 @@ export default function BriargateColoradoSpringsRealEstate() {
                 A lot of buyers start with the house first. Most of the time, what helps more is getting clear on what area fits your needs, what would be nice to have, and what would make the move really feel right if everything lined up.
               </p>
               <p className="text-stone-300 mb-6">
-                If you want, send me your Needs, Wants, and Dreams list and I can help you figure out whether Briargate fits, or whether another part of town makes more sense.
+                If you want, send me your Needs, Wants, and Dreams list and I can help you figure out whether Briargate fits, or whether another part of town makes more sense. You can also learn more about the buying process at the <a href="/colorado-home-buying-workshop" className="text-[#C9A96E] hover:text-[#F5F0EB] underline">Colorado Home Buying Workshop</a>.
               </p>
               <a
                 href="/#contact"
@@ -404,7 +404,7 @@ export default function BriargateColoradoSpringsRealEstate() {
               But if you want an established north side area that is easier to understand, easier to compare, and easier to live in once the move is real, Briargate usually deserves a serious look.
             </p>
             <p>
-              If you are trying to figure out whether Briargate really fits the way you live, it is usually better to sort that out early than after you have already spent a lot of time looking at homes in areas that may not fit as well as you thought.
+              If you are trying to figure out whether Briargate really fits the way you live, it is usually better to sort that out early than after you have already spent a lot of time looking at <a href="/colorado-springs-co-homes-for-sale" className="text-amber-700 hover:underline">homes in Colorado Springs</a> that may not fit as well as you thought.
             </p>
           </div>
         </section>
