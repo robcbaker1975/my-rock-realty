@@ -7,7 +7,75 @@
  */
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
+
+/* ─── FAQ Content ─── */
+const faqContent = [
+  {
+    question: "What do buyers usually mean when they say they want to be near Interquest?",
+    answer:
+      "Most of the time, they mean they want shopping, restaurants, entertainment, and everyday convenience on the north side. They usually do not mean Interquest is the only place they want to live. They mean they want that part of town to be easy to use.",
+  },
+  {
+    question: "Is Interquest a neighborhood in Colorado Springs?",
+    answer:
+      "Not really in the same way Briargate or Flying Horse are. Interquest is more useful as a location and convenience reference point on the north side.",
+  },
+  {
+    question: "Why does Interquest keep coming up when buyers look at Northgate and Flying Horse?",
+    answer:
+      "Because it helps explain the convenience side of that part of town. Buyers looking at Northgate or Flying Horse often want to know what is nearby for shopping, dining, entertainment, and normal day-to-day errands. Interquest is one of the main answers to that question.",
+  },
+  {
+    question: "Is Interquest the same thing as Northgate?",
+    answer:
+      "No. They are related, but they are not the same thing. Interquest is usually about shopping, restaurants, and convenience on that side of town. Northgate is more about where you would actually live. People bring them up together all the time, but they are not talking about the same thing.",
+  },
+  {
+    question: "Who should care most about being near Interquest?",
+    answer:
+      "Usually buyers who want the north side to feel easy and want shopping, restaurants, entertainment, and services nearby. It matters less to buyers who are choosing mainly for neighborhood identity and more to buyers who care about how daily errands and outings are going to work.",
+  },
+  {
+    question: "Is being near Interquest good for relocation buyers?",
+    answer:
+      "Usually yes, at least as an orientation tool. It helps relocation buyers understand one of the main convenience hubs on the north side. It should still be paired with a real residential comparison before they decide where to live.",
+  },
+  {
+    question: "Is Interquest close to the Air Force Academy?",
+    answer:
+      "Yes. It is part of the same general north-side conversation around the Academy, Northgate, and nearby areas, which is one reason it keeps coming up for buyers looking in that part of town.",
+  },
+  {
+    question: "Does Interquest have more shopping and entertainment than Northgate?",
+    answer:
+      "As a reference point, yes. That is usually the whole reason buyers talk about it. Interquest is more tied to shopping, restaurants, and entertainment. Northgate is more tied to the residential side of the decision.",
+  },
+  {
+    question: "Should buyers compare Interquest with Briargate?",
+    answer:
+      "Yes, but not as a one-to-one residential comparison. Briargate is the stronger residential-area conversation. Interquest is the stronger convenience conversation. The better comparison is usually Briargate versus Northgate or Briargate versus Flying Horse, with Interquest helping explain what is nearby.",
+  },
+  {
+    question: "What is the biggest mistake buyers make with Interquest?",
+    answer:
+      "Treating it like it answers the whole residential question. Usually it does not. It helps explain convenience. It does not replace choosing the right nearby neighborhood.",
+  },
+];
+
+const faqSchema = buildFAQPageSchema(faqContent);
+
+function FAQItem({ question, answer, index }: { question: string; answer: string; index: number }) {
+  return (
+    <div className={`py-6 ${index % 2 === 0 ? "bg-white" : "bg-stone-50"} px-5 rounded-lg mb-2`}>
+      <p className="text-[#292524] font-semibold text-base md:text-lg leading-snug mb-3">
+        {question}
+      </p>
+      <p className="text-stone-600 leading-relaxed text-sm md:text-base">{answer}</p>
+    </div>
+  );
+}
 
 const breadcrumbItems = [
   { label: "Home", url: "/" },
@@ -33,7 +101,7 @@ export default function InterquestColoradoSprings() {
           canonicalUrl: "https://myrockhomes.com/interquest-colorado-springs/",
           breadcrumbs: breadcrumbItems,
         }}
-        schema={[]}
+        schema={faqSchema ? [faqSchema] : []}
       />
 
       {/* ─── Header ─── */}
@@ -387,6 +455,19 @@ export default function InterquestColoradoSprings() {
           </div>
         </section>
 
+        {/* ─── FAQ ─── */}
+        <section className="py-12 px-6 border-t border-stone-200">
+          <div className="max-w-3xl mx-auto">
+            <span className={sectionLabel}>Common Questions</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#292524] mb-8">FAQ about living near Interquest</h2>
+            <div>
+              {faqContent.map((item, i) => (
+                <FAQItem key={item.question} question={item.question} answer={item.answer} index={i} />
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ─── Final Thoughts ─── */}
         <section className="py-14 px-6 bg-white border-t border-stone-200">
           <div className="max-w-3xl mx-auto">
@@ -403,6 +484,16 @@ export default function InterquestColoradoSprings() {
               <p>That is the right role for this page.</p>
               <p>
                 It should make the map easier to understand without pretending Interquest is the whole neighborhood decision.
+              </p>
+              <p>
+                If you are trying to sort out where to live on the north side, it usually helps to separate the convenience question from the neighborhood question before you get too far into the search.
+              </p>
+              <p>
+                Browse{" "}
+                <a href="/colorado-springs-co-homes-for-sale" className="text-amber-700 hover:underline font-medium">
+                  homes for sale in Colorado Springs
+                </a>{" "}
+                when you are ready to start looking at what is actually available.
               </p>
             </div>
           </div>
@@ -445,11 +536,7 @@ export default function InterquestColoradoSprings() {
               </div>
               <p className="text-stone-500 text-xs font-semibold tracking-widest uppercase mb-4">Keep Exploring</p>
               <div className="flex flex-wrap justify-center gap-x-2 gap-y-3">
-                <a href="/northgate-colorado-springs-real-estate/" className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors">Northgate →</a>
-                <span className="text-[#C9A96E]/30 text-sm">·</span>
-                <a href="/briargate-colorado-springs-real-estate/" className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors">Briargate →</a>
-                <span className="text-[#C9A96E]/30 text-sm">·</span>
-                <a href="/flying-horse-colorado-springs-real-estate/" className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors">Flying Horse →</a>
+                <a href="/colorado-springs-co-homes-for-sale" className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors">Colorado Springs homes for sale →</a>
                 <span className="text-[#C9A96E]/30 text-sm">·</span>
                 <a href="/moving-to-colorado-springs/" className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors">Moving to Colorado Springs →</a>
                 <span className="text-[#C9A96E]/30 text-sm">·</span>
