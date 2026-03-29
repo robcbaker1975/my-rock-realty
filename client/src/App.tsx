@@ -56,6 +56,7 @@ import MonumentCoRealEstate from "./pages/MonumentCoRealEstate";
 import BriargateColoradoSpringsRealEstate from "./pages/BriargateColoradoSpringsRealEstate";
 import NorthgateColoradoSpringsRealEstate from "./pages/NorthgateColoradoSpringsRealEstate";
 import FlyingHorseColoradoSpringsRealEstate from "./pages/FlyingHorseColoradoSpringsRealEstate";
+import InterquestColoradoSprings from "./pages/InterquestColoradoSprings";
 import BlackForestCoRealEstate from "./pages/BlackForestCoRealEstate";
 import FalconCoRealEstate from "./pages/FalconCoRealEstate";
 import BanningLewisRanchColoradoSpringsRealEstate from "./pages/BanningLewisRanchColoradoSpringsRealEstate";
@@ -183,6 +184,7 @@ function Router() {
       <Route path={"/briargate-colorado-springs-real-estate/"} component={BriargateColoradoSpringsRealEstate} />
       <Route path={"/northgate-colorado-springs-real-estate/"} component={NorthgateColoradoSpringsRealEstate} />
       <Route path={"/flying-horse-colorado-springs-real-estate/"} component={FlyingHorseColoradoSpringsRealEstate} />
+      <Route path={"/interquest-colorado-springs/"} component={InterquestColoradoSprings} />
       <Route path={"/black-forest-co-real-estate/"} component={BlackForestCoRealEstate} />
       <Route path={"/falcon-co-real-estate/"} component={FalconCoRealEstate} />
       <Route path={"/banning-lewis-ranch-colorado-springs-real-estate/"} component={BanningLewisRanchColoradoSpringsRealEstate} />
