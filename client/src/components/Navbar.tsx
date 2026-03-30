@@ -27,6 +27,7 @@ const coloradoSpringsNeighborhoods = [
   { label: "Northgate", href: "/northgate-colorado-springs-real-estate/" },
   { label: "Flying Horse", href: "/flying-horse-colorado-springs-real-estate/" },
   { label: "Cordera", href: "/cordera-colorado-springs-real-estate/" },
+  { label: "Wolf Ranch", href: "/wolf-ranch-colorado-springs-real-estate/" },
   { label: "Pine Creek", href: "/pine-creek-colorado-springs-real-estate/" },
   { label: "Banning Lewis Ranch", href: "/banning-lewis-ranch-colorado-springs-real-estate/" },
   { label: "Old Colorado City", href: "/old-colorado-city-colorado-springs-real-estate/" },
