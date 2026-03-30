@@ -486,6 +486,23 @@ export default function WorkshopDraft() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
+          WORKSHOP TOOLKIT PREVIEW — brief link, secondary to conversion
+      ═══════════════════════════════════════════════════ */}
+      <section className="py-8 sm:py-10 bg-charcoal/5 border-t border-charcoal/10">
+        <div className="container max-w-3xl">
+          <p className="text-charcoal/70 text-[14px] sm:text-[15px] leading-relaxed mb-3">
+            Looking for the workshop worksheets? Three practical tools — Needs, Wants &amp; Dreams, Monthly Payment Comfort, and Buyer Offer Strategy — are available to support the workshop.
+          </p>
+          <a
+            href="/colorado-home-buying-workshop/resources"
+            className="inline-flex items-center gap-2 text-charcoal text-sm font-semibold underline underline-offset-4 hover:text-gold transition-colors"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            View Workshop Worksheets &amp; Resources →
+          </a>
+        </div>
+      </section>
+      {/* ═══════════════════════════════════════════════════
           WORKSHOP INTAKE FORM
       ═══════════════════════════════════════════════════ */}
       <section id="workshop-contact" className="py-12 sm:py-16 md:py-20 bg-warm-white border-t border-gold/10">

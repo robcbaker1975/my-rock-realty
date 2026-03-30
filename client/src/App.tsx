@@ -12,6 +12,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import FairHousing from "./pages/FairHousing";
 import WorkshopDraft from "./pages/WorkshopDraft";
+import WorkshopResources from "./pages/WorkshopResources";
 import JoinUs from "./pages/JoinUs";
 import Coaching from "./pages/Coaching";
 import Accessibility from "./pages/Accessibility";
@@ -140,6 +141,7 @@ function Router() {
       <Route path={"/terms"} component={Terms} />
       <Route path={"/fair-housing"} component={FairHousing} />
       <Route path={"/colorado-home-buying-workshop"} component={WorkshopDraft} />
+      <Route path={"/colorado-home-buying-workshop/resources"} component={WorkshopResources} />
       <Route path={"/join-us"} component={JoinUs} />
       <Route path={"/real-estate-coaching"} component={Coaching} />
       <Route path={"/coaching"}>{() => { window.location.href = "/real-estate-coaching"; return null; }}</Route>

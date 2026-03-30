@@ -1324,6 +1324,20 @@ export function serveStatic(app: Express) {
     }
   });
 
+  // IL-98: Serve prerendered HTML for /colorado-home-buying-workshop/resources (+ trailing-slash form).
+  // Primary: server/prerendered/colorado-home-buying-workshop-resources.html — committed to git.
+  // Fallback: dist/prerendered/colorado-home-buying-workshop-resources.html — build artifact.
+  app.get(["/colorado-home-buying-workshop/resources", "/colorado-home-buying-workshop/resources/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/colorado-home-buying-workshop-resources.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/colorado-home-buying-workshop-resources.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
   app.use(express.static(distPath));
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
