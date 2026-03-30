@@ -44,8 +44,8 @@ async function prerenderWorkshopResources() {
   const distOutputDir = resolve(ROOT, "dist/prerendered");
   // === SEO_INJECTED ===
   const _seoBlock = buildSeoHeadBlock({
-    title: "Colorado Home Buying Workshop — Worksheets & Resources | My Rock Realty",
-    description: "Three practical worksheets to support the Colorado Home Buying Workshop: Needs, Wants & Dreams; Monthly Payment Comfort; and Buyer Offer Strategy. Use these before and after the workshop.",
+    title: "Colorado Home Buying Workshop — Worksheets & Toolkit | My Rock Realty",
+    description: "Three practical worksheets for Colorado home buyers: Needs, Wants & Dreams; Monthly Payment Comfort; and Buyer Offer Strategy. Use them in sequence to support the Colorado Home Buying Workshop.",
     canonical: "https://myrockhomes.com/colorado-home-buying-workshop/resources",
     ogImage: OG_IMAGE_DEFAULT,
     schemas: [
