@@ -1310,6 +1310,20 @@ export function serveStatic(app: Express) {
       res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
+  // IL-97: Serve prerendered HTML for /wolf-ranch-colorado-springs-real-estate (+ trailing-slash form).
+  // Primary: server/prerendered/wolf-ranch-colorado-springs-real-estate.html — committed to git.
+  // Fallback: dist/prerendered/wolf-ranch-colorado-springs-real-estate.html — build artifact.
+  app.get(["/wolf-ranch-colorado-springs-real-estate", "/wolf-ranch-colorado-springs-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/wolf-ranch-colorado-springs-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/wolf-ranch-colorado-springs-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+
   app.use(express.static(distPath));
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
