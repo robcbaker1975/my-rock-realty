@@ -20,7 +20,7 @@ const worksheets = [
     role: "Get clear on what actually matters before the search gets noisy.",
     description:
       "Most buyers start looking at homes before they know what they really need. The result is a scattered search, emotional decisions, and a lot of wasted time. This worksheet helps you separate true needs from flexible wants and longer-term dreams — so your search stays focused, your conversations with your agent stay productive, and you don't end up settling for the wrong home.",
-    href: "/needs-wants-dreams-worksheet.html",
+    href: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/needs-wants-dreams-worksheet_c8e606ce.html",
     cta: "Open Worksheet 1",
   },
   {
@@ -31,7 +31,7 @@ const worksheets = [
     role: "Separate what a lender approves from what you're actually comfortable paying.",
     description:
       "Lender approval tells you the ceiling. This worksheet helps you find your floor — the monthly payment you can genuinely live with, not just technically afford. Working through this before you write an offer means you go in with a number that's grounded in your real life, not just what the bank says is possible.",
-    href: "/monthly-payment-comfort-worksheet.html",
+    href: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/monthly-payment-comfort-worksheet_e42740c1.html",
     cta: "Open Worksheet 2",
   },
   {
@@ -42,7 +42,7 @@ const worksheets = [
     role: "Think through price, concessions, contingencies, and structure before you write.",
     description:
       "Writing an offer without a clear strategy usually leads to regret — either you overpay, leave protections on the table, or lose a home you could have won. This worksheet walks you through every major decision point: price, seller concessions, loan and property risk, contingencies, and offer structure. You go in with a plan instead of a guess.",
-    href: "/buyer-offer-strategy-worksheet.html",
+    href: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/buyer-offer-strategy-worksheet_b9d78a0a.html",
     cta: "Open Worksheet 3",
   },
 ];
