@@ -14,7 +14,7 @@ export const BASE_SCHEMAS = [
     "@type": "RealEstateAgent",
     name: "My Rock Realty",
     url: "https://myrockhomes.com",
-    telephone: "+1-720-295-9089",
+    telephone: "+1-720-363-6544",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Denver",
@@ -69,15 +69,13 @@ export function buildSeoHeadBlock({ title, description, canonical, ogImage, sche
 }
 
 export function injectSeoHead(html, seoBlock, canonical) {
+  // Remove default shell title
   html = html.replace(/<title[^>]*>Colorado Real Estate \| My Rock Realty<\/title>/, "");
-  html = html.replace(
-    /<meta property="og:url" content="https:\/\/myrockhomes\.com\/" \/>/,
-    `<meta property="og:url" content="${canonical}" />`
-  );
-  html = html.replace(
-    /<meta name="twitter:url" content="https:\/\/myrockhomes\.com\/" \/>/,
-    `<meta name="twitter:url" content="${canonical}" />`
-  );
+  // Remove default og:url, og:image, twitter:url from index.html shell
+  // seoBlock injects the correct page-specific values; removing defaults prevents duplication
+  html = html.replace(/<meta property="og:url" content="[^"]*" \/>/g, "");
+  html = html.replace(/<meta property="og:image" content="[^"]*" \/>/g, "");
+  html = html.replace(/<meta name="twitter:url" content="[^"]*" \/>/g, "");
   html = html.replace("</head>", `${seoBlock}\n  </head>`);
   return html;
 }

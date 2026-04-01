@@ -69,6 +69,7 @@ const faqSchema = buildFAQPageSchema(faqContent);
 
 const breadcrumbItems = [
   { label: "Home", url: "/" },
+  { label: "Colorado Springs", url: "/colorado-springs-co-homes-for-sale" },
   { label: "Briargate, Colorado Springs Real Estate", url: "/briargate-colorado-springs-real-estate/" },
 ];
 
@@ -478,6 +479,8 @@ export default function BriargateColoradoSpringsRealEstate() {
                 <a href="/cordera-colorado-springs-real-estate/" className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors">Cordera →</a>
                 <span className="text-[#C9A96E]/30 text-sm">·</span>
                 <a href="/flying-horse-colorado-springs-real-estate/" className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors">Flying Horse →</a>
+                <span className="text-[#C9A96E]/30 text-sm">·</span>
+                <a href="/banning-lewis-ranch-colorado-springs-real-estate/" className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors">Banning Lewis Ranch →</a>
               </div>
               <p className="text-stone-500 text-xs font-semibold tracking-widest uppercase mb-4">Keep Exploring</p>
               <div className="flex flex-wrap justify-center gap-x-2 gap-y-3">
