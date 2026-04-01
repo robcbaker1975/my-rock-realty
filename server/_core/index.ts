@@ -31,6 +31,55 @@ async function findAvailablePort(startPort: number = 3000): Promise<number> {
 async function startServer() {
   const app = express();
   const server = createServer(app);
+
+  // ── Security headers ────────────────────────────────────────────────────────
+  // Remove Express fingerprint
+  app.disable("x-powered-by");
+
+  // Baseline security headers (applied to every response)
+  app.use((_req, res, next) => {
+    res.setHeader("X-Content-Type-Options", "nosniff");
+    res.setHeader("X-Frame-Options", "SAMEORIGIN");
+    res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+    res.setHeader("Permissions-Policy", "geolocation=(), microphone=(), camera=()");
+
+    // HSTS — only for HTTPS traffic (Render/Cloudflare sets X-Forwarded-Proto)
+    const proto = _req.headers["x-forwarded-proto"] || _req.protocol;
+    if (proto === "https") {
+      res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+    }
+
+    // Evidence-based Content Security Policy
+    // 'unsafe-inline' in script-src is required by Buying Buddy's inline init block
+    // (var MBB = {...} in index.html line 13-15). Cannot be removed without breaking BB.
+    // 'unsafe-inline' in style-src is required by Buying Buddy widget inline styles.
+    const csp = [
+      "default-src 'self'",
+      // Self + Buying Buddy (mbb2.com, d2w6u17ngtanmy CloudFront) + GHL form embed (link.msgsndr.com)
+      // 'unsafe-inline' required: Buying Buddy inline init script in index.html
+      "script-src 'self' 'unsafe-inline' https://www.mbb2.com https://d2w6u17ngtanmy.cloudfront.net https://link.msgsndr.com",
+      // Self + Google Fonts CSS
+      // 'unsafe-inline' required: Buying Buddy widget injects inline styles at runtime
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      // Self + Google Fonts files
+      "font-src 'self' https://fonts.gstatic.com",
+      // Self + CDN-hosted images (favicon, og:image) + Buying Buddy listing images
+      "img-src 'self' data: https://d2xsxph8kpxj0f.cloudfront.net https://d2w6u17ngtanmy.cloudfront.net https://www.mbb2.com",
+      // Self + tRPC/API calls + GHL API + Buying Buddy data endpoints
+      "connect-src 'self' https://api.leadconnectorhq.com https://www.mbb2.com https://d2w6u17ngtanmy.cloudfront.net",
+      // GHL popup form is loaded in an iframe from api.leadconnectorhq.com
+      "frame-src https://api.leadconnectorhq.com",
+      // Prevent this page from being framed by other origins
+      "frame-ancestors 'self'",
+      "base-uri 'self'",
+      "form-action 'self'",
+    ].join("; ");
+    res.setHeader("Content-Security-Policy", csp);
+
+    next();
+  });
+  // ── End security headers ─────────────────────────────────────────────────────
+
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
