@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Globe, Users, CheckCircle } from "lucide-react";
-import { Link } from "wouter";
 
 const scenarios = [
   {

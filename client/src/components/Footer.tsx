@@ -1,4 +1,3 @@
-import { Link } from "wouter";
 import { useEffect } from "react";
 import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 
@@ -274,18 +273,18 @@ export default function Footer() {
               >
                 Coaching
               </a>
-              <Link href="/privacy" className="block text-cream/70 hover:text-gold transition-colors">
+              <a href="/privacy" className="block text-cream/70 hover:text-gold transition-colors">
                 Privacy Policy
-              </Link>
-              <Link href="/terms" className="block text-cream/70 hover:text-gold transition-colors">
+              </a>
+              <a href="/terms" className="block text-cream/70 hover:text-gold transition-colors">
                 Terms &amp; Conditions
-              </Link>
-              <Link href="/fair-housing" className="block text-cream/70 hover:text-gold transition-colors">
+              </a>
+              <a href="/fair-housing" className="block text-cream/70 hover:text-gold transition-colors">
                 Fair Housing Statement
-              </Link>
-              <Link href="/accessibility" className="block text-cream/70 hover:text-gold transition-colors">
+              </a>
+              <a href="/accessibility" className="block text-cream/70 hover:text-gold transition-colors">
                 Accessibility Statement
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -322,21 +321,21 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} My Rock Realty, LLC. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-cream/70 text-xs">
-            <Link href="/privacy" className="hover:text-white transition-colors">
+            <a href="/privacy" className="hover:text-white transition-colors">
               Privacy
-            </Link>
+            </a>
             <span>&middot;</span>
-            <Link href="/terms" className="hover:text-white transition-colors">
+            <a href="/terms" className="hover:text-white transition-colors">
               Terms
-            </Link>
+            </a>
             <span>&middot;</span>
-            <Link href="/fair-housing" className="hover:text-white transition-colors">
+            <a href="/fair-housing" className="hover:text-white transition-colors">
               Fair Housing
-            </Link>
+            </a>
             <span>&middot;</span>
-            <Link href="/accessibility" className="hover:text-white transition-colors">
+            <a href="/accessibility" className="hover:text-white transition-colors">
               Accessibility
-            </Link>
+            </a>
           </div>
         </div>
       </div>

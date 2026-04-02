@@ -104,7 +104,7 @@ export function serveStatic(app: Express) {
   app.get("/colorado-springs-co-homes-for-sale", (_req, res) => {
     const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/colorado-springs-co-homes-for-sale.html");
     const distPrerendered = path.resolve(import.meta.dirname, "prerendered/colorado-springs-co-homes-for-sale.html");
-    const prerendered = fs.existsSync(distPrerendered) ? distPrerendered : srcPrerendered;
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
     } else {
@@ -134,7 +134,7 @@ export function serveStatic(app: Express) {
   app.get(["/black-forest-co-real-estate", "/black-forest-co-real-estate/"], (_req, res) => {
     const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/black-forest-co-real-estate.html");
     const distPrerendered = path.resolve(import.meta.dirname, "prerendered/black-forest-co-real-estate.html");
-    const prerendered = fs.existsSync(distPrerendered) ? distPrerendered : srcPrerendered;
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
     } else {
@@ -149,7 +149,7 @@ export function serveStatic(app: Express) {
   app.get(["/peyton-co-real-estate", "/peyton-co-real-estate/"], (_req, res) => {
     const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/peyton-co-real-estate.html");
     const distPrerendered = path.resolve(import.meta.dirname, "prerendered/peyton-co-real-estate.html");
-    const prerendered = fs.existsSync(distPrerendered) ? distPrerendered : srcPrerendered;
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
     } else {
@@ -164,7 +164,7 @@ export function serveStatic(app: Express) {
   app.get(["/palmer-lake-co-real-estate", "/palmer-lake-co-real-estate/"], (_req, res) => {
     const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/palmer-lake-co-real-estate.html");
     const distPrerendered = path.resolve(import.meta.dirname, "prerendered/palmer-lake-co-real-estate.html");
-    const prerendered = fs.existsSync(distPrerendered) ? distPrerendered : srcPrerendered;
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
     } else {
@@ -178,7 +178,7 @@ export function serveStatic(app: Express) {
   app.get(["/parker-co-homes-for-sale", "/parker-co-homes-for-sale/"], (_req, res) => {
     const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/parker-co-homes-for-sale.html");
     const distPrerendered = path.resolve(import.meta.dirname, "prerendered/parker-co-homes-for-sale.html");
-    const prerendered = fs.existsSync(distPrerendered) ? distPrerendered : srcPrerendered;
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
     } else {
@@ -192,7 +192,7 @@ export function serveStatic(app: Express) {
   app.get(["/highlands-ranch-co-homes-for-sale", "/highlands-ranch-co-homes-for-sale/"], (_req, res) => {
     const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/highlands-ranch-co-homes-for-sale.html");
     const distPrerendered = path.resolve(import.meta.dirname, "prerendered/highlands-ranch-co-homes-for-sale.html");
-    const prerendered = fs.existsSync(distPrerendered) ? distPrerendered : srcPrerendered;
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
     } else {
@@ -206,7 +206,7 @@ export function serveStatic(app: Express) {
   app.get(["/castle-rock-co-homes-for-sale", "/castle-rock-co-homes-for-sale/"], (_req, res) => {
     const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/castle-rock-co-homes-for-sale.html");
     const distPrerendered = path.resolve(import.meta.dirname, "prerendered/castle-rock-co-homes-for-sale.html");
-    const prerendered = fs.existsSync(distPrerendered) ? distPrerendered : srcPrerendered;
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
     } else {
@@ -220,7 +220,7 @@ export function serveStatic(app: Express) {
   app.get(["/littleton-co-homes-for-sale", "/littleton-co-homes-for-sale/"], (_req, res) => {
     const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/littleton-co-homes-for-sale.html");
     const distPrerendered = path.resolve(import.meta.dirname, "prerendered/littleton-co-homes-for-sale.html");
-    const prerendered = fs.existsSync(distPrerendered) ? distPrerendered : srcPrerendered;
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
     } else {
@@ -234,7 +234,7 @@ export function serveStatic(app: Express) {
   app.get(["/arvada-co-homes-for-sale", "/arvada-co-homes-for-sale/"], (_req, res) => {
     const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/arvada-co-homes-for-sale.html");
     const distPrerendered = path.resolve(import.meta.dirname, "prerendered/arvada-co-homes-for-sale.html");
-    const prerendered = fs.existsSync(distPrerendered) ? distPrerendered : srcPrerendered;
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
     if (fs.existsSync(prerendered)) {
       res.sendFile(prerendered);
     } else {
