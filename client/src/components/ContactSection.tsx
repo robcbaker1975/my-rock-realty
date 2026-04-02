@@ -171,10 +171,11 @@ export default function ContactSection() {
               {/* Name & Email */}
               <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
                 <div>
-                  <label className="block text-cream/60 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                  <label htmlFor="contact-name" className="block text-cream/60 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
                     Name *
                   </label>
                   <input
+                    id="contact-name"
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -183,10 +184,11 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="block text-cream/60 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                  <label htmlFor="contact-email" className="block text-cream/60 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
                     Email *
                   </label>
                   <input
+                    id="contact-email"
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -199,10 +201,11 @@ export default function ContactSection() {
               {/* Phone & Type */}
               <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
                 <div>
-                  <label className="block text-cream/60 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                  <label htmlFor="contact-phone" className="block text-cream/60 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
                     Phone
                   </label>
                   <input
+                    id="contact-phone"
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -257,10 +260,11 @@ export default function ContactSection() {
 
               {/* Message */}
               <div>
-                <label className="block text-cream/60 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                <label htmlFor="contact-message" className="block text-cream/60 text-sm mb-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
                   Message
                 </label>
                 <textarea
+                  id="contact-message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={4}
