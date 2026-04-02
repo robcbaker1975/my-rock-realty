@@ -20,6 +20,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 import { buildSeoHeadBlock, injectSeoHead, BASE_SCHEMAS, buildBreadcrumbSchema, OG_IMAGE_DEFAULT, OG_IMAGE_MILITARY } from "./seo-inject.mjs";
+import { SEO_METADATA_MAP } from "./seo-metadata-map.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -172,7 +173,18 @@ async function prerenderAll() {
     const html = ssrMod.renderDenverHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_denver = SEO_METADATA_MAP["denver-homes-for-sale"];
+    const _seoBlock_denver = buildSeoHeadBlock({
+      title: _seoMeta_denver.title,
+      description: _seoMeta_denver.description,
+      canonical: _seoMeta_denver.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver.breadcrumbs)],
+      slug: "denver-homes-for-sale",
+    });
+    const _injectedHtml_denver = injectSeoHead(prerenderedShell, _seoBlock_denver, _seoMeta_denver.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "denver-homes-for-sale.html"), _injectedHtml_denver, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "denver-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_denver = readFileSync(resolve(serverPrerenderedDir, "denver-homes-for-sale.html"), "utf-8");
@@ -225,7 +237,18 @@ async function prerenderAll() {
     const html = ssrMod.renderBoulderCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "boulder-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_boulder = SEO_METADATA_MAP["boulder-co-homes-for-sale"];
+    const _seoBlock_boulder = buildSeoHeadBlock({
+      title: _seoMeta_boulder.title,
+      description: _seoMeta_boulder.description,
+      canonical: _seoMeta_boulder.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_boulder.breadcrumbs)],
+      slug: "boulder-co-homes-for-sale",
+    });
+    const _injectedHtml_boulder = injectSeoHead(prerenderedShell, _seoBlock_boulder, _seoMeta_boulder.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "boulder-co-homes-for-sale.html"), _injectedHtml_boulder, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "boulder-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_boulder = readFileSync(resolve(serverPrerenderedDir, "boulder-co-homes-for-sale.html"), "utf-8");
@@ -239,7 +262,18 @@ async function prerenderAll() {
     const html = ssrMod.renderBlackForestCoRealEstate();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "black-forest-co-real-estate.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_black_forest = SEO_METADATA_MAP["black-forest-co-real-estate"];
+    const _seoBlock_black_forest = buildSeoHeadBlock({
+      title: _seoMeta_black_forest.title,
+      description: _seoMeta_black_forest.description,
+      canonical: _seoMeta_black_forest.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_black_forest.breadcrumbs)],
+      slug: "black-forest-co-real-estate",
+    });
+    const _injectedHtml_black_forest = injectSeoHead(prerenderedShell, _seoBlock_black_forest, _seoMeta_black_forest.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "black-forest-co-real-estate.html"), _injectedHtml_black_forest, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "black-forest-co-real-estate.html"), prerenderedShell, "utf-8");
     const written_black_forest = readFileSync(resolve(serverPrerenderedDir, "black-forest-co-real-estate.html"), "utf-8");
@@ -253,7 +287,18 @@ async function prerenderAll() {
     const html = ssrMod.renderPeytonCoRealEstate();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "peyton-co-real-estate.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_peyton = SEO_METADATA_MAP["peyton-co-real-estate"];
+    const _seoBlock_peyton = buildSeoHeadBlock({
+      title: _seoMeta_peyton.title,
+      description: _seoMeta_peyton.description,
+      canonical: _seoMeta_peyton.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_peyton.breadcrumbs)],
+      slug: "peyton-co-real-estate",
+    });
+    const _injectedHtml_peyton = injectSeoHead(prerenderedShell, _seoBlock_peyton, _seoMeta_peyton.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "peyton-co-real-estate.html"), _injectedHtml_peyton, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "peyton-co-real-estate.html"), prerenderedShell, "utf-8");
     const written_peyton = readFileSync(resolve(serverPrerenderedDir, "peyton-co-real-estate.html"), "utf-8");
@@ -267,7 +312,18 @@ async function prerenderAll() {
     const html = ssrMod.renderPalmerLakeCoRealEstate();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "palmer-lake-co-real-estate.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_palmer_lake = SEO_METADATA_MAP["palmer-lake-co-real-estate"];
+    const _seoBlock_palmer_lake = buildSeoHeadBlock({
+      title: _seoMeta_palmer_lake.title,
+      description: _seoMeta_palmer_lake.description,
+      canonical: _seoMeta_palmer_lake.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_palmer_lake.breadcrumbs)],
+      slug: "palmer-lake-co-real-estate",
+    });
+    const _injectedHtml_palmer_lake = injectSeoHead(prerenderedShell, _seoBlock_palmer_lake, _seoMeta_palmer_lake.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "palmer-lake-co-real-estate.html"), _injectedHtml_palmer_lake, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "palmer-lake-co-real-estate.html"), prerenderedShell, "utf-8");
     const written_palmer_lake = readFileSync(resolve(serverPrerenderedDir, "palmer-lake-co-real-estate.html"), "utf-8");
@@ -281,7 +337,18 @@ async function prerenderAll() {
     const html = ssrMod.renderParkerCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "parker-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_parker = SEO_METADATA_MAP["parker-co-homes-for-sale"];
+    const _seoBlock_parker = buildSeoHeadBlock({
+      title: _seoMeta_parker.title,
+      description: _seoMeta_parker.description,
+      canonical: _seoMeta_parker.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_parker.breadcrumbs)],
+      slug: "parker-co-homes-for-sale",
+    });
+    const _injectedHtml_parker = injectSeoHead(prerenderedShell, _seoBlock_parker, _seoMeta_parker.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "parker-co-homes-for-sale.html"), _injectedHtml_parker, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "parker-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_parker = readFileSync(resolve(serverPrerenderedDir, "parker-co-homes-for-sale.html"), "utf-8");
@@ -295,7 +362,18 @@ async function prerenderAll() {
     const html = ssrMod.renderHighlandsRanchCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "highlands-ranch-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_highlands_ranch = SEO_METADATA_MAP["highlands-ranch-co-homes-for-sale"];
+    const _seoBlock_highlands_ranch = buildSeoHeadBlock({
+      title: _seoMeta_highlands_ranch.title,
+      description: _seoMeta_highlands_ranch.description,
+      canonical: _seoMeta_highlands_ranch.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_highlands_ranch.breadcrumbs)],
+      slug: "highlands-ranch-co-homes-for-sale",
+    });
+    const _injectedHtml_highlands_ranch = injectSeoHead(prerenderedShell, _seoBlock_highlands_ranch, _seoMeta_highlands_ranch.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "highlands-ranch-co-homes-for-sale.html"), _injectedHtml_highlands_ranch, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "highlands-ranch-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_highlands_ranch = readFileSync(resolve(serverPrerenderedDir, "highlands-ranch-co-homes-for-sale.html"), "utf-8");
@@ -309,7 +387,18 @@ async function prerenderAll() {
     const html = ssrMod.renderCastleRockCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "castle-rock-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_castle_rock = SEO_METADATA_MAP["castle-rock-co-homes-for-sale"];
+    const _seoBlock_castle_rock = buildSeoHeadBlock({
+      title: _seoMeta_castle_rock.title,
+      description: _seoMeta_castle_rock.description,
+      canonical: _seoMeta_castle_rock.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_castle_rock.breadcrumbs)],
+      slug: "castle-rock-co-homes-for-sale",
+    });
+    const _injectedHtml_castle_rock = injectSeoHead(prerenderedShell, _seoBlock_castle_rock, _seoMeta_castle_rock.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "castle-rock-co-homes-for-sale.html"), _injectedHtml_castle_rock, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "castle-rock-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_castle_rock = readFileSync(resolve(serverPrerenderedDir, "castle-rock-co-homes-for-sale.html"), "utf-8");
@@ -323,7 +412,18 @@ async function prerenderAll() {
     const html = ssrMod.renderLittletonCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "littleton-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_littleton = SEO_METADATA_MAP["littleton-co-homes-for-sale"];
+    const _seoBlock_littleton = buildSeoHeadBlock({
+      title: _seoMeta_littleton.title,
+      description: _seoMeta_littleton.description,
+      canonical: _seoMeta_littleton.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_littleton.breadcrumbs)],
+      slug: "littleton-co-homes-for-sale",
+    });
+    const _injectedHtml_littleton = injectSeoHead(prerenderedShell, _seoBlock_littleton, _seoMeta_littleton.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "littleton-co-homes-for-sale.html"), _injectedHtml_littleton, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "littleton-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_littleton = readFileSync(resolve(serverPrerenderedDir, "littleton-co-homes-for-sale.html"), "utf-8");
@@ -337,7 +437,18 @@ async function prerenderAll() {
     const html = ssrMod.renderArvadaCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "arvada-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_arvada = SEO_METADATA_MAP["arvada-co-homes-for-sale"];
+    const _seoBlock_arvada = buildSeoHeadBlock({
+      title: _seoMeta_arvada.title,
+      description: _seoMeta_arvada.description,
+      canonical: _seoMeta_arvada.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_arvada.breadcrumbs)],
+      slug: "arvada-co-homes-for-sale",
+    });
+    const _injectedHtml_arvada = injectSeoHead(prerenderedShell, _seoBlock_arvada, _seoMeta_arvada.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "arvada-co-homes-for-sale.html"), _injectedHtml_arvada, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "arvada-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_arvada = readFileSync(resolve(serverPrerenderedDir, "arvada-co-homes-for-sale.html"), "utf-8");
@@ -351,7 +462,18 @@ async function prerenderAll() {
     const html = ssrMod.renderFortCollinsCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "fort-collins-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_fort_collins = SEO_METADATA_MAP["fort-collins-co-homes-for-sale"];
+    const _seoBlock_fort_collins = buildSeoHeadBlock({
+      title: _seoMeta_fort_collins.title,
+      description: _seoMeta_fort_collins.description,
+      canonical: _seoMeta_fort_collins.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_fort_collins.breadcrumbs)],
+      slug: "fort-collins-co-homes-for-sale",
+    });
+    const _injectedHtml_fort_collins = injectSeoHead(prerenderedShell, _seoBlock_fort_collins, _seoMeta_fort_collins.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "fort-collins-co-homes-for-sale.html"), _injectedHtml_fort_collins, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "fort-collins-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_fort_collins = readFileSync(resolve(serverPrerenderedDir, "fort-collins-co-homes-for-sale.html"), "utf-8");
@@ -365,7 +487,18 @@ async function prerenderAll() {
     const html = ssrMod.renderLovelandCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "loveland-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_loveland = SEO_METADATA_MAP["loveland-co-homes-for-sale"];
+    const _seoBlock_loveland = buildSeoHeadBlock({
+      title: _seoMeta_loveland.title,
+      description: _seoMeta_loveland.description,
+      canonical: _seoMeta_loveland.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_loveland.breadcrumbs)],
+      slug: "loveland-co-homes-for-sale",
+    });
+    const _injectedHtml_loveland = injectSeoHead(prerenderedShell, _seoBlock_loveland, _seoMeta_loveland.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "loveland-co-homes-for-sale.html"), _injectedHtml_loveland, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "loveland-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_loveland = readFileSync(resolve(serverPrerenderedDir, "loveland-co-homes-for-sale.html"), "utf-8");
@@ -379,7 +512,18 @@ async function prerenderAll() {
     const html = ssrMod.renderWindsorCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "windsor-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_windsor = SEO_METADATA_MAP["windsor-co-homes-for-sale"];
+    const _seoBlock_windsor = buildSeoHeadBlock({
+      title: _seoMeta_windsor.title,
+      description: _seoMeta_windsor.description,
+      canonical: _seoMeta_windsor.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_windsor.breadcrumbs)],
+      slug: "windsor-co-homes-for-sale",
+    });
+    const _injectedHtml_windsor = injectSeoHead(prerenderedShell, _seoBlock_windsor, _seoMeta_windsor.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "windsor-co-homes-for-sale.html"), _injectedHtml_windsor, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "windsor-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_windsor = readFileSync(resolve(serverPrerenderedDir, "windsor-co-homes-for-sale.html"), "utf-8");
@@ -393,7 +537,18 @@ async function prerenderAll() {
     const html = ssrMod.renderJohnstownCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "johnstown-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_johnstown = SEO_METADATA_MAP["johnstown-co-homes-for-sale"];
+    const _seoBlock_johnstown = buildSeoHeadBlock({
+      title: _seoMeta_johnstown.title,
+      description: _seoMeta_johnstown.description,
+      canonical: _seoMeta_johnstown.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_johnstown.breadcrumbs)],
+      slug: "johnstown-co-homes-for-sale",
+    });
+    const _injectedHtml_johnstown = injectSeoHead(prerenderedShell, _seoBlock_johnstown, _seoMeta_johnstown.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "johnstown-co-homes-for-sale.html"), _injectedHtml_johnstown, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "johnstown-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_johnstown = readFileSync(resolve(serverPrerenderedDir, "johnstown-co-homes-for-sale.html"), "utf-8");
@@ -407,7 +562,18 @@ async function prerenderAll() {
     const html = ssrMod.renderGreeleyCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "greeley-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_greeley = SEO_METADATA_MAP["greeley-co-homes-for-sale"];
+    const _seoBlock_greeley = buildSeoHeadBlock({
+      title: _seoMeta_greeley.title,
+      description: _seoMeta_greeley.description,
+      canonical: _seoMeta_greeley.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_greeley.breadcrumbs)],
+      slug: "greeley-co-homes-for-sale",
+    });
+    const _injectedHtml_greeley = injectSeoHead(prerenderedShell, _seoBlock_greeley, _seoMeta_greeley.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "greeley-co-homes-for-sale.html"), _injectedHtml_greeley, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "greeley-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_greeley = readFileSync(resolve(serverPrerenderedDir, "greeley-co-homes-for-sale.html"), "utf-8");
@@ -421,7 +587,18 @@ async function prerenderAll() {
     const html = ssrMod.renderDouglasCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "douglas-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_douglas = SEO_METADATA_MAP["douglas-co-homes-for-sale"];
+    const _seoBlock_douglas = buildSeoHeadBlock({
+      title: _seoMeta_douglas.title,
+      description: _seoMeta_douglas.description,
+      canonical: _seoMeta_douglas.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_douglas.breadcrumbs)],
+      slug: "douglas-co-homes-for-sale",
+    });
+    const _injectedHtml_douglas = injectSeoHead(prerenderedShell, _seoBlock_douglas, _seoMeta_douglas.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "douglas-co-homes-for-sale.html"), _injectedHtml_douglas, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "douglas-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_douglas = readFileSync(resolve(serverPrerenderedDir, "douglas-co-homes-for-sale.html"), "utf-8");
@@ -435,7 +612,18 @@ async function prerenderAll() {
     const html = ssrMod.renderCastlePinesCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "castle-pines-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_castle_pines = SEO_METADATA_MAP["castle-pines-co-homes-for-sale"];
+    const _seoBlock_castle_pines = buildSeoHeadBlock({
+      title: _seoMeta_castle_pines.title,
+      description: _seoMeta_castle_pines.description,
+      canonical: _seoMeta_castle_pines.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_castle_pines.breadcrumbs)],
+      slug: "castle-pines-co-homes-for-sale",
+    });
+    const _injectedHtml_castle_pines = injectSeoHead(prerenderedShell, _seoBlock_castle_pines, _seoMeta_castle_pines.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "castle-pines-co-homes-for-sale.html"), _injectedHtml_castle_pines, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "castle-pines-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_castle_pines = readFileSync(resolve(serverPrerenderedDir, "castle-pines-co-homes-for-sale.html"), "utf-8");
@@ -449,7 +637,18 @@ async function prerenderAll() {
     const html = ssrMod.renderCentennialCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "centennial-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_centennial = SEO_METADATA_MAP["centennial-co-homes-for-sale"];
+    const _seoBlock_centennial = buildSeoHeadBlock({
+      title: _seoMeta_centennial.title,
+      description: _seoMeta_centennial.description,
+      canonical: _seoMeta_centennial.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_centennial.breadcrumbs)],
+      slug: "centennial-co-homes-for-sale",
+    });
+    const _injectedHtml_centennial = injectSeoHead(prerenderedShell, _seoBlock_centennial, _seoMeta_centennial.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "centennial-co-homes-for-sale.html"), _injectedHtml_centennial, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "centennial-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_centennial = readFileSync(resolve(serverPrerenderedDir, "centennial-co-homes-for-sale.html"), "utf-8");
@@ -463,7 +662,18 @@ async function prerenderAll() {
     const html = ssrMod.renderLoneTreeCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "lone-tree-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_lone_tree = SEO_METADATA_MAP["lone-tree-co-homes-for-sale"];
+    const _seoBlock_lone_tree = buildSeoHeadBlock({
+      title: _seoMeta_lone_tree.title,
+      description: _seoMeta_lone_tree.description,
+      canonical: _seoMeta_lone_tree.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_lone_tree.breadcrumbs)],
+      slug: "lone-tree-co-homes-for-sale",
+    });
+    const _injectedHtml_lone_tree = injectSeoHead(prerenderedShell, _seoBlock_lone_tree, _seoMeta_lone_tree.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "lone-tree-co-homes-for-sale.html"), _injectedHtml_lone_tree, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "lone-tree-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_lone_tree = readFileSync(resolve(serverPrerenderedDir, "lone-tree-co-homes-for-sale.html"), "utf-8");
@@ -477,7 +687,18 @@ async function prerenderAll() {
     const html = ssrMod.renderWestminsterCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "westminster-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_westminster = SEO_METADATA_MAP["westminster-co-homes-for-sale"];
+    const _seoBlock_westminster = buildSeoHeadBlock({
+      title: _seoMeta_westminster.title,
+      description: _seoMeta_westminster.description,
+      canonical: _seoMeta_westminster.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_westminster.breadcrumbs)],
+      slug: "westminster-co-homes-for-sale",
+    });
+    const _injectedHtml_westminster = injectSeoHead(prerenderedShell, _seoBlock_westminster, _seoMeta_westminster.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "westminster-co-homes-for-sale.html"), _injectedHtml_westminster, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "westminster-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_westminster = readFileSync(resolve(serverPrerenderedDir, "westminster-co-homes-for-sale.html"), "utf-8");
@@ -491,7 +712,18 @@ async function prerenderAll() {
     const html = ssrMod.renderMonumentCoRealEstate();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "monument-co-real-estate.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_monument = SEO_METADATA_MAP["monument-co-real-estate"];
+    const _seoBlock_monument = buildSeoHeadBlock({
+      title: _seoMeta_monument.title,
+      description: _seoMeta_monument.description,
+      canonical: _seoMeta_monument.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_monument.breadcrumbs)],
+      slug: "monument-co-real-estate",
+    });
+    const _injectedHtml_monument = injectSeoHead(prerenderedShell, _seoBlock_monument, _seoMeta_monument.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "monument-co-real-estate.html"), _injectedHtml_monument, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "monument-co-real-estate.html"), prerenderedShell, "utf-8");
     const written_monument = readFileSync(resolve(serverPrerenderedDir, "monument-co-real-estate.html"), "utf-8");
@@ -556,7 +788,18 @@ async function prerenderAll() {
     const html = ssrMod.renderFountainCoRealEstate();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "fountain-co-real-estate.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_fountain = SEO_METADATA_MAP["fountain-co-real-estate"];
+    const _seoBlock_fountain = buildSeoHeadBlock({
+      title: _seoMeta_fountain.title,
+      description: _seoMeta_fountain.description,
+      canonical: _seoMeta_fountain.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_fountain.breadcrumbs)],
+      slug: "fountain-co-real-estate",
+    });
+    const _injectedHtml_fountain = injectSeoHead(prerenderedShell, _seoBlock_fountain, _seoMeta_fountain.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "fountain-co-real-estate.html"), _injectedHtml_fountain, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "fountain-co-real-estate.html"), prerenderedShell, "utf-8");
     const written_fountain = readFileSync(resolve(serverPrerenderedDir, "fountain-co-real-estate.html"), "utf-8");
@@ -570,7 +813,18 @@ async function prerenderAll() {
     const html = ssrMod.renderWoodlandParkCoRealEstate();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "woodland-park-co-real-estate.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_woodland_park = SEO_METADATA_MAP["woodland-park-co-real-estate"];
+    const _seoBlock_woodland_park = buildSeoHeadBlock({
+      title: _seoMeta_woodland_park.title,
+      description: _seoMeta_woodland_park.description,
+      canonical: _seoMeta_woodland_park.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_woodland_park.breadcrumbs)],
+      slug: "woodland-park-co-real-estate",
+    });
+    const _injectedHtml_woodland_park = injectSeoHead(prerenderedShell, _seoBlock_woodland_park, _seoMeta_woodland_park.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "woodland-park-co-real-estate.html"), _injectedHtml_woodland_park, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "woodland-park-co-real-estate.html"), prerenderedShell, "utf-8");
     const written_woodland_park = readFileSync(resolve(serverPrerenderedDir, "woodland-park-co-real-estate.html"), "utf-8");
@@ -1259,7 +1513,18 @@ async function prerenderAll() {
     const html = ssrMod.renderWashParkDenverHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "wash-park-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_wash_park = SEO_METADATA_MAP["wash-park-denver-homes-for-sale"];
+    const _seoBlock_wash_park = buildSeoHeadBlock({
+      title: _seoMeta_wash_park.title,
+      description: _seoMeta_wash_park.description,
+      canonical: _seoMeta_wash_park.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_wash_park.breadcrumbs)],
+      slug: "wash-park-denver-homes-for-sale",
+    });
+    const _injectedHtml_wash_park = injectSeoHead(prerenderedShell, _seoBlock_wash_park, _seoMeta_wash_park.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "wash-park-denver-homes-for-sale.html"), _injectedHtml_wash_park, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "wash-park-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_wash_park = readFileSync(resolve(serverPrerenderedDir, "wash-park-denver-homes-for-sale.html"), "utf-8");
@@ -1273,7 +1538,18 @@ async function prerenderAll() {
     const html = ssrMod.renderCherryCreekDenverHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "cherry-creek-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_cherry_creek = SEO_METADATA_MAP["cherry-creek-denver-homes-for-sale"];
+    const _seoBlock_cherry_creek = buildSeoHeadBlock({
+      title: _seoMeta_cherry_creek.title,
+      description: _seoMeta_cherry_creek.description,
+      canonical: _seoMeta_cherry_creek.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_cherry_creek.breadcrumbs)],
+      slug: "cherry-creek-denver-homes-for-sale",
+    });
+    const _injectedHtml_cherry_creek = injectSeoHead(prerenderedShell, _seoBlock_cherry_creek, _seoMeta_cherry_creek.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "cherry-creek-denver-homes-for-sale.html"), _injectedHtml_cherry_creek, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "cherry-creek-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_cherry_creek = readFileSync(resolve(serverPrerenderedDir, "cherry-creek-denver-homes-for-sale.html"), "utf-8");
@@ -1287,7 +1563,18 @@ async function prerenderAll() {
     const html = ssrMod.renderLohiDenverHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "lohi-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_lohi = SEO_METADATA_MAP["lohi-denver-homes-for-sale"];
+    const _seoBlock_lohi = buildSeoHeadBlock({
+      title: _seoMeta_lohi.title,
+      description: _seoMeta_lohi.description,
+      canonical: _seoMeta_lohi.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_lohi.breadcrumbs)],
+      slug: "lohi-denver-homes-for-sale",
+    });
+    const _injectedHtml_lohi = injectSeoHead(prerenderedShell, _seoBlock_lohi, _seoMeta_lohi.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "lohi-denver-homes-for-sale.html"), _injectedHtml_lohi, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "lohi-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_lohi = readFileSync(resolve(serverPrerenderedDir, "lohi-denver-homes-for-sale.html"), "utf-8");
@@ -1301,7 +1588,18 @@ async function prerenderAll() {
     const html = ssrMod.renderRinoDenverHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "rino-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_rino = SEO_METADATA_MAP["rino-denver-homes-for-sale"];
+    const _seoBlock_rino = buildSeoHeadBlock({
+      title: _seoMeta_rino.title,
+      description: _seoMeta_rino.description,
+      canonical: _seoMeta_rino.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_rino.breadcrumbs)],
+      slug: "rino-denver-homes-for-sale",
+    });
+    const _injectedHtml_rino = injectSeoHead(prerenderedShell, _seoBlock_rino, _seoMeta_rino.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "rino-denver-homes-for-sale.html"), _injectedHtml_rino, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "rino-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_rino = readFileSync(resolve(serverPrerenderedDir, "rino-denver-homes-for-sale.html"), "utf-8");
@@ -1315,7 +1613,18 @@ async function prerenderAll() {
     const html = ssrMod.renderCentralParkDenverHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "central-park-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_central_park = SEO_METADATA_MAP["central-park-denver-homes-for-sale"];
+    const _seoBlock_central_park = buildSeoHeadBlock({
+      title: _seoMeta_central_park.title,
+      description: _seoMeta_central_park.description,
+      canonical: _seoMeta_central_park.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_central_park.breadcrumbs)],
+      slug: "central-park-denver-homes-for-sale",
+    });
+    const _injectedHtml_central_park = injectSeoHead(prerenderedShell, _seoBlock_central_park, _seoMeta_central_park.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "central-park-denver-homes-for-sale.html"), _injectedHtml_central_park, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "central-park-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_central_park = readFileSync(resolve(serverPrerenderedDir, "central-park-denver-homes-for-sale.html"), "utf-8");
@@ -1329,7 +1638,18 @@ async function prerenderAll() {
     const html = ssrMod.renderAdamsCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "adams-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_adams_co = SEO_METADATA_MAP["adams-co-homes-for-sale"];
+    const _seoBlock_adams_co = buildSeoHeadBlock({
+      title: _seoMeta_adams_co.title,
+      description: _seoMeta_adams_co.description,
+      canonical: _seoMeta_adams_co.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_adams_co.breadcrumbs)],
+      slug: "adams-co-homes-for-sale",
+    });
+    const _injectedHtml_adams_co = injectSeoHead(prerenderedShell, _seoBlock_adams_co, _seoMeta_adams_co.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "adams-co-homes-for-sale.html"), _injectedHtml_adams_co, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "adams-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_adams_co = readFileSync(resolve(serverPrerenderedDir, "adams-co-homes-for-sale.html"), "utf-8");
@@ -1343,7 +1663,18 @@ async function prerenderAll() {
     const html = ssrMod.renderCommerceCityHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "commerce-city-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_commerce_city = SEO_METADATA_MAP["commerce-city-homes-for-sale"];
+    const _seoBlock_commerce_city = buildSeoHeadBlock({
+      title: _seoMeta_commerce_city.title,
+      description: _seoMeta_commerce_city.description,
+      canonical: _seoMeta_commerce_city.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_commerce_city.breadcrumbs)],
+      slug: "commerce-city-homes-for-sale",
+    });
+    const _injectedHtml_commerce_city = injectSeoHead(prerenderedShell, _seoBlock_commerce_city, _seoMeta_commerce_city.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "commerce-city-homes-for-sale.html"), _injectedHtml_commerce_city, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "commerce-city-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_commerce_city = readFileSync(resolve(serverPrerenderedDir, "commerce-city-homes-for-sale.html"), "utf-8");
@@ -1357,7 +1688,18 @@ async function prerenderAll() {
     const html = ssrMod.renderBrightonCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "brighton-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_brighton_co = SEO_METADATA_MAP["brighton-co-homes-for-sale"];
+    const _seoBlock_brighton_co = buildSeoHeadBlock({
+      title: _seoMeta_brighton_co.title,
+      description: _seoMeta_brighton_co.description,
+      canonical: _seoMeta_brighton_co.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_brighton_co.breadcrumbs)],
+      slug: "brighton-co-homes-for-sale",
+    });
+    const _injectedHtml_brighton_co = injectSeoHead(prerenderedShell, _seoBlock_brighton_co, _seoMeta_brighton_co.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "brighton-co-homes-for-sale.html"), _injectedHtml_brighton_co, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "brighton-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_brighton_co = readFileSync(resolve(serverPrerenderedDir, "brighton-co-homes-for-sale.html"), "utf-8");
@@ -1371,7 +1713,18 @@ async function prerenderAll() {
     const html = ssrMod.renderThorntonCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "thornton-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_thornton_co = SEO_METADATA_MAP["thornton-co-homes-for-sale"];
+    const _seoBlock_thornton_co = buildSeoHeadBlock({
+      title: _seoMeta_thornton_co.title,
+      description: _seoMeta_thornton_co.description,
+      canonical: _seoMeta_thornton_co.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_thornton_co.breadcrumbs)],
+      slug: "thornton-co-homes-for-sale",
+    });
+    const _injectedHtml_thornton_co = injectSeoHead(prerenderedShell, _seoBlock_thornton_co, _seoMeta_thornton_co.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "thornton-co-homes-for-sale.html"), _injectedHtml_thornton_co, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "thornton-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_thornton_co = readFileSync(resolve(serverPrerenderedDir, "thornton-co-homes-for-sale.html"), "utf-8");
@@ -1385,7 +1738,18 @@ async function prerenderAll() {
     const html = ssrMod.renderNorthglennCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "northglenn-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_northglenn_co = SEO_METADATA_MAP["northglenn-co-homes-for-sale"];
+    const _seoBlock_northglenn_co = buildSeoHeadBlock({
+      title: _seoMeta_northglenn_co.title,
+      description: _seoMeta_northglenn_co.description,
+      canonical: _seoMeta_northglenn_co.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_northglenn_co.breadcrumbs)],
+      slug: "northglenn-co-homes-for-sale",
+    });
+    const _injectedHtml_northglenn_co = injectSeoHead(prerenderedShell, _seoBlock_northglenn_co, _seoMeta_northglenn_co.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "northglenn-co-homes-for-sale.html"), _injectedHtml_northglenn_co, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "northglenn-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_northglenn_co = readFileSync(resolve(serverPrerenderedDir, "northglenn-co-homes-for-sale.html"), "utf-8");
@@ -1399,7 +1763,18 @@ async function prerenderAll() {
     const html = ssrMod.renderBuyingAHomeInDenver();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "buying-a-home-in-denver.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_buying_a_home_in_denver = SEO_METADATA_MAP["buying-a-home-in-denver"];
+    const _seoBlock_buying_a_home_in_denver = buildSeoHeadBlock({
+      title: _seoMeta_buying_a_home_in_denver.title,
+      description: _seoMeta_buying_a_home_in_denver.description,
+      canonical: _seoMeta_buying_a_home_in_denver.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_buying_a_home_in_denver.breadcrumbs)],
+      slug: "buying-a-home-in-denver",
+    });
+    const _injectedHtml_buying_a_home_in_denver = injectSeoHead(prerenderedShell, _seoBlock_buying_a_home_in_denver, _seoMeta_buying_a_home_in_denver.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "buying-a-home-in-denver.html"), _injectedHtml_buying_a_home_in_denver, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "buying-a-home-in-denver.html"), prerenderedShell, "utf-8");
     const written_buying_a_home_in_denver = readFileSync(resolve(serverPrerenderedDir, "buying-a-home-in-denver.html"), "utf-8");
@@ -1413,7 +1788,18 @@ async function prerenderAll() {
     const html = ssrMod.renderFirstTimeHomeBuyerDenver();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "first-time-home-buyer-denver.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_first_time_home_buyer_denver = SEO_METADATA_MAP["first-time-home-buyer-denver"];
+    const _seoBlock_first_time_home_buyer_denver = buildSeoHeadBlock({
+      title: _seoMeta_first_time_home_buyer_denver.title,
+      description: _seoMeta_first_time_home_buyer_denver.description,
+      canonical: _seoMeta_first_time_home_buyer_denver.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_first_time_home_buyer_denver.breadcrumbs)],
+      slug: "first-time-home-buyer-denver",
+    });
+    const _injectedHtml_first_time_home_buyer_denver = injectSeoHead(prerenderedShell, _seoBlock_first_time_home_buyer_denver, _seoMeta_first_time_home_buyer_denver.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "first-time-home-buyer-denver.html"), _injectedHtml_first_time_home_buyer_denver, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "first-time-home-buyer-denver.html"), prerenderedShell, "utf-8");
     const written_first_time_home_buyer_denver = readFileSync(resolve(serverPrerenderedDir, "first-time-home-buyer-denver.html"), "utf-8");
@@ -1427,7 +1813,18 @@ async function prerenderAll() {
     const html = ssrMod.renderDenverHomeBuyingProcess();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "denver-home-buying-process.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_denver_home_buying_process = SEO_METADATA_MAP["denver-home-buying-process"];
+    const _seoBlock_denver_home_buying_process = buildSeoHeadBlock({
+      title: _seoMeta_denver_home_buying_process.title,
+      description: _seoMeta_denver_home_buying_process.description,
+      canonical: _seoMeta_denver_home_buying_process.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver_home_buying_process.breadcrumbs)],
+      slug: "denver-home-buying-process",
+    });
+    const _injectedHtml_denver_home_buying_process = injectSeoHead(prerenderedShell, _seoBlock_denver_home_buying_process, _seoMeta_denver_home_buying_process.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "denver-home-buying-process.html"), _injectedHtml_denver_home_buying_process, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "denver-home-buying-process.html"), prerenderedShell, "utf-8");
     const written_denver_home_buying_process = readFileSync(resolve(serverPrerenderedDir, "denver-home-buying-process.html"), "utf-8");
@@ -1441,7 +1838,18 @@ async function prerenderAll() {
     const html = ssrMod.renderCostOfLivingInDenverColorado();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "cost-of-living-in-denver-colorado.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_cost_of_living_in_denver_colorado = SEO_METADATA_MAP["cost-of-living-in-denver-colorado"];
+    const _seoBlock_cost_of_living_in_denver_colorado = buildSeoHeadBlock({
+      title: _seoMeta_cost_of_living_in_denver_colorado.title,
+      description: _seoMeta_cost_of_living_in_denver_colorado.description,
+      canonical: _seoMeta_cost_of_living_in_denver_colorado.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_cost_of_living_in_denver_colorado.breadcrumbs)],
+      slug: "cost-of-living-in-denver-colorado",
+    });
+    const _injectedHtml_cost_of_living_in_denver_colorado = injectSeoHead(prerenderedShell, _seoBlock_cost_of_living_in_denver_colorado, _seoMeta_cost_of_living_in_denver_colorado.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "cost-of-living-in-denver-colorado.html"), _injectedHtml_cost_of_living_in_denver_colorado, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "cost-of-living-in-denver-colorado.html"), prerenderedShell, "utf-8");
     const written_cost_of_living_in_denver_colorado = readFileSync(resolve(serverPrerenderedDir, "cost-of-living-in-denver-colorado.html"), "utf-8");
@@ -1455,7 +1863,18 @@ async function prerenderAll() {
     const html = ssrMod.renderRelocatingToDenverColorado();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "relocating-to-denver-colorado.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_relocating_to_denver_colorado = SEO_METADATA_MAP["relocating-to-denver-colorado"];
+    const _seoBlock_relocating_to_denver_colorado = buildSeoHeadBlock({
+      title: _seoMeta_relocating_to_denver_colorado.title,
+      description: _seoMeta_relocating_to_denver_colorado.description,
+      canonical: _seoMeta_relocating_to_denver_colorado.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_relocating_to_denver_colorado.breadcrumbs)],
+      slug: "relocating-to-denver-colorado",
+    });
+    const _injectedHtml_relocating_to_denver_colorado = injectSeoHead(prerenderedShell, _seoBlock_relocating_to_denver_colorado, _seoMeta_relocating_to_denver_colorado.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "relocating-to-denver-colorado.html"), _injectedHtml_relocating_to_denver_colorado, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "relocating-to-denver-colorado.html"), prerenderedShell, "utf-8");
     const written_relocating_to_denver_colorado = readFileSync(resolve(serverPrerenderedDir, "relocating-to-denver-colorado.html"), "utf-8");
@@ -1469,7 +1888,18 @@ async function prerenderAll() {
     const html = ssrMod.renderFortCollinsHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "fort-collins-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_fort_collins_homes = SEO_METADATA_MAP["fort-collins-homes-for-sale"];
+    const _seoBlock_fort_collins_homes = buildSeoHeadBlock({
+      title: _seoMeta_fort_collins_homes.title,
+      description: _seoMeta_fort_collins_homes.description,
+      canonical: _seoMeta_fort_collins_homes.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_fort_collins_homes.breadcrumbs)],
+      slug: "fort-collins-homes-for-sale",
+    });
+    const _injectedHtml_fort_collins_homes = injectSeoHead(prerenderedShell, _seoBlock_fort_collins_homes, _seoMeta_fort_collins_homes.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "fort-collins-homes-for-sale.html"), _injectedHtml_fort_collins_homes, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "fort-collins-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_fort_collins_homes = readFileSync(resolve(serverPrerenderedDir, "fort-collins-homes-for-sale.html"), "utf-8");
@@ -1483,7 +1913,18 @@ async function prerenderAll() {
     const html = ssrMod.renderGreeleyHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "greeley-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_greeley_homes = SEO_METADATA_MAP["greeley-homes-for-sale"];
+    const _seoBlock_greeley_homes = buildSeoHeadBlock({
+      title: _seoMeta_greeley_homes.title,
+      description: _seoMeta_greeley_homes.description,
+      canonical: _seoMeta_greeley_homes.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_greeley_homes.breadcrumbs)],
+      slug: "greeley-homes-for-sale",
+    });
+    const _injectedHtml_greeley_homes = injectSeoHead(prerenderedShell, _seoBlock_greeley_homes, _seoMeta_greeley_homes.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "greeley-homes-for-sale.html"), _injectedHtml_greeley_homes, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "greeley-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_greeley_homes = readFileSync(resolve(serverPrerenderedDir, "greeley-homes-for-sale.html"), "utf-8");
@@ -1497,7 +1938,18 @@ async function prerenderAll() {
     const html = ssrMod.renderEvansCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "evans-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_evans_co = SEO_METADATA_MAP["evans-co-homes-for-sale"];
+    const _seoBlock_evans_co = buildSeoHeadBlock({
+      title: _seoMeta_evans_co.title,
+      description: _seoMeta_evans_co.description,
+      canonical: _seoMeta_evans_co.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_evans_co.breadcrumbs)],
+      slug: "evans-co-homes-for-sale",
+    });
+    const _injectedHtml_evans_co = injectSeoHead(prerenderedShell, _seoBlock_evans_co, _seoMeta_evans_co.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "evans-co-homes-for-sale.html"), _injectedHtml_evans_co, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "evans-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_evans_co = readFileSync(resolve(serverPrerenderedDir, "evans-co-homes-for-sale.html"), "utf-8");
@@ -1511,7 +1963,18 @@ async function prerenderAll() {
     const html = ssrMod.renderPlattevilleCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "platteville-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_platteville_co = SEO_METADATA_MAP["platteville-co-homes-for-sale"];
+    const _seoBlock_platteville_co = buildSeoHeadBlock({
+      title: _seoMeta_platteville_co.title,
+      description: _seoMeta_platteville_co.description,
+      canonical: _seoMeta_platteville_co.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_platteville_co.breadcrumbs)],
+      slug: "platteville-co-homes-for-sale",
+    });
+    const _injectedHtml_platteville_co = injectSeoHead(prerenderedShell, _seoBlock_platteville_co, _seoMeta_platteville_co.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "platteville-co-homes-for-sale.html"), _injectedHtml_platteville_co, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "platteville-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_platteville_co = readFileSync(resolve(serverPrerenderedDir, "platteville-co-homes-for-sale.html"), "utf-8");
@@ -1525,7 +1988,18 @@ async function prerenderAll() {
     const html = ssrMod.renderLaSalleCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "lasalle-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_lasalle_co = SEO_METADATA_MAP["lasalle-co-homes-for-sale"];
+    const _seoBlock_lasalle_co = buildSeoHeadBlock({
+      title: _seoMeta_lasalle_co.title,
+      description: _seoMeta_lasalle_co.description,
+      canonical: _seoMeta_lasalle_co.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_lasalle_co.breadcrumbs)],
+      slug: "lasalle-co-homes-for-sale",
+    });
+    const _injectedHtml_lasalle_co = injectSeoHead(prerenderedShell, _seoBlock_lasalle_co, _seoMeta_lasalle_co.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "lasalle-co-homes-for-sale.html"), _injectedHtml_lasalle_co, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "lasalle-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_lasalle_co = readFileSync(resolve(serverPrerenderedDir, "lasalle-co-homes-for-sale.html"), "utf-8");
@@ -1539,7 +2013,18 @@ async function prerenderAll() {
     const html = ssrMod.renderSloanLakeDenverHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "sloan-lake-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_sloan_lake = SEO_METADATA_MAP["sloan-lake-denver-homes-for-sale"];
+    const _seoBlock_sloan_lake = buildSeoHeadBlock({
+      title: _seoMeta_sloan_lake.title,
+      description: _seoMeta_sloan_lake.description,
+      canonical: _seoMeta_sloan_lake.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_sloan_lake.breadcrumbs)],
+      slug: "sloan-lake-denver-homes-for-sale",
+    });
+    const _injectedHtml_sloan_lake = injectSeoHead(prerenderedShell, _seoBlock_sloan_lake, _seoMeta_sloan_lake.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "sloan-lake-denver-homes-for-sale.html"), _injectedHtml_sloan_lake, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "sloan-lake-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_sloan_lake = readFileSync(resolve(serverPrerenderedDir, "sloan-lake-denver-homes-for-sale.html"), "utf-8");
@@ -1553,7 +2038,18 @@ async function prerenderAll() {
     const html = ssrMod.renderJeffersonCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "jefferson-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_jefferson_co = SEO_METADATA_MAP["jefferson-co-homes-for-sale"];
+    const _seoBlock_jefferson_co = buildSeoHeadBlock({
+      title: _seoMeta_jefferson_co.title,
+      description: _seoMeta_jefferson_co.description,
+      canonical: _seoMeta_jefferson_co.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_jefferson_co.breadcrumbs)],
+      slug: "jefferson-co-homes-for-sale",
+    });
+    const _injectedHtml_jefferson_co = injectSeoHead(prerenderedShell, _seoBlock_jefferson_co, _seoMeta_jefferson_co.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "jefferson-co-homes-for-sale.html"), _injectedHtml_jefferson_co, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "jefferson-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_jefferson_co = readFileSync(resolve(serverPrerenderedDir, "jefferson-co-homes-for-sale.html"), "utf-8");
@@ -1567,7 +2063,18 @@ async function prerenderAll() {
     const html = ssrMod.renderGoldenHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "golden-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_golden = SEO_METADATA_MAP["golden-homes-for-sale"];
+    const _seoBlock_golden = buildSeoHeadBlock({
+      title: _seoMeta_golden.title,
+      description: _seoMeta_golden.description,
+      canonical: _seoMeta_golden.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_golden.breadcrumbs)],
+      slug: "golden-homes-for-sale",
+    });
+    const _injectedHtml_golden = injectSeoHead(prerenderedShell, _seoBlock_golden, _seoMeta_golden.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "golden-homes-for-sale.html"), _injectedHtml_golden, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "golden-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_golden = readFileSync(resolve(serverPrerenderedDir, "golden-homes-for-sale.html"), "utf-8");
@@ -1581,7 +2088,18 @@ async function prerenderAll() {
     const html = ssrMod.renderLakewoodCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "lakewood-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_lakewood = SEO_METADATA_MAP["lakewood-co-homes-for-sale"];
+    const _seoBlock_lakewood = buildSeoHeadBlock({
+      title: _seoMeta_lakewood.title,
+      description: _seoMeta_lakewood.description,
+      canonical: _seoMeta_lakewood.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_lakewood.breadcrumbs)],
+      slug: "lakewood-co-homes-for-sale",
+    });
+    const _injectedHtml_lakewood = injectSeoHead(prerenderedShell, _seoBlock_lakewood, _seoMeta_lakewood.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "lakewood-co-homes-for-sale.html"), _injectedHtml_lakewood, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "lakewood-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_lakewood = readFileSync(resolve(serverPrerenderedDir, "lakewood-co-homes-for-sale.html"), "utf-8");
@@ -1595,7 +2113,18 @@ async function prerenderAll() {
     const html = ssrMod.renderMorrisonCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "morrison-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_morrison = SEO_METADATA_MAP["morrison-co-homes-for-sale"];
+    const _seoBlock_morrison = buildSeoHeadBlock({
+      title: _seoMeta_morrison.title,
+      description: _seoMeta_morrison.description,
+      canonical: _seoMeta_morrison.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_morrison.breadcrumbs)],
+      slug: "morrison-co-homes-for-sale",
+    });
+    const _injectedHtml_morrison = injectSeoHead(prerenderedShell, _seoBlock_morrison, _seoMeta_morrison.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "morrison-co-homes-for-sale.html"), _injectedHtml_morrison, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "morrison-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_morrison = readFileSync(resolve(serverPrerenderedDir, "morrison-co-homes-for-sale.html"), "utf-8");
@@ -1839,7 +2368,18 @@ async function prerenderAll() {
     const html = ssrMod.renderBuckleySpaceForceBase();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "buckley-space-force-base.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_buckley_space_force_base = SEO_METADATA_MAP["buckley-space-force-base"];
+    const _seoBlock_buckley_space_force_base = buildSeoHeadBlock({
+      title: _seoMeta_buckley_space_force_base.title,
+      description: _seoMeta_buckley_space_force_base.description,
+      canonical: _seoMeta_buckley_space_force_base.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_buckley_space_force_base.breadcrumbs)],
+      slug: "buckley-space-force-base",
+    });
+    const _injectedHtml_buckley_space_force_base = injectSeoHead(prerenderedShell, _seoBlock_buckley_space_force_base, _seoMeta_buckley_space_force_base.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "buckley-space-force-base.html"), _injectedHtml_buckley_space_force_base, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "buckley-space-force-base.html"), prerenderedShell, "utf-8");
     const written_buckley_space_force_base = readFileSync(resolve(serverPrerenderedDir, "buckley-space-force-base.html"), "utf-8");
@@ -1871,7 +2411,7 @@ async function prerenderAll() {
       ],
       slug: 'us-air-force-academy',
     });
-    const _injectedHtml = injectSeoHead(html, _seoBlock, 'https://myrockhomes.com/military-relocation/usafa/');
+    const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/military-relocation/usafa/');
     writeFileSync(resolve(prerenderedDir, ARTIFACT), _injectedHtml);
     // Also write to dist/prerendered
     mkdirSync(distPrerenderedDir, { recursive: true });
@@ -1905,7 +2445,7 @@ async function prerenderAll() {
       ],
       slug: 'military-spouses-buying-colorado',
     });
-    const _injectedHtml = injectSeoHead(html, _seoBlock, 'https://myrockhomes.com/military-relocation/military-spouses-buying-colorado/');
+    const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/military-relocation/military-spouses-buying-colorado/');
     writeFileSync(resolve(prerenderedDir, ARTIFACT), _injectedHtml);
     // Also write to dist/prerendered
     mkdirSync(distPrerenderedDir, { recursive: true });
@@ -2485,7 +3025,18 @@ async function prerenderAll() {
     const html = ssrMod.renderBoulderHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "boulder-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_boulder_homes = SEO_METADATA_MAP["boulder-homes-for-sale"];
+    const _seoBlock_boulder_homes = buildSeoHeadBlock({
+      title: _seoMeta_boulder_homes.title,
+      description: _seoMeta_boulder_homes.description,
+      canonical: _seoMeta_boulder_homes.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_boulder_homes.breadcrumbs)],
+      slug: "boulder-homes-for-sale",
+    });
+    const _injectedHtml_boulder_homes = injectSeoHead(prerenderedShell, _seoBlock_boulder_homes, _seoMeta_boulder_homes.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "boulder-homes-for-sale.html"), _injectedHtml_boulder_homes, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "boulder-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_boulder_homes = readFileSync(resolve(serverPrerenderedDir, "boulder-homes-for-sale.html"), "utf-8");
@@ -2499,7 +3050,18 @@ async function prerenderAll() {
     const html = ssrMod.renderLongmontCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "longmont-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_longmont = SEO_METADATA_MAP["longmont-co-homes-for-sale"];
+    const _seoBlock_longmont = buildSeoHeadBlock({
+      title: _seoMeta_longmont.title,
+      description: _seoMeta_longmont.description,
+      canonical: _seoMeta_longmont.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_longmont.breadcrumbs)],
+      slug: "longmont-co-homes-for-sale",
+    });
+    const _injectedHtml_longmont = injectSeoHead(prerenderedShell, _seoBlock_longmont, _seoMeta_longmont.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "longmont-co-homes-for-sale.html"), _injectedHtml_longmont, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "longmont-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_longmont = readFileSync(resolve(serverPrerenderedDir, "longmont-co-homes-for-sale.html"), "utf-8");
@@ -2513,7 +3075,18 @@ async function prerenderAll() {
     const html = ssrMod.renderLafayetteCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "lafayette-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_lafayette = SEO_METADATA_MAP["lafayette-co-homes-for-sale"];
+    const _seoBlock_lafayette = buildSeoHeadBlock({
+      title: _seoMeta_lafayette.title,
+      description: _seoMeta_lafayette.description,
+      canonical: _seoMeta_lafayette.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_lafayette.breadcrumbs)],
+      slug: "lafayette-co-homes-for-sale",
+    });
+    const _injectedHtml_lafayette = injectSeoHead(prerenderedShell, _seoBlock_lafayette, _seoMeta_lafayette.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "lafayette-co-homes-for-sale.html"), _injectedHtml_lafayette, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "lafayette-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_lafayette = readFileSync(resolve(serverPrerenderedDir, "lafayette-co-homes-for-sale.html"), "utf-8");
@@ -2527,7 +3100,18 @@ async function prerenderAll() {
     const html = ssrMod.renderNiwotCoHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "niwot-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_niwot = SEO_METADATA_MAP["niwot-co-homes-for-sale"];
+    const _seoBlock_niwot = buildSeoHeadBlock({
+      title: _seoMeta_niwot.title,
+      description: _seoMeta_niwot.description,
+      canonical: _seoMeta_niwot.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_niwot.breadcrumbs)],
+      slug: "niwot-co-homes-for-sale",
+    });
+    const _injectedHtml_niwot = injectSeoHead(prerenderedShell, _seoBlock_niwot, _seoMeta_niwot.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "niwot-co-homes-for-sale.html"), _injectedHtml_niwot, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "niwot-co-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_niwot = readFileSync(resolve(serverPrerenderedDir, "niwot-co-homes-for-sale.html"), "utf-8");
@@ -2541,7 +3125,18 @@ async function prerenderAll() {
     const html = ssrMod.renderDenverCondosForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "denver-condos-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_denver_condos = SEO_METADATA_MAP["denver-condos-for-sale"];
+    const _seoBlock_denver_condos = buildSeoHeadBlock({
+      title: _seoMeta_denver_condos.title,
+      description: _seoMeta_denver_condos.description,
+      canonical: _seoMeta_denver_condos.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver_condos.breadcrumbs)],
+      slug: "denver-condos-for-sale",
+    });
+    const _injectedHtml_denver_condos = injectSeoHead(prerenderedShell, _seoBlock_denver_condos, _seoMeta_denver_condos.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "denver-condos-for-sale.html"), _injectedHtml_denver_condos, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "denver-condos-for-sale.html"), prerenderedShell, "utf-8");
     const written_denver_condos = readFileSync(resolve(serverPrerenderedDir, "denver-condos-for-sale.html"), "utf-8");
@@ -2555,7 +3150,18 @@ async function prerenderAll() {
     const html = ssrMod.renderDenverTownhomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "denver-townhomes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_denver_townhomes = SEO_METADATA_MAP["denver-townhomes-for-sale"];
+    const _seoBlock_denver_townhomes = buildSeoHeadBlock({
+      title: _seoMeta_denver_townhomes.title,
+      description: _seoMeta_denver_townhomes.description,
+      canonical: _seoMeta_denver_townhomes.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver_townhomes.breadcrumbs)],
+      slug: "denver-townhomes-for-sale",
+    });
+    const _injectedHtml_denver_townhomes = injectSeoHead(prerenderedShell, _seoBlock_denver_townhomes, _seoMeta_denver_townhomes.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "denver-townhomes-for-sale.html"), _injectedHtml_denver_townhomes, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "denver-townhomes-for-sale.html"), prerenderedShell, "utf-8");
     const written_denver_townhomes = readFileSync(resolve(serverPrerenderedDir, "denver-townhomes-for-sale.html"), "utf-8");
@@ -2569,7 +3175,18 @@ async function prerenderAll() {
     const html = ssrMod.renderDenverLuxuryHomesForSale();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "denver-luxury-homes-for-sale.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_denver_luxury = SEO_METADATA_MAP["denver-luxury-homes-for-sale"];
+    const _seoBlock_denver_luxury = buildSeoHeadBlock({
+      title: _seoMeta_denver_luxury.title,
+      description: _seoMeta_denver_luxury.description,
+      canonical: _seoMeta_denver_luxury.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver_luxury.breadcrumbs)],
+      slug: "denver-luxury-homes-for-sale",
+    });
+    const _injectedHtml_denver_luxury = injectSeoHead(prerenderedShell, _seoBlock_denver_luxury, _seoMeta_denver_luxury.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "denver-luxury-homes-for-sale.html"), _injectedHtml_denver_luxury, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "denver-luxury-homes-for-sale.html"), prerenderedShell, "utf-8");
     const written_denver_luxury = readFileSync(resolve(serverPrerenderedDir, "denver-luxury-homes-for-sale.html"), "utf-8");
@@ -2583,7 +3200,18 @@ async function prerenderAll() {
     const html = ssrMod.renderDenverNewConstructionHomes();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "denver-new-construction-homes.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_denver_new_construction = SEO_METADATA_MAP["denver-new-construction-homes"];
+    const _seoBlock_denver_new_construction = buildSeoHeadBlock({
+      title: _seoMeta_denver_new_construction.title,
+      description: _seoMeta_denver_new_construction.description,
+      canonical: _seoMeta_denver_new_construction.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver_new_construction.breadcrumbs)],
+      slug: "denver-new-construction-homes",
+    });
+    const _injectedHtml_denver_new_construction = injectSeoHead(prerenderedShell, _seoBlock_denver_new_construction, _seoMeta_denver_new_construction.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "denver-new-construction-homes.html"), _injectedHtml_denver_new_construction, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "denver-new-construction-homes.html"), prerenderedShell, "utf-8");
     const written_denver_new_construction = readFileSync(resolve(serverPrerenderedDir, "denver-new-construction-homes.html"), "utf-8");
@@ -2597,7 +3225,18 @@ async function prerenderAll() {
     const html = ssrMod.renderAdamsCountyVsJeffersonCounty();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "adams-county-vs-jefferson-county.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_adams_county_vs_jefferson_county = SEO_METADATA_MAP["adams-county-vs-jefferson-county"];
+    const _seoBlock_adams_county_vs_jefferson_county = buildSeoHeadBlock({
+      title: _seoMeta_adams_county_vs_jefferson_county.title,
+      description: _seoMeta_adams_county_vs_jefferson_county.description,
+      canonical: _seoMeta_adams_county_vs_jefferson_county.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_adams_county_vs_jefferson_county.breadcrumbs)],
+      slug: "adams-county-vs-jefferson-county",
+    });
+    const _injectedHtml_adams_county_vs_jefferson_county = injectSeoHead(prerenderedShell, _seoBlock_adams_county_vs_jefferson_county, _seoMeta_adams_county_vs_jefferson_county.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "adams-county-vs-jefferson-county.html"), _injectedHtml_adams_county_vs_jefferson_county, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "adams-county-vs-jefferson-county.html"), prerenderedShell, "utf-8");
     const written_adams_county_vs_jefferson_county = readFileSync(resolve(serverPrerenderedDir, "adams-county-vs-jefferson-county.html"), "utf-8");
@@ -2611,7 +3250,18 @@ async function prerenderAll() {
     const html = ssrMod.renderDouglasCountyVsWeldCounty();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "douglas-county-vs-weld-county.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_douglas_county_vs_weld_county = SEO_METADATA_MAP["douglas-county-vs-weld-county"];
+    const _seoBlock_douglas_county_vs_weld_county = buildSeoHeadBlock({
+      title: _seoMeta_douglas_county_vs_weld_county.title,
+      description: _seoMeta_douglas_county_vs_weld_county.description,
+      canonical: _seoMeta_douglas_county_vs_weld_county.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_douglas_county_vs_weld_county.breadcrumbs)],
+      slug: "douglas-county-vs-weld-county",
+    });
+    const _injectedHtml_douglas_county_vs_weld_county = injectSeoHead(prerenderedShell, _seoBlock_douglas_county_vs_weld_county, _seoMeta_douglas_county_vs_weld_county.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "douglas-county-vs-weld-county.html"), _injectedHtml_douglas_county_vs_weld_county, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "douglas-county-vs-weld-county.html"), prerenderedShell, "utf-8");
     const written_douglas_county_vs_weld_county = readFileSync(resolve(serverPrerenderedDir, "douglas-county-vs-weld-county.html"), "utf-8");
@@ -2625,7 +3275,18 @@ async function prerenderAll() {
     const html = ssrMod.renderBoulderVsFortCollins();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "boulder-vs-fort-collins.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_boulder_vs_fort_collins = SEO_METADATA_MAP["boulder-vs-fort-collins"];
+    const _seoBlock_boulder_vs_fort_collins = buildSeoHeadBlock({
+      title: _seoMeta_boulder_vs_fort_collins.title,
+      description: _seoMeta_boulder_vs_fort_collins.description,
+      canonical: _seoMeta_boulder_vs_fort_collins.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_boulder_vs_fort_collins.breadcrumbs)],
+      slug: "boulder-vs-fort-collins",
+    });
+    const _injectedHtml_boulder_vs_fort_collins = injectSeoHead(prerenderedShell, _seoBlock_boulder_vs_fort_collins, _seoMeta_boulder_vs_fort_collins.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "boulder-vs-fort-collins.html"), _injectedHtml_boulder_vs_fort_collins, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "boulder-vs-fort-collins.html"), prerenderedShell, "utf-8");
     const written_boulder_vs_fort_collins = readFileSync(resolve(serverPrerenderedDir, "boulder-vs-fort-collins.html"), "utf-8");
@@ -2639,7 +3300,18 @@ async function prerenderAll() {
     const html = ssrMod.renderDenverMarketReport2025();
     const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
     mkdirSync(serverPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(serverPrerenderedDir, "denver-real-estate-market-report-2025.html"), prerenderedShell, "utf-8");
+
+    const _seoMeta_denver_market_report_2025 = SEO_METADATA_MAP["denver-real-estate-market-report-2025"];
+    const _seoBlock_denver_market_report_2025 = buildSeoHeadBlock({
+      title: _seoMeta_denver_market_report_2025.title,
+      description: _seoMeta_denver_market_report_2025.description,
+      canonical: _seoMeta_denver_market_report_2025.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver_market_report_2025.breadcrumbs)],
+      slug: "denver-real-estate-market-report-2025",
+    });
+    const _injectedHtml_denver_market_report_2025 = injectSeoHead(prerenderedShell, _seoBlock_denver_market_report_2025, _seoMeta_denver_market_report_2025.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "denver-real-estate-market-report-2025.html"), _injectedHtml_denver_market_report_2025, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
     writeFileSync(resolve(distPrerenderedDir, "denver-real-estate-market-report-2025.html"), prerenderedShell, "utf-8");
     const written_denver_market_report_2025 = readFileSync(resolve(serverPrerenderedDir, "denver-real-estate-market-report-2025.html"), "utf-8");
