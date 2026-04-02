@@ -134,6 +134,7 @@ async function prerenderAll() {
   "entry-server-boulder-vs-fort-collins": resolve(ROOT, "client/src/entry-server-boulder-vs-fort-collins.tsx"),
   "entry-server-denver-market-report-2025": resolve(ROOT, "client/src/entry-server-denver-market-report-2025.tsx"),
   "entry-server-denver-vs-colorado-springs": resolve(ROOT, "client/src/entry-server-denver-vs-colorado-springs.tsx"),
+  "entry-server-home": resolve(ROOT, "client/src/entry-server-home.tsx"),
         },
         output: {
           format: "esm",
@@ -3354,7 +3355,47 @@ async function prerenderAll() {
     console.log("[prerender-all] Done: denver-vs-colorado-springs");
   }
 
-  console.log("[prerender-all] All 96 routes complete.");
+  // --- homepage (/) ---
+  // NOTE: Home.tsx imports Navbar/Footer which use wouter Link — not SSR-renderable with wouter 3.7.1.
+  // Inject SEO head into the shell template only (root div stays empty, hydrates on client).
+  {
+    const prerenderedShell = readFileSync(resolve(ROOT, "dist/public/index.html"), "utf-8");
+    const _seoBlock = buildSeoHeadBlock({
+      title: "Colorado Real Estate | My Rock Realty",
+      description: "Strategic real estate guidance for Colorado buyers, sellers, and relocating families. Work with My Rock Realty \u2014 serving Colorado.",
+      canonical: "https://myrockhomes.com/",
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [
+        ...BASE_SCHEMAS,
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "What home buying programs are available in Colorado?", acceptedAnswer: { "@type": "Answer", text: "Colorado offers a range of national, state, and local programs designed to help eligible buyers reduce down payments, lower closing costs, and access financing options that may better fit their goals." } },
+            { "@type": "Question", name: "How is working with My Rock Realty different from other agents?", acceptedAnswer: { "@type": "Answer", text: "Rob Baker brings a coaching-based approach shaped by 25+ years in sales and negotiations and 4.5 years as an Agent Coach & Consultant at Zillow." } },
+            { "@type": "Question", name: "Can you help me if I'm moving to Colorado from another state?", acceptedAnswer: { "@type": "Answer", text: "Absolutely. Rob helps relocation clients understand the Colorado market, buying process, timing, and property-specific considerations so they can make a more informed decision." } },
+            { "@type": "Question", name: "What if I need an agent in a state other than Colorado?", acceptedAnswer: { "@type": "Answer", text: "Rob has a trusted referral network of vetted agents in all 50 states." } },
+            { "@type": "Question", name: "How does your seller strategy work?", acceptedAnswer: { "@type": "Answer", text: "Rob builds a customized selling plan around data-informed pricing, modern marketing, and strategic positioning." } },
+            { "@type": "Question", name: "What is the Colorado Home Buying Workshop?", acceptedAnswer: { "@type": "Answer", text: "It's a free weekly educational session hosted by Rob for people interested in buying a home in Colorado. Visit ColoradoHomeBuyingWorkshop.com for details." } },
+            { "@type": "Question", name: "Do you help with land purchases and investment properties?", acceptedAnswer: { "@type": "Answer", text: "Yes. Rob works with clients looking for land, move-up properties, and strategic real estate investments across Colorado." } },
+          ],
+        },
+      ],
+      slug: "homepage",
+    });
+    const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, "https://myrockhomes.com/");
+    const distOutputDir = resolve(ROOT, "dist/prerendered");
+    mkdirSync(distOutputDir, { recursive: true });
+    writeFileSync(resolve(distOutputDir, "index.html"), _injectedHtml, "utf-8");
+    const srcOutputDir = resolve(ROOT, "server/prerendered");
+    mkdirSync(srcOutputDir, { recursive: true });
+    writeFileSync(resolve(srcOutputDir, "index.html"), _injectedHtml, "utf-8");
+    const written_homepage = readFileSync(resolve(srcOutputDir, "index.html"), "utf-8");
+    // Root div is intentionally empty (client-hydrated). Verify SEO head was injected.
+    if (!written_homepage.includes('<title ') && !written_homepage.includes('<title>')) throw new Error("[prerender-all] FAIL: no title tag in homepage output");
+    console.log("[prerender-all] Done: homepage (/)");
+  }
+  console.log("[prerender-all] All 97 routes complete.");
 }
 
 prerenderAll().catch((err) => {

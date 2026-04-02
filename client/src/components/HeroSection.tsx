@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useLocation } from "wouter";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/hero-bg-dyEKuHhWXn8eKxpjETtCvy.webp";
 const HEADSHOT_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/rob-headshot_a6a8b976.jpg";
 
 export default function HeroSection() {
-  const [, setLocation] = useLocation();
+  const navigate = (path: string) => { window.location.href = path; };
   const scrollTo = (id: string) => {
     const el = document.querySelector(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -93,7 +92,7 @@ export default function HeroSection() {
             >
               {/* PRIMARY CTA: Search Homes */}
               <button
-                onClick={() => setLocation("/listing-results?searchParams%5Bmappos%5D=39.7392%2C-104.9903&searchParams%5Bmapzoom%5D=11")}
+                onClick={() => navigate("/listing-results?searchParams%5Bmappos%5D=39.7392%2C-104.9903&searchParams%5Bmapzoom%5D=11")}
                 className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 sm:px-8 sm:py-4 bg-gold text-charcoal font-bold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-base sm:text-[17px]"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
@@ -102,7 +101,7 @@ export default function HeroSection() {
               </button>
               {/* SECONDARY CTA: Workshop — de-emphasized outline style */}
               <button
-                onClick={() => setLocation("/colorado-home-buying-workshop")}
+                onClick={() => navigate("/colorado-home-buying-workshop")}
                 className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 sm:px-8 sm:py-4 bg-transparent border-2 border-gold/70 text-gold font-semibold rounded-lg transition-all hover:border-gold hover:bg-gold/10 active:scale-[0.98] text-base sm:text-[17px]"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >

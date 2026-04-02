@@ -125,6 +125,10 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [marketsExpanded, setMarketsExpanded] = useState(false);
+  const [portalTarget, setPortalTarget] = useState<Element | null>(null);
+
+  // Set portal target only on client (document is not available in SSR)
+  useEffect(() => { setPortalTarget(document.body); }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -160,7 +164,7 @@ export default function Navbar() {
   // CSS backdrop-filter creates a new containing block for fixed-position descendants,
   // causing fixed inset-0 children to be clipped to the nav bar bounds instead of the viewport.
   // Portal renders the menu directly into document.body, outside the nav stacking context entirely.
-  const mobileMenuPortal = createPortal(
+  const mobileMenuPortal = portalTarget ? createPortal(
     <AnimatePresence>
       {mobileOpen && (
         <motion.div
@@ -298,8 +302,8 @@ export default function Navbar() {
         </motion.div>
       )}
     </AnimatePresence>,
-    document.body
-  );
+    portalTarget
+  ) : null;
 
   return (
     <>
