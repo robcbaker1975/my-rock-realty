@@ -48,6 +48,7 @@ import DenverVsBoulder from "./pages/DenverVsBoulder";
 import DenverVsFortCollins from "./pages/DenverVsFortCollins";
 import BoulderCoHomesForSale from "./pages/BoulderCoHomesForSale";
 import BoulderHomesForSale from "./pages/BoulderHomesForSale";
+import UniversityHillCuBoulderRealEstate from "./pages/UniversityHillCuBoulderRealEstate";
 import LafayetteCoHomesForSale from "./pages/LafayetteCoHomesForSale";
 import LongmontCoHomesForSale from "./pages/LongmontCoHomesForSale";
 import NiwotCoHomesForSale from "./pages/NiwotCoHomesForSale";
@@ -178,6 +179,7 @@ function Router() {
       <Route path={"/denver-vs-fort-collins"} component={DenverVsFortCollins} />
       <Route path={"/boulder-co-homes-for-sale"} component={BoulderCoHomesForSale} />
       <Route path={"/boulder-homes-for-sale"} component={BoulderHomesForSale} />
+      <Route path={"/university-hill-cu-boulder-real-estate"} component={UniversityHillCuBoulderRealEstate} />
       <Route path={"/lafayette-co-homes-for-sale"} component={LafayetteCoHomesForSale} />
       <Route path={"/longmont-co-homes-for-sale"} component={LongmontCoHomesForSale} />
       <Route path={"/niwot-co-homes-for-sale"} component={NiwotCoHomesForSale} />

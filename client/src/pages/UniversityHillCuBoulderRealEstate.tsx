@@ -1,7 +1,7 @@
 /**
- * Boulder Homes for Sale — My Rock Realty
- * Hub page: /boulder-homes-for-sale
- * Content: Approved boulder_cluster_package_v2 / approved_boulder_hub.md
+ * University Hill / CU Boulder Real Estate — My Rock Realty
+ * Route: /university-hill-cu-boulder-real-estate
+ * Content: Approved boulder_cluster_package_v2 / approved_university_hill_cu_boulder.md
  * Design: Front Range Modern — matches existing site design system
  * Palette: Warm charcoal (#292524), cream (#F5F0EB), antique gold (#C9A96E)
  * Typography: Outfit (display) + Libre Franklin (body)
@@ -13,62 +13,65 @@ import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
-/* Hero Background Image */
-const BOULDER_HERO_BG =
+/* Hero Background Image — reuse Boulder hero */
+const HERO_BG =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/denver-rowhouses-hero_2f59d4ac.jpg";
 
-/* ─── FAQ Content — approved_boulder_hub.md §11 ─── */
+/* ─── FAQ Content — approved_university_hill_cu_boulder.md §11 ─── */
 const faqContent = [
   {
-    question: "Why does Boulder stay in the search even when it gets harder?",
+    question: "Is University Hill the same thing as Boulder generally?",
     answer:
-      "Because for the right buyer, Boulder feels distinct enough that it keeps earning a second look even when easier options exist.",
+      "No. It is part of Boulder, but it usually feels more specific, more central, and more influenced by its proximity to CU Boulder.",
   },
   {
-    question: "Is Boulder mostly a house search or a location search?",
+    question: "Who usually likes this area most?",
     answer:
-      "Usually a location search. In Boulder, the area decision often matters just as much as the house itself.",
+      "Usually buyers who want a more immediate Boulder feel, stronger centrality, and more comfort with a university-adjacent environment.",
   },
   {
-    question: "Does Boulder fit every buyer in this part of the market?",
+    question: "Who usually moves away from this area?",
     answer:
-      "No. Some buyers end up liking nearby options better once they compare daily life, flexibility, and how much they need Boulder specifically.",
+      "Usually buyers who still want Boulder, but want a quieter, more buffered, or less central version of it.",
   },
   {
     question:
-      "When does University Hill / CU Boulder become its own conversation?",
+      "Does living near CU Boulder automatically make this a student-only conversation?",
     answer:
-      "Usually when the buyer wants to understand campus-adjacent living, central Boulder energy, or how that part of the city feels compared with Boulder more broadly.",
+      "No. The more useful question is whether this version of Boulder fits the way you want to live.",
   },
   {
-    question: "When does Lafayette start to look better?",
+    question:
+      "When does this area make more sense than Boulder generally?",
     answer:
-      "Usually when the buyer wants the region but starts questioning whether Boulder itself is worth the tighter tradeoffs.",
+      "When a buyer already knows they want a more specific, central, and university-adjacent part of Boulder.",
   },
   {
-    question: "When does Longmont start to make more sense?",
+    question:
+      "When does Boulder generally make more sense than University Hill?",
     answer:
-      "Usually when someone wants more room to work with and a different balance of pace, space, and flexibility.",
+      "When someone still needs to answer the broader city-level fit question before narrowing into a more specific area.",
   },
   {
-    question: "Is Boulder worth studying even if it may not be the final answer?",
+    question: "When does Lafayette start to look stronger?",
     answer:
-      "Yes. Boulder often helps buyers clarify what matters most, even if they end up choosing somewhere else nearby.",
+      "Usually when a buyer wants the region but starts feeling like this part of Boulder may be more active or more specific than they want.",
   },
   {
-    question: "Should I rent first in Boulder?",
+    question: "When does Longmont start to look stronger?",
     answer:
-      "Sometimes. Renting first can be the cleaner move if you still need to learn the city before making a long-term purchase.",
+      "Usually when flexibility, room to work with, and a less narrowed location start mattering more.",
   },
   {
-    question: "What do buyers usually get wrong about Boulder at the start?",
+    question: "Should I rent first before buying here?",
     answer:
-      "They often assume liking the idea of Boulder means they should buy there, when the better question is whether Boulder actually fits the way they want to live.",
+      "Sometimes, yes. Renting first can make a lot of sense if you want to understand how this part of Boulder feels before committing long term.",
   },
   {
-    question: "What should I compare next if Boulder stays on the list?",
+    question:
+      "What is the most useful thing this page should help me figure out?",
     answer:
-      "Start with University Hill / CU Boulder, Lafayette, and Longmont. Those are the cleanest next comparisons once Boulder feels relevant but not automatic.",
+      "Whether you want Boulder generally, or whether you want this more specific version of Boulder on purpose.",
   },
 ];
 
@@ -79,6 +82,10 @@ const faqSchema = buildFAQPageSchema(faqContent);
 const breadcrumbItems = [
   { label: "Home", url: "/" },
   { label: "Boulder", url: "/boulder-homes-for-sale" },
+  {
+    label: "University Hill / CU Boulder",
+    url: "/university-hill-cu-boulder-real-estate",
+  },
 ];
 
 const fadeUp = {
@@ -86,7 +93,7 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-export default function BoulderHomesForSale() {
+export default function UniversityHillCuBoulderRealEstate() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
@@ -94,10 +101,11 @@ export default function BoulderHomesForSale() {
       <SeoHead
         metadata={{
           title:
-            "Living in Boulder, Colorado: Real Estate, Tradeoffs, and What It's Actually Like",
+            "Living Near University Hill and CU Boulder: Real Estate, Tradeoffs, and What It's Actually Like",
           description:
-            "Thinking about living in Boulder, Colorado? Get a clear look at what Boulder actually feels like, who it fits, where the tradeoffs show up, and when Lafayette, Longmont, or University Hill may fit better.",
-          canonicalUrl: "https://myrockhomes.com/boulder-homes-for-sale/",
+            "Thinking about living near University Hill and CU Boulder? Learn what this part of Boulder actually feels like, who it fits, what the tradeoffs are, and when another part of Boulder may make more sense.",
+          canonicalUrl:
+            "https://myrockhomes.com/university-hill-cu-boulder-real-estate/",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}
@@ -115,8 +123,8 @@ export default function BoulderHomesForSale() {
       ═══════════════════════════════════════════════════ */}
       <section className="relative bg-charcoal overflow-hidden">
         <img
-          src={BOULDER_HERO_BG}
-          alt="Residential street in Boulder, Colorado"
+          src={HERO_BG}
+          alt="University Hill neighborhood near CU Boulder, Colorado"
           className="absolute inset-0 w-full h-full object-cover object-center"
           width="1600"
           height="900"
@@ -135,8 +143,8 @@ export default function BoulderHomesForSale() {
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Living in Boulder, Colorado: Real Estate, Tradeoffs, and What
-              It's Actually Like
+              Living Near University Hill and CU Boulder: Real Estate,
+              Tradeoffs, and What It's Actually Like
             </h1>
           </motion.div>
         </div>
@@ -148,25 +156,28 @@ export default function BoulderHomesForSale() {
         <div className="container max-w-2xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              A lot of buyers put Boulder on the list early.
+              A lot of buyers start by saying they want Boulder.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              That part is easy.
+              That is broad enough to be true, but usually not specific enough
+              to be useful.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              What usually takes longer is figuring out whether they want
-              Boulder itself, or whether they want what they think Boulder
-              stands for.
+              At some point, the search narrows. That is when University Hill
+              and the area around CU Boulder usually stop being background and
+              become their own decision.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Those are not always the same thing.
+              That is what this page is for.
+            </p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              This is not a school page. It is not a visitor page. And it is
+              not here to smooth over the tradeoffs that come with living in a
+              more central, campus-influenced part of Boulder.
             </p>
             <p className="text-lg text-charcoal/80 leading-relaxed">
-              This page is here to help with that. Not to sell Boulder. Not to
-              turn it into a brochure. Just to give you a clearer read on what
-              living here usually feels like, what keeps Boulder in the
-              conversation, where it gets harder, and when a nearby option may
-              actually fit better.
+              It is here to help you figure out whether this specific version
+              of Boulder fits the way you actually want to live.
             </p>
           </motion.div>
         </div>
@@ -184,27 +195,37 @@ export default function BoulderHomesForSale() {
               What the area feels like
             </h2>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Boulder usually feels more deliberate than a lot of nearby
-              markets.
+              University Hill usually feels more immediate than Boulder in the
+              broader sense.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Part of that is the way the city is set up. Part of it is the way
-              people think about living there in the first place.
+              More shaped by movement. More tied into the center of things.
+              Less buffered.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              It also helps explain why Boulder feels the way it does on the
-              ground. The city has more than 45,000 acres of protected open
-              space and mountain parks, so outdoor access is not just a nice
-              extra here. It shapes how a lot of buyers think about daily life.
+              A big reason is that this part of town is closely tied to CU
+              Boulder, which enrolled about 39,000 students in fall 2024. That
+              is enough to shape the rhythm of an area in a real way, and
+              buyers usually feel that pretty quickly once they spend time here.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              That shows up fast once you start driving it.
+              That does not mean every block feels the same. It does mean this
+              part of Boulder usually feels less neutral than some other areas.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              For some people, that is exactly why it works.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              They want a part of Boulder that feels connected, walkable, and
+              unmistakably part of the city's core.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              For other buyers, it can feel like too much of the picture is
+              happening around them all at once.
             </p>
             <p className="text-lg text-cream/80 leading-relaxed">
-              Some parts of Boulder feel more central and active. Some feel
-              quieter and more neighborhood-driven. Some feel more influenced by
-              the university. But Boulder usually feels like a place people
-              choose on purpose, not just a place they end up near.
+              This area is not just close to Boulder activity. It is part of a
+              more specific version of Boulder life.
             </p>
           </motion.div>
         </div>
@@ -222,33 +243,27 @@ export default function BoulderHomesForSale() {
               Why it stays in the conversation
             </h2>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Boulder stays in the conversation because it gives some buyers
-              something they do not feel anywhere else nearby.
+              This area stays in the conversation because some buyers do not
+              just want Boulder generally.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Not perfection.
+              They want Boulder to feel closer in, more connected, and more
+              tied to the daily rhythm of the city.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Not simplicity.
+              That is where University Hill tends to stay strong.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Just a stronger sense that the area itself matters.
+              It also stays strong because buyers who like it usually know they
+              are not choosing a neutral part of town. They are choosing a
+              place with more identity, more presence, and more built-in
+              tradeoffs.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              That is usually what keeps Boulder alive in the search even when
-              buyers start feeling the pressure of price, competition,
-              compromise, or limited flexibility.
-            </p>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              If someone is only comparing square footage, Boulder often gets
-              harder to justify.
-            </p>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              If they are comparing how a place feels to live in, Boulder
-              usually gets stronger.
+              That makes it easier to rule in for the right buyer.
             </p>
             <p className="text-lg text-charcoal/80 leading-relaxed">
-              That is the line.
+              And easier to rule out for the wrong one.
             </p>
           </motion.div>
         </div>
@@ -266,16 +281,16 @@ export default function BoulderHomesForSale() {
               Who it tends to fit
             </h2>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Boulder usually fits buyers who want:
+              University Hill / CU Boulder usually fits buyers who want:
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "a stronger sense of place",
-                "a market that feels more identity-driven than generic",
-                "outdoor access that feels built into normal life",
-                "more walkable or bikeable pockets than they may find elsewhere nearby",
-                "a home search where the location matters as much as the house",
-                "a move that feels intentional, not just efficient",
+                "a more central Boulder feel",
+                "a location that feels tied into the city, not set apart from it",
+                "more comfort with daily activity around them",
+                "a stronger university-adjacent presence",
+                "a search where walkability and location matter more than separation",
+                "a more specific part of Boulder, not a neutral one",
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-cream/80">
                   <ArrowRight
@@ -286,16 +301,9 @@ export default function BoulderHomesForSale() {
                 </li>
               ))}
             </ul>
-            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              It also fits buyers who already know they are willing to make
-              tradeoffs for the right location.
-            </p>
-            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              That matters here.
-            </p>
             <p className="text-lg text-cream/80 leading-relaxed">
-              Boulder tends to work best when someone wants Boulder
-              specifically, not just something near Boulder.
+              It can also fit buyers who want Boulder to feel lived in and in
+              motion, not tucked away.
             </p>
           </motion.div>
         </div>
@@ -313,16 +321,15 @@ export default function BoulderHomesForSale() {
               Who may not love it
             </h2>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Boulder may not be the best fit if you want:
+              This area may not be the best fit if you want:
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "the easiest value for the money",
-                "the least stressful version of the move",
-                "a more conventional suburban setup",
-                "the most square footage for the budget",
-                "a market where location is secondary to house features",
-                "distance from university influence in more central parts of the city",
+                "a quieter version of Boulder",
+                "more distance from university influence",
+                "more visual and day-to-day separation from central activity",
+                "a search built around calm, buffer, or privacy first",
+                "a part of Boulder that fades into the background more easily",
               ].map((item, idx) => (
                 <li
                   key={idx}
@@ -337,11 +344,11 @@ export default function BoulderHomesForSale() {
               ))}
             </ul>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Some buyers also move off Boulder because they realize they like
-              the idea of Boulder more than the reality of choosing it.
+              A lot of buyers do not move off this area because it is wrong.
             </p>
             <p className="text-lg text-charcoal/80 leading-relaxed">
-              That is useful to learn early.
+              They move off it because they realize they still want Boulder,
+              just not this particular version of Boulder.
             </p>
           </motion.div>
         </div>
@@ -359,58 +366,44 @@ export default function BoulderHomesForSale() {
               What the home search usually turns into
             </h2>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Boulder searches usually get more specific as soon as the search
-              gets real.
+              A search here usually becomes less about Boulder in general and
+              more about how specific your Boulder decision really is.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              At first, buyers often say they want Boulder because they like the
-              feel, the location, or the lifestyle attached to it.
+              At first, a buyer may think they just want Boulder.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Then the real questions show up.
+              Then the search starts dividing itself.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Do you want Boulder itself, or do you want to stay in the orbit of
-              Boulder? Do you want central energy, quieter residential pockets,
-              or a cleaner separation from the university? Do you want the
-              strongest Boulder identity, or do you want a nearby market that
-              may work better day to day?
+              Do you want a more central and active part of town? Do you want a
+              quieter residential pocket? Do you want Boulder broadly, or do
+              you want a part of Boulder that feels more immediate and less
+              removed from the center of things?
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              That is where the map starts sorting itself out.
+              That is usually where this page becomes useful.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              For some buyers, Boulder gets stronger.
+              For some buyers, University Hill gets stronger as the search gets
+              more specific.
             </p>
             <p className="text-lg text-cream/80 leading-relaxed">
-              For others, the better next step is comparing Boulder with{" "}
+              For others, this page helps them realize they belong back on the
+              broader{" "}
               <a
-                href="/lafayette-co-homes-for-sale"
+                href="/boulder-homes-for-sale"
                 className="text-gold hover:text-gold/80 underline"
               >
-                Lafayette
-              </a>
-              ,{" "}
-              <a
-                href="/longmont-co-homes-for-sale"
-                className="text-gold hover:text-gold/80 underline"
-              >
-                Longmont
-              </a>
-              , or a more specific Boulder spoke like{" "}
-              <a
-                href="/university-hill-cu-boulder-real-estate"
-                className="text-gold hover:text-gold/80 underline"
-              >
-                University Hill / CU Boulder
-              </a>
-              .
+                Boulder page
+              </a>{" "}
+              or in a different nearby comparison entirely.
             </p>
           </motion.div>
         </div>
       </section>
       {/* ═══════════════════════════════════════════════════
-          8. Boulder tradeoffs
+          8. The tradeoffs are the whole point
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
         <div className="container max-w-2xl">
@@ -419,25 +412,24 @@ export default function BoulderHomesForSale() {
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Boulder tradeoffs
+              The tradeoffs are the whole point
             </h2>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              This is not a market where the tradeoffs sit quietly in the
-              background.
+              The tradeoffs here are not side issues.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              They are the decision.
+              They are the actual choice.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Boulder usually forces buyers to decide what matters more:
+              This area usually works best when a buyer actively wants:
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "being in Boulder itself",
-                "getting more flexibility in the search",
-                "staying close to the same region without choosing the same pressure",
-                "accepting a more constrained search in exchange for a more specific location",
-                "sorting out whether identity, lifestyle, and place matter enough to justify the harder parts",
+                "centrality",
+                "walkability",
+                "location-driven daily life",
+                "a stronger university-adjacent feel",
+                "a more immediate version of Boulder",
               ].map((item, idx) => (
                 <li
                   key={idx}
@@ -452,12 +444,17 @@ export default function BoulderHomesForSale() {
               ))}
             </ul>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              That is why vague Boulder interest is usually not enough.
+              And if that is what they want, the tradeoffs may feel worth it.
+            </p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              If it is not, those same traits can start feeling like friction
+              instead of value.
+            </p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              That is what buyers need to get clear on.
             </p>
             <p className="text-lg text-charcoal/80 leading-relaxed font-semibold">
-              Boulder tends to work best when buyers can answer a simple
-              question clearly: Do I want Boulder enough to choose it on
-              purpose?
+              Not whether this area is good. Whether it is good for them.
             </p>
           </motion.div>
         </div>
@@ -474,87 +471,88 @@ export default function BoulderHomesForSale() {
             >
               Compare nearby options
             </h2>
-            {/* Boulder vs University Hill */}
+            {/* vs Boulder overall */}
             <div className="mb-10">
               <h3
                 className="text-xl font-bold text-gold mb-4"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                Boulder vs University Hill / CU Boulder
+                University Hill / CU Boulder vs Boulder overall
               </h3>
               <p className="text-lg text-cream/80 mb-4 leading-relaxed">
-                This is the most important child-page split inside the Boulder
-                cluster.
-              </p>
-              <p className="text-lg text-cream/80 mb-4 leading-relaxed">
-                Boulder is the broader city-level decision.
-              </p>
-              <p className="text-lg text-cream/80 leading-relaxed">
                 <a
-                  href="/university-hill-cu-boulder-real-estate"
+                  href="/boulder-homes-for-sale"
                   className="text-gold hover:text-gold/80 underline"
                 >
-                  University Hill / CU Boulder
+                  Boulder
                 </a>{" "}
-                is for buyers trying to understand what happens when the search
-                becomes more campus-adjacent, more central, and more tied to
-                that part of town. If Boulder is the macro decision, University
-                Hill / CU Boulder is the closer look at one of the city's most
-                specific submarkets.
+                is the broader city-level decision.
+              </p>
+              <p className="text-lg text-cream/80 leading-relaxed">
+                University Hill / CU Boulder is narrower and more specific. If
+                Boulder is the main question, this page is the follow-up
+                question: what happens when the buyer wants a version of
+                Boulder that feels closer in and less neutral?
               </p>
             </div>
-            {/* Boulder vs Lafayette */}
+            {/* vs quieter parts of Boulder */}
             <div className="mb-10">
               <h3
                 className="text-xl font-bold text-gold mb-4"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                Boulder vs Lafayette
+                University Hill / CU Boulder vs quieter parts of Boulder
               </h3>
               <p className="text-lg text-cream/80 mb-4 leading-relaxed">
+                This is usually the most important internal comparison.
+              </p>
+              <p className="text-lg text-cream/80 leading-relaxed">
+                A lot of buyers do not need to leave Boulder. They just need to
+                move away from the more central, university-influenced part of
+                the map. That is an important distinction.
+              </p>
+            </div>
+            {/* vs Lafayette */}
+            <div className="mb-10">
+              <h3
+                className="text-xl font-bold text-gold mb-4"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                University Hill / CU Boulder vs Lafayette
+              </h3>
+              <p className="text-lg text-cream/80 leading-relaxed">
                 <a
                   href="/lafayette-co-homes-for-sale"
                   className="text-gold hover:text-gold/80 underline"
                 >
                   Lafayette
                 </a>{" "}
-                usually gets serious when buyers want the general region, but
-                start questioning whether Boulder itself is the right version of
-                the move.
-              </p>
-              <p className="text-lg text-cream/80 mb-4 leading-relaxed">
-                That does not make Lafayette a fallback.
-              </p>
-              <p className="text-lg text-cream/80 leading-relaxed">
-                It makes it one of the cleaner comparison markets. If Boulder is
-                the identity-first choice, Lafayette is often the "would this
-                work better in real life?" choice.
+                usually becomes relevant when a buyer wants the region, but
+                starts feeling like this part of Boulder may be too specific,
+                too central, or too active for the way they want to live. If
+                this page is the more immediate choice, Lafayette is often the
+                calmer alternative.
               </p>
             </div>
-            {/* Boulder vs Longmont */}
+            {/* vs Longmont */}
             <div>
               <h3
                 className="text-xl font-bold text-gold mb-4"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                Boulder vs Longmont
+                University Hill / CU Boulder vs Longmont
               </h3>
-              <p className="text-lg text-cream/80 mb-4 leading-relaxed">
+              <p className="text-lg text-cream/80 leading-relaxed">
                 <a
                   href="/longmont-co-homes-for-sale"
                   className="text-gold hover:text-gold/80 underline"
                 >
                   Longmont
                 </a>{" "}
-                usually becomes the practical comparison when buyers want more
-                room to work with or want the move to feel less compressed.
-              </p>
-              <p className="text-lg text-cream/80 mb-4 leading-relaxed">
-                Again, that is not a downgrade.
-              </p>
-              <p className="text-lg text-cream/80 leading-relaxed">
-                It is just a different answer. If Boulder is the more specific
-                choice, Longmont is often the broader flexibility play.
+                usually comes into play when a buyer wants more room to work
+                with and a version of the move that feels less narrowed by
+                place. If this page is about choosing specificity on purpose,
+                Longmont is often about reopening the search.
               </p>
             </div>
           </motion.div>
@@ -573,26 +571,29 @@ export default function BoulderHomesForSale() {
               What people tend to underestimate
             </h2>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              A lot of buyers underestimate how much Boulder narrows the search.
+              A lot of buyers underestimate how different this part of Boulder
+              feels from Boulder in the broader sense.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Sometimes that is exactly why it helps.
+              They also underestimate how helpful that difference can be.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              But it usually narrows the search faster than people expect. It
-              forces clearer decisions about budget, area, pace, priorities, and
-              whether the city itself matters more than the house.
+              Sometimes this page confirms that University Hill is exactly the
+              kind of area they want.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Buyers also tend to underestimate how useful the nearby
-              comparisons become once they stop treating them as basically the
-              same.
+              Sometimes it makes clear that they were really looking for a
+              different version of Boulder all along.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              They are not the same.
+              Both outcomes help.
+            </p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              The mistake is assuming this area is just a smaller version of
+              the Boulder hub.
             </p>
             <p className="text-lg text-charcoal/80 leading-relaxed">
-              That is why the spoke pages matter.
+              It is not.
             </p>
           </motion.div>
         </div>
@@ -610,21 +611,22 @@ export default function BoulderHomesForSale() {
               Buy now or rent first
             </h2>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              For some buyers, buying in Boulder right away makes sense because
-              they already know what they are choosing and why.
+              For some buyers, buying here right away makes sense because they
+              already know they want a more central, more immediate,
+              campus-adjacent part of Boulder.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              For others, renting first is the better move.
+              For others, renting first is the cleaner move.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              That is especially true if you are still figuring out:
+              That is especially true if you are still sorting out:
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "whether Boulder itself is the long-term fit",
-                "which part of Boulder actually feels right to you",
-                "how much university influence you want nearby",
-                "whether Lafayette or Longmont may fit better once the move is real",
+                "how much day-to-day activity feels right",
+                "how much university presence you want nearby",
+                "whether you want Boulder broadly or this part of Boulder specifically",
+                "whether a different Boulder pocket, Lafayette, or Longmont would fit better once the move becomes real",
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-cream/80">
                   <ArrowRight
@@ -636,17 +638,17 @@ export default function BoulderHomesForSale() {
               ))}
             </ul>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Renting first is not hesitation.
+              Renting first is not a lack of commitment.
             </p>
             <p className="text-lg text-cream/80 leading-relaxed">
-              Sometimes it is the cleanest way to avoid forcing a decision
-              before the map is clear.
+              Sometimes it is the most practical way to learn the area before
+              making a long-term decision.
             </p>
           </motion.div>
         </div>
       </section>
       {/* ═══════════════════════════════════════════════════
-          12. Boulder FAQs
+          12. FAQ
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
         <div className="container max-w-2xl">
@@ -655,7 +657,7 @@ export default function BoulderHomesForSale() {
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-10"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Boulder FAQs
+              University Hill / CU Boulder FAQs
             </h2>
           </motion.div>
           <div className="space-y-4">
@@ -706,28 +708,31 @@ export default function BoulderHomesForSale() {
               Final thoughts
             </h2>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Boulder stays in the conversation for a reason.
+              University Hill / CU Boulder stays in the conversation for a
+              reason.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              It is not just recognizable. It is not just attractive. It is not
-              just a place people like talking about.
+              It is not just another part of Boulder.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              For the right buyer, Boulder can feel more specific than that.
+              For the right buyer, it can feel more connected, more immediate,
+              and more aligned with the kind of day-to-day life they actually
+              want.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              But that only helps if you are honest about what you are choosing.
+              For the wrong buyer, it can still do something valuable.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              If Boulder fits, it usually fits because the city itself matters
-              enough to shape the whole move.
+              It can make the map clearer.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              If it does not, that is also good to know early.
+              That matters.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              Because the goal is not just to choose Boulder.
             </p>
             <p className="text-lg text-cream/80 leading-relaxed">
-              Because the goal is not to end up near the right map. It is to
-              end up in the part of the map that actually makes sense for you.
+              It is to choose the version of Boulder that actually fits.
             </p>
           </motion.div>
         </div>
@@ -746,18 +751,9 @@ export default function BoulderHomesForSale() {
             </h2>
             <div className="space-y-3 mb-10">
               {[
-                {
-                  label: "University Hill / CU Boulder →",
-                  href: "/university-hill-cu-boulder-real-estate",
-                },
-                {
-                  label: "Lafayette →",
-                  href: "/lafayette-co-homes-for-sale",
-                },
-                {
-                  label: "Longmont →",
-                  href: "/longmont-co-homes-for-sale",
-                },
+                { label: "Boulder →", href: "/boulder-homes-for-sale" },
+                { label: "Lafayette →", href: "/lafayette-co-homes-for-sale" },
+                { label: "Longmont →", href: "/longmont-co-homes-for-sale" },
               ].map((link, idx) => (
                 <a
                   key={idx}
@@ -777,7 +773,10 @@ export default function BoulderHomesForSale() {
             </h2>
             <div className="space-y-3">
               {[
-                { label: "Talk to Rob About Boulder →", href: "/#contact" },
+                {
+                  label: "Talk to Rob About Boulder Area Options →",
+                  href: "/#contact",
+                },
                 {
                   label: "Browse Boulder Homes →",
                   href: "/boulder-co-homes-for-sale",

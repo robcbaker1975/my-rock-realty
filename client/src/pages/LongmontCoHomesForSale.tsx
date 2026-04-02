@@ -1,55 +1,67 @@
 /**
  * Longmont CO Homes for Sale — My Rock Realty
- * Boulder County suburb spoke page — focused suburb page for Longmont search intent
+ * Boulder cluster spoke — approved content per boulder_cluster_package_v2
  * Design: Front Range Modern — matches existing site design system
  * Palette: Warm charcoal (#292524), cream (#F5F0EB), antique gold (#C9A96E)
  * Typography: Outfit (display) + Libre Franklin (body)
  */
-
 import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
-import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  Home,
-  MapPin,
-  CheckCircle2,
-  Phone,
-  Mail,
-  ChevronDown,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-/* Hero Background Image — Approved Denver metro aerial view */
-const DENVER_HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/denver-rowhouses-hero_2f59d4ac.jpg";
-
-/* ─── FAQ Content ─── */
+/* ─── FAQ Content — approved per package ─── */
 const faqContent = [
   {
-    question: "What is Longmont known for in the Boulder County area?",
+    question: "Why does Longmont stay in the conversation for Boulder-area buyers?",
     answer:
-      "Longmont is known for its larger suburban setting, diverse community, range of housing options, and position as a significant city within the Boulder County area.",
+      "Because it often gives buyers a broader, more flexible answer without pulling them out of this part of the region.",
   },
   {
-    question: "What types of homes can buyers find in Longmont?",
+    question: "Is Longmont just what buyers choose when Boulder does not work?",
     answer:
-      "Buyers may find a wide mix of detached homes, residential developments, townhomes, condos, and other housing options depending on the neighborhood and area.",
+      "No. For the right buyer, Longmont is not a fallback. It is the better-fit answer because it gives the move more room to come together.",
   },
   {
-    question: "Why do buyers consider Longmont when searching in the Boulder County area?",
+    question: "Who usually likes Longmont most?",
     answer:
-      "Buyers often consider Longmont for its suburban character, neighborhood variety, housing diversity, and its position as a larger community within Boulder County.",
+      "Usually buyers who want more flexibility, a broader practical answer, and less pressure around choosing one exact place.",
   },
   {
-    question: "Is Longmont a good fit for buyers who want a larger suburban community?",
+    question: "Who usually moves away from Longmont?",
     answer:
-      "Longmont can be a strong fit for buyers who want a larger suburban environment with diverse neighborhoods, community amenities, and a range of housing options.",
+      "Usually buyers who realize they still want Boulder specifically, or want the steadier regional balance that Lafayette provides.",
   },
   {
-    question: "What should buyers pay attention to when considering homes in Longmont?",
+    question: "When does Longmont make more sense than Boulder?",
     answer:
-      "Buyers should pay attention to neighborhood differences throughout Longmont, proximity to other areas, home age and condition, community layout, nearby amenities, and how one part of Longmont compares with another.",
+      "Usually when the buyer wants this part of the region, but does not want the whole move to depend on Boulder itself.",
+  },
+  {
+    question: "When does Boulder still make more sense than Longmont?",
+    answer:
+      "When the buyer cares enough about Boulder specifically that a broader practical answer will still feel too open-ended.",
+  },
+  {
+    question: "When does Lafayette make more sense than Longmont?",
+    answer:
+      "Usually when the buyer still wants to stay more tightly tied to the Boulder-area orbit, but wants a steadier answer than Boulder.",
+  },
+  {
+    question: "When does University Hill / CU Boulder make more sense than Longmont?",
+    answer:
+      "When the buyer wants a more specific, central, campus-adjacent version of Boulder instead of a broader practical alternative.",
+  },
+  {
+    question: "Should I rent first in Longmont before buying?",
+    answer:
+      "Sometimes, yes. Renting first can make sense if you are still figuring out whether Longmont is your long-term answer or just the page that helps the search open up.",
+  },
+  {
+    question: "What is this page really supposed to help me figure out?",
+    answer:
+      "Whether you want the move to stay narrowly tied to Boulder, or whether a broader answer actually fits you better.",
   },
 ];
 
@@ -59,24 +71,22 @@ const faqSchema = buildFAQPageSchema(faqContent);
 /* ─── Breadcrumb Items ─── */
 const breadcrumbItems = [
   { label: "Home", url: "/" },
+  { label: "Boulder", url: "/boulder-homes-for-sale" },
   { label: "Longmont CO Homes for Sale", url: "/longmont-co-homes-for-sale" },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
 function CTAButton({
-  label = "Schedule a Longmont Home Buying Consultation",
+  label = "Talk to Rob About Longmont",
+  href = "/#contact",
   className = "",
 }: {
   label?: string;
+  href?: string;
   className?: string;
 }) {
   return (
     <a
-      href="mailto:rob@myrockhomes.com?subject=Longmont Home Buying Consultation"
+      href={href}
       className={`inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 bg-gold text-charcoal hover:bg-gold-light hover:shadow-lg px-7 py-4 text-[15px] sm:text-base no-underline ${className}`}
       style={{ fontFamily: "'Outfit', sans-serif" }}
     >
@@ -93,452 +103,515 @@ export default function LongmontCoHomesForSale() {
     <div className="min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
-          title: "Longmont CO Homes for Sale | Longmont Colorado Real Estate",
+          title:
+            "Living in Longmont, Colorado: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
           description:
-            "Explore Longmont CO homes for sale, neighborhood character, housing styles, local lifestyle appeal, and helpful resources for buying in Longmont, Colorado.",
-          canonicalUrl: "https://myrockhomes.com/longmont-co-homes-for-sale",
+            "Thinking about living in Longmont, Colorado? Learn what Longmont actually feels like, who it fits, what the tradeoffs are, and when Boulder or Lafayette may make more sense.",
+          canonicalUrl: "https://myrockhomes.com/longmont-co-homes-for-sale/",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}
       />
 
-      {/* ═══════════════════════════════════════════════════
-          BREADCRUMBS
-      ═══════════════════════════════════════════════════ */}
+      {/* ─── BREADCRUMBS ─── */}
       <div className="bg-charcoal">
         <div className="container py-3">
           <Breadcrumbs items={breadcrumbItems} />
         </div>
       </div>
 
-      {/* ═══════════════════════════════════════════════════
-          1. HERO — Longmont CO Homes for Sale
-      ═══════════════════════════════════════════════════ */}
-      <section className="relative bg-charcoal overflow-hidden">
-        {/* Hero Background Image */}
-        <img
-          src={DENVER_HERO_BG}
-          alt="Row houses along a residential street in Longmont"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        
-          width="1600"
-          height="900"
-          fetchPriority="high"
-          decoding="async"
-        />
-        {/* Gradient Overlay — ensures text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
-        <div className="container relative z-10 py-16 sm:py-20 md:py-24">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            className="max-w-2xl"
+      {/* ─── HERO ─── */}
+      <section className="bg-charcoal py-16 sm:py-20">
+        <div className="container max-w-3xl">
+          <h1
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream leading-tight mb-6"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            <h1
-              className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
+            Living in Longmont, Colorado: Real Estate, Tradeoffs, and What It's Actually Like
+          </h1>
+          <p className="text-cream/80 text-lg leading-relaxed mb-8" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            Thinking about living in Longmont, Colorado? Learn what Longmont actually feels like, who it fits, what the tradeoffs are, and when Boulder or Lafayette may make more sense.
+          </p>
+          <CTAButton label="Talk to Rob About Longmont" href="/#contact" />
+        </div>
+      </section>
+
+      {/* ─── ANCHOR NAV ─── */}
+      <nav className="bg-cream border-b border-charcoal/10 sticky top-0 z-10">
+        <div className="container py-3 overflow-x-auto">
+          <ul className="flex gap-6 text-sm font-medium text-charcoal/70 whitespace-nowrap" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            <li><a href="#what-it-feels-like" className="hover:text-gold transition-colors">What Longmont feels like</a></li>
+            <li><a href="#who-it-fits" className="hover:text-gold transition-colors">Who Longmont fits</a></li>
+            <li><a href="#who-may-not-love-it" className="hover:text-gold transition-colors">Who may not love it</a></li>
+            <li><a href="#tradeoffs" className="hover:text-gold transition-colors">Longmont tradeoffs</a></li>
+            <li><a href="#compare" className="hover:text-gold transition-colors">Compare nearby options</a></li>
+            <li><a href="#faq" className="hover:text-gold transition-colors">Longmont FAQs</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      {/* ─── BODY CONTENT ─── */}
+      <main className="flex-1">
+
+        {/* 1. Intro */}
+        <section className="py-14 bg-cream">
+          <div className="container max-w-3xl">
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              A lot of buyers land on Longmont after the search stops feeling like it has to revolve around Boulder.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              That is usually a useful shift.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              It does not mean the buyer is lowering the bar. It usually means they are starting to ask a better question.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              Not, "What sounds best?"
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              More like, "What actually fits?"
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              This page is here to help with that.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              It is not here to treat Longmont like a fallback. And it is not here to make it sound like the answer for anyone who wants more space and nothing else.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              It is here to help you sort out whether Longmont gives you a better version of the move once the search gets more real.
+            </p>
+          </div>
+        </section>
+
+        {/* 2. What the area feels like */}
+        <section id="what-it-feels-like" className="py-14 bg-charcoal/5">
+          <div className="container max-w-3xl">
+            <h2
+              className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Longmont CO Homes for Sale
-            </h1>
-            <p className="text-lg text-cream/80 mb-8 leading-relaxed">
-              Explore homes in Longmont — a larger suburban community in the Boulder County area. Diverse neighborhoods, community-oriented character, and a range of housing options make Longmont an attractive choice for buyers seeking a suburban setting with diverse amenities.
+              What the area feels like
+            </h2>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              Longmont usually feels less compressed than Boulder.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <CTAButton />
-              <a
-                href="mailto:rob@myrockhomes.com?subject=Longmont Listings — Alert Request"
-                className="inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 border-2 border-gold text-gold hover:bg-gold hover:text-charcoal px-7 py-4 text-[15px] sm:text-base no-underline"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                Get Alerts for New Longmont Homes
-                <ArrowRight size={18} />
-              </a>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              That is one of the first things buyers tend to notice.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              The search often feels like it has more room in it. More room to think. More room to compare. More room to build around the way you actually want to live instead of forcing everything through one exact idea of place.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              That is the appeal for a lot of people.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              Longmont also has more than 1,500 acres of parks and open space, which helps explain why the city can feel less boxed in day to day.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              Longmont usually does not feel like it is trying to make a strong statement about itself. It tends to feel more grounded than that.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              For some buyers, that is exactly why it starts making sense.
+            </p>
+          </div>
+        </section>
+
+        {/* 3. Why it stays in the conversation */}
+        <section className="py-14 bg-cream">
+          <div className="container max-w-3xl">
+            <h2
+              className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Why it stays in the conversation
+            </h2>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              Longmont stays in the conversation because it often becomes the page buyers need once they stop trying to make Boulder work no matter what.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              That is not a knock on Boulder.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              It just means that at some point, some buyers realize they want this part of the region without needing the move to be tied to one exact place.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              That is where Longmont tends to get stronger.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              It gives buyers another way to stay in the broader orbit without making the whole decision feel boxed in.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              That can be a big deal.
+            </p>
+          </div>
+        </section>
+
+        {/* 4. Who it tends to fit */}
+        <section id="who-it-fits" className="py-14 bg-charcoal/5">
+          <div className="container max-w-3xl">
+            <h2
+              className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Who it tends to fit
+            </h2>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              Longmont usually fits buyers who want:
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-charcoal/80 text-lg mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              <li>more room to work with in the search</li>
+              <li>a broader practical answer</li>
+              <li>a place that still keeps them in this part of the region</li>
+              <li>less pressure around choosing one exact version of the move</li>
+              <li>a day-to-day feel that is easier to build around</li>
+              <li>more flexibility in how the search comes together</li>
+            </ul>
+            <p className="text-charcoal/80 text-lg leading-relaxed" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              It is often a strong fit for buyers who want the move to make sense in real life, not just in theory.
+            </p>
+          </div>
+        </section>
+
+        {/* 5. Who may not love it */}
+        <section id="who-may-not-love-it" className="py-14 bg-cream">
+          <div className="container max-w-3xl">
+            <h2
+              className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Who may not love it
+            </h2>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              Longmont may not be the best fit if you want:
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-charcoal/80 text-lg mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              <li>Boulder specifically</li>
+              <li>a move that feels more tied to Boulder's identity</li>
+              <li>a location choice that feels narrower and more exact</li>
+              <li>the steadier middle-ground answer that Lafayette often provides</li>
+              <li>a place where the location itself is doing most of the emotional work in the decision</li>
+            </ul>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              Some buyers move away from Longmont because they realize they still want the move to feel more specific than this.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              That is useful to learn.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              Longmont usually works best when more flexibility feels like an advantage, not like a step away from what you really wanted.
+            </p>
+          </div>
+        </section>
+
+        {/* 6. What the home search usually turns into */}
+        <section className="py-14 bg-charcoal/5">
+          <div className="container max-w-3xl">
+            <h2
+              className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              What the home search usually turns into
+            </h2>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              A Longmont search usually turns into a question of how open the buyer wants the move to be.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              That is usually the real issue.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              Do you still want Boulder anchoring the whole decision? Do you want a steadier answer like{" "}
+              <a href="/lafayette-co-homes-for-sale" className="text-gold underline hover:text-gold-light">Lafayette</a>?
+              Or do you want a place that gives you more room to work with and lets the search come together more naturally?
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              That is where Longmont becomes useful.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              For some buyers, it is the first page that makes the move feel less tight.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              For others, it helps confirm they still want the sharper fit of{" "}
+              <a href="/boulder-homes-for-sale" className="text-gold underline hover:text-gold-light">Boulder</a>{" "}
+              or the cleaner regional balance of Lafayette.
+            </p>
+          </div>
+        </section>
+
+        {/* 7. The tradeoffs */}
+        <section id="tradeoffs" className="py-14 bg-cream">
+          <div className="container max-w-3xl">
+            <h2
+              className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              The tradeoffs are the whole point
+            </h2>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              The tradeoff with Longmont is pretty simple.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              It usually gives buyers more room in the decision.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              More room around the search. More room around priorities. More room to let the move come together without forcing it through one exact idea.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              For the right buyer, that is a real advantage.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              But if someone wants Boulder specifically, or wants the move to feel more tied to one exact place, Longmont probably will not replace that.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              That is fine.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              This page is here to help figure out whether more flexibility is what you actually want, or whether it just sounds good until the search gets serious.
+            </p>
+          </div>
+        </section>
+
+        {/* 8. Area vs nearby alternatives */}
+        <section id="compare" className="py-14 bg-charcoal/5">
+          <div className="container max-w-3xl">
+            <h2
+              className="text-2xl sm:text-3xl font-bold text-charcoal mb-8"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Area vs nearby alternatives
+            </h2>
+
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                  Longmont vs Boulder
+                </h3>
+                <p className="text-charcoal/80 text-lg leading-relaxed mb-2" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+                  <a href="/boulder-homes-for-sale" className="text-gold underline hover:text-gold-light">Boulder</a>{" "}
+                  is usually the more exact decision.
+                </p>
+                <p className="text-charcoal/80 text-lg leading-relaxed" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+                  Longmont usually gets stronger when the buyer wants this part of the region, but no longer wants the whole move to depend on Boulder itself. If Boulder is the more identity-first answer, Longmont is usually the more flexible one.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                  Longmont vs Lafayette
+                </h3>
+                <p className="text-charcoal/80 text-lg leading-relaxed mb-2" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+                  <a href="/lafayette-co-homes-for-sale" className="text-gold underline hover:text-gold-light">Lafayette</a>{" "}
+                  is often the steadier comparison.
+                </p>
+                <p className="text-charcoal/80 text-lg leading-relaxed" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+                  That page tends to fit buyers who still want to stay pretty closely tied to the Boulder-area orbit, just without Boulder's full pressure. Longmont usually gets stronger when the buyer wants to open the search a little wider and have more room to work with.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-charcoal mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                  Longmont vs University Hill / CU Boulder
+                </h3>
+                <p className="text-charcoal/80 text-lg leading-relaxed mb-2" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+                  <a href="/university-hill-cu-boulder-real-estate" className="text-gold underline hover:text-gold-light">University Hill / CU Boulder</a>{" "}
+                  is a much more specific page.
+                </p>
+                <p className="text-charcoal/80 text-lg leading-relaxed" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+                  That page is about choosing a more immediate, more central, more campus-adjacent version of Boulder on purpose. Longmont usually makes sense when the buyer wants almost the opposite kind of decision — less narrowed, less tied to one exact version of place.
+                </p>
+              </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* ═══════════════════════════════════════════════════
-          2. Why Buyers Consider Longmont
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-cream">
-        <div className="container">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Why Buyers Consider Longmont
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Home,
-                title: "Larger Suburban Setting",
-                desc: "Longmont offers a larger suburban environment with diverse neighborhoods, varied community amenities, and a different scale from smaller Boulder County communities.",
-              },
-              {
-                icon: MapPin,
-                title: "Housing Diversity",
-                desc: "Buyers may find a wide mix of detached homes, residential developments, townhomes, condos, and other housing options depending on the neighborhood.",
-              },
-              {
-                icon: CheckCircle2,
-                title: "Boulder County Position",
-                desc: "Longmont's position as a larger city within Boulder County provides suburban character with diverse amenities and access to the broader region.",
-              },
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeUp}
-                className="bg-white rounded-lg p-6 border border-charcoal/10 shadow-sm"
-              >
-                <item.icon
-                  size={32}
-                  className="text-gold mb-4"
-                  strokeWidth={1.5}
-                />
-                <h3
-                  className="text-xl font-bold text-charcoal mb-2"
-                  style={{ fontFamily: "'Outfit', sans-serif" }}
+        {/* 9. What people tend to underestimate */}
+        <section className="py-14 bg-cream">
+          <div className="container max-w-3xl">
+            <h2
+              className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              What people tend to underestimate
+            </h2>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              A lot of buyers underestimate how helpful it can be when the search stops feeling boxed in.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              That is one of the main reasons Longmont stays relevant.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              It is not just about having more options. It is about what happens when the buyer no longer feels like the whole move has to fit one exact picture in order to be right.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              People also tend to underestimate how often Longmont starts looking stronger once they stop measuring every option against Boulder and start asking what actually works better for their life.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              That is usually when this page starts doing its job.
+            </p>
+          </div>
+        </section>
+
+        {/* 10. Buy now or rent first */}
+        <section className="py-14 bg-charcoal/5">
+          <div className="container max-w-3xl">
+            <h2
+              className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Buy now or rent first
+            </h2>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              For some buyers, buying in Longmont right away makes sense because the appeal is already clear.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              They want more flexibility. They want more room in the decision. And they do not need the move to be more exact than that.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              For others, renting first may still make sense.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              That is especially true if you are still sorting out:
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-charcoal/80 text-lg mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              <li>whether Boulder still has too much pull</li>
+              <li>whether <a href="/lafayette-co-homes-for-sale" className="text-gold underline hover:text-gold-light">Lafayette</a> is the cleaner middle-ground answer</li>
+              <li>whether Longmont feels right long term or just less pressured in the short term</li>
+              <li>how open you really want the move to be</li>
+            </ul>
+            <p className="text-charcoal/80 text-lg leading-relaxed" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              Renting first can make sense if the search is still widening instead of narrowing.
+            </p>
+          </div>
+        </section>
+
+        {/* 11. FAQ */}
+        <section id="faq" className="py-14 bg-cream">
+          <div className="container max-w-3xl">
+            <h2
+              className="text-2xl sm:text-3xl font-bold text-charcoal mb-8"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Longmont FAQs
+            </h2>
+            <div className="space-y-3">
+              {faqContent.map((item, index) => (
+                <div
+                  key={index}
+                  className="border border-charcoal/15 rounded-lg overflow-hidden"
                 >
-                  {item.title}
-                </h3>
-                <p className="text-charcoal/70">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          3. Neighborhood Character and Lifestyle
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Neighborhood Character and Lifestyle
-          </h2>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={fadeUp}
-            className="bg-cream/10 rounded-lg p-8 border border-cream/20"
-          >
-            <p className="text-cream/90 leading-relaxed mb-6">
-              Longmont has a recognizable suburban identity built around diverse neighborhoods, community-oriented character, and a range of housing choices. Buyers are drawn to the community's suburban character, neighborhood variety, and access to diverse amenities within the broader Boulder County area.
-            </p>
-            <p className="text-cream/90 leading-relaxed">
-              The community attracts a range of buyers — from those prioritizing suburban lifestyle and residential neighborhoods to buyers comparing Boulder County communities for housing variety and long-term fit.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          4. Homes and Housing Styles in Longmont
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-cream">
-        <div className="container">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Homes and Housing Styles in Longmont
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                name: "Boulder",
-                link: "/boulder-homes-for-sale",
-              },
-              {
-                name: "Lafayette",
-                link: "/lafayette-co-homes-for-sale",
-              },
-              {
-                name: "Niwot",
-                link: "/niwot-co-homes-for-sale",
-              },
-              {
-                name: "Boulder County Homes Hub",
-                link: "/boulder-co-homes-for-sale",
-              },
-            ].map((suburb, idx) => (
-              <motion.a
-                key={idx}
-                href={suburb.link}
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeUp}
-                className="bg-white hover:shadow-lg rounded-lg p-6 border border-charcoal/10 transition-all group"
-              >
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-bold text-charcoal group-hover:text-gold transition-colors">
-                    {suburb.name}
-                  </h3>
-                  <ArrowRight
-                    size={18}
-                    className="text-gold group-hover:translate-x-1 transition-transform"
-                  />
+                  <button
+                    className="w-full text-left px-6 py-4 flex items-center justify-between gap-4 bg-white hover:bg-cream/60 transition-colors"
+                    onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
+                    aria-expanded={expandedFaq === index}
+                  >
+                    <span
+                      className="font-semibold text-charcoal text-base"
+                      style={{ fontFamily: "'Outfit', sans-serif" }}
+                    >
+                      {item.question}
+                    </span>
+                    <span className="text-gold text-xl flex-shrink-0">
+                      {expandedFaq === index ? "−" : "+"}
+                    </span>
+                  </button>
+                  {expandedFaq === index && (
+                    <div className="px-6 py-4 bg-white border-t border-charcoal/10">
+                      <p
+                        className="text-charcoal/80 leading-relaxed"
+                        style={{ fontFamily: "'Libre Franklin', sans-serif" }}
+                      >
+                        {item.answer}
+                      </p>
+                    </div>
+                  )}
                 </div>
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          5. What to Know Before Buying in Longmont
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-cream mb-12 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            What to Know Before Buying in Longmont
-          </h2>
-          <div className="space-y-4">
-            {[
-              "Pay attention to neighborhood differences throughout Longmont",
-              "Understand proximity to Boulder and other areas",
-              "Evaluate home age and condition carefully",
-              "Review community layout and nearby amenities",
-              "Compare one part of Longmont with another",
-              "Consider school districts and community services if applicable",
-              "Work with an agent familiar with Longmont's specific market dynamics",
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeUp}
-                className="flex items-start gap-4 p-4 bg-cream/10 rounded-lg border border-cream/20"
-              >
-                <CheckCircle2
-                  size={24}
-                  className="text-gold flex-shrink-0 mt-0.5"
-                  strokeWidth={1.5}
-                />
-                <p className="text-cream/80">{item}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          6. Explore Longmont Real Estate Options
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-cream">
-        <div className="container">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Explore Longmont Real Estate Options
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Boulder Homes",
-                link: "/boulder-homes-for-sale",
-              },
-              {
-                title: "Lafayette Homes",
-                link: "/lafayette-co-homes-for-sale",
-              },
-              {
-                title: "Boulder Condos for Sale",
-                link: "/denver-condos-for-sale",
-              },
-              {
-                title: "Boulder Townhomes for Sale",
-                link: "/denver-townhomes-for-sale",
-              },
-              {
-                title: "Boulder County Homes Hub",
-                link: "/boulder-co-homes-for-sale",
-              },
-            ].map((resource, idx) => (
-              <motion.a
-                key={idx}
-                href={resource.link}
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeUp}
-                className="bg-white hover:shadow-lg rounded-lg p-6 border border-charcoal/10 transition-all group"
-              >
-                <h3 className="text-lg font-bold text-charcoal mb-3 group-hover:text-gold transition-colors">
-                  {resource.title}
-                </h3>
-                <div className="flex items-center gap-2 text-gold">
-                  <span className="text-sm font-semibold">Explore</span>
-                  <ArrowRight
-                    size={16}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </div>
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          7. Longmont Buyer Resources
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Longmont Buyer Resources
-          </h2>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={fadeUp}
-            className="bg-cream/10 rounded-lg p-8 border border-cream/20"
-          >
-            <p className="text-cream/90 leading-relaxed mb-6">
-              Buying in Longmont involves understanding the community's specific market dynamics, housing mix, and how individual properties compare within the area. Knowing the Boulder County buying process helps buyers move forward with confidence.
-            </p>
-            <div className="space-y-3 mb-8">
-              {[
-                {
-                  title: "Buying a Home in Boulder",
-                  link: "/buying-a-home-in-denver",
-                },
-                {
-                  title: "Boulder Home Buying Process",
-                  link: "/denver-home-buying-process",
-                },
-              ].map((guide, idx) => (
-                <a
-                  key={idx}
-                  href={guide.link}
-                  className="flex items-center gap-2 text-gold hover:text-gold-light transition-colors font-semibold"
-                >
-                  <ArrowRight size={16} />
-                  {guide.title}
-                </a>
               ))}
             </div>
-            <a
-              href="/boulder-co-homes-for-sale"
-              className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors font-semibold"
-            >
-              Back to Boulder County Homes Hub
-              <ArrowRight size={16} />
-            </a>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          8. Longmont FAQs
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Longmont FAQs
-          </h2>
-          <div className="space-y-4">
-            {faqContent.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeUp}
-                className="bg-white rounded-lg border border-charcoal/10 overflow-hidden"
-              >
-                <button
-                  onClick={() =>
-                    setExpandedFaq(expandedFaq === idx ? null : idx)
-                  }
-                  className="w-full flex items-center justify-between p-6 hover:bg-cream/50 transition-colors text-left"
-                >
-                  <h3 className="font-bold text-charcoal pr-4">
-                    {item.question}
-                  </h3>
-                  <ChevronDown
-                    size={20}
-                    className={`text-gold flex-shrink-0 transition-transform ${
-                      expandedFaq === idx ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {expandedFaq === idx && (
-                  <div className="px-6 pb-6 border-t border-charcoal/10 text-charcoal/80">
-                    {item.answer}
-                  </div>
-                )}
-              </motion.div>
-            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ═══════════════════════════════════════════════════
-          9. Final CTA
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl text-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={fadeUp}
-          >
+        {/* 12. Final thoughts */}
+        <section className="py-14 bg-charcoal/5">
+          <div className="container max-w-3xl">
             <h2
-              className="text-3xl sm:text-4xl font-bold text-cream mb-6"
+              className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Ready to Explore Longmont Homes?
+              Final thoughts
             </h2>
-            <p className="text-lg text-cream/80 mb-8">
-              Schedule a consultation to discuss your Longmont home buying goals and explore available options in the community.
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              Longmont stays relevant for a reason.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <CTAButton />
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              It usually starts getting stronger when buyers stop trying to force the whole move through one exact idea of place and start asking what actually works.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              For the right buyer, that can be a big shift.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              Sometimes the better answer is not the sharper answer.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed mb-4" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              Sometimes it is the one that gives the move more room to come together in a way that actually makes sense.
+            </p>
+            <p className="text-charcoal/80 text-lg leading-relaxed" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+              That is where Longmont tends to stay strong.
+            </p>
+          </div>
+        </section>
+
+        {/* ─── ENDCAP ─── */}
+        <section className="py-14 bg-charcoal">
+          <div className="container max-w-3xl">
+            <h2
+              className="text-2xl font-bold text-cream mb-6"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Keep Exploring Boulder Area Options
+            </h2>
+            <ul className="space-y-2 mb-10">
+              <li>
+                <a href="/boulder-homes-for-sale" className="text-gold hover:text-gold-light underline text-lg" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+                  Boulder →
+                </a>
+              </li>
+              <li>
+                <a href="/lafayette-co-homes-for-sale" className="text-gold hover:text-gold-light underline text-lg" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+                  Lafayette →
+                </a>
+              </li>
+              <li>
+                <a href="/university-hill-cu-boulder-real-estate" className="text-gold hover:text-gold-light underline text-lg" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+                  University Hill / CU Boulder →
+                </a>
+              </li>
+            </ul>
+            <h3
+              className="text-xl font-bold text-cream mb-4"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Next Step
+            </h3>
+            <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
+              <CTAButton label="Talk to Rob About Boulder Area Options" href="/#contact" />
               <a
                 href="/boulder-co-homes-for-sale"
-                className="inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 border-2 border-gold text-gold hover:bg-gold hover:text-charcoal px-7 py-4 text-[15px] sm:text-base no-underline"
+                className="inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 border border-cream/40 text-cream hover:bg-cream/10 px-7 py-4 text-[15px] sm:text-base no-underline"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                Browse Longmont Listings
-                <ArrowRight size={18} />
-              </a>
-            </div>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center text-cream/50 text-xs">
-              <a
-                href="tel:+17203636544"
-                className="inline-flex items-center gap-1.5 hover:text-gold transition-colors"
-              >
-                <Phone size={12} />
-                720-363-6544
+                Browse Boulder Homes →
               </a>
               <a
-                href="mailto:rob@myrockhomes.com"
-                className="inline-flex items-center gap-1.5 hover:text-gold transition-colors"
+                href="/colorado-home-buying-workshop"
+                className="inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 border border-cream/40 text-cream hover:bg-cream/10 px-7 py-4 text-[15px] sm:text-base no-underline"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                <Mail size={12} />
-                rob@myrockhomes.com
+                Colorado Home Buying Workshop →
               </a>
             </div>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </section>
+
+      </main>
     </div>
   );
 }

@@ -48,14 +48,14 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "boulder-homes-for-sale": {
-    title: "Boulder Homes for Sale | My Rock Realty",
+    title: "Living in Boulder, Colorado: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
     description:
-      "Browse homes for sale in Boulder, Colorado. My Rock Realty covers neighborhoods, price ranges, and what buyers need to know about the Boulder market.",
+      "Thinking about living in Boulder, Colorado? Get a clear look at what Boulder actually feels like, who it fits, where the tradeoffs show up, and when Lafayette, Longmont, or University Hill may fit better.",
     canonical: "https://myrockhomes.com/boulder-homes-for-sale/",
-    pageType: "city",
+    pageType: "hub",
     breadcrumbs: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
-      { "@type": "ListItem", position: 2, name: "Boulder Homes for Sale", item: "https://myrockhomes.com/boulder-homes-for-sale/" },
+      { "@type": "ListItem", position: 2, name: "Boulder", item: "https://myrockhomes.com/boulder-homes-for-sale/" },
     ],
   },
   "fort-collins-co-homes-for-sale": {
@@ -114,25 +114,25 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "longmont-co-homes-for-sale": {
-    title: "Longmont, CO Homes for Sale | My Rock Realty",
+    title: "Living in Longmont, Colorado: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
     description:
-      "Search homes for sale in Longmont, CO. My Rock Realty covers Longmont neighborhoods, pricing, and what buyers need to know.",
+      "Thinking about living in Longmont, Colorado? Learn what Longmont actually feels like, who it fits, what the tradeoffs are, and when Boulder or Lafayette may make more sense.",
     canonical: "https://myrockhomes.com/longmont-co-homes-for-sale/",
     pageType: "city",
     breadcrumbs: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
-      { "@type": "ListItem", position: 2, name: "Longmont Homes for Sale", item: "https://myrockhomes.com/longmont-co-homes-for-sale/" },
+      { "@type": "ListItem", position: 2, name: "Longmont CO Homes for Sale", item: "https://myrockhomes.com/longmont-co-homes-for-sale/" },
     ],
   },
   "lafayette-co-homes-for-sale": {
-    title: "Lafayette, CO Homes for Sale | My Rock Realty",
+    title: "Living in Lafayette, Colorado: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
     description:
-      "Browse homes for sale in Lafayette, CO. Discover neighborhoods, pricing, and what to expect in the Lafayette real estate market.",
+      "Thinking about living in Lafayette, Colorado? Learn what Lafayette actually feels like, who it fits, what the tradeoffs are, and when Boulder or Longmont may make more sense.",
     canonical: "https://myrockhomes.com/lafayette-co-homes-for-sale/",
     pageType: "city",
     breadcrumbs: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
-      { "@type": "ListItem", position: 2, name: "Lafayette Homes for Sale", item: "https://myrockhomes.com/lafayette-co-homes-for-sale/" },
+      { "@type": "ListItem", position: 2, name: "Lafayette CO Homes for Sale", item: "https://myrockhomes.com/lafayette-co-homes-for-sale/" },
     ],
   },
   "niwot-co-homes-for-sale": {
@@ -722,6 +722,18 @@ export const SEO_METADATA_MAP = {
     breadcrumbs: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
       { "@type": "ListItem", position: 2, name: "Boulder vs Fort Collins", item: "https://myrockhomes.com/boulder-vs-fort-collins/" },
+    ],
+  },
+  "university-hill-cu-boulder-real-estate": {
+    title: "Living Near University Hill and CU Boulder: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+    description:
+      "Thinking about living near University Hill and CU Boulder? Learn what this part of Boulder actually feels like, who it fits, what the tradeoffs are, and when another part of Boulder may make more sense.",
+    canonical: "https://myrockhomes.com/university-hill-cu-boulder-real-estate/",
+    pageType: "neighborhood",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Boulder", item: "https://myrockhomes.com/boulder-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "University Hill / CU Boulder", item: "https://myrockhomes.com/university-hill-cu-boulder-real-estate/" },
     ],
   },
 };

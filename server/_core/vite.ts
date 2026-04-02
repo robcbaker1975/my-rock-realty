@@ -1352,6 +1352,17 @@ export function serveStatic(app: Express) {
     }
   });
 
+  // IL-99: /university-hill-cu-boulder-real-estate
+  app.get(["/university-hill-cu-boulder-real-estate", "/university-hill-cu-boulder-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/university-hill-cu-boulder-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/university-hill-cu-boulder-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
   app.use(express.static(distPath));
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
