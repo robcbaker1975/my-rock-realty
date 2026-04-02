@@ -300,6 +300,17 @@ export default function SeoHead({
       );
     }
 
+    // Remove any prerendered ld+json blocks not managed by SeoHead.
+    // Prerender scripts inject static ld+json (no owner attr) for Googlebot.
+    // When SeoHead hydrates it injects the same schemas again, causing duplicates.
+    // This cleanup removes the orphan prerendered blocks before SeoHead adds its own.
+    head
+      .querySelectorAll<HTMLScriptElement>('script[type="application/ld+json"]')
+      .forEach((el) => {
+        if (!el.getAttribute(OWNER_ATTR)) {
+          el.parentNode?.removeChild(el);
+        }
+      });
     schemaNodes.forEach((node, index) => {
       managedNodes.push(setManagedJsonLd(head, `jsonld:${index}`, node));
     });
