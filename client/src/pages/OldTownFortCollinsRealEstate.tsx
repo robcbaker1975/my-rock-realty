@@ -74,8 +74,8 @@ export default function OldTownFortCollinsRealEstate() {
     <div className="min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
-          title: "Living in Old Town Fort Collins: Real Estate, Tradeoffs, and What It’s Like",
-          description: "Thinking about Old Town Fort Collins? Here is what Old Town actually feels like, who it fits, where it gets harder, and how it compares with the rest of Fort Collins.",
+          title: "Old Town Fort Collins Real Estate | Homes & Living Guide",
+          description: "Explore Old Town Fort Collins real estate and see whether central, established Fort Collins fits better than newer or less central options.",
           canonicalUrl: "https://myrockhomes.com/old-town-fort-collins-real-estate/",
           breadcrumbs: breadcrumbItems,
         }}
@@ -92,7 +92,7 @@ export default function OldTownFortCollinsRealEstate() {
         <div className="container relative z-10 py-16 sm:py-20 md:py-24">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} className="max-w-2xl">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>
-              Living in Old Town Fort Collins: Real Estate, Tradeoffs, and What It’s Like
+              Old Town Fort Collins Real Estate
             </h1>
           </motion.div>
         </div>
@@ -103,7 +103,7 @@ export default function OldTownFortCollinsRealEstate() {
             <h2 className="text-3xl sm:text-4xl font-bold text-charcoal mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
               What Old Town feels like
             </h2>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">Old Town usually feels like the part of Fort Collins where the city comes into focus fastest.</p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">Old Town is a narrower Fort Collins decision, not just a smaller version of the same search. Buyers who end up here are usually looking for a more central, established, identity-driven part of the city rather than the easier, newer, or more edge-of-town version of Fort Collins. This page is here to help you figure out whether that specific version of the move fits you.</p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">That helps some buyers a lot.</p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">Once you are here, the difference from the broader Fort Collins search usually gets clear pretty quickly. This is not the newer edge of town. It is not the “just give me the cleanest lane” version of the search. It is not the part of the city buyers choose because it feels easiest.</p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">It feels older.  
@@ -322,7 +322,7 @@ The center.</p>
               {[
                 { label: "Windsor →", href: "/windsor-co-real-estate" },
         { label: "Timnath →", href: "/timnath-co-real-estate" },
-        { label: "Loveland →", href: "/loveland-co-real-estate" },
+        { label: "Loveland →", href: "/loveland-co-homes-for-sale" },
         { label: "Wellington →", href: "/wellington-co-real-estate" },
         { label: "Colorado Home Buying Workshop →", href: "/colorado-home-buying-workshop" },
               ].map((link, idx) => (

@@ -48,9 +48,9 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "boulder-homes-for-sale": {
-    title: "Living in Boulder, Colorado: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+    title: "Boulder CO Homes for Sale | Real Estate & Living Guide | My Rock Realty",
     description:
-      "Thinking about living in Boulder, Colorado? Get a clear look at what Boulder actually feels like, who it fits, where the tradeoffs show up, and when Lafayette, Longmont, or University Hill may fit better.",
+      "Explore Boulder CO homes for sale and see whether Boulder fits your move better than Longmont, Lafayette, or other Front Range options.",
     canonical: "https://myrockhomes.com/boulder-homes-for-sale/",
     pageType: "hub",
     breadcrumbs: [
@@ -59,9 +59,9 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "fort-collins-co-homes-for-sale": {
-    title: "Living in Fort Collins, Colorado: Real Estate, Tradeoffs, and What It's Like | My Rock Realty",
+    title: "Fort Collins CO Homes for Sale | Real Estate & Living Guide | My Rock Realty",
     description:
-      "Thinking about Fort Collins? Here is what Fort Collins actually feels like, who it fits, where it gets harder, and how it compares with Windsor, Timnath, Loveland, and Wellington.",
+      "Explore Fort Collins CO homes for sale and see how Fort Collins compares with Windsor, Loveland, and nearby Northern Colorado options for buyers narrowing their move.",
     canonical: "https://myrockhomes.com/fort-collins-co-homes-for-sale/",
     pageType: "hub",
     breadcrumbs: [
@@ -114,9 +114,9 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "old-town-fort-collins-real-estate": {
-    title: "Living in Old Town Fort Collins: Real Estate, Tradeoffs, and What It's Like | My Rock Realty",
+    title: "Old Town Fort Collins Real Estate | Homes & Living Guide | My Rock Realty",
     description:
-      "Thinking about Old Town Fort Collins? Here is what Old Town actually feels like, who it fits, where it gets harder, and how it compares with the rest of Fort Collins.",
+      "Explore Old Town Fort Collins real estate and see whether central, established Fort Collins fits better than newer or less central options.",
     canonical: "https://myrockhomes.com/old-town-fort-collins-real-estate/",
     pageType: "neighborhood",
     breadcrumbs: [
@@ -172,9 +172,9 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "greeley-homes-for-sale": {
-    title: "Greeley Homes for Sale | My Rock Realty",
+    title: "Greeley Homes for Sale | Real Estate & Area Guide | My Rock Realty",
     description:
-      "Browse homes for sale in Greeley, Colorado. My Rock Realty covers the Greeley market, neighborhoods, and pricing for buyers.",
+      "Explore Greeley homes for sale and see how Greeley compares with Fort Collins and nearby Northern Colorado options for buyers who want a different pace or price point.",
     canonical: "https://myrockhomes.com/greeley-homes-for-sale/",
     pageType: "city",
     breadcrumbs: [
@@ -183,9 +183,9 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "loveland-co-homes-for-sale": {
-    title: "Loveland, CO Homes for Sale | My Rock Realty",
+    title: "Loveland CO Homes for Sale | Real Estate & Area Guide | My Rock Realty",
     description:
-      "Find homes for sale in Loveland, CO. Explore neighborhoods, price ranges, and what to expect when buying in Loveland, Colorado.",
+      "Explore Loveland CO homes for sale and see how Loveland compares with Fort Collins and nearby Northern Colorado options for buyers narrowing their move.",
     canonical: "https://myrockhomes.com/loveland-co-homes-for-sale/",
     pageType: "city",
     breadcrumbs: [
@@ -346,9 +346,9 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "johnstown-co-homes-for-sale": {
-    title: "Johnstown, CO Homes for Sale | My Rock Realty",
+    title: "Johnstown CO Homes for Sale | Real Estate & Area Guide | My Rock Realty",
     description:
-      "Find homes for sale in Johnstown, CO. My Rock Realty covers Johnstown neighborhoods, pricing, and what buyers need to know.",
+      "Explore Johnstown CO homes for sale and compare Johnstown with Fort Collins and Loveland for buyers seeking newer suburban options.",
     canonical: "https://myrockhomes.com/johnstown-co-homes-for-sale/",
     pageType: "city",
     breadcrumbs: [
@@ -565,6 +565,17 @@ export const SEO_METADATA_MAP = {
       { "@type": "ListItem", position: 2, name: "Commerce City Homes for Sale", item: "https://myrockhomes.com/commerce-city-homes-for-sale/" },
     ],
   },
+  "colorado-springs-co-homes-for-sale": {
+    title: "Colorado Springs CO Homes for Sale | Real Estate & Living Guide | My Rock Realty",
+    description:
+      "Explore Colorado Springs CO homes for sale and see how Colorado Springs compares with Black Forest, Monument, and Palmer Lake for buyers narrowing their move.",
+    canonical: "https://myrockhomes.com/colorado-springs-co-homes-for-sale/",
+    pageType: "hub",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale/" },
+    ],
+  },
   "monument-co-real-estate": {
     title: "Monument, CO Real Estate | My Rock Realty",
     description:
@@ -588,9 +599,9 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "black-forest-co-real-estate": {
-    title: "Black Forest, CO Real Estate | My Rock Realty",
+    title: "Black Forest CO Real Estate | Homes & Living Guide | My Rock Realty",
     description:
-      "Search homes and real estate in Black Forest, CO. Explore this El Paso County community, pricing, and what buyers need to know.",
+      "Explore Black Forest CO real estate and see how Black Forest compares with Colorado Springs and Monument for buyers who want space, privacy, and a rural feel.",
     canonical: "https://myrockhomes.com/black-forest-co-real-estate/",
     pageType: "city",
     breadcrumbs: [
@@ -610,9 +621,9 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "palmer-lake-co-real-estate": {
-    title: "Palmer Lake, CO Real Estate | My Rock Realty",
+    title: "Palmer Lake CO Real Estate | Small-Town Living Guide | My Rock Realty",
     description:
-      "Find homes and real estate in Palmer Lake, CO. My Rock Realty covers this small mountain community between Denver and Colorado Springs.",
+      "Explore Palmer Lake CO real estate and compare Palmer Lake with Monument and Colorado Springs for buyers seeking a quieter, more tucked-away move.",
     canonical: "https://myrockhomes.com/palmer-lake-co-real-estate/",
     pageType: "city",
     breadcrumbs: [

@@ -88,9 +88,9 @@ export default function FortCollinsCoHomesForSale() {
       <SeoHead
         metadata={{
           title:
-            "Living in Fort Collins, Colorado: Real Estate, Tradeoffs, and What It's Like",
+            "Fort Collins CO Homes for Sale | Real Estate & Living Guide",
           description:
-            "Thinking about Fort Collins? Here is what Fort Collins actually feels like, who it fits, where it gets harder, and how it compares with Windsor, Timnath, Loveland, and Wellington.",
+            "Explore Fort Collins CO homes for sale and compare Fort Collins with Windsor, Timnath, Loveland, and Wellington before narrowing your move.",
           canonicalUrl:
             "https://myrockhomes.com/fort-collins-co-homes-for-sale/",
           breadcrumbs: breadcrumbItems,
@@ -126,7 +126,7 @@ export default function FortCollinsCoHomesForSale() {
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Living in Fort Collins, Colorado: Real Estate, Tradeoffs, and What It's Like
+              Fort Collins CO Homes for Sale
             </h1>
           </motion.div>
         </div>
@@ -135,20 +135,8 @@ export default function FortCollinsCoHomesForSale() {
       <section className="py-16 sm:py-20 bg-cream">
         <div className="container max-w-2xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              A lot of buyers land on Fort Collins early in the search.
-            </p>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Sometimes it is because of CSU. Sometimes it is because of the outdoor access. Sometimes it is because someone they know lives there, or because it came up in a search for Northern Colorado.
-            </p>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              However it shows up, Fort Collins usually stays in the conversation longer than buyers expect.
-            </p>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              This page is not here to sell you on Fort Collins.
-            </p>
             <p className="text-lg text-charcoal/80 leading-relaxed">
-              It is here to help you figure out whether Fort Collins actually fits the way you want to live, and how it compares honestly with Windsor, Timnath, Loveland, and Wellington.
+              Fort Collins comes up early for a lot of buyers, but staying on the list and actually fitting are not always the same thing. This page is here to help with that part. You can use it to narrow Fort Collins more clearly, understand where the tradeoffs tend to show up, and compare it with nearby options like Windsor, Timnath, Loveland, and Wellington before the search gets too broad.
             </p>
           </motion.div>
         </div>
@@ -578,6 +566,10 @@ export default function FortCollinsCoHomesForSale() {
                 {
                   label: "Old Town Fort Collins →",
                   href: "/old-town-fort-collins-real-estate",
+                },
+                {
+                  label: "Loveland →",
+                  href: "/loveland-co-homes-for-sale",
                 },
                 {
                   label: "Midtown Fort Collins →",

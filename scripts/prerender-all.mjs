@@ -221,8 +221,8 @@ async function prerenderAll() {
     // SEO injection
     // === SEO_INJECTED ===
       const _seoBlock = buildSeoHeadBlock({
-        title: 'Colorado Springs, CO Homes for Sale | My Rock Realty',
-        description: 'Searching for homes for sale in Colorado Springs? Start with a clearer search strategy — budget, part of town, and what the tradeoffs actually are.',
+        title: 'Colorado Springs CO Homes for Sale | Real Estate & Living Guide | My Rock Realty',
+        description: 'Explore Colorado Springs CO homes for sale and see how Colorado Springs compares with Black Forest, Monument, and Palmer Lake for buyers narrowing their move.',
         canonical: 'https://myrockhomes.com/colorado-springs-co-homes-for-sale',
         ogImage: OG_IMAGE_DEFAULT,
         schemas: [

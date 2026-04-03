@@ -73,9 +73,9 @@ export default function BlackForestCoRealEstate() {
     <>
       <SeoHead
         metadata={{
-          title: "Living in Black Forest, CO: Real Estate, Tradeoffs, and What It's Like | MyRockHomes.com",
+          title: "Black Forest CO Real Estate | Homes, Land & Lifestyle",
           description:
-            "Black Forest stays in the Colorado Springs conversation because it offers more land, more privacy, and a more property-first version of the move. A practical guide to whether Black Forest fits the way you actually want space and daily life to work.",
+            "Explore Black Forest CO real estate and see how Black Forest compares with Monument and Colorado Springs for buyers prioritizing land, privacy, and trees.",
           canonicalUrl: "https://myrockhomes.com/black-forest-co-real-estate/",
         }}
         schema={[faqSchema]}
@@ -97,7 +97,7 @@ export default function BlackForestCoRealEstate() {
             animate="visible"
             variants={fadeUp}
           >
-            Living in Black Forest, CO: Real Estate, Tradeoffs, and What It's Like
+            Black Forest CO Real Estate
           </motion.h1>
           <motion.p
             className="text-amber-400 text-lg"
@@ -116,18 +116,7 @@ export default function BlackForestCoRealEstate() {
 
           {/* Intro */}
           <section>
-            <p className="mb-4">Black Forest usually comes up when the search stops being about neighborhoods and starts being about property.</p>
-            <p className="mb-4">That is a big shift.</p>
-            <p className="mb-4">A lot of buyers get here after they realize they do not just want more house. They want more land, more privacy, more trees, and a setup that feels less tied to a standard neighborhood pattern.</p>
-            <p className="mb-4">That is usually where Black Forest starts to make sense.</p>
-            <p className="mb-4">
-              This is not the page for someone trying to understand all of Colorado Springs. The main{" "}
-              <a href="/moving-to-colorado-springs/" className="text-amber-600 underline hover:text-amber-700">
-                Colorado Springs relocation page
-              </a>{" "}
-              already handles that. This page is narrower on purpose.
-            </p>
-            <p className="font-semibold">The real question here is simpler: does Black Forest fit the way you actually want space and daily life to work?</p>
+            <p className="mb-4">Black Forest usually comes up when the search stops being about neighborhoods and starts being about property. Buyers who land here are often looking for more land, more privacy, more trees, and a setup that feels less tied to a standard neighborhood pattern. This page is here to help you decide whether Black Forest is actually that move, and how it compares with Monument or the broader Colorado Springs search.</p>
           </section>
 
           {/* What Black Forest feels like */}
@@ -284,6 +273,12 @@ export default function BlackForestCoRealEstate() {
                 className="inline-block border border-amber-500 text-amber-400 hover:bg-amber-500 hover:text-stone-900 font-semibold px-6 py-3 rounded transition-colors"
               >
                 Browse Colorado Springs Homes →
+              </a>
+              <a
+                href="/palmer-lake-co-real-estate"
+                className="inline-block border border-amber-500 text-amber-400 hover:bg-amber-500 hover:text-stone-900 font-semibold px-6 py-3 rounded transition-colors"
+              >
+                Palmer Lake →
               </a>
             </div>
             <div className="mt-4">

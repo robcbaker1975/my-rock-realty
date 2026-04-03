@@ -96,9 +96,9 @@ export default function GreeleyHomesForSale() {
     <div className="min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
-          title: "Greeley Homes for Sale | University Community, Practical Northern Colorado Living & Buyer Fit",
+          title: "Greeley Homes for Sale | Real Estate & Area Guide",
           description:
-            "Thinking about buying in Greeley? Explore who the city tends to attract, what the UNC community connection means for buyers, and whether Greeley's practical northern Colorado character fits your priorities.",
+            "Explore Greeley homes for sale and see how Greeley compares with Fort Collins and nearby Northern Colorado options for buyers who want a different pace or price point.",
           canonicalUrl: "https://myrockhomes.com/greeley-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
@@ -142,10 +142,10 @@ export default function GreeleyHomesForSale() {
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Greeley: University Community & Practical Northern Colorado Living
+              Greeley Homes for Sale
             </h1>
             <p className="text-lg text-cream/80 mb-8 leading-relaxed">
-              Greeley has a distinct identity on the northern Front Range — shaped by the University of Northern Colorado, its agricultural heritage, and a practical community character that appeals to buyers who want northern Colorado living without the price premium of Fort Collins or Boulder. This page is about who Greeley tends to suit and what living there is actually like.
+              Greeley tends to come up for buyers who want Northern Colorado access at a different price point or pace than Fort Collins. For some, that is about the UNC connection. For others, it is about the community character, the housing options, or simply what the search looks like when you move east of I-25. This page is here to help you sort out where Greeley fits, how it compares with Fort Collins or Johnstown, and whether it matches the kind of move you are actually trying to make.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton />
@@ -424,6 +424,14 @@ export default function GreeleyHomesForSale() {
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               LaSalle CO Homes
+              <ArrowRight size={13} className="inline ml-1.5 opacity-60" />
+            </a>
+            <a
+              href="/fort-collins-co-homes-for-sale"
+              className="block bg-white border border-charcoal/10 rounded-lg px-4 py-3 text-sm font-medium text-charcoal hover:border-gold hover:text-gold transition-colors duration-150"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Fort Collins CO Homes
               <ArrowRight size={13} className="inline ml-1.5 opacity-60" />
             </a>
           </div>

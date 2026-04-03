@@ -94,9 +94,9 @@ export default function LovelandCoHomesForSale() {
     <div className="min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
-          title: "Loveland CO Homes for Sale | Loveland Colorado Real Estate",
+          title: "Loveland CO Homes for Sale | Real Estate & Area Guide",
           description:
-            "Explore Loveland CO homes for sale, neighborhood character, housing styles, outdoor recreation access, and helpful resources for buying in Loveland, Colorado.",
+            "Explore Loveland CO homes for sale and see how Loveland compares with Fort Collins and nearby Northern Colorado options for buyers narrowing their move.",
           canonicalUrl: "https://myrockhomes.com/loveland-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
@@ -143,7 +143,7 @@ export default function LovelandCoHomesForSale() {
               Loveland CO Homes for Sale
             </h1>
             <p className="text-lg text-cream/80 mb-8 leading-relaxed">
-              Explore homes in Loveland — a Front Range city south of Fort Collins in Larimer County. An arts community character, outdoor recreation access, and a range of neighborhoods make Loveland an option worth considering for buyers exploring northern Colorado.
+              Loveland tends to come up for buyers who want Northern Colorado access without defaulting straight to Fort Collins. For some, that is about pace. For others, it is about feel, location, or the kind of housing search they want to run. This page is here to help you sort out where Loveland fits, how it compares with Fort Collins or Johnstown, and whether it matches the kind of move you are actually trying to make.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton />

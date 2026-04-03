@@ -94,9 +94,9 @@ export default function BoulderHomesForSale() {
       <SeoHead
         metadata={{
           title:
-            "Living in Boulder, Colorado: Real Estate, Tradeoffs, and What It's Actually Like",
+            "Boulder CO Homes for Sale | Real Estate & Living Guide",
           description:
-            "Thinking about living in Boulder, Colorado? Get a clear look at what Boulder actually feels like, who it fits, where the tradeoffs show up, and when Lafayette, Longmont, or University Hill may fit better.",
+            "Explore Boulder CO homes for sale and learn how Boulder compares with nearby options, neighborhoods, and everyday tradeoffs before you narrow your search.",
           canonicalUrl: "https://myrockhomes.com/boulder-homes-for-sale/",
           breadcrumbs: breadcrumbItems,
         }}
@@ -135,8 +135,7 @@ export default function BoulderHomesForSale() {
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Living in Boulder, Colorado: Real Estate, Tradeoffs, and What
-              It's Actually Like
+              Boulder CO Homes for Sale
             </h1>
           </motion.div>
         </div>
@@ -147,26 +146,8 @@ export default function BoulderHomesForSale() {
       <section className="py-16 sm:py-20 bg-cream">
         <div className="container max-w-2xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              A lot of buyers put Boulder on the list early.
-            </p>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              That part is easy.
-            </p>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              What usually takes longer is figuring out whether they want
-              Boulder itself, or whether they want what they think Boulder
-              stands for.
-            </p>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Those are not always the same thing.
-            </p>
             <p className="text-lg text-charcoal/80 leading-relaxed">
-              This page is here to help with that. Not to sell Boulder. Not to
-              turn it into a brochure. Just to give you a clearer read on what
-              living here usually feels like, what keeps Boulder in the
-              conversation, where it gets harder, and when a nearby option may
-              actually fit better.
+              Boulder is one of the first places many buyers look, but the harder question is whether Boulder itself fits the way they actually want to live. This page is here to help you sort that out. You can use it to narrow Boulder as a real option, understand where the tradeoffs show up, and compare it with nearby choices like Longmont, Lafayette, or University Hill before you go too far down the wrong path.
             </p>
           </motion.div>
         </div>

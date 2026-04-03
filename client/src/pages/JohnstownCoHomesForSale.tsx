@@ -94,9 +94,9 @@ export default function JohnstownCoHomesForSale() {
     <div className="min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
-          title: "Johnstown CO Homes for Sale | Johnstown Colorado Real Estate",
+          title: "Johnstown CO Homes for Sale | Real Estate & Area Guide",
           description:
-            "Explore Johnstown CO homes for sale, neighborhood character, housing styles, community amenities, and helpful resources for buying in Johnstown, Colorado.",
+            "Explore Johnstown CO homes for sale and compare Johnstown with Fort Collins and Loveland for buyers seeking newer suburban options.",
           canonicalUrl: "https://myrockhomes.com/johnstown-co-homes-for-sale",
           breadcrumbs: breadcrumbItems,
         }}
@@ -143,7 +143,7 @@ export default function JohnstownCoHomesForSale() {
               Johnstown CO Homes for Sale
             </h1>
             <p className="text-lg text-cream/80 mb-8 leading-relaxed">
-              Explore homes in Johnstown — a growing community in Weld County southeast of Fort Collins. Suburban residential character, newer housing options, and access to both Fort Collins and Loveland make Johnstown an option worth considering for buyers exploring northern Colorado.
+              Johnstown usually comes up for buyers who want a newer-growth suburban option in Northern Colorado without centering the whole search on Fort Collins. The appeal is often the newer housing stock, the more suburban feel, and access to nearby cities without living in the middle of them. This page is here to help you see where Johnstown fits, and how it compares with places like Loveland or Fort Collins.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CTAButton />

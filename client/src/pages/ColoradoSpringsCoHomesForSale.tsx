@@ -106,9 +106,9 @@ export default function ColoradoSpringsCoHomesForSale() {
     <div className="min-h-screen bg-warm-white">
       <SeoHead
         metadata={{
-          title: "Colorado Springs, CO Homes for Sale | My Rock Realty",
+          title: "Colorado Springs CO Homes for Sale | Area Guide",
           description:
-            "Searching for homes for sale in Colorado Springs? Start with a clearer search strategy — budget, part of town, home type, and commute. My Rock Realty helps Colorado Springs buyers find the right fit.",
+            "Search Colorado Springs CO homes for sale and narrow by area, commute, home type, and nearby options like Monument, Falcon, and Black Forest.",
           canonicalUrl: "https://myrockhomes.com/colorado-springs-co-homes-for-sale",
         }}
         schema={faqSchema ? [faqSchema] : []}
@@ -165,37 +165,14 @@ export default function ColoradoSpringsCoHomesForSale() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream leading-tight mb-5"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Colorado Springs, CO Homes for Sale
+            Colorado Springs CO Homes for Sale
           </h1>
           <p
             className="text-cream/70 text-base sm:text-lg leading-relaxed max-w-2xl"
             style={{ fontFamily: "'Libre Franklin', sans-serif" }}
           >
-            Searching for homes for sale in Colorado Springs gets easier once you stop trying to search the whole city at once.
+            Searching for Colorado Springs CO homes for sale gets easier once you stop trying to search the whole city at once. Colorado Springs is a broad market, and the clearest search usually starts with a few practical decisions first: your budget, your commute, the kind of home you want, and which part of town fits the way you actually live. This page is meant to help you narrow that before the search gets messy.
           </p>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          INTRO
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-12 sm:py-16">
-        <div className="container max-w-3xl">
-          <div className="prose prose-charcoal max-w-none" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
-            <p className="text-charcoal/80 text-base sm:text-[17px] leading-relaxed mb-4">
-              Colorado Springs is a broad market, and the right search usually starts with a few practical things first: your budget, your commute, the kind of home you want, and what part of town fits the way you actually live.
-            </p>
-            <p className="text-charcoal/80 text-base sm:text-[17px] leading-relaxed mb-4">
-              This page is here to help you start that search more clearly.
-            </p>
-            <p className="text-charcoal/80 text-base sm:text-[17px] leading-relaxed">
-              If you're still figuring out what different parts of town feel like, what to know before moving, or whether it makes more sense to rent or buy first, start with our guide to{" "}
-              <a href="/moving-to-colorado-springs/" className="text-gold underline underline-offset-2 hover:opacity-80 transition-opacity">
-                moving to Colorado Springs
-              </a>
-              .
-            </p>
-          </div>
         </div>
       </section>
 
