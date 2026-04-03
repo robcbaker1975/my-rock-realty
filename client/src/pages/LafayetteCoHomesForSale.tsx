@@ -572,6 +572,11 @@ export default function LafayetteCoHomesForSale() {
                   Longmont →
                 </a>
               </li>
+              <li>
+                <a href="/louisville-co-homes-for-sale" className="text-gold hover:text-gold-light underline text-lg" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+                  Louisville →
+                </a>
+              </li>
             </ul>
             <h3
               className="text-xl font-bold text-cream mb-4"

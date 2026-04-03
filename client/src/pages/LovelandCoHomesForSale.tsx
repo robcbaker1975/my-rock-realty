@@ -255,7 +255,7 @@ export default function LovelandCoHomesForSale() {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                name: "Fort Collins, CO Homes Hub",
+                name: "Back to Fort Collins Hub",
                 link: "/fort-collins-co-homes-for-sale",
               },
               {
@@ -348,7 +348,7 @@ export default function LovelandCoHomesForSale() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: "Fort Collins, CO Homes Hub",
+                title: "Back to Fort Collins Hub",
                 link: "/fort-collins-co-homes-for-sale",
               },
               {
