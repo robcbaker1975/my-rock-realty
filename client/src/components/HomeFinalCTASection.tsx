@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
-import { useLocation } from "wouter";
 
 export default function HomeFinalCTASection() {
-  const [, setLocation] = useLocation();
-
   return (
     <section className="py-14 sm:py-20 md:py-24 bg-cream border-t border-charcoal/10">
       <div className="container">
@@ -35,14 +32,14 @@ export default function HomeFinalCTASection() {
             transition={{ delay: 0.18 }}
             className="flex flex-col sm:flex-row gap-3 sm:gap-4"
           >
-            <button
-              onClick={() => setLocation("/listing-results")}
-              className="inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-gold text-charcoal font-bold rounded-lg transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
+            <a
+              href="/listing-results"
+              className="inline-flex items-center justify-center gap-2.5 px-7 py-4 bg-gold text-charcoal font-bold rounded-lg transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base no-underline"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Search Homes
               <ArrowRight size={17} />
-            </button>
+            </a>
             <a
               href="tel:7203636544"
               className="inline-flex items-center justify-center gap-2.5 px-7 py-4 border border-charcoal/25 text-charcoal font-semibold rounded-lg transition-all hover:border-charcoal/50 hover:bg-charcoal/5 text-[15px] sm:text-base no-underline"

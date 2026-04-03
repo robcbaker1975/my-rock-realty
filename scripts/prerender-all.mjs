@@ -3837,10 +3837,14 @@ async function prerenderAll() {
     console.log("[prerender-all] Done: highland");
   }
   // --- homepage (/) ----
-  // NOTE: Home.tsx imports Navbar/Footer which use wouter Link — not SSR-renderable with wouter 3.7.1.
-  // Inject SEO head into the shell template only (root div stays empty, hydrates on client).
+  // SSR-render Home.tsx and inject body + SEO head.
   {
-    const prerenderedShell = readFileSync(resolve(ROOT, "dist/public/index.html"), "utf-8");
+    const ssrMod_home = await import(resolve(ROOT, "dist/server/entry-server-home.js"));
+    const homeBodyHtml = ssrMod_home.renderHome();
+    const rawShell = readFileSync(resolve(ROOT, "dist/public/index.html"), "utf-8");
+    const HP_PLACEHOLDER = '<div id="root"></div>';
+    if (!rawShell.includes(HP_PLACEHOLDER)) throw new Error("[prerender-all] FAIL: root placeholder not found in shell");
+    const prerenderedShell = rawShell.replace(HP_PLACEHOLDER, `<div id="root">${homeBodyHtml}</div>`);
     const _seoBlock = buildSeoHeadBlock({
       title: "Colorado Real Estate | My Rock Realty",
       description: "Strategic real estate guidance for Colorado buyers, sellers, and relocating families. Work with My Rock Realty \u2014 serving Colorado.",
@@ -3872,9 +3876,12 @@ async function prerenderAll() {
     mkdirSync(srcOutputDir, { recursive: true });
     writeFileSync(resolve(srcOutputDir, "index.html"), _injectedHtml, "utf-8");
     const written_homepage = readFileSync(resolve(srcOutputDir, "index.html"), "utf-8");
-    // Root div is intentionally empty (client-hydrated). Verify SEO head was injected.
+    const hp_rootNotEmpty = !written_homepage.includes('<div id="root"></div>');
+    const hp_hasH1 = /<h1[\s>]/.test(written_homepage);
+    if (!hp_rootNotEmpty) throw new Error("[prerender-all] FAIL: homepage root div still empty");
+    if (!hp_hasH1) throw new Error("[prerender-all] FAIL: homepage H1 not found");
     if (!written_homepage.includes('<title ') && !written_homepage.includes('<title>')) throw new Error("[prerender-all] FAIL: no title tag in homepage output");
-    console.log("[prerender-all] Done: homepage (/)");
+    console.log(`[prerender-all] Done: homepage (/) rootNotEmpty=${hp_rootNotEmpty} hasH1=${hp_hasH1}`);
   }
   console.log("[prerender-all] All 107 routes complete.");
 }

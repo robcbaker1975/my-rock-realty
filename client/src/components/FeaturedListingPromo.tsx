@@ -6,8 +6,6 @@
  * Secondary CTA → Buying Buddy search results
  */
 
-import { Link } from "wouter";
-
 export default function FeaturedListingPromo() {
   return (
     <section
@@ -57,20 +55,20 @@ export default function FeaturedListingPromo() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 mt-2">
               {/* Primary */}
-              <Link
+              <a
                 href="/featured/4810-basalt-ridge-circle-castle-rock-co"
-                className="inline-block bg-[#C9A96E] hover:bg-[#b8955a] text-white text-sm font-semibold px-6 py-2.5 rounded-sm transition-colors text-center"
+                className="inline-block bg-[#C9A96E] hover:bg-[#b8955a] text-white text-sm font-semibold px-6 py-2.5 rounded-sm transition-colors text-center no-underline"
               >
                 View Listing Details
-              </Link>
+              </a>
 
               {/* Secondary */}
-              <Link
+              <a
                 href="/listing-results"
-                className="inline-block border border-[#C9A96E] text-[#C9A96E] hover:bg-[#C9A96E]/10 text-sm font-medium px-6 py-2.5 rounded-sm transition-colors text-center"
+                className="inline-block border border-[#C9A96E] text-[#C9A96E] hover:bg-[#C9A96E]/10 text-sm font-medium px-6 py-2.5 rounded-sm transition-colors text-center no-underline"
               >
                 Search Other Homes
-              </Link>
+              </a>
             </div>
           </div>
         </div>

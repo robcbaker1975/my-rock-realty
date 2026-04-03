@@ -1,4 +1,3 @@
-import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 
 export default function TrustProofSection() {
@@ -50,14 +49,14 @@ export default function TrustProofSection() {
 
               {/* CTA */}
               <div className="mt-2">
-                <Link
+                <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 border border-gold/50 text-gold hover:bg-gold/10 hover:border-gold transition-all rounded text-sm font-medium"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 border border-gold/50 text-gold hover:bg-gold/10 hover:border-gold transition-all rounded text-sm font-medium no-underline"
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
                   Start the Conversation
                   <ArrowRight className="w-4 h-4" />
-                </Link>
+                </a>
               </div>
             </div>
 
