@@ -171,7 +171,7 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "table-mesa-south-boulder-real-estate": {
-    title: "Living in Table Mesa / South Boulder: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+    title: "Living in Table Mesa and South Boulder: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
     description:
       "Thinking about living in Table Mesa or South Boulder? Learn what the neighborhood actually feels like, who it fits, what the tradeoffs are, and when other Boulder neighborhoods may make more sense.",
     canonical: "https://myrockhomes.com/table-mesa-south-boulder-real-estate/",
@@ -183,7 +183,7 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "north-boulder-nobo-real-estate": {
-    title: "Living in North Boulder (NoBo): Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+    title: "Living in North Boulder and NoBo: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
     description:
       "Thinking about living in North Boulder (NoBo)? Learn what the neighborhood actually feels like, who it fits, what the tradeoffs are, and when other Boulder neighborhoods may make more sense.",
     canonical: "https://myrockhomes.com/north-boulder-nobo-real-estate/",

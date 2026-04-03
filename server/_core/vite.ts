@@ -1363,6 +1363,105 @@ export function serveStatic(app: Express) {
       res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
+  // IL-100: /gunbarrel-co-real-estate
+  app.get(["/gunbarrel-co-real-estate", "/gunbarrel-co-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/gunbarrel-co-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/gunbarrel-co-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-101: /niwot-co-real-estate
+  app.get(["/niwot-co-real-estate", "/niwot-co-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/niwot-co-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/niwot-co-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-102: /table-mesa-south-boulder-real-estate
+  app.get(["/table-mesa-south-boulder-real-estate", "/table-mesa-south-boulder-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/table-mesa-south-boulder-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/table-mesa-south-boulder-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-103: /north-boulder-nobo-real-estate
+  app.get(["/north-boulder-nobo-real-estate", "/north-boulder-nobo-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/north-boulder-nobo-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/north-boulder-nobo-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-104: /newlands-boulder-real-estate
+  app.get(["/newlands-boulder-real-estate", "/newlands-boulder-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/newlands-boulder-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/newlands-boulder-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-105: /mapleton-hill-boulder-real-estate
+  app.get(["/mapleton-hill-boulder-real-estate", "/mapleton-hill-boulder-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/mapleton-hill-boulder-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/mapleton-hill-boulder-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-106: /louisville-co-homes-for-sale
+  app.get(["/louisville-co-homes-for-sale", "/louisville-co-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/louisville-co-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/louisville-co-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-107: /superior-co-homes-for-sale
+  app.get(["/superior-co-homes-for-sale", "/superior-co-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/superior-co-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/superior-co-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-108: /lyons-co-homes-for-sale
+  app.get(["/lyons-co-homes-for-sale", "/lyons-co-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/lyons-co-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/lyons-co-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
   app.use(express.static(distPath));
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
