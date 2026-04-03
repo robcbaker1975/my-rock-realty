@@ -705,6 +705,30 @@ export const SEO_METADATA_MAP = {
       { "@type": "ListItem", position: 3, name: "Sloan Lake", item: "https://myrockhomes.com/sloan-lake-denver-homes-for-sale/" },
     ],
   },
+  "platt-park-denver-homes-for-sale": {
+    title: "Platt Park Denver Homes for Sale: Fit, Feel, and the Tradeoffs That Matter | My Rock Realty",
+    description:
+      "A practical guide to Platt Park Denver homes for sale, with honest help on fit, South Pearl pull, home types, and the tradeoffs that shape the search.",
+    canonical: "https://myrockhomes.com/platt-park-denver-homes-for-sale/",
+    pageType: "neighborhood",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Denver Homes for Sale", item: "https://myrockhomes.com/denver-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "Platt Park", item: "https://myrockhomes.com/platt-park-denver-homes-for-sale/" },
+    ],
+  },
+  "highland-denver-homes-for-sale": {
+    title: "Highland Denver Homes for Sale: Fit, Feel, and the Tradeoffs That Matter | My Rock Realty",
+    description:
+      "A practical guide to Highland Denver homes for sale, with honest help on fit, Highland versus LoHi, home types, and the tradeoffs that shape the search.",
+    canonical: "https://myrockhomes.com/highland-denver-homes-for-sale/",
+    pageType: "neighborhood",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Denver Homes for Sale", item: "https://myrockhomes.com/denver-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "Highland", item: "https://myrockhomes.com/highland-denver-homes-for-sale/" },
+    ],
+  },
   "denver-condos-for-sale": {
     title: "Denver Condos for Sale | My Rock Realty",
     description:

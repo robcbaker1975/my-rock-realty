@@ -27,6 +27,8 @@ import LohiDenverHomesForSale from "./pages/LohiDenverHomesForSale";
 import RinoDenverHomesForSale from "./pages/RinoDenverHomesForSale";
 import CentralParkDenverHomesForSale from "./pages/CentralParkDenverHomesForSale";
 import SloanLakeDenverHomesForSale from "./pages/SloanLakeDenverHomesForSale";
+import PlattParkDenverHomesForSale from "./pages/PlattParkDenverHomesForSale";
+import HighlandDenverHomesForSale from "./pages/HighlandDenverHomesForSale";
 import ParkerCoHomesForSale from "./pages/ParkerCoHomesForSale";
 import HighlandsRanchCoHomesForSale from "./pages/HighlandsRanchCoHomesForSale";
 import CastleRockCoHomesForSale from "./pages/CastleRockCoHomesForSale";
@@ -174,6 +176,8 @@ function Router() {
       <Route path={"/rino-denver-homes-for-sale"} component={RinoDenverHomesForSale} />
       <Route path={"/central-park-denver-homes-for-sale"} component={CentralParkDenverHomesForSale} />
       <Route path={"/sloan-lake-denver-homes-for-sale"} component={SloanLakeDenverHomesForSale} />
+      <Route path={"/platt-park-denver-homes-for-sale"} component={PlattParkDenverHomesForSale} />
+      <Route path={"/highland-denver-homes-for-sale"} component={HighlandDenverHomesForSale} />
       <Route path={"/parker-co-homes-for-sale"} component={ParkerCoHomesForSale} />
       <Route path={"/highlands-ranch-co-homes-for-sale"} component={HighlandsRanchCoHomesForSale} />
       <Route path={"/castle-rock-co-homes-for-sale"} component={CastleRockCoHomesForSale} />

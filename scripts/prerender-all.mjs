@@ -151,6 +151,8 @@ async function prerenderAll() {
   "entry-server-boulder-vs-fort-collins": resolve(ROOT, "client/src/entry-server-boulder-vs-fort-collins.tsx"),
   "entry-server-denver-market-report-2025": resolve(ROOT, "client/src/entry-server-denver-market-report-2025.tsx"),
   "entry-server-denver-vs-colorado-springs": resolve(ROOT, "client/src/entry-server-denver-vs-colorado-springs.tsx"),
+  "entry-server-platt-park": resolve(ROOT, "client/src/entry-server-platt-park.tsx"),
+  "entry-server-highland": resolve(ROOT, "client/src/entry-server-highland.tsx"),
   "entry-server-home": resolve(ROOT, "client/src/entry-server-home.tsx"),
         },
         output: {
@@ -3788,8 +3790,53 @@ async function prerenderAll() {
     if (written_denver_vs_colorado_springs.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for denver-vs-colorado-springs");
     console.log("[prerender-all] Done: denver-vs-colorado-springs");
   }
-
-  // --- homepage (/) ---
+  // --- platt-park ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-platt-park.js"));
+    const html = ssrMod.renderPlattParkDenverHomesForSale();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_platt_park = SEO_METADATA_MAP["platt-park-denver-homes-for-sale"];
+    const _seoBlock_platt_park = buildSeoHeadBlock({
+      title: _seoMeta_platt_park.title,
+      description: _seoMeta_platt_park.description,
+      canonical: _seoMeta_platt_park.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_platt_park.breadcrumbs)],
+      slug: "platt-park-denver-homes-for-sale",
+    });
+    const _injectedHtml_platt_park = injectSeoHead(prerenderedShell, _seoBlock_platt_park, _seoMeta_platt_park.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "platt-park-denver-homes-for-sale.html"), _injectedHtml_platt_park, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "platt-park-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+    const written_platt_park = readFileSync(resolve(serverPrerenderedDir, "platt-park-denver-homes-for-sale.html"), "utf-8");
+    if (written_platt_park.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for platt-park");
+    console.log("[prerender-all] Done: platt-park");
+  }
+  // --- highland ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-highland.js"));
+    const html = ssrMod.renderHighlandDenverHomesForSale();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_highland = SEO_METADATA_MAP["highland-denver-homes-for-sale"];
+    const _seoBlock_highland = buildSeoHeadBlock({
+      title: _seoMeta_highland.title,
+      description: _seoMeta_highland.description,
+      canonical: _seoMeta_highland.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_highland.breadcrumbs)],
+      slug: "highland-denver-homes-for-sale",
+    });
+    const _injectedHtml_highland = injectSeoHead(prerenderedShell, _seoBlock_highland, _seoMeta_highland.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "highland-denver-homes-for-sale.html"), _injectedHtml_highland, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "highland-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+    const written_highland = readFileSync(resolve(serverPrerenderedDir, "highland-denver-homes-for-sale.html"), "utf-8");
+    if (written_highland.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for highland");
+    console.log("[prerender-all] Done: highland");
+  }
+  // --- homepage (/) ----
   // NOTE: Home.tsx imports Navbar/Footer which use wouter Link — not SSR-renderable with wouter 3.7.1.
   // Inject SEO head into the shell template only (root div stays empty, hydrates on client).
   {
@@ -3829,7 +3876,7 @@ async function prerenderAll() {
     if (!written_homepage.includes('<title ') && !written_homepage.includes('<title>')) throw new Error("[prerender-all] FAIL: no title tag in homepage output");
     console.log("[prerender-all] Done: homepage (/)");
   }
-  console.log("[prerender-all] All 105 routes complete.");
+  console.log("[prerender-all] All 107 routes complete.");
 }
 
 prerenderAll().catch((err) => {

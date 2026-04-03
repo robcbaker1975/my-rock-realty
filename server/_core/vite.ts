@@ -1539,6 +1539,32 @@ export function serveStatic(app: Express) {
       res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
+  // IL-116: Serve prerendered HTML for /platt-park-denver-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/platt-park-denver-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/platt-park-denver-homes-for-sale.html — build artifact.
+  app.get(["/platt-park-denver-homes-for-sale", "/platt-park-denver-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/platt-park-denver-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/platt-park-denver-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-117: Serve prerendered HTML for /highland-denver-homes-for-sale (+ trailing-slash form).
+  // Primary: server/prerendered/highland-denver-homes-for-sale.html — committed to git.
+  // Fallback: dist/prerendered/highland-denver-homes-for-sale.html — build artifact.
+  app.get(["/highland-denver-homes-for-sale", "/highland-denver-homes-for-sale/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/highland-denver-homes-for-sale.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/highland-denver-homes-for-sale.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
   app.use(express.static(distPath));
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
