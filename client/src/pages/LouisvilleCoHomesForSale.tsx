@@ -92,9 +92,9 @@ export default function LouisvilleCoHomesForSale() {
       <SeoHead
         metadata={{
           title:
-            "Living in Louisville, Colorado: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+            "Louisville CO Homes for Sale | Real Estate & Area Guide",
           description:
-            "Thinking about living in Louisville, Colorado? Learn what Louisville actually feels like, who it fits, what the tradeoffs are, and when Boulder, Lafayette, or Superior may make more sense.",
+            "Explore Louisville CO homes for sale and see how Louisville compares with Boulder, Lafayette, and nearby options for buyers narrowing their move.",
           canonicalUrl: "https://myrockhomes.com/louisville-co-homes-for-sale/",
           breadcrumbs: breadcrumbItems,
         }}
@@ -124,7 +124,7 @@ export default function LouisvilleCoHomesForSale() {
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Living in Louisville, Colorado: Real Estate, Tradeoffs, and What It's Actually Like
+              Louisville CO Homes for Sale
             </h1>
           </motion.div>
         </div>

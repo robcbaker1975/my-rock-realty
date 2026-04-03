@@ -205,9 +205,9 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "lafayette-co-homes-for-sale": {
-    title: "Living in Lafayette, Colorado: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+    title: "Lafayette CO Homes for Sale | Real Estate & Area Guide",
     description:
-      "Thinking about living in Lafayette, Colorado? Learn what Lafayette actually feels like, who it fits, what the tradeoffs are, and when Boulder or Longmont may make more sense.",
+      "Explore Lafayette CO homes for sale and see how Lafayette compares with Boulder, Louisville, and nearby options for buyers narrowing their move.",
     canonical: "https://myrockhomes.com/lafayette-co-homes-for-sale/",
     pageType: "city",
     breadcrumbs: [
@@ -299,9 +299,9 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "louisville-co-homes-for-sale": {
-    title: "Living in Louisville, Colorado: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+    title: "Louisville CO Homes for Sale | Real Estate & Area Guide",
     description:
-      "Thinking about living in Louisville, Colorado? Learn what Louisville actually feels like, who it fits, what the tradeoffs are, and when Boulder, Lafayette, or Superior may make more sense.",
+      "Explore Louisville CO homes for sale and see how Louisville compares with Boulder, Lafayette, and nearby options for buyers narrowing their move.",
     canonical: "https://myrockhomes.com/louisville-co-homes-for-sale/",
     pageType: "city",
     breadcrumbs: [

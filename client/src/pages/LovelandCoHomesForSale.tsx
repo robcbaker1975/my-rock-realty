@@ -437,7 +437,7 @@ export default function LovelandCoHomesForSale() {
               href="/fort-collins-co-homes-for-sale"
               className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors font-semibold"
             >
-              Back to Fort Collins County Homes Hub
+              Back to Fort Collins Hub
               <ArrowRight size={16} />
             </a>
           </motion.div>

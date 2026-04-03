@@ -104,9 +104,9 @@ export default function LafayetteCoHomesForSale() {
       <SeoHead
         metadata={{
           title:
-            "Living in Lafayette, Colorado: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+            "Lafayette CO Homes for Sale | Real Estate & Area Guide",
           description:
-            "Thinking about living in Lafayette, Colorado? Learn what Lafayette actually feels like, who it fits, what the tradeoffs are, and when Boulder or Longmont may make more sense.",
+            "Explore Lafayette CO homes for sale and see how Lafayette compares with Boulder, Louisville, and nearby options for buyers narrowing their move.",
           canonicalUrl: "https://myrockhomes.com/lafayette-co-homes-for-sale/",
           breadcrumbs: breadcrumbItems,
         }}
@@ -127,7 +127,7 @@ export default function LafayetteCoHomesForSale() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream leading-tight mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Living in Lafayette, Colorado: Real Estate, Tradeoffs, and What It's Actually Like
+            Lafayette CO Homes for Sale
           </h1>
           <p className="text-cream/80 text-lg leading-relaxed mb-8" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
             Thinking about living in Lafayette, Colorado? Learn what Lafayette actually feels like, who it fits, what the tradeoffs are, and when Boulder or Longmont may make more sense.
