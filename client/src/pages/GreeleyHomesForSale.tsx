@@ -142,7 +142,7 @@ export default function GreeleyHomesForSale() {
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Greeley Homes for Sale
+              Greeley CO Homes for Sale
             </h1>
             <p className="text-lg text-cream/80 mb-8 leading-relaxed">
               Greeley tends to come up for buyers who want Northern Colorado access at a different price point or pace than Fort Collins. For some, that is about the UNC connection. For others, it is about the community character, the housing options, or simply what the search looks like when you move east of I-25. This page is here to help you sort out where Greeley fits, how it compares with Fort Collins or Johnstown, and whether it matches the kind of move you are actually trying to make.
