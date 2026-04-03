@@ -299,7 +299,7 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "louisville-co-homes-for-sale": {
-    title: "Louisville CO Homes for Sale | Real Estate & Area Guide",
+    title: "Louisville CO Homes for Sale | Real Estate & Living Guide",
     description:
       "Explore Louisville CO homes for sale and see how Louisville compares with Boulder, Lafayette, and nearby options for buyers narrowing their move.",
     canonical: "https://myrockhomes.com/louisville-co-homes-for-sale/",
