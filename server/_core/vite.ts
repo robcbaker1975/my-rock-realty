@@ -1462,6 +1462,83 @@ export function serveStatic(app: Express) {
       res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
+  // IL-109: /windsor-co-real-estate
+  app.get(["/windsor-co-real-estate", "/windsor-co-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/windsor-co-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/windsor-co-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-110: /timnath-co-real-estate
+  app.get(["/timnath-co-real-estate", "/timnath-co-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/timnath-co-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/timnath-co-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-111: /loveland-co-real-estate
+  app.get(["/loveland-co-real-estate", "/loveland-co-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/loveland-co-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/loveland-co-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-112: /wellington-co-real-estate
+  app.get(["/wellington-co-real-estate", "/wellington-co-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/wellington-co-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/wellington-co-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-113: /old-town-fort-collins-real-estate
+  app.get(["/old-town-fort-collins-real-estate", "/old-town-fort-collins-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/old-town-fort-collins-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/old-town-fort-collins-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-114: /midtown-fort-collins-real-estate
+  app.get(["/midtown-fort-collins-real-estate", "/midtown-fort-collins-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/midtown-fort-collins-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/midtown-fort-collins-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-115: /harmony-fort-collins-real-estate
+  app.get(["/harmony-fort-collins-real-estate", "/harmony-fort-collins-real-estate/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/harmony-fort-collins-real-estate.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/harmony-fort-collins-real-estate.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
   app.use(express.static(distPath));
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {

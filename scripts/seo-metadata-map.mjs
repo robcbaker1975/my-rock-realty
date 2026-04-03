@@ -59,14 +59,94 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "fort-collins-co-homes-for-sale": {
-    title: "Fort Collins, CO Homes for Sale | My Rock Realty",
+    title: "Living in Fort Collins, Colorado: Real Estate, Tradeoffs, and What It's Like | My Rock Realty",
     description:
-      "Search homes for sale in Fort Collins, CO. Discover neighborhoods, pricing trends, and what to expect when buying in Fort Collins.",
+      "Thinking about Fort Collins? Here is what Fort Collins actually feels like, who it fits, where it gets harder, and how it compares with Windsor, Timnath, Loveland, and Wellington.",
     canonical: "https://myrockhomes.com/fort-collins-co-homes-for-sale/",
+    pageType: "hub",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Fort Collins", item: "https://myrockhomes.com/fort-collins-co-homes-for-sale/" },
+    ],
+  },
+  "windsor-co-real-estate": {
+    title: "Living in Windsor, Colorado: Real Estate, Tradeoffs, and What It's Like | My Rock Realty",
+    description:
+      "Thinking about Windsor? Here is what Windsor actually feels like, who it fits, where it gets harder, and how it compares with Fort Collins, Timnath, Loveland, and Wellington.",
+    canonical: "https://myrockhomes.com/windsor-co-real-estate/",
     pageType: "city",
     breadcrumbs: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
-      { "@type": "ListItem", position: 2, name: "Fort Collins Homes for Sale", item: "https://myrockhomes.com/fort-collins-co-homes-for-sale/" },
+      { "@type": "ListItem", position: 2, name: "Windsor", item: "https://myrockhomes.com/windsor-co-real-estate/" },
+    ],
+  },
+  "timnath-co-real-estate": {
+    title: "Living in Timnath, Colorado: Real Estate, Tradeoffs, and What It's Like | My Rock Realty",
+    description:
+      "Thinking about Timnath? Here is what Timnath actually feels like, who it fits, where it gets harder, and how it compares with Fort Collins, Windsor, Loveland, and Wellington.",
+    canonical: "https://myrockhomes.com/timnath-co-real-estate/",
+    pageType: "city",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Timnath", item: "https://myrockhomes.com/timnath-co-real-estate/" },
+    ],
+  },
+  "loveland-co-real-estate": {
+    title: "Living in Loveland, Colorado: Real Estate, Tradeoffs, and What It's Like | My Rock Realty",
+    description:
+      "Thinking about Loveland? Here is what Loveland actually feels like, who it fits, where it gets harder, and how it compares with Fort Collins, Windsor, Timnath, and Wellington.",
+    canonical: "https://myrockhomes.com/loveland-co-real-estate/",
+    pageType: "city",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Loveland", item: "https://myrockhomes.com/loveland-co-real-estate/" },
+    ],
+  },
+  "wellington-co-real-estate": {
+    title: "Living in Wellington, Colorado: Real Estate, Tradeoffs, and What It's Like | My Rock Realty",
+    description:
+      "Thinking about Wellington? Here is what Wellington actually feels like, who it fits, where it gets harder, and how it compares with Fort Collins, Windsor, Timnath, and Loveland.",
+    canonical: "https://myrockhomes.com/wellington-co-real-estate/",
+    pageType: "city",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Wellington", item: "https://myrockhomes.com/wellington-co-real-estate/" },
+    ],
+  },
+  "old-town-fort-collins-real-estate": {
+    title: "Living in Old Town Fort Collins: Real Estate, Tradeoffs, and What It's Like | My Rock Realty",
+    description:
+      "Thinking about Old Town Fort Collins? Here is what Old Town actually feels like, who it fits, where it gets harder, and how it compares with the rest of Fort Collins.",
+    canonical: "https://myrockhomes.com/old-town-fort-collins-real-estate/",
+    pageType: "neighborhood",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Fort Collins", item: "https://myrockhomes.com/fort-collins-co-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "Old Town Fort Collins", item: "https://myrockhomes.com/old-town-fort-collins-real-estate/" },
+    ],
+  },
+  "midtown-fort-collins-real-estate": {
+    title: "Living in Midtown Fort Collins: Real Estate, Tradeoffs, and What It's Like | My Rock Realty",
+    description:
+      "Thinking about Midtown Fort Collins? Here is what Midtown actually feels like, who it fits, where it gets harder, and how it compares with Old Town, the rest of Fort Collins, and nearby options.",
+    canonical: "https://myrockhomes.com/midtown-fort-collins-real-estate/",
+    pageType: "neighborhood",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Fort Collins", item: "https://myrockhomes.com/fort-collins-co-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "Midtown Fort Collins", item: "https://myrockhomes.com/midtown-fort-collins-real-estate/" },
+    ],
+  },
+  "harmony-fort-collins-real-estate": {
+    title: "Living Near Harmony in Fort Collins: Real Estate, Tradeoffs, and What It's Like | My Rock Realty",
+    description:
+      "Thinking about the Harmony area in Fort Collins? Here is what this part of town actually feels like, who it fits, where it gets harder, and how it compares with Midtown, Old Town, and the rest of Fort Collins.",
+    canonical: "https://myrockhomes.com/harmony-fort-collins-real-estate/",
+    pageType: "neighborhood",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Fort Collins", item: "https://myrockhomes.com/fort-collins-co-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "Harmony Fort Collins", item: "https://myrockhomes.com/harmony-fort-collins-real-estate/" },
     ],
   },
   "fort-collins-homes-for-sale": {

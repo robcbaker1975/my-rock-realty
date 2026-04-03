@@ -135,6 +135,13 @@ async function prerenderAll() {
   "entry-server-louisville-co-homes-for-sale": resolve(ROOT, "client/src/entry-server-louisville-co-homes-for-sale.tsx"),
   "entry-server-superior-co-homes-for-sale": resolve(ROOT, "client/src/entry-server-superior-co-homes-for-sale.tsx"),
   "entry-server-lyons-co-homes-for-sale": resolve(ROOT, "client/src/entry-server-lyons-co-homes-for-sale.tsx"),
+  "entry-server-windsor-co-real-estate": resolve(ROOT, "client/src/entry-server-windsor-co-real-estate.tsx"),
+  "entry-server-timnath-co-real-estate": resolve(ROOT, "client/src/entry-server-timnath-co-real-estate.tsx"),
+  "entry-server-loveland-co-real-estate": resolve(ROOT, "client/src/entry-server-loveland-co-real-estate.tsx"),
+  "entry-server-wellington-co-real-estate": resolve(ROOT, "client/src/entry-server-wellington-co-real-estate.tsx"),
+  "entry-server-old-town-fort-collins-real-estate": resolve(ROOT, "client/src/entry-server-old-town-fort-collins-real-estate.tsx"),
+  "entry-server-midtown-fort-collins-real-estate": resolve(ROOT, "client/src/entry-server-midtown-fort-collins-real-estate.tsx"),
+  "entry-server-harmony-fort-collins-real-estate": resolve(ROOT, "client/src/entry-server-harmony-fort-collins-real-estate.tsx"),
   "entry-server-denver-condos": resolve(ROOT, "client/src/entry-server-denver-condos.tsx"),
   "entry-server-denver-townhomes": resolve(ROOT, "client/src/entry-server-denver-townhomes.tsx"),
   "entry-server-denver-luxury": resolve(ROOT, "client/src/entry-server-denver-luxury.tsx"),
@@ -156,7 +163,7 @@ async function prerenderAll() {
     logLevel: "warn",
   });
 
-  console.log("[prerender-all] SSR build complete. Rendering all 96 routes...");
+  console.log("[prerender-all] SSR build complete. Rendering all 105 routes...");
 
   // STEP 2: Read the client shell (built by vite build step before this script runs)
   const shellPath = resolve(ROOT, "dist/public/index.html");
@@ -480,7 +487,8 @@ async function prerenderAll() {
       description: _seoMeta_fort_collins.description,
       canonical: _seoMeta_fort_collins.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_fort_collins.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_fort_collins.breadcrumbs),
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why do buyers keep Fort Collins in the search once they start driving it?","acceptedAnswer":{"@type":"Answer","text":"Because Fort Collins usually feels more real in person than it does online. Buyers start noticing the older center, the main corridors, the CSU background influence, and the fact that the city has more internal range than some nearby alternatives."}},{"@type":"Question","name":"What kind of buyer usually chooses Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"Usually someone who wants a city with more identity, more internal variation, and a stronger sense of place than a simpler nearby path offers."}},{"@type":"Question","name":"What kind of buyer usually moves on from Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"Usually someone who wants a tighter lane, a newer-growth path, a smaller-town feel, or a different city fit."}},{"@type":"Question","name":"Is Fort Collins mostly a college-town decision?","acceptedAnswer":{"@type":"Answer","text":"Usually no. CSU shapes part of the city's feel, but Fort Collins usually reads as a broader city decision than that."}},{"@type":"Question","name":"When does Windsor make more sense than Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"When the buyer wants the broader area, but a town-based path feels cleaner and easier to commit to."}},{"@type":"Question","name":"When does Timnath make more sense than Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"When newer-growth simplicity matters more than city range or established feel."}},{"@type":"Question","name":"When does Loveland make more sense than Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"When the real choice is between two city identities and Fort Collins no longer feels like the clearest fit."}},{"@type":"Question","name":"When does Wellington make more sense than Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"When a smaller-town direction sounds better than a broader city search."}},{"@type":"Question","name":"Should I narrow down neighborhoods inside Fort Collins before deciding on Fort Collins itself?","acceptedAnswer":{"@type":"Answer","text":"Usually no. The cleaner move is to decide on the city first, then narrow down inside it."}},{"@type":"Question","name":"Is this page trying to say Fort Collins is better than the nearby options?","acceptedAnswer":{"@type":"Answer","text":"No. It is here to help you figure out whether Fort Collins fits you better."}}]}],
       slug: "fort-collins-co-homes-for-sale",
     });
     const _injectedHtml_fort_collins = injectSeoHead(prerenderedShell, _seoBlock_fort_collins, _seoMeta_fort_collins.canonical);
@@ -3352,6 +3360,174 @@ async function prerenderAll() {
     console.log("[prerender-all] Done: superior-co-homes-for-sale");
   }
 
+  // --- windsor-co-real-estate ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-windsor-co-real-estate.js"));
+    const html = ssrMod.renderWindsorCoRealEstate();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_windsor_fc = SEO_METADATA_MAP["windsor-co-real-estate"];
+    const _seoBlock_windsor_fc = buildSeoHeadBlock({
+      title: _seoMeta_windsor_fc.title,
+      description: _seoMeta_windsor_fc.description,
+      canonical: _seoMeta_windsor_fc.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_windsor_fc.breadcrumbs),
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why do buyers keep Windsor in the search once they start driving it?","acceptedAnswer":{"@type":"Answer","text":"Because Windsor usually feels easier to sort out than a broader city search, while still feeling like a real place with a center, a rhythm, and some identity."}},{"@type":"Question","name":"What kind of buyer usually chooses Windsor?","acceptedAnswer":{"@type":"Answer","text":"Usually someone who wants a cleaner town-based path, a place that feels easier to picture in everyday life, and a search that narrows down faster than Fort Collins."}},{"@type":"Question","name":"What kind of buyer usually moves on from Windsor?","acceptedAnswer":{"@type":"Answer","text":"Usually someone who wants more city range, a simpler newer-growth lane, or a different kind of town feel."}},{"@type":"Question","name":"Is Windsor just a simpler version of Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"Usually no. It is a different path. Fort Collins is a broader city decision. Windsor is a cleaner town-based decision with its own center and identity."}},{"@type":"Question","name":"When does Windsor make more sense than Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"When the buyer wants the search to narrow down faster and wants a town-centered path instead of a broader city one."}},{"@type":"Question","name":"When does Timnath make more sense than Windsor?","acceptedAnswer":{"@type":"Answer","text":"When newer-growth simplicity matters more than town center, identity, or a more established-feeling town layout."}},{"@type":"Question","name":"When does Loveland make more sense than Windsor?","acceptedAnswer":{"@type":"Answer","text":"When the buyer realizes they still want a city decision rather than a town-based one."}},{"@type":"Question","name":"Is Windsor too growth-driven now?","acceptedAnswer":{"@type":"Answer","text":"For some buyers, maybe. But for a lot of buyers, Windsor still feels more like a town than a growth lane, and that distinction matters."}},{"@type":"Question","name":"Should I look at neighborhoods first or decide on Windsor first?","acceptedAnswer":{"@type":"Answer","text":"Usually decide on Windsor first. The cleaner move is to decide whether the town-based path is right before narrowing down further."}},{"@type":"Question","name":"Is this page trying to say Windsor is better than Fort Collins or Timnath?","acceptedAnswer":{"@type":"Answer","text":"No. It is here to help you figure out whether Windsor fits you better."}}]}],
+      slug: "windsor-co-real-estate",
+    });
+    const _injectedHtml_windsor_fc = injectSeoHead(prerenderedShell, _seoBlock_windsor_fc, _seoMeta_windsor_fc.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "windsor-co-real-estate.html"), _injectedHtml_windsor_fc, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "windsor-co-real-estate.html"), prerenderedShell, "utf-8");
+    const written_windsor_fc = readFileSync(resolve(serverPrerenderedDir, "windsor-co-real-estate.html"), "utf-8");
+    if (written_windsor_fc.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for windsor-co-real-estate");
+    console.log("[prerender-all] Done: windsor-co-real-estate");
+  }
+  // --- timnath-co-real-estate ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-timnath-co-real-estate.js"));
+    const html = ssrMod.renderTimnathCoRealEstate();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_timnath_fc = SEO_METADATA_MAP["timnath-co-real-estate"];
+    const _seoBlock_timnath_fc = buildSeoHeadBlock({
+      title: _seoMeta_timnath_fc.title,
+      description: _seoMeta_timnath_fc.description,
+      canonical: _seoMeta_timnath_fc.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_timnath_fc.breadcrumbs),
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why do buyers keep Timnath in the search once they start driving it?","acceptedAnswer":{"@type":"Answer","text":"Because Timnath usually feels easier to sort out than a broader city search while still keeping access to nearby larger places in play."}},{"@type":"Question","name":"What kind of buyer usually chooses Timnath?","acceptedAnswer":{"@type":"Answer","text":"Usually someone who wants a newer-growth path, a cleaner search, and less internal complexity than Fort Collins."}},{"@type":"Question","name":"What kind of buyer usually moves on from Timnath?","acceptedAnswer":{"@type":"Answer","text":"Usually someone who wants more town identity, more city range, or a place with a more established center."}},{"@type":"Question","name":"Is Timnath just a simpler version of Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"Usually no. It is a different path. Fort Collins is a broader city decision. Timnath is a more streamlined newer-growth decision."}},{"@type":"Question","name":"When does Timnath make more sense than Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"When the buyer wants newer-growth simplicity more than city range or internal variation."}},{"@type":"Question","name":"When does Windsor make more sense than Timnath?","acceptedAnswer":{"@type":"Answer","text":"When the buyer wants more town identity, a stronger center, and a place that feels less like a growth lane."}},{"@type":"Question","name":"When does Loveland make more sense than Timnath?","acceptedAnswer":{"@type":"Answer","text":"When the buyer realizes they still want a city decision rather than a newer-growth town path."}},{"@type":"Question","name":"Is Timnath still growing fast?","acceptedAnswer":{"@type":"Answer","text":"Yes, and that growth is part of why the place feels like a newer-growth path rather than a broader town or city decision."}},{"@type":"Question","name":"Should I look at neighborhoods first or decide on Timnath first?","acceptedAnswer":{"@type":"Answer","text":"Usually decide on Timnath first. The cleaner move is to decide whether the newer-growth path is right before narrowing down further."}},{"@type":"Question","name":"Is this page trying to say Timnath is better than Fort Collins or Windsor?","acceptedAnswer":{"@type":"Answer","text":"No. It is here to help you figure out whether Timnath fits you better."}}]}],
+      slug: "timnath-co-real-estate",
+    });
+    const _injectedHtml_timnath_fc = injectSeoHead(prerenderedShell, _seoBlock_timnath_fc, _seoMeta_timnath_fc.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "timnath-co-real-estate.html"), _injectedHtml_timnath_fc, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "timnath-co-real-estate.html"), prerenderedShell, "utf-8");
+    const written_timnath_fc = readFileSync(resolve(serverPrerenderedDir, "timnath-co-real-estate.html"), "utf-8");
+    if (written_timnath_fc.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for timnath-co-real-estate");
+    console.log("[prerender-all] Done: timnath-co-real-estate");
+  }
+  // --- loveland-co-real-estate ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-loveland-co-real-estate.js"));
+    const html = ssrMod.renderLovelandCoRealEstate();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_loveland_fc = SEO_METADATA_MAP["loveland-co-real-estate"];
+    const _seoBlock_loveland_fc = buildSeoHeadBlock({
+      title: _seoMeta_loveland_fc.title,
+      description: _seoMeta_loveland_fc.description,
+      canonical: _seoMeta_loveland_fc.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_loveland_fc.breadcrumbs),
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why do buyers keep Loveland in the search once they start driving it?","acceptedAnswer":{"@type":"Answer","text":"Because Loveland usually feels like a real city option without forcing the exact same city decision as Fort Collins."}},{"@type":"Question","name":"What kind of buyer usually chooses Loveland?","acceptedAnswer":{"@type":"Answer","text":"Usually someone who still wants a city, but wants a different city fit than Fort Collins offers."}},{"@type":"Question","name":"What kind of buyer usually moves on from Loveland?","acceptedAnswer":{"@type":"Answer","text":"Usually someone who wants either more city range, a cleaner town-based path, or a newer-growth lane."}},{"@type":"Question","name":"Is Loveland just a fallback if Fort Collins does not work?","acceptedAnswer":{"@type":"Answer","text":"Usually no. It is a different city decision, not a leftover option."}},{"@type":"Question","name":"When does Loveland make more sense than Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"When the buyer still wants a city, but Fort Collins no longer feels like the clearest fit."}},{"@type":"Question","name":"When does Windsor make more sense than Loveland?","acceptedAnswer":{"@type":"Answer","text":"When the buyer wants a cleaner town-based path instead of another city decision."}},{"@type":"Question","name":"When does Timnath make more sense than Loveland?","acceptedAnswer":{"@type":"Answer","text":"When newer-growth simplicity matters more than city identity or established feel."}},{"@type":"Question","name":"Is Loveland too similar to Fort Collins to deserve its own page?","acceptedAnswer":{"@type":"Answer","text":"No. The point of this page is that it solves a different buyer decision."}},{"@type":"Question","name":"Should I look at neighborhoods first or decide on Loveland first?","acceptedAnswer":{"@type":"Answer","text":"Usually decide on Loveland first. The cleaner move is to decide whether this city path is right before narrowing down further."}},{"@type":"Question","name":"Is this page trying to say Loveland is better than Fort Collins or Windsor?","acceptedAnswer":{"@type":"Answer","text":"No. It is here to help you figure out whether Loveland fits you better."}}]}],
+      slug: "loveland-co-real-estate",
+    });
+    const _injectedHtml_loveland_fc = injectSeoHead(prerenderedShell, _seoBlock_loveland_fc, _seoMeta_loveland_fc.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "loveland-co-real-estate.html"), _injectedHtml_loveland_fc, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "loveland-co-real-estate.html"), prerenderedShell, "utf-8");
+    const written_loveland_fc = readFileSync(resolve(serverPrerenderedDir, "loveland-co-real-estate.html"), "utf-8");
+    if (written_loveland_fc.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for loveland-co-real-estate");
+    console.log("[prerender-all] Done: loveland-co-real-estate");
+  }
+  // --- wellington-co-real-estate ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-wellington-co-real-estate.js"));
+    const html = ssrMod.renderWellingtonCoRealEstate();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_wellington_fc = SEO_METADATA_MAP["wellington-co-real-estate"];
+    const _seoBlock_wellington_fc = buildSeoHeadBlock({
+      title: _seoMeta_wellington_fc.title,
+      description: _seoMeta_wellington_fc.description,
+      canonical: _seoMeta_wellington_fc.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_wellington_fc.breadcrumbs),
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why do buyers keep Wellington in the search once they start driving it?","acceptedAnswer":{"@type":"Answer","text":"Because Wellington usually feels smaller, quieter, and easier to sort out than a broader city path."}},{"@type":"Question","name":"What kind of buyer usually chooses Wellington?","acceptedAnswer":{"@type":"Answer","text":"Usually someone who wants a smaller-town decision, less map, and a place that feels easier to settle into."}},{"@type":"Question","name":"What kind of buyer usually moves on from Wellington?","acceptedAnswer":{"@type":"Answer","text":"Usually someone who wants more city range, a stronger town center, or a newer-growth lane."}},{"@type":"Question","name":"Is Wellington just the smaller version of Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"Usually no. It is a different path. Fort Collins is a broader city decision. Wellington is a smaller-town decision."}},{"@type":"Question","name":"When does Wellington make more sense than Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"When the buyer wants less city range and a smaller-town feel."}},{"@type":"Question","name":"When does Windsor make more sense than Wellington?","acceptedAnswer":{"@type":"Answer","text":"When the buyer wants more activity, a stronger center, and more built-out town feel."}},{"@type":"Question","name":"When does Timnath make more sense than Wellington?","acceptedAnswer":{"@type":"Answer","text":"When newer-growth simplicity matters more than smaller-town feel."}},{"@type":"Question","name":"Is Wellington too limited?","acceptedAnswer":{"@type":"Answer","text":"For some buyers, yes. For others, the smaller scale is exactly why it works."}},{"@type":"Question","name":"Should I look at neighborhoods first or decide on Wellington first?","acceptedAnswer":{"@type":"Answer","text":"Usually decide on Wellington first. The cleaner move is to decide whether the smaller-town path is right before narrowing down further."}},{"@type":"Question","name":"Is this page trying to say Wellington is better than the nearby options?","acceptedAnswer":{"@type":"Answer","text":"No. It is here to help you figure out whether Wellington fits you better."}}]}],
+      slug: "wellington-co-real-estate",
+    });
+    const _injectedHtml_wellington_fc = injectSeoHead(prerenderedShell, _seoBlock_wellington_fc, _seoMeta_wellington_fc.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "wellington-co-real-estate.html"), _injectedHtml_wellington_fc, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "wellington-co-real-estate.html"), prerenderedShell, "utf-8");
+    const written_wellington_fc = readFileSync(resolve(serverPrerenderedDir, "wellington-co-real-estate.html"), "utf-8");
+    if (written_wellington_fc.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for wellington-co-real-estate");
+    console.log("[prerender-all] Done: wellington-co-real-estate");
+  }
+  // --- old-town-fort-collins-real-estate ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-old-town-fort-collins-real-estate.js"));
+    const html = ssrMod.renderOldTownFortCollinsRealEstate();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_old_town_fc = SEO_METADATA_MAP["old-town-fort-collins-real-estate"];
+    const _seoBlock_old_town_fc = buildSeoHeadBlock({
+      title: _seoMeta_old_town_fc.title,
+      description: _seoMeta_old_town_fc.description,
+      canonical: _seoMeta_old_town_fc.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_old_town_fc.breadcrumbs),
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why do buyers keep Old Town in the search once they start spending time there?","acceptedAnswer":{"@type":"Answer","text":"Because Old Town usually feels like the center of Fort Collins in a way the broader city page cannot fully capture on its own."}},{"@type":"Question","name":"What kind of buyer usually chooses Old Town?","acceptedAnswer":{"@type":"Answer","text":"Usually someone who wants a more central, more established, more rooted version of the Fort Collins decision."}},{"@type":"Question","name":"What kind of buyer usually moves on from Old Town?","acceptedAnswer":{"@type":"Answer","text":"Usually someone who wants easier, newer, quieter, or less of the decision tied to the middle of the city."}},{"@type":"Question","name":"Is Old Town just the best part of Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"Usually no. It is a different fit, not a universal upgrade."}},{"@type":"Question","name":"When does Old Town make more sense than the rest of Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"When the buyer wants the center of the city to matter more than having the broadest range of options."}},{"@type":"Question","name":"When do newer parts of Fort Collins make more sense than Old Town?","acceptedAnswer":{"@type":"Answer","text":"When the buyer wants a cleaner, more straightforward, or less setting-driven search."}},{"@type":"Question","name":"Is Old Town too specific to deserve its own page?","acceptedAnswer":{"@type":"Answer","text":"No. It is the clearest first internal Fort Collins decision after the city-level hub."}},{"@type":"Question","name":"Should I decide on Fort Collins first or Old Town first?","acceptedAnswer":{"@type":"Answer","text":"Usually decide on Fort Collins first, then use Old Town to sort out whether the central core is actually the part that fits."}},{"@type":"Question","name":"Is Old Town trying to replace the Fort Collins hub?","acceptedAnswer":{"@type":"Answer","text":"No. The Fort Collins hub owns the city-level decision. Old Town owns a more specific internal decision."}},{"@type":"Question","name":"Is this page trying to say Old Town is better than the rest of Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"No. It is here to help you figure out whether Old Town fits you better."}}]}],
+      slug: "old-town-fort-collins-real-estate",
+    });
+    const _injectedHtml_old_town_fc = injectSeoHead(prerenderedShell, _seoBlock_old_town_fc, _seoMeta_old_town_fc.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "old-town-fort-collins-real-estate.html"), _injectedHtml_old_town_fc, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "old-town-fort-collins-real-estate.html"), prerenderedShell, "utf-8");
+    const written_old_town_fc = readFileSync(resolve(serverPrerenderedDir, "old-town-fort-collins-real-estate.html"), "utf-8");
+    if (written_old_town_fc.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for old-town-fort-collins-real-estate");
+    console.log("[prerender-all] Done: old-town-fort-collins-real-estate");
+  }
+  // --- midtown-fort-collins-real-estate ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-midtown-fort-collins-real-estate.js"));
+    const html = ssrMod.renderMidtownFortCollinsRealEstate();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_midtown_fc = SEO_METADATA_MAP["midtown-fort-collins-real-estate"];
+    const _seoBlock_midtown_fc = buildSeoHeadBlock({
+      title: _seoMeta_midtown_fc.title,
+      description: _seoMeta_midtown_fc.description,
+      canonical: _seoMeta_midtown_fc.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_midtown_fc.breadcrumbs),
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why do buyers keep Midtown in the search once they start driving it?","acceptedAnswer":{"@type":"Answer","text":"Because Midtown usually feels central, connected, and easier to picture in everyday life than the broader city page can capture by itself."}},{"@type":"Question","name":"What kind of buyer usually chooses Midtown?","acceptedAnswer":{"@type":"Answer","text":"Usually someone who wants central Fort Collins to matter, but does not need the decision to be all about the Old Town core."}},{"@type":"Question","name":"What kind of buyer usually moves on from Midtown?","acceptedAnswer":{"@type":"Answer","text":"Usually someone who wants either the stronger historic-core feel of Old Town or a cleaner outside-city path."}},{"@type":"Question","name":"Is Midtown just a less interesting version of Old Town?","acceptedAnswer":{"@type":"Answer","text":"Usually no. It is a different fit. Old Town is more core-driven. Midtown is more about central convenience and everyday usability."}},{"@type":"Question","name":"When does Midtown make more sense than Old Town?","acceptedAnswer":{"@type":"Answer","text":"When the buyer wants centrality and access, but not the whole decision tied to the older downtown core."}},{"@type":"Question","name":"When does Harmony or southeast Fort Collins make more sense than Midtown?","acceptedAnswer":{"@type":"Answer","text":"When the buyer wants a more access-driven part of Fort Collins and a little less central-city feel."}},{"@type":"Question","name":"Is Midtown too broad to deserve its own page?","acceptedAnswer":{"@type":"Answer","text":"No. Midtown solves a real internal Fort Collins decision that sits between Old Town and the broader city search."}},{"@type":"Question","name":"Should I decide on Fort Collins first or Midtown first?","acceptedAnswer":{"@type":"Answer","text":"Usually decide on Fort Collins first, then use Midtown to figure out whether the more central, more connected part of the city is the part that fits."}},{"@type":"Question","name":"Is Midtown trying to replace the Fort Collins hub?","acceptedAnswer":{"@type":"Answer","text":"No. The Fort Collins hub owns the city-level decision. Midtown owns a more specific internal decision."}},{"@type":"Question","name":"Is this page trying to say Midtown is better than the rest of Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"No. It is here to help you figure out whether Midtown fits you better."}}]}],
+      slug: "midtown-fort-collins-real-estate",
+    });
+    const _injectedHtml_midtown_fc = injectSeoHead(prerenderedShell, _seoBlock_midtown_fc, _seoMeta_midtown_fc.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "midtown-fort-collins-real-estate.html"), _injectedHtml_midtown_fc, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "midtown-fort-collins-real-estate.html"), prerenderedShell, "utf-8");
+    const written_midtown_fc = readFileSync(resolve(serverPrerenderedDir, "midtown-fort-collins-real-estate.html"), "utf-8");
+    if (written_midtown_fc.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for midtown-fort-collins-real-estate");
+    console.log("[prerender-all] Done: midtown-fort-collins-real-estate");
+  }
+  // --- harmony-fort-collins-real-estate ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-harmony-fort-collins-real-estate.js"));
+    const html = ssrMod.renderHarmonyFortCollinsRealEstate();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_harmony_fc = SEO_METADATA_MAP["harmony-fort-collins-real-estate"];
+    const _seoBlock_harmony_fc = buildSeoHeadBlock({
+      title: _seoMeta_harmony_fc.title,
+      description: _seoMeta_harmony_fc.description,
+      canonical: _seoMeta_harmony_fc.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_harmony_fc.breadcrumbs),
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why do buyers keep the Harmony area in the search once they start driving it?","acceptedAnswer":{"@type":"Answer","text":"Because it usually feels easier to organize around access and everyday movement than the broader city search does."}},{"@type":"Question","name":"What kind of buyer usually chooses the Harmony area?","acceptedAnswer":{"@type":"Answer","text":"Usually someone who wants a more practical, more corridor-driven, less core-centered version of Fort Collins."}},{"@type":"Question","name":"What kind of buyer usually moves on from the Harmony area?","acceptedAnswer":{"@type":"Answer","text":"Usually someone who wants either the stronger central feel of Midtown, the stronger core identity of Old Town, or a cleaner outside-city path."}},{"@type":"Question","name":"Is Harmony just another name for southeast Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"Not really. Harmony works best as a distinct internal decision, not just a compass label."}},{"@type":"Question","name":"When does Harmony make more sense than Midtown?","acceptedAnswer":{"@type":"Answer","text":"When the buyer wants more access-driven practicality and a little less central-city feel."}},{"@type":"Question","name":"When does Old Town make more sense than Harmony?","acceptedAnswer":{"@type":"Answer","text":"When the buyer wants the center of Fort Collins itself to matter more than ease of access and everyday convenience."}},{"@type":"Question","name":"Is Harmony too broad to deserve its own page?","acceptedAnswer":{"@type":"Answer","text":"No. It solves a real internal Fort Collins decision that is different from both Midtown and Old Town."}},{"@type":"Question","name":"Should I decide on Fort Collins first or Harmony first?","acceptedAnswer":{"@type":"Answer","text":"Usually decide on Fort Collins first, then use Harmony to sort out whether this more practical subarea is the part that fits."}},{"@type":"Question","name":"Is Harmony trying to replace the Fort Collins hub?","acceptedAnswer":{"@type":"Answer","text":"No. The Fort Collins hub owns the city-level decision. Harmony owns a more specific internal decision."}},{"@type":"Question","name":"Is this page trying to say Harmony is better than the rest of Fort Collins?","acceptedAnswer":{"@type":"Answer","text":"No. It is here to help you figure out whether Harmony fits you better."}}]}],
+      slug: "harmony-fort-collins-real-estate",
+    });
+    const _injectedHtml_harmony_fc = injectSeoHead(prerenderedShell, _seoBlock_harmony_fc, _seoMeta_harmony_fc.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "harmony-fort-collins-real-estate.html"), _injectedHtml_harmony_fc, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "harmony-fort-collins-real-estate.html"), prerenderedShell, "utf-8");
+    const written_harmony_fc = readFileSync(resolve(serverPrerenderedDir, "harmony-fort-collins-real-estate.html"), "utf-8");
+    if (written_harmony_fc.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for harmony-fort-collins-real-estate");
+    console.log("[prerender-all] Done: harmony-fort-collins-real-estate");
+  }
   // --- lyons-co-homes-for-sale ---
   {
     const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-lyons-co-homes-for-sale.js"));
@@ -3653,7 +3829,7 @@ async function prerenderAll() {
     if (!written_homepage.includes('<title ') && !written_homepage.includes('<title>')) throw new Error("[prerender-all] FAIL: no title tag in homepage output");
     console.log("[prerender-all] Done: homepage (/)");
   }
-  console.log("[prerender-all] All 97 routes complete.");
+  console.log("[prerender-all] All 105 routes complete.");
 }
 
 prerenderAll().catch((err) => {

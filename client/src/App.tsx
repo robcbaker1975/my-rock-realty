@@ -90,6 +90,13 @@ import ManitouSpringsCoHomesForSale from "./pages/ManitouSpringsCoHomesForSale";
 import WidefieldCoHomesForSale from "./pages/WidefieldCoHomesForSale";
 import PalmerLakeCoHomesForSale from "./pages/PalmerLakeCoHomesForSale";
 import FortCollinsCoHomesForSale from "./pages/FortCollinsCoHomesForSale";
+import WindsorCoRealEstate from "./pages/WindsorCoRealEstate";
+import TimnathCoRealEstate from "./pages/TimnathCoRealEstate";
+import LovelandCoRealEstate from "./pages/LovelandCoRealEstate";
+import WellingtonCoRealEstate from "./pages/WellingtonCoRealEstate";
+import OldTownFortCollinsRealEstate from "./pages/OldTownFortCollinsRealEstate";
+import MidtownFortCollinsRealEstate from "./pages/MidtownFortCollinsRealEstate";
+import HarmonyFortCollinsRealEstate from "./pages/HarmonyFortCollinsRealEstate";
 import FortCollinsHomesForSale from "./pages/FortCollinsHomesForSale";
 import LovelandCoHomesForSale from "./pages/LovelandCoHomesForSale";
 import WindsorCoHomesForSale from "./pages/WindsorCoHomesForSale";
@@ -230,6 +237,13 @@ function Router() {
       <Route path={"/widefield-co-homes-for-sale"} component={WidefieldCoHomesForSale} />
       <Route path={"/palmer-lake-co-homes-for-sale"} component={PalmerLakeCoHomesForSale} />
       <Route path={"/fort-collins-co-homes-for-sale"} component={FortCollinsCoHomesForSale} />
+      <Route path={"/windsor-co-real-estate"} component={WindsorCoRealEstate} />
+      <Route path={"/timnath-co-real-estate"} component={TimnathCoRealEstate} />
+      <Route path={"/loveland-co-real-estate"} component={LovelandCoRealEstate} />
+      <Route path={"/wellington-co-real-estate"} component={WellingtonCoRealEstate} />
+      <Route path={"/old-town-fort-collins-real-estate"} component={OldTownFortCollinsRealEstate} />
+      <Route path={"/midtown-fort-collins-real-estate"} component={MidtownFortCollinsRealEstate} />
+      <Route path={"/harmony-fort-collins-real-estate"} component={HarmonyFortCollinsRealEstate} />
       <Route path={"/fort-collins-homes-for-sale"} component={FortCollinsHomesForSale} />
       <Route path={"/loveland-co-homes-for-sale"} component={LovelandCoHomesForSale} />
       <Route path={"/windsor-co-homes-for-sale"} component={WindsorCoHomesForSale} />

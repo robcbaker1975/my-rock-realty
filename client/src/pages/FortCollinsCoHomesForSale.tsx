@@ -1,517 +1,610 @@
-/*
- * Fort Collins, CO Homes for Sale — My Rock Realty
- * Primary Larimer County authority hub page for the Fort Collins SEO cluster
+/**
+ * Fort Collins Hub — My Rock Realty
+ * Route: /fort-collins-co-homes-for-sale
+ * Content: fort_collins_cluster_package_v1 / approved_fort_collins_hub.md
  * Design: Front Range Modern — matches existing site design system
- * Palette: Warm charcoal, cream, antique gold
+ * Palette: Warm charcoal (#292524), cream (#F5F0EB), antique gold (#C9A96E)
  * Typography: Outfit (display) + Libre Franklin (body)
  */
-
-import { useState, useEffect } from "react";
-import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
+import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
-import {
-  ArrowRight,
-  ArrowLeft,
-  MapPin,
-  Home as HomeIcon,
-  TrendingUp,
-  Users,
-  Globe,
-  ChevronDown,
-  Phone,
-  Mail,
-  Building2,
-  Trees,
-  Star,
-  Compass,
-  BookOpen,
-  Bell,
-  Calendar,
-} from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, ChevronDown } from "lucide-react";
 
-/* Hero Background Image — Approved Denver metro aerial view */
-const FC_HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/denver-rowhouses-hero_2f59d4ac.jpg";
+const HERO_BG =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/denver-rowhouses-hero_2f59d4ac.jpg";
 
-/* ─── FAQ Content ─── */
 const faqContent = [
   {
-    question: "What are the most popular neighborhoods for buying a home in Fort Collins?",
+    question: "Why do buyers keep Fort Collins in the search once they start driving it?",
     answer:
-      "Popular Fort Collins neighborhoods for buyers include Old Town, Midtown, Southeast Fort Collins, Harmony Road corridor, and surrounding areas. Each neighborhood has its own character, housing mix, and price range. Buyers should research individual neighborhoods to find the best fit for their needs.",
+      "Because Fort Collins usually feels more real in person than it does online. Buyers start noticing the older center, the main corridors, the CSU background influence, and the fact that the city has more internal range than some nearby alternatives.",
   },
   {
-    question: "Are there good communities near Fort Collins for home buyers?",
+    question: "What kind of buyer usually chooses Fort Collins?",
     answer:
-      "Yes. Many buyers looking in the Fort Collins area also explore nearby communities in Larimer County that offer different price points, community characteristics, and access to outdoor recreation. Buyers should research the broader Larimer County area to understand their options.",
+      "Usually someone who wants a city with more identity, more internal variation, and a stronger sense of place than a simpler nearby path offers.",
   },
   {
-    question: "What types of homes can buyers find in Fort Collins?",
+    question: "What kind of buyer usually moves on from Fort Collins?",
     answer:
-      "Buyers can find a range of housing options in Fort Collins, including historic homes in Old Town, newer construction in suburban neighborhoods, condos, townhomes, and single-family homes across a variety of price ranges and community settings.",
+      "Usually someone who wants a tighter lane, a newer-growth path, a smaller-town feel, or a different city fit.",
   },
   {
-    question: "Is Fort Collins a competitive real estate market?",
+    question: "Is Fort Collins mostly a college-town decision?",
     answer:
-      "Fort Collins market conditions vary by neighborhood, price range, and season. Inventory levels and demand shift over time, so buyers should research current conditions and work with an agent familiar with the local market to understand what to expect.",
+      "Usually no. CSU shapes part of the city's feel, but Fort Collins usually reads as a broader city decision than that.",
   },
   {
-    question: "Where should I start if I want to buy a home in Fort Collins?",
+    question: "When does Windsor make more sense than Fort Collins?",
     answer:
-      "A good starting point is understanding your budget, getting pre-approved, learning about Fort Collins neighborhoods, and narrowing down areas that fit your priorities. Working with an agent familiar with the Fort Collins market can help you navigate the process.",
+      "When the buyer wants the broader area, but a town-based path feels cleaner and easier to commit to.",
   },
   {
-    question: "What makes Fort Collins different from Denver for home buyers?",
+    question: "When does Timnath make more sense than Fort Collins?",
     answer:
-      "Fort Collins offers a different community character, smaller city feel, and generally different price points compared to Denver. The two cities attract different buyer profiles and offer distinct lifestyle options. Buyers should research both to find the best fit for their situation.",
+      "When newer-growth simplicity matters more than city range or established feel.",
   },
   {
-    question: "How does the Fort Collins real estate market compare to surrounding areas?",
+    question: "When does Loveland make more sense than Fort Collins?",
     answer:
-      "Fort Collins tends to have different price points and inventory levels than nearby communities in Larimer County. Buyers often compare Fort Collins to surrounding areas to find the best fit for their budget and priorities.",
+      "When the real choice is between two city identities and Fort Collins no longer feels like the clearest fit.",
   },
   {
-    question: "What should I know about Fort Collins school districts?",
+    question: "When does Wellington make more sense than Fort Collins?",
     answer:
-      "Fort Collins is primarily served by Poudre School District, along with other districts in the surrounding area. Buyers should independently research specific schools and districts to understand what matters most for their family.",
+      "When a smaller-town direction sounds better than a broader city search.",
   },
   {
-    question: "What outdoor recreation is available near Fort Collins?",
+    question: "Should I narrow down neighborhoods inside Fort Collins before deciding on Fort Collins itself?",
     answer:
-      "Fort Collins provides access to hiking, cycling, fishing, and outdoor activities in the Rocky Mountain foothills and nearby natural areas. Buyers interested in outdoor access should research specific areas and proximity to trails, parks, and recreation opportunities that matter to them.",
+      "Usually no. The cleaner move is to decide on the city first, then narrow down inside it.",
+  },
+  {
+    question: "Is this page trying to say Fort Collins is better than the nearby options?",
+    answer:
+      "No. It is here to help you figure out whether Fort Collins fits you better.",
   },
 ];
 
-/* ─── FAQ Accordion ─── */
-function FAQItem({ question, answer }: { question: string; answer: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border-b border-charcoal/10 last:border-0">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-5 px-1 text-left gap-4 group"
-      >
-        <span
-          className="text-[15px] sm:text-base font-semibold text-charcoal leading-snug"
-          style={{ fontFamily: "'Outfit', sans-serif" }}
-        >
-          {question}
-        </span>
-        <ChevronDown
-          size={20}
-          className={`shrink-0 text-gold transition-transform duration-200 ${open ? "rotate-180" : ""}`}
-        />
-      </button>
-      <div
-        className={`overflow-hidden transition-all duration-300 ${open ? "max-h-60 pb-5" : "max-h-0"}`}
-      >
-        <p className="text-[14px] sm:text-[15px] text-charcoal/70 leading-relaxed px-1">
-          {answer}
-        </p>
-      </div>
-    </div>
-  );
-}
-
-/* ─── Internal Link Card ─── */
-function LinkCard({ href, label }: { href: string; label: string }) {
-  return (
-    <a
-      href={href}
-      className="block bg-white border border-charcoal/10 rounded-lg px-4 py-3 text-sm font-medium text-charcoal hover:border-gold hover:text-gold transition-colors duration-150"
-      style={{ fontFamily: "'Outfit', sans-serif" }}
-    >
-      {label}
-      <ArrowRight size={13} className="inline ml-1.5 opacity-60" />
-    </a>
-  );
-}
+const faqSchema = buildFAQPageSchema(faqContent);
 
 const breadcrumbItems = [
   { label: "Home", url: "/" },
-  { label: "Fort Collins, CO Homes for Sale", url: "/fort-collins-co-homes-for-sale" },
+  { label: "Fort Collins", url: "/fort-collins-co-homes-for-sale" },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 export default function FortCollinsCoHomesForSale() {
-  const faqSchema = buildFAQPageSchema(faqContent);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
-          title: "Fort Collins, CO Homes for Sale | Fort Collins Real Estate & Larimer County Homes",
+          title:
+            "Living in Fort Collins, Colorado: Real Estate, Tradeoffs, and What It's Like",
           description:
-            "Explore Fort Collins homes for sale, popular neighborhoods, nearby communities, property types, and local home buying resources for the Fort Collins and Larimer County area.",
-          canonicalUrl: "https://myrockhomes.com/fort-collins-co-homes-for-sale",
+            "Thinking about Fort Collins? Here is what Fort Collins actually feels like, who it fits, where it gets harder, and how it compares with Windsor, Timnath, Loveland, and Wellington.",
+          canonicalUrl:
+            "https://myrockhomes.com/fort-collins-co-homes-for-sale/",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}
       />
-
-      {/* ═══════════════════════════════════════════════════
-          BREADCRUMBS
-      ═══════════════════════════════════════════════════ */}
+      {/* BREADCRUMBS */}
       <div className="bg-charcoal">
         <div className="container py-3">
           <Breadcrumbs items={breadcrumbItems} />
         </div>
       </div>
-
-      {/* ═══════════════════════════════════════════════════
-          HEADER
-      ═══════════════════════════════════════════════════ */}
-      <header className="bg-charcoal">
-        <div className="container flex items-center justify-center sm:justify-between py-3 sm:py-4">
-          <a
-            href="/"
-            className="text-cream font-bold text-lg sm:text-xl tracking-tight"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            My Rock Realty
-          </a>
-          <a
-            href="/"
-            className="absolute top-4 right-4 sm:static text-cream/70 hover:text-gold text-xs sm:text-sm font-medium transition-colors inline-flex items-center gap-1.5"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            <ArrowLeft size={14} />
-            Back to Main Site
-          </a>
-        </div>
-      </header>
-
-      {/* ═══════════════════════════════════════════════════
-          1. HERO — Fort Collins Homes for Sale
-      ═══════════════════════════════════════════════════ */}
+      {/* 1. HERO */}
       <section className="relative bg-charcoal overflow-hidden">
-        {/* Hero Background Image */}
         <img
-          src={FC_HERO_BG}
-          alt="Row houses along a residential street in Fort Collins"
+          src={HERO_BG}
+          alt="Fort Collins, Colorado real estate"
           className="absolute inset-0 w-full h-full object-cover object-center"
-        
           width="1600"
           height="900"
           fetchPriority="high"
           decoding="async"
         />
-        {/* Gradient Overlay — ensures text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
-        <div className="container relative z-10 py-14 sm:py-20 lg:py-24">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-gold/15 border border-gold/30 rounded-full px-4 py-1.5 mb-6">
-              <MapPin size={13} className="text-gold" />
-              <span
-                className="text-gold text-xs sm:text-sm font-semibold tracking-wide"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                LARIMER COUNTY · COLORADO
-              </span>
-            </div>
+        <div className="container relative z-10 py-16 sm:py-20 md:py-24">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            className="max-w-2xl"
+          >
             <h1
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cream leading-tight mb-5"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Fort Collins, CO Homes for Sale
+              Living in Fort Collins, Colorado: Real Estate, Tradeoffs, and What It's Like
             </h1>
-            <p className="text-cream/80 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
-              Explore Fort Collins neighborhoods, surrounding communities, and property types. Whether you're buying your first home, relocating, or exploring Larimer County, this is your starting point.
+          </motion.div>
+        </div>
+      </section>
+      {/* 2. Intro */}
+      <section className="py-16 sm:py-20 bg-cream">
+        <div className="container max-w-2xl">
+          <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              A lot of buyers land on Fort Collins early in the search.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="mailto:rob@myrockhomes.com?subject=Fort Collins Home Buying Consultation"
-                className="inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 bg-gold text-charcoal hover:bg-gold-light hover:shadow-lg px-7 py-4 text-[15px] sm:text-base no-underline"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                <Calendar size={16} />
-                Schedule a Home Buying Consultation
-              </a>
-              <a
-                href="mailto:rob@myrockhomes.com?subject=New Fort Collins Listings — Alert Request"
-                className="inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 border-2 border-gold text-gold hover:bg-gold hover:text-charcoal px-6 py-3 text-sm no-underline"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                <Bell size={15} />
-                Get Alerts for New Fort Collins Homes
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          2. LIVING IN FORT COLLINS: LIFESTYLE & AMENITIES
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-4"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Living in Fort Collins: Lifestyle &amp; Amenities
-          </h2>
-          <p className="text-charcoal/70 leading-relaxed mb-6">
-            Fort Collins offers a combination of outdoor recreation access, a walkable Old Town district, diverse neighborhoods, and a community character that appeals to a range of buyers. The city sits along the Front Range and provides access to the Rocky Mountain foothills and natural areas throughout the year.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {[
-              { icon: Trees, label: "Outdoor Access" },
-              { icon: Building2, label: "Old Town District" },
-              { icon: Compass, label: "Front Range Setting" },
-              { icon: Star, label: "Community Character" },
-            ].map(({ icon: Icon, label }) => (
-              <div key={label} className="bg-white border border-charcoal/8 rounded-lg p-4 text-center">
-                <Icon size={22} className="text-gold mx-auto mb-2" />
-                <p className="text-xs sm:text-sm font-medium text-charcoal" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                  {label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          3. WHY PEOPLE CHOOSE TO LIVE IN FORT COLLINS
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-charcoal/3">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-4"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Why People Choose to Live in Fort Collins
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-5">
-            {[
-              { title: "Outdoor Recreation Access", body: "Fort Collins provides access to hiking, cycling, fishing, and outdoor activities in the Rocky Mountain foothills and nearby natural areas. Buyers interested in outdoor access should research specific areas and proximity to trails and parks." },
-              { title: "Old Town Character", body: "Fort Collins' Old Town district offers a walkable area with local businesses, restaurants, and community events. The historic character of Old Town is a draw for buyers who value walkability and community atmosphere." },
-              { title: "Neighborhood Variety", body: "From historic Old Town homes to newer suburban developments, Fort Collins offers a range of neighborhood characters and housing styles to suit different buyer preferences and budgets." },
-              { title: "Front Range Location", body: "Fort Collins sits along the Front Range corridor, providing access to mountain recreation, natural scenery, and proximity to other Colorado communities. Buyers should research specific locations and commute considerations." },
-            ].map(({ title, body }) => (
-              <div key={title} className="bg-white border border-charcoal/8 rounded-lg p-5">
-                <h3 className="text-base font-semibold text-charcoal mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                  {title}
-                </h3>
-                <p className="text-sm text-charcoal/70 leading-relaxed">{body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          4. RELOCATING TO FORT COLLINS
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-4"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Relocating to Fort Collins
-          </h2>
-          <p className="text-charcoal/70 leading-relaxed mb-5">
-            Relocating to Fort Collins from another state involves more than finding the right home. Understanding the market, neighborhoods, outdoor access, and buying process from a distance requires a clear strategy.
-          </p>
-          <p className="text-charcoal/70 leading-relaxed mb-6">
-            Buyers should independently research schools, crime data, neighborhood characteristics, demographics, and other community factors that are important to them.
-          </p>
-          <a
-            href="/relocation/relocating-to-denver-colorado"
-            className="inline-flex items-center gap-2 text-gold font-semibold text-sm hover:underline"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Relocating to Colorado — Home Buying Guide
-            <ArrowRight size={14} />
-          </a>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          5. FORT COLLINS REAL ESTATE MARKET OVERVIEW
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-charcoal/3">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-4"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Fort Collins Real Estate Market Overview
-          </h2>
-          <p className="text-charcoal/70 leading-relaxed mb-5">
-            The Fort Collins real estate market varies by neighborhood, price range, and season. Buyers should research current conditions and work with an agent familiar with local market dynamics to understand what to expect.
-          </p>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {[
-              { icon: TrendingUp, label: "Market Conditions", body: "Fort Collins market conditions shift over time. Preparation, research, and working with a knowledgeable agent can help buyers navigate the process." },
-              { icon: HomeIcon, label: "Price Ranges", body: "Fort Collins offers options from condos and townhomes to larger single-family homes across a range of price points and neighborhood settings." },
-              { icon: Users, label: "Buyer Considerations", body: "Well-priced homes in desirable areas can move quickly. Strategy, preparation, and understanding neighborhood-specific dynamics are important for buyers." },
-            ].map(({ icon: Icon, label, body }) => (
-              <div key={label} className="bg-white border border-charcoal/8 rounded-lg p-5">
-                <Icon size={20} className="text-gold mb-3" />
-                <h3 className="text-sm font-semibold text-charcoal mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                  {label}
-                </h3>
-                <p className="text-xs text-charcoal/70 leading-relaxed">{body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          6. FORT COLLINS NEIGHBORHOODS & COMMUNITIES
-      ═══════════════════════════════════════════════════ */}
-      {/* ═══════════════════════════════════════════════════
-          7. FORT COLLINS PROPERTY TYPES
-      ═══════════════════════════════════════════════════ */}
-      {/* ═══════════════════════════════════════════════════
-          8. FORT COLLINS VS OTHER COLORADO CITIES
-      ═══════════════════════════════════════════════════ */}
-      {/* ═══════════════════════════════════════════════════
-          9. FORT COLLINS HOME BUYING RESOURCES
-      ═══════════════════════════════════════════════════ */}
-      {/* ═══════════════════════════════════════════════════
-          10. BROWSE FORT COLLINS HOMES BY PRICE
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Browse Fort Collins Homes by Price
-          </h2>
-          <p className="text-charcoal/60 text-sm mb-6">
-            Price range browsing will be available here. Contact Rob to discuss what fits your budget.
-          </p>
-          <div className="bg-white border border-charcoal/10 rounded-lg p-6 text-center">
-            <p className="text-sm text-charcoal/60 mb-4">
-              Looking for homes in a specific price range? Rob can help you understand what's available and what to expect at each price point in the Fort Collins market.
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              Sometimes it is because of CSU. Sometimes it is because of the outdoor access. Sometimes it is because someone they know lives there, or because it came up in a search for Northern Colorado.
             </p>
-            <a
-              href="mailto:rob@myrockhomes.com?subject=Fort Collins Homes — Price Range Question"
-              className="inline-flex items-center gap-2 text-gold font-semibold text-sm hover:underline"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              <Mail size={14} />
-              Ask About Fort Collins Home Prices
-            </a>
-          </div>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              However it shows up, Fort Collins usually stays in the conversation longer than buyers expect.
+            </p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              This page is not here to sell you on Fort Collins.
+            </p>
+            <p className="text-lg text-charcoal/80 leading-relaxed">
+              It is here to help you figure out whether Fort Collins actually fits the way you want to live, and how it compares honestly with Windsor, Timnath, Loveland, and Wellington.
+            </p>
+          </motion.div>
         </div>
       </section>
-
-      {/* ═══════════════════════════════════════════════════
-          11. FEATURED FORT COLLINS LISTINGS
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-charcoal/3">
-        <div className="container max-w-4xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-2"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Featured Fort Collins Listings
-          </h2>
-          {/* ── LIVE IDX LISTING FEED ── */}
-          <BuyingBuddyWidget type="SearchResults" filter="city:Fort Collins mappos:40.5853,-105.0844 mapzoom:12" />
-          {/* ── END IDX LISTING FEED ── */}
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          12. FORT COLLINS REAL ESTATE FAQs
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-16 bg-warm-white">
-        <div className="container max-w-3xl mx-auto">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-8"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Fort Collins Real Estate FAQs
-          </h2>
-          <div className="bg-white border border-charcoal/8 rounded-xl px-6 py-2">
-            {faqContent.map((item) => (
-              <FAQItem key={item.question} question={item.question} answer={item.answer} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          13. FINAL CTA
-      ═══════════════════════════════════════════════════ */}
+      {/* 3. What Fort Collins feels like */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl mx-auto text-center">
-          <h2
-            className="text-2xl sm:text-3xl font-bold text-cream mb-4"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Ready to Explore Fort Collins Homes?
-          </h2>
-          <p className="text-cream/70 text-base leading-relaxed mb-8">
-            Rob Baker works with Colorado buyers, sellers, and relocating families. Schedule a consultation to discuss your goals and get a clear plan for the Fort Collins market.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="mailto:rob@myrockhomes.com?subject=Fort Collins Home Buying Consultation"
-              className="inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 bg-gold text-charcoal hover:bg-gold-light hover:shadow-lg px-7 py-4 text-[15px] sm:text-base no-underline"
+        <div className="container max-w-2xl">
+          <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-cream mb-8"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              <Calendar size={16} />
-              Schedule a Home Buying Consultation
-            </a>
-            <a
-              href="mailto:rob@myrockhomes.com?subject=New Fort Collins Listings — Browse Request"
-              className="inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 border-2 border-gold text-gold hover:bg-gold hover:text-charcoal px-6 py-3 text-sm no-underline"
+              What Fort Collins feels like
+            </h2>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              Fort Collins usually feels more like a real city than buyers expect from Northern Colorado.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              There is an older center, a main street corridor, a university presence that shapes the energy without dominating it, and enough internal variety that the search can go in more than one direction.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              It does not feel like a suburb that grew up. It feels like a city that has been there for a while.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              That is part of what keeps buyers here once they start driving it.
+            </p>
+            <p className="text-lg text-cream/80 leading-relaxed">
+              The tradeoffs are real too. Fort Collins is not the cheapest path in Northern Colorado. It is not the simplest. And it is not the right fit for every buyer.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+      {/* 4. Why Fort Collins stays in the conversation */}
+      <section className="py-16 sm:py-20 bg-cream">
+        <div className="container max-w-2xl">
+          <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Browse New Fort Collins Listings
-              <ArrowRight size={14} />
-            </a>
-          </div>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center text-cream/50 text-xs">
-            <a href="tel:+17203636544" className="inline-flex items-center gap-1.5 hover:text-gold transition-colors">
-              <Phone size={12} />
-              720-363-6544
-            </a>
-            <a href="mailto:rob@myrockhomes.com" className="inline-flex items-center gap-1.5 hover:text-gold transition-colors">
-              <Mail size={12} />
-              rob@myrockhomes.com
-            </a>
-            <a href="/" className="inline-flex items-center gap-1.5 hover:text-gold transition-colors">
-              <Globe size={12} />
-              myrockhomes.com
-            </a>
+              Why Fort Collins stays in the conversation
+            </h2>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              Fort Collins usually stays in the conversation because it gives buyers more internal range than the nearby alternatives.
+            </p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              The search does not have to commit to one lane early. Old Town, Midtown, the Harmony corridor, and the surrounding areas all offer different versions of Fort Collins life.
+            </p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              That flexibility matters for buyers who are not yet sure which version of Northern Colorado they want.
+            </p>
+            <p className="text-lg text-charcoal/80 leading-relaxed">
+              It also matters for buyers who already know they want a city with more identity and more of a lived-in feel.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+      {/* 5. Who Fort Collins tends to fit */}
+      <section className="py-16 sm:py-20 bg-charcoal">
+        <div className="container max-w-2xl">
+          <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-cream mb-8"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Who Fort Collins tends to fit
+            </h2>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              Fort Collins tends to fit buyers who want:
+            </p>
+            <ul className="space-y-3 mb-8">
+              {[
+                "a city with more identity and internal range",
+                "more than one way for the search to work",
+                "an established feel without going all the way to Denver",
+                "a university-adjacent energy that stays in the background",
+                "outdoor access without giving up city character",
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3 text-cream/80">
+                  <ArrowRight size={16} className="text-gold mt-1 flex-shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-lg text-cream/80 leading-relaxed">
+              It can also fit buyers who want a Northern Colorado base that does not feel like a compromise.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+      {/* 6. Who may not love Fort Collins */}
+      <section className="py-16 sm:py-20 bg-cream">
+        <div className="container max-w-2xl">
+          <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Who may not love Fort Collins
+            </h2>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              Fort Collins may not be the best fit if you want:
+            </p>
+            <ul className="space-y-3 mb-8">
+              {[
+                "a simpler, newer-growth path",
+                "a smaller-town feel with less city complexity",
+                "a lower price point without giving up the region",
+                "a search that narrows faster and commits earlier",
+                "a place where the city itself matters less than the house",
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3 text-charcoal/80">
+                  <ArrowRight size={16} className="text-gold mt-1 flex-shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-lg text-charcoal/80 leading-relaxed">
+              A lot of buyers do not move off Fort Collins because it is wrong. They move off it because they realize they want something narrower, simpler, or more specific.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+      {/* 7. What the home search usually turns into */}
+      <section className="py-16 sm:py-20 bg-charcoal">
+        <div className="container max-w-2xl">
+          <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-cream mb-8"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              What the home search usually turns into
+            </h2>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              A search in Fort Collins usually becomes less about Northern Colorado in general and more about which version of Northern Colorado actually fits.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              At first, buyers often keep Fort Collins, Windsor, Timnath, Loveland, and Wellington all open at the same time.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              Then the search starts dividing itself.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              Do you want a city that feels more established? Do you want a simpler town-based path? Do you want newer growth? Do you want something smaller?
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              For some buyers, Fort Collins gets stronger as those questions get answered.
+            </p>
+            <p className="text-lg text-cream/80 leading-relaxed">
+              For others, this page helps them realize they belong in a different branch of the search entirely.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+      {/* 8. The tradeoffs */}
+      <section className="py-16 sm:py-20 bg-cream">
+        <div className="container max-w-2xl">
+          <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              The tradeoffs are the whole point
+            </h2>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              Fort Collins costs more than Wellington. It is more complex than Timnath. It has more city character than Windsor.
+            </p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              Those are not problems. They are the tradeoffs.
+            </p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              The question is whether those tradeoffs work in your direction.
+            </p>
+            <p className="text-lg text-charcoal/80 leading-relaxed">
+              If the city identity, the internal range, and the established feel are worth what Fort Collins asks for them, it usually makes sense. If they are not, the nearby alternatives usually make more sense.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+      {/* 9. Fort Collins vs nearby alternatives */}
+      <section className="py-16 sm:py-20 bg-charcoal">
+        <div className="container max-w-2xl">
+          <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-cream mb-8"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Fort Collins vs nearby alternatives
+            </h2>
+            <div className="space-y-8">
+              {[
+                {
+                  heading: "Fort Collins vs Windsor",
+                  body: "Fort Collins usually makes more sense when the buyer wants a more established city feel and more than one way for the search to work. Windsor usually starts making more sense when a town-based path feels cleaner and easier to commit to.",
+                },
+                {
+                  heading: "Fort Collins vs Timnath",
+                  body: "Fort Collins usually makes more sense when the buyer wants a more established city feel and more than one way for the search to work. Timnath usually starts making more sense when newer-growth simplicity is the main draw.",
+                },
+                {
+                  heading: "Fort Collins vs Loveland",
+                  body: "If Fort Collins stays ahead, it is usually because the buyer wants its specific mix of city feel, central identity, and internal range. If Loveland starts winning, it is usually because Fort Collins no longer feels like the clearest fit.",
+                },
+                {
+                  heading: "Fort Collins vs Wellington",
+                  body: "Fort Collins usually makes more sense when the buyer wants a broader city search and more internal layers. Wellington usually gets stronger when a smaller-town direction sounds better and giving up some city range feels worth it.",
+                },
+              ].map(({ heading, body }, idx) => (
+                <div key={idx}>
+                  <h3
+                    className="text-xl font-bold text-gold mb-3"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    {heading}
+                  </h3>
+                  <p className="text-lg text-cream/80 leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+      {/* 10. What people tend to underestimate */}
+      <section className="py-16 sm:py-20 bg-cream">
+        <div className="container max-w-2xl">
+          <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              What people tend to underestimate
+            </h2>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              People often underestimate that Fort Collins is not really a hype decision.
+            </p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              It is a fit decision.
+            </p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              Some buyers underestimate how much they will value a city with more identity and more internal variety. Others underestimate how quickly they will realize they want something narrower, newer, or simpler.
+            </p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              They also underestimate how different the nearby options actually are.
+            </p>
+            <p className="text-lg text-charcoal/80 leading-relaxed">
+              Windsor, Timnath, Loveland, and Wellington are not just nearby names. They are usually the next honest branches in the search.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+      {/* 11. Buy now or rent first */}
+      <section className="py-16 sm:py-20 bg-charcoal">
+        <div className="container max-w-2xl">
+          <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-cream mb-8"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Buy now or rent first
+            </h2>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              This usually comes down to whether you have answered the city-fit question yet.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              If you already know Fort Collins is where you want the search to stay, buying can make sense once the right house and numbers line up.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              If you still are not sure whether you want Fort Collins or one of the nearby alternatives, renting first can make a lot of sense.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              Not because renting is automatically smarter.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              Because clarity is.
+            </p>
+            <p className="text-lg text-cream/80 leading-relaxed">
+              A short rent-first period can help when the real issue is not whether you want Northern Colorado. It is whether you want <strong>Fort Collins specifically</strong>.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+      {/* 12. FAQ */}
+      <section className="py-16 sm:py-20 bg-cream">
+        <div className="container max-w-2xl">
+          <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-charcoal mb-10"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              FAQ
+            </h2>
+          </motion.div>
+          <div className="space-y-2">
+            {faqContent.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial="hidden"
+                whileInView="visible"
+                variants={fadeUp}
+                className="bg-white rounded-lg border border-charcoal/10"
+              >
+                <button
+                  onClick={() =>
+                    setExpandedFaq(expandedFaq === idx ? null : idx)
+                  }
+                  className="w-full flex items-center justify-between px-6 py-5 text-left gap-4"
+                >
+                  <h3
+                    className="text-base font-semibold text-charcoal leading-snug"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    {item.question}
+                  </h3>
+                  <ChevronDown
+                    size={20}
+                    className={`text-gold flex-shrink-0 transition-transform ${
+                      expandedFaq === idx ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {expandedFaq === idx && (
+                  <div className="px-6 pb-6 border-t border-charcoal/10 text-charcoal/80 leading-relaxed">
+                    {item.answer}
+                  </div>
+                )}
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
-
-      {/* ═══════════════════════════════════════════════════
-          FOOTER
-      ═══════════════════════════════════════════════════ */}
-      <footer className="bg-charcoal/95 border-t border-white/5 py-8">
-        <div className="container max-w-4xl mx-auto">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-cream/40 text-xs">
-            <p style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
-              © {new Date().getFullYear()} My Rock Realty · Rob Baker · Licensed Colorado Real Estate Broker
+      {/* 13. Final thoughts */}
+      <section className="py-16 sm:py-20 bg-charcoal">
+        <div className="container max-w-2xl">
+          <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-cream mb-8"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Final thoughts
+            </h2>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              Fort Collins usually stays strong for buyers who want the city itself to matter.
             </p>
-            <div className="flex gap-4">
-              <a href="/privacy" className="hover:text-gold transition-colors">Privacy</a>
-              <a href="/fair-housing" className="hover:text-gold transition-colors">Fair Housing</a>
-              <a href="/accessibility" className="hover:text-gold transition-colors">Accessibility</a>
-            </div>
-          </div>
-          <p className="text-cream/25 text-[11px] mt-4 text-center leading-relaxed" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
-            All information is deemed reliable but not guaranteed. Buyers should independently research schools, crime data, neighborhood characteristics, and other community factors important to them. Real estate market conditions vary and change over time.
-          </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              Not just the house.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              Not just the price point.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              The city.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              If you want a place with more identity, more range, and more of a lived-in feel once the move gets real, Fort Collins deserves a serious look.
+            </p>
+            <p className="text-lg text-cream/80 leading-relaxed">
+              If that does not sound like what you want, that is useful too. It usually means the right next step is not to force Fort Collins to fit. It is to compare it honestly against the nearby paths buyers usually weigh next.
+            </p>
+          </motion.div>
         </div>
-      </footer>
+      </section>
+      {/* 14. Endcap */}
+      <section className="py-16 sm:py-20 bg-cream">
+        <div className="container max-w-2xl">
+          <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
+            <h2
+              className="text-2xl font-bold text-charcoal mb-4"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Still trying to sort out Fort Collins, Windsor, Timnath, Loveland, and Wellington?
+            </h2>
+            <p className="text-lg text-charcoal/80 mb-8 leading-relaxed">
+              That is usually where the search gets more useful. A lot of buyers start with the house first. Most of the time, what helps more is getting clear on which place fits the way you want everyday life to work before you get too far into listings.
+            </p>
+            <div className="space-y-3 mb-10">
+              {[
+                {
+                  label: "Talk to Rob About Fort Collins vs the Nearby Options →",
+                  href: "/#contact",
+                },
+                {
+                  label: "Start Narrowing Fort Collins Against the Other Paths →",
+                  href: "/#contact",
+                },
+              ].map((link, idx) => (
+                <a
+                  key={idx}
+                  href={link.href}
+                  className="flex items-center gap-2 text-gold hover:text-gold/80 transition-colors font-semibold text-lg"
+                >
+                  <ArrowRight size={16} />
+                  {link.label}
+                </a>
+              ))}
+            </div>
+            <h2
+              className="text-2xl font-bold text-charcoal mb-6"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Compare nearby
+            </h2>
+            <div className="space-y-3 mb-10">
+              {[
+                { label: "Windsor →", href: "/windsor-co-real-estate" },
+                { label: "Timnath →", href: "/timnath-co-real-estate" },
+                { label: "Loveland →", href: "/loveland-co-real-estate" },
+                { label: "Wellington →", href: "/wellington-co-real-estate" },
+              ].map((link, idx) => (
+                <a
+                  key={idx}
+                  href={link.href}
+                  className="flex items-center gap-2 text-gold hover:text-gold/80 transition-colors font-semibold text-lg"
+                >
+                  <ArrowRight size={16} />
+                  {link.label}
+                </a>
+              ))}
+            </div>
+            <h2
+              className="text-2xl font-bold text-charcoal mb-6"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Keep exploring
+            </h2>
+            <div className="space-y-3">
+              {[
+                {
+                  label: "Old Town Fort Collins →",
+                  href: "/old-town-fort-collins-real-estate",
+                },
+                {
+                  label: "Midtown Fort Collins →",
+                  href: "/midtown-fort-collins-real-estate",
+                },
+                {
+                  label: "Harmony Fort Collins →",
+                  href: "/harmony-fort-collins-real-estate",
+                },
+                {
+                  label: "Colorado Home Buying Workshop →",
+                  href: "/colorado-home-buying-workshop",
+                },
+              ].map((link, idx) => (
+                <a
+                  key={idx}
+                  href={link.href}
+                  className="flex items-center gap-2 text-gold hover:text-gold/80 transition-colors font-semibold text-lg"
+                >
+                  <ArrowRight size={16} />
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }
