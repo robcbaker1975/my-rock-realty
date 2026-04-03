@@ -48,7 +48,7 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "boulder-homes-for-sale": {
-    title: "Boulder CO Homes for Sale | Real Estate & Living Guide | My Rock Realty",
+    title: "Boulder CO Homes for Sale | Real Estate & Living Guide",
     description:
       "Explore Boulder CO homes for sale and see whether Boulder fits your move better than Longmont, Lafayette, or other Front Range options.",
     canonical: "https://myrockhomes.com/boulder-homes-for-sale/",
@@ -59,7 +59,7 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "fort-collins-co-homes-for-sale": {
-    title: "Fort Collins CO Homes for Sale | Real Estate & Living Guide | My Rock Realty",
+    title: "Fort Collins CO Homes for Sale | Real Estate & Living Guide",
     description:
       "Explore Fort Collins CO homes for sale and see how Fort Collins compares with Windsor, Loveland, and nearby Northern Colorado options for buyers narrowing their move.",
     canonical: "https://myrockhomes.com/fort-collins-co-homes-for-sale/",
@@ -114,7 +114,7 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "old-town-fort-collins-real-estate": {
-    title: "Old Town Fort Collins Real Estate | Homes & Living Guide | My Rock Realty",
+    title: "Old Town Fort Collins Real Estate | Homes & Living Guide",
     description:
       "Explore Old Town Fort Collins real estate and see whether central, established Fort Collins fits better than newer or less central options.",
     canonical: "https://myrockhomes.com/old-town-fort-collins-real-estate/",
@@ -172,7 +172,7 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "greeley-homes-for-sale": {
-    title: "Greeley Homes for Sale | Real Estate & Area Guide | My Rock Realty",
+    title: "Greeley CO Homes for Sale | Real Estate & Living Guide",
     description:
       "Explore Greeley homes for sale and see how Greeley compares with Fort Collins and nearby Northern Colorado options for buyers who want a different pace or price point.",
     canonical: "https://myrockhomes.com/greeley-homes-for-sale/",
@@ -183,7 +183,7 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "loveland-co-homes-for-sale": {
-    title: "Loveland CO Homes for Sale | Real Estate & Area Guide | My Rock Realty",
+    title: "Loveland CO Homes for Sale | Real Estate & Area Guide",
     description:
       "Explore Loveland CO homes for sale and see how Loveland compares with Fort Collins and nearby Northern Colorado options for buyers narrowing their move.",
     canonical: "https://myrockhomes.com/loveland-co-homes-for-sale/",
@@ -346,7 +346,7 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "johnstown-co-homes-for-sale": {
-    title: "Johnstown CO Homes for Sale | Real Estate & Area Guide | My Rock Realty",
+    title: "Johnstown CO Homes for Sale | Real Estate & Area Guide",
     description:
       "Explore Johnstown CO homes for sale and compare Johnstown with Fort Collins and Loveland for buyers seeking newer suburban options.",
     canonical: "https://myrockhomes.com/johnstown-co-homes-for-sale/",
@@ -566,7 +566,7 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "colorado-springs-co-homes-for-sale": {
-    title: "Colorado Springs CO Homes for Sale | Real Estate & Living Guide | My Rock Realty",
+    title: "Colorado Springs CO Homes for Sale | Area Guide",
     description:
       "Explore Colorado Springs CO homes for sale and see how Colorado Springs compares with Black Forest, Monument, and Palmer Lake for buyers narrowing their move.",
     canonical: "https://myrockhomes.com/colorado-springs-co-homes-for-sale/",
@@ -599,7 +599,7 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "black-forest-co-real-estate": {
-    title: "Black Forest CO Real Estate | Homes & Living Guide | My Rock Realty",
+    title: "Black Forest CO Real Estate | Homes, Land & Lifestyle",
     description:
       "Explore Black Forest CO real estate and see how Black Forest compares with Colorado Springs and Monument for buyers who want space, privacy, and a rural feel.",
     canonical: "https://myrockhomes.com/black-forest-co-real-estate/",
@@ -621,7 +621,7 @@ export const SEO_METADATA_MAP = {
     ],
   },
   "palmer-lake-co-real-estate": {
-    title: "Palmer Lake CO Real Estate | Small-Town Living Guide | My Rock Realty",
+    title: "Palmer Lake CO Real Estate | Small-Town Living Guide",
     description:
       "Explore Palmer Lake CO real estate and compare Palmer Lake with Monument and Colorado Springs for buyers seeking a quieter, more tucked-away move.",
     canonical: "https://myrockhomes.com/palmer-lake-co-real-estate/",
