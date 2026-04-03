@@ -825,12 +825,12 @@ export const SEO_METADATA_MAP = {
     title: "Buckley Space Force Base Housing & Relocation | My Rock Realty",
     description:
       "Homes and relocation resources near Buckley Space Force Base in Aurora, CO. My Rock Realty helps military buyers and PCS movers find housing near Buckley SFB.",
-    canonical: "https://myrockhomes.com/buckley-space-force-base/",
+    canonical: "https://myrockhomes.com/military-relocation/buckley-space-force-base/",
     pageType: "guide",
     breadcrumbs: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
       { "@type": "ListItem", position: 2, name: "Military Relocation", item: "https://myrockhomes.com/military-relocation/" },
-      { "@type": "ListItem", position: 3, name: "Buckley Space Force Base", item: "https://myrockhomes.com/buckley-space-force-base/" },
+      { "@type": "ListItem", position: 3, name: "Buckley Space Force Base", item: "https://myrockhomes.com/military-relocation/buckley-space-force-base/" },
     ],
   },
 
@@ -883,11 +883,11 @@ export const SEO_METADATA_MAP = {
     title: "Relocating to Denver, Colorado | My Rock Realty",
     description:
       "A guide to relocating to Denver, CO. My Rock Realty covers neighborhoods, the buying process, and what relocating buyers need to know.",
-    canonical: "https://myrockhomes.com/relocating-to-denver-colorado/",
+    canonical: "https://myrockhomes.com/relocation/relocating-to-denver-colorado/",
     pageType: "guide",
     breadcrumbs: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
-      { "@type": "ListItem", position: 2, name: "Relocating to Denver", item: "https://myrockhomes.com/relocating-to-denver-colorado/" },
+      { "@type": "ListItem", position: 2, name: "Relocating to Denver", item: "https://myrockhomes.com/relocation/relocating-to-denver-colorado/" },
     ],
   },
   "denver-real-estate-market-report-2025": {

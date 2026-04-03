@@ -2420,19 +2420,19 @@ async function prerenderAll() {
     const _seoBlock = buildSeoHeadBlock({
       title: 'USAFA Relocation Guide | Colorado Springs Real Estate | My Rock Realty',
       description: 'Practical relocation guidance for buyers moving to the US Air Force Academy and the Colorado Springs area. PCS planning, VA loan context, and neighborhood orientation.',
-      canonical: 'https://myrockhomes.com/military-relocation/usafa/',
+      canonical: 'https://myrockhomes.com/military-relocation/us-air-force-academy/',
       ogImage: OG_IMAGE_MILITARY,
       schemas: [
         ...BASE_SCHEMAS,
         buildBreadcrumbSchema([
           { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
           { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
-          { "@type": "ListItem", position: 3, name: 'USAFA Relocation Guide', item: 'https://myrockhomes.com/military-relocation/usafa/' },
+          { "@type": "ListItem", position: 3, name: 'USAFA Relocation Guide', item: 'https://myrockhomes.com/military-relocation/us-air-force-academy/' },
         ]),
       ],
       slug: 'us-air-force-academy',
     });
-    const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/military-relocation/usafa/');
+    const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/military-relocation/us-air-force-academy/');
     writeFileSync(resolve(prerenderedDir, ARTIFACT), _injectedHtml);
     // Also write to dist/prerendered
     mkdirSync(distPrerenderedDir, { recursive: true });
