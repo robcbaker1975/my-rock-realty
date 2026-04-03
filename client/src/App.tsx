@@ -52,6 +52,15 @@ import UniversityHillCuBoulderRealEstate from "./pages/UniversityHillCuBoulderRe
 import LafayetteCoHomesForSale from "./pages/LafayetteCoHomesForSale";
 import LongmontCoHomesForSale from "./pages/LongmontCoHomesForSale";
 import NiwotCoHomesForSale from "./pages/NiwotCoHomesForSale";
+import NiwotCoRealEstate from "./pages/NiwotCoRealEstate";
+import GunbarrelCoRealEstate from "./pages/GunbarrelCoRealEstate";
+import TableMesaSouthBoulderRealEstate from "./pages/TableMesaSouthBoulderRealEstate";
+import NorthBoulderNoBoRealEstate from "./pages/NorthBoulderNoBoRealEstate";
+import NewlandsBoulderRealEstate from "./pages/NewlandsBoulderRealEstate";
+import MapletonHillBoulderRealEstate from "./pages/MapletonHillBoulderRealEstate";
+import LouisvilleCoHomesForSale from "./pages/LouisvilleCoHomesForSale";
+import SuperiorCoHomesForSale from "./pages/SuperiorCoHomesForSale";
+import LyonsCoHomesForSale from "./pages/LyonsCoHomesForSale";
 import ColoradoSpringsCoHomesForSale from "./pages/ColoradoSpringsCoHomesForSale";
 import MovingToColoradoSprings from "./pages/MovingToColoradoSprings";
 import MonumentCoRealEstate from "./pages/MonumentCoRealEstate";
@@ -183,6 +192,15 @@ function Router() {
       <Route path={"/lafayette-co-homes-for-sale"} component={LafayetteCoHomesForSale} />
       <Route path={"/longmont-co-homes-for-sale"} component={LongmontCoHomesForSale} />
       <Route path={"/niwot-co-homes-for-sale"} component={NiwotCoHomesForSale} />
+      <Route path={"/niwot-co-real-estate"} component={NiwotCoRealEstate} />
+      <Route path={"/gunbarrel-co-real-estate"} component={GunbarrelCoRealEstate} />
+      <Route path={"/table-mesa-south-boulder-real-estate"} component={TableMesaSouthBoulderRealEstate} />
+      <Route path={"/north-boulder-nobo-real-estate"} component={NorthBoulderNoBoRealEstate} />
+      <Route path={"/newlands-boulder-real-estate"} component={NewlandsBoulderRealEstate} />
+      <Route path={"/mapleton-hill-boulder-real-estate"} component={MapletonHillBoulderRealEstate} />
+      <Route path={"/louisville-co-homes-for-sale"} component={LouisvilleCoHomesForSale} />
+      <Route path={"/superior-co-homes-for-sale"} component={SuperiorCoHomesForSale} />
+      <Route path={"/lyons-co-homes-for-sale"} component={LyonsCoHomesForSale} />
       <Route path={"/moving-to-colorado-springs/"} component={MovingToColoradoSprings} />
       <Route path={"/monument-co-real-estate/"} component={MonumentCoRealEstate} />
       <Route path={"/briargate-colorado-springs-real-estate/"} component={BriargateColoradoSpringsRealEstate} />

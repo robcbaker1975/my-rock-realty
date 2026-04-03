@@ -126,6 +126,15 @@ async function prerenderAll() {
   "entry-server-longmont": resolve(ROOT, "client/src/entry-server-longmont.tsx"),
   "entry-server-lafayette": resolve(ROOT, "client/src/entry-server-lafayette.tsx"),
   "entry-server-niwot": resolve(ROOT, "client/src/entry-server-niwot.tsx"),
+  "entry-server-niwot-co-real-estate": resolve(ROOT, "client/src/entry-server-niwot-co-real-estate.tsx"),
+  "entry-server-gunbarrel-co-real-estate": resolve(ROOT, "client/src/entry-server-gunbarrel-co-real-estate.tsx"),
+  "entry-server-table-mesa-south-boulder-real-estate": resolve(ROOT, "client/src/entry-server-table-mesa-south-boulder-real-estate.tsx"),
+  "entry-server-north-boulder-nobo-real-estate": resolve(ROOT, "client/src/entry-server-north-boulder-nobo-real-estate.tsx"),
+  "entry-server-newlands-boulder-real-estate": resolve(ROOT, "client/src/entry-server-newlands-boulder-real-estate.tsx"),
+  "entry-server-mapleton-hill-boulder-real-estate": resolve(ROOT, "client/src/entry-server-mapleton-hill-boulder-real-estate.tsx"),
+  "entry-server-louisville-co-homes-for-sale": resolve(ROOT, "client/src/entry-server-louisville-co-homes-for-sale.tsx"),
+  "entry-server-superior-co-homes-for-sale": resolve(ROOT, "client/src/entry-server-superior-co-homes-for-sale.tsx"),
+  "entry-server-lyons-co-homes-for-sale": resolve(ROOT, "client/src/entry-server-lyons-co-homes-for-sale.tsx"),
   "entry-server-denver-condos": resolve(ROOT, "client/src/entry-server-denver-condos.tsx"),
   "entry-server-denver-townhomes": resolve(ROOT, "client/src/entry-server-denver-townhomes.tsx"),
   "entry-server-denver-luxury": resolve(ROOT, "client/src/entry-server-denver-luxury.tsx"),
@@ -3141,6 +3150,222 @@ async function prerenderAll() {
     const written_niwot = readFileSync(resolve(serverPrerenderedDir, "niwot-co-homes-for-sale.html"), "utf-8");
     if (written_niwot.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for niwot");
     console.log("[prerender-all] Done: niwot");
+  }
+
+  // --- niwot-co-real-estate ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-niwot-co-real-estate.js"));
+    const html = ssrMod.renderNiwotCoRealEstate();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_niwot_co_real_estate = SEO_METADATA_MAP["niwot-co-real-estate"];
+    const _seoBlock_niwot_co_real_estate = buildSeoHeadBlock({
+      title: _seoMeta_niwot_co_real_estate.title,
+      description: _seoMeta_niwot_co_real_estate.description,
+      canonical: _seoMeta_niwot_co_real_estate.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_niwot_co_real_estate.breadcrumbs)],
+      slug: "niwot-co-real-estate",
+    });
+    const _injectedHtml_niwot_co_real_estate = injectSeoHead(prerenderedShell, _seoBlock_niwot_co_real_estate, _seoMeta_niwot_co_real_estate.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "niwot-co-real-estate.html"), _injectedHtml_niwot_co_real_estate, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "niwot-co-real-estate.html"), prerenderedShell, "utf-8");
+    const written_niwot_co_real_estate = readFileSync(resolve(serverPrerenderedDir, "niwot-co-real-estate.html"), "utf-8");
+    if (written_niwot_co_real_estate.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for niwot-co-real-estate");
+    console.log("[prerender-all] Done: niwot-co-real-estate");
+  }
+
+  // --- gunbarrel-co-real-estate ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-gunbarrel-co-real-estate.js"));
+    const html = ssrMod.renderGunbarrelCoRealEstate();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_gunbarrel = SEO_METADATA_MAP["gunbarrel-co-real-estate"];
+    const _seoBlock_gunbarrel = buildSeoHeadBlock({
+      title: _seoMeta_gunbarrel.title,
+      description: _seoMeta_gunbarrel.description,
+      canonical: _seoMeta_gunbarrel.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_gunbarrel.breadcrumbs)],
+      slug: "gunbarrel-co-real-estate",
+    });
+    const _injectedHtml_gunbarrel = injectSeoHead(prerenderedShell, _seoBlock_gunbarrel, _seoMeta_gunbarrel.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "gunbarrel-co-real-estate.html"), _injectedHtml_gunbarrel, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "gunbarrel-co-real-estate.html"), prerenderedShell, "utf-8");
+    const written_gunbarrel = readFileSync(resolve(serverPrerenderedDir, "gunbarrel-co-real-estate.html"), "utf-8");
+    if (written_gunbarrel.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for gunbarrel-co-real-estate");
+    console.log("[prerender-all] Done: gunbarrel-co-real-estate");
+  }
+
+  // --- table-mesa-south-boulder-real-estate ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-table-mesa-south-boulder-real-estate.js"));
+    const html = ssrMod.renderTableMesaSouthBoulderRealEstate();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_table_mesa = SEO_METADATA_MAP["table-mesa-south-boulder-real-estate"];
+    const _seoBlock_table_mesa = buildSeoHeadBlock({
+      title: _seoMeta_table_mesa.title,
+      description: _seoMeta_table_mesa.description,
+      canonical: _seoMeta_table_mesa.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_table_mesa.breadcrumbs)],
+      slug: "table-mesa-south-boulder-real-estate",
+    });
+    const _injectedHtml_table_mesa = injectSeoHead(prerenderedShell, _seoBlock_table_mesa, _seoMeta_table_mesa.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "table-mesa-south-boulder-real-estate.html"), _injectedHtml_table_mesa, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "table-mesa-south-boulder-real-estate.html"), prerenderedShell, "utf-8");
+    const written_table_mesa = readFileSync(resolve(serverPrerenderedDir, "table-mesa-south-boulder-real-estate.html"), "utf-8");
+    if (written_table_mesa.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for table-mesa-south-boulder-real-estate");
+    console.log("[prerender-all] Done: table-mesa-south-boulder-real-estate");
+  }
+
+  // --- north-boulder-nobo-real-estate ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-north-boulder-nobo-real-estate.js"));
+    const html = ssrMod.renderNorthBoulderNoBoRealEstate();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_north_boulder = SEO_METADATA_MAP["north-boulder-nobo-real-estate"];
+    const _seoBlock_north_boulder = buildSeoHeadBlock({
+      title: _seoMeta_north_boulder.title,
+      description: _seoMeta_north_boulder.description,
+      canonical: _seoMeta_north_boulder.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_north_boulder.breadcrumbs)],
+      slug: "north-boulder-nobo-real-estate",
+    });
+    const _injectedHtml_north_boulder = injectSeoHead(prerenderedShell, _seoBlock_north_boulder, _seoMeta_north_boulder.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "north-boulder-nobo-real-estate.html"), _injectedHtml_north_boulder, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "north-boulder-nobo-real-estate.html"), prerenderedShell, "utf-8");
+    const written_north_boulder = readFileSync(resolve(serverPrerenderedDir, "north-boulder-nobo-real-estate.html"), "utf-8");
+    if (written_north_boulder.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for north-boulder-nobo-real-estate");
+    console.log("[prerender-all] Done: north-boulder-nobo-real-estate");
+  }
+
+  // --- newlands-boulder-real-estate ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-newlands-boulder-real-estate.js"));
+    const html = ssrMod.renderNewlandsBoulderRealEstate();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_newlands = SEO_METADATA_MAP["newlands-boulder-real-estate"];
+    const _seoBlock_newlands = buildSeoHeadBlock({
+      title: _seoMeta_newlands.title,
+      description: _seoMeta_newlands.description,
+      canonical: _seoMeta_newlands.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_newlands.breadcrumbs)],
+      slug: "newlands-boulder-real-estate",
+    });
+    const _injectedHtml_newlands = injectSeoHead(prerenderedShell, _seoBlock_newlands, _seoMeta_newlands.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "newlands-boulder-real-estate.html"), _injectedHtml_newlands, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "newlands-boulder-real-estate.html"), prerenderedShell, "utf-8");
+    const written_newlands = readFileSync(resolve(serverPrerenderedDir, "newlands-boulder-real-estate.html"), "utf-8");
+    if (written_newlands.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for newlands-boulder-real-estate");
+    console.log("[prerender-all] Done: newlands-boulder-real-estate");
+  }
+
+  // --- mapleton-hill-boulder-real-estate ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-mapleton-hill-boulder-real-estate.js"));
+    const html = ssrMod.renderMapletonHillBoulderRealEstate();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_mapleton_hill = SEO_METADATA_MAP["mapleton-hill-boulder-real-estate"];
+    const _seoBlock_mapleton_hill = buildSeoHeadBlock({
+      title: _seoMeta_mapleton_hill.title,
+      description: _seoMeta_mapleton_hill.description,
+      canonical: _seoMeta_mapleton_hill.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_mapleton_hill.breadcrumbs)],
+      slug: "mapleton-hill-boulder-real-estate",
+    });
+    const _injectedHtml_mapleton_hill = injectSeoHead(prerenderedShell, _seoBlock_mapleton_hill, _seoMeta_mapleton_hill.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "mapleton-hill-boulder-real-estate.html"), _injectedHtml_mapleton_hill, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "mapleton-hill-boulder-real-estate.html"), prerenderedShell, "utf-8");
+    const written_mapleton_hill = readFileSync(resolve(serverPrerenderedDir, "mapleton-hill-boulder-real-estate.html"), "utf-8");
+    if (written_mapleton_hill.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for mapleton-hill-boulder-real-estate");
+    console.log("[prerender-all] Done: mapleton-hill-boulder-real-estate");
+  }
+
+  // --- louisville-co-homes-for-sale ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-louisville-co-homes-for-sale.js"));
+    const html = ssrMod.renderLouisvilleCoHomesForSale();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_louisville = SEO_METADATA_MAP["louisville-co-homes-for-sale"];
+    const _seoBlock_louisville = buildSeoHeadBlock({
+      title: _seoMeta_louisville.title,
+      description: _seoMeta_louisville.description,
+      canonical: _seoMeta_louisville.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_louisville.breadcrumbs)],
+      slug: "louisville-co-homes-for-sale",
+    });
+    const _injectedHtml_louisville = injectSeoHead(prerenderedShell, _seoBlock_louisville, _seoMeta_louisville.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "louisville-co-homes-for-sale.html"), _injectedHtml_louisville, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "louisville-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    const written_louisville = readFileSync(resolve(serverPrerenderedDir, "louisville-co-homes-for-sale.html"), "utf-8");
+    if (written_louisville.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for louisville-co-homes-for-sale");
+    console.log("[prerender-all] Done: louisville-co-homes-for-sale");
+  }
+
+  // --- superior-co-homes-for-sale ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-superior-co-homes-for-sale.js"));
+    const html = ssrMod.renderSuperiorCoHomesForSale();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_superior = SEO_METADATA_MAP["superior-co-homes-for-sale"];
+    const _seoBlock_superior = buildSeoHeadBlock({
+      title: _seoMeta_superior.title,
+      description: _seoMeta_superior.description,
+      canonical: _seoMeta_superior.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_superior.breadcrumbs)],
+      slug: "superior-co-homes-for-sale",
+    });
+    const _injectedHtml_superior = injectSeoHead(prerenderedShell, _seoBlock_superior, _seoMeta_superior.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "superior-co-homes-for-sale.html"), _injectedHtml_superior, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "superior-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    const written_superior = readFileSync(resolve(serverPrerenderedDir, "superior-co-homes-for-sale.html"), "utf-8");
+    if (written_superior.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for superior-co-homes-for-sale");
+    console.log("[prerender-all] Done: superior-co-homes-for-sale");
+  }
+
+  // --- lyons-co-homes-for-sale ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-lyons-co-homes-for-sale.js"));
+    const html = ssrMod.renderLyonsCoHomesForSale();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_lyons = SEO_METADATA_MAP["lyons-co-homes-for-sale"];
+    const _seoBlock_lyons = buildSeoHeadBlock({
+      title: _seoMeta_lyons.title,
+      description: _seoMeta_lyons.description,
+      canonical: _seoMeta_lyons.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_lyons.breadcrumbs)],
+      slug: "lyons-co-homes-for-sale",
+    });
+    const _injectedHtml_lyons = injectSeoHead(prerenderedShell, _seoBlock_lyons, _seoMeta_lyons.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "lyons-co-homes-for-sale.html"), _injectedHtml_lyons, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "lyons-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    const written_lyons = readFileSync(resolve(serverPrerenderedDir, "lyons-co-homes-for-sale.html"), "utf-8");
+    if (written_lyons.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for lyons-co-homes-for-sale");
+    console.log("[prerender-all] Done: lyons-co-homes-for-sale");
   }
 
   // --- denver-condos ---

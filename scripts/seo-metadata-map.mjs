@@ -146,6 +146,114 @@ export const SEO_METADATA_MAP = {
       { "@type": "ListItem", position: 2, name: "Niwot Homes for Sale", item: "https://myrockhomes.com/niwot-co-homes-for-sale/" },
     ],
   },
+  "niwot-co-real-estate": {
+    title: "Living in Niwot, Colorado: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+    description:
+      "Thinking about living in Niwot, Colorado? Learn what Niwot actually feels like, who it fits, what the tradeoffs are, and when Boulder, Longmont, or Louisville may make more sense.",
+    canonical: "https://myrockhomes.com/niwot-co-real-estate/",
+    pageType: "neighborhood",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Boulder Area", item: "https://myrockhomes.com/boulder-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "Niwot", item: "https://myrockhomes.com/niwot-co-real-estate/" },
+    ],
+  },
+  "gunbarrel-co-real-estate": {
+    title: "Living in Gunbarrel, Colorado: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+    description:
+      "Thinking about living in Gunbarrel, Colorado? Learn what Gunbarrel actually feels like, who it fits, what the tradeoffs are, and when Boulder or other neighborhoods may make more sense.",
+    canonical: "https://myrockhomes.com/gunbarrel-co-real-estate/",
+    pageType: "neighborhood",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Boulder Area", item: "https://myrockhomes.com/boulder-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "Gunbarrel", item: "https://myrockhomes.com/gunbarrel-co-real-estate/" },
+    ],
+  },
+  "table-mesa-south-boulder-real-estate": {
+    title: "Living in Table Mesa / South Boulder: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+    description:
+      "Thinking about living in Table Mesa or South Boulder? Learn what the neighborhood actually feels like, who it fits, what the tradeoffs are, and when other Boulder neighborhoods may make more sense.",
+    canonical: "https://myrockhomes.com/table-mesa-south-boulder-real-estate/",
+    pageType: "neighborhood",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Boulder Area", item: "https://myrockhomes.com/boulder-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "Table Mesa / South Boulder", item: "https://myrockhomes.com/table-mesa-south-boulder-real-estate/" },
+    ],
+  },
+  "north-boulder-nobo-real-estate": {
+    title: "Living in North Boulder (NoBo): Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+    description:
+      "Thinking about living in North Boulder (NoBo)? Learn what the neighborhood actually feels like, who it fits, what the tradeoffs are, and when other Boulder neighborhoods may make more sense.",
+    canonical: "https://myrockhomes.com/north-boulder-nobo-real-estate/",
+    pageType: "neighborhood",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Boulder Area", item: "https://myrockhomes.com/boulder-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "North Boulder (NoBo)", item: "https://myrockhomes.com/north-boulder-nobo-real-estate/" },
+    ],
+  },
+  "newlands-boulder-real-estate": {
+    title: "Living in Newlands, Boulder: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+    description:
+      "Thinking about living in Newlands, Boulder? Learn what the neighborhood actually feels like, who it fits, what the tradeoffs are, and when other Boulder neighborhoods may make more sense.",
+    canonical: "https://myrockhomes.com/newlands-boulder-real-estate/",
+    pageType: "neighborhood",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Boulder Area", item: "https://myrockhomes.com/boulder-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "Newlands", item: "https://myrockhomes.com/newlands-boulder-real-estate/" },
+    ],
+  },
+  "mapleton-hill-boulder-real-estate": {
+    title: "Living in Mapleton Hill, Boulder: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+    description:
+      "Thinking about living in Mapleton Hill, Boulder? Learn what the neighborhood actually feels like, who it fits, what the tradeoffs are, and when other Boulder neighborhoods may make more sense.",
+    canonical: "https://myrockhomes.com/mapleton-hill-boulder-real-estate/",
+    pageType: "neighborhood",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Boulder Area", item: "https://myrockhomes.com/boulder-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "Mapleton Hill", item: "https://myrockhomes.com/mapleton-hill-boulder-real-estate/" },
+    ],
+  },
+  "louisville-co-homes-for-sale": {
+    title: "Living in Louisville, Colorado: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+    description:
+      "Thinking about living in Louisville, Colorado? Learn what Louisville actually feels like, who it fits, what the tradeoffs are, and when Boulder, Lafayette, or Superior may make more sense.",
+    canonical: "https://myrockhomes.com/louisville-co-homes-for-sale/",
+    pageType: "city",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Boulder Area", item: "https://myrockhomes.com/boulder-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "Louisville", item: "https://myrockhomes.com/louisville-co-homes-for-sale/" },
+    ],
+  },
+  "superior-co-homes-for-sale": {
+    title: "Living in Superior, Colorado: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+    description:
+      "Thinking about living in Superior, Colorado? Learn what Superior actually feels like, who it fits, what the tradeoffs are, and when Louisville, Lafayette, or Boulder may make more sense.",
+    canonical: "https://myrockhomes.com/superior-co-homes-for-sale/",
+    pageType: "city",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Boulder Area", item: "https://myrockhomes.com/boulder-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "Superior", item: "https://myrockhomes.com/superior-co-homes-for-sale/" },
+    ],
+  },
+  "lyons-co-homes-for-sale": {
+    title: "Living in Lyons, Colorado: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
+    description:
+      "Thinking about living in Lyons, Colorado? Learn what Lyons actually feels like, who it fits, what the tradeoffs are, and when Boulder or Longmont may make more sense.",
+    canonical: "https://myrockhomes.com/lyons-co-homes-for-sale/",
+    pageType: "city",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Boulder Area", item: "https://myrockhomes.com/boulder-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "Lyons", item: "https://myrockhomes.com/lyons-co-homes-for-sale/" },
+    ],
+  },
   "windsor-co-homes-for-sale": {
     title: "Windsor, CO Homes for Sale | My Rock Realty",
     description:

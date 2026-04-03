@@ -1,7 +1,7 @@
 /**
- * Boulder Homes for Sale — My Rock Realty
- * Hub page: /boulder-homes-for-sale
- * Content: Approved boulder_cluster_package_v2 / approved_boulder_hub.md
+ * Lyons CO Homes For Sale — My Rock Realty
+ * Route: /lyons-co-homes-for-sale
+ * Content: boulder_wave2_true_source_of_truth / approved_lyons_full.txt
  * Design: Front Range Modern — matches existing site design system
  * Palette: Warm charcoal (#292524), cream (#F5F0EB), antique gold (#C9A96E)
  * Typography: Outfit (display) + Libre Franklin (body)
@@ -13,72 +13,71 @@ import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
-/* Hero Background Image */
-const BOULDER_HERO_BG =
+const HERO_BG =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/denver-rowhouses-hero_2f59d4ac.jpg";
 
-/* ─── FAQ Content — approved_boulder_hub.md §11 ─── */
+/* ─── FAQ Content — approved_lyons_full.txt §11 ─── */
 const faqContent = [
   {
-    question: "Why does Boulder stay in the search even when it gets harder?",
+    question: "Why does Lyons stay in the conversation for Boulder-area buyers?",
     answer:
-      "Because for the right buyer, Boulder feels distinct enough that it keeps earning a second look even when easier options exist.",
+      "Because it often gives buyers a more distinct and more self-defining answer once the usual Boulder-area paths stop feeling right.",
   },
   {
-    question: "Is Boulder mostly a house search or a location search?",
+    question: "Is Lyons basically just what buyers choose when Boulder does not work?",
     answer:
-      "Usually a location search. In Boulder, the area decision often matters just as much as the house itself.",
+      "No. For the right buyer, Lyons is not a fallback. It is a different kind of answer that works because it feels less tied to the usual Boulder-area comparison map.",
   },
   {
-    question: "Does Boulder fit every buyer in this part of the market?",
+    question: "Who usually likes Lyons most?",
     answer:
-      "No. Some buyers end up liking nearby options better once they compare daily life, flexibility, and how much they need Boulder specifically.",
+      "Usually buyers who want this part of the region, but want the final choice to feel smaller, more distinct, and more clearly like its own place.",
   },
   {
-    question:
-      "When does University Hill / CU Boulder become its own conversation?",
+    question: "Who usually moves away from Lyons?",
     answer:
-      "Usually when the buyer wants to understand campus-adjacent living, central Boulder energy, or how that part of the city feels compared with Boulder more broadly.",
+      "Usually buyers who realize they either still want Boulder more directly or want a broader, steadier nearby-city answer like Longmont, Louisville, Lafayette, or Superior.",
   },
   {
-    question: "When does Lafayette start to look better?",
+    question: "When does Lyons make more sense than Boulder?",
     answer:
-      "Usually when the buyer wants the region but starts questioning whether Boulder itself is worth the tighter tradeoffs.",
+      "Usually when the buyer wants this part of the region strongly, but no longer needs the move to run through Boulder itself.",
   },
   {
-    question: "When does Longmont start to make more sense?",
+    question: "When does Boulder still make more sense than Lyons?",
     answer:
-      "Usually when someone wants more room to work with and a different balance of pace, space, and flexibility.",
+      "When the buyer cares enough about Boulder specifically that a more separate answer will still feel like the wrong fit.",
   },
   {
-    question: "Is Boulder worth studying even if it may not be the final answer?",
+    question: "When does Longmont make more sense than Lyons?",
     answer:
-      "Yes. Boulder often helps buyers clarify what matters most, even if they end up choosing somewhere else nearby.",
+      "Usually when the buyer wants a broader practical answer and more room around the decision.",
   },
   {
-    question: "Should I rent first in Boulder?",
+    question: "When do Louisville or Lafayette make more sense than Lyons?",
     answer:
-      "Sometimes. Renting first can be the cleaner move if you still need to learn the city before making a long-term purchase.",
+      "Usually when the buyer wants a steadier nearby-city answer that still feels more connected to the usual Boulder-area map.",
   },
   {
-    question: "What do buyers usually get wrong about Boulder at the start?",
+    question: "When does Superior make more sense than Lyons?",
     answer:
-      "They often assume liking the idea of Boulder means they should buy there, when the better question is whether Boulder actually fits the way they want to live.",
+      "Usually when the buyer wants the answer to feel more polished, more clearly shaped, and less distinct in this way.",
   },
   {
-    question: "What should I compare next if Boulder stays on the list?",
+    question: "What is this page really supposed to help me figure out?",
     answer:
-      "Start with University Hill / CU Boulder, Lafayette, and Longmont. Those are the cleanest next comparisons once Boulder feels relevant but not automatic.",
+      "Whether you want this part of the region to feel smaller, more distinct, and more self-defining than the usual Boulder-area paths.",
   },
 ];
 
 /* ─── Build FAQ Schema ─── */
 const faqSchema = buildFAQPageSchema(faqContent);
 
-/* ─── Breadcrumb Items — matrix spec ─── */
+/* ─── Breadcrumb Items ─── */
 const breadcrumbItems = [
   { label: "Home", url: "/" },
-  { label: "Boulder", url: "/boulder-homes-for-sale" },
+  { label: "Boulder Area", url: "/boulder-homes-for-sale" },
+  { label: "Lyons", url: "/lyons-co-homes-for-sale" },
 ];
 
 const fadeUp = {
@@ -86,18 +85,17 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-export default function BoulderHomesForSale() {
+export default function LyonsCoHomesForSale() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-
   return (
     <div className="min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title:
-            "Living in Boulder, Colorado: Real Estate, Tradeoffs, and What It's Actually Like",
+            "Living in Lyons, Colorado: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
           description:
-            "Thinking about living in Boulder, Colorado? Get a clear look at what Boulder actually feels like, who it fits, where the tradeoffs show up, and when Lafayette, Longmont, or University Hill may fit better.",
-          canonicalUrl: "https://myrockhomes.com/boulder-homes-for-sale/",
+            "Thinking about living in Lyons, Colorado? Learn what Lyons actually feels like, who it fits, what the tradeoffs are, and when Boulder, Longmont, or Lyons-area living may make more sense.",
+          canonicalUrl: "https://myrockhomes.com/lyons-co-homes-for-sale/",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}
@@ -115,28 +113,18 @@ export default function BoulderHomesForSale() {
       ═══════════════════════════════════════════════════ */}
       <section className="relative bg-charcoal overflow-hidden">
         <img
-          src={BOULDER_HERO_BG}
-          alt="Residential street in Boulder, Colorado"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          width="1600"
-          height="900"
-          fetchPriority="high"
-          decoding="async"
+          src={HERO_BG}
+          alt="Lyons Colorado real estate"
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
         <div className="container relative z-10 py-16 sm:py-20 md:py-24">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            className="max-w-2xl"
-          >
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="max-w-2xl">
             <h1
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Living in Boulder, Colorado: Real Estate, Tradeoffs, and What
-              It's Actually Like
+              Living in Lyons, Colorado: Real Estate, Tradeoffs, and What It's Actually Like
             </h1>
           </motion.div>
         </div>
@@ -148,25 +136,22 @@ export default function BoulderHomesForSale() {
         <div className="container max-w-2xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              A lot of buyers put Boulder on the list early.
+              A lot of buyers get to Lyons once the search stops being about staying as close as possible to Boulder and starts becoming more about how they actually want the place itself to feel.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              That part is easy.
+              That is usually when the search gets more honest.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              What usually takes longer is figuring out whether they want
-              Boulder itself, or whether they want what they think Boulder
-              stands for.
+              This page is not here to turn Lyons into a postcard. And it is not here to sell it as a catch-all answer for anyone who wants mountains, views, or "small-town charm."
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Those are not always the same thing.
+              It is here to help with a more useful question.
+            </p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              If you want this part of the region to feel smaller, more distinct, and less tied to the usual Boulder-orbit decision tree, does Lyons fit the way you actually want to live?
             </p>
             <p className="text-lg text-charcoal/80 leading-relaxed">
-              This page is here to help with that. Not to sell Boulder. Not to
-              turn it into a brochure. Just to give you a clearer read on what
-              living here usually feels like, what keeps Boulder in the
-              conversation, where it gets harder, and when a nearby option may
-              actually fit better.
+              That is usually the real decision.
             </p>
           </motion.div>
         </div>
@@ -184,27 +169,22 @@ export default function BoulderHomesForSale() {
               What the area feels like
             </h2>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Boulder usually feels more deliberate than a lot of nearby
-              markets.
+              Lyons usually feels more separate than most of the nearby comparisons buyers make first.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Part of that is the way the city is set up. Part of it is the way
-              people think about living there in the first place.
+              That is part of the draw.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              It also helps explain why Boulder feels the way it does on the
-              ground. The city has more than 45,000 acres of protected open
-              space and mountain parks, so outdoor access is not just a nice
-              extra here. It shapes how a lot of buyers think about daily life.
+              It does not usually feel like Boulder with a little extra distance on it. It does not usually feel like Louisville, Superior, or Lafayette either. It tends to feel more like the buyer is making a more specific choice about how they want daily life to feel, not just where they want to stay near.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              That shows up fast once you start driving it.
+              That matters.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              For the right buyer, Lyons feels more distinct and more self-defining than a lot of nearby options. For the wrong buyer, it can feel like the move is getting too narrow too fast.
             </p>
             <p className="text-lg text-cream/80 leading-relaxed">
-              Some parts of Boulder feel more central and active. Some feel
-              quieter and more neighborhood-driven. Some feel more influenced by
-              the university. But Boulder usually feels like a place people
-              choose on purpose, not just a place they end up near.
+              That is exactly why the page matters.
             </p>
           </motion.div>
         </div>
@@ -222,33 +202,25 @@ export default function BoulderHomesForSale() {
               Why it stays in the conversation
             </h2>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Boulder stays in the conversation because it gives some buyers
-              something they do not feel anywhere else nearby.
+              Lyons stays in the conversation because it often becomes relevant once buyers stop trying to fit themselves into the usual Boulder-area answers.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Not perfection.
+              That is where it gets stronger.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Not simplicity.
+              A buyer may still want this general region, but they may no longer want the move to feel polished like Superior, settled like Louisville, broad like Longmont, or Boulder-centered at all.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Just a stronger sense that the area itself matters.
+              That is a real shift.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              That is usually what keeps Boulder alive in the search even when
-              buyers start feeling the pressure of price, competition,
-              compromise, or limited flexibility.
+              Lyons often starts making sense when the buyer wants the place itself to feel more distinct and less like an extension of someone else's default comparison map.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              If someone is only comparing square footage, Boulder often gets
-              harder to justify.
-            </p>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              If they are comparing how a place feels to live in, Boulder
-              usually gets stronger.
+              That is not going to fit everyone.
             </p>
             <p className="text-lg text-charcoal/80 leading-relaxed">
-              That is the line.
+              But for the right buyer, it is exactly why Lyons stays alive in the search.
             </p>
           </motion.div>
         </div>
@@ -266,36 +238,25 @@ export default function BoulderHomesForSale() {
               Who it tends to fit
             </h2>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Boulder usually fits buyers who want:
+              Lyons usually fits buyers who want:
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "a stronger sense of place",
-                "a market that feels more identity-driven than generic",
-                "outdoor access that feels built into normal life",
-                "more walkable or bikeable pockets than they may find elsewhere nearby",
-                "a home search where the location matters as much as the house",
-                "a move that feels intentional, not just efficient",
+                "a more distinct and smaller-feeling answer in this part of the region",
+                "a move that feels less tied to the usual Boulder-area comparison path",
+                "a place that feels more self-defining than adjacent",
+                "less interest in polished nearby-city living",
+                "more comfort with a location choice that feels more specific and less interchangeable",
+                "a move where the place itself matters more than convenience to the usual defaults",
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-cream/80">
-                  <ArrowRight
-                    size={16}
-                    className="text-gold mt-1 flex-shrink-0"
-                  />
+                  <ArrowRight size={16} className="text-gold mt-1 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              It also fits buyers who already know they are willing to make
-              tradeoffs for the right location.
-            </p>
-            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              That matters here.
-            </p>
             <p className="text-lg text-cream/80 leading-relaxed">
-              Boulder tends to work best when someone wants Boulder
-              specifically, not just something near Boulder.
+              It is often a strong fit for buyers who are not just looking for "near Boulder," but for something that feels more clearly like its own answer.
             </p>
           </motion.div>
         </div>
@@ -313,35 +274,28 @@ export default function BoulderHomesForSale() {
               Who may not love it
             </h2>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Boulder may not be the best fit if you want:
+              Lyons may not be the best fit if you want:
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "the easiest value for the money",
-                "the least stressful version of the move",
-                "a more conventional suburban setup",
-                "the most square footage for the budget",
-                "a market where location is secondary to house features",
-                "distance from university influence in more central parts of the city",
+                "Boulder specifically",
+                "a more polished nearby-city answer like Superior",
+                "a steadier middle-ground option like Louisville or Lafayette",
+                "the broader flexibility that Longmont can provide",
+                "a move where staying on the standard Boulder-area path matters a lot",
+                "a location choice that needs to feel less distinct and less specific than this",
               ].map((item, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-start gap-3 text-charcoal/80"
-                >
-                  <ArrowRight
-                    size={16}
-                    className="text-gold mt-1 flex-shrink-0"
-                  />
+                <li key={idx} className="flex items-start gap-3 text-charcoal/80">
+                  <ArrowRight size={16} className="text-gold mt-1 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Some buyers also move off Boulder because they realize they like
-              the idea of Boulder more than the reality of choosing it.
+              Some buyers move off Lyons because they realize they still want the answer to feel more connected to the usual Boulder-area comparison map.
             </p>
             <p className="text-lg text-charcoal/80 leading-relaxed">
-              That is useful to learn early.
+              That is useful to learn.
             </p>
           </motion.div>
         </div>
@@ -359,58 +313,47 @@ export default function BoulderHomesForSale() {
               What the home search usually turns into
             </h2>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Boulder searches usually get more specific as soon as the search
-              gets real.
+              A Lyons search usually turns into a question of how distinct the buyer wants the answer to feel.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              At first, buyers often say they want Boulder because they like the
-              feel, the location, or the lifestyle attached to it.
+              That is usually the real fork in the road.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Then the real questions show up.
+              Do you still want{" "}
+              <a href="/boulder-homes-for-sale" className="text-gold hover:text-gold/80 underline">
+                Boulder
+              </a>{" "}
+              itself?
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Do you want Boulder itself, or do you want to stay in the orbit of
-              Boulder? Do you want central energy, quieter residential pockets,
-              or a cleaner separation from the university? Do you want the
-              strongest Boulder identity, or do you want a nearby market that
-              may work better day to day?
+              Do you want the broader practical answer of{" "}
+              <a href="/longmont-co-homes-for-sale" className="text-gold hover:text-gold/80 underline">
+                Longmont
+              </a>?
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              That is where the map starts sorting itself out.
+              Do you want a steadier nearby-city fit like Louisville or{" "}
+              <a href="/lafayette-co-homes-for-sale" className="text-gold hover:text-gold/80 underline">
+                Lafayette
+              </a>?
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              For some buyers, Boulder gets stronger.
+              Or do you want a place that feels more separate, more self-defining, and less tied to the usual Boulder-area script than those other paths?
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              That is where Lyons becomes useful.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              For some buyers, it is the right answer for exactly that reason.
             </p>
             <p className="text-lg text-cream/80 leading-relaxed">
-              For others, the better next step is comparing Boulder with{" "}
-              <a
-                href="/lafayette-co-homes-for-sale"
-                className="text-gold hover:text-gold/80 underline"
-              >
-                Lafayette
-              </a>
-              ,{" "}
-              <a
-                href="/longmont-co-homes-for-sale"
-                className="text-gold hover:text-gold/80 underline"
-              >
-                Longmont
-              </a>
-              , or a more specific Boulder spoke like{" "}
-              <a
-                href="/university-hill-cu-boulder-real-estate"
-                className="text-gold hover:text-gold/80 underline"
-              >
-                University Hill / CU Boulder
-              </a>
-              .
+              For others, it helps confirm they still want something broader, steadier, or more connected to the Boulder orbit.
             </p>
           </motion.div>
         </div>
       </section>
       {/* ═══════════════════════════════════════════════════
-          8. Boulder tradeoffs
+          8. The tradeoffs are the whole point
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
         <div className="container max-w-2xl">
@@ -419,45 +362,28 @@ export default function BoulderHomesForSale() {
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Boulder tradeoffs
+              The tradeoffs are the whole point
             </h2>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              This is not a market where the tradeoffs sit quietly in the
-              background.
+              The tradeoff here is pretty straightforward.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              They are the decision.
+              Lyons usually gives buyers a more distinct and more self-defining answer, but it also asks them to be more certain that this is really the kind of place they want.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Boulder usually forces buyers to decide what matters more:
+              That is the whole point.
             </p>
-            <ul className="space-y-3 mb-8">
-              {[
-                "being in Boulder itself",
-                "getting more flexibility in the search",
-                "staying close to the same region without choosing the same pressure",
-                "accepting a more constrained search in exchange for a more specific location",
-                "sorting out whether identity, lifestyle, and place matter enough to justify the harder parts",
-              ].map((item, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-start gap-3 text-charcoal/80"
-                >
-                  <ArrowRight
-                    size={16}
-                    className="text-gold mt-1 flex-shrink-0"
-                  />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              That is why vague Boulder interest is usually not enough.
+              For the right buyer, the appeal is that the move stops feeling like a comparison against Boulder and starts feeling like a more independent choice.
             </p>
-            <p className="text-lg text-charcoal/80 leading-relaxed font-semibold">
-              Boulder tends to work best when buyers can answer a simple
-              question clearly: Do I want Boulder enough to choose it on
-              purpose?
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              But if someone wants the broadest possible answer, or wants a nearby-city path that feels more polished, more settled, or more conventional in this region, Lyons is probably not the right fit.
+            </p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              That is fine.
+            </p>
+            <p className="text-lg text-charcoal/80 leading-relaxed">
+              This page is here to help sort out whether "this part of Colorado, but in a smaller and more distinct form" is actually the answer they want.
             </p>
           </motion.div>
         </div>
@@ -474,87 +400,65 @@ export default function BoulderHomesForSale() {
             >
               Compare nearby options
             </h2>
-            {/* Boulder vs University Hill */}
+            {/* vs Boulder */}
             <div className="mb-10">
-              <h3
-                className="text-xl font-bold text-gold mb-4"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                Boulder vs University Hill / CU Boulder
+              <h3 className="text-xl font-bold text-gold mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                Lyons vs Boulder
               </h3>
               <p className="text-lg text-cream/80 mb-4 leading-relaxed">
-                This is the most important child-page split inside the Boulder
-                cluster.
-              </p>
-              <p className="text-lg text-cream/80 mb-4 leading-relaxed">
-                Boulder is the broader city-level decision.
+                <a href="/boulder-homes-for-sale" className="text-gold hover:text-gold/80 underline">
+                  Boulder
+                </a>{" "}
+                is usually the more exact, more identity-first regional decision.
               </p>
               <p className="text-lg text-cream/80 leading-relaxed">
-                <a
-                  href="/university-hill-cu-boulder-real-estate"
-                  className="text-gold hover:text-gold/80 underline"
-                >
-                  University Hill / CU Boulder
-                </a>{" "}
-                is for buyers trying to understand what happens when the search
-                becomes more campus-adjacent, more central, and more tied to
-                that part of town. If Boulder is the macro decision, University
-                Hill / CU Boulder is the closer look at one of the city's most
-                specific submarkets.
+                Lyons usually gets stronger when the buyer still wants this part of Colorado, but no longer wants the whole move to depend on Boulder itself. If Boulder is the sharper regional answer, Lyons is often the more separate one.
               </p>
             </div>
-            {/* Boulder vs Lafayette */}
+            {/* vs Longmont */}
             <div className="mb-10">
-              <h3
-                className="text-xl font-bold text-gold mb-4"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                Boulder vs Lafayette
+              <h3 className="text-xl font-bold text-gold mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                Lyons vs Longmont
               </h3>
               <p className="text-lg text-cream/80 mb-4 leading-relaxed">
-                <a
-                  href="/lafayette-co-homes-for-sale"
-                  className="text-gold hover:text-gold/80 underline"
-                >
-                  Lafayette
-                </a>{" "}
-                usually gets serious when buyers want the general region, but
-                start questioning whether Boulder itself is the right version of
-                the move.
-              </p>
-              <p className="text-lg text-cream/80 mb-4 leading-relaxed">
-                That does not make Lafayette a fallback.
-              </p>
-              <p className="text-lg text-cream/80 leading-relaxed">
-                It makes it one of the cleaner comparison markets. If Boulder is
-                the identity-first choice, Lafayette is often the "would this
-                work better in real life?" choice.
-              </p>
-            </div>
-            {/* Boulder vs Longmont */}
-            <div>
-              <h3
-                className="text-xl font-bold text-gold mb-4"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                Boulder vs Longmont
-              </h3>
-              <p className="text-lg text-cream/80 mb-4 leading-relaxed">
-                <a
-                  href="/longmont-co-homes-for-sale"
-                  className="text-gold hover:text-gold/80 underline"
-                >
+                <a href="/longmont-co-homes-for-sale" className="text-gold hover:text-gold/80 underline">
                   Longmont
                 </a>{" "}
-                usually becomes the practical comparison when buyers want more
-                room to work with or want the move to feel less compressed.
-              </p>
-              <p className="text-lg text-cream/80 mb-4 leading-relaxed">
-                Again, that is not a downgrade.
+                usually becomes the broader practical comparison.
               </p>
               <p className="text-lg text-cream/80 leading-relaxed">
-                It is just a different answer. If Boulder is the more specific
-                choice, Longmont is often the broader flexibility play.
+                If Lyons is the more distinct and more self-defining answer, Longmont is usually the one that gives the move more room to come together in a broader way. That is a very real split.
+              </p>
+            </div>
+            {/* vs Louisville or Lafayette */}
+            <div className="mb-10">
+              <h3 className="text-xl font-bold text-gold mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                Lyons vs Louisville or Lafayette
+              </h3>
+              <p className="text-lg text-cream/80 mb-4 leading-relaxed">
+                Louisville and{" "}
+                <a href="/lafayette-co-homes-for-sale" className="text-gold hover:text-gold/80 underline">
+                  Lafayette
+                </a>{" "}
+                usually fit buyers who still want this part of the region to feel settled, connected, and easier to picture inside the usual Boulder-area map.
+              </p>
+              <p className="text-lg text-cream/80 leading-relaxed">
+                Lyons usually gets stronger when the buyer wants the answer to feel less tied to that map and more like its own place.
+              </p>
+            </div>
+            {/* vs Superior */}
+            <div>
+              <h3 className="text-xl font-bold text-gold mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                Lyons vs Superior
+              </h3>
+              <p className="text-lg text-cream/80 mb-4 leading-relaxed">
+                <a href="/superior-co-homes-for-sale" className="text-gold hover:text-gold/80 underline">
+                  Superior
+                </a>{" "}
+                usually becomes relevant when the buyer wants the nearby-city answer to feel more polished and more clearly defined.
+              </p>
+              <p className="text-lg text-cream/80 leading-relaxed">
+                Lyons is a different kind of decision. It usually fits when the buyer wants the move to feel more distinct and less polished than that.
               </p>
             </div>
           </motion.div>
@@ -573,26 +477,16 @@ export default function BoulderHomesForSale() {
               What people tend to underestimate
             </h2>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              A lot of buyers underestimate how much Boulder narrows the search.
+              A lot of buyers underestimate how useful it is when the answer stops feeling like "which Boulder-area option fits best?" and starts feeling like "what kind of place do I actually want to live in?"
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Sometimes that is exactly why it helps.
+              That is where Lyons starts helping.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              But it usually narrows the search faster than people expect. It
-              forces clearer decisions about budget, area, pace, priorities, and
-              whether the city itself matters more than the house.
-            </p>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Buyers also tend to underestimate how useful the nearby
-              comparisons become once they stop treating them as basically the
-              same.
-            </p>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              They are not the same.
+              Lyons usually is not the first page buyers begin with.
             </p>
             <p className="text-lg text-charcoal/80 leading-relaxed">
-              That is why the spoke pages matter.
+              It is the page that starts making sense once the broad regional question is already alive, but the usual nearby-city answers stop feeling right. That is a very different kind of search.
             </p>
           </motion.div>
         </div>
@@ -610,43 +504,38 @@ export default function BoulderHomesForSale() {
               Buy now or rent first
             </h2>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              For some buyers, buying in Boulder right away makes sense because
-              they already know what they are choosing and why.
+              For some buyers, buying here right away makes sense because the appeal is already clear.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              For others, renting first is the better move.
+              They want this part of Colorado. They want the answer to feel smaller, more distinct, and less tied to the usual Boulder-area comparison path. And they do not need the move to feel broader than that.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              That is especially true if you are still figuring out:
+              For others, renting first may still make sense.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              That is especially true if you are still sorting out:
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "whether Boulder itself is the long-term fit",
-                "which part of Boulder actually feels right to you",
-                "how much university influence you want nearby",
-                "whether Lafayette or Longmont may fit better once the move is real",
+                "whether Boulder still has too much pull",
+                "whether Longmont fits better as a broader practical answer",
+                "whether Louisville, Lafayette, or Superior fit better as steadier nearby-city alternatives",
+                "whether Lyons feels right long term or just like the clearest next comparison",
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-cream/80">
-                  <ArrowRight
-                    size={16}
-                    className="text-gold mt-1 flex-shrink-0"
-                  />
+                  <ArrowRight size={16} className="text-gold mt-1 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Renting first is not hesitation.
-            </p>
             <p className="text-lg text-cream/80 leading-relaxed">
-              Sometimes it is the cleanest way to avoid forcing a decision
-              before the map is clear.
+              Renting first can make sense if the regional decision is clear but the exact kind of place is not.
             </p>
           </motion.div>
         </div>
       </section>
       {/* ═══════════════════════════════════════════════════
-          12. Boulder FAQs
+          12. FAQ
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
         <div className="container max-w-2xl">
@@ -655,7 +544,7 @@ export default function BoulderHomesForSale() {
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-10"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Boulder FAQs
+              Lyons FAQs
             </h2>
           </motion.div>
           <div className="space-y-4">
@@ -668,14 +557,10 @@ export default function BoulderHomesForSale() {
                 className="bg-white rounded-lg border border-charcoal/10 overflow-hidden"
               >
                 <button
-                  onClick={() =>
-                    setExpandedFaq(expandedFaq === idx ? null : idx)
-                  }
+                  onClick={() => setExpandedFaq(expandedFaq === idx ? null : idx)}
                   className="w-full flex items-center justify-between p-6 hover:bg-cream/50 transition-colors text-left"
                 >
-                  <h3 className="font-bold text-charcoal pr-4">
-                    {item.question}
-                  </h3>
+                  <h3 className="font-bold text-charcoal pr-4">{item.question}</h3>
                   <ChevronDown
                     size={20}
                     className={`text-gold flex-shrink-0 transition-transform ${
@@ -706,28 +591,19 @@ export default function BoulderHomesForSale() {
               Final thoughts
             </h2>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Boulder stays in the conversation for a reason.
+              Lyons stays relevant for a reason.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              It is not just recognizable. It is not just attractive. It is not
-              just a place people like talking about.
+              It usually starts getting stronger when buyers stop asking whether Boulder is still the answer and start asking what kind of place they actually want the final answer to be.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              For the right buyer, Boulder can feel more specific than that.
+              For the right buyer, that can be a very useful shift.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              But that only helps if you are honest about what you are choosing.
-            </p>
-            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              If Boulder fits, it usually fits because the city itself matters
-              enough to shape the whole move.
-            </p>
-            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              If it does not, that is also good to know early.
+              Because sometimes the better answer is not broader, and it is not more polished.
             </p>
             <p className="text-lg text-cream/80 leading-relaxed">
-              Because the goal is not to end up near the right map. It is to
-              end up in the part of the map that actually makes sense for you.
+              Sometimes it is just this part of Colorado in a form that feels more distinct, more separate, and more clearly chosen. That is where Lyons tends to stay strong.
             </p>
           </motion.div>
         </div>
@@ -746,54 +622,11 @@ export default function BoulderHomesForSale() {
             </h2>
             <div className="space-y-3 mb-10">
               {[
-                {
-                  label: "University Hill / CU Boulder →",
-                  href: "/university-hill-cu-boulder-real-estate",
-                },
-                {
-                  label: "Lafayette →",
-                  href: "/lafayette-co-homes-for-sale",
-                },
-                {
-                  label: "Longmont →",
-                  href: "/longmont-co-homes-for-sale",
-                },
-                {
-                  label: "Gunbarrel →",
-                  href: "/gunbarrel-co-real-estate",
-                },
-                {
-                  label: "Niwot →",
-                  href: "/niwot-co-real-estate",
-                },
-                {
-                  label: "Table Mesa / South Boulder →",
-                  href: "/table-mesa-south-boulder-real-estate",
-                },
-                {
-                  label: "North Boulder (NoBo) →",
-                  href: "/north-boulder-nobo-real-estate",
-                },
-                {
-                  label: "Newlands →",
-                  href: "/newlands-boulder-real-estate",
-                },
-                {
-                  label: "Mapleton Hill →",
-                  href: "/mapleton-hill-boulder-real-estate",
-                },
-                {
-                  label: "Louisville →",
-                  href: "/louisville-co-homes-for-sale",
-                },
-                {
-                  label: "Superior →",
-                  href: "/superior-co-homes-for-sale",
-                },
-                {
-                  label: "Lyons →",
-                  href: "/lyons-co-homes-for-sale",
-                },
+                { label: "Boulder →", href: "/boulder-homes-for-sale" },
+                { label: "Longmont →", href: "/longmont-co-homes-for-sale" },
+                { label: "Louisville →", href: "/louisville-co-homes-for-sale" },
+                { label: "Superior →", href: "/superior-co-homes-for-sale" },
+                { label: "Lafayette →", href: "/lafayette-co-homes-for-sale" },
               ].map((link, idx) => (
                 <a
                   key={idx}
@@ -813,15 +646,9 @@ export default function BoulderHomesForSale() {
             </h2>
             <div className="space-y-3">
               {[
-                { label: "Talk to Rob About Boulder →", href: "/#contact" },
-                {
-                  label: "Browse Boulder Homes →",
-                  href: "/boulder-co-homes-for-sale",
-                },
-                {
-                  label: "Colorado Home Buying Workshop →",
-                  href: "/colorado-home-buying-workshop",
-                },
+                { label: "Talk to Rob About Boulder Area Options →", href: "/#contact" },
+                { label: "Browse Boulder Homes →", href: "/boulder-co-homes-for-sale" },
+                { label: "Colorado Home Buying Workshop →", href: "/colorado-home-buying-workshop" },
               ].map((link, idx) => (
                 <a
                   key={idx}

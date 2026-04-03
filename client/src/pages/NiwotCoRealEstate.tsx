@@ -1,7 +1,7 @@
 /**
- * Boulder Homes for Sale — My Rock Realty
- * Hub page: /boulder-homes-for-sale
- * Content: Approved boulder_cluster_package_v2 / approved_boulder_hub.md
+ * Niwot CO Real Estate — My Rock Realty
+ * Route: /niwot-co-real-estate
+ * Content: boulder_wave2_true_source_of_truth / approved_niwot_full.txt
  * Design: Front Range Modern — matches existing site design system
  * Palette: Warm charcoal (#292524), cream (#F5F0EB), antique gold (#C9A96E)
  * Typography: Outfit (display) + Libre Franklin (body)
@@ -13,72 +13,71 @@ import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
-/* Hero Background Image */
-const BOULDER_HERO_BG =
+const HERO_BG =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/denver-rowhouses-hero_2f59d4ac.jpg";
 
-/* ─── FAQ Content — approved_boulder_hub.md §11 ─── */
+/* ─── FAQ Content — approved_niwot_full.txt §11 ─── */
 const faqContent = [
   {
-    question: "Why does Boulder stay in the search even when it gets harder?",
+    question: "Why does Niwot stay in the conversation for Boulder-area buyers?",
     answer:
-      "Because for the right buyer, Boulder feels distinct enough that it keeps earning a second look even when easier options exist.",
+      "Because it often gives buyers a more distinct and more settled answer without forcing the move through Boulder itself.",
   },
   {
-    question: "Is Boulder mostly a house search or a location search?",
+    question: "Is Niwot just what buyers choose when they do not get Boulder?",
     answer:
-      "Usually a location search. In Boulder, the area decision often matters just as much as the house itself.",
+      "No. For the right buyer, Niwot is not a fallback. It is the better-fit answer because it gives the move a stronger sense of place without making it more central than they want.",
   },
   {
-    question: "Does Boulder fit every buyer in this part of the market?",
+    question: "Who usually likes Niwot most?",
     answer:
-      "No. Some buyers end up liking nearby options better once they compare daily life, flexibility, and how much they need Boulder specifically.",
+      "Usually buyers who want Boulder-area relevance, a more distinct community feel, and a move that feels more intentionally chosen.",
   },
   {
-    question:
-      "When does University Hill / CU Boulder become its own conversation?",
+    question: "Who usually moves away from Niwot?",
     answer:
-      "Usually when the buyer wants to understand campus-adjacent living, central Boulder energy, or how that part of the city feels compared with Boulder more broadly.",
+      "Usually buyers who realize they still want Boulder specifically, or want a different comparison path like Gunbarrel, Lafayette, or Longmont.",
   },
   {
-    question: "When does Lafayette start to look better?",
+    question: "When does Niwot make more sense than Boulder?",
     answer:
-      "Usually when the buyer wants the region but starts questioning whether Boulder itself is worth the tighter tradeoffs.",
+      "Usually when the buyer wants this part of the region strongly, but does not need the move to depend on Boulder itself.",
   },
   {
-    question: "When does Longmont start to make more sense?",
+    question: "When does Boulder still make more sense than Niwot?",
     answer:
-      "Usually when someone wants more room to work with and a different balance of pace, space, and flexibility.",
+      "When the buyer cares enough about Boulder specifically that a more settled nearby answer will still feel like the wrong fit.",
   },
   {
-    question: "Is Boulder worth studying even if it may not be the final answer?",
+    question: "When does Gunbarrel make more sense than Niwot?",
     answer:
-      "Yes. Boulder often helps buyers clarify what matters most, even if they end up choosing somewhere else nearby.",
+      "Usually when the buyer wants Boulder-area access without needing the decision to feel as distinct or as specifically chosen.",
   },
   {
-    question: "Should I rent first in Boulder?",
+    question: "When does Lafayette make more sense than Niwot?",
     answer:
-      "Sometimes. Renting first can be the cleaner move if you still need to learn the city before making a long-term purchase.",
+      "Usually when the buyer wants a steadier regional answer and less emphasis on choosing one particular sense of place.",
   },
   {
-    question: "What do buyers usually get wrong about Boulder at the start?",
+    question: "When does Longmont make more sense than Niwot?",
     answer:
-      "They often assume liking the idea of Boulder means they should buy there, when the better question is whether Boulder actually fits the way they want to live.",
+      "Usually when the buyer wants to open the search wider and give the move more room to come together differently.",
   },
   {
-    question: "What should I compare next if Boulder stays on the list?",
+    question: "What is this page really supposed to help me figure out?",
     answer:
-      "Start with University Hill / CU Boulder, Lafayette, and Longmont. Those are the cleanest next comparisons once Boulder feels relevant but not automatic.",
+      "Whether you want the answer to feel more settled, more distinct, and more intentionally chosen than some of the other Boulder-area paths.",
   },
 ];
 
 /* ─── Build FAQ Schema ─── */
 const faqSchema = buildFAQPageSchema(faqContent);
 
-/* ─── Breadcrumb Items — matrix spec ─── */
+/* ─── Breadcrumb Items ─── */
 const breadcrumbItems = [
   { label: "Home", url: "/" },
   { label: "Boulder", url: "/boulder-homes-for-sale" },
+  { label: "Niwot", url: "/niwot-co-real-estate" },
 ];
 
 const fadeUp = {
@@ -86,18 +85,17 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-export default function BoulderHomesForSale() {
+export default function NiwotCoRealEstate() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-
   return (
     <div className="min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title:
-            "Living in Boulder, Colorado: Real Estate, Tradeoffs, and What It's Actually Like",
+            "Living in Niwot, Colorado: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
           description:
-            "Thinking about living in Boulder, Colorado? Get a clear look at what Boulder actually feels like, who it fits, where the tradeoffs show up, and when Lafayette, Longmont, or University Hill may fit better.",
-          canonicalUrl: "https://myrockhomes.com/boulder-homes-for-sale/",
+            "Thinking about living in Niwot, Colorado? Learn what Niwot actually feels like, who it fits, what the tradeoffs are, and when Boulder, Gunbarrel, Lafayette, or Longmont may make more sense.",
+          canonicalUrl: "https://myrockhomes.com/niwot-co-real-estate/",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}
@@ -115,28 +113,18 @@ export default function BoulderHomesForSale() {
       ═══════════════════════════════════════════════════ */}
       <section className="relative bg-charcoal overflow-hidden">
         <img
-          src={BOULDER_HERO_BG}
-          alt="Residential street in Boulder, Colorado"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          width="1600"
-          height="900"
-          fetchPriority="high"
-          decoding="async"
+          src={HERO_BG}
+          alt="Niwot Colorado real estate"
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
         <div className="container relative z-10 py-16 sm:py-20 md:py-24">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            className="max-w-2xl"
-          >
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="max-w-2xl">
             <h1
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Living in Boulder, Colorado: Real Estate, Tradeoffs, and What
-              It's Actually Like
+              Living in Niwot, Colorado: Real Estate, Tradeoffs, and What It's Actually Like
             </h1>
           </motion.div>
         </div>
@@ -148,25 +136,22 @@ export default function BoulderHomesForSale() {
         <div className="container max-w-2xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              A lot of buyers put Boulder on the list early.
+              A lot of buyers get to Niwot once they realize they still want this part of the map, but they do not want the answer to feel like central Boulder or a broader reset.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              That part is easy.
+              That is usually when Niwot starts making sense.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              What usually takes longer is figuring out whether they want
-              Boulder itself, or whether they want what they think Boulder
-              stands for.
+              This page is not here to turn Niwot into a postcard. And it is not here to act like a smaller place automatically means an easier decision.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Those are not always the same thing.
+              It is here to help answer a more useful question.
+            </p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              If you want the Boulder-area map to feel more settled, more distinct, and more intentionally chosen, does Niwot fit the way you actually want to live?
             </p>
             <p className="text-lg text-charcoal/80 leading-relaxed">
-              This page is here to help with that. Not to sell Boulder. Not to
-              turn it into a brochure. Just to give you a clearer read on what
-              living here usually feels like, what keeps Boulder in the
-              conversation, where it gets harder, and when a nearby option may
-              actually fit better.
+              That is usually the real decision.
             </p>
           </motion.div>
         </div>
@@ -184,27 +169,22 @@ export default function BoulderHomesForSale() {
               What the area feels like
             </h2>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Boulder usually feels more deliberate than a lot of nearby
-              markets.
+              Niwot usually feels more specific than a lot of nearby options.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Part of that is the way the city is set up. Part of it is the way
-              people think about living there in the first place.
+              Not more central. Not broader. More specific.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              It also helps explain why Boulder feels the way it does on the
-              ground. The city has more than 45,000 acres of protected open
-              space and mountain parks, so outdoor access is not just a nice
-              extra here. It shapes how a lot of buyers think about daily life.
+              For the right buyer, that is the draw.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              That shows up fast once you start driving it.
+              A lot of that identity runs through Old Town Niwot along Second Avenue, where Boulder County's Niwot Rural Community District overlaps part of the Old Town Niwot Historic District. That helps explain why Niwot tends to feel more like a place people choose on purpose than a place they just land near.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              That does not mean it fits everyone.
             </p>
             <p className="text-lg text-cream/80 leading-relaxed">
-              Some parts of Boulder feel more central and active. Some feel
-              quieter and more neighborhood-driven. Some feel more influenced by
-              the university. But Boulder usually feels like a place people
-              choose on purpose, not just a place they end up near.
+              It means Niwot usually works best when the buyer wants something more distinct and more settled than a broad regional answer, but less immediate than Boulder's more central choices.
             </p>
           </motion.div>
         </div>
@@ -222,33 +202,22 @@ export default function BoulderHomesForSale() {
               Why it stays in the conversation
             </h2>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Boulder stays in the conversation because it gives some buyers
-              something they do not feel anywhere else nearby.
+              Niwot stays in the conversation because it often solves a very specific problem.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Not perfection.
+              A buyer still wants this part of the region. They still want Boulder-area relevance. But they do not want the decision to feel as central, as pressured, or as broad as some of the other comparison paths.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Not simplicity.
+              That is where Niwot gets stronger.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Just a stronger sense that the area itself matters.
+              It often becomes the page buyers need once they realize they want a place with more identity than Gunbarrel, more specificity than Lafayette, and less sprawl in the decision than Longmont.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              That is usually what keeps Boulder alive in the search even when
-              buyers start feeling the pressure of price, competition,
-              compromise, or limited flexibility.
-            </p>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              If someone is only comparing square footage, Boulder often gets
-              harder to justify.
-            </p>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              If they are comparing how a place feels to live in, Boulder
-              usually gets stronger.
+              That is a narrower answer.
             </p>
             <p className="text-lg text-charcoal/80 leading-relaxed">
-              That is the line.
+              But for the right buyer, it is the right one.
             </p>
           </motion.div>
         </div>
@@ -266,36 +235,25 @@ export default function BoulderHomesForSale() {
               Who it tends to fit
             </h2>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Boulder usually fits buyers who want:
+              Niwot usually fits buyers who want:
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "a stronger sense of place",
-                "a market that feels more identity-driven than generic",
-                "outdoor access that feels built into normal life",
-                "more walkable or bikeable pockets than they may find elsewhere nearby",
-                "a home search where the location matters as much as the house",
-                "a move that feels intentional, not just efficient",
+                "a more distinct small-community feel in this part of the region",
+                "Boulder-area relevance without needing Boulder itself",
+                "a place that feels more settled and more intentionally chosen",
+                "less pressure than central Boulder",
+                "more identity than a broader practical answer",
+                "a move that feels specific without feeling overly immediate",
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-cream/80">
-                  <ArrowRight
-                    size={16}
-                    className="text-gold mt-1 flex-shrink-0"
-                  />
+                  <ArrowRight size={16} className="text-gold mt-1 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              It also fits buyers who already know they are willing to make
-              tradeoffs for the right location.
-            </p>
-            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              That matters here.
-            </p>
             <p className="text-lg text-cream/80 leading-relaxed">
-              Boulder tends to work best when someone wants Boulder
-              specifically, not just something near Boulder.
+              It is often a strong fit for buyers who want the area to feel grounded and recognizable, not just convenient.
             </p>
           </motion.div>
         </div>
@@ -313,35 +271,31 @@ export default function BoulderHomesForSale() {
               Who may not love it
             </h2>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Boulder may not be the best fit if you want:
+              Niwot may not be the best fit if you want:
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "the easiest value for the money",
-                "the least stressful version of the move",
-                "a more conventional suburban setup",
-                "the most square footage for the budget",
-                "a market where location is secondary to house features",
-                "distance from university influence in more central parts of the city",
+                "Boulder specifically",
+                "a more central or more active Boulder decision",
+                "the broader flexibility that Longmont provides",
+                "the steadier regional middle-ground that Lafayette offers",
+                "a looser search where the exact place matters less",
+                "a move that is more about access than identity",
               ].map((item, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-start gap-3 text-charcoal/80"
-                >
-                  <ArrowRight
-                    size={16}
-                    className="text-gold mt-1 flex-shrink-0"
-                  />
+                <li key={idx} className="flex items-start gap-3 text-charcoal/80">
+                  <ArrowRight size={16} className="text-gold mt-1 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Some buyers also move off Boulder because they realize they like
-              the idea of Boulder more than the reality of choosing it.
+              Some buyers move off Niwot because they realize they want either a sharper Boulder answer or a broader practical one.
+            </p>
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              That is useful to learn.
             </p>
             <p className="text-lg text-charcoal/80 leading-relaxed">
-              That is useful to learn early.
+              Niwot usually works best when the buyer wants the decision to feel smaller, more specific, and more chosen.
             </p>
           </motion.div>
         </div>
@@ -359,58 +313,47 @@ export default function BoulderHomesForSale() {
               What the home search usually turns into
             </h2>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Boulder searches usually get more specific as soon as the search
-              gets real.
+              A Niwot search usually turns into a question of how specific the buyer wants the answer to be.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              At first, buyers often say they want Boulder because they like the
-              feel, the location, or the lifestyle attached to it.
+              That is usually the real fork in the road.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Then the real questions show up.
+              Do you still want{" "}
+              <a href="/boulder-homes-for-sale" className="text-gold hover:text-gold/80 underline">
+                Boulder
+              </a>{" "}
+              itself?
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Do you want Boulder itself, or do you want to stay in the orbit of
-              Boulder? Do you want central energy, quieter residential pockets,
-              or a cleaner separation from the university? Do you want the
-              strongest Boulder identity, or do you want a nearby market that
-              may work better day to day?
+              Do you want Boulder-area relevance without as much pressure, like{" "}
+              <a href="/gunbarrel-co-real-estate" className="text-gold hover:text-gold/80 underline">
+                Gunbarrel
+              </a>?
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              That is where the map starts sorting itself out.
+              Do you want the steadier regional fit of{" "}
+              <a href="/lafayette-co-homes-for-sale" className="text-gold hover:text-gold/80 underline">
+                Lafayette
+              </a>?
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              For some buyers, Boulder gets stronger.
+              Or do you want a place that feels more distinct and more intentionally chosen than any of those?
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              That is where Niwot becomes useful.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              For some buyers, it turns into the better-fit answer.
             </p>
             <p className="text-lg text-cream/80 leading-relaxed">
-              For others, the better next step is comparing Boulder with{" "}
-              <a
-                href="/lafayette-co-homes-for-sale"
-                className="text-gold hover:text-gold/80 underline"
-              >
-                Lafayette
-              </a>
-              ,{" "}
-              <a
-                href="/longmont-co-homes-for-sale"
-                className="text-gold hover:text-gold/80 underline"
-              >
-                Longmont
-              </a>
-              , or a more specific Boulder spoke like{" "}
-              <a
-                href="/university-hill-cu-boulder-real-estate"
-                className="text-gold hover:text-gold/80 underline"
-              >
-                University Hill / CU Boulder
-              </a>
-              .
+              For others, it helps clarify that they want either something sharper, steadier, or broader.
             </p>
           </motion.div>
         </div>
       </section>
       {/* ═══════════════════════════════════════════════════
-          8. Boulder tradeoffs
+          8. The tradeoffs are the whole point
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
         <div className="container max-w-2xl">
@@ -419,45 +362,25 @@ export default function BoulderHomesForSale() {
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Boulder tradeoffs
+              The tradeoffs are the whole point
             </h2>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              This is not a market where the tradeoffs sit quietly in the
-              background.
+              The tradeoff with Niwot is pretty clear.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              They are the decision.
+              It usually gives buyers a stronger sense of place than some nearby options, but it is not trying to be central Boulder and it is not trying to be the broadest possible answer either.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Boulder usually forces buyers to decide what matters more:
+              For the right buyer, that is the appeal.
             </p>
-            <ul className="space-y-3 mb-8">
-              {[
-                "being in Boulder itself",
-                "getting more flexibility in the search",
-                "staying close to the same region without choosing the same pressure",
-                "accepting a more constrained search in exchange for a more specific location",
-                "sorting out whether identity, lifestyle, and place matter enough to justify the harder parts",
-              ].map((item, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-start gap-3 text-charcoal/80"
-                >
-                  <ArrowRight
-                    size={16}
-                    className="text-gold mt-1 flex-shrink-0"
-                  />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              That is why vague Boulder interest is usually not enough.
+              But if someone wants Boulder itself, wants more flexibility, or wants the move to feel less tied to one distinct place, Niwot is probably not going to replace that.
             </p>
-            <p className="text-lg text-charcoal/80 leading-relaxed font-semibold">
-              Boulder tends to work best when buyers can answer a simple
-              question clearly: Do I want Boulder enough to choose it on
-              purpose?
+            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
+              That is fine.
+            </p>
+            <p className="text-lg text-charcoal/80 leading-relaxed">
+              This page is here to help sort out whether a more specific and more settled answer is actually what fits best.
             </p>
           </motion.div>
         </div>
@@ -474,87 +397,64 @@ export default function BoulderHomesForSale() {
             >
               Compare nearby options
             </h2>
-            {/* Boulder vs University Hill */}
+            {/* vs Boulder */}
             <div className="mb-10">
-              <h3
-                className="text-xl font-bold text-gold mb-4"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                Boulder vs University Hill / CU Boulder
+              <h3 className="text-xl font-bold text-gold mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                Niwot vs Boulder
               </h3>
               <p className="text-lg text-cream/80 mb-4 leading-relaxed">
-                This is the most important child-page split inside the Boulder
-                cluster.
-              </p>
-              <p className="text-lg text-cream/80 mb-4 leading-relaxed">
-                Boulder is the broader city-level decision.
+                <a href="/boulder-homes-for-sale" className="text-gold hover:text-gold/80 underline">
+                  Boulder
+                </a>{" "}
+                is usually the more identity-first and more exact decision.
               </p>
               <p className="text-lg text-cream/80 leading-relaxed">
-                <a
-                  href="/university-hill-cu-boulder-real-estate"
-                  className="text-gold hover:text-gold/80 underline"
-                >
-                  University Hill / CU Boulder
-                </a>{" "}
-                is for buyers trying to understand what happens when the search
-                becomes more campus-adjacent, more central, and more tied to
-                that part of town. If Boulder is the macro decision, University
-                Hill / CU Boulder is the closer look at one of the city's most
-                specific submarkets.
+                Niwot usually gets stronger when the buyer wants this part of the region, but no longer needs the whole move to run through Boulder itself. If Boulder is the sharper answer, Niwot is often the more settled one.
               </p>
             </div>
-            {/* Boulder vs Lafayette */}
+            {/* vs Gunbarrel */}
             <div className="mb-10">
-              <h3
-                className="text-xl font-bold text-gold mb-4"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                Boulder vs Lafayette
+              <h3 className="text-xl font-bold text-gold mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                Niwot vs Gunbarrel
               </h3>
               <p className="text-lg text-cream/80 mb-4 leading-relaxed">
-                <a
-                  href="/lafayette-co-homes-for-sale"
-                  className="text-gold hover:text-gold/80 underline"
-                >
+                <a href="/gunbarrel-co-real-estate" className="text-gold hover:text-gold/80 underline">
+                  Gunbarrel
+                </a>{" "}
+                usually makes sense when the buyer still wants to stay closely tied to the Boulder conversation without making it too exact.
+              </p>
+              <p className="text-lg text-cream/80 leading-relaxed">
+                Niwot usually gets stronger when the buyer wants the answer to feel more distinct and more intentionally chosen than that.
+              </p>
+            </div>
+            {/* vs Lafayette */}
+            <div className="mb-10">
+              <h3 className="text-xl font-bold text-gold mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                Niwot vs Lafayette
+              </h3>
+              <p className="text-lg text-cream/80 mb-4 leading-relaxed">
+                <a href="/lafayette-co-homes-for-sale" className="text-gold hover:text-gold/80 underline">
                   Lafayette
                 </a>{" "}
-                usually gets serious when buyers want the general region, but
-                start questioning whether Boulder itself is the right version of
-                the move.
-              </p>
-              <p className="text-lg text-cream/80 mb-4 leading-relaxed">
-                That does not make Lafayette a fallback.
+                is often the steadier regional comparison.
               </p>
               <p className="text-lg text-cream/80 leading-relaxed">
-                It makes it one of the cleaner comparison markets. If Boulder is
-                the identity-first choice, Lafayette is often the "would this
-                work better in real life?" choice.
+                That page tends to fit buyers who want the region to work well in real life without needing the move to feel overly specific. Niwot usually makes more sense when the buyer wants more identity and more sense of place in the actual choice.
               </p>
             </div>
-            {/* Boulder vs Longmont */}
+            {/* vs Longmont */}
             <div>
-              <h3
-                className="text-xl font-bold text-gold mb-4"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                Boulder vs Longmont
+              <h3 className="text-xl font-bold text-gold mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                Niwot vs Longmont
               </h3>
               <p className="text-lg text-cream/80 mb-4 leading-relaxed">
-                <a
-                  href="/longmont-co-homes-for-sale"
-                  className="text-gold hover:text-gold/80 underline"
-                >
+                <a href="/longmont-co-homes-for-sale" className="text-gold hover:text-gold/80 underline">
                   Longmont
                 </a>{" "}
-                usually becomes the practical comparison when buyers want more
-                room to work with or want the move to feel less compressed.
-              </p>
-              <p className="text-lg text-cream/80 mb-4 leading-relaxed">
-                Again, that is not a downgrade.
+                usually becomes the broader practical comparison.
               </p>
               <p className="text-lg text-cream/80 leading-relaxed">
-                It is just a different answer. If Boulder is the more specific
-                choice, Longmont is often the broader flexibility play.
+                If Niwot is about choosing a more settled and more distinct answer on purpose, Longmont is usually about opening the search wider and giving the move more room to come together differently.
               </p>
             </div>
           </motion.div>
@@ -573,26 +473,19 @@ export default function BoulderHomesForSale() {
               What people tend to underestimate
             </h2>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              A lot of buyers underestimate how much Boulder narrows the search.
+              A lot of buyers underestimate how much easier it can be to decide once they realize they do not need the answer to be central Boulder, but they also do not want it to feel broad or generic.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Sometimes that is exactly why it helps.
+              That is where Niwot starts helping.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              But it usually narrows the search faster than people expect. It
-              forces clearer decisions about budget, area, pace, priorities, and
-              whether the city itself matters more than the house.
+              It usually is not the first page buyers start with.
             </p>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              Buyers also tend to underestimate how useful the nearby
-              comparisons become once they stop treating them as basically the
-              same.
-            </p>
-            <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
-              They are not the same.
+              It is the page that starts making sense once the search gets more honest about what kind of place actually feels right.
             </p>
             <p className="text-lg text-charcoal/80 leading-relaxed">
-              That is why the spoke pages matter.
+              People also tend to underestimate how much a more distinct sense of place can matter once daily life becomes more real than the search itself.
             </p>
           </motion.div>
         </div>
@@ -610,43 +503,39 @@ export default function BoulderHomesForSale() {
               Buy now or rent first
             </h2>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              For some buyers, buying in Boulder right away makes sense because
-              they already know what they are choosing and why.
+              For some buyers, buying in Niwot right away makes sense because the appeal is already clear.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              For others, renting first is the better move.
+              They want this part of the map. They want the decision to feel more settled and more specific. And they do not need the move to be more central or more open-ended than that.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              That is especially true if you are still figuring out:
+              For others, renting first may still make sense.
+            </p>
+            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
+              That is especially true if you are still sorting out:
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "whether Boulder itself is the long-term fit",
-                "which part of Boulder actually feels right to you",
-                "how much university influence you want nearby",
-                "whether Lafayette or Longmont may fit better once the move is real",
+                "whether Boulder still has too much pull",
+                "whether Gunbarrel fits better as a more relaxed nearby option",
+                "whether Lafayette fits better as a steadier regional answer",
+                "whether Longmont fits better as a broader practical answer",
+                "whether Niwot feels right long term or just like the clearest next comparison",
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-cream/80">
-                  <ArrowRight
-                    size={16}
-                    className="text-gold mt-1 flex-shrink-0"
-                  />
+                  <ArrowRight size={16} className="text-gold mt-1 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Renting first is not hesitation.
-            </p>
             <p className="text-lg text-cream/80 leading-relaxed">
-              Sometimes it is the cleanest way to avoid forcing a decision
-              before the map is clear.
+              Renting first can make sense if the search is still narrowing and you are not quite ready to choose a more specific map on purpose.
             </p>
           </motion.div>
         </div>
       </section>
       {/* ═══════════════════════════════════════════════════
-          12. Boulder FAQs
+          12. FAQ
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
         <div className="container max-w-2xl">
@@ -655,7 +544,7 @@ export default function BoulderHomesForSale() {
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-10"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Boulder FAQs
+              Niwot FAQs
             </h2>
           </motion.div>
           <div className="space-y-4">
@@ -668,14 +557,10 @@ export default function BoulderHomesForSale() {
                 className="bg-white rounded-lg border border-charcoal/10 overflow-hidden"
               >
                 <button
-                  onClick={() =>
-                    setExpandedFaq(expandedFaq === idx ? null : idx)
-                  }
+                  onClick={() => setExpandedFaq(expandedFaq === idx ? null : idx)}
                   className="w-full flex items-center justify-between p-6 hover:bg-cream/50 transition-colors text-left"
                 >
-                  <h3 className="font-bold text-charcoal pr-4">
-                    {item.question}
-                  </h3>
+                  <h3 className="font-bold text-charcoal pr-4">{item.question}</h3>
                   <ChevronDown
                     size={20}
                     className={`text-gold flex-shrink-0 transition-transform ${
@@ -706,28 +591,19 @@ export default function BoulderHomesForSale() {
               Final thoughts
             </h2>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              Boulder stays in the conversation for a reason.
+              Niwot stays relevant for a reason.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              It is not just recognizable. It is not just attractive. It is not
-              just a place people like talking about.
+              It usually starts making more sense when buyers stop assuming the answer has to be either Boulder itself or a broad nearby alternative and start asking what actually fits.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              For the right buyer, Boulder can feel more specific than that.
+              For the right buyer, that can be a very useful shift.
             </p>
             <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              But that only helps if you are honest about what you are choosing.
-            </p>
-            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              If Boulder fits, it usually fits because the city itself matters
-              enough to shape the whole move.
-            </p>
-            <p className="text-lg text-cream/80 mb-5 leading-relaxed">
-              If it does not, that is also good to know early.
+              Because sometimes the better answer is not the most central answer or the widest one.
             </p>
             <p className="text-lg text-cream/80 leading-relaxed">
-              Because the goal is not to end up near the right map. It is to
-              end up in the part of the map that actually makes sense for you.
+              Sometimes it is the one that feels more settled, more distinct, and more clearly chosen. That is where Niwot tends to stay strong.
             </p>
           </motion.div>
         </div>
@@ -746,54 +622,10 @@ export default function BoulderHomesForSale() {
             </h2>
             <div className="space-y-3 mb-10">
               {[
-                {
-                  label: "University Hill / CU Boulder →",
-                  href: "/university-hill-cu-boulder-real-estate",
-                },
-                {
-                  label: "Lafayette →",
-                  href: "/lafayette-co-homes-for-sale",
-                },
-                {
-                  label: "Longmont →",
-                  href: "/longmont-co-homes-for-sale",
-                },
-                {
-                  label: "Gunbarrel →",
-                  href: "/gunbarrel-co-real-estate",
-                },
-                {
-                  label: "Niwot →",
-                  href: "/niwot-co-real-estate",
-                },
-                {
-                  label: "Table Mesa / South Boulder →",
-                  href: "/table-mesa-south-boulder-real-estate",
-                },
-                {
-                  label: "North Boulder (NoBo) →",
-                  href: "/north-boulder-nobo-real-estate",
-                },
-                {
-                  label: "Newlands →",
-                  href: "/newlands-boulder-real-estate",
-                },
-                {
-                  label: "Mapleton Hill →",
-                  href: "/mapleton-hill-boulder-real-estate",
-                },
-                {
-                  label: "Louisville →",
-                  href: "/louisville-co-homes-for-sale",
-                },
-                {
-                  label: "Superior →",
-                  href: "/superior-co-homes-for-sale",
-                },
-                {
-                  label: "Lyons →",
-                  href: "/lyons-co-homes-for-sale",
-                },
+                { label: "Boulder →", href: "/boulder-homes-for-sale" },
+                { label: "Gunbarrel →", href: "/gunbarrel-co-real-estate" },
+                { label: "Lafayette →", href: "/lafayette-co-homes-for-sale" },
+                { label: "Longmont →", href: "/longmont-co-homes-for-sale" },
               ].map((link, idx) => (
                 <a
                   key={idx}
@@ -813,15 +645,9 @@ export default function BoulderHomesForSale() {
             </h2>
             <div className="space-y-3">
               {[
-                { label: "Talk to Rob About Boulder →", href: "/#contact" },
-                {
-                  label: "Browse Boulder Homes →",
-                  href: "/boulder-co-homes-for-sale",
-                },
-                {
-                  label: "Colorado Home Buying Workshop →",
-                  href: "/colorado-home-buying-workshop",
-                },
+                { label: "Talk to Rob About Boulder Area Options →", href: "/#contact" },
+                { label: "Browse Boulder Homes →", href: "/boulder-co-homes-for-sale" },
+                { label: "Colorado Home Buying Workshop →", href: "/colorado-home-buying-workshop" },
               ].map((link, idx) => (
                 <a
                   key={idx}
