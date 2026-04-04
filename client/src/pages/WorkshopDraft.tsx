@@ -71,7 +71,7 @@ export default function WorkshopDraft() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="hub-page min-h-screen bg-warm-white">
       <SeoHead
         metadata={{
           title: "Free Colorado Home Buying Workshop | My Rock Realty",

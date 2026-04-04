@@ -91,7 +91,7 @@ export default function DenverCondosForSale() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="hub-page min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title: "Denver Condos for Sale | Condominiums in Denver, Colorado",

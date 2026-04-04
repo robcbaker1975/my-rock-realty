@@ -30,7 +30,7 @@ export default function AgentPartner() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream font-body">
+    <div className="hub-page min-h-screen flex flex-col bg-cream font-body">
       {/* ─── SEO: noindex, nofollow ─── */}
       <SeoHead
         metadata={{

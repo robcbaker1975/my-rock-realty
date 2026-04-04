@@ -101,7 +101,7 @@ export default function JoinUs() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="hub-page min-h-screen bg-warm-white">
       <SeoHead
         metadata={{
           title: "Join My Rock Realty | Colorado Real Estate Agent Opportunities",

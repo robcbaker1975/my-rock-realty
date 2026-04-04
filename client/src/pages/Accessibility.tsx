@@ -10,7 +10,7 @@ import { ArrowLeft, Phone, Mail } from "lucide-react";
 
 export default function Accessibility() {
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="hub-page min-h-screen bg-warm-white">
       <SeoHead
         metadata={{
           title: "Accessibility Statement | My Rock Realty",

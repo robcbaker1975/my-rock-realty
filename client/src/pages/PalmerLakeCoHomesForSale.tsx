@@ -91,7 +91,7 @@ export default function PalmerLakeCoHomesForSale() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="hub-page min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title: "Palmer Lake CO Homes for Sale | Palmer Lake Colorado Real Estate",

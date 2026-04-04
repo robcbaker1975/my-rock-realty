@@ -170,3 +170,69 @@
     background: oklch(0.58 0.12 85);
   }
 }
+
+/* ============================================================
+   HUB PAGE DESKTOP LAYOUT SYSTEM
+   Applies to all hub/community/buyer-guide pages via .hub-page
+   Mobile layout is preserved; desktop breakpoints add width
+   and rhythm. Homepage and BuyingIn pages are excluded.
+   ============================================================ */
+
+/* Desktop container width expansion */
+@media (min-width: 1024px) {
+  .hub-page .container.max-w-3xl {
+    max-width: 56rem;
+  }
+  .hub-page .container.max-w-2xl {
+    max-width: 48rem;
+  }
+}
+
+/* Comparison / navigation link grid on desktop */
+@media (min-width: 1024px) {
+  .hub-page .hub-link-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 2rem;
+  }
+  .hub-page .hub-link-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem 1.5rem;
+  }
+}
+
+/* CTA row desktop treatment */
+@media (min-width: 1024px) {
+  .hub-page .hub-cta-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+}
+
+/* Stats / snapshot block desktop treatment */
+@media (min-width: 1024px) {
+  .hub-page .hub-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .hub-page .hub-stats-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Two-column content sections on large desktop */
+@media (min-width: 1280px) {
+  .hub-page .hub-two-col {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+  }
+}

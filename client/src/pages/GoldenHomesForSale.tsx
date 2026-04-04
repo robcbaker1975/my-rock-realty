@@ -116,7 +116,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
 export default function GoldenHomesForSale() {
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="hub-page min-h-screen bg-warm-white">
       <SeoHead
         metadata={{
           title: "Golden Homes for Sale | Golden CO Real Estate | My Rock Realty",

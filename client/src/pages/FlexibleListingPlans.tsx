@@ -150,7 +150,7 @@ export default function FlexibleListingPlans() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-warm-white">
+    <div className="hub-page min-h-screen flex flex-col bg-warm-white">
       <SeoHead
         metadata={{
           title: "Flexible Listing Plans for Colorado Sellers | My Rock Realty",

@@ -91,7 +91,7 @@ export default function WidefieldCoHomesForSale() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="hub-page min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title: "Widefield CO Homes for Sale | Widefield Colorado Real Estate",

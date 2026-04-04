@@ -86,7 +86,7 @@ export default function DenverHomesForSale() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
-    <div className="min-h-screen bg-warm-white" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+    <div className="hub-page min-h-screen bg-warm-white" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
       <SeoHead
         metadata={{
           title: "Living in Denver: Real Estate, Fit, and the Tradeoffs That Matter | My Rock Realty",

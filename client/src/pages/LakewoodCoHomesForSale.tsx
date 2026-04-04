@@ -113,7 +113,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
 export default function LakewoodCoHomesForSale() {
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="hub-page min-h-screen bg-warm-white">
       <SeoHead
         metadata={{
           title: "Lakewood CO Homes for Sale | Lakewood Colorado Real Estate | My Rock Realty",

@@ -91,7 +91,7 @@ export default function LoneTreeCoHomesForSale() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="hub-page min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title: "Lone Tree CO Homes for Sale | Lone Tree Colorado Real Estate",

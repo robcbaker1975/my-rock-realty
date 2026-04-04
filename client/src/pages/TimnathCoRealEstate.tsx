@@ -71,7 +71,7 @@ const fadeUp = {
 export default function TimnathCoRealEstate() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="hub-page min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title: "Living in Timnath, Colorado: Real Estate, Tradeoffs, and What It’s Like",

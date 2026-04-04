@@ -133,7 +133,7 @@ export default function BoulderCoHomesForSale() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="hub-page min-h-screen bg-warm-white">
       <SeoHead
         metadata={{
           title: "Boulder, CO Homes for Sale | Boulder Real Estate & Boulder County Homes",

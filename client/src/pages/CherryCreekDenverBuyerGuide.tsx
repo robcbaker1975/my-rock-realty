@@ -81,7 +81,7 @@ export default function CherryCreekDenverBuyerGuide() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="hub-page min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title: "Cherry Creek Denver Buyer Guide | Cherry Creek Home Search",

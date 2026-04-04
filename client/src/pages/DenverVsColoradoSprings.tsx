@@ -84,7 +84,7 @@ export default function DenverVsColoradoSprings() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="hub-page min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title: "Denver vs Colorado Springs | Colorado City Comparison for Home Buyers",

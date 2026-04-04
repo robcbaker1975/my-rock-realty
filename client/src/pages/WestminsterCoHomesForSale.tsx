@@ -114,7 +114,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
 export default function WestminsterCoHomesForSale() {
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="hub-page min-h-screen bg-warm-white">
       <SeoHead
         metadata={{
           title: "Westminster CO Homes for Sale | Westminster Colorado Real Estate | My Rock Realty",

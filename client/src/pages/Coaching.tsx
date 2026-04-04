@@ -59,7 +59,7 @@ export default function Coaching() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="hub-page min-h-screen bg-warm-white">
       <SeoHead
         metadata={{
           title: "Real Estate Coaching for Licensed Agents | My Rock Realty",

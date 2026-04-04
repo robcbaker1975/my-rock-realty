@@ -93,7 +93,7 @@ export default function ColoradoSpringsHomesForSale() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="hub-page min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title: "Colorado Springs Homes for Sale | Lifestyle, Relocation & Neighborhood Fit — My Rock Realty",

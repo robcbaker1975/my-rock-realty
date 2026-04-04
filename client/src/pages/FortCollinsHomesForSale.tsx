@@ -93,7 +93,7 @@ export default function FortCollinsHomesForSale() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="hub-page min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title: "Fort Collins Homes for Sale | Old Town Lifestyle, College-Town Character & Buyer Fit",

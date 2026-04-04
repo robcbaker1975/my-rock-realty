@@ -85,7 +85,7 @@ export default function DouglasCountyVsWeldCounty() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="hub-page min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title: "Douglas County vs Weld County | Colorado County Comparison for Home Buyers",

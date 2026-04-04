@@ -98,7 +98,7 @@ export default function FirstTimeHomeBuyerDenver() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="hub-page min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title: "First-Time Home Buyer Denver | Denver First-Time Buyer Guide",

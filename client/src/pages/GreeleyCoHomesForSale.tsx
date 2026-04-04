@@ -140,7 +140,7 @@ export default function GreeleyCoHomesForSale() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="hub-page min-h-screen bg-warm-white">
       <SeoHead
         metadata={{
           title: "Greeley, CO Homes for Sale | Greeley Real Estate & Weld County Homes",

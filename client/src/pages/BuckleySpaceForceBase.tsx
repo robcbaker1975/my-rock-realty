@@ -70,7 +70,7 @@ export default function BuckleySpaceForceBase() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+    <div className="hub-page min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
       <SeoHead
         metadata={{
           title: "Buckley Space Force Base Relocation Guide | Aurora & Denver Metro Real Estate | My Rock Realty",

@@ -103,7 +103,7 @@ export default function ColoradoSpringsCoHomesForSale() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="hub-page min-h-screen bg-warm-white">
       <SeoHead
         metadata={{
           title: "Colorado Springs CO Homes for Sale | Area Guide",

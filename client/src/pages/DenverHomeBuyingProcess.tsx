@@ -98,7 +98,7 @@ export default function DenverHomeBuyingProcess() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="hub-page min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title: "Denver Home Buying Process | Steps to Buy a Home in Denver",

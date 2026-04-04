@@ -257,7 +257,7 @@ export default function MilitaryRelocation() {
   };
 
   return (
-    <div className="min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+    <div className="hub-page min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
       <SeoHead
         metadata={{
           title: "Military & PCS Relocation in Colorado | My Rock Realty",

@@ -83,7 +83,7 @@ export default function BestCommunitiesNearFortCarson() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+    <div className="hub-page min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
       <SeoHead
         metadata={{
           title: "Best Communities Near Fort Carson | Military Relocation | My Rock Realty",

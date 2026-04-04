@@ -89,7 +89,7 @@ export default function WorkshopResources() {
   };
 
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="hub-page min-h-screen bg-warm-white">
       <SeoHead
         metadata={{
           title: "Colorado Home Buying Workshop — Worksheets & Toolkit | My Rock Realty",

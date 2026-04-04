@@ -139,7 +139,7 @@ export default function DouglasCoHomesForSale() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="hub-page min-h-screen bg-warm-white">
       <SeoHead
         metadata={{
           title: "Douglas County, CO Homes for Sale | Douglas County Real Estate",

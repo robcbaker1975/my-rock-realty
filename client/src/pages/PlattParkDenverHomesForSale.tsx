@@ -75,7 +75,7 @@ export default function PlattParkDenverHomesForSale() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
-    <div className="min-h-screen bg-warm-white" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+    <div className="hub-page min-h-screen bg-warm-white" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
       <SeoHead
         metadata={{
           title: "Platt Park Denver Homes for Sale: Fit, Feel, and the Tradeoffs That Matter | My Rock Realty",

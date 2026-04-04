@@ -91,7 +91,7 @@ export default function WindsorCoHomesForSale() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="hub-page min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title: "Windsor CO Homes for Sale | Windsor Colorado Real Estate",

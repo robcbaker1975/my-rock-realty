@@ -15,7 +15,7 @@ const breadcrumbItems = [
 
 export default function DenverMarketReport2025() {
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="hub-page min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title: "Denver Real Estate Market Report 2025: Key Trends & Insights",
