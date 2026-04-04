@@ -284,7 +284,14 @@ export default function LohiDenverHomesForSale() {
           <h2 className="text-2xl sm:text-3xl font-bold text-charcoal mb-6" style={{ fontFamily: "'Outfit', sans-serif" }}>
             Featured LoHi Listings
           </h2>
-          <BuyingBuddyWidget type="SearchResults" filter="neighborhood:Highland mappos:39.7594,-105.0097 mapzoom:14" />
+          <BuyingBuddyWidget
+            type="FeaturedGallery"
+            filter="mls_id:denver+listing_status:active,coming-soon+mapType:ROADMAP+shapesearch:39.76929968443959 -104.99326020207035,39.76929968443959 -105.01604824986087,39.75632750174891 -105.01609116520511,39.75510678392926 -105.01274376835453,39.76638935141429 -104.99918251957523,39.76929968443959 -104.99326020207035+mapzoom:14+mappos:39.762203599846536 -105.00467568363773+limit:12+order:price"
+          />
+          <BuyingBuddyWidget
+            type="InteractiveMap"
+            filter="mls_id:denver+listing_status:active,coming-soon+mapType:ROADMAP+shapesearch:39.76929968443959 -104.99326020207035,39.76929968443959 -105.01604824986087,39.75632750174891 -105.01609116520511,39.75510678392926 -105.01274376835453,39.76638935141429 -104.99918251957523,39.76929968443959 -104.99326020207035+mapzoom:14+mappos:39.762203599846536 -105.00467568363773+limit:12+order:price"
+          />
         </div>
       </section>
 

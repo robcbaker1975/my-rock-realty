@@ -401,7 +401,14 @@ export default function BoulderCoHomesForSale() {
             Featured Boulder Listings
           </h2>
           {/* ── LIVE IDX LISTING FEED ── */}
-          <BuyingBuddyWidget type="SearchResults" filter="city:Boulder mappos:40.01499,-105.27055 mapzoom:12" />
+          <BuyingBuddyWidget
+            type="FeaturedGallery"
+            filter="mls_id:denver+listing_status:active,coming-soon+city:Boulder+mapType:ROADMAP+mapzoom:7+mappos:40.01499 -105.27055+limit:12+order:price"
+          />
+          <BuyingBuddyWidget
+            type="InteractiveMap"
+            filter="mapzoom:7+mappos:40.01499 -105.27055+mls_id:denver+listing_status:active,coming-soon+city:Boulder+limit:12+order:price"
+          />
           {/* ── END IDX LISTING FEED ── */}
         </div>
       </section>
