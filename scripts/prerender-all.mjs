@@ -207,7 +207,7 @@ async function prerenderAll() {
     const _injectedHtml_denver = injectSeoHead(prerenderedShell, _seoBlock_denver, _seoMeta_denver.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "denver-homes-for-sale.html"), _injectedHtml_denver, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "denver-homes-for-sale.html"), _injectedHtml_denver, "utf-8");
     const written_denver = readFileSync(resolve(serverPrerenderedDir, "denver-homes-for-sale.html"), "utf-8");
     if (written_denver.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for denver");
     console.log("[prerender-all] Done: denver");
@@ -271,7 +271,7 @@ async function prerenderAll() {
     const _injectedHtml_boulder = injectSeoHead(prerenderedShell, _seoBlock_boulder, _seoMeta_boulder.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "boulder-co-homes-for-sale.html"), _injectedHtml_boulder, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "boulder-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "boulder-co-homes-for-sale.html"), _injectedHtml_boulder, "utf-8");
     const written_boulder = readFileSync(resolve(serverPrerenderedDir, "boulder-co-homes-for-sale.html"), "utf-8");
     if (written_boulder.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for boulder");
     console.log("[prerender-all] Done: boulder");
@@ -296,7 +296,7 @@ async function prerenderAll() {
     const _injectedHtml_black_forest = injectSeoHead(prerenderedShell, _seoBlock_black_forest, _seoMeta_black_forest.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "black-forest-co-real-estate.html"), _injectedHtml_black_forest, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "black-forest-co-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "black-forest-co-real-estate.html"), _injectedHtml_black_forest, "utf-8");
     const written_black_forest = readFileSync(resolve(serverPrerenderedDir, "black-forest-co-real-estate.html"), "utf-8");
     if (written_black_forest.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for black-forest");
     console.log("[prerender-all] Done: black-forest");
@@ -321,7 +321,7 @@ async function prerenderAll() {
     const _injectedHtml_peyton = injectSeoHead(prerenderedShell, _seoBlock_peyton, _seoMeta_peyton.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "peyton-co-real-estate.html"), _injectedHtml_peyton, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "peyton-co-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "peyton-co-real-estate.html"), _injectedHtml_peyton, "utf-8");
     const written_peyton = readFileSync(resolve(serverPrerenderedDir, "peyton-co-real-estate.html"), "utf-8");
     if (written_peyton.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for peyton");
     console.log("[prerender-all] Done: peyton");
@@ -346,7 +346,7 @@ async function prerenderAll() {
     const _injectedHtml_palmer_lake = injectSeoHead(prerenderedShell, _seoBlock_palmer_lake, _seoMeta_palmer_lake.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "palmer-lake-co-real-estate.html"), _injectedHtml_palmer_lake, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "palmer-lake-co-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "palmer-lake-co-real-estate.html"), _injectedHtml_palmer_lake, "utf-8");
     const written_palmer_lake = readFileSync(resolve(serverPrerenderedDir, "palmer-lake-co-real-estate.html"), "utf-8");
     if (written_palmer_lake.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for palmer-lake");
     console.log("[prerender-all] Done: palmer-lake");
@@ -371,7 +371,7 @@ async function prerenderAll() {
     const _injectedHtml_parker = injectSeoHead(prerenderedShell, _seoBlock_parker, _seoMeta_parker.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "parker-co-homes-for-sale.html"), _injectedHtml_parker, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "parker-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "parker-co-homes-for-sale.html"), _injectedHtml_parker, "utf-8");
     const written_parker = readFileSync(resolve(serverPrerenderedDir, "parker-co-homes-for-sale.html"), "utf-8");
     if (written_parker.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for parker");
     console.log("[prerender-all] Done: parker");
@@ -396,7 +396,7 @@ async function prerenderAll() {
     const _injectedHtml_highlands_ranch = injectSeoHead(prerenderedShell, _seoBlock_highlands_ranch, _seoMeta_highlands_ranch.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "highlands-ranch-co-homes-for-sale.html"), _injectedHtml_highlands_ranch, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "highlands-ranch-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "highlands-ranch-co-homes-for-sale.html"), _injectedHtml_highlands_ranch, "utf-8");
     const written_highlands_ranch = readFileSync(resolve(serverPrerenderedDir, "highlands-ranch-co-homes-for-sale.html"), "utf-8");
     if (written_highlands_ranch.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for highlands-ranch");
     console.log("[prerender-all] Done: highlands-ranch");
@@ -421,7 +421,7 @@ async function prerenderAll() {
     const _injectedHtml_castle_rock = injectSeoHead(prerenderedShell, _seoBlock_castle_rock, _seoMeta_castle_rock.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "castle-rock-co-homes-for-sale.html"), _injectedHtml_castle_rock, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "castle-rock-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "castle-rock-co-homes-for-sale.html"), _injectedHtml_castle_rock, "utf-8");
     const written_castle_rock = readFileSync(resolve(serverPrerenderedDir, "castle-rock-co-homes-for-sale.html"), "utf-8");
     if (written_castle_rock.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for castle-rock");
     console.log("[prerender-all] Done: castle-rock");
@@ -446,7 +446,7 @@ async function prerenderAll() {
     const _injectedHtml_littleton = injectSeoHead(prerenderedShell, _seoBlock_littleton, _seoMeta_littleton.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "littleton-co-homes-for-sale.html"), _injectedHtml_littleton, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "littleton-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "littleton-co-homes-for-sale.html"), _injectedHtml_littleton, "utf-8");
     const written_littleton = readFileSync(resolve(serverPrerenderedDir, "littleton-co-homes-for-sale.html"), "utf-8");
     if (written_littleton.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for littleton");
     console.log("[prerender-all] Done: littleton");
@@ -471,7 +471,7 @@ async function prerenderAll() {
     const _injectedHtml_arvada = injectSeoHead(prerenderedShell, _seoBlock_arvada, _seoMeta_arvada.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "arvada-co-homes-for-sale.html"), _injectedHtml_arvada, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "arvada-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "arvada-co-homes-for-sale.html"), _injectedHtml_arvada, "utf-8");
     const written_arvada = readFileSync(resolve(serverPrerenderedDir, "arvada-co-homes-for-sale.html"), "utf-8");
     if (written_arvada.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for arvada");
     console.log("[prerender-all] Done: arvada");
@@ -497,7 +497,7 @@ async function prerenderAll() {
     const _injectedHtml_fort_collins = injectSeoHead(prerenderedShell, _seoBlock_fort_collins, _seoMeta_fort_collins.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "fort-collins-co-homes-for-sale.html"), _injectedHtml_fort_collins, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "fort-collins-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "fort-collins-co-homes-for-sale.html"), _injectedHtml_fort_collins, "utf-8");
     const written_fort_collins = readFileSync(resolve(serverPrerenderedDir, "fort-collins-co-homes-for-sale.html"), "utf-8");
     if (written_fort_collins.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for fort-collins");
     console.log("[prerender-all] Done: fort-collins");
@@ -522,7 +522,7 @@ async function prerenderAll() {
     const _injectedHtml_loveland = injectSeoHead(prerenderedShell, _seoBlock_loveland, _seoMeta_loveland.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "loveland-co-homes-for-sale.html"), _injectedHtml_loveland, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "loveland-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "loveland-co-homes-for-sale.html"), _injectedHtml_loveland, "utf-8");
     const written_loveland = readFileSync(resolve(serverPrerenderedDir, "loveland-co-homes-for-sale.html"), "utf-8");
     if (written_loveland.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for loveland");
     console.log("[prerender-all] Done: loveland");
@@ -547,7 +547,7 @@ async function prerenderAll() {
     const _injectedHtml_windsor = injectSeoHead(prerenderedShell, _seoBlock_windsor, _seoMeta_windsor.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "windsor-co-homes-for-sale.html"), _injectedHtml_windsor, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "windsor-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "windsor-co-homes-for-sale.html"), _injectedHtml_windsor, "utf-8");
     const written_windsor = readFileSync(resolve(serverPrerenderedDir, "windsor-co-homes-for-sale.html"), "utf-8");
     if (written_windsor.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for windsor");
     console.log("[prerender-all] Done: windsor");
@@ -572,7 +572,7 @@ async function prerenderAll() {
     const _injectedHtml_johnstown = injectSeoHead(prerenderedShell, _seoBlock_johnstown, _seoMeta_johnstown.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "johnstown-co-homes-for-sale.html"), _injectedHtml_johnstown, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "johnstown-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "johnstown-co-homes-for-sale.html"), _injectedHtml_johnstown, "utf-8");
     const written_johnstown = readFileSync(resolve(serverPrerenderedDir, "johnstown-co-homes-for-sale.html"), "utf-8");
     if (written_johnstown.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for johnstown");
     console.log("[prerender-all] Done: johnstown");
@@ -597,7 +597,7 @@ async function prerenderAll() {
     const _injectedHtml_greeley = injectSeoHead(prerenderedShell, _seoBlock_greeley, _seoMeta_greeley.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "greeley-co-homes-for-sale.html"), _injectedHtml_greeley, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "greeley-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "greeley-co-homes-for-sale.html"), _injectedHtml_greeley, "utf-8");
     const written_greeley = readFileSync(resolve(serverPrerenderedDir, "greeley-co-homes-for-sale.html"), "utf-8");
     if (written_greeley.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for greeley");
     console.log("[prerender-all] Done: greeley");
@@ -622,7 +622,7 @@ async function prerenderAll() {
     const _injectedHtml_douglas = injectSeoHead(prerenderedShell, _seoBlock_douglas, _seoMeta_douglas.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "douglas-co-homes-for-sale.html"), _injectedHtml_douglas, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "douglas-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "douglas-co-homes-for-sale.html"), _injectedHtml_douglas, "utf-8");
     const written_douglas = readFileSync(resolve(serverPrerenderedDir, "douglas-co-homes-for-sale.html"), "utf-8");
     if (written_douglas.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for douglas");
     console.log("[prerender-all] Done: douglas");
@@ -647,7 +647,7 @@ async function prerenderAll() {
     const _injectedHtml_castle_pines = injectSeoHead(prerenderedShell, _seoBlock_castle_pines, _seoMeta_castle_pines.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "castle-pines-co-homes-for-sale.html"), _injectedHtml_castle_pines, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "castle-pines-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "castle-pines-co-homes-for-sale.html"), _injectedHtml_castle_pines, "utf-8");
     const written_castle_pines = readFileSync(resolve(serverPrerenderedDir, "castle-pines-co-homes-for-sale.html"), "utf-8");
     if (written_castle_pines.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for castle-pines");
     console.log("[prerender-all] Done: castle-pines");
@@ -672,7 +672,7 @@ async function prerenderAll() {
     const _injectedHtml_centennial = injectSeoHead(prerenderedShell, _seoBlock_centennial, _seoMeta_centennial.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "centennial-co-homes-for-sale.html"), _injectedHtml_centennial, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "centennial-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "centennial-co-homes-for-sale.html"), _injectedHtml_centennial, "utf-8");
     const written_centennial = readFileSync(resolve(serverPrerenderedDir, "centennial-co-homes-for-sale.html"), "utf-8");
     if (written_centennial.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for centennial");
     console.log("[prerender-all] Done: centennial");
@@ -697,7 +697,7 @@ async function prerenderAll() {
     const _injectedHtml_lone_tree = injectSeoHead(prerenderedShell, _seoBlock_lone_tree, _seoMeta_lone_tree.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "lone-tree-co-homes-for-sale.html"), _injectedHtml_lone_tree, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "lone-tree-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "lone-tree-co-homes-for-sale.html"), _injectedHtml_lone_tree, "utf-8");
     const written_lone_tree = readFileSync(resolve(serverPrerenderedDir, "lone-tree-co-homes-for-sale.html"), "utf-8");
     if (written_lone_tree.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for lone-tree");
     console.log("[prerender-all] Done: lone-tree");
@@ -722,7 +722,7 @@ async function prerenderAll() {
     const _injectedHtml_westminster = injectSeoHead(prerenderedShell, _seoBlock_westminster, _seoMeta_westminster.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "westminster-co-homes-for-sale.html"), _injectedHtml_westminster, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "westminster-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "westminster-co-homes-for-sale.html"), _injectedHtml_westminster, "utf-8");
     const written_westminster = readFileSync(resolve(serverPrerenderedDir, "westminster-co-homes-for-sale.html"), "utf-8");
     if (written_westminster.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for westminster");
     console.log("[prerender-all] Done: westminster");
@@ -747,7 +747,7 @@ async function prerenderAll() {
     const _injectedHtml_monument = injectSeoHead(prerenderedShell, _seoBlock_monument, _seoMeta_monument.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "monument-co-real-estate.html"), _injectedHtml_monument, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "monument-co-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "monument-co-real-estate.html"), _injectedHtml_monument, "utf-8");
     const written_monument = readFileSync(resolve(serverPrerenderedDir, "monument-co-real-estate.html"), "utf-8");
     if (written_monument.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for monument");
     console.log("[prerender-all] Done: monument");
@@ -794,7 +794,7 @@ async function prerenderAll() {
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/falcon-co-real-estate/');
 
       mkdirSync(distOutputDir, { recursive: true });
-      writeFileSync(resolve(distOutputDir, "falcon-co-real-estate.html"), prerenderedShell, "utf-8");
+      writeFileSync(resolve(distOutputDir, "falcon-co-real-estate.html"), _injectedHtml, "utf-8");
       const srcOutputDir = resolve(ROOT, "server/prerendered");
       mkdirSync(srcOutputDir, { recursive: true });
       const srcOutputPath = resolve(srcOutputDir, "falcon-co-real-estate.html");
@@ -823,7 +823,7 @@ async function prerenderAll() {
     const _injectedHtml_fountain = injectSeoHead(prerenderedShell, _seoBlock_fountain, _seoMeta_fountain.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "fountain-co-real-estate.html"), _injectedHtml_fountain, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "fountain-co-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "fountain-co-real-estate.html"), _injectedHtml_fountain, "utf-8");
     const written_fountain = readFileSync(resolve(serverPrerenderedDir, "fountain-co-real-estate.html"), "utf-8");
     if (written_fountain.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for fountain");
     console.log("[prerender-all] Done: fountain");
@@ -848,7 +848,7 @@ async function prerenderAll() {
     const _injectedHtml_woodland_park = injectSeoHead(prerenderedShell, _seoBlock_woodland_park, _seoMeta_woodland_park.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "woodland-park-co-real-estate.html"), _injectedHtml_woodland_park, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "woodland-park-co-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "woodland-park-co-real-estate.html"), _injectedHtml_woodland_park, "utf-8");
     const written_woodland_park = readFileSync(resolve(serverPrerenderedDir, "woodland-park-co-real-estate.html"), "utf-8");
     if (written_woodland_park.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for woodland-park");
     console.log("[prerender-all] Done: woodland-park");
@@ -879,7 +879,7 @@ async function prerenderAll() {
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/manitou-springs-co-real-estate/');
 
       mkdirSync(distOutputDir, { recursive: true });
-      writeFileSync(resolve(distOutputDir, "manitou-springs-co-real-estate.html"), prerenderedShell, "utf-8");
+      writeFileSync(resolve(distOutputDir, "manitou-springs-co-real-estate.html"), _injectedHtml, "utf-8");
       const srcOutputDir = resolve(ROOT, "server/prerendered");
       mkdirSync(srcOutputDir, { recursive: true });
       const srcOutputPath = resolve(srcOutputDir, "manitou-springs-co-real-estate.html");
@@ -930,7 +930,7 @@ async function prerenderAll() {
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/briargate-colorado-springs-real-estate/');
 
       mkdirSync(distOutputDir, { recursive: true });
-      writeFileSync(resolve(distOutputDir, "briargate-colorado-springs-real-estate.html"), prerenderedShell, "utf-8");
+      writeFileSync(resolve(distOutputDir, "briargate-colorado-springs-real-estate.html"), _injectedHtml, "utf-8");
       const srcOutputDir = resolve(ROOT, "server/prerendered");
       mkdirSync(srcOutputDir, { recursive: true });
       const srcOutputPath = resolve(srcOutputDir, "briargate-colorado-springs-real-estate.html");
@@ -1051,7 +1051,7 @@ async function prerenderAll() {
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/northgate-colorado-springs-real-estate/');
 
       mkdirSync(distOutputDir, { recursive: true });
-      writeFileSync(resolve(distOutputDir, "northgate-colorado-springs-real-estate.html"), prerenderedShell, "utf-8");
+      writeFileSync(resolve(distOutputDir, "northgate-colorado-springs-real-estate.html"), _injectedHtml, "utf-8");
       const srcOutputDir = resolve(ROOT, "server/prerendered");
       mkdirSync(srcOutputDir, { recursive: true });
       const srcOutputPath = resolve(srcOutputDir, "northgate-colorado-springs-real-estate.html");
@@ -1172,7 +1172,7 @@ async function prerenderAll() {
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/flying-horse-colorado-springs-real-estate/');
 
       mkdirSync(distOutputDir, { recursive: true });
-      writeFileSync(resolve(distOutputDir, "flying-horse-colorado-springs-real-estate.html"), prerenderedShell, "utf-8");
+      writeFileSync(resolve(distOutputDir, "flying-horse-colorado-springs-real-estate.html"), _injectedHtml, "utf-8");
       const srcOutputDir = resolve(ROOT, "server/prerendered");
       mkdirSync(srcOutputDir, { recursive: true });
       const srcOutputPath = resolve(srcOutputDir, "flying-horse-colorado-springs-real-estate.html");
@@ -1293,7 +1293,7 @@ async function prerenderAll() {
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/cordera-colorado-springs-real-estate/');
 
       mkdirSync(distOutputDir, { recursive: true });
-      writeFileSync(resolve(distOutputDir, "cordera-colorado-springs-real-estate.html"), prerenderedShell, "utf-8");
+      writeFileSync(resolve(distOutputDir, "cordera-colorado-springs-real-estate.html"), _injectedHtml, "utf-8");
       const srcOutputDir = resolve(ROOT, "server/prerendered");
       mkdirSync(srcOutputDir, { recursive: true });
       const srcOutputPath = resolve(srcOutputDir, "cordera-colorado-springs-real-estate.html");
@@ -1344,7 +1344,7 @@ async function prerenderAll() {
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/pine-creek-colorado-springs-real-estate/');
 
       mkdirSync(distOutputDir, { recursive: true });
-      writeFileSync(resolve(distOutputDir, "pine-creek-colorado-springs-real-estate.html"), prerenderedShell, "utf-8");
+      writeFileSync(resolve(distOutputDir, "pine-creek-colorado-springs-real-estate.html"), _injectedHtml, "utf-8");
       const srcOutputDir = resolve(ROOT, "server/prerendered");
       mkdirSync(srcOutputDir, { recursive: true });
       const srcOutputPath = resolve(srcOutputDir, "pine-creek-colorado-springs-real-estate.html");
@@ -1379,7 +1379,7 @@ async function prerenderAll() {
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/mountain-shadows-colorado-springs-real-estate/');
 
       mkdirSync(distOutputDir, { recursive: true });
-      writeFileSync(resolve(distOutputDir, "mountain-shadows-colorado-springs-real-estate.html"), prerenderedShell, "utf-8");
+      writeFileSync(resolve(distOutputDir, "mountain-shadows-colorado-springs-real-estate.html"), _injectedHtml, "utf-8");
       const srcOutputDir = resolve(ROOT, "server/prerendered");
       mkdirSync(srcOutputDir, { recursive: true });
       const srcOutputPath = resolve(srcOutputDir, "mountain-shadows-colorado-springs-real-estate.html");
@@ -1414,7 +1414,7 @@ async function prerenderAll() {
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/peregrine-colorado-springs-real-estate/');
 
       mkdirSync(distOutputDir, { recursive: true });
-      writeFileSync(resolve(distOutputDir, "peregrine-colorado-springs-real-estate.html"), prerenderedShell, "utf-8");
+      writeFileSync(resolve(distOutputDir, "peregrine-colorado-springs-real-estate.html"), _injectedHtml, "utf-8");
       const srcOutputDir = resolve(ROOT, "server/prerendered");
       mkdirSync(srcOutputDir, { recursive: true });
       const srcOutputPath = resolve(srcOutputDir, "peregrine-colorado-springs-real-estate.html");
@@ -1449,7 +1449,7 @@ async function prerenderAll() {
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/old-colorado-city-colorado-springs-real-estate/');
 
       mkdirSync(distOutputDir, { recursive: true });
-      writeFileSync(resolve(distOutputDir, "old-colorado-city-colorado-springs-real-estate.html"), prerenderedShell, "utf-8");
+      writeFileSync(resolve(distOutputDir, "old-colorado-city-colorado-springs-real-estate.html"), _injectedHtml, "utf-8");
       const srcOutputDir = resolve(ROOT, "server/prerendered");
       mkdirSync(srcOutputDir, { recursive: true });
       const srcOutputPath = resolve(srcOutputDir, "old-colorado-city-colorado-springs-real-estate.html");
@@ -1484,7 +1484,7 @@ async function prerenderAll() {
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/old-north-end-colorado-springs-real-estate/');
 
       mkdirSync(distOutputDir, { recursive: true });
-      writeFileSync(resolve(distOutputDir, "old-north-end-colorado-springs-real-estate.html"), prerenderedShell, "utf-8");
+      writeFileSync(resolve(distOutputDir, "old-north-end-colorado-springs-real-estate.html"), _injectedHtml, "utf-8");
       const srcOutputDir = resolve(ROOT, "server/prerendered");
       mkdirSync(srcOutputDir, { recursive: true });
       const srcOutputPath = resolve(srcOutputDir, "old-north-end-colorado-springs-real-estate.html");
@@ -1519,7 +1519,7 @@ async function prerenderAll() {
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/broadmoor-cheyenne-mountain-colorado-springs-real-estate/');
 
       mkdirSync(distOutputDir, { recursive: true });
-      writeFileSync(resolve(distOutputDir, "broadmoor-cheyenne-mountain-colorado-springs-real-estate.html"), prerenderedShell, "utf-8");
+      writeFileSync(resolve(distOutputDir, "broadmoor-cheyenne-mountain-colorado-springs-real-estate.html"), _injectedHtml, "utf-8");
       const srcOutputDir = resolve(ROOT, "server/prerendered");
       mkdirSync(srcOutputDir, { recursive: true });
       const srcOutputPath = resolve(srcOutputDir, "broadmoor-cheyenne-mountain-colorado-springs-real-estate.html");
@@ -1548,7 +1548,7 @@ async function prerenderAll() {
     const _injectedHtml_wash_park = injectSeoHead(prerenderedShell, _seoBlock_wash_park, _seoMeta_wash_park.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "wash-park-denver-homes-for-sale.html"), _injectedHtml_wash_park, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "wash-park-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "wash-park-denver-homes-for-sale.html"), _injectedHtml_wash_park, "utf-8");
     const written_wash_park = readFileSync(resolve(serverPrerenderedDir, "wash-park-denver-homes-for-sale.html"), "utf-8");
     if (written_wash_park.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for wash-park");
     console.log("[prerender-all] Done: wash-park");
@@ -1573,7 +1573,7 @@ async function prerenderAll() {
     const _injectedHtml_cherry_creek = injectSeoHead(prerenderedShell, _seoBlock_cherry_creek, _seoMeta_cherry_creek.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "cherry-creek-denver-homes-for-sale.html"), _injectedHtml_cherry_creek, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "cherry-creek-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "cherry-creek-denver-homes-for-sale.html"), _injectedHtml_cherry_creek, "utf-8");
     const written_cherry_creek = readFileSync(resolve(serverPrerenderedDir, "cherry-creek-denver-homes-for-sale.html"), "utf-8");
     if (written_cherry_creek.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for cherry-creek");
     console.log("[prerender-all] Done: cherry-creek");
@@ -1598,7 +1598,7 @@ async function prerenderAll() {
     const _injectedHtml_lohi = injectSeoHead(prerenderedShell, _seoBlock_lohi, _seoMeta_lohi.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "lohi-denver-homes-for-sale.html"), _injectedHtml_lohi, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "lohi-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "lohi-denver-homes-for-sale.html"), _injectedHtml_lohi, "utf-8");
     const written_lohi = readFileSync(resolve(serverPrerenderedDir, "lohi-denver-homes-for-sale.html"), "utf-8");
     if (written_lohi.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for lohi");
     console.log("[prerender-all] Done: lohi");
@@ -1623,7 +1623,7 @@ async function prerenderAll() {
     const _injectedHtml_rino = injectSeoHead(prerenderedShell, _seoBlock_rino, _seoMeta_rino.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "rino-denver-homes-for-sale.html"), _injectedHtml_rino, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "rino-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "rino-denver-homes-for-sale.html"), _injectedHtml_rino, "utf-8");
     const written_rino = readFileSync(resolve(serverPrerenderedDir, "rino-denver-homes-for-sale.html"), "utf-8");
     if (written_rino.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for rino");
     console.log("[prerender-all] Done: rino");
@@ -1648,7 +1648,7 @@ async function prerenderAll() {
     const _injectedHtml_central_park = injectSeoHead(prerenderedShell, _seoBlock_central_park, _seoMeta_central_park.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "central-park-denver-homes-for-sale.html"), _injectedHtml_central_park, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "central-park-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "central-park-denver-homes-for-sale.html"), _injectedHtml_central_park, "utf-8");
     const written_central_park = readFileSync(resolve(serverPrerenderedDir, "central-park-denver-homes-for-sale.html"), "utf-8");
     if (written_central_park.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for central-park");
     console.log("[prerender-all] Done: central-park");
@@ -1673,7 +1673,7 @@ async function prerenderAll() {
     const _injectedHtml_adams_co = injectSeoHead(prerenderedShell, _seoBlock_adams_co, _seoMeta_adams_co.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "adams-co-homes-for-sale.html"), _injectedHtml_adams_co, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "adams-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "adams-co-homes-for-sale.html"), _injectedHtml_adams_co, "utf-8");
     const written_adams_co = readFileSync(resolve(serverPrerenderedDir, "adams-co-homes-for-sale.html"), "utf-8");
     if (written_adams_co.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for adams-co");
     console.log("[prerender-all] Done: adams-co");
@@ -1698,7 +1698,7 @@ async function prerenderAll() {
     const _injectedHtml_commerce_city = injectSeoHead(prerenderedShell, _seoBlock_commerce_city, _seoMeta_commerce_city.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "commerce-city-homes-for-sale.html"), _injectedHtml_commerce_city, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "commerce-city-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "commerce-city-homes-for-sale.html"), _injectedHtml_commerce_city, "utf-8");
     const written_commerce_city = readFileSync(resolve(serverPrerenderedDir, "commerce-city-homes-for-sale.html"), "utf-8");
     if (written_commerce_city.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for commerce-city");
     console.log("[prerender-all] Done: commerce-city");
@@ -1723,7 +1723,7 @@ async function prerenderAll() {
     const _injectedHtml_brighton_co = injectSeoHead(prerenderedShell, _seoBlock_brighton_co, _seoMeta_brighton_co.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "brighton-co-homes-for-sale.html"), _injectedHtml_brighton_co, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "brighton-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "brighton-co-homes-for-sale.html"), _injectedHtml_brighton_co, "utf-8");
     const written_brighton_co = readFileSync(resolve(serverPrerenderedDir, "brighton-co-homes-for-sale.html"), "utf-8");
     if (written_brighton_co.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for brighton-co");
     console.log("[prerender-all] Done: brighton-co");
@@ -1748,7 +1748,7 @@ async function prerenderAll() {
     const _injectedHtml_thornton_co = injectSeoHead(prerenderedShell, _seoBlock_thornton_co, _seoMeta_thornton_co.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "thornton-co-homes-for-sale.html"), _injectedHtml_thornton_co, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "thornton-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "thornton-co-homes-for-sale.html"), _injectedHtml_thornton_co, "utf-8");
     const written_thornton_co = readFileSync(resolve(serverPrerenderedDir, "thornton-co-homes-for-sale.html"), "utf-8");
     if (written_thornton_co.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for thornton-co");
     console.log("[prerender-all] Done: thornton-co");
@@ -1773,7 +1773,7 @@ async function prerenderAll() {
     const _injectedHtml_northglenn_co = injectSeoHead(prerenderedShell, _seoBlock_northglenn_co, _seoMeta_northglenn_co.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "northglenn-co-homes-for-sale.html"), _injectedHtml_northglenn_co, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "northglenn-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "northglenn-co-homes-for-sale.html"), _injectedHtml_northglenn_co, "utf-8");
     const written_northglenn_co = readFileSync(resolve(serverPrerenderedDir, "northglenn-co-homes-for-sale.html"), "utf-8");
     if (written_northglenn_co.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for northglenn-co");
     console.log("[prerender-all] Done: northglenn-co");
@@ -1798,7 +1798,7 @@ async function prerenderAll() {
     const _injectedHtml_buying_a_home_in_denver = injectSeoHead(prerenderedShell, _seoBlock_buying_a_home_in_denver, _seoMeta_buying_a_home_in_denver.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "buying-a-home-in-denver.html"), _injectedHtml_buying_a_home_in_denver, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "buying-a-home-in-denver.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "buying-a-home-in-denver.html"), _injectedHtml_buying_a_home_in_denver, "utf-8");
     const written_buying_a_home_in_denver = readFileSync(resolve(serverPrerenderedDir, "buying-a-home-in-denver.html"), "utf-8");
     if (written_buying_a_home_in_denver.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for buying-a-home-in-denver");
     console.log("[prerender-all] Done: buying-a-home-in-denver");
@@ -1823,7 +1823,7 @@ async function prerenderAll() {
     const _injectedHtml_first_time_home_buyer_denver = injectSeoHead(prerenderedShell, _seoBlock_first_time_home_buyer_denver, _seoMeta_first_time_home_buyer_denver.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "first-time-home-buyer-denver.html"), _injectedHtml_first_time_home_buyer_denver, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "first-time-home-buyer-denver.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "first-time-home-buyer-denver.html"), _injectedHtml_first_time_home_buyer_denver, "utf-8");
     const written_first_time_home_buyer_denver = readFileSync(resolve(serverPrerenderedDir, "first-time-home-buyer-denver.html"), "utf-8");
     if (written_first_time_home_buyer_denver.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for first-time-home-buyer-denver");
     console.log("[prerender-all] Done: first-time-home-buyer-denver");
@@ -1848,7 +1848,7 @@ async function prerenderAll() {
     const _injectedHtml_denver_home_buying_process = injectSeoHead(prerenderedShell, _seoBlock_denver_home_buying_process, _seoMeta_denver_home_buying_process.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "denver-home-buying-process.html"), _injectedHtml_denver_home_buying_process, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "denver-home-buying-process.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "denver-home-buying-process.html"), _injectedHtml_denver_home_buying_process, "utf-8");
     const written_denver_home_buying_process = readFileSync(resolve(serverPrerenderedDir, "denver-home-buying-process.html"), "utf-8");
     if (written_denver_home_buying_process.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for denver-home-buying-process");
     console.log("[prerender-all] Done: denver-home-buying-process");
@@ -1873,7 +1873,7 @@ async function prerenderAll() {
     const _injectedHtml_cost_of_living_in_denver_colorado = injectSeoHead(prerenderedShell, _seoBlock_cost_of_living_in_denver_colorado, _seoMeta_cost_of_living_in_denver_colorado.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "cost-of-living-in-denver-colorado.html"), _injectedHtml_cost_of_living_in_denver_colorado, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "cost-of-living-in-denver-colorado.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "cost-of-living-in-denver-colorado.html"), _injectedHtml_cost_of_living_in_denver_colorado, "utf-8");
     const written_cost_of_living_in_denver_colorado = readFileSync(resolve(serverPrerenderedDir, "cost-of-living-in-denver-colorado.html"), "utf-8");
     if (written_cost_of_living_in_denver_colorado.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for cost-of-living-in-denver-colorado");
     console.log("[prerender-all] Done: cost-of-living-in-denver-colorado");
@@ -1898,7 +1898,7 @@ async function prerenderAll() {
     const _injectedHtml_relocating_to_denver_colorado = injectSeoHead(prerenderedShell, _seoBlock_relocating_to_denver_colorado, _seoMeta_relocating_to_denver_colorado.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "relocating-to-denver-colorado.html"), _injectedHtml_relocating_to_denver_colorado, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "relocating-to-denver-colorado.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "relocating-to-denver-colorado.html"), _injectedHtml_relocating_to_denver_colorado, "utf-8");
     const written_relocating_to_denver_colorado = readFileSync(resolve(serverPrerenderedDir, "relocating-to-denver-colorado.html"), "utf-8");
     if (written_relocating_to_denver_colorado.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for relocating-to-denver-colorado");
     console.log("[prerender-all] Done: relocating-to-denver-colorado");
@@ -1923,7 +1923,7 @@ async function prerenderAll() {
     const _injectedHtml_fort_collins_homes = injectSeoHead(prerenderedShell, _seoBlock_fort_collins_homes, _seoMeta_fort_collins_homes.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "fort-collins-homes-for-sale.html"), _injectedHtml_fort_collins_homes, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "fort-collins-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "fort-collins-homes-for-sale.html"), _injectedHtml_fort_collins_homes, "utf-8");
     const written_fort_collins_homes = readFileSync(resolve(serverPrerenderedDir, "fort-collins-homes-for-sale.html"), "utf-8");
     if (written_fort_collins_homes.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for fort-collins-homes");
     console.log("[prerender-all] Done: fort-collins-homes");
@@ -1948,7 +1948,7 @@ async function prerenderAll() {
     const _injectedHtml_greeley_homes = injectSeoHead(prerenderedShell, _seoBlock_greeley_homes, _seoMeta_greeley_homes.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "greeley-homes-for-sale.html"), _injectedHtml_greeley_homes, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "greeley-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "greeley-homes-for-sale.html"), _injectedHtml_greeley_homes, "utf-8");
     const written_greeley_homes = readFileSync(resolve(serverPrerenderedDir, "greeley-homes-for-sale.html"), "utf-8");
     if (written_greeley_homes.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for greeley-homes");
     console.log("[prerender-all] Done: greeley-homes");
@@ -1973,7 +1973,7 @@ async function prerenderAll() {
     const _injectedHtml_evans_co = injectSeoHead(prerenderedShell, _seoBlock_evans_co, _seoMeta_evans_co.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "evans-co-homes-for-sale.html"), _injectedHtml_evans_co, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "evans-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "evans-co-homes-for-sale.html"), _injectedHtml_evans_co, "utf-8");
     const written_evans_co = readFileSync(resolve(serverPrerenderedDir, "evans-co-homes-for-sale.html"), "utf-8");
     if (written_evans_co.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for evans-co");
     console.log("[prerender-all] Done: evans-co");
@@ -1998,7 +1998,7 @@ async function prerenderAll() {
     const _injectedHtml_platteville_co = injectSeoHead(prerenderedShell, _seoBlock_platteville_co, _seoMeta_platteville_co.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "platteville-co-homes-for-sale.html"), _injectedHtml_platteville_co, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "platteville-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "platteville-co-homes-for-sale.html"), _injectedHtml_platteville_co, "utf-8");
     const written_platteville_co = readFileSync(resolve(serverPrerenderedDir, "platteville-co-homes-for-sale.html"), "utf-8");
     if (written_platteville_co.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for platteville-co");
     console.log("[prerender-all] Done: platteville-co");
@@ -2023,7 +2023,7 @@ async function prerenderAll() {
     const _injectedHtml_lasalle_co = injectSeoHead(prerenderedShell, _seoBlock_lasalle_co, _seoMeta_lasalle_co.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "lasalle-co-homes-for-sale.html"), _injectedHtml_lasalle_co, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "lasalle-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "lasalle-co-homes-for-sale.html"), _injectedHtml_lasalle_co, "utf-8");
     const written_lasalle_co = readFileSync(resolve(serverPrerenderedDir, "lasalle-co-homes-for-sale.html"), "utf-8");
     if (written_lasalle_co.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for lasalle-co");
     console.log("[prerender-all] Done: lasalle-co");
@@ -2048,7 +2048,7 @@ async function prerenderAll() {
     const _injectedHtml_sloan_lake = injectSeoHead(prerenderedShell, _seoBlock_sloan_lake, _seoMeta_sloan_lake.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "sloan-lake-denver-homes-for-sale.html"), _injectedHtml_sloan_lake, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "sloan-lake-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "sloan-lake-denver-homes-for-sale.html"), _injectedHtml_sloan_lake, "utf-8");
     const written_sloan_lake = readFileSync(resolve(serverPrerenderedDir, "sloan-lake-denver-homes-for-sale.html"), "utf-8");
     if (written_sloan_lake.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for sloan-lake");
     console.log("[prerender-all] Done: sloan-lake");
@@ -2073,7 +2073,7 @@ async function prerenderAll() {
     const _injectedHtml_jefferson_co = injectSeoHead(prerenderedShell, _seoBlock_jefferson_co, _seoMeta_jefferson_co.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "jefferson-co-homes-for-sale.html"), _injectedHtml_jefferson_co, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "jefferson-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "jefferson-co-homes-for-sale.html"), _injectedHtml_jefferson_co, "utf-8");
     const written_jefferson_co = readFileSync(resolve(serverPrerenderedDir, "jefferson-co-homes-for-sale.html"), "utf-8");
     if (written_jefferson_co.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for jefferson-co");
     console.log("[prerender-all] Done: jefferson-co");
@@ -2098,7 +2098,7 @@ async function prerenderAll() {
     const _injectedHtml_golden = injectSeoHead(prerenderedShell, _seoBlock_golden, _seoMeta_golden.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "golden-homes-for-sale.html"), _injectedHtml_golden, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "golden-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "golden-homes-for-sale.html"), _injectedHtml_golden, "utf-8");
     const written_golden = readFileSync(resolve(serverPrerenderedDir, "golden-homes-for-sale.html"), "utf-8");
     if (written_golden.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for golden");
     console.log("[prerender-all] Done: golden");
@@ -2123,7 +2123,7 @@ async function prerenderAll() {
     const _injectedHtml_lakewood = injectSeoHead(prerenderedShell, _seoBlock_lakewood, _seoMeta_lakewood.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "lakewood-co-homes-for-sale.html"), _injectedHtml_lakewood, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "lakewood-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "lakewood-co-homes-for-sale.html"), _injectedHtml_lakewood, "utf-8");
     const written_lakewood = readFileSync(resolve(serverPrerenderedDir, "lakewood-co-homes-for-sale.html"), "utf-8");
     if (written_lakewood.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for lakewood");
     console.log("[prerender-all] Done: lakewood");
@@ -2148,7 +2148,7 @@ async function prerenderAll() {
     const _injectedHtml_morrison = injectSeoHead(prerenderedShell, _seoBlock_morrison, _seoMeta_morrison.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "morrison-co-homes-for-sale.html"), _injectedHtml_morrison, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "morrison-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "morrison-co-homes-for-sale.html"), _injectedHtml_morrison, "utf-8");
     const written_morrison = readFileSync(resolve(serverPrerenderedDir, "morrison-co-homes-for-sale.html"), "utf-8");
     if (written_morrison.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for morrison");
     console.log("[prerender-all] Done: morrison");
@@ -2403,7 +2403,7 @@ async function prerenderAll() {
     const _injectedHtml_buckley_space_force_base = injectSeoHead(prerenderedShell, _seoBlock_buckley_space_force_base, _seoMeta_buckley_space_force_base.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "buckley-space-force-base.html"), _injectedHtml_buckley_space_force_base, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "buckley-space-force-base.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "buckley-space-force-base.html"), _injectedHtml_buckley_space_force_base, "utf-8");
     const written_buckley_space_force_base = readFileSync(resolve(serverPrerenderedDir, "buckley-space-force-base.html"), "utf-8");
     if (written_buckley_space_force_base.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for buckley-space-force-base");
     console.log("[prerender-all] Done: buckley-space-force-base");
@@ -2996,7 +2996,7 @@ async function prerenderAll() {
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/banning-lewis-ranch-colorado-springs-real-estate/');
 
       mkdirSync(distOutputDir, { recursive: true });
-      writeFileSync(resolve(distOutputDir, "banning-lewis-ranch-colorado-springs-real-estate.html"), prerenderedShell, "utf-8");
+      writeFileSync(resolve(distOutputDir, "banning-lewis-ranch-colorado-springs-real-estate.html"), _injectedHtml, "utf-8");
       const srcOutputDir = resolve(ROOT, "server/prerendered");
       mkdirSync(srcOutputDir, { recursive: true });
       const srcOutputPath = resolve(srcOutputDir, "banning-lewis-ranch-colorado-springs-real-estate.html");
@@ -3031,7 +3031,7 @@ async function prerenderAll() {
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/calhan-co-real-estate/');
 
       mkdirSync(distOutputDir, { recursive: true });
-      writeFileSync(resolve(distOutputDir, "calhan-co-real-estate.html"), prerenderedShell, "utf-8");
+      writeFileSync(resolve(distOutputDir, "calhan-co-real-estate.html"), _injectedHtml, "utf-8");
       const srcOutputDir = resolve(ROOT, "server/prerendered");
       mkdirSync(srcOutputDir, { recursive: true });
       const srcOutputPath = resolve(srcOutputDir, "calhan-co-real-estate.html");
@@ -3060,7 +3060,7 @@ async function prerenderAll() {
     const _injectedHtml_boulder_homes = injectSeoHead(prerenderedShell, _seoBlock_boulder_homes, _seoMeta_boulder_homes.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "boulder-homes-for-sale.html"), _injectedHtml_boulder_homes, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "boulder-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "boulder-homes-for-sale.html"), _injectedHtml_boulder_homes, "utf-8");
     const written_boulder_homes = readFileSync(resolve(serverPrerenderedDir, "boulder-homes-for-sale.html"), "utf-8");
     if (written_boulder_homes.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for boulder-homes");
     console.log("[prerender-all] Done: boulder-homes");
@@ -3083,7 +3083,7 @@ async function prerenderAll() {
     const _injectedHtml_university_hill = injectSeoHead(prerenderedShell, _seoBlock_university_hill, _seoMeta_university_hill.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "university-hill-cu-boulder-real-estate.html"), _injectedHtml_university_hill, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "university-hill-cu-boulder-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "university-hill-cu-boulder-real-estate.html"), _injectedHtml_university_hill, "utf-8");
     const written_university_hill = readFileSync(resolve(serverPrerenderedDir, "university-hill-cu-boulder-real-estate.html"), "utf-8");
     if (written_university_hill.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for university-hill");
     console.log("[prerender-all] Done: university-hill");
@@ -3107,7 +3107,7 @@ async function prerenderAll() {
     const _injectedHtml_longmont = injectSeoHead(prerenderedShell, _seoBlock_longmont, _seoMeta_longmont.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "longmont-co-homes-for-sale.html"), _injectedHtml_longmont, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "longmont-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "longmont-co-homes-for-sale.html"), _injectedHtml_longmont, "utf-8");
     const written_longmont = readFileSync(resolve(serverPrerenderedDir, "longmont-co-homes-for-sale.html"), "utf-8");
     if (written_longmont.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for longmont");
     console.log("[prerender-all] Done: longmont");
@@ -3132,7 +3132,7 @@ async function prerenderAll() {
     const _injectedHtml_lafayette = injectSeoHead(prerenderedShell, _seoBlock_lafayette, _seoMeta_lafayette.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "lafayette-co-homes-for-sale.html"), _injectedHtml_lafayette, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "lafayette-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "lafayette-co-homes-for-sale.html"), _injectedHtml_lafayette, "utf-8");
     const written_lafayette = readFileSync(resolve(serverPrerenderedDir, "lafayette-co-homes-for-sale.html"), "utf-8");
     if (written_lafayette.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for lafayette");
     console.log("[prerender-all] Done: lafayette");
@@ -3157,7 +3157,7 @@ async function prerenderAll() {
     const _injectedHtml_niwot = injectSeoHead(prerenderedShell, _seoBlock_niwot, _seoMeta_niwot.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "niwot-co-homes-for-sale.html"), _injectedHtml_niwot, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "niwot-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "niwot-co-homes-for-sale.html"), _injectedHtml_niwot, "utf-8");
     const written_niwot = readFileSync(resolve(serverPrerenderedDir, "niwot-co-homes-for-sale.html"), "utf-8");
     if (written_niwot.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for niwot");
     console.log("[prerender-all] Done: niwot");
@@ -3182,7 +3182,7 @@ async function prerenderAll() {
     const _injectedHtml_niwot_co_real_estate = injectSeoHead(prerenderedShell, _seoBlock_niwot_co_real_estate, _seoMeta_niwot_co_real_estate.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "niwot-co-real-estate.html"), _injectedHtml_niwot_co_real_estate, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "niwot-co-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "niwot-co-real-estate.html"), _injectedHtml_niwot_co_real_estate, "utf-8");
     const written_niwot_co_real_estate = readFileSync(resolve(serverPrerenderedDir, "niwot-co-real-estate.html"), "utf-8");
     if (written_niwot_co_real_estate.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for niwot-co-real-estate");
     console.log("[prerender-all] Done: niwot-co-real-estate");
@@ -3207,7 +3207,7 @@ async function prerenderAll() {
     const _injectedHtml_gunbarrel = injectSeoHead(prerenderedShell, _seoBlock_gunbarrel, _seoMeta_gunbarrel.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "gunbarrel-co-real-estate.html"), _injectedHtml_gunbarrel, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "gunbarrel-co-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "gunbarrel-co-real-estate.html"), _injectedHtml_gunbarrel, "utf-8");
     const written_gunbarrel = readFileSync(resolve(serverPrerenderedDir, "gunbarrel-co-real-estate.html"), "utf-8");
     if (written_gunbarrel.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for gunbarrel-co-real-estate");
     console.log("[prerender-all] Done: gunbarrel-co-real-estate");
@@ -3232,7 +3232,7 @@ async function prerenderAll() {
     const _injectedHtml_table_mesa = injectSeoHead(prerenderedShell, _seoBlock_table_mesa, _seoMeta_table_mesa.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "table-mesa-south-boulder-real-estate.html"), _injectedHtml_table_mesa, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "table-mesa-south-boulder-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "table-mesa-south-boulder-real-estate.html"), _injectedHtml_table_mesa, "utf-8");
     const written_table_mesa = readFileSync(resolve(serverPrerenderedDir, "table-mesa-south-boulder-real-estate.html"), "utf-8");
     if (written_table_mesa.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for table-mesa-south-boulder-real-estate");
     console.log("[prerender-all] Done: table-mesa-south-boulder-real-estate");
@@ -3257,7 +3257,7 @@ async function prerenderAll() {
     const _injectedHtml_north_boulder = injectSeoHead(prerenderedShell, _seoBlock_north_boulder, _seoMeta_north_boulder.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "north-boulder-nobo-real-estate.html"), _injectedHtml_north_boulder, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "north-boulder-nobo-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "north-boulder-nobo-real-estate.html"), _injectedHtml_north_boulder, "utf-8");
     const written_north_boulder = readFileSync(resolve(serverPrerenderedDir, "north-boulder-nobo-real-estate.html"), "utf-8");
     if (written_north_boulder.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for north-boulder-nobo-real-estate");
     console.log("[prerender-all] Done: north-boulder-nobo-real-estate");
@@ -3282,7 +3282,7 @@ async function prerenderAll() {
     const _injectedHtml_newlands = injectSeoHead(prerenderedShell, _seoBlock_newlands, _seoMeta_newlands.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "newlands-boulder-real-estate.html"), _injectedHtml_newlands, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "newlands-boulder-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "newlands-boulder-real-estate.html"), _injectedHtml_newlands, "utf-8");
     const written_newlands = readFileSync(resolve(serverPrerenderedDir, "newlands-boulder-real-estate.html"), "utf-8");
     if (written_newlands.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for newlands-boulder-real-estate");
     console.log("[prerender-all] Done: newlands-boulder-real-estate");
@@ -3307,7 +3307,7 @@ async function prerenderAll() {
     const _injectedHtml_mapleton_hill = injectSeoHead(prerenderedShell, _seoBlock_mapleton_hill, _seoMeta_mapleton_hill.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "mapleton-hill-boulder-real-estate.html"), _injectedHtml_mapleton_hill, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "mapleton-hill-boulder-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "mapleton-hill-boulder-real-estate.html"), _injectedHtml_mapleton_hill, "utf-8");
     const written_mapleton_hill = readFileSync(resolve(serverPrerenderedDir, "mapleton-hill-boulder-real-estate.html"), "utf-8");
     if (written_mapleton_hill.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for mapleton-hill-boulder-real-estate");
     console.log("[prerender-all] Done: mapleton-hill-boulder-real-estate");
@@ -3332,7 +3332,7 @@ async function prerenderAll() {
     const _injectedHtml_louisville = injectSeoHead(prerenderedShell, _seoBlock_louisville, _seoMeta_louisville.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "louisville-co-homes-for-sale.html"), _injectedHtml_louisville, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "louisville-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "louisville-co-homes-for-sale.html"), _injectedHtml_louisville, "utf-8");
     const written_louisville = readFileSync(resolve(serverPrerenderedDir, "louisville-co-homes-for-sale.html"), "utf-8");
     if (written_louisville.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for louisville-co-homes-for-sale");
     console.log("[prerender-all] Done: louisville-co-homes-for-sale");
@@ -3357,7 +3357,7 @@ async function prerenderAll() {
     const _injectedHtml_superior = injectSeoHead(prerenderedShell, _seoBlock_superior, _seoMeta_superior.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "superior-co-homes-for-sale.html"), _injectedHtml_superior, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "superior-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "superior-co-homes-for-sale.html"), _injectedHtml_superior, "utf-8");
     const written_superior = readFileSync(resolve(serverPrerenderedDir, "superior-co-homes-for-sale.html"), "utf-8");
     if (written_superior.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for superior-co-homes-for-sale");
     console.log("[prerender-all] Done: superior-co-homes-for-sale");
@@ -3382,7 +3382,7 @@ async function prerenderAll() {
     const _injectedHtml_windsor_fc = injectSeoHead(prerenderedShell, _seoBlock_windsor_fc, _seoMeta_windsor_fc.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "windsor-co-real-estate.html"), _injectedHtml_windsor_fc, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "windsor-co-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "windsor-co-real-estate.html"), _injectedHtml_windsor_fc, "utf-8");
     const written_windsor_fc = readFileSync(resolve(serverPrerenderedDir, "windsor-co-real-estate.html"), "utf-8");
     if (written_windsor_fc.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for windsor-co-real-estate");
     console.log("[prerender-all] Done: windsor-co-real-estate");
@@ -3406,7 +3406,7 @@ async function prerenderAll() {
     const _injectedHtml_timnath_fc = injectSeoHead(prerenderedShell, _seoBlock_timnath_fc, _seoMeta_timnath_fc.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "timnath-co-real-estate.html"), _injectedHtml_timnath_fc, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "timnath-co-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "timnath-co-real-estate.html"), _injectedHtml_timnath_fc, "utf-8");
     const written_timnath_fc = readFileSync(resolve(serverPrerenderedDir, "timnath-co-real-estate.html"), "utf-8");
     if (written_timnath_fc.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for timnath-co-real-estate");
     console.log("[prerender-all] Done: timnath-co-real-estate");
@@ -3430,7 +3430,7 @@ async function prerenderAll() {
     const _injectedHtml_loveland_fc = injectSeoHead(prerenderedShell, _seoBlock_loveland_fc, _seoMeta_loveland_fc.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "loveland-co-real-estate.html"), _injectedHtml_loveland_fc, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "loveland-co-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "loveland-co-real-estate.html"), _injectedHtml_loveland_fc, "utf-8");
     const written_loveland_fc = readFileSync(resolve(serverPrerenderedDir, "loveland-co-real-estate.html"), "utf-8");
     if (written_loveland_fc.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for loveland-co-real-estate");
     console.log("[prerender-all] Done: loveland-co-real-estate");
@@ -3454,7 +3454,7 @@ async function prerenderAll() {
     const _injectedHtml_wellington_fc = injectSeoHead(prerenderedShell, _seoBlock_wellington_fc, _seoMeta_wellington_fc.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "wellington-co-real-estate.html"), _injectedHtml_wellington_fc, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "wellington-co-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "wellington-co-real-estate.html"), _injectedHtml_wellington_fc, "utf-8");
     const written_wellington_fc = readFileSync(resolve(serverPrerenderedDir, "wellington-co-real-estate.html"), "utf-8");
     if (written_wellington_fc.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for wellington-co-real-estate");
     console.log("[prerender-all] Done: wellington-co-real-estate");
@@ -3478,7 +3478,7 @@ async function prerenderAll() {
     const _injectedHtml_old_town_fc = injectSeoHead(prerenderedShell, _seoBlock_old_town_fc, _seoMeta_old_town_fc.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "old-town-fort-collins-real-estate.html"), _injectedHtml_old_town_fc, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "old-town-fort-collins-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "old-town-fort-collins-real-estate.html"), _injectedHtml_old_town_fc, "utf-8");
     const written_old_town_fc = readFileSync(resolve(serverPrerenderedDir, "old-town-fort-collins-real-estate.html"), "utf-8");
     if (written_old_town_fc.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for old-town-fort-collins-real-estate");
     console.log("[prerender-all] Done: old-town-fort-collins-real-estate");
@@ -3502,7 +3502,7 @@ async function prerenderAll() {
     const _injectedHtml_midtown_fc = injectSeoHead(prerenderedShell, _seoBlock_midtown_fc, _seoMeta_midtown_fc.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "midtown-fort-collins-real-estate.html"), _injectedHtml_midtown_fc, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "midtown-fort-collins-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "midtown-fort-collins-real-estate.html"), _injectedHtml_midtown_fc, "utf-8");
     const written_midtown_fc = readFileSync(resolve(serverPrerenderedDir, "midtown-fort-collins-real-estate.html"), "utf-8");
     if (written_midtown_fc.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for midtown-fort-collins-real-estate");
     console.log("[prerender-all] Done: midtown-fort-collins-real-estate");
@@ -3526,7 +3526,7 @@ async function prerenderAll() {
     const _injectedHtml_harmony_fc = injectSeoHead(prerenderedShell, _seoBlock_harmony_fc, _seoMeta_harmony_fc.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "harmony-fort-collins-real-estate.html"), _injectedHtml_harmony_fc, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "harmony-fort-collins-real-estate.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "harmony-fort-collins-real-estate.html"), _injectedHtml_harmony_fc, "utf-8");
     const written_harmony_fc = readFileSync(resolve(serverPrerenderedDir, "harmony-fort-collins-real-estate.html"), "utf-8");
     if (written_harmony_fc.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for harmony-fort-collins-real-estate");
     console.log("[prerender-all] Done: harmony-fort-collins-real-estate");
@@ -3550,7 +3550,7 @@ async function prerenderAll() {
     const _injectedHtml_lyons = injectSeoHead(prerenderedShell, _seoBlock_lyons, _seoMeta_lyons.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "lyons-co-homes-for-sale.html"), _injectedHtml_lyons, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "lyons-co-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "lyons-co-homes-for-sale.html"), _injectedHtml_lyons, "utf-8");
     const written_lyons = readFileSync(resolve(serverPrerenderedDir, "lyons-co-homes-for-sale.html"), "utf-8");
     if (written_lyons.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for lyons-co-homes-for-sale");
     console.log("[prerender-all] Done: lyons-co-homes-for-sale");
@@ -3576,7 +3576,7 @@ async function prerenderAll() {
     const _injectedHtml_denver_condos = injectSeoHead(prerenderedShell, _seoBlock_denver_condos, _seoMeta_denver_condos.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "denver-condos-for-sale.html"), _injectedHtml_denver_condos, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "denver-condos-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "denver-condos-for-sale.html"), _injectedHtml_denver_condos, "utf-8");
     const written_denver_condos = readFileSync(resolve(serverPrerenderedDir, "denver-condos-for-sale.html"), "utf-8");
     if (written_denver_condos.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for denver-condos");
     console.log("[prerender-all] Done: denver-condos");
@@ -3601,7 +3601,7 @@ async function prerenderAll() {
     const _injectedHtml_denver_townhomes = injectSeoHead(prerenderedShell, _seoBlock_denver_townhomes, _seoMeta_denver_townhomes.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "denver-townhomes-for-sale.html"), _injectedHtml_denver_townhomes, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "denver-townhomes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "denver-townhomes-for-sale.html"), _injectedHtml_denver_townhomes, "utf-8");
     const written_denver_townhomes = readFileSync(resolve(serverPrerenderedDir, "denver-townhomes-for-sale.html"), "utf-8");
     if (written_denver_townhomes.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for denver-townhomes");
     console.log("[prerender-all] Done: denver-townhomes");
@@ -3626,7 +3626,7 @@ async function prerenderAll() {
     const _injectedHtml_denver_luxury = injectSeoHead(prerenderedShell, _seoBlock_denver_luxury, _seoMeta_denver_luxury.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "denver-luxury-homes-for-sale.html"), _injectedHtml_denver_luxury, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "denver-luxury-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "denver-luxury-homes-for-sale.html"), _injectedHtml_denver_luxury, "utf-8");
     const written_denver_luxury = readFileSync(resolve(serverPrerenderedDir, "denver-luxury-homes-for-sale.html"), "utf-8");
     if (written_denver_luxury.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for denver-luxury");
     console.log("[prerender-all] Done: denver-luxury");
@@ -3651,7 +3651,7 @@ async function prerenderAll() {
     const _injectedHtml_denver_new_construction = injectSeoHead(prerenderedShell, _seoBlock_denver_new_construction, _seoMeta_denver_new_construction.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "denver-new-construction-homes.html"), _injectedHtml_denver_new_construction, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "denver-new-construction-homes.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "denver-new-construction-homes.html"), _injectedHtml_denver_new_construction, "utf-8");
     const written_denver_new_construction = readFileSync(resolve(serverPrerenderedDir, "denver-new-construction-homes.html"), "utf-8");
     if (written_denver_new_construction.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for denver-new-construction");
     console.log("[prerender-all] Done: denver-new-construction");
@@ -3676,7 +3676,7 @@ async function prerenderAll() {
     const _injectedHtml_adams_county_vs_jefferson_county = injectSeoHead(prerenderedShell, _seoBlock_adams_county_vs_jefferson_county, _seoMeta_adams_county_vs_jefferson_county.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "adams-county-vs-jefferson-county.html"), _injectedHtml_adams_county_vs_jefferson_county, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "adams-county-vs-jefferson-county.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "adams-county-vs-jefferson-county.html"), _injectedHtml_adams_county_vs_jefferson_county, "utf-8");
     const written_adams_county_vs_jefferson_county = readFileSync(resolve(serverPrerenderedDir, "adams-county-vs-jefferson-county.html"), "utf-8");
     if (written_adams_county_vs_jefferson_county.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for adams-county-vs-jefferson-county");
     console.log("[prerender-all] Done: adams-county-vs-jefferson-county");
@@ -3701,7 +3701,7 @@ async function prerenderAll() {
     const _injectedHtml_douglas_county_vs_weld_county = injectSeoHead(prerenderedShell, _seoBlock_douglas_county_vs_weld_county, _seoMeta_douglas_county_vs_weld_county.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "douglas-county-vs-weld-county.html"), _injectedHtml_douglas_county_vs_weld_county, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "douglas-county-vs-weld-county.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "douglas-county-vs-weld-county.html"), _injectedHtml_douglas_county_vs_weld_county, "utf-8");
     const written_douglas_county_vs_weld_county = readFileSync(resolve(serverPrerenderedDir, "douglas-county-vs-weld-county.html"), "utf-8");
     if (written_douglas_county_vs_weld_county.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for douglas-county-vs-weld-county");
     console.log("[prerender-all] Done: douglas-county-vs-weld-county");
@@ -3726,7 +3726,7 @@ async function prerenderAll() {
     const _injectedHtml_boulder_vs_fort_collins = injectSeoHead(prerenderedShell, _seoBlock_boulder_vs_fort_collins, _seoMeta_boulder_vs_fort_collins.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "boulder-vs-fort-collins.html"), _injectedHtml_boulder_vs_fort_collins, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "boulder-vs-fort-collins.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "boulder-vs-fort-collins.html"), _injectedHtml_boulder_vs_fort_collins, "utf-8");
     const written_boulder_vs_fort_collins = readFileSync(resolve(serverPrerenderedDir, "boulder-vs-fort-collins.html"), "utf-8");
     if (written_boulder_vs_fort_collins.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for boulder-vs-fort-collins");
     console.log("[prerender-all] Done: boulder-vs-fort-collins");
@@ -3751,7 +3751,7 @@ async function prerenderAll() {
     const _injectedHtml_denver_market_report_2025 = injectSeoHead(prerenderedShell, _seoBlock_denver_market_report_2025, _seoMeta_denver_market_report_2025.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "denver-real-estate-market-report-2025.html"), _injectedHtml_denver_market_report_2025, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "denver-real-estate-market-report-2025.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "denver-real-estate-market-report-2025.html"), _injectedHtml_denver_market_report_2025, "utf-8");
     const written_denver_market_report_2025 = readFileSync(resolve(serverPrerenderedDir, "denver-real-estate-market-report-2025.html"), "utf-8");
     if (written_denver_market_report_2025.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for denver-market-report-2025");
     console.log("[prerender-all] Done: denver-market-report-2025");
@@ -3782,7 +3782,7 @@ async function prerenderAll() {
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/denver-vs-colorado-springs');
 
       mkdirSync(distOutputDir, { recursive: true });
-      writeFileSync(resolve(distOutputDir, "denver-vs-colorado-springs.html"), prerenderedShell, "utf-8");
+      writeFileSync(resolve(distOutputDir, "denver-vs-colorado-springs.html"), _injectedHtml, "utf-8");
       const srcOutputDir = resolve(ROOT, "server/prerendered");
       mkdirSync(srcOutputDir, { recursive: true });
       const srcOutputPath = resolve(srcOutputDir, "denver-vs-colorado-springs.html");
@@ -3809,7 +3809,7 @@ async function prerenderAll() {
     const _injectedHtml_platt_park = injectSeoHead(prerenderedShell, _seoBlock_platt_park, _seoMeta_platt_park.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "platt-park-denver-homes-for-sale.html"), _injectedHtml_platt_park, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "platt-park-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "platt-park-denver-homes-for-sale.html"), _injectedHtml_platt_park, "utf-8");
     const written_platt_park = readFileSync(resolve(serverPrerenderedDir, "platt-park-denver-homes-for-sale.html"), "utf-8");
     if (written_platt_park.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for platt-park");
     console.log("[prerender-all] Done: platt-park");
@@ -3832,7 +3832,7 @@ async function prerenderAll() {
     const _injectedHtml_highland = injectSeoHead(prerenderedShell, _seoBlock_highland, _seoMeta_highland.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "highland-denver-homes-for-sale.html"), _injectedHtml_highland, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "highland-denver-homes-for-sale.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "highland-denver-homes-for-sale.html"), _injectedHtml_highland, "utf-8");
     const written_highland = readFileSync(resolve(serverPrerenderedDir, "highland-denver-homes-for-sale.html"), "utf-8");
     if (written_highland.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for highland");
     console.log("[prerender-all] Done: highland");
@@ -3918,7 +3918,7 @@ async function prerenderAll() {
     const _injectedHtml_buying_in_lohi_denver = injectSeoHead(prerenderedShell, _seoBlock_buying_in_lohi_denver, _seoMeta_buying_in_lohi_denver.canonical);
     writeFileSync(resolve(serverPrerenderedDir, "buying-in-lohi-denver.html"), _injectedHtml_buying_in_lohi_denver, "utf-8");
     mkdirSync(distPrerenderedDir, { recursive: true });
-    writeFileSync(resolve(distPrerenderedDir, "buying-in-lohi-denver.html"), prerenderedShell, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "buying-in-lohi-denver.html"), _injectedHtml_buying_in_lohi_denver, "utf-8");
     const written_buying_in_lohi_denver = readFileSync(resolve(serverPrerenderedDir, "buying-in-lohi-denver.html"), "utf-8");
     if (written_buying_in_lohi_denver.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for buying-in-lohi-denver");
     console.log("[prerender-all] Done: buying-in-lohi-denver");
