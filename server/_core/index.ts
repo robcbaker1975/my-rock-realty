@@ -64,7 +64,7 @@ async function startServer() {
       // Self + Google Fonts files
       "font-src 'self' https://fonts.gstatic.com",
       // Self + CDN-hosted images (favicon, og:image) + Buying Buddy listing images
-      "img-src 'self' data: https://d2xsxph8kpxj0f.cloudfront.net https://d2w6u17ngtanmy.cloudfront.net https://www.mbb2.com https://photos.sparkplatform.com https://cdn.photos.sparkplatform.com https://*.sparkplatform.com https://*.amazonaws.com https://*.cartocdn.com",
+      "img-src 'self' data: https://d2xsxph8kpxj0f.cloudfront.net https://d2w6u17ngtanmy.cloudfront.net https://www.mbb2.com https://photos.sparkplatform.com https://cdn.photos.sparkplatform.com https://*.sparkplatform.com https://*.amazonaws.com https://*.cartocdn.com https://d2jdjs2y9vy4n2.cloudfront.net",
       // Self + tRPC/API calls + GHL API + Buying Buddy data endpoints
       "connect-src 'self' https://api.leadconnectorhq.com https://www.mbb2.com https://d2w6u17ngtanmy.cloudfront.net",
       // GHL popup form is loaded in an iframe from api.leadconnectorhq.com
