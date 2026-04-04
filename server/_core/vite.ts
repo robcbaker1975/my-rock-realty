@@ -1578,6 +1578,30 @@ export function serveStatic(app: Express) {
       res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
+  // IL-119: Serve static HTML for /listing-results — Buying Buddy ListingResults foundation page.
+  // Must serve bare <bb-widget data-type="ListingResults"> in raw HTML for BB dashboard recognition.
+  app.get(["/listing-results", "/listing-results/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/listing-results.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/listing-results.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
+  // IL-120: Serve static HTML for /listing-details — Buying Buddy SearchDetails foundation page.
+  // Must serve bare <bb-widget data-type="SearchDetails"> in raw HTML for BB dashboard recognition.
+  app.get(["/listing-details", "/listing-details/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/listing-details.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/listing-details.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
   app.use(express.static(distPath));
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {
