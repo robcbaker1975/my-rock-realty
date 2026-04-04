@@ -273,7 +273,10 @@ export default function WashParkDenverHomesForSale() {
           <h2 className="text-2xl sm:text-3xl font-bold text-charcoal mb-6" style={{ fontFamily: "'Outfit', sans-serif" }}>
             Featured Wash Park Listings
           </h2>
-          <BuyingBuddyWidget type="SearchResults" filter="neighborhood:Washington Park mappos:39.7066,-104.9690 mapzoom:14" />
+          <BuyingBuddyWidget
+            type="FeaturedGallery"
+            filter="mls_id:denver+listing_status:active,coming-soon+neighborhood:Washington Park+order:create_dt desc"
+          />
         </div>
       </section>
 

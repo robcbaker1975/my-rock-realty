@@ -284,7 +284,10 @@ export default function SloanLakeDenverHomesForSale() {
           <h2 className="text-2xl sm:text-3xl font-bold text-charcoal mb-6" style={{ fontFamily: "'Outfit', sans-serif" }}>
             Featured Sloan Lake Listings
           </h2>
-          <BuyingBuddyWidget type="SearchResults" filter="neighborhood:Sloan Lake mappos:39.7441,-105.0360 mapzoom:14" />
+          <BuyingBuddyWidget
+            type="FeaturedGallery"
+            filter="mls_id:denver+listing_status:active,coming-soon+neighborhood:Sloan Lake+order:create_dt desc"
+          />
         </div>
       </section>
 

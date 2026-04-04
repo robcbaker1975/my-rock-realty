@@ -283,7 +283,10 @@ export default function CherryCreekDenverHomesForSale() {
           <h2 className="text-2xl sm:text-3xl font-bold text-charcoal mb-6" style={{ fontFamily: "'Outfit', sans-serif" }}>
             Featured Cherry Creek Listings
           </h2>
-          <BuyingBuddyWidget type="SearchResults" filter="neighborhood:Cherry Creek mappos:39.7165,-104.9511 mapzoom:14" />
+          <BuyingBuddyWidget
+            type="FeaturedGallery"
+            filter="mls_id:denver+listing_status:active,coming-soon+neighborhood:Cherry Creek+order:create_dt desc"
+          />
         </div>
       </section>
 
