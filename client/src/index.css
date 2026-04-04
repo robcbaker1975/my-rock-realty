@@ -236,3 +236,79 @@
     align-items: start;
   }
 }
+
+/* ============================================================
+   HUB PAGE DESKTOP LAYOUT — PHASE 2
+   Comparison links, FAQ treatment, section rhythm
+   All rules scoped to .hub-page — mobile unaffected
+   ============================================================ */
+
+/* --- Comparison / navigation link sections ---
+   Targets ul.space-y-2 (Denver/LoHi pattern) on desktop:
+   2-column grid, subtle row separator, better scanability
+*/
+@media (min-width: 1024px) {
+  .hub-page ul.space-y-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 0;
+  }
+  .hub-page ul.space-y-2 li {
+    border-bottom: 1px solid oklch(0.22 0.01 65 / 0.08);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+  }
+  .hub-page ul.space-y-2 li:last-child {
+    border-bottom: none;
+  }
+  /* Odd-count: last item spans full width */
+  .hub-page ul.space-y-2 li:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* --- Boulder-style comparison links (div.space-y-3 > a) ---
+   Targets direct <a> children of div.space-y-3 on desktop
+*/
+@media (min-width: 1024px) {
+  .hub-page .space-y-3:has(> a) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 0;
+  }
+  .hub-page .space-y-3:has(> a) > a {
+    border-bottom: 1px solid oklch(0.22 0.01 65 / 0.08);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .hub-page .space-y-3:has(> a) > a:last-child {
+    border-bottom: none;
+  }
+  /* Odd-count: last item spans full width */
+  .hub-page .space-y-3:has(> a) > a:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* --- FAQ section visual treatment ---
+   Targets the FAQ accordion wrapper used across all hub pages:
+   div.bg-white.border.border-charcoal\/8.rounded-xl.px-6.py-2
+   On desktop: gold left accent border, slightly more padding
+*/
+@media (min-width: 1024px) {
+  .hub-page .rounded-xl.px-6.py-2 {
+    border-left: 3px solid oklch(0.72 0.1 85);
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+  .hub-page .rounded-xl.px-6.py-2 button {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+  .hub-page .rounded-xl.px-6.py-2 button > span:first-child {
+    font-size: 1rem;
+  }
+}
