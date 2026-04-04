@@ -60,7 +60,7 @@ async function startServer() {
       "script-src 'self' 'unsafe-inline' https://www.mbb2.com https://d2w6u17ngtanmy.cloudfront.net https://link.msgsndr.com",
       // Self + Google Fonts CSS
       // 'unsafe-inline' required: Buying Buddy widget injects inline styles at runtime
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://s3.amazonaws.com",
       // Self + Google Fonts files
       "font-src 'self' https://fonts.gstatic.com",
       // Self + CDN-hosted images (favicon, og:image) + Buying Buddy listing images
