@@ -887,7 +887,7 @@ export const SEO_METADATA_MAP = {
     pageType: "guide",
     breadcrumbs: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
-      { "@type": "ListItem", position: 2, name: "Buying In", item: "https://myrockhomes.com/denver-homes-for-sale/" },
+      { "@type": "ListItem", position: 2, name: "Denver Homes", item: "https://myrockhomes.com/denver-homes-for-sale/" },
       { "@type": "ListItem", position: 3, name: "LoHi", item: "https://myrockhomes.com/buying-in/lohi-denver" },
     ],
   },

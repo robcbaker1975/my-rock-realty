@@ -6,7 +6,7 @@
  * Design: Front Range Modern — matches existing site design system
  */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
@@ -74,12 +74,16 @@ const faqSchema = buildFAQPageSchema(faqContent);
 
 const breadcrumbItems = [
   { label: "Home", url: "/" },
-  { label: "Buying In", url: "/denver-homes-for-sale" },
+  { label: "Denver Homes", url: "/denver-homes-for-sale" },
   { label: "LoHi", url: "/buying-in/lohi-denver" },
 ];
 
 export default function BuyingInLohiDenver() {
+  // SSR: start with all answers expanded so they are in the DOM for crawlers.
+  // After hydration, collapse all. This ensures FAQ answers are present in prerendered HTML.
+  const [hydrated, setHydrated] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  useEffect(() => { setHydrated(true); }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-cream">
@@ -413,13 +417,19 @@ export default function BuyingInLohiDenver() {
               </div>
             ))}
           </div>
-          {/* Interactive Map widget */}
+          {/* LoHi listings map + search widget */}
           <div className="mb-8 rounded-lg overflow-hidden border border-cream/20">
-            <BuyingBuddyWidget type="InteractiveMap" filter={BB_FILTER} />
+            <BuyingBuddyWidget
+              type="SearchResults"
+              filter="neighborhood:Highland mappos:39.7594,-105.0097 mapzoom:14"
+            />
           </div>
-          {/* Featured Gallery widget */}
+          {/* Alerts anchor target */}
           <div className="mb-8" id="lohi-alerts">
-            <BuyingBuddyWidget type="FeaturedGallery" filter={BB_FILTER} />
+            <BuyingBuddyWidget
+              type="SearchResults"
+              filter="neighborhood:Highland mappos:39.7594,-105.0097 mapzoom:14"
+            />
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
             <a
@@ -764,11 +774,14 @@ export default function BuyingInLohiDenver() {
                     }`}
                   />
                 </button>
-                {expandedFaq === idx && (
-                  <div className="px-5 pb-5 pt-2 bg-white">
-                    <p className="text-charcoal/75 leading-relaxed">{faq.answer}</p>
-                  </div>
-                )}
+                {/* Answer always in DOM for SEO/SSR; hidden visually after hydration when collapsed */}
+                <div
+                  className="px-5 pb-5 pt-2 bg-white"
+                  style={{ display: !hydrated || expandedFaq === idx ? "block" : "none" }}
+                  aria-hidden={hydrated && expandedFaq !== idx}
+                >
+                  <p className="text-charcoal/75 leading-relaxed">{faq.answer}</p>
+                </div>
               </div>
             ))}
           </div>
