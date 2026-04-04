@@ -1565,6 +1565,19 @@ export function serveStatic(app: Express) {
       res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
+  // IL-118: Serve prerendered HTML for /buying-in/lohi-denver (+ trailing-slash form).
+  // Primary: server/prerendered/buying-in-lohi-denver.html — committed to git.
+  // Fallback: dist/prerendered/buying-in-lohi-denver.html — build artifact.
+  app.get(["/buying-in/lohi-denver", "/buying-in/lohi-denver/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/buying-in-lohi-denver.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/buying-in-lohi-denver.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
   app.use(express.static(distPath));
   // fall through to index.html if the file doesn't exist
   app.use("*", (_req, res) => {

@@ -879,6 +879,19 @@ export const SEO_METADATA_MAP = {
       { "@type": "ListItem", position: 2, name: "Cost of Living in Denver", item: "https://myrockhomes.com/cost-of-living-in-denver-colorado/" },
     ],
   },
+  "buying-in-lohi-denver": {
+    title: "Buying in LoHi Denver | Should It Stay on Your List?",
+    description:
+      "Thinking about buying in LoHi Denver? Here's how to know if LoHi should stay on your list, what buyers get wrong, and when nearby may be the smarter move.",
+    canonical: "https://myrockhomes.com/buying-in/lohi-denver",
+    pageType: "guide",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Buying In", item: "https://myrockhomes.com/denver-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "LoHi", item: "https://myrockhomes.com/buying-in/lohi-denver" },
+    ],
+  },
+
   "relocating-to-denver-colorado": {
     title: "Relocating to Denver, Colorado | My Rock Realty",
     description:

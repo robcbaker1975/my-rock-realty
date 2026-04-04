@@ -154,6 +154,7 @@ async function prerenderAll() {
   "entry-server-platt-park": resolve(ROOT, "client/src/entry-server-platt-park.tsx"),
   "entry-server-highland": resolve(ROOT, "client/src/entry-server-highland.tsx"),
   "entry-server-home": resolve(ROOT, "client/src/entry-server-home.tsx"),
+  "entry-server-buying-in-lohi-denver": resolve(ROOT, "client/src/entry-server-buying-in-lohi-denver.tsx"),
         },
         output: {
           format: "esm",
@@ -3883,7 +3884,47 @@ async function prerenderAll() {
     if (!written_homepage.includes('<title ') && !written_homepage.includes('<title>')) throw new Error("[prerender-all] FAIL: no title tag in homepage output");
     console.log(`[prerender-all] Done: homepage (/) rootNotEmpty=${hp_rootNotEmpty} hasH1=${hp_hasH1}`);
   }
-  console.log("[prerender-all] All 107 routes complete.");
+  // --- buying-in-lohi-denver ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-buying-in-lohi-denver.js"));
+    const html = ssrMod.renderBuyingInLohiDenver();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+
+    const _seoMeta_buying_in_lohi_denver = SEO_METADATA_MAP["buying-in-lohi-denver"];
+    const _seoBlock_buying_in_lohi_denver = buildSeoHeadBlock({
+      title: _seoMeta_buying_in_lohi_denver.title,
+      description: _seoMeta_buying_in_lohi_denver.description,
+      canonical: _seoMeta_buying_in_lohi_denver.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [
+        ...BASE_SCHEMAS,
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Is LoHi an official Denver neighborhood?", "acceptedAnswer": { "@type": "Answer", "text": "Officially, Denver uses Highland. LoHi is the shorthand people use for the Lower Highland part of that broader area." } },
+            { "@type": "Question", "name": "Do people actually call it LoHi?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Visit Denver explicitly says \"LoHi to locals.\"" } },
+            { "@type": "Question", "name": "Is LoHi the same as Highland?", "acceptedAnswer": { "@type": "Answer", "text": "Not exactly. Highland is the official neighborhood name. LoHi usually means the closer-in Lower Highland piece." } },
+            { "@type": "Question", "name": "What kind of homes are common in LoHi?", "acceptedAnswer": { "@type": "Answer", "text": "Visit Denver describes Highland as having three districts, including Lower Highland, and local guides commonly describe LoHi around condos, townhomes, newer infill, and some detached homes." } },
+            { "@type": "Question", "name": "What is the biggest mistake buyers make in LoHi?", "acceptedAnswer": { "@type": "Answer", "text": "Keeping it on the list just because the name sounds right." } },
+            { "@type": "Question", "name": "Should I buy in LoHi or just near it?", "acceptedAnswer": { "@type": "Answer", "text": "That depends on whether you want LoHi itself or just what this part of Denver gives you." } }
+          ]
+        },
+        buildBreadcrumbSchema(_seoMeta_buying_in_lohi_denver.breadcrumbs),
+      ],
+      slug: "buying-in-lohi-denver",
+    });
+    const _injectedHtml_buying_in_lohi_denver = injectSeoHead(prerenderedShell, _seoBlock_buying_in_lohi_denver, _seoMeta_buying_in_lohi_denver.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "buying-in-lohi-denver.html"), _injectedHtml_buying_in_lohi_denver, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "buying-in-lohi-denver.html"), prerenderedShell, "utf-8");
+    const written_buying_in_lohi_denver = readFileSync(resolve(serverPrerenderedDir, "buying-in-lohi-denver.html"), "utf-8");
+    if (written_buying_in_lohi_denver.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for buying-in-lohi-denver");
+    console.log("[prerender-all] Done: buying-in-lohi-denver");
+  }
+
+  console.log("[prerender-all] All 108 routes complete.");
 }
 
 prerenderAll().catch((err) => {

@@ -37,6 +37,7 @@ import ArvadaCoHomesForSale from "./pages/ArvadaCoHomesForSale";
 import WashParkDenverBuyerGuide from "./pages/WashParkDenverBuyerGuide";
 import CherryCreekDenverBuyerGuide from "./pages/CherryCreekDenverBuyerGuide";
 import LohiDenverBuyerGuide from "./pages/LohiDenverBuyerGuide";
+import BuyingInLohiDenver from "./pages/BuyingInLohiDenver";
 import RiNoDenverBuyerGuide from "./pages/RiNoDenverBuyerGuide";
 import CentralParkDenverBuyerGuide from "./pages/CentralParkDenverBuyerGuide";
 import SloanLakeDenverBuyerGuide from "./pages/SloanLakeDenverBuyerGuide";
@@ -186,6 +187,7 @@ function Router() {
       <Route path={"/wash-park-denver-buyer-guide"} component={WashParkDenverBuyerGuide} />
       <Route path={"/cherry-creek-denver-buyer-guide"} component={CherryCreekDenverBuyerGuide} />
       <Route path={"/lohi-denver-buyer-guide"} component={LohiDenverBuyerGuide} />
+      <Route path={"/buying-in/lohi-denver"} component={BuyingInLohiDenver} />
       <Route path={"/rino-denver-buyer-guide"} component={RiNoDenverBuyerGuide} />
       <Route path={"/central-park-denver-buyer-guide"} component={CentralParkDenverBuyerGuide} />
       <Route path={"/sloan-lake-denver-buyer-guide"} component={SloanLakeDenverBuyerGuide} />
