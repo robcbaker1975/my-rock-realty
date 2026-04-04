@@ -11,6 +11,16 @@ import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 
 export default function ListingResults() {
   useEffect(() => {
+    // Append #display when no hash is present so Buying Buddy defaults to photo/grid view.
+    // Preserves any existing query string. Does nothing if a hash is already present.
+    if (!window.location.hash) {
+      window.location.replace(
+        window.location.pathname + window.location.search + "#display"
+      );
+    }
+  }, []);
+
+  useEffect(() => {
     document.title = "Listing Results | My Rock Realty";
     // Inject noindex meta tag — foundation page, not intended for search engine indexing
     let meta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
