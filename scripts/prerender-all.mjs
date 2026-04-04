@@ -16,7 +16,7 @@
  * add the entry to the input map and route block below, then update package.json.
  */
 import { build } from "vite";
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, copyFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 import { buildSeoHeadBlock, injectSeoHead, BASE_SCHEMAS, buildBreadcrumbSchema, OG_IMAGE_DEFAULT, OG_IMAGE_MILITARY } from "./seo-inject.mjs";
@@ -3925,6 +3925,21 @@ async function prerenderAll() {
   }
 
   console.log("[prerender-all] All 108 routes complete.");
+
+  // Copy Buying Buddy foundation pages (not in prerender pipeline) to dist/prerendered/
+  // These are standalone HTML files that must exist in dist for production route handlers.
+  const foundationPages = ["listing-details", "listing-results"];
+  for (const slug of foundationPages) {
+    const srcFile = resolve(serverPrerenderedDir, `${slug}.html`);
+    const distFile = resolve(distPrerenderedDir, `${slug}.html`);
+    if (existsSync(srcFile)) {
+      mkdirSync(distPrerenderedDir, { recursive: true });
+      copyFileSync(srcFile, distFile);
+      console.log(`[prerender-all] Copied foundation page: ${slug}.html`);
+    } else {
+      console.warn(`[prerender-all] WARNING: foundation page not found: ${srcFile}`);
+    }
+  }
 }
 
 prerenderAll().catch((err) => {
