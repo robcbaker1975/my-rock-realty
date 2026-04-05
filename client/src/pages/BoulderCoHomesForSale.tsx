@@ -8,6 +8,7 @@
 
 import { useState, useEffect } from "react";
 import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
+import Footer from "@/components/Footer";
 import { Link } from "wouter";
 import SeoHead from "@/components/seo/SeoHead";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
@@ -480,6 +481,7 @@ export default function BoulderCoHomesForSale() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
