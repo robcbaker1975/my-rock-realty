@@ -287,7 +287,10 @@ export default function HighlandDenverHomesForSale() {
           <h2 className="text-2xl sm:text-3xl font-bold text-charcoal mb-6" style={{ fontFamily: "'Outfit', sans-serif" }}>
             Featured Highland Listings
           </h2>
-          <BuyingBuddyWidget type="SearchResults" filter="neighborhood:Highland mappos:39.7620,-105.0100 mapzoom:14" />
+          <BuyingBuddyWidget
+            type="FeaturedGallery"
+            filter="carousel:true+shapesearch:39.7699 -105.0248,39.7699 -105.0118,39.7226 -105.0118,39.7226 -105.0248,39.7699 -105.0248+mls_id:denver+listing_status:active,coming-soon+order:create_dt desc"
+          />
         </div>
       </section>
 

@@ -288,7 +288,10 @@ export default function RinoDenverHomesForSale() {
           <h2 className="text-2xl sm:text-3xl font-bold text-charcoal mb-6" style={{ fontFamily: "'Outfit', sans-serif" }}>
             Featured RiNo Listings
           </h2>
-          <BuyingBuddyWidget type="SearchResults" filter="neighborhood:River North mappos:39.7680,-104.9810 mapzoom:14" />
+          <BuyingBuddyWidget
+            type="FeaturedGallery"
+            filter="carousel:true+shapesearch:39.7838 -105.0088,39.7838 -104.9798,39.7528 -104.9798,39.7528 -105.0088,39.7838 -105.0088+mls_id:denver+listing_status:active,coming-soon+order:create_dt desc"
+          />
         </div>
       </section>
 

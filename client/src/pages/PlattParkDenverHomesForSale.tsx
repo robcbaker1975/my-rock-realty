@@ -288,7 +288,10 @@ export default function PlattParkDenverHomesForSale() {
           <h2 className="text-2xl sm:text-3xl font-bold text-charcoal mb-6" style={{ fontFamily: "'Outfit', sans-serif" }}>
             Featured Platt Park Listings
           </h2>
-          <BuyingBuddyWidget type="SearchResults" filter="neighborhood:Platt Park mappos:39.6882,-104.9740 mapzoom:14" />
+          <BuyingBuddyWidget
+            type="FeaturedGallery"
+            filter="carousel:true+shapesearch:39.6968 -104.9878,39.6968 -104.9733,39.6780 -104.9733,39.6780 -104.9878,39.6968 -104.9878+mls_id:denver+listing_status:active,coming-soon+order:create_dt desc"
+          />
         </div>
       </section>
 

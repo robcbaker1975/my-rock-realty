@@ -286,7 +286,7 @@ export default function CherryCreekDenverHomesForSale() {
           </h2>
           <BuyingBuddyWidget
             type="FeaturedGallery"
-            filter="carousel:true+mls_id:denver+listing_status:active,coming-soon+mapType:ROADMAP+shapesearch:39.7256 -104.9587,39.7256 -104.9130,39.6950 -104.9130,39.6950 -104.9587,39.7256 -104.9587+mapzoom:14+mappos:39.7103,-104.9359+delay:2500+order:create_dt desc"
+            filter="carousel:true+shapesearch:39.7256 -105.0060,39.7256 -104.9405,39.7110 -104.9405,39.7110 -105.0060,39.7256 -105.0060+mls_id:denver+listing_status:active,coming-soon+order:create_dt desc"
           />
         </div>
       </section>

@@ -289,7 +289,10 @@ export default function CentralParkDenverHomesForSale() {
           <h2 className="text-2xl sm:text-3xl font-bold text-charcoal mb-6" style={{ fontFamily: "'Outfit', sans-serif" }}>
             Featured Central Park Listings
           </h2>
-          <BuyingBuddyWidget type="SearchResults" filter="neighborhood:Central Park mappos:39.7560,-104.8880 mapzoom:13" />
+          <BuyingBuddyWidget
+            type="FeaturedGallery"
+            filter="carousel:true+shapesearch:39.7648 -104.9036,39.7648 -104.8820,39.7118 -104.8820,39.7118 -104.9036,39.7648 -104.9036+mls_id:denver+listing_status:active,coming-soon+order:create_dt desc"
+          />
         </div>
       </section>
 
