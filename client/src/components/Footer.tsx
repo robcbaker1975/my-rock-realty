@@ -1,6 +1,14 @@
 import { useEffect } from "react";
 import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'bb-widget': any;
+    }
+  }
+}
+
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/logo_c4d99dfc.png";
 
 // Military & PCS spoke links for footer discoverability
@@ -289,13 +297,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* MLS Disclaimer — rendered via React-safe imperative wrapper */}
+        {/* MLS Disclaimer */}
         <div className="pt-4 pb-2">
-          <BuyingBuddyWidget
-            type="Disclaimer"
-            className="text-cream/50 text-xs leading-relaxed"
-            widgetStyle="--bbw-body-text-color:#F5F0EB;--bbw-disclaimer-bg-color-rgba:255,255,255,0;--bbw-disclaimer-bg-border-radius:0.5rem"
-          />
+          <bb-widget data-type="Disclaimer"></bb-widget>
         </div>
 
         {/* Compliance / Disclosures Bar */}
