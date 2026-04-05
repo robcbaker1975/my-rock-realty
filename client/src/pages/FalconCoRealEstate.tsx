@@ -9,6 +9,7 @@ import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
+import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 
 /* ─── FAQ Content ─── */
 const faqContent = [
@@ -401,6 +402,20 @@ export default function FalconCoRealEstate() {
           </div>
         </section>
 
+        {/* ─── Search CTA ─── */}
+        <section className="py-12 px-6 bg-white border-t border-stone-200">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#292524] mb-3">Search Falcon homes</h2>
+            <p className="text-stone-700 text-base md:text-lg leading-relaxed mb-6">See active listings in Falcon and narrow the search from there.</p>
+            <a
+              href="/listing-results?searchParams%5Bcity%5D=Falcon"
+              className="inline-block bg-[#C9A96E] text-[#292524] font-semibold px-8 py-3.5 rounded-lg hover:bg-[#b8945a] transition-colors text-base"
+            >
+              Open Falcon home search
+            </a>
+          </div>
+        </section>
+
         {/* ─── FAQ ─── */}
         <section className="py-14 px-6">
           <div className="max-w-3xl mx-auto">
@@ -411,6 +426,18 @@ export default function FalconCoRealEstate() {
                 <FAQItem key={item.question} question={item.question} answer={item.answer} index={i} />
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ─── Featured Listings ─── */}
+        <section className="py-14 px-6 bg-white border-t border-stone-200">
+          <div className="max-w-3xl mx-auto">
+            <span className={sectionLabel}>Featured Listings</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#292524] mb-8">Featured Falcon Listings</h2>
+            <BuyingBuddyWidget
+              type="FeaturedGallery"
+              filter="carousel:true+shapesearch:38.9750 -104.6200,38.9750 -104.5050,38.8800 -104.5050,38.8800 -104.6200,38.9750 -104.6200+mls_id:ppar+listing_status:active,coming-soon+order:create_dt desc"
+            />
           </div>
         </section>
 

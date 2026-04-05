@@ -10,6 +10,7 @@ import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 
 /* ─── FAQ Content ─── */
 const faqContent = [
@@ -445,6 +446,18 @@ export default function PeytonCoRealEstate() {
               </div>
             </div>
 
+            {/* Search CTA */}
+            <div className="space-y-4 bg-stone-800/50 rounded-lg p-6">
+              <h2 className="font-display text-2xl text-cream">Search Peyton homes</h2>
+              <p className="text-stone-300">See active listings in Peyton and narrow the search from there.</p>
+              <a
+                href="/listing-results?searchParams%5Bcity%5D=Peyton"
+                className="inline-block bg-amber-600 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded transition-colors"
+              >
+                Open Peyton home search
+              </a>
+            </div>
+
             {/* FAQ */}
             <div className="space-y-4">
               <h2 className="font-display text-2xl text-cream">
@@ -459,6 +472,15 @@ export default function PeytonCoRealEstate() {
                   />
                 ))}
               </div>
+            </div>
+
+            {/* Featured Listings */}
+            <div className="space-y-4">
+              <h2 className="font-display text-2xl text-cream">Featured Peyton Listings</h2>
+              <BuyingBuddyWidget
+                type="FeaturedGallery"
+                filter="carousel:true+shapesearch:39.0300 -104.5600,39.0300 -104.4100,38.8600 -104.4100,38.8600 -104.5600,39.0300 -104.5600+mls_id:ppar+listing_status:active,coming-soon+order:create_dt desc"
+              />
             </div>
 
             {/* Final thoughts */}

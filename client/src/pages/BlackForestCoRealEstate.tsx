@@ -10,6 +10,7 @@ import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 
 /* ─── FAQ Content ─── */
 const faqContent = [
@@ -234,6 +235,20 @@ export default function BlackForestCoRealEstate() {
             <p>If you are still deciding between Black Forest, Monument, Falcon, or a north-side neighborhood, renting first can still help. But if the reason you are looking here is clear, Black Forest is often one of those places where buyers know pretty quickly whether the lifestyle fits them or not.</p>
           </section>
 
+          {/* Search CTA */}
+          <section>
+            <div className="bg-stone-100 rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-stone-900 mb-3">Search Black Forest homes</h2>
+              <p className="text-stone-700 mb-6">See active listings in Black Forest and narrow the search from there.</p>
+              <a
+                href="/listing-results?searchParams%5Bcity%5D=Black%20Forest"
+                className="inline-block bg-amber-500 hover:bg-amber-400 text-stone-900 font-semibold px-6 py-3 rounded transition-colors"
+              >
+                Open Black Forest home search
+              </a>
+            </div>
+          </section>
+
           {/* FAQ */}
           <section>
             <h2 className="text-2xl font-bold text-stone-900 mb-6">FAQ about living in Black Forest</h2>
@@ -242,6 +257,15 @@ export default function BlackForestCoRealEstate() {
                 <FAQItem key={item.question} question={item.question} answer={item.answer} />
               ))}
             </div>
+          </section>
+
+          {/* Featured Listings */}
+          <section>
+            <h2 className="text-2xl font-bold text-stone-900 mb-6">Featured Black Forest Listings</h2>
+            <BuyingBuddyWidget
+              type="FeaturedGallery"
+              filter="carousel:true+shapesearch:39.0580 -104.7350,39.0580 -104.6200,38.9630 -104.6200,38.9630 -104.7350,39.0580 -104.7350+mls_id:ppar+listing_status:active,coming-soon+order:create_dt desc"
+            />
           </section>
 
           {/* Final thoughts */}

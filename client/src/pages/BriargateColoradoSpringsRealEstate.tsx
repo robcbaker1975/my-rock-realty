@@ -10,6 +10,7 @@ import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
+import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 
 /* ─── FAQ Content ─── */
 const faqContent = [
@@ -265,6 +266,20 @@ export default function BriargateColoradoSpringsRealEstate() {
           </div>
         </section>
 
+        {/* ─── Search CTA ─── */}
+        <section className="py-12 px-6 bg-white border-t border-stone-200">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#292524] mb-3">Search Briargate homes</h2>
+            <p className="text-stone-700 text-base md:text-lg leading-relaxed mb-6">See active listings in Briargate and narrow the search from there.</p>
+            <a
+              href="/listing-results?searchParams%5Bcity%5D=Colorado%20Springs&searchParams%5Bsubdivision%5D=Briargate"
+              className="inline-block bg-[#C9A96E] text-[#292524] font-semibold px-8 py-3.5 rounded-lg hover:bg-[#b8945a] transition-colors text-base"
+            >
+              Open Briargate home search
+            </a>
+          </div>
+        </section>
+
         {/* ─── What Briargate Is Not ─── */}
         <section className="py-12 px-6 bg-white border-t border-stone-200">
           <div className="max-w-3xl mx-auto">
@@ -421,6 +436,18 @@ export default function BriargateColoradoSpringsRealEstate() {
                 <FAQItem key={item.question} question={item.question} answer={item.answer} index={i} />
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ─── Featured Listings ─── */}
+        <section className="py-14 px-6 bg-white border-t border-stone-200">
+          <div className="max-w-3xl mx-auto">
+            <span className={sectionLabel}>Featured Listings</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#292524] mb-8">Featured Briargate Listings</h2>
+            <BuyingBuddyWidget
+              type="FeaturedGallery"
+              filter="carousel:true+shapesearch:38.9875 -104.8305,38.9875 -104.7570,38.9340 -104.7570,38.9340 -104.8305,38.9875 -104.8305+mls_id:ppar+listing_status:active,coming-soon+order:create_dt desc"
+            />
           </div>
         </section>
 

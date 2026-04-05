@@ -8,6 +8,7 @@ import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
+import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 
 /* ─── FAQ Content ─── */
 const faqContent = [
@@ -266,6 +267,20 @@ export default function BanningLewisRanchColoradoSpringsRealEstate() {
           </div>
         </section>
 
+        {/* ─── Search CTA ─── */}
+        <section className="py-12 px-6 bg-white border-t border-stone-200">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#292524] mb-3">Search Banning Lewis Ranch homes</h2>
+            <p className="text-stone-700 text-base md:text-lg leading-relaxed mb-6">See active listings in Banning Lewis Ranch and narrow the search from there.</p>
+            <a
+              href="/listing-results?searchParams%5Bcity%5D=Colorado%20Springs&searchParams%5Bsubdivision%5D=Banning%20Lewis%20Ranch"
+              className="inline-block bg-[#C9A96E] text-[#292524] font-semibold px-8 py-3.5 rounded-lg hover:bg-[#b8945a] transition-colors text-base"
+            >
+              Open Banning Lewis Ranch home search
+            </a>
+          </div>
+        </section>
+
         {/* ─── What Banning Lewis Ranch Is Not ─── */}
         <section className="py-12 px-6 bg-white border-t border-stone-200">
           <div className="max-w-3xl mx-auto">
@@ -412,6 +427,18 @@ export default function BanningLewisRanchColoradoSpringsRealEstate() {
                 <FAQItem key={item.question} question={item.question} answer={item.answer} index={i} />
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ─── Featured Listings ─── */}
+        <section className="py-14 px-6 bg-white border-t border-stone-200">
+          <div className="max-w-3xl mx-auto">
+            <span className={sectionLabel}>Featured Listings</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#292524] mb-8">Featured Banning Lewis Ranch Listings</h2>
+            <BuyingBuddyWidget
+              type="FeaturedGallery"
+              filter="carousel:true+shapesearch:38.9475 -104.6835,38.9475 -104.6320,38.8895 -104.6320,38.8895 -104.6835,38.9475 -104.6835+mls_id:ppar+listing_status:active,coming-soon+order:create_dt desc"
+            />
           </div>
         </section>
 
