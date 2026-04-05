@@ -1,106 +1,88 @@
 /**
  * Buying a Home in Denver — My Rock Realty
- * First guide page in the Denver SEO cluster
- * Design: Front Range Modern — matches existing site design system
- * Palette: Warm charcoal (#292524), cream (#F5F0EB), antique gold (#C9A96E)
- * Typography: Outfit (display) + Libre Franklin (body)
+ * Denver city-level buyer guide page
+ * Route: /buying-a-home-in-denver
+ * Approved copy, widgets, and metadata
  */
 
-import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
 import LeadForm from "@/components/LeadForm";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
-import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  Home,
-  MapPin,
-  CheckCircle2,
-  ChevronDown,
-  BookOpen,
-  DollarSign,
-  Compass,
-} from "lucide-react";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
-/* Hero Background Image — Approved Denver metro aerial view */
-const DENVER_HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/denver-rowhouses-hero_2f59d4ac.jpg";
-
-/* ─── FAQ Content ─── */
+/* ─── FAQ Content — Exact from approved copy ─── */
 const faqContent = [
   {
-    question: "What should buyers do first when planning to buy a home in Denver?",
+    question: "Am I really ready to buy in Denver?",
     answer:
-      "Buyers usually start by clarifying budget, speaking with a lender or reviewing financing options, and narrowing down which Denver neighborhoods or suburbs best fit their goals.",
+      "Probably, if you know your payment comfort, your likely home-type lane, and whether Denver proper actually belongs in your search.",
   },
   {
-    question: "How competitive is the Denver home market for buyers?",
+    question: "What makes Denver harder than a simpler market?",
     answer:
-      "Competition can vary by price point, location, inventory levels, and season, so buyers should be prepared for changing conditions across different parts of the Denver market.",
+      "Usually too much real choice. Buyers stay broad too long and mistake activity for progress.",
   },
   {
-    question: "Should buyers focus on Denver neighborhoods or surrounding suburbs?",
+    question: "Should I search by neighborhood first?",
     answer:
-      "That depends on lifestyle, commute needs, budget, and housing preferences. Some buyers prefer central Denver neighborhoods, while others focus on suburbs for different layout, community, or price considerations.",
+      "Only if neighborhood is honestly the main unresolved question. A lot of buyers should start with payment, home type, and tradeoffs first.",
   },
   {
-    question: "What should buyers pay attention to besides the home itself?",
+    question: "When do seller concessions matter most?",
     answer:
-      "Buyers should also evaluate location, commute patterns, neighborhood fit, resale potential, property condition, and how the home compares with nearby alternatives.",
+      "When cash to close, payment structure, or a buydown matters more than fighting over a small price difference.",
   },
   {
-    question: "Why is local market guidance helpful when buying in Denver?",
+    question: "Should I look at CHFA, Denver DPA, VA, HomeReady, or Home Possible?",
     answer:
-      "Local guidance can help buyers compare neighborhoods, understand market patterns, prepare stronger search strategies, and make more confident decisions in a competitive metro-area market.",
+      "Yes, if those programs fit the actual problem you are trying to solve. The point is not just to qualify. The point is to buy the right home the right way.",
   },
   {
-    question: "What should buyers know about making an offer in Denver?",
+    question: "When should I move into neighborhood pages?",
     answer:
-      "Buyers should understand current market conditions, comparable prices, contingency options, earnest money expectations, and timing considerations. A strong offer balances competitiveness with protection and realistic terms.",
-  },
-  {
-    question: "How important is the home inspection in the Denver buying process?",
-    answer:
-      "Home inspections are crucial for identifying potential issues, understanding maintenance needs, and making informed decisions. They provide a professional assessment that can guide negotiations and reveal hidden problems.",
-  },
-  {
-    question: "What should buyers do if they encounter multiple offers on a property?",
-    answer:
-      "In a multiple-offer situation, buyers should prepare a competitive offer with strong terms, consider waiving certain contingencies if comfortable, and be ready to decide quickly. Working with a local real estate professional helps navigate these competitive scenarios.",
+      "When neighborhood comparison is helping you narrow instead of helping you stay broad.",
   },
 ];
 
-/* ─── Build FAQ Schema ─── */
 const faqSchema = buildFAQPageSchema(faqContent);
 
-/* ─── Breadcrumb Items ─── */
 const breadcrumbItems = [
   { label: "Home", url: "/" },
+  { label: "Denver", url: "/denver-co-homes-for-sale/" },
   { label: "Buying a Home in Denver", url: "/buying-a-home-in-denver" },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
-function CTAButton({
-  label = "Schedule a Denver Home Buying Consultation",
-  className = "",
+function FAQItem({
+  question,
+  answer,
+  isOpen,
+  onToggle,
 }: {
-  label?: string;
-  className?: string;
+  question: string;
+  answer: string;
+  isOpen: boolean;
+  onToggle: () => void;
 }) {
   return (
-    <a
-      href="#contact-rob"
-      onClick={(e: React.MouseEvent) => { e.preventDefault(); document.getElementById('contact-rob')?.scrollIntoView({ behavior: 'smooth' }); }}
-      className={`inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 bg-gold text-charcoal hover:bg-gold-light hover:shadow-lg px-7 py-4 text-[15px] sm:text-base no-underline ${className}`}
-      style={{ fontFamily: "'Outfit', sans-serif" }}
-    >
-      {label}
-      <ArrowRight size={18} />
-    </a>
+    <div className="border-b border-stone-200">
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between py-4 px-4 text-left hover:bg-stone-50 transition-colors"
+      >
+        <h3 className="font-semibold text-stone-900 pr-4">{question}</h3>
+        <ChevronDown
+          size={20}
+          className={`flex-shrink-0 text-stone-600 transition-transform ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+      {isOpen && (
+        <div className="px-4 pb-4 text-stone-700 leading-relaxed">{answer}</div>
+      )}
+    </div>
   );
 }
 
@@ -108,460 +90,582 @@ export default function BuyingAHomeInDenver() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
-    <div className="hub-page min-h-screen flex flex-col bg-cream">
+    <div className="min-h-screen bg-white">
       <SeoHead
         metadata={{
-          title: "Buying a Home in Denver | Denver Home Buyer Guide",
+          title:
+            "Buying a Home in Denver: What Gets Harder, What Helps, and How to Start Smart",
           description:
-            "Learn about buying a home in Denver, including neighborhood search strategy, financing preparation, market considerations, and practical steps for Denver-area buyers.",
+            "A practical guide to buying a home in Denver, with honest help on readiness, payment comfort, search strategy, concessions, financing options, and what to do next.",
           canonicalUrl: "https://myrockhomes.com/buying-a-home-in-denver",
           breadcrumbs: breadcrumbItems,
         }}
         schema={faqSchema ? [faqSchema] : []}
       />
 
-      {/* ═══════════════════════════════════════════════════
-          BREADCRUMBS
-      ═══════════════════════════════════════════════════ */}
-      <div className="bg-charcoal">
-        <div className="container py-3">
+      {/* ─── Breadcrumbs ─── */}
+      <div className="bg-stone-100 border-b border-stone-200">
+        <div className="max-w-3xl mx-auto px-6 py-3">
           <Breadcrumbs items={breadcrumbItems} />
         </div>
       </div>
 
-      {/* ═══════════════════════════════════════════════════
-          1. HERO — Buying a Home in Denver
-      ═══════════════════════════════════════════════════ */}
-      <section className="relative bg-charcoal overflow-hidden">
-        {/* Hero Background Image */}
-        <img
-          src={DENVER_HERO_BG}
-          alt="Row houses along a residential street in Denver"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          width="1600"
-          height="900"
-          fetchPriority="high"
-          decoding="async"
-        />
-        {/* Gradient Overlay — ensures text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/90" />
-        <div className="container relative z-10 py-16 sm:py-20 md:py-24">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            className="max-w-2xl"
-          >
-            <h1
-              className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Buying a Home in Denver
-            </h1>
-            <p className="text-lg text-cream/80 mb-8 leading-relaxed">
-              A practical guide for buyers navigating the Denver metro area —
-              from clarifying your search strategy and financing options to
-              understanding neighborhoods, suburbs, and market conditions.
+      {/* ─── Main Content ─── */}
+      <main className="max-w-3xl mx-auto px-6 py-12 space-y-12">
+        {/* ─── H1 + Intro ─── */}
+        <section>
+          <h1 className="text-4xl md:text-5xl font-bold text-stone-900 mb-6">
+            Buying a Home in Denver: What Gets Harder, What Helps, and How to
+            Start Smart
+          </h1>
+          <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-4">
+            <p>
+              Buying in Denver usually does not get hard because buyers are
+              doing something wrong.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <CTAButton />
-              <a
-                href="mailto:rob@myrockhomes.com?subject=Denver Listings — Alert Request"
-                className="inline-flex items-center justify-center gap-2 font-semibold rounded transition-all duration-200 border-2 border-gold text-gold hover:bg-gold hover:text-charcoal px-7 py-4 text-[15px] sm:text-base no-underline"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                Get Alerts for New Denver Listings
-                <ArrowRight size={18} />
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          2. Why Denver Buyers Need a Clear Search Strategy
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-cream">
-        <div className="container">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Why Denver Buyers Need a Clear Search Strategy
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Compass,
-                title: "Market Variability",
-                desc: "Competition, inventory, and pricing can shift significantly across Denver neighborhoods and suburbs, making a focused search strategy essential.",
-              },
-              {
-                icon: MapPin,
-                title: "Geographic Range",
-                desc: "The Denver metro area spans a wide range of neighborhoods and suburbs, each with distinct character, pricing, and lifestyle considerations.",
-              },
-              {
-                icon: Home,
-                title: "Housing Variety",
-                desc: "From urban condos and townhomes to detached homes in established suburbs, buyers benefit from narrowing down housing type early in the process.",
-              },
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeUp}
-                className="bg-white rounded-lg p-6 border border-charcoal/10 shadow-sm"
-              >
-                <item.icon
-                  size={32}
-                  className="text-gold mb-4"
-                  strokeWidth={1.5}
-                />
-                <h3
-                  className="text-xl font-bold text-charcoal mb-2"
-                  style={{ fontFamily: "'Outfit', sans-serif" }}
-                >
-                  {item.title}
-                </h3>
-                <p className="text-charcoal/70">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          3. Choosing Between Neighborhoods and Suburbs
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Choosing Between Neighborhoods and Suburbs
-          </h2>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={fadeUp}
-            className="bg-cream/10 rounded-lg p-8 border border-cream/20 mb-8"
-          >
-            <p className="text-cream/90 leading-relaxed mb-6">
-              Some buyers prioritize walkability, urban character, and proximity
-              to Denver's core neighborhoods. Others focus on suburban settings
-              with different housing layouts, community amenities, and pricing
-              considerations.
+            <p>It usually gets hard because they start too wide.</p>
+            <p>
+              They look at too many neighborhoods, too many price points, too
+              many home types, and tell themselves they are just getting a feel
+              for things.
             </p>
-            <p className="text-cream/90 leading-relaxed">
-              The right choice depends on lifestyle, commute needs, budget, and
-              housing preferences. Exploring both options before committing to a
-              search area helps buyers make more informed decisions.
+            <p>
+              Most of the time, what is really happening is they have not
+              figured out what matters yet, so every house feels half-right.
             </p>
-          </motion.div>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {[
-              { label: "Wash Park", link: "/wash-park-denver-homes-for-sale" },
-              { label: "Cherry Creek", link: "/cherry-creek-denver-homes-for-sale" },
-              { label: "LoHi", link: "/lohi-denver-homes-for-sale" },
-              { label: "Parker", link: "/parker-co-homes-for-sale" },
-              { label: "Highlands Ranch", link: "/highlands-ranch-co-homes-for-sale" },
-              { label: "Castle Rock", link: "/castle-rock-co-homes-for-sale" },
-            ].map((item, idx) => (
-              <motion.a
-                key={idx}
-                href={item.link}
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeUp}
-                className="bg-cream/10 hover:bg-cream/20 rounded-lg p-4 border border-cream/20 transition-all group flex items-center justify-between"
-              >
-                <span className="text-cream font-semibold">{item.label}</span>
-                <ArrowRight
-                  size={16}
-                  className="text-gold group-hover:translate-x-1 transition-transform"
-                />
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          4. Financing and Preparation Before You Buy
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-cream">
-        <div className="container">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Financing and Preparation Before You Buy
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {[
-              {
-                icon: DollarSign,
-                title: "Clarify Your Budget",
-                desc: "Understanding your price range before searching helps focus your efforts and avoids wasted time on homes outside your financing capacity.",
-              },
-              {
-                icon: BookOpen,
-                title: "Get Pre-Approved",
-                desc: "Pre-approval strengthens your position in competitive situations and gives sellers confidence that you are a serious, qualified buyer.",
-              },
-              {
-                icon: CheckCircle2,
-                title: "Review Loan Options",
-                desc: "Different loan types have different requirements, rates, and down payment structures. Reviewing options early helps buyers choose the right fit.",
-              },
-              {
-                icon: Compass,
-                title: "Understand Closing Costs",
-                desc: "Beyond the purchase price, buyers should account for closing costs, inspections, and other transaction expenses when planning their budget.",
-              },
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeUp}
-                className="bg-white rounded-lg p-6 border border-charcoal/10 shadow-sm flex gap-4"
-              >
-                <item.icon
-                  size={28}
-                  className="text-gold flex-shrink-0 mt-0.5"
-                  strokeWidth={1.5}
-                />
-                <div>
-                  <h3
-                    className="text-lg font-bold text-charcoal mb-1"
-                    style={{ fontFamily: "'Outfit', sans-serif" }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p className="text-charcoal/70 text-sm">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          5. Denver Market Considerations for Buyers
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-cream mb-12 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Denver Market Considerations for Buyers
-          </h2>
-          <div className="space-y-4">
-            {[
-              "Competition varies by price range, neighborhood, and season",
-              "Inventory levels shift throughout the year across different areas",
-              "Financing strength affects how quickly buyers can move",
-              "Some neighborhoods move faster than others depending on demand",
-              "Suburban markets can behave differently from central Denver",
-              "Resale potential and neighborhood trajectory matter long-term",
-              "Working with a local agent helps buyers navigate changing conditions",
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeUp}
-                className="flex items-start gap-4 p-4 bg-cream/10 rounded-lg border border-cream/20"
-              >
-                <CheckCircle2
-                  size={24}
-                  className="text-gold flex-shrink-0 mt-0.5"
-                  strokeWidth={1.5}
-                />
-                <p className="text-cream/80">{item}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          6. Practical Steps in the Home Search Process
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-cream">
-        <div className="container">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Practical Steps in the Home Search Process
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Denver Condos for Sale",
-                link: "/denver-condos-for-sale",
-              },
-              {
-                title: "Denver Townhomes for Sale",
-                link: "/denver-townhomes-for-sale",
-              },
-              {
-                title: "Denver Luxury Homes",
-                link: "/denver-luxury-homes-for-sale",
-              },
-              {
-                title: "Denver New Construction",
-                link: "/denver-new-construction-homes",
-              },
-              {
-                title: "Denver Homes Hub",
-                link: "/denver-homes-for-sale",
-              },
-            ].map((resource, idx) => (
-              <motion.a
-                key={idx}
-                href={resource.link}
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeUp}
-                className="bg-white hover:shadow-lg rounded-lg p-6 border border-charcoal/10 transition-all group"
-              >
-                <h3 className="text-lg font-bold text-charcoal mb-3 group-hover:text-gold transition-colors">
-                  {resource.title}
-                </h3>
-                <div className="flex items-center gap-2 text-gold">
-                  <span className="text-sm font-semibold">Explore</span>
-                  <ArrowRight
-                    size={16}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </div>
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          7. Related Denver Buyer Resources
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Related Denver Buyer Resources
-          </h2>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={fadeUp}
-            className="bg-cream/10 rounded-lg p-8 border border-cream/20"
-          >
-            <p className="text-cream/90 leading-relaxed mb-6">
-              Understanding the Denver home buying process, first-time buyer
-              considerations, and cost of living factors helps buyers approach
-              their search with greater confidence.
+            <p>That is where people lose time.</p>
+            <p>That is what this page is for.</p>
+            <p>
+              Not to sell you on Denver. Not to give you a big generic buyer
+              article. And not to throw every financing option on one page and
+              call it helpful.
             </p>
-            <div className="space-y-3 mb-8">
-              {[
-                {
-                  title: "Denver Home Buying Process",
-                  link: "/denver-home-buying-process",
-                },
-                {
-                  title: "First-Time Home Buyer Denver",
-                  link: "/first-time-home-buyer-denver",
-                },
-                {
-                  title: "Cost of Living in Denver, Colorado",
-                  link: "/cost-of-living-in-denver-colorado",
-                },
-              ].map((guide, idx) => (
-                <a
-                  key={idx}
-                  href={guide.link}
-                  className="flex items-center gap-2 text-gold hover:text-gold-light transition-colors font-semibold"
-                >
-                  <ArrowRight size={16} />
-                  {guide.title}
-                </a>
-              ))}
-            </div>
-            <a
-              href="/denver-homes-for-sale"
-              className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors font-semibold"
-            >
-              Back to Denver Homes Hub
-              <ArrowRight size={16} />
-            </a>
-          </motion.div>
-        </div>
-      </section>
+            <p>Just to help you get clear before you spend weeks looking at the
+              wrong stuff.</p>
+          </div>
+        </section>
 
-      {/* ═══════════════════════════════════════════════════
-          8. Buying a Home in Denver FAQs
-      ═══════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Buying a Home in Denver FAQs
+        {/* ─── What I would figure out first ─── */}
+        <section>
+          <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-6">
+            What I would figure out first
           </h2>
-          <div className="space-y-4">
+          <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-4">
+            <p>Before you get attached to neighborhoods, figure out a few basic
+              things.</p>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              What payment actually feels okay
+            </h3>
+            <p>
+              Not what a lender says you can qualify for.
+            </p>
+            <p>
+              What actually feels okay to you every month.
+            </p>
+            <p>
+              Those are not always the same number.
+            </p>
+            <p>
+              A lot of buyers get themselves in trouble here because they start
+              with approval instead of payment comfort.
+            </p>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              Whether your real problem is payment or cash to close
+            </h3>
+            <p>
+              Those are different problems.
+            </p>
+            <p>
+              Some buyers can handle the payment but are tight on down payment
+              and closing costs. Some have enough cash, but the monthly number
+              starts getting uncomfortable fast. Some are dealing with both.
+            </p>
+            <p>
+              That changes the whole conversation.
+            </p>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              What kind of home you are honestly open to
+            </h3>
+            <p>
+              Detached house. Condo. Townhome. Duplex. Something
+              lower-maintenance.
+            </p>
+            <p>
+              Do not be lazy with this part.
+            </p>
+            <p>
+              A lot of Denver searches go sideways because the buyer says,
+              "I'm open," but they really are not.
+            </p>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              Whether you should start with area or start with fit
+            </h3>
+            <p>
+              Some buyers really do need to start with neighborhood.
+            </p>
+            <p>
+              A lot of buyers do better starting with:
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>payment</li>
+              <li>home type</li>
+              <li>upkeep</li>
+              <li>commute</li>
+              <li>whether they even want Denver badly enough to pay for Denver</li>
+            </ul>
+            <p>
+              That part gets skipped all the time.
+            </p>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              What tradeoffs you can actually live with
+            </h3>
+            <p>
+              More space or better location. Older home or easier ownership.
+              Lower payment or stronger area fit. Big-name neighborhood or
+              better overall setup.
+            </p>
+            <p>
+              If you do not figure that out early, Denver usually makes you
+              figure it out later anyway.
+            </p>
+            <p>
+              Just not in a fun way.
+            </p>
+          </div>
+        </section>
+
+        {/* ─── Search CTA Block ─── */}
+        <section className="bg-stone-50 rounded-lg p-8 border border-stone-200">
+          <p className="text-stone-700 mb-6">
+            If you already want to start looking, use the search below. Just do
+            yourself a favor and stay honest about payment, home type, and
+            tradeoffs while you do it.
+          </p>
+          <bb-widget
+            data-type="SearchForm"
+            data-filter="shapesearch:39.80102090895284 -105.02467621018009,39.78453360179922 -105.02433288742618,39.782554859383524 -105.00287521530704,39.78730374558338 -104.99806869675236,39.79930641313517 -105.00476349045353,39.80735098475494 -105.00733841110782,39.80102090895284 -105.02467621018009,39.80102090895284 -105.02467621018009+mapzoom:13+mappos:39.79495403947301 -105.01137245346622+delay:2500+order:create_dt desc,price+show-options:on+mls_id:denver+listing_status:active,coming-soon+city:denver"
+          />
+        </section>
+
+        {/* ─── What makes Denver harder than a simpler market ─── */}
+        <section>
+          <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-6">
+            What makes Denver harder than a simpler market
+          </h2>
+          <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-4">
+            <p>
+              Usually it is not one thing.
+            </p>
+            <p>
+              It is that Denver gives you enough real options to stay broad
+              longer than you should.
+            </p>
+            <p>
+              At first that feels exciting.
+            </p>
+            <p>
+              Then it starts wasting your time.
+            </p>
+            <p>
+              You can bounce around between neighborhoods, home types, and price
+              points and feel like you are doing a lot, when really you are just
+              keeping too many half-ideas alive.
+            </p>
+            <p>
+              That is a real Denver problem.
+            </p>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              Home type matters early here
+            </h3>
+            <p>
+              In some places, buyers can stay fuzzy on home type for a while.
+            </p>
+            <p>
+              Here, that usually gets expensive.
+            </p>
+            <p>
+              A detached-house search is not the same as a condo search. A condo
+              search is not the same as a townhome search. The tradeoffs change.
+              The financing conversation can change. The concession strategy can
+              change.
+            </p>
+            <p>
+              If that part is still loose, the rest of the search usually stays
+              loose too.
+            </p>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              Seller concessions matter more than people think
+            </h3>
+            <p>
+              A lot of buyers still look at everything like price is the whole
+              game.
+            </p>
+            <p>
+              It is not.
+            </p>
+            <p>
+              Sometimes the smarter move is not squeezing out every last dollar
+              on price. Sometimes it is getting concessions that help with
+              closing costs, keep more cash in your pocket, or help the payment
+              through a buydown.
+            </p>
+            <p>
+              That can matter more than buyers realize, especially if cash to
+              close is the real pressure point.
+            </p>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              Vague buyers usually think the market is the whole problem
+            </h3>
+            <p>
+              Sometimes the market is hard.
+            </p>
+            <p>
+              But a lot of the time, the bigger problem is that the buyer is
+              still too broad.
+            </p>
+            <p>
+              If you know your payment comfort, home-type lane, tradeoffs, and
+              whether Denver proper is even really part of the plan, you usually
+              move a lot better.
+            </p>
+          </div>
+        </section>
+
+        {/* ─── Market Stats Widget ─── */}
+        <section className="bg-stone-50 rounded-lg p-8 border border-stone-200">
+          <p className="text-stone-700 mb-6">
+            Here is the quick market snapshot. Useful, yes. But still not as
+            useful as knowing what kind of buyer you are and what kind of search
+            actually fits you.
+          </p>
+          <bb-widget
+            data-type="MarketStats"
+            data-filter="reportType:totals+mls_id:denver+listing_status:active,coming-soon+city:denver"
+          />
+        </section>
+
+        {/* ─── How I would search smarter in Denver ─── */}
+        <section>
+          <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-6">
+            How I would search smarter in Denver
+          </h2>
+          <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-4">
+            <p>
+              A lot of buyers here do better when they narrow in this order:
+            </p>
+            <ol className="list-decimal pl-6 space-y-2">
+              <li>payment</li>
+              <li>home type</li>
+              <li>Denver vs suburb or Denver vs nearby access</li>
+              <li>upkeep / ownership fit</li>
+              <li>neighborhood</li>
+            </ol>
+            <p>
+              That does not mean neighborhood never comes first.
+            </p>
+            <p>
+              It just means neighborhood usually works better after the bigger
+              stuff is honest.
+            </p>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              Start with neighborhood when:
+            </h3>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>you already know the city itself matters</li>
+              <li>you already know the kind of area you want</li>
+              <li>you are ready to search homes</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              Do not start with neighborhood when:
+            </h3>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>you are still fuzzy on payment</li>
+              <li>you are still pretending every home type works</li>
+              <li>you keep saying you want "something easier" but have not said
+                what that means</li>
+              <li>you are reacting to names more than fit</li>
+            </ul>
+            <p>
+              That is when neighborhood pages can actually make you more
+              scattered.
+            </p>
+          </div>
+        </section>
+
+        {/* ─── Financing and concessions ─── */}
+        <section>
+          <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-6">
+            Financing and concessions
+          </h2>
+          <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-4">
+            <p>
+              This page does not need to turn into a loan seminar.
+            </p>
+            <p>
+              But it does need to be useful.
+            </p>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              CHFA
+            </h3>
+            <p>
+              CHFA matters when the real issue is cash to close.
+            </p>
+            <p>
+              Not every buyer should use it. But if Denver is the fit and the
+              down payment or closing cash is the thing getting in the way, it
+              deserves a real look.
+            </p>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              Denver DPA / metroDPA
+            </h3>
+            <p>
+              Same basic idea.
+            </p>
+            <p>
+              If the house and area make sense, but cash to close is the
+              problem, that kind of assistance may matter. The question is not
+              just whether you qualify. The question is whether it actually
+              helps you buy the right place in a smart way.
+            </p>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              VA
+            </h3>
+            <p>
+              VA can be really strong here if you are eligible.
+            </p>
+            <p>
+              Especially if keeping cash matters.
+            </p>
+            <p>
+              But it still has to fit the property, the deal, and the overall
+              plan. It is a tool. A good one. But still a tool.
+            </p>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              Conventional / HomeReady / Home Possible
+            </h3>
+            <p>
+              These matter because not every conventional buyer should take the
+              most obvious path.
+            </p>
+            <p>
+              Sometimes one of these lower-down-payment options is the better
+              fit depending on the buyer, the property, and what problem you are
+              actually trying to solve.
+            </p>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              Seller concessions
+            </h3>
+            <p>
+              This should not be some throwaway line at the bottom of a
+              financing section.
+            </p>
+            <p>
+              It is part of the strategy.
+            </p>
+            <p>
+              In Denver, concessions can help with:
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>closing costs</li>
+              <li>keeping cash in reserve</li>
+              <li>buydowns</li>
+              <li>making the whole deal feel better even when the price barely
+                moves</li>
+            </ul>
+            <p>
+              A lot of buyers miss that because they only look at list price and
+              sales price.
+            </p>
+          </div>
+        </section>
+
+        {/* ─── When neighborhood pages actually help ─── */}
+        <section>
+          <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-6">
+            When neighborhood pages actually help
+          </h2>
+          <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-4">
+            <p>
+              Neighborhood pages help after you are honest about:
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>budget</li>
+              <li>payment</li>
+              <li>home type</li>
+              <li>tradeoffs</li>
+            </ul>
+            <p>
+              That is when they start doing real work.
+            </p>
+            <p>
+              Before that, they can actually make you more scattered.
+            </p>
+            <p>
+              Once you are ready, that is where pages like:
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Wash Park vs Platt Park</li>
+              <li>LoHi vs Highland</li>
+              <li>RiNo vs LoHi</li>
+              <li>Central Park vs older / tighter-in options</li>
+              <li>Sloan Lake vs other west-side choices</li>
+              <li>Cherry Creek vs a more neighborhood-first search</li>
+            </ul>
+            <p>
+              start helping instead of distracting you.
+            </p>
+            <p>
+              So yes, neighborhood matters.
+            </p>
+            <p>
+              Just not always first.
+            </p>
+          </div>
+        </section>
+
+        {/* ─── Featured Gallery Widget ─── */}
+        <section className="bg-stone-50 rounded-lg p-8 border border-stone-200">
+          <p className="text-stone-700 mb-6">
+            If you are at the point where looking at actual listings helps, use
+            this as a browse section — not as a substitute for getting clear.
+          </p>
+          <bb-widget
+            data-type="FeaturedGallery"
+            data-filter="carousel:true+mls_id:denver+listing_status:active,coming-soon+delay:2500+order:create_dt desc,price"
+          />
+        </section>
+
+        {/* ─── What your next step probably is ─── */}
+        <section>
+          <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-6">
+            What your next step probably is
+          </h2>
+          <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-4">
+            <p>
+              Usually it is one of these.
+            </p>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              You are ready to search homes
+            </h3>
+            <p>
+              That is usually true when you know:
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>your payment</li>
+              <li>your home type</li>
+              <li>whether Denver proper is really part of the plan</li>
+              <li>what tradeoffs you can live with</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              You need a strategy conversation first
+            </h3>
+            <p>
+              That is usually true when:
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>you are still broad</li>
+              <li>you are mixing too many neighborhoods and home types</li>
+              <li>you do not know whether concessions or assistance matter</li>
+              <li>or you have a preapproval but not a real plan</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              You need neighborhood pages next
+            </h3>
+            <p>
+              That is when the main question is fit, not readiness.
+            </p>
+          </div>
+        </section>
+
+        {/* ─── FAQs ─── */}
+        <section>
+          <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-6">
+            FAQs
+          </h2>
+          <div className="border border-stone-200 rounded-lg overflow-hidden">
             {faqContent.map((item, idx) => (
-              <motion.div
+              <FAQItem
                 key={idx}
-                initial="hidden"
-                whileInView="visible"
-                variants={fadeUp}
-                className="bg-white rounded-lg border border-charcoal/10 overflow-hidden"
-              >
-                <button
-                  onClick={() =>
-                    setExpandedFaq(expandedFaq === idx ? null : idx)
-                  }
-                  className="w-full flex items-center justify-between p-6 hover:bg-cream/50 transition-colors text-left"
-                >
-                  <h3 className="font-bold text-charcoal pr-4">
-                    {item.question}
-                  </h3>
-                  <ChevronDown
-                    size={20}
-                    className={`text-gold flex-shrink-0 transition-transform ${
-                      expandedFaq === idx ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {expandedFaq === idx && (
-                  <div className="px-6 pb-6 border-t border-charcoal/10 text-charcoal/80">
-                    {item.answer}
-                  </div>
-                )}
-              </motion.div>
+                question={item.question}
+                answer={item.answer}
+                isOpen={expandedFaq === idx}
+                onToggle={() =>
+                  setExpandedFaq(expandedFaq === idx ? null : idx)
+                }
+              />
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ═══════════════════════════════════════════════════
-          9. Final CTA
-      ═══════════════════════════════════════════════════ */}
-      <section id="contact-rob" className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        {/* ─── Final thoughts ─── */}
+        <section>
+          <h2 className="text-2xl md:text-3xl font-bold text-stone-900 mb-6">
+            Final thoughts
+          </h2>
+          <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-4">
+            <p>
+              Buying in Denver usually gets easier once you stop treating it
+              like a generic market.
+            </p>
+            <p>
+              Most of the time, that means getting honest about:
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>payment</li>
+              <li>home type</li>
+              <li>tradeoffs</li>
+              <li>financing fit</li>
+              <li>concessions</li>
+              <li>and whether it is even time to narrow by neighborhood yet</li>
+            </ul>
+            <p>
+              That is all this page really needs to do.
+            </p>
+            <p>
+              Help a serious buyer get clearer before they waste a bunch of
+              time.
+            </p>
+
+            <h3 className="text-xl font-semibold text-stone-900 mt-8 mb-3">
+              Next step
+            </h3>
+            <p>
+              If you want help figuring out whether you are actually ready to
+              buy in Denver, the next move is to talk through budget, payment
+              comfort, home type, concessions, and whether you should still be
+              broad or start narrowing.
+            </p>
+            <p>
+              Then search homes or neighborhood pages from there.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      {/* ─── Contact Form ─── */}
+      <section id="contact-rob" className="bg-stone-100 border-t border-stone-200">
+        <div className="max-w-3xl mx-auto px-6 py-12">
           <LeadForm
             variant="buyer"
             source="Buying a Home in Denver"
-            dark
           />
         </div>
       </section>

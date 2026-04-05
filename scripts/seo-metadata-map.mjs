@@ -843,8 +843,21 @@ export const SEO_METADATA_MAP = {
     pageType: "guide",
     breadcrumbs: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
-      { "@type": "ListItem", position: 2, name: "Buying a Home in Denver", item: "https://myrockhomes.com/buying-a-home-in-denver/" },
+      { "@type": "ListItem", position: 2, name: "Denver", item: "https://myrockhomes.com/denver-co-homes-for-sale/" },
+      { "@type": "ListItem", position: 3, name: "Buying a Home in Denver", item: "https://myrockhomes.com/buying-a-home-in-denver/" },
     ],
+    faqSchema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Am I really ready to buy in Denver?", "acceptedAnswer": { "@type": "Answer", "text": "Probably, if you know your payment comfort, your likely home-type lane, and whether Denver proper actually belongs in your search." } },
+        { "@type": "Question", "name": "What makes Denver harder than a simpler market?", "acceptedAnswer": { "@type": "Answer", "text": "Usually too much real choice. Buyers stay broad too long and mistake activity for progress." } },
+        { "@type": "Question", "name": "Should I search by neighborhood first?", "acceptedAnswer": { "@type": "Answer", "text": "Only if neighborhood is honestly the main unresolved question. A lot of buyers should start with payment, home type, and tradeoffs first." } },
+        { "@type": "Question", "name": "When do seller concessions matter most?", "acceptedAnswer": { "@type": "Answer", "text": "When cash to close, payment structure, or a buydown matters more than fighting over a small price difference." } },
+        { "@type": "Question", "name": "Should I look at CHFA, Denver DPA, VA, HomeReady, or Home Possible?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, if those programs fit the actual problem you are trying to solve. The point is not just to qualify. The point is to buy the right home the right way." } },
+        { "@type": "Question", "name": "When should I move into neighborhood pages?", "acceptedAnswer": { "@type": "Answer", "text": "When neighborhood comparison is helping you narrow instead of helping you stay broad." } },
+      ],
+    },
   },
   "first-time-home-buyer-denver": {
     title: "First-Time Home Buyer in Denver | My Rock Realty",

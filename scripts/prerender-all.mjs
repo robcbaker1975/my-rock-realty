@@ -1792,7 +1792,7 @@ async function prerenderAll() {
       description: _seoMeta_buying_a_home_in_denver.description,
       canonical: _seoMeta_buying_a_home_in_denver.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_buying_a_home_in_denver.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_buying_a_home_in_denver.breadcrumbs), _seoMeta_buying_a_home_in_denver.faqSchema],
       slug: "buying-a-home-in-denver",
     });
     const _injectedHtml_buying_a_home_in_denver = injectSeoHead(prerenderedShell, _seoBlock_buying_a_home_in_denver, _seoMeta_buying_a_home_in_denver.canonical);
