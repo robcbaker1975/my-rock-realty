@@ -106,7 +106,12 @@ export default function BuyingAHomeInDenver() {
       {/* ─── Breadcrumbs ─── */}
       <div className="bg-stone-100 border-b border-stone-200">
         <div className="max-w-3xl mx-auto px-6 py-3">
-          <Breadcrumbs items={breadcrumbItems} />
+          <Breadcrumbs
+            items={breadcrumbItems}
+            listClassName="text-stone-600"
+            itemClassName="text-stone-600"
+            className="[&_a]:text-stone-600 [&_a]:hover:text-amber-700 [&_span[aria-current]]:text-stone-900 [&_span[aria-current]]:font-semibold [&_span[aria-hidden]]:text-stone-400"
+          />
         </div>
       </div>
 
@@ -240,16 +245,18 @@ export default function BuyingAHomeInDenver() {
         </section>
 
         {/* ─── Search CTA Block ─── */}
-        <section className="bg-stone-50 rounded-lg p-8 border border-stone-200">
-          <p className="text-stone-700 mb-6">
+        <section className="border-t border-stone-200 pt-10">
+          <p className="text-stone-700 mb-5 text-base">
             If you already want to start looking, use the search below. Just do
             yourself a favor and stay honest about payment, home type, and
             tradeoffs while you do it.
           </p>
-          <bb-widget
-            data-type="SearchForm"
-            data-filter="shapesearch:39.80102090895284 -105.02467621018009,39.78453360179922 -105.02433288742618,39.782554859383524 -105.00287521530704,39.78730374558338 -104.99806869675236,39.79930641313517 -105.00476349045353,39.80735098475494 -105.00733841110782,39.80102090895284 -105.02467621018009,39.80102090895284 -105.02467621018009+mapzoom:13+mappos:39.79495403947301 -105.01137245346622+delay:2500+order:create_dt desc,price+show-options:on+mls_id:denver+listing_status:active,coming-soon+city:denver"
-          />
+          <div className="w-full overflow-x-auto">
+            <bb-widget
+              data-type="SearchForm"
+              data-filter="shapesearch:39.80102090895284 -105.02467621018009,39.78453360179922 -105.02433288742618,39.782554859383524 -105.00287521530704,39.78730374558338 -104.99806869675236,39.79930641313517 -105.00476349045353,39.80735098475494 -105.00733841110782,39.80102090895284 -105.02467621018009,39.80102090895284 -105.02467621018009+mapzoom:13+mappos:39.79495403947301 -105.01137245346622+delay:2500+order:create_dt desc,price+show-options:on+mls_id:denver+listing_status:active,coming-soon+city:denver"
+            />
+          </div>
         </section>
 
         {/* ─── What makes Denver harder than a simpler market ─── */}
@@ -340,16 +347,26 @@ export default function BuyingAHomeInDenver() {
         </section>
 
         {/* ─── Market Stats Widget ─── */}
-        <section className="bg-stone-50 rounded-lg p-8 border border-stone-200">
-          <p className="text-stone-700 mb-6">
+        <section className="border-t border-stone-200 pt-10">
+          <p className="text-stone-700 mb-5 text-base">
             Here is the quick market snapshot. Useful, yes. But still not as
             useful as knowing what kind of buyer you are and what kind of search
             actually fits you.
           </p>
-          <bb-widget
-            data-type="MarketStats"
-            data-filter="reportType:totals+mls_id:denver+listing_status:active,coming-soon+city:denver"
-          />
+          <style>{`
+            bb-widget[data-type="MarketStats"] img[src=""],
+            bb-widget[data-type="MarketStats"] img:not([src]),
+            bb-widget[data-type="MarketStats"] .bb-icon-placeholder,
+            bb-widget[data-type="MarketStats"] [class*="icon"]:empty {
+              display: none !important;
+            }
+          `}</style>
+          <div className="w-full">
+            <bb-widget
+              data-type="MarketStats"
+              data-filter="reportType:totals+mls_id:denver+listing_status:active,coming-soon+city:denver"
+            />
+          </div>
         </section>
 
         {/* ─── How I would search smarter in Denver ─── */}
@@ -539,15 +556,17 @@ export default function BuyingAHomeInDenver() {
         </section>
 
         {/* ─── Featured Gallery Widget ─── */}
-        <section className="bg-stone-50 rounded-lg p-8 border border-stone-200">
-          <p className="text-stone-700 mb-6">
+        <section className="border-t border-stone-200 pt-10">
+          <p className="text-stone-700 mb-5 text-base">
             If you are at the point where looking at actual listings helps, use
             this as a browse section — not as a substitute for getting clear.
           </p>
-          <bb-widget
-            data-type="FeaturedGallery"
-            data-filter="carousel:true+mls_id:denver+listing_status:active,coming-soon+delay:2500+order:create_dt desc,price"
-          />
+          <div className="w-full">
+            <bb-widget
+              data-type="FeaturedGallery"
+              data-filter="carousel:true+mls_id:denver+listing_status:active,coming-soon+city:denver+delay:2500+order:create_dt desc,price"
+            />
+          </div>
         </section>
 
         {/* ─── What your next step probably is ─── */}
