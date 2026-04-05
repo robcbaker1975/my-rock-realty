@@ -275,7 +275,7 @@ export default function WashParkDenverHomesForSale() {
           </h2>
           <BuyingBuddyWidget
             type="FeaturedGallery"
-            filter="mls_id:denver+listing_status:active,coming-soon+neighborhood:Washington Park+order:create_dt desc"
+            filter="carousel:true+shapesearch:39.718320 -104.973314,39.714615 -104.958817,39.676617 -104.961897,39.689500 -104.973500,39.718320 -104.973314+mls_id:denver+listing_status:active,coming-soon+order:create_dt desc"
           />
         </div>
       </section>

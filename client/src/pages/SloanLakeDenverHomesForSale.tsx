@@ -286,7 +286,7 @@ export default function SloanLakeDenverHomesForSale() {
           </h2>
           <BuyingBuddyWidget
             type="FeaturedGallery"
-            filter="mls_id:denver+listing_status:active,coming-soon+neighborhood:Sloan Lake+order:create_dt desc"
+            filter="carousel:true+shapesearch:39.757900 -105.045800,39.757900 -105.041405,39.739600 -105.041405,39.739600 -105.045800,39.757900 -105.045800+mls_id:denver+listing_status:active,coming-soon+order:create_dt desc"
           />
         </div>
       </section>
