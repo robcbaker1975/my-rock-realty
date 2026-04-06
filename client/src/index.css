@@ -177,7 +177,7 @@
    Mobile layout is preserved; desktop breakpoints add width
    and rhythm. Homepage and BuyingIn pages are excluded.
    ============================================================ */
-
+@layer utilities {
 /* Desktop container width expansion */
 @media (min-width: 1024px) {
   .hub-page .container.max-w-3xl {
@@ -291,6 +291,7 @@
   .hub-page .space-y-3:has(> a) > a:last-child:nth-child(odd) {
     grid-column: 1 / -1;
   }
+}
 }
 
 /* --- FAQ section visual treatment ---
