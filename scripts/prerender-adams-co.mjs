@@ -29,6 +29,7 @@ async function prerenderAdamsCo() {
   console.log("[prerender-adams-co] SSR build complete. Rendering HTML...");
   const ssrModule = await import(resolve(ROOT, "dist/server/entry-server-adams-co.js"));
   const html = ssrModule.renderAdamsCoHomesForSale();
+  const faqSchema = ssrModule.getAdamsCoFaqSchema();
   console.log(`[prerender-adams-co] Rendered HTML length: ${html.length} chars`);
   const shellPath = resolve(ROOT, "dist/public/index.html");
   if (!existsSync(shellPath)) {
@@ -39,7 +40,10 @@ async function prerenderAdamsCo() {
   if (!shell.includes(PLACEHOLDER)) {
     throw new Error(`[prerender-adams-co] Could not find '${PLACEHOLDER}' in dist/public/index.html.`);
   }
-  const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+  /* Inject FAQ schema into shell head before body */
+  const faqSchemaBlock = `<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`;
+  let prerenderedShell = shell.replace('</head>', `${faqSchemaBlock}\n  </head>`);
+  prerenderedShell = prerenderedShell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
   const distOutputDir = resolve(ROOT, "dist/prerendered");
   mkdirSync(distOutputDir, { recursive: true });
   writeFileSync(resolve(distOutputDir, "adams-co-homes-for-sale.html"), prerenderedShell, "utf-8");
