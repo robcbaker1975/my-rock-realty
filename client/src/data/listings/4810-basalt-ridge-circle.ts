@@ -185,7 +185,7 @@ Seller concessions may be used for an interest rate buydown, closing costs, prep
   metaDescription:
     "3 bed, 4 bath, 3,698 sq ft home in Castle Rock's Terrain community. Granite kitchen, great room with fireplace, primary suite, 3-car garage, covered patio. $12,500 seller concession. Listed by Robert Baker, My Rock Realty.",
   canonicalUrl:
-    "https://www.myrockhomes.com/featured/4810-basalt-ridge-circle-castle-rock-co",
+    "https://myrockhomes.com/featured/4810-basalt-ridge-circle-castle-rock-co",
 };
 
 export default listing;

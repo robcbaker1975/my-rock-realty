@@ -376,6 +376,41 @@ export default function ColoradoSpringsCoHomesForSale() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
+          MILITARY RESOURCES
+      ═══════════════════════════════════════════════════ */}
+      <section className="py-12 sm:py-16">
+        <div className="container max-w-3xl">
+          <h2
+            className="text-xl sm:text-2xl font-bold text-charcoal mb-5"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            Military & PCS Resources
+          </h2>
+          <p className="text-charcoal/80 text-base leading-relaxed mb-6" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            Many Colorado Springs buyers are relocating for military service. If you're PCS-ing to Fort Carson, Peterson Space Force Base, or Schriever Space Force Base, these resources can help.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-2" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+            {[
+              { label: "PCS to Colorado Guide", href: "/military-relocation/pcs-colorado/" },
+              { label: "Fort Carson Relocation", href: "/military-relocation/fort-carson/" },
+              { label: "Peterson Space Force Base", href: "/military-relocation/peterson-space-force-base/" },
+              { label: "VA Home Loans in Colorado", href: "/military-relocation/va-home-loans-colorado/" },
+            ].map((n) => (
+              <div key={n.href} className="flex items-center gap-2 py-1">
+                <ArrowRight size={13} className="text-gold shrink-0" />
+                <a
+                  href={n.href}
+                  className="text-gold underline underline-offset-2 hover:opacity-80 transition-opacity text-[15px]"
+                >
+                  {n.label}
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
           FAQ
       ═══════════════════════════════════════════════════ */}
       <section className="bg-charcoal/5 border-y border-charcoal/8 py-12 sm:py-16">

@@ -418,6 +418,43 @@ export default function FortCollinsCoHomesForSale() {
           </motion.div>
         </div>
       </section>
+      {/* 11b. EXPLORE FORT COLLINS AREA */}
+      <section className="py-16 sm:py-20 bg-cream/50">
+        <div className="container max-w-2xl">
+          <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Explore Fort Collins & Nearby Areas
+            </h2>
+            <p className="text-lg text-charcoal/80 mb-8 leading-relaxed">
+              If Fort Collins feels right, these pages dive deeper into specific neighborhoods and nearby communities.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+              {[
+                { label: "Old Town Fort Collins", href: "/old-town-fort-collins-real-estate" },
+                { label: "Midtown Fort Collins", href: "/midtown-fort-collins-real-estate" },
+                { label: "Harmony, CO", href: "/harmony-fort-collins-real-estate" },
+                { label: "Windsor, CO", href: "/windsor-co-real-estate" },
+                { label: "Timnath, CO", href: "/timnath-co-real-estate" },
+                { label: "Loveland, CO", href: "/loveland-co-homes-for-sale" },
+              ].map((n) => (
+                <div key={n.href} className="flex items-center gap-2">
+                  <ArrowRight size={16} className="text-gold shrink-0" />
+                  <a
+                    href={n.href}
+                    className="text-gold font-medium hover:underline text-base"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    {n.label}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
       {/* 12. FAQ */}
       <section className="py-16 sm:py-20 bg-cream">
         <div className="container max-w-2xl">

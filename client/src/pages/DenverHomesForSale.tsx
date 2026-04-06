@@ -321,8 +321,8 @@ export default function DenverHomesForSale() {
           </h2>
           <p className="text-charcoal/80 leading-relaxed mb-6">If Denver still feels worth pursuing, the next move is not to stay broad. It is to start comparing the right Denver paths.</p>
           <p className="text-charcoal/80 leading-relaxed mb-6">Use the next pages to pressure-test fit, not just collect more options.</p>
-          <p className="text-charcoal/80 font-semibold mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>Explore next</p>
-          <ul className="space-y-2">
+          <p className="text-charcoal/80 font-semibold mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>Explore neighborhoods</p>
+          <ul className="space-y-2 mb-6">
             {[
               { label: "Wash Park", href: "/wash-park-denver-homes-for-sale" },
               { label: "Cherry Creek", href: "/cherry-creek-denver-homes-for-sale" },
@@ -330,6 +330,22 @@ export default function DenverHomesForSale() {
               { label: "RiNo", href: "/rino-denver-homes-for-sale" },
               { label: "Central Park", href: "/central-park-denver-homes-for-sale" },
               { label: "Sloan Lake", href: "/sloan-lake-denver-homes-for-sale" },
+            ].map(({ label, href }) => (
+              <li key={href}>
+                <a href={href} className="inline-flex items-center gap-1.5 text-gold font-medium hover:underline text-sm" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                  <ArrowRight size={13} />
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="text-charcoal/80 font-semibold mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>Buyer guides & resources</p>
+          <ul className="space-y-2">
+            {[
+              { label: "Buying a Home in Denver", href: "/buying-a-home-in-denver" },
+              { label: "Denver Home Buying Process", href: "/denver-home-buying-process" },
+              { label: "First-Time Home Buyer Guide", href: "/first-time-home-buyer-denver" },
+              { label: "Denver vs. Colorado Springs", href: "/denver-vs-colorado-springs" },
             ].map(({ label, href }) => (
               <li key={href}>
                 <a href={href} className="inline-flex items-center gap-1.5 text-gold font-medium hover:underline text-sm" style={{ fontFamily: "'Outfit', sans-serif" }}>

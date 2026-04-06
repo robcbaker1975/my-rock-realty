@@ -414,6 +414,37 @@ export default function BoulderCoHomesForSale() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
+          11b. EXPLORE BOULDER AREA
+      ═══════════════════════════════════════════════════ */}
+      <section className="py-14 sm:py-16 bg-warm-white">
+        <div className="container max-w-3xl mx-auto">
+          <h2
+            className="text-2xl sm:text-3xl font-bold text-charcoal mb-4"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            Explore the Boulder Area
+          </h2>
+          <p className="text-charcoal/80 leading-relaxed mb-6">Boulder County offers diverse neighborhoods and surrounding communities, each with its own character and market dynamics.</p>
+          <p className="text-charcoal/80 font-semibold mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>Boulder neighborhoods & nearby areas</p>
+          <ul className="space-y-2">
+            {[
+              { label: "University Hill (CU Boulder)", href: "/university-hill-cu-boulder-real-estate" },
+              { label: "Lafayette, CO", href: "/lafayette-co-homes-for-sale" },
+              { label: "Longmont, CO", href: "/longmont-co-homes-for-sale" },
+              { label: "Niwot, CO", href: "/niwot-co-real-estate" },
+            ].map(({ label, href }) => (
+              <li key={href}>
+                <a href={href} className="inline-flex items-center gap-1.5 text-gold font-medium hover:underline text-sm" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                  <ArrowRight size={13} />
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
           12. BOULDER REAL ESTATE FAQs
       ═══════════════════════════════════════════════════ */}
       <section className="py-14 sm:py-16 bg-warm-white">
