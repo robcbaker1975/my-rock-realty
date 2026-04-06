@@ -28,7 +28,57 @@ const marketLinks = [
   { label: "Denver", href: "/denver-homes-for-sale" },
   { label: "Boulder", href: "/boulder-homes-for-sale" },
   { label: "Colorado Springs", href: "/colorado-springs-co-homes-for-sale" },
-  { label: "Fort Collins", href: "/fort-collins-homes-for-sale" },
+  { label: "Fort Collins", href: "/fort-collins-co-homes-for-sale" },
+  { label: "Adams County", href: "/adams-co-homes-for-sale" },
+  { label: "Jefferson County", href: "/jefferson-co-homes-for-sale" },
+  { label: "Highlands Ranch", href: "/highlands-ranch-co-homes-for-sale" },
+  { label: "Castle Rock", href: "/castle-rock-co-homes-for-sale" },
+  { label: "Lakewood", href: "/lakewood-co-homes-for-sale" },
+  { label: "Thornton", href: "/thornton-co-homes-for-sale" },
+  { label: "Northglenn", href: "/northglenn-co-homes-for-sale" },
+  { label: "Westminster", href: "/westminster-co-homes-for-sale" },
+  { label: "Arvada", href: "/arvada-co-homes-for-sale" },
+  { label: "Littleton", href: "/littleton-co-homes-for-sale" },
+  { label: "Parker", href: "/parker-co-homes-for-sale" },
+  { label: "Centennial", href: "/centennial-co-homes-for-sale" },
+  { label: "Lone Tree", href: "/lone-tree-co-homes-for-sale" },
+  { label: "Castle Pines", href: "/castle-pines-co-homes-for-sale" },
+  { label: "Golden", href: "/golden-homes-for-sale" },
+  { label: "Morrison", href: "/morrison-co-homes-for-sale" },
+  { label: "Brighton", href: "/brighton-co-homes-for-sale" },
+  { label: "Commerce City", href: "/commerce-city-homes-for-sale" },
+  { label: "Windsor", href: "/windsor-co-homes-for-sale" },
+  { label: "Evans", href: "/evans-co-homes-for-sale" },
+  { label: "LaSalle", href: "/lasalle-co-homes-for-sale" },
+  { label: "Platteville", href: "/platteville-co-homes-for-sale" },
+  { label: "Widefield", href: "/widefield-co-homes-for-sale" },
+];
+
+// Denver property-type pages
+const denverPropertyLinks = [
+  { label: "Denver Condos", href: "/denver-condos-for-sale" },
+  { label: "Denver Townhomes", href: "/denver-townhomes-for-sale" },
+  { label: "Denver Luxury Homes", href: "/denver-luxury-homes-for-sale" },
+  { label: "Denver New Construction", href: "/denver-new-construction-homes" },
+  { label: "Cost of Living in Denver", href: "/cost-of-living-in-denver-colorado" },
+];
+
+// Denver neighborhood pages
+const denverNeighborhoodLinks = [
+  { label: "Highland", href: "/highland-denver-homes-for-sale" },
+  { label: "Platt Park", href: "/platt-park-denver-homes-for-sale" },
+];
+
+// Boulder area pages
+const boulderAreaLinks = [
+  { label: "Louisville", href: "/louisville-co-homes-for-sale" },
+  { label: "Superior", href: "/superior-co-homes-for-sale" },
+  { label: "Lyons", href: "/lyons-co-homes-for-sale" },
+  { label: "Gunbarrel", href: "/gunbarrel-co-real-estate" },
+  { label: "North Boulder (NoBo)", href: "/north-boulder-nobo-real-estate" },
+  { label: "Newlands", href: "/newlands-boulder-real-estate" },
+  { label: "Mapleton Hill", href: "/mapleton-hill-boulder-real-estate" },
+  { label: "Table Mesa / South Boulder", href: "/table-mesa-south-boulder-real-estate" },
 ];
 
 // Representative buyer guides — existing pages only
@@ -235,6 +285,61 @@ export default function Footer() {
             </h3>
             <div className="space-y-2.5 text-sm">
               {militaryLinks.map((m) => (
+                <a
+                  key={m.href}
+                  href={m.href}
+                  className="block text-cream/70 hover:text-gold transition-colors"
+                >
+                  {m.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Denver Property Types & Neighborhoods */}
+          <div>
+            <h3
+              className="text-white font-semibold mb-4 text-sm"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Denver Properties
+            </h3>
+            <div className="space-y-2.5 text-sm">
+              {denverPropertyLinks.map((m) => (
+                <a
+                  key={m.href}
+                  href={m.href}
+                  className="block text-cream/70 hover:text-gold transition-colors"
+                >
+                  {m.label}
+                </a>
+              ))}
+            </div>
+            <h3
+              className="text-white font-semibold mt-6 mb-4 text-sm"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Denver Neighborhoods
+            </h3>
+            <div className="space-y-2.5 text-sm">
+              {denverNeighborhoodLinks.map((m) => (
+                <a
+                  key={m.href}
+                  href={m.href}
+                  className="block text-cream/70 hover:text-gold transition-colors"
+                >
+                  {m.label}
+                </a>
+              ))}
+            </div>
+            <h3
+              className="text-white font-semibold mt-6 mb-4 text-sm"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Boulder Area
+            </h3>
+            <div className="space-y-2.5 text-sm">
+              {boulderAreaLinks.map((m) => (
                 <a
                   key={m.href}
                   href={m.href}
