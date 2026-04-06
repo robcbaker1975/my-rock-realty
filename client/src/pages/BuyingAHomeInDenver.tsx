@@ -244,9 +244,9 @@ export default function BuyingAHomeInDenver() {
             If you already want to start looking, use the search below. Just do yourself a favor and stay honest about payment, home type, and tradeoffs while you do it.
           </p>
           <div className="w-full overflow-x-auto">
-            <bb-widget
-              data-type="SearchForm"
-              data-filter="shapesearch:39.80102090895284 -105.02467621018009,39.78453360179922 -105.02433288742618,39.782554859383524 -105.00287521530704,39.78730374558338 -104.99806869675236,39.79930641313517 -105.00476349045353,39.80735098475494 -105.00733841110782,39.80102090895284 -105.02467621018009,39.80102090895284 -105.02467621018009+mapzoom:13+mappos:39.79495403947301 -105.01137245346622+delay:2500+order:create_dt desc,price+show-options:on+mls_id:denver+listing_status:active,coming-soon+city:denver"
+            <BuyingBuddyWidget
+              type="SearchForm"
+              filter="shapesearch:39.80102090895284 -105.02467621018009,39.78453360179922 -105.02433288742618,39.782554859383524 -105.00287521530704,39.78730374558338 -104.99806869675236,39.79930641313517 -105.00476349045353,39.80735098475494 -105.00733841110782,39.80102090895284 -105.02467621018009,39.80102090895284 -105.02467621018009+mapzoom:13+mappos:39.79495403947301 -105.01137245346622+delay:2500+order:create_dt desc,price+show-options:on+mls_id:denver+listing_status:active,coming-soon+city:denver"
             />
           </div>
         </div>
@@ -338,9 +338,9 @@ export default function BuyingAHomeInDenver() {
             }
           `}</style>
           <div className="w-full">
-            <bb-widget
-              data-type="MarketStats"
-              data-filter="reportType:totals+mls_id:denver+listing_status:active,coming-soon+city:denver"
+            <BuyingBuddyWidget
+              type="MarketStats"
+              filter="reportType:totals+mls_id:denver+listing_status:active,coming-soon+city:denver"
             />
           </div>
         </div>
@@ -527,9 +527,9 @@ export default function BuyingAHomeInDenver() {
             If you are at the point where looking at actual listings helps, use this as a browse section — not as a substitute for getting clear.
           </p>
           <div className="w-full">
-            <bb-widget
-              data-type="FeaturedGallery"
-              data-filter="carousel:true+mls_id:denver+listing_status:active,coming-soon+city:denver+delay:2500+order:create_dt desc,price"
+            <BuyingBuddyWidget
+              type="FeaturedGallery"
+              filter="carousel:true+mls_id:denver+listing_status:active,coming-soon+city:denver+delay:2500+order:create_dt desc,price"
             />
           </div>
         </div>
