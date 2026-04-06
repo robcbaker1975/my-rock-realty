@@ -47,7 +47,7 @@ const marketLinks = [
   { label: "Morrison", href: "/morrison-co-homes-for-sale" },
   { label: "Brighton", href: "/brighton-co-homes-for-sale" },
   { label: "Commerce City", href: "/commerce-city-homes-for-sale" },
-  { label: "Windsor", href: "/windsor-co-homes-for-sale" },
+  { label: "Windsor", href: "/windsor-co-real-estate" },
   { label: "Evans", href: "/evans-co-homes-for-sale" },
   { label: "LaSalle", href: "/lasalle-co-homes-for-sale" },
   { label: "Platteville", href: "/platteville-co-homes-for-sale" },

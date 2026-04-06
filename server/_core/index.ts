@@ -110,6 +110,21 @@ async function startServer() {
     res.redirect(301, "/colorado-springs-co-homes-for-sale")
   );
 
+  // 301 redirect: Windsor duplicate → canonical (real-estate class, richer content)
+  app.get(["/windsor-co-homes-for-sale", "/windsor-co-homes-for-sale/"], (_req, res) =>
+    res.redirect(301, "/windsor-co-real-estate")
+  );
+
+  // 301 redirect: Boulder non-sitemap slug → sitemap canonical
+  app.get(["/boulder-co-homes-for-sale", "/boulder-co-homes-for-sale/"], (_req, res) =>
+    res.redirect(301, "/boulder-homes-for-sale")
+  );
+
+  // 301 redirect: Fort Collins non-sitemap slug → sitemap canonical
+  app.get(["/fort-collins-homes-for-sale", "/fort-collins-homes-for-sale/"], (_req, res) =>
+    res.redirect(301, "/fort-collins-co-homes-for-sale")
+  );
+
   // 301 redirects: Academy alternate slugs → canonical URL
   app.get(["/military-relocation/usafa", "/military-relocation/usafa/"], (_req, res) =>
     res.redirect(301, "/military-relocation/us-air-force-academy/")

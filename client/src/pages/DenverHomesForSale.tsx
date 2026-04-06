@@ -339,13 +339,52 @@ export default function DenverHomesForSale() {
               </li>
             ))}
           </ul>
-          <p className="text-charcoal/80 font-semibold mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>Buyer guides & resources</p>
+          <p className="text-charcoal/80 font-semibold mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>By property type</p>
+          <ul className="space-y-2 mb-6">
+            {[
+              { label: "Denver Condos for Sale", href: "/denver-condos-for-sale" },
+              { label: "Denver Townhomes for Sale", href: "/denver-townhomes-for-sale" },
+              { label: "Denver Luxury Homes", href: "/denver-luxury-homes-for-sale" },
+              { label: "Denver New Construction", href: "/denver-new-construction-homes" },
+            ].map(({ label, href }) => (
+              <li key={href}>
+                <a href={href} className="inline-flex items-center gap-1.5 text-gold font-medium hover:underline text-sm" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                  <ArrowRight size={13} />
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="text-charcoal/80 font-semibold mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>Denver metro cities &amp; counties</p>
+          <ul className="space-y-2 mb-6">
+            {[
+              { label: "Adams County", href: "/adams-co-homes-for-sale" },
+              { label: "Jefferson County", href: "/jefferson-co-homes-for-sale" },
+              { label: "Lakewood", href: "/lakewood-co-homes-for-sale" },
+              { label: "Arvada", href: "/arvada-co-homes-for-sale" },
+              { label: "Highlands Ranch", href: "/highlands-ranch-co-homes-for-sale" },
+              { label: "Thornton", href: "/thornton-co-homes-for-sale" },
+              { label: "Westminster", href: "/westminster-co-homes-for-sale" },
+              { label: "Littleton", href: "/littleton-co-homes-for-sale" },
+              { label: "Parker", href: "/parker-co-homes-for-sale" },
+              { label: "Centennial", href: "/centennial-co-homes-for-sale" },
+            ].map(({ label, href }) => (
+              <li key={href}>
+                <a href={href} className="inline-flex items-center gap-1.5 text-gold font-medium hover:underline text-sm" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                  <ArrowRight size={13} />
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="text-charcoal/80 font-semibold mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>Buyer guides &amp; resources</p>
           <ul className="space-y-2">
             {[
               { label: "Buying a Home in Denver", href: "/buying-a-home-in-denver" },
               { label: "Denver Home Buying Process", href: "/denver-home-buying-process" },
               { label: "First-Time Home Buyer Guide", href: "/first-time-home-buyer-denver" },
               { label: "Denver vs. Colorado Springs", href: "/denver-vs-colorado-springs" },
+              { label: "Cost of Living in Denver", href: "/cost-of-living-in-denver-colorado" },
             ].map(({ label, href }) => (
               <li key={href}>
                 <a href={href} className="inline-flex items-center gap-1.5 text-gold font-medium hover:underline text-sm" style={{ fontFamily: "'Outfit', sans-serif" }}>
