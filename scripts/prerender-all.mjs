@@ -201,7 +201,7 @@ async function prerenderAll() {
       description: _seoMeta_denver.description,
       canonical: _seoMeta_denver.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver.breadcrumbs), _seoMeta_denver.faqSchema],
       slug: "denver-homes-for-sale",
     });
     const _injectedHtml_denver = injectSeoHead(prerenderedShell, _seoBlock_denver, _seoMeta_denver.canonical);
@@ -233,6 +233,13 @@ async function prerenderAll() {
             { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
             { "@type": "ListItem", position: 3, name: 'Colorado Springs, CO Homes for Sale', item: 'https://myrockhomes.com/colorado-springs-co-homes-for-sale' },
           ]),
+          { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "What types of homes can buyers find in Colorado Springs?", "acceptedAnswer": { "@type": "Answer", "text": "Buyers can find condos, townhomes, newer single-family homes, older homes in more established areas, and properties with more land. What fits best usually depends on budget, area, and how much upkeep or updating you are comfortable with." } },
+            { "@type": "Question", "name": "Is Colorado Springs a good place to buy a home?", "acceptedAnswer": { "@type": "Answer", "text": "For a lot of buyers, yes. But it usually works best when the search is built around budget, area fit, commute, and home style instead of just whatever listings appear first." } },
+            { "@type": "Question", "name": "Should I rent before buying in Colorado Springs?", "acceptedAnswer": { "@type": "Answer", "text": "Sometimes. If you already know the map and feel clear on where you want to be, buying first can make sense. If you are still figuring out area fit or timing, rental tour support can be a better first step." } },
+            { "@type": "Question", "name": "Is Colorado Springs a good market for military buyers?", "acceptedAnswer": { "@type": "Answer", "text": "Often, yes. Installation access, commute, and timing shape a lot of buying decisions here, especially for buyers connected to Fort Carson, Peterson, Schriever, or the Air Force Academy." } },
+            { "@type": "Question", "name": "What should I do before touring homes in Colorado Springs?", "acceptedAnswer": { "@type": "Answer", "text": "Get clear on your budget, financing, preferred part of town, and the type of home you actually want. If you are still learning the area, read the Moving to Colorado Springs page first." } }
+          ] },
         ],
         slug: 'colorado-springs-co-homes-for-sale',
       });
@@ -265,7 +272,7 @@ async function prerenderAll() {
       description: _seoMeta_boulder.description,
       canonical: _seoMeta_boulder.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_boulder.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_boulder.breadcrumbs), _seoMeta_boulder.faqSchema],
       slug: "boulder-co-homes-for-sale",
     });
     const _injectedHtml_boulder = injectSeoHead(prerenderedShell, _seoBlock_boulder, _seoMeta_boulder.canonical);
@@ -290,7 +297,7 @@ async function prerenderAll() {
       description: _seoMeta_black_forest.description,
       canonical: _seoMeta_black_forest.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_black_forest.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_black_forest.breadcrumbs), _seoMeta_black_forest.faqSchema],
       slug: "black-forest-co-real-estate",
     });
     const _injectedHtml_black_forest = injectSeoHead(prerenderedShell, _seoBlock_black_forest, _seoMeta_black_forest.canonical);
@@ -315,7 +322,7 @@ async function prerenderAll() {
       description: _seoMeta_peyton.description,
       canonical: _seoMeta_peyton.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_peyton.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_peyton.breadcrumbs), _seoMeta_peyton.faqSchema],
       slug: "peyton-co-real-estate",
     });
     const _injectedHtml_peyton = injectSeoHead(prerenderedShell, _seoBlock_peyton, _seoMeta_peyton.canonical);
@@ -340,7 +347,7 @@ async function prerenderAll() {
       description: _seoMeta_palmer_lake.description,
       canonical: _seoMeta_palmer_lake.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_palmer_lake.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_palmer_lake.breadcrumbs), _seoMeta_palmer_lake.faqSchema],
       slug: "palmer-lake-co-real-estate",
     });
     const _injectedHtml_palmer_lake = injectSeoHead(prerenderedShell, _seoBlock_palmer_lake, _seoMeta_palmer_lake.canonical);
@@ -365,7 +372,7 @@ async function prerenderAll() {
       description: _seoMeta_parker.description,
       canonical: _seoMeta_parker.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_parker.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_parker.breadcrumbs), _seoMeta_parker.faqSchema],
       slug: "parker-co-homes-for-sale",
     });
     const _injectedHtml_parker = injectSeoHead(prerenderedShell, _seoBlock_parker, _seoMeta_parker.canonical);
@@ -390,7 +397,7 @@ async function prerenderAll() {
       description: _seoMeta_highlands_ranch.description,
       canonical: _seoMeta_highlands_ranch.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_highlands_ranch.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_highlands_ranch.breadcrumbs), _seoMeta_highlands_ranch.faqSchema],
       slug: "highlands-ranch-co-homes-for-sale",
     });
     const _injectedHtml_highlands_ranch = injectSeoHead(prerenderedShell, _seoBlock_highlands_ranch, _seoMeta_highlands_ranch.canonical);
@@ -415,7 +422,7 @@ async function prerenderAll() {
       description: _seoMeta_castle_rock.description,
       canonical: _seoMeta_castle_rock.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_castle_rock.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_castle_rock.breadcrumbs), _seoMeta_castle_rock.faqSchema],
       slug: "castle-rock-co-homes-for-sale",
     });
     const _injectedHtml_castle_rock = injectSeoHead(prerenderedShell, _seoBlock_castle_rock, _seoMeta_castle_rock.canonical);
@@ -440,7 +447,7 @@ async function prerenderAll() {
       description: _seoMeta_littleton.description,
       canonical: _seoMeta_littleton.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_littleton.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_littleton.breadcrumbs), _seoMeta_littleton.faqSchema],
       slug: "littleton-co-homes-for-sale",
     });
     const _injectedHtml_littleton = injectSeoHead(prerenderedShell, _seoBlock_littleton, _seoMeta_littleton.canonical);
@@ -465,7 +472,7 @@ async function prerenderAll() {
       description: _seoMeta_arvada.description,
       canonical: _seoMeta_arvada.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_arvada.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_arvada.breadcrumbs), _seoMeta_arvada.faqSchema],
       slug: "arvada-co-homes-for-sale",
     });
     const _injectedHtml_arvada = injectSeoHead(prerenderedShell, _seoBlock_arvada, _seoMeta_arvada.canonical);
@@ -516,7 +523,7 @@ async function prerenderAll() {
       description: _seoMeta_loveland.description,
       canonical: _seoMeta_loveland.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_loveland.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_loveland.breadcrumbs), _seoMeta_loveland.faqSchema],
       slug: "loveland-co-homes-for-sale",
     });
     const _injectedHtml_loveland = injectSeoHead(prerenderedShell, _seoBlock_loveland, _seoMeta_loveland.canonical);
@@ -541,7 +548,7 @@ async function prerenderAll() {
       description: _seoMeta_windsor.description,
       canonical: _seoMeta_windsor.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_windsor.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_windsor.breadcrumbs), _seoMeta_windsor.faqSchema],
       slug: "windsor-co-homes-for-sale",
     });
     const _injectedHtml_windsor = injectSeoHead(prerenderedShell, _seoBlock_windsor, _seoMeta_windsor.canonical);
@@ -566,7 +573,7 @@ async function prerenderAll() {
       description: _seoMeta_johnstown.description,
       canonical: _seoMeta_johnstown.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_johnstown.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_johnstown.breadcrumbs), _seoMeta_johnstown.faqSchema],
       slug: "johnstown-co-homes-for-sale",
     });
     const _injectedHtml_johnstown = injectSeoHead(prerenderedShell, _seoBlock_johnstown, _seoMeta_johnstown.canonical);
@@ -591,7 +598,7 @@ async function prerenderAll() {
       description: _seoMeta_greeley.description,
       canonical: _seoMeta_greeley.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_greeley.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_greeley.breadcrumbs), _seoMeta_greeley.faqSchema],
       slug: "greeley-co-homes-for-sale",
     });
     const _injectedHtml_greeley = injectSeoHead(prerenderedShell, _seoBlock_greeley, _seoMeta_greeley.canonical);
@@ -616,7 +623,7 @@ async function prerenderAll() {
       description: _seoMeta_douglas.description,
       canonical: _seoMeta_douglas.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_douglas.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_douglas.breadcrumbs), _seoMeta_douglas.faqSchema],
       slug: "douglas-co-homes-for-sale",
     });
     const _injectedHtml_douglas = injectSeoHead(prerenderedShell, _seoBlock_douglas, _seoMeta_douglas.canonical);
@@ -641,7 +648,7 @@ async function prerenderAll() {
       description: _seoMeta_castle_pines.description,
       canonical: _seoMeta_castle_pines.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_castle_pines.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_castle_pines.breadcrumbs), _seoMeta_castle_pines.faqSchema],
       slug: "castle-pines-co-homes-for-sale",
     });
     const _injectedHtml_castle_pines = injectSeoHead(prerenderedShell, _seoBlock_castle_pines, _seoMeta_castle_pines.canonical);
@@ -666,7 +673,7 @@ async function prerenderAll() {
       description: _seoMeta_centennial.description,
       canonical: _seoMeta_centennial.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_centennial.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_centennial.breadcrumbs), _seoMeta_centennial.faqSchema],
       slug: "centennial-co-homes-for-sale",
     });
     const _injectedHtml_centennial = injectSeoHead(prerenderedShell, _seoBlock_centennial, _seoMeta_centennial.canonical);
@@ -691,7 +698,7 @@ async function prerenderAll() {
       description: _seoMeta_lone_tree.description,
       canonical: _seoMeta_lone_tree.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_lone_tree.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_lone_tree.breadcrumbs), _seoMeta_lone_tree.faqSchema],
       slug: "lone-tree-co-homes-for-sale",
     });
     const _injectedHtml_lone_tree = injectSeoHead(prerenderedShell, _seoBlock_lone_tree, _seoMeta_lone_tree.canonical);
@@ -716,7 +723,7 @@ async function prerenderAll() {
       description: _seoMeta_westminster.description,
       canonical: _seoMeta_westminster.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_westminster.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_westminster.breadcrumbs), _seoMeta_westminster.faqSchema],
       slug: "westminster-co-homes-for-sale",
     });
     const _injectedHtml_westminster = injectSeoHead(prerenderedShell, _seoBlock_westminster, _seoMeta_westminster.canonical);
@@ -741,7 +748,7 @@ async function prerenderAll() {
       description: _seoMeta_monument.description,
       canonical: _seoMeta_monument.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_monument.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_monument.breadcrumbs), _seoMeta_monument.faqSchema],
       slug: "monument-co-real-estate",
     });
     const _injectedHtml_monument = injectSeoHead(prerenderedShell, _seoBlock_monument, _seoMeta_monument.canonical);
@@ -817,7 +824,7 @@ async function prerenderAll() {
       description: _seoMeta_fountain.description,
       canonical: _seoMeta_fountain.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_fountain.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_fountain.breadcrumbs), _seoMeta_fountain.faqSchema],
       slug: "fountain-co-real-estate",
     });
     const _injectedHtml_fountain = injectSeoHead(prerenderedShell, _seoBlock_fountain, _seoMeta_fountain.canonical);
@@ -842,7 +849,7 @@ async function prerenderAll() {
       description: _seoMeta_woodland_park.description,
       canonical: _seoMeta_woodland_park.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_woodland_park.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_woodland_park.breadcrumbs), _seoMeta_woodland_park.faqSchema],
       slug: "woodland-park-co-real-estate",
     });
     const _injectedHtml_woodland_park = injectSeoHead(prerenderedShell, _seoBlock_woodland_park, _seoMeta_woodland_park.canonical);
@@ -873,7 +880,13 @@ async function prerenderAll() {
             { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
             { "@type": "ListItem", position: 3, name: 'Manitou Springs, CO Real Estate', item: 'https://myrockhomes.com/manitou-springs-co-real-estate/' },
           ]),
-        ],
+        ,
+          { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "Is Manitou Springs more like a neighborhood or more like its own town?", "acceptedAnswer": { "@type": "Answer", "text": "More like its own town. That is one of the clearest reasons it stays in the conversation." } },
+            { "@type": "Question", "name": "Is Manitou Springs walkable?", "acceptedAnswer": { "@type": "Answer", "text": "Compared with much of the broader Colorado Springs area, yes. Walkability and a compact town pattern are part of the appeal, even though that also comes with tradeoffs like tighter streets and a busier visitor rhythm." } },
+            { "@type": "Question", "name": "What makes Manitou Springs distinct?", "acceptedAnswer": { "@type": "Answer", "text": "The clearest difference is that it offers one of the most town-like, character-driven, mountain-edge living options near Colorado Springs." } },
+            { "@type": "Question", "name": "Is Manitou Springs a good fit for buyers who want older homes?", "acceptedAnswer": { "@type": "Answer", "text": "Often, yes. That is one of the main reasons it comes up." } }
+          ] }],
         slug: 'manitou-springs-co-real-estate',
       });
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/manitou-springs-co-real-estate/');
@@ -1373,7 +1386,13 @@ async function prerenderAll() {
             { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
             { "@type": "ListItem", position: 3, name: "Living in Mountain Shadows, Colorado Springs: Real Estate, Tradeoffs, and What It's Like", item: 'https://myrockhomes.com/mountain-shadows-colorado-springs-real-estate/' },
           ]),
-        ],
+        ,
+          { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "Is Mountain Shadows more like Peregrine or more like a traditional suburban neighborhood?", "acceptedAnswer": { "@type": "Answer", "text": "Usually it sits between those two. It is more scenery-driven and less standard-suburban than many neighborhood searches, but generally less tucked away than Peregrine." } },
+            { "@type": "Question", "name": "What makes Mountain Shadows distinct?", "acceptedAnswer": { "@type": "Answer", "text": "The clearest difference is that it offers one of the more scenic, setting-first, west-side neighborhood searches in Colorado Springs, with views and west-side terrain doing a lot of the work." } },
+            { "@type": "Question", "name": "Is Mountain Shadows a good fit for buyers who want west-side views?", "acceptedAnswer": { "@type": "Answer", "text": "Often, yes. That is one of the main reasons it comes up." } },
+            { "@type": "Question", "name": "Does Mountain Shadows feel easy to live in day to day?", "acceptedAnswer": { "@type": "Answer", "text": "For the right buyer, yes. The appeal usually comes less from a tightly planned system and more from the fact that the neighborhood setting feels rewarding once you are there." } }
+          ] }],
         slug: 'mountain-shadows-colorado-springs-real-estate',
       });
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/mountain-shadows-colorado-springs-real-estate/');
@@ -1408,7 +1427,13 @@ async function prerenderAll() {
             { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
             { "@type": "ListItem", position: 3, name: "Living in Peregrine, Colorado Springs: Real Estate, Tradeoffs, and What It's Like", item: 'https://myrockhomes.com/peregrine-colorado-springs-real-estate/' },
           ]),
-        ],
+        ,
+          { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "Is Peregrine more like Mountain Shadows or more like a traditional suburban neighborhood?", "acceptedAnswer": { "@type": "Answer", "text": "Usually it sits between those two, but closer to the setting-driven side. It is more foothills-oriented and less standard-suburban than many neighborhood searches, and generally more tucked away than Mountain Shadows." } },
+            { "@type": "Question", "name": "What makes Peregrine distinct?", "acceptedAnswer": { "@type": "Answer", "text": "The clearest difference is that it offers one of the more secluded, foothills-first neighborhood searches in Colorado Springs, with open-space adjacency and neighborhood setting doing a lot of the work." } },
+            { "@type": "Question", "name": "Is Peregrine a good fit for buyers who want foothills access and privacy?", "acceptedAnswer": { "@type": "Answer", "text": "Often, yes. That is one of the main reasons it comes up." } },
+            { "@type": "Question", "name": "Does Peregrine feel easy to live in day to day?", "acceptedAnswer": { "@type": "Answer", "text": "For the right buyer, yes. The appeal usually comes less from a tightly planned system and more from the fact that the neighborhood setting feels rewarding once you are there." } }
+          ] }],
         slug: 'peregrine-colorado-springs-real-estate',
       });
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/peregrine-colorado-springs-real-estate/');
@@ -1443,7 +1468,13 @@ async function prerenderAll() {
             { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
             { "@type": "ListItem", position: 3, name: 'Old Colorado City, Colorado Springs Real Estate', item: 'https://myrockhomes.com/old-colorado-city-colorado-springs-real-estate/' },
           ]),
-        ],
+        ,
+          { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "Is Old Colorado City more like a neighborhood or more like a separate town?", "acceptedAnswer": { "@type": "Answer", "text": "It is still a Colorado Springs neighborhood decision, but it tends to feel more distinct than a lot of other neighborhoods because the area has a visible center and a stronger westside identity." } },
+            { "@type": "Question", "name": "Is Old Colorado City walkable?", "acceptedAnswer": { "@type": "Answer", "text": "Compared with a lot of Colorado Springs, yes. That is one of the reasons it stays in the conversation. The area is well known for its walkable blocks, local shops, and restaurants." } },
+            { "@type": "Question", "name": "What makes Old Colorado City distinct?", "acceptedAnswer": { "@type": "Answer", "text": "The clearest difference is that it offers one of the more established, walkable, character-driven neighborhood searches in Colorado Springs." } },
+            { "@type": "Question", "name": "Is Old Colorado City a good fit for buyers who want older homes?", "acceptedAnswer": { "@type": "Answer", "text": "Often, yes. That is one of the main reasons it comes up." } }
+          ] }],
         slug: 'old-colorado-city-colorado-springs-real-estate',
       });
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/old-colorado-city-colorado-springs-real-estate/');
@@ -1478,7 +1509,13 @@ async function prerenderAll() {
             { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
             { "@type": "ListItem", position: 3, name: 'Old North End, Colorado Springs Real Estate', item: 'https://myrockhomes.com/old-north-end-colorado-springs-real-estate/' },
           ]),
-        ],
+        ,
+          { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "Is Old North End more like a neighborhood or more like a historic district?", "acceptedAnswer": { "@type": "Answer", "text": "It is a neighborhood decision, but it also carries a strong historic-district identity. That is part of what makes it feel more distinct than many other central Colorado Springs areas." } },
+            { "@type": "Question", "name": "Is Old North End walkable?", "acceptedAnswer": { "@type": "Answer", "text": "Compared with a lot of Colorado Springs, yes, though it is usually more residential in feel than Old Colorado City." } },
+            { "@type": "Question", "name": "What makes Old North End distinct?", "acceptedAnswer": { "@type": "Answer", "text": "The clearest difference is that it offers one of the more historic, residential, and architecturally distinctive neighborhood searches in Colorado Springs." } },
+            { "@type": "Question", "name": "Is Old North End a good fit for buyers who want older homes?", "acceptedAnswer": { "@type": "Answer", "text": "Often, yes. That is one of the main reasons it comes up." } }
+          ] }],
         slug: 'old-north-end-colorado-springs-real-estate',
       });
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/old-north-end-colorado-springs-real-estate/');
@@ -1513,7 +1550,13 @@ async function prerenderAll() {
             { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
             { "@type": "ListItem", position: 3, name: 'Broadmoor / Cheyenne Mountain, Colorado Springs Real Estate', item: 'https://myrockhomes.com/broadmoor-cheyenne-mountain-colorado-springs-real-estate/' },
           ]),
-        ],
+        ,
+          { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "Is Broadmoor / Cheyenne Mountain more like a neighborhood or more like a well-known area of town?", "acceptedAnswer": { "@type": "Answer", "text": "It is still a neighborhood/community decision, but it carries a stronger identity than many other parts of Colorado Springs because the area is so tied to the south side and to the setting around it." } },
+            { "@type": "Question", "name": "Is Broadmoor / Cheyenne Mountain walkable?", "acceptedAnswer": { "@type": "Answer", "text": "Usually less so in the main-street sense than Old Colorado City. The appeal here is more about residential setting, established streets, and mountain proximity than commercial walkability." } },
+            { "@type": "Question", "name": "What makes Broadmoor / Cheyenne Mountain distinct?", "acceptedAnswer": { "@type": "Answer", "text": "The clearest difference is that it offers one of the more established, scenic, and polished neighborhood searches in Colorado Springs." } },
+            { "@type": "Question", "name": "Is Broadmoor / Cheyenne Mountain a good fit for buyers who want established homes?", "acceptedAnswer": { "@type": "Answer", "text": "Often, yes. That is one of the main reasons it comes up." } }
+          ] }],
         slug: 'broadmoor-cheyenne-mountain-colorado-springs-real-estate',
       });
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/broadmoor-cheyenne-mountain-colorado-springs-real-estate/');
@@ -1542,7 +1585,7 @@ async function prerenderAll() {
       description: _seoMeta_wash_park.description,
       canonical: _seoMeta_wash_park.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_wash_park.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_wash_park.breadcrumbs), _seoMeta_wash_park.faqSchema],
       slug: "wash-park-denver-homes-for-sale",
     });
     const _injectedHtml_wash_park = injectSeoHead(prerenderedShell, _seoBlock_wash_park, _seoMeta_wash_park.canonical);
@@ -1567,7 +1610,7 @@ async function prerenderAll() {
       description: _seoMeta_cherry_creek.description,
       canonical: _seoMeta_cherry_creek.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_cherry_creek.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_cherry_creek.breadcrumbs), _seoMeta_cherry_creek.faqSchema],
       slug: "cherry-creek-denver-homes-for-sale",
     });
     const _injectedHtml_cherry_creek = injectSeoHead(prerenderedShell, _seoBlock_cherry_creek, _seoMeta_cherry_creek.canonical);
@@ -1592,7 +1635,7 @@ async function prerenderAll() {
       description: _seoMeta_lohi.description,
       canonical: _seoMeta_lohi.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_lohi.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_lohi.breadcrumbs), _seoMeta_lohi.faqSchema],
       slug: "lohi-denver-homes-for-sale",
     });
     const _injectedHtml_lohi = injectSeoHead(prerenderedShell, _seoBlock_lohi, _seoMeta_lohi.canonical);
@@ -1617,7 +1660,7 @@ async function prerenderAll() {
       description: _seoMeta_rino.description,
       canonical: _seoMeta_rino.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_rino.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_rino.breadcrumbs), _seoMeta_rino.faqSchema],
       slug: "rino-denver-homes-for-sale",
     });
     const _injectedHtml_rino = injectSeoHead(prerenderedShell, _seoBlock_rino, _seoMeta_rino.canonical);
@@ -1642,7 +1685,7 @@ async function prerenderAll() {
       description: _seoMeta_central_park.description,
       canonical: _seoMeta_central_park.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_central_park.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_central_park.breadcrumbs), _seoMeta_central_park.faqSchema],
       slug: "central-park-denver-homes-for-sale",
     });
     const _injectedHtml_central_park = injectSeoHead(prerenderedShell, _seoBlock_central_park, _seoMeta_central_park.canonical);
@@ -1667,7 +1710,7 @@ async function prerenderAll() {
       description: _seoMeta_adams_co.description,
       canonical: _seoMeta_adams_co.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_adams_co.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_adams_co.breadcrumbs), _seoMeta_adams_co.faqSchema],
       slug: "adams-co-homes-for-sale",
     });
     const _injectedHtml_adams_co = injectSeoHead(prerenderedShell, _seoBlock_adams_co, _seoMeta_adams_co.canonical);
@@ -1692,7 +1735,7 @@ async function prerenderAll() {
       description: _seoMeta_commerce_city.description,
       canonical: _seoMeta_commerce_city.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_commerce_city.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_commerce_city.breadcrumbs), _seoMeta_commerce_city.faqSchema],
       slug: "commerce-city-homes-for-sale",
     });
     const _injectedHtml_commerce_city = injectSeoHead(prerenderedShell, _seoBlock_commerce_city, _seoMeta_commerce_city.canonical);
@@ -1717,7 +1760,7 @@ async function prerenderAll() {
       description: _seoMeta_brighton_co.description,
       canonical: _seoMeta_brighton_co.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_brighton_co.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_brighton_co.breadcrumbs), _seoMeta_brighton_co.faqSchema],
       slug: "brighton-co-homes-for-sale",
     });
     const _injectedHtml_brighton_co = injectSeoHead(prerenderedShell, _seoBlock_brighton_co, _seoMeta_brighton_co.canonical);
@@ -1742,7 +1785,7 @@ async function prerenderAll() {
       description: _seoMeta_thornton_co.description,
       canonical: _seoMeta_thornton_co.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_thornton_co.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_thornton_co.breadcrumbs), _seoMeta_thornton_co.faqSchema],
       slug: "thornton-co-homes-for-sale",
     });
     const _injectedHtml_thornton_co = injectSeoHead(prerenderedShell, _seoBlock_thornton_co, _seoMeta_thornton_co.canonical);
@@ -1767,7 +1810,7 @@ async function prerenderAll() {
       description: _seoMeta_northglenn_co.description,
       canonical: _seoMeta_northglenn_co.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_northglenn_co.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_northglenn_co.breadcrumbs), _seoMeta_northglenn_co.faqSchema],
       slug: "northglenn-co-homes-for-sale",
     });
     const _injectedHtml_northglenn_co = injectSeoHead(prerenderedShell, _seoBlock_northglenn_co, _seoMeta_northglenn_co.canonical);
@@ -1817,7 +1860,7 @@ async function prerenderAll() {
       description: _seoMeta_first_time_home_buyer_denver.description,
       canonical: _seoMeta_first_time_home_buyer_denver.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_first_time_home_buyer_denver.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_first_time_home_buyer_denver.breadcrumbs), _seoMeta_first_time_home_buyer_denver.faqSchema],
       slug: "first-time-home-buyer-denver",
     });
     const _injectedHtml_first_time_home_buyer_denver = injectSeoHead(prerenderedShell, _seoBlock_first_time_home_buyer_denver, _seoMeta_first_time_home_buyer_denver.canonical);
@@ -1842,7 +1885,7 @@ async function prerenderAll() {
       description: _seoMeta_denver_home_buying_process.description,
       canonical: _seoMeta_denver_home_buying_process.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver_home_buying_process.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver_home_buying_process.breadcrumbs), _seoMeta_denver_home_buying_process.faqSchema],
       slug: "denver-home-buying-process",
     });
     const _injectedHtml_denver_home_buying_process = injectSeoHead(prerenderedShell, _seoBlock_denver_home_buying_process, _seoMeta_denver_home_buying_process.canonical);
@@ -1867,7 +1910,7 @@ async function prerenderAll() {
       description: _seoMeta_cost_of_living_in_denver_colorado.description,
       canonical: _seoMeta_cost_of_living_in_denver_colorado.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_cost_of_living_in_denver_colorado.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_cost_of_living_in_denver_colorado.breadcrumbs), _seoMeta_cost_of_living_in_denver_colorado.faqSchema],
       slug: "cost-of-living-in-denver-colorado",
     });
     const _injectedHtml_cost_of_living_in_denver_colorado = injectSeoHead(prerenderedShell, _seoBlock_cost_of_living_in_denver_colorado, _seoMeta_cost_of_living_in_denver_colorado.canonical);
@@ -1892,7 +1935,7 @@ async function prerenderAll() {
       description: _seoMeta_relocating_to_denver_colorado.description,
       canonical: _seoMeta_relocating_to_denver_colorado.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_relocating_to_denver_colorado.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_relocating_to_denver_colorado.breadcrumbs), _seoMeta_relocating_to_denver_colorado.faqSchema],
       slug: "relocating-to-denver-colorado",
     });
     const _injectedHtml_relocating_to_denver_colorado = injectSeoHead(prerenderedShell, _seoBlock_relocating_to_denver_colorado, _seoMeta_relocating_to_denver_colorado.canonical);
@@ -1917,7 +1960,7 @@ async function prerenderAll() {
       description: _seoMeta_fort_collins_homes.description,
       canonical: _seoMeta_fort_collins_homes.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_fort_collins_homes.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_fort_collins_homes.breadcrumbs), _seoMeta_fort_collins_homes.faqSchema],
       slug: "fort-collins-homes-for-sale",
     });
     const _injectedHtml_fort_collins_homes = injectSeoHead(prerenderedShell, _seoBlock_fort_collins_homes, _seoMeta_fort_collins_homes.canonical);
@@ -1942,7 +1985,7 @@ async function prerenderAll() {
       description: _seoMeta_greeley_homes.description,
       canonical: _seoMeta_greeley_homes.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_greeley_homes.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_greeley_homes.breadcrumbs), _seoMeta_greeley_homes.faqSchema],
       slug: "greeley-homes-for-sale",
     });
     const _injectedHtml_greeley_homes = injectSeoHead(prerenderedShell, _seoBlock_greeley_homes, _seoMeta_greeley_homes.canonical);
@@ -1967,7 +2010,7 @@ async function prerenderAll() {
       description: _seoMeta_evans_co.description,
       canonical: _seoMeta_evans_co.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_evans_co.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_evans_co.breadcrumbs), _seoMeta_evans_co.faqSchema],
       slug: "evans-co-homes-for-sale",
     });
     const _injectedHtml_evans_co = injectSeoHead(prerenderedShell, _seoBlock_evans_co, _seoMeta_evans_co.canonical);
@@ -1992,7 +2035,7 @@ async function prerenderAll() {
       description: _seoMeta_platteville_co.description,
       canonical: _seoMeta_platteville_co.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_platteville_co.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_platteville_co.breadcrumbs), _seoMeta_platteville_co.faqSchema],
       slug: "platteville-co-homes-for-sale",
     });
     const _injectedHtml_platteville_co = injectSeoHead(prerenderedShell, _seoBlock_platteville_co, _seoMeta_platteville_co.canonical);
@@ -2017,7 +2060,7 @@ async function prerenderAll() {
       description: _seoMeta_lasalle_co.description,
       canonical: _seoMeta_lasalle_co.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_lasalle_co.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_lasalle_co.breadcrumbs), _seoMeta_lasalle_co.faqSchema],
       slug: "lasalle-co-homes-for-sale",
     });
     const _injectedHtml_lasalle_co = injectSeoHead(prerenderedShell, _seoBlock_lasalle_co, _seoMeta_lasalle_co.canonical);
@@ -2042,7 +2085,7 @@ async function prerenderAll() {
       description: _seoMeta_sloan_lake.description,
       canonical: _seoMeta_sloan_lake.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_sloan_lake.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_sloan_lake.breadcrumbs), _seoMeta_sloan_lake.faqSchema],
       slug: "sloan-lake-denver-homes-for-sale",
     });
     const _injectedHtml_sloan_lake = injectSeoHead(prerenderedShell, _seoBlock_sloan_lake, _seoMeta_sloan_lake.canonical);
@@ -2067,7 +2110,7 @@ async function prerenderAll() {
       description: _seoMeta_jefferson_co.description,
       canonical: _seoMeta_jefferson_co.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_jefferson_co.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_jefferson_co.breadcrumbs), _seoMeta_jefferson_co.faqSchema],
       slug: "jefferson-co-homes-for-sale",
     });
     const _injectedHtml_jefferson_co = injectSeoHead(prerenderedShell, _seoBlock_jefferson_co, _seoMeta_jefferson_co.canonical);
@@ -2092,7 +2135,7 @@ async function prerenderAll() {
       description: _seoMeta_golden.description,
       canonical: _seoMeta_golden.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_golden.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_golden.breadcrumbs), _seoMeta_golden.faqSchema],
       slug: "golden-homes-for-sale",
     });
     const _injectedHtml_golden = injectSeoHead(prerenderedShell, _seoBlock_golden, _seoMeta_golden.canonical);
@@ -2117,7 +2160,7 @@ async function prerenderAll() {
       description: _seoMeta_lakewood.description,
       canonical: _seoMeta_lakewood.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_lakewood.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_lakewood.breadcrumbs), _seoMeta_lakewood.faqSchema],
       slug: "lakewood-co-homes-for-sale",
     });
     const _injectedHtml_lakewood = injectSeoHead(prerenderedShell, _seoBlock_lakewood, _seoMeta_lakewood.canonical);
@@ -2142,7 +2185,7 @@ async function prerenderAll() {
       description: _seoMeta_morrison.description,
       canonical: _seoMeta_morrison.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_morrison.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_morrison.breadcrumbs), _seoMeta_morrison.faqSchema],
       slug: "morrison-co-homes-for-sale",
     });
     const _injectedHtml_morrison = injectSeoHead(prerenderedShell, _seoBlock_morrison, _seoMeta_morrison.canonical);
@@ -2214,7 +2257,8 @@ async function prerenderAll() {
             { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
             { "@type": "ListItem", position: 3, name: 'PCS to Colorado: Military Homebuying Guide', item: 'https://myrockhomes.com/military-relocation/pcs-colorado/' },
           ]),
-        ],
+        ,
+          {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How far in advance should military buyers start planning a PCS move to Colorado?", "acceptedAnswer": {"@type": "Answer", "text": "Starting 3\u20136 months before your report date gives buyers more time to research neighborhoods, understand the market, and make a more deliberate decision. Buyers with shorter timelines can still navigate the process \u2014 it just requires more focused prioritization."}}, {"@type": "Question", "name": "Should I rent or buy when PCS-ing to Colorado?", "acceptedAnswer": {"@type": "Answer", "text": "There"}}, {"@type": "Question", "name": "Can I buy a home in Colorado before I arrive?", "acceptedAnswer": {"@type": "Answer", "text": "It"}}, {"@type": "Question", "name": "What Colorado markets are most common for military PCS buyers?", "acceptedAnswer": {"@type": "Answer", "text": "Many PCS buyers focus on the Denver metro area, Colorado Springs (near Fort Carson and Schriever/Peterson), and Fort Collins (near Buckley and other Northern Colorado installations). The right market depends on your assignment location, commute tolerance, and lifestyle preferences."}}, {"@type": "Question", "name": "How does BAH affect homebuying decisions for military buyers in Colorado?", "acceptedAnswer": {"@type": "Answer", "text": "BAH rates vary by rank and duty station. Understanding your BAH rate helps frame a realistic budget. Rob can help you think through how your BAH fits within Colorado"}}, {"@type": "Question", "name": "What should PCS buyers prioritize when searching in an unfamiliar Colorado market?", "acceptedAnswer": {"@type": "Answer", "text": "Location relative to your duty station, commute patterns, neighborhood character, school districts (if relevant), and resale potential are all worth evaluating. Rob can help you narrow down which areas fit your priorities before you start touring."}}]}],
         slug: 'pcs-colorado',
       });
       const _injectedHtml = injectSeoHead(finalHtml, _seoBlock, 'https://myrockhomes.com/military-relocation/pcs-colorado/');
@@ -2290,7 +2334,8 @@ async function prerenderAll() {
             { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
             { "@type": "ListItem", position: 3, name: 'Peterson Space Force Base Relocation Guide', item: 'https://myrockhomes.com/military-relocation/peterson-space-force-base/' },
           ]),
-        ],
+        ,
+          {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What communities do buyers relocating to Peterson Space Force Base typically consider?", "acceptedAnswer": {"@type": "Answer", "text": "Peterson Space Force Base is located on the east side of Colorado Springs. Buyers commonly look at east Colorado Springs neighborhoods, Falcon, Peyton, and Schriever-adjacent communities. The right fit depends on commute preferences, school priorities, and budget."}}, {"@type": "Question", "name": "Is Peterson Space Force Base close to Schriever Space Force Base?", "acceptedAnswer": {"@type": "Answer", "text": "Peterson Space Force Base and Schriever Space Force Base are both in the Colorado Springs area. Some buyers assigned to one installation consider communities that provide reasonable access to both, depending on their situation."}}, {"@type": "Question", "name": "Can Rob help me buy near Peterson Space Force Base if I", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Rob works with buyers planning a PCS move from out of state. He can provide market orientation, neighborhood guidance, and support for buyers navigating the process remotely before they arrive."}}, {"@type": "Question", "name": "How competitive is the Colorado Springs market for buyers?", "acceptedAnswer": {"@type": "Answer", "text": "Colorado Springs has been an active market, particularly in price ranges common for military buyers. Understanding current inventory, pricing trends, and neighborhood dynamics before you start searching helps you move efficiently when the right home appears."}}, {"@type": "Question", "name": "Does Rob work with VA financing?", "acceptedAnswer": {"@type": "Answer", "text": "Rob provides educational guidance on VA homebuying and works with buyers using VA financing. For specific VA loan questions, buyers should work directly with a VA-approved lender."}}]}],
         slug: 'peterson-space-force-base',
       });
       const _injectedHtml = injectSeoHead(finalHtml, _seoBlock, 'https://myrockhomes.com/military-relocation/peterson-space-force-base/');
@@ -2397,7 +2442,7 @@ async function prerenderAll() {
       description: _seoMeta_buckley_space_force_base.description,
       canonical: _seoMeta_buckley_space_force_base.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_buckley_space_force_base.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_buckley_space_force_base.breadcrumbs), _seoMeta_buckley_space_force_base.faqSchema],
       slug: "buckley-space-force-base",
     });
     const _injectedHtml_buckley_space_force_base = injectSeoHead(prerenderedShell, _seoBlock_buckley_space_force_base, _seoMeta_buckley_space_force_base.canonical);
@@ -2648,7 +2693,18 @@ async function prerenderAll() {
             { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
             { "@type": "ListItem", position: 3, name: 'PCS Relocation Tour Support', item: 'https://myrockhomes.com/military-relocation/pcs-relocation-tour-support/' },
           ]),
-        ],
+        ,
+          { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "What exactly happens during a tour session?", "acceptedAnswer": { "@type": "Answer", "text": "Each tour is a structured showing session — in-person property access and guided walkthrough where available, or a 15–30 minute virtual or recorded tour support session where in-person access is not available. Rob provides neighborhood context, market guidance, and practical relocation considerations to help you evaluate each property." } },
+            { "@type": "Question", "name": "Can I use tours for both rental properties and homes for purchase?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tour support is available for PCS families evaluating rental options, homes for purchase, or both. The goal is to help you make a well-informed housing decision before you arrive — regardless of whether you plan to rent or buy." } },
+            { "@type": "Question", "name": "What areas does this service cover?", "acceptedAnswer": { "@type": "Answer", "text": "Tour support is available within a 25-mile radius of downtown Denver and a 25-mile radius of downtown Colorado Springs — covering Fort Carson, Peterson Space Force Base, Schriever Space Force Base, the U.S. Air Force Academy, and Buckley Space Force Base. Properties outside the standard service area may be available by custom quote." } },
+            { "@type": "Question", "name": "Does this service include representation or lease negotiation?", "acceptedAnswer": { "@type": "Answer", "text": "No. This is a tour support and guidance service only. It does not create a tenant representation relationship, buyer representation relationship, agency relationship, or any brokerage relationship. Lease negotiation, application assistance, and approval guarantees are not included. You remain unrepresented unless you sign a separate written agreement with My Rock Realty." } },
+            { "@type": "Question", "name": "How do I schedule tours after purchasing a package?", "acceptedAnswer": { "@type": "Answer", "text": "After purchasing, you'll coordinate directly with Rob to schedule your showing sessions. Rob makes reasonable efforts to accommodate requests within 5–7 business days. Scheduling is flexible within your package validity period." } },
+            { "@type": "Question", "name": "What is the cancellation policy?", "acceptedAnswer": { "@type": "Answer", "text": "Same-day cancellations (less than 24 hours' notice) forfeit that day's showings and 3 showing credits. Arrival more than 15 minutes late without notice may result in forfeiture of that day's showings at My Rock Realty's discretion. Access delays or last-minute cancellations outside My Rock Realty's control restore the showing credit and may be rescheduled." } },
+            { "@type": "Question", "name": "What if I find a home before using all my showing days?", "acceptedAnswer": { "@type": "Answer", "text": "If you find the right home before using all your showing days, that's a good outcome — the service did its job. Unused showing days and credits expire at the end of your package validity period and do not carry over." } },
+            { "@type": "Question", "name": "Can I transfer my package to another family?", "acceptedAnswer": { "@type": "Answer", "text": "No. Tour packages are non-transferable and not shareable. Attempted transfer or sharing will result in immediate forfeiture of remaining days and showing credits." } },
+            { "@type": "Question", "name": "What is the future home purchase credit?", "acceptedAnswer": { "@type": "Answer", "text": "If you later enter into a separate written buyer representation agreement with My Rock Realty and successfully close on a home purchase through us within 60 months of your tour service purchase, your paid tour fee may be credited in full at closing, where permitted and as outlined in the separate written agreement, subject to brokerage policy, applicable law, lender approval, and successful closing." } }
+          ] }],
         slug: 'pcs-relocation-tour-support',
       });
       const _injectedHtml = injectSeoHead(finalHtml, _seoBlock, 'https://myrockhomes.com/military-relocation/pcs-relocation-tour-support/');
@@ -2833,7 +2889,17 @@ async function prerenderAll() {
             { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
             { "@type": "ListItem", position: 3, name: 'Moving to Colorado Springs: Neighborhoods, Costs, and Tradeoffs', item: 'https://myrockhomes.com/moving-to-colorado-springs/' },
           ]),
-        ],
+        ,
+          { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "Is Colorado Springs a good place to live?", "acceptedAnswer": { "@type": "Answer", "text": "For a lot of people, yes. Colorado Springs appeals to buyers who want mountain access, more breathing room, and a pace that usually feels easier than Denver. But whether it feels like a good fit really depends on your budget, commute, and which part of town makes the most sense for your day-to-day life." } },
+            { "@type": "Question", "name": "Is Colorado Springs cheaper than Denver?", "acceptedAnswer": { "@type": "Answer", "text": "In many cases, yes. But that only tells part of the story. Colorado Springs can feel more manageable than Denver, especially if you're coming from a higher-priced market. But once you start narrowing down neighborhoods, condition, home style, and commute, the budget question gets more real." } },
+            { "@type": "Question", "name": "Do you need a car in Colorado Springs?", "acceptedAnswer": { "@type": "Answer", "text": "In most cases, yes. Colorado Springs is a driving-oriented city, and daily routine matters a lot here. Where you live can make a big difference in how easy the city feels once work, errands, school, and normal life all start stacking together." } },
+            { "@type": "Question", "name": "Should I rent before buying in Colorado Springs?", "acceptedAnswer": { "@type": "Answer", "text": "Sometimes, yes. If you already know the city, understand the map, and feel clear on where you want to be, buying first can make a lot of sense. But if you're still figuring out commute, neighborhoods, or how you want everyday life to work, renting first can help you avoid buying in the wrong area." } },
+            { "@type": "Question", "name": "Do different neighborhoods in Colorado Springs really feel that different?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, they usually do. That's one of the things people tend to underestimate. Some areas feel more established. Some feel newer. Some make day-to-day driving easier. Some offer more space or privacy. The right fit usually depends less on the best neighborhood and more on which part of town works best for your routine." } },
+            { "@type": "Question", "name": "Should I also look outside Colorado Springs?", "acceptedAnswer": { "@type": "Answer", "text": "Sometimes, yes. A lot of buyers start in Colorado Springs, then widen the search once they get clearer on what matters most. Communities like Manitou Springs, Monument, Palmer Lake, Falcon, Peyton, Fountain, Black Forest, Woodland Park, and Calhan can all make sense depending on commute, space, setting, and the kind of day-to-day feel you want." } },
+            { "@type": "Question", "name": "Is Colorado Springs too spread out?", "acceptedAnswer": { "@type": "Answer", "text": "That depends on what you're used to and how often you need to cross town. Some buyers find Colorado Springs easier to handle than Denver. Others are surprised by how much daily life depends on where they land. A home can look great online, but if it adds too much driving to your week, the city can feel bigger than expected pretty quickly." } },
+            { "@type": "Question", "name": "Is Colorado Springs a good market for military moves?", "acceptedAnswer": { "@type": "Answer", "text": "Often, yes. Colorado Springs has enough military influence that it shapes a lot of local search decisions, especially when commute, timeline, and access matter. For buyers connected to Fort Carson, Peterson, Schriever, or the Air Force Academy, practicality often ends up driving the search more than the original picture they had in mind." } }
+          ] }],
         slug: 'moving-to-colorado-springs',
       });
       const _injectedHtml = injectSeoHead(finalHtml, _seoBlock, 'https://myrockhomes.com/moving-to-colorado-springs/');
@@ -2870,7 +2936,14 @@ async function prerenderAll() {
           { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
           { "@type": "ListItem", position: 3, name: "Widefield CO Homes for Sale", item: 'https://myrockhomes.com/widefield-co-homes-for-sale' },
         ]),
-      ],
+      ,
+          { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "What is Widefield known for in the Colorado Springs area?", "acceptedAnswer": { "@type": "Answer", "text": "Widefield is known for its suburban character, residential neighborhoods, and position south of Colorado Springs. It offers a suburban setting with access to Colorado Springs amenities and a range of housing options." } },
+            { "@type": "Question", "name": "What types of homes can buyers find in Widefield?", "acceptedAnswer": { "@type": "Answer", "text": "Buyers may find a mix of single-family homes, residential developments, and other housing options across various price points depending on the neighborhood and area." } },
+            { "@type": "Question", "name": "Why do buyers consider Widefield when searching near Colorado Springs?", "acceptedAnswer": { "@type": "Answer", "text": "Buyers often consider Widefield for its suburban character, residential neighborhoods, and its position within the broader Colorado Springs housing market at various price points." } },
+            { "@type": "Question", "name": "Is Widefield a good fit for buyers who want a suburban setting near Colorado Springs?", "acceptedAnswer": { "@type": "Answer", "text": "Widefield can be a strong fit for buyers who want a suburban environment with residential neighborhoods and proximity to Colorado Springs. Buyers should research specific neighborhoods and properties to determine the best match for their needs." } },
+            { "@type": "Question", "name": "What should buyers pay attention to when considering homes in Widefield?", "acceptedAnswer": { "@type": "Answer", "text": "Buyers should pay attention to neighborhood differences, home condition, proximity to Colorado Springs amenities, and how individual properties compare within the area. Buyers should independently research schools, crime data, and other community factors important to them." } }
+          ] }],
       slug: 'widefield-co-homes-for-sale',
       });
       const _injectedHtml = injectSeoHead(finalHtml, _seoBlock, 'https://myrockhomes.com/widefield-co-homes-for-sale');
@@ -3025,7 +3098,13 @@ async function prerenderAll() {
             { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
             { "@type": "ListItem", position: 3, name: "Living in Calhan, CO: Real Estate, Tradeoffs, and What It's Like", item: 'https://myrockhomes.com/calhan-co-real-estate/' },
           ]),
-        ],
+        ,
+          { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "Is Calhan more like Peyton or more like a truly rural move?", "acceptedAnswer": { "@type": "Answer", "text": "Usually it leans more rural. Peyton can still feel more connected to the broader suburban edge of Colorado Springs. Calhan usually feels like more of a true step out onto the plains." } },
+            { "@type": "Question", "name": "Is Calhan part of Colorado Springs?", "acceptedAnswer": { "@type": "Answer", "text": "No. It is its own town in El Paso County, though it often comes up in the broader Colorado Springs housing conversation. Calhan identifies itself as a separate statutory town along U.S. 24." } },
+            { "@type": "Question", "name": "What makes Calhan distinct?", "acceptedAnswer": { "@type": "Answer", "text": "The clearest difference is that it gives buyers one of the more rural, land-first, lower-density moves in the broader Colorado Springs orbit, with a much stronger eastern-plains feel." } },
+            { "@type": "Question", "name": "Is Calhan a good fit for buyers who want more land?", "acceptedAnswer": { "@type": "Answer", "text": "Often, yes. That is one of the main reasons it comes up. Current listing platforms keep surfacing Calhan as a sizable inventory pocket with a lot of acreage-oriented housing stock, including many 40-acre listings." } }
+          ] }],
         slug: 'calhan-co-real-estate',
       });
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/calhan-co-real-estate/');
@@ -3151,7 +3230,7 @@ async function prerenderAll() {
       description: _seoMeta_niwot.description,
       canonical: _seoMeta_niwot.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_niwot.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_niwot.breadcrumbs), _seoMeta_niwot.faqSchema],
       slug: "niwot-co-homes-for-sale",
     });
     const _injectedHtml_niwot = injectSeoHead(prerenderedShell, _seoBlock_niwot, _seoMeta_niwot.canonical);
@@ -3595,7 +3674,7 @@ async function prerenderAll() {
       description: _seoMeta_denver_townhomes.description,
       canonical: _seoMeta_denver_townhomes.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver_townhomes.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver_townhomes.breadcrumbs), _seoMeta_denver_townhomes.faqSchema],
       slug: "denver-townhomes-for-sale",
     });
     const _injectedHtml_denver_townhomes = injectSeoHead(prerenderedShell, _seoBlock_denver_townhomes, _seoMeta_denver_townhomes.canonical);
@@ -3620,7 +3699,7 @@ async function prerenderAll() {
       description: _seoMeta_denver_luxury.description,
       canonical: _seoMeta_denver_luxury.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver_luxury.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver_luxury.breadcrumbs), _seoMeta_denver_luxury.faqSchema],
       slug: "denver-luxury-homes-for-sale",
     });
     const _injectedHtml_denver_luxury = injectSeoHead(prerenderedShell, _seoBlock_denver_luxury, _seoMeta_denver_luxury.canonical);
@@ -3645,7 +3724,7 @@ async function prerenderAll() {
       description: _seoMeta_denver_new_construction.description,
       canonical: _seoMeta_denver_new_construction.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver_new_construction.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver_new_construction.breadcrumbs), _seoMeta_denver_new_construction.faqSchema],
       slug: "denver-new-construction-homes",
     });
     const _injectedHtml_denver_new_construction = injectSeoHead(prerenderedShell, _seoBlock_denver_new_construction, _seoMeta_denver_new_construction.canonical);
@@ -3670,7 +3749,7 @@ async function prerenderAll() {
       description: _seoMeta_adams_county_vs_jefferson_county.description,
       canonical: _seoMeta_adams_county_vs_jefferson_county.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_adams_county_vs_jefferson_county.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_adams_county_vs_jefferson_county.breadcrumbs), _seoMeta_adams_county_vs_jefferson_county.faqSchema],
       slug: "adams-county-vs-jefferson-county",
     });
     const _injectedHtml_adams_county_vs_jefferson_county = injectSeoHead(prerenderedShell, _seoBlock_adams_county_vs_jefferson_county, _seoMeta_adams_county_vs_jefferson_county.canonical);
@@ -3695,7 +3774,7 @@ async function prerenderAll() {
       description: _seoMeta_douglas_county_vs_weld_county.description,
       canonical: _seoMeta_douglas_county_vs_weld_county.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_douglas_county_vs_weld_county.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_douglas_county_vs_weld_county.breadcrumbs), _seoMeta_douglas_county_vs_weld_county.faqSchema],
       slug: "douglas-county-vs-weld-county",
     });
     const _injectedHtml_douglas_county_vs_weld_county = injectSeoHead(prerenderedShell, _seoBlock_douglas_county_vs_weld_county, _seoMeta_douglas_county_vs_weld_county.canonical);
@@ -3720,7 +3799,7 @@ async function prerenderAll() {
       description: _seoMeta_boulder_vs_fort_collins.description,
       canonical: _seoMeta_boulder_vs_fort_collins.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_boulder_vs_fort_collins.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_boulder_vs_fort_collins.breadcrumbs), _seoMeta_boulder_vs_fort_collins.faqSchema],
       slug: "boulder-vs-fort-collins",
     });
     const _injectedHtml_boulder_vs_fort_collins = injectSeoHead(prerenderedShell, _seoBlock_boulder_vs_fort_collins, _seoMeta_boulder_vs_fort_collins.canonical);
@@ -3745,7 +3824,7 @@ async function prerenderAll() {
       description: _seoMeta_denver_market_report_2025.description,
       canonical: _seoMeta_denver_market_report_2025.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver_market_report_2025.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_denver_market_report_2025.breadcrumbs), _seoMeta_denver_market_report_2025.faqSchema],
       slug: "denver-real-estate-market-report-2025",
     });
     const _injectedHtml_denver_market_report_2025 = injectSeoHead(prerenderedShell, _seoBlock_denver_market_report_2025, _seoMeta_denver_market_report_2025.canonical);
@@ -3776,7 +3855,14 @@ async function prerenderAll() {
             { "@type": "ListItem", position: 2, name: "Colorado Springs", item: "https://myrockhomes.com/colorado-springs-co-homes-for-sale" },
             { "@type": "ListItem", position: 3, name: 'Denver vs Colorado Springs', item: 'https://myrockhomes.com/denver-vs-colorado-springs' },
           ]),
-        ],
+        ,
+          { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "How do buyers decide between Denver and Colorado Springs?", "acceptedAnswer": { "@type": "Answer", "text": "Buyers often compare Denver and Colorado Springs based on lifestyle, commute needs, housing preferences, budget, and which type of metro environment best fits their goals." } },
+            { "@type": "Question", "name": "Is the housing experience the same in Denver and Colorado Springs?", "acceptedAnswer": { "@type": "Answer", "text": "No. The two markets differ in neighborhood patterns, housing types, commute structure, and how buyers evaluate tradeoffs between central areas, suburbs, and community layout." } },
+            { "@type": "Question", "name": "Why do some buyers compare Denver and Colorado Springs before moving?", "acceptedAnswer": { "@type": "Answer", "text": "Buyers may compare the two cities to understand differences in pace, market options, lifestyle priorities, and how each location fits work, family, or long-term planning needs." } },
+            { "@type": "Question", "name": "What should buyers evaluate besides home price when comparing Denver and Colorado Springs?", "acceptedAnswer": { "@type": "Answer", "text": "Buyers should also evaluate commute patterns, neighborhood fit, total ownership costs, access to amenities, housing stock, and long-term lifestyle preferences." } },
+            { "@type": "Question", "name": "Why is local guidance helpful when comparing two Colorado markets?", "acceptedAnswer": { "@type": "Answer", "text": "Local guidance can help buyers understand practical tradeoffs, avoid oversimplified assumptions, and make more informed decisions based on how each market actually fits their needs." } }
+          ] }],
         slug: 'denver-vs-colorado-springs',
       });
       const _injectedHtml = injectSeoHead(prerenderedShell, _seoBlock, 'https://myrockhomes.com/denver-vs-colorado-springs');
@@ -3803,7 +3889,7 @@ async function prerenderAll() {
       description: _seoMeta_platt_park.description,
       canonical: _seoMeta_platt_park.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_platt_park.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_platt_park.breadcrumbs), _seoMeta_platt_park.faqSchema],
       slug: "platt-park-denver-homes-for-sale",
     });
     const _injectedHtml_platt_park = injectSeoHead(prerenderedShell, _seoBlock_platt_park, _seoMeta_platt_park.canonical);
@@ -3826,7 +3912,7 @@ async function prerenderAll() {
       description: _seoMeta_highland.description,
       canonical: _seoMeta_highland.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_highland.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_highland.breadcrumbs), _seoMeta_highland.faqSchema],
       slug: "highland-denver-homes-for-sale",
     });
     const _injectedHtml_highland = injectSeoHead(prerenderedShell, _seoBlock_highland, _seoMeta_highland.canonical);
