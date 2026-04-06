@@ -28,7 +28,6 @@ import ProcessSection from "@/components/ProcessSection";
 import ContactSection from "@/components/ContactSection";
 import HomeFinalCTASection from "@/components/HomeFinalCTASection";
 import FAQSection from "@/components/FAQSection";
-import Footer from "@/components/Footer";
 
 const faqContent = [
   {
@@ -112,7 +111,6 @@ export default function Home() {
         <HomeFinalCTASection />
         <FAQSection />
       </main>
-      <Footer />
     </div>
   );
 }

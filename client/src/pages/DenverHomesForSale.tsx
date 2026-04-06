@@ -6,7 +6,6 @@
  */
 import { useState, useEffect } from "react";
 import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
-import Footer from "@/components/Footer";
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
@@ -374,7 +373,6 @@ export default function DenverHomesForSale() {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

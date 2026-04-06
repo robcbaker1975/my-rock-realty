@@ -1,8 +1,9 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
+import Footer from "./components/Footer";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import IdxTest from "./pages/IdxTest";
@@ -315,6 +316,20 @@ function Router() {
   );
 }
 
+// Paths that should not receive the shared Footer (foundation/noindex pages)
+const FOOTER_EXCLUDED_PATHS = ["/idx-test", "/listing-results", "/listing-details"];
+
+function AppLayout() {
+  const [location] = useLocation();
+  const showFooter = !FOOTER_EXCLUDED_PATHS.some((p) => location === p || location.startsWith(p + "?"));
+  return (
+    <>
+      <Router />
+      {showFooter && <Footer />}
+    </>
+  );
+}
+
 function App() {
   return (
     <ErrorBoundary>
@@ -323,7 +338,7 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <AppLayout />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
