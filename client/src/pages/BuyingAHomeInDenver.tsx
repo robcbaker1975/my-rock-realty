@@ -153,7 +153,7 @@ export default function BuyingAHomeInDenver() {
 
       {/* ─── What I would figure out first ─── */}
       <section className="py-14 sm:py-18 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="mx-auto w-full max-w-3xl px-8">
           <h2
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -236,7 +236,7 @@ export default function BuyingAHomeInDenver() {
 
       {/* ─── SearchForm Widget Section ─── */}
       <section className="py-14 sm:py-18 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="mx-auto w-full max-w-3xl px-8">
           <h2
             className="text-2xl sm:text-3xl font-bold text-cream mb-4"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -260,7 +260,7 @@ export default function BuyingAHomeInDenver() {
 
       {/* ─── What makes Denver harder than a simpler market ─── */}
       <section className="py-14 sm:py-18 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="mx-auto w-full max-w-3xl px-8">
           <h2
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -328,7 +328,7 @@ export default function BuyingAHomeInDenver() {
 
       {/* ─── MarketStats Widget Section ─── */}
       <section className="py-14 sm:py-18 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="mx-auto w-full max-w-3xl px-8">
           <h2
             className="text-2xl sm:text-3xl font-bold text-cream mb-4"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -360,7 +360,7 @@ export default function BuyingAHomeInDenver() {
 
       {/* ─── How I would search smarter in Denver ─── */}
       <section className="py-14 sm:py-18 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="mx-auto w-full max-w-3xl px-8">
           <h2
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -416,7 +416,7 @@ export default function BuyingAHomeInDenver() {
 
       {/* ─── Financing and concessions ─── */}
       <section className="py-14 sm:py-18 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="mx-auto w-full max-w-3xl px-8">
           <h2
             className="text-2xl sm:text-3xl font-bold text-cream mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -495,7 +495,7 @@ export default function BuyingAHomeInDenver() {
 
       {/* ─── When neighborhood pages actually help ─── */}
       <section className="py-14 sm:py-18 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="mx-auto w-full max-w-3xl px-8">
           <h2
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -531,7 +531,7 @@ export default function BuyingAHomeInDenver() {
 
       {/* ─── FeaturedGallery Widget Section ─── */}
       <section className="py-14 sm:py-18 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="mx-auto w-full max-w-3xl px-8">
           <h2
             className="text-2xl sm:text-3xl font-bold text-cream mb-4"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -555,7 +555,7 @@ export default function BuyingAHomeInDenver() {
 
       {/* ─── What your next step probably is ─── */}
       <section className="py-14 sm:py-18 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="mx-auto w-full max-w-3xl px-8">
           <h2
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -607,7 +607,7 @@ export default function BuyingAHomeInDenver() {
 
       {/* ─── FAQ ─── */}
       <section className="py-14 sm:py-18 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="mx-auto w-full max-w-3xl px-8">
           <h2
             className="text-2xl sm:text-3xl font-bold text-cream mb-8"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -651,7 +651,7 @@ export default function BuyingAHomeInDenver() {
 
       {/* ─── Final thoughts ─── */}
       <section className="py-14 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="mx-auto w-full max-w-3xl px-8">
           <h2
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -703,7 +703,7 @@ export default function BuyingAHomeInDenver() {
 
       {/* ─── Contact Form Endcap ─── */}
       <section id="contact-rob" className="py-14 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="mx-auto w-full max-w-3xl px-8">
           <LeadForm
             variant="buyer"
             source="Buying a Home in Denver"
