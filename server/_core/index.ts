@@ -57,16 +57,18 @@ async function startServer() {
       "default-src 'self'",
       // Self + Buying Buddy (mbb2.com, d2w6u17ngtanmy CloudFront) + GHL form embed (link.msgsndr.com)
       // 'unsafe-inline' required: Buying Buddy inline init script in index.html
-      "script-src 'self' 'unsafe-inline' https://www.mbb2.com https://d2w6u17ngtanmy.cloudfront.net https://link.msgsndr.com",
+      // GTM loads from googletagmanager.com (blocked without this entry)
+      "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.mbb2.com https://d2w6u17ngtanmy.cloudfront.net https://link.msgsndr.com",
       // Self + Google Fonts CSS
       // 'unsafe-inline' required: Buying Buddy widget injects inline styles at runtime
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://s3.amazonaws.com",
-      // Self + Google Fonts files
-      "font-src 'self' https://fonts.gstatic.com",
+      // Self + Google Fonts files + Buying Buddy widget fonts (s3.amazonaws.com, d2w6u17ngtanmy CloudFront)
+      "font-src 'self' https://fonts.gstatic.com https://s3.amazonaws.com https://d2w6u17ngtanmy.cloudfront.net",
       // Self + CDN-hosted images (favicon, og:image) + Buying Buddy listing images
-      "img-src 'self' data: https://d2xsxph8kpxj0f.cloudfront.net https://d2w6u17ngtanmy.cloudfront.net https://www.mbb2.com https://photos.sparkplatform.com https://cdn.photos.sparkplatform.com https://*.sparkplatform.com https://*.amazonaws.com https://*.cartocdn.com https://d2jdjs2y9vy4n2.cloudfront.net",
-      // Self + tRPC/API calls + GHL API + Buying Buddy data endpoints
-      "connect-src 'self' https://api.leadconnectorhq.com https://www.mbb2.com https://d2w6u17ngtanmy.cloudfront.net",
+      // GTM pixel + GA pixel added for tag-fired tracking pixels
+      "img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://d2xsxph8kpxj0f.cloudfront.net https://d2w6u17ngtanmy.cloudfront.net https://www.mbb2.com https://photos.sparkplatform.com https://cdn.photos.sparkplatform.com https://*.sparkplatform.com https://*.amazonaws.com https://*.cartocdn.com https://d2jdjs2y9vy4n2.cloudfront.net",
+      // Self + tRPC/API calls + GHL API + Buying Buddy data endpoints + GTM data layer
+      "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://api.leadconnectorhq.com https://www.mbb2.com https://d2w6u17ngtanmy.cloudfront.net",
       // GHL popup form is loaded in an iframe from api.leadconnectorhq.com
       "frame-src https://api.leadconnectorhq.com",
       // Prevent this page from being framed by other origins

@@ -47,10 +47,16 @@
     <!-- Preconnect: Google Fonts (used on every page) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preconnect: GTM (loads on every page, early connection reduces script delay) -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <!-- Preconnect: Buying Buddy CDN (loads on every page) -->
+    <link rel="preconnect" href="https://d2w6u17ngtanmy.cloudfront.net" crossorigin />
     <!-- DNS prefetch: LeadConnector / GHL form widget -->
     <link rel="dns-prefetch" href="https://link.msgsndr.com" />
     <link rel="dns-prefetch" href="https://api.leadconnectorhq.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+    <!-- Non-blocking font load: media=print trick defers render-blocking CSS until after paint -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" /></noscript>
   </head>
 
   <body>

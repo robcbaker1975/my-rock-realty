@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, DollarSign, TrendingDown, Lightbulb } from "lucide-react";
 
-const BUYERS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/buyers-section-2eFQTo7zcHuJbWGubrh3KM.webp";
+const BUYERS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/buyers-section-optimized_2f77a921.webp";
 
 const benefits = [
   {

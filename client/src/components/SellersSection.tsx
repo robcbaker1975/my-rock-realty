@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, BarChart3, Megaphone, Handshake } from "lucide-react";
 
-const SELLERS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/sellers-section-fnwPTJUizC3f5ESwH6gvsF.webp";
+const SELLERS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/sellers-section-optimized_24e6600a.webp";
 
 const strategies = [
   {
