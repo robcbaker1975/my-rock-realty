@@ -32,7 +32,7 @@ import {
 import LeadForm from "@/components/LeadForm";
 
 const LOGO_URL =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/logo_c4d99dfc.png";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/logo-256-q90_82c472ae.webp";
 const HEADSHOT_URL =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/rob-headshot_a6a8b976.jpg";
 

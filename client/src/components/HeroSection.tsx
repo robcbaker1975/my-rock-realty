@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/hero-bg-dyEKuHhWXn8eKxpjETtCvy.webp";
+const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/hero-bg-1440-q70_ba90119e.webp";
 const HEADSHOT_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/rob-headshot_a6a8b976.jpg";
 
 export default function HeroSection() {
@@ -22,8 +22,8 @@ export default function HeroSection() {
           src={HERO_BG}
           alt="Colorado Front Range mountains at golden hour"
           className="w-full h-full object-cover object-[55%_40%] sm:object-[50%_45%] md:object-center"
-          width="1600"
-          height="900"
+          width="1440"
+          height="611"
           fetchPriority="high"
           decoding="async"
         />

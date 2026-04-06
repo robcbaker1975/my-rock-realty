@@ -13,7 +13,7 @@ import SeoHead from "@/components/seo/SeoHead";
 import { ExternalLink } from "lucide-react";
 import LeadForm from "@/components/LeadForm";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/logo_c4d99dfc.png";
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/logo-256-q90_82c472ae.webp";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 18 },

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/logo_c4d99dfc.png";
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/logo-256-q90_82c472ae.webp";
 
 // Military & PCS spoke links for footer discoverability
 const militaryLinks = [
