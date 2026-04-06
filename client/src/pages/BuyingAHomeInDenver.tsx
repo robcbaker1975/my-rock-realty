@@ -67,7 +67,7 @@ export default function BuyingAHomeInDenver() {
   useEffect(() => { setHydrated(true); }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-cream">
+    <div className="hub-page min-h-screen flex flex-col bg-cream">
       <SeoHead
         metadata={{
           title:
@@ -235,7 +235,7 @@ export default function BuyingAHomeInDenver() {
       </section>
 
       {/* ─── SearchForm Widget Section ─── */}
-      <section className="py-14 sm:py-18 bg-charcoal min-h-[280px]">
+      <section className="py-14 sm:py-18 bg-charcoal">
         <div className="container max-w-2xl">
           <h2
             className="text-2xl sm:text-3xl font-bold text-cream mb-4"
@@ -327,7 +327,7 @@ export default function BuyingAHomeInDenver() {
       </section>
 
       {/* ─── MarketStats Widget Section ─── */}
-      <section className="py-14 sm:py-18 bg-charcoal min-h-[280px]">
+      <section className="py-14 sm:py-18 bg-charcoal">
         <div className="container max-w-2xl">
           <h2
             className="text-2xl sm:text-3xl font-bold text-cream mb-4"
@@ -530,7 +530,7 @@ export default function BuyingAHomeInDenver() {
       </section>
 
       {/* ─── FeaturedGallery Widget Section ─── */}
-      <section className="py-14 sm:py-18 bg-charcoal min-h-[280px]">
+      <section className="py-14 sm:py-18 bg-charcoal">
         <div className="container max-w-2xl">
           <h2
             className="text-2xl sm:text-3xl font-bold text-cream mb-4"
