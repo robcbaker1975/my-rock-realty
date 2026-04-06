@@ -98,11 +98,11 @@ export default function BuyingAHomeInDenver() {
           fetchPriority="high"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/95 to-charcoal/85" />
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal/90 via-charcoal/70 to-charcoal/40" />
         <div className="container relative z-10 py-16 sm:py-20 md:py-24">
           <div className="max-w-2xl">
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-cream mb-6 leading-tight"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               Buying a Home in Denver: What Gets Harder, What Helps, and How to Start Smart
@@ -237,6 +237,12 @@ export default function BuyingAHomeInDenver() {
       {/* ─── SearchForm Widget Section ─── */}
       <section className="py-14 sm:py-18 bg-charcoal">
         <div className="container max-w-2xl">
+          <h2
+            className="text-2xl sm:text-3xl font-bold text-cream mb-4"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            Search Denver homes
+          </h2>
           <p
             className="text-cream/80 mb-6 leading-relaxed text-base"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -323,6 +329,12 @@ export default function BuyingAHomeInDenver() {
       {/* ─── MarketStats Widget Section ─── */}
       <section className="py-14 sm:py-18 bg-charcoal">
         <div className="container max-w-2xl">
+          <h2
+            className="text-2xl sm:text-3xl font-bold text-cream mb-4"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            Denver market snapshot
+          </h2>
           <p
             className="text-cream/80 mb-6 leading-relaxed text-base"
             style={{ fontFamily: "'Outfit', sans-serif" }}
