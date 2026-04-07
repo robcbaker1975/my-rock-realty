@@ -67,8 +67,9 @@
     <div id="root"></div>
 
     <!-- LeadConnector Workshop Popup Form -->
+    <!-- src deferred to first interaction to prevent eager reCAPTCHA load -->
     <iframe
-      src="https://api.leadconnectorhq.com/widget/form/sD4hCHIgZtHikPcqCh1z"
+      data-src="https://api.leadconnectorhq.com/widget/form/sD4hCHIgZtHikPcqCh1z"
       style="display:none;width:100%;height:100%;border:none;border-radius:3px;position:fixed;top:0;left:0;z-index:9999"
       id="popup-sD4hCHIgZtHikPcqCh1z"
       data-layout="{'id':'POPUP'}"
@@ -85,6 +86,22 @@
       title="Colorado Homebuying Workshop">
     </iframe>
     <script defer src="https://link.msgsndr.com/js/form_embed.js"></script>
+    <script>
+      (function() {
+        var loaded = false;
+        function loadLC() {
+          if (loaded) return;
+          loaded = true;
+          var iframe = document.getElementById('popup-sD4hCHIgZtHikPcqCh1z');
+          if (iframe && iframe.dataset.src) {
+            iframe.src = iframe.dataset.src;
+          }
+        }
+        ['click','scroll','mousemove','touchstart'].forEach(function(evt) {
+          document.addEventListener(evt, loadLC, { once: true, passive: true });
+        });
+      })();
+    </script>
 
     <script type="module" src="/src/main.tsx"></script>
   </body>
