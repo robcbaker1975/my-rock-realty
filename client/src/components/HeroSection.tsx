@@ -12,6 +12,7 @@ export default function HeroSection() {
 
   return (
     <section
+      id="hero"
       className="relative bg-cover bg-center bg-no-repeat overflow-hidden"
       style={{
         backgroundImage: `url('${HERO_BG}')`,
