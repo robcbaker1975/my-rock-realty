@@ -12,6 +12,7 @@ import { motion, type Variants } from "framer-motion";
 import SeoHead from "@/components/seo/SeoHead";
 import { ExternalLink } from "lucide-react";
 import LeadForm from "@/components/LeadForm";
+import Navbar from "@/components/Navbar";
 
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/logo-256-q90_82c472ae.webp";
 
@@ -32,6 +33,7 @@ export default function AgentPartner() {
   return (
     <div className="hub-page min-h-screen flex flex-col bg-cream font-body">
       {/* ─── SEO: noindex, nofollow ─── */}
+      <Navbar compact />
       <SeoHead
         metadata={{
           title: "Colorado Agent Partnership | My Rock Realty",

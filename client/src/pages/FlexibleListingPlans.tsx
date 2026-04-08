@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import SeoHead from "@/components/seo/SeoHead";
 import LeadForm from "@/components/LeadForm";
 import {
+import Navbar from "@/components/Navbar";
   ArrowLeft,
   CheckCircle2,
   ChevronDown,
@@ -151,6 +152,7 @@ export default function FlexibleListingPlans() {
 
   return (
     <div className="hub-page min-h-screen flex flex-col bg-warm-white">
+      <Navbar compact />
       <SeoHead
         metadata={{
           title: "Flexible Listing Plans for Colorado Sellers | My Rock Realty",

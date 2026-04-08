@@ -7,10 +7,12 @@
 
 import SeoHead from "@/components/seo/SeoHead";
 import { ArrowLeft, Phone, Mail } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 export default function Accessibility() {
   return (
     <div className="hub-page min-h-screen bg-warm-white">
+      <Navbar compact />
       <SeoHead
         metadata={{
           title: "Accessibility Statement | My Rock Realty",

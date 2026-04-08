@@ -7,12 +7,14 @@
 import SeoHead from "@/components/seo/SeoHead";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
+import Navbar from "@/components/Navbar";
 
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/logo-256-q90_82c472ae.webp";
 
 export default function Terms() {
   return (
     <div className="min-h-screen bg-warm-white">
+      <Navbar compact />
       <SeoHead
         metadata={{
           title: "Terms & Conditions | My Rock Realty",
