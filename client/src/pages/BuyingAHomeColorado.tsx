@@ -9,7 +9,6 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
-import LeadForm from "@/components/LeadForm";
 
 const CHARCOAL = "#292524";
 const DEEP_CHARCOAL = "#1a1714";
@@ -365,10 +364,48 @@ export default function BuyingAHomeColorado() {
         </div>
       </section>
 
-      {/* ── CONTACT / LEAD FORM ─────────────────────────────────────── */}
-      <div id="contact-rob">
-        <LeadForm variant="buyer" source="buying-a-home-colorado" dark={true} />
-      </div>
+      {/* ── CONTACT CTA ─────────────────────────────────────────────── */}
+      {/* LeadForm removed: SSR-unsafe (trpc hook triggers getServerSnapshot failure). */}
+      {/* Replaced with prerender-safe static CTA block. LeadForm can be re-added client-side in a later pass. */}
+      <section id="contact-rob" style={{ background: DEEP_CHARCOAL }} className="py-20 sm:py-28">
+        <div className="max-w-3xl mx-auto px-8">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: GOLD }}>
+            Get in Touch
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold mb-6"
+            style={{ color: "#fff", fontFamily: "Outfit, sans-serif" }}
+          >
+            Ready to start your Colorado home search?
+          </h2>
+          <p className="text-lg mb-10" style={{ color: "rgba(255,255,255,0.85)", lineHeight: 1.75 }}>
+            Call, text, or send a message. I will help you slow things down, get clear, and make a smarter decision from the start.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
+            <a
+              href="https://myrockhomes.com/contact"
+              className="inline-block px-7 py-4 font-semibold text-base rounded-sm transition-opacity hover:opacity-90"
+              style={{ background: GOLD, color: DEEP_CHARCOAL, fontFamily: "Outfit, sans-serif" }}
+            >
+              Download the Needs, Wants, and Dreams Worksheet
+            </a>
+            <a
+              href="/colorado-home-buying-workshop"
+              className="inline-block px-7 py-4 font-semibold text-base rounded-sm border transition-opacity hover:opacity-90"
+              style={{ borderColor: GOLD, color: GOLD, fontFamily: "Outfit, sans-serif" }}
+            >
+              Sign Up for the Workshop
+            </a>
+            <a
+              href="/listing-results"
+              className="inline-block px-7 py-4 font-semibold text-base rounded-sm border transition-opacity hover:opacity-90"
+              style={{ borderColor: "rgba(255,255,255,0.4)", color: "rgba(255,255,255,0.7)", fontFamily: "Outfit, sans-serif" }}
+            >
+              Search Homes
+            </a>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
