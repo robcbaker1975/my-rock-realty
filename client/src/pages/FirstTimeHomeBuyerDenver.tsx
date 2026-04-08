@@ -10,6 +10,7 @@ import LeadForm from "@/components/LeadForm";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
+import Navbar from "@/components/Navbar";
 import {
   ArrowRight,
   Home,
@@ -99,6 +100,7 @@ export default function FirstTimeHomeBuyerDenver() {
 
   return (
     <div className="hub-page min-h-screen flex flex-col bg-cream">
+      <Navbar />
       <SeoHead
         metadata={{
           title: "First-Time Home Buyer Denver | Denver First-Time Buyer Guide",

@@ -8,6 +8,7 @@
 import { useEffect } from "react";
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import Navbar from "@/components/Navbar";
 
 const CHARCOAL = "#292524";
 const DEEP_CHARCOAL = "#1a1714";
@@ -36,6 +37,8 @@ export default function BuyingAHomeColorado() {
         }}
         schema={[]}
       />
+
+      <Navbar />
 
       {/* ── 1. HERO SECTION ─────────────────────────────────────────── */}
       <section

@@ -9,6 +9,7 @@ import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
+import Navbar from "@/components/Navbar";
 import {
   ArrowRight,
   Home,
@@ -85,6 +86,7 @@ export default function RelocatingToDenverColorado() {
 
   return (
     <div className="hub-page min-h-screen flex flex-col bg-cream">
+      <Navbar />
       <SeoHead
         metadata={{
           title: "Relocating to Denver Colorado | Denver Relocation Guide",

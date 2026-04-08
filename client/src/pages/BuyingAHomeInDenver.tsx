@@ -12,6 +12,7 @@ import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { ChevronDown } from "lucide-react";
 import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
+import Navbar from "@/components/Navbar";
 
 const HERO_BG =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/denver-rowhouses-hero_2f59d4ac.jpg";
@@ -68,6 +69,7 @@ export default function BuyingAHomeInDenver() {
 
   return (
     <div className="hub-page min-h-screen flex flex-col bg-cream">
+      <Navbar />
       <SeoHead
         metadata={{
           title:
