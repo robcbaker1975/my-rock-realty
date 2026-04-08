@@ -8,7 +8,7 @@
 
 import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
-import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import Navbar from "@/components/Navbar";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
 import {
@@ -82,6 +82,7 @@ export default function CherryCreekDenverBuyerGuide() {
 
   return (
     <div className="hub-page min-h-screen flex flex-col bg-cream">
+      <Navbar compact />
       <SeoHead
         metadata={{
           title: "Cherry Creek Denver Buyer Guide | Cherry Creek Home Search",
@@ -93,15 +94,8 @@ export default function CherryCreekDenverBuyerGuide() {
         schema={faqSchema ? [faqSchema] : []}
       />
 
-      {/* BREADCRUMBS */}
-      <div className="bg-charcoal">
-        <div className="container py-3">
-          <Breadcrumbs items={breadcrumbItems} />
-        </div>
-      </div>
-
       {/* 1. HERO */}
-      <section className="relative bg-charcoal overflow-hidden">
+      <section className="relative bg-charcoal overflow-hidden pt-[72px]">
         <img
           src={HERO_BG}
           alt="Residential street in Cherry Creek Denver"
