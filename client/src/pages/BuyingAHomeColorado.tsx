@@ -40,10 +40,22 @@ export default function BuyingAHomeColorado() {
       {/* ── 1. HERO SECTION ─────────────────────────────────────────── */}
       <section
         id="hero"
-        style={{ background: DEEP_CHARCOAL }}
-        className="pt-40 sm:pt-44 md:pt-52 pb-20 sm:pb-28"
+        className="relative bg-charcoal overflow-hidden pt-40 sm:pt-44 md:pt-52 pb-20 sm:pb-28"
       >
-        <div className="max-w-3xl mx-auto px-8">
+        {/* Mountain road background image */}
+        <img
+          src="/colorado-mountain-road-hero.webp"
+          alt="Colorado mountain road with snow-capped peaks"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          width="1600"
+          height="900"
+          fetchPriority="high"
+          decoding="async"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40" />
+        {/* Content container */}
+        <div className="relative max-w-3xl mx-auto px-8">
           <div className="mb-6">
             <Breadcrumbs items={breadcrumbItems} />
           </div>
