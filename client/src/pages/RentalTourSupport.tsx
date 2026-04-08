@@ -7,7 +7,7 @@
  */
 import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
-import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import Navbar from "@/components/Navbar";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
 import {
@@ -215,6 +215,7 @@ export default function RentalTourSupport() {
 
   return (
     <div className="min-h-screen bg-cream" style={{ fontFamily: "'Libre Franklin', sans-serif" }}>
+      <Navbar compact />
       <SeoHead
         metadata={{
           title: "Rental Tour Support | Find the Right Rental in Colorado | My Rock Realty",
@@ -225,16 +226,9 @@ export default function RentalTourSupport() {
         schema={[faqSchema]}
       />
 
-      {/* ─── Breadcrumbs ─── */}
-      <div className="bg-charcoal/95 border-b border-white/5">
-        <div className="container py-3">
-          <Breadcrumbs items={breadcrumbItems} />
-        </div>
-      </div>
-
       {/* ─── Hero ─── */}
       <section
-        className="relative py-16 sm:py-24 md:py-32 bg-charcoal overflow-hidden"
+        className="relative py-16 sm:py-24 md:py-32 bg-charcoal overflow-hidden pt-[72px]"
         style={{
           backgroundImage: `url(${HERO_BG})`,
           backgroundSize: "cover",
