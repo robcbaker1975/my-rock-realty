@@ -1,125 +1,44 @@
 import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, Users, Calendar, CheckCircle } from "lucide-react";
-
-const WORKSHOP_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/workshop-section-Yp8jnnKmpb9X4Au9XRWi4s.webp";
-
-const takeaways = [
-  "Understand national, state, and local home buying programs",
-  "Learn how to reduce out-of-pocket costs and better understand financing options",
-  "Get clarity on the buying process from start to close",
-  "Ask questions directly to a licensed real estate professional",
-];
+import { ArrowRight } from "lucide-react";
 
 export default function WorkshopSection() {
+  const navigate = (path: string) => { window.location.href = path; };
+
   return (
-    <section id="workshop" className="py-12 sm:py-20 md:py-28 bg-charcoal overflow-hidden">
-      <div className="container">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <span
-              className="text-gold text-sm font-semibold tracking-widest uppercase mb-3 block"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Weekly Workshop
-            </span>
-            <h2
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-4 sm:mb-5"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Colorado Home Buying{" "}
-              <span className="text-gold">Workshop</span>
-            </h2>
-            <p className="text-cream/70 text-[15px] sm:text-lg leading-relaxed mb-5 sm:mb-6">
-              Every week, Rob hosts a free workshop helping Colorado buyers and homeowners explore programs, reduce upfront costs, and build a clear path forward. No pressure — just real information from a real professional.
+    <section className="relative bg-charcoal py-20 sm:py-28 md:py-32">
+      <div className="container mx-auto w-full max-w-4xl px-6 sm:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
+            Colorado Home Buying Workshop
+          </h2>
+          
+          <div className="space-y-6 max-w-2xl mb-8">
+            <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
+              A lot of buyers are not ready to jump into private showings or serious one-on-one conversations yet. That's natural.
             </p>
+            
+            <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
+              Sometimes the better first step is just getting clear on how the process works, what programs may help, how much cash you may actually need, and what mistakes to avoid before things get serious.
+            </p>
+            
+            <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
+              That is why I host a Colorado home buying workshop. It is practical, low pressure, and built to help people feel more informed before they make a big move.
+            </p>
+          </div>
 
-            {/* Takeaways */}
-            <div className="space-y-2.5 mb-6 sm:mb-8">
-              {takeaways.map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="flex items-start gap-3"
-                >
-                  <CheckCircle size={18} className="text-gold mt-0.5 shrink-0" />
-                  <span className="text-cream/80 text-sm leading-relaxed">{item}</span>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Stats */}
-            <div className="flex flex-wrap gap-4 sm:gap-8 mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-white/10">
-              <div className="flex items-center gap-2 text-cream/60">
-                <Calendar size={16} className="text-gold" />
-                <span className="text-sm">Weekly Sessions</span>
-              </div>
-              <div className="flex items-center gap-2 text-cream/60">
-                <Users size={16} className="text-gold" />
-                <span className="text-sm">Open to All Buyers</span>
-              </div>
-              <div className="flex items-center gap-2 text-cream/60">
-                <BookOpen size={16} className="text-gold" />
-                <span className="text-sm">Free to Attend</span>
-              </div>
-            </div>
-
-            {/* Homepage CTA → navigates to workshop page */}
-            <a
-              href="/colorado-home-buying-workshop"
-              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 border border-cream/25 text-cream/80 font-medium rounded-lg sm:rounded transition-all hover:border-gold/50 hover:text-gold active:bg-white/5 text-[15px] sm:text-base"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Learn More About the Workshop
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </a>
-          </motion.div>
-
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
+          <button
+            onClick={() => navigate("/colorado-home-buying-workshop")}
+            className="group inline-flex items-center gap-2.5 px-6 py-3 text-gold font-semibold text-base transition-colors hover:text-gold-light"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            <div className="relative rounded overflow-hidden shadow-2xl">
-              <img
-                src={WORKSHOP_IMG}
-                alt="Professional workshop setting with mountain views"
-                className="w-full h-auto object-cover aspect-[4/3]"
-                width="800"
-                height="600"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/30 to-transparent" />
-            </div>
-            {/* Floating card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="absolute -bottom-6 -left-4 md:-left-8 bg-white rounded shadow-xl p-5 max-w-[260px]"
-            >
-              <p className="text-charcoal font-semibold text-sm mb-1" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                MyRockHomes.com/colorado-home-buying-workshop
-              </p>
-              <p className="text-charcoal-light/60 text-xs leading-relaxed">
-                Free weekly sessions for Colorado home buyers
-              </p>
-            </motion.div>
-          </motion.div>
-        </div>
+            Reserve My Spot
+            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+          </button>
+        </motion.div>
       </div>
     </section>
   );

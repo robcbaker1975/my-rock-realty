@@ -18,11 +18,7 @@ import TrustSection from "@/components/TrustSection";
 import BuyersSection from "@/components/BuyersSection";
 import SellersSection from "@/components/SellersSection";
 import RelocationsSection from "@/components/RelocationsSection";
-import TrustProofSection from "@/components/TrustProofSection";
 import WorkshopSection from "@/components/WorkshopSection";
-import AdditionalServicesSection from "@/components/AdditionalServicesSection";
-import FeaturedListingPromo from "@/components/FeaturedListingPromo";
-import HomeTestimonialsSection from "@/components/HomeTestimonialsSection";
 import AboutSection from "@/components/AboutSection";
 import ProcessSection from "@/components/ProcessSection";
 import ContactSection from "@/components/ContactSection";
@@ -83,28 +79,19 @@ export default function Home() {
       <main>
         {/* ── PRIMARY PATHS ── */}
         <HeroSection />
-        <TrustSection />
         <BuyersSection />
         <SellersSection />
-        {/* Rental / Tour Support — includes PCS/Military mention, links to /rental-tour-support/ */}
+        {/* Moving to Colorado */}
         <RelocationsSection />
 
-        {/* ── TRUST / PROOF — inserted below path-selection, above secondary content ── */}
-        <TrustProofSection />
+        {/* Why People Work With Me */}
+        <TrustSection />
 
-        {/* ── SECONDARY TRUST / EDUCATION ── */}
+        {/* Colorado Home Buying Workshop */}
         <WorkshopSection />
 
-        {/* ── COMPACT SECONDARY OFFERS ── */}
-        <AdditionalServicesSection />
-
-        {/* ── FEATURED LISTING PROMO ── */}
-        <FeaturedListingPromo />
-
-        {/* ── PROOF + CREDIBILITY ── */}
-        <HomeTestimonialsSection />
+        {/* About Rob */}
         <AboutSection />
-        <ProcessSection />
 
         {/* ── CONVERSION ── */}
         <ContactSection />

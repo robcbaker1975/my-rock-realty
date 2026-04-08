@@ -1,121 +1,52 @@
 import { motion } from "framer-motion";
-import { ArrowRight, DollarSign, TrendingDown, Lightbulb } from "lucide-react";
-
-const BUYERS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/buyers-section-optimized_2f77a921.webp";
-
-const benefits = [
-  {
-    icon: DollarSign,
-    title: "Reduce Out-of-Pocket Costs",
-    text: "Uncover national, state, and local programs that can lower your down payment and closing costs.",
-  },
-  {
-    icon: TrendingDown,
-    title: "Improve Your Buying Power",
-    text: "Strategic financing guidance to help you explore more options — or save more on what you buy.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Make Smarter Decisions",
-    text: "Education-first approach so you understand every step, every option, and every opportunity.",
-  },
-];
+import { ArrowRight } from "lucide-react";
 
 export default function BuyersSection() {
-  const scrollTo = (id: string) => {
-    const el = document.querySelector(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
+  const navigate = (path: string) => { window.location.href = path; };
 
   return (
-    <section id="buyers" className="py-12 sm:py-20 md:py-28 bg-charcoal overflow-hidden">
-      <div className="container">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative order-2 lg:order-1"
-          >
-            <div className="relative rounded overflow-hidden shadow-2xl">
-              <img
-                src={BUYERS_IMG}
-                alt="Beautiful Colorado mountain home at dusk"
-                className="w-full h-auto object-cover aspect-[4/3]"
-                width="800"
-                height="600"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/30 to-transparent" />
-            </div>
-            {/* Accent border */}
-            <div className="absolute -bottom-3 -right-3 w-full h-full border border-gold/20 rounded -z-10" />
-          </motion.div>
-
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="order-1 lg:order-2"
-          >
-            <span
-              className="text-gold text-sm font-semibold tracking-widest uppercase mb-3 block"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              For Buyers
-            </span>
-            <h2
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-4 sm:mb-5"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Navigate Home Buying Programs &{" "}
-              <span className="text-gold">Smart Financing</span>
-            </h2>
-            <p className="text-cream/70 text-[15px] sm:text-lg leading-relaxed mb-5 sm:mb-8">
-              Rob helps buyers uncover programs and financing strategies most agents overlook — reducing costs, improving terms, and building a stronger path to homeownership.
+    <section className="relative bg-charcoal py-20 sm:py-28 md:py-32">
+      <div className="container mx-auto w-full max-w-4xl px-6 sm:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
+            Buying a Home
+          </h2>
+          
+          <div className="space-y-6 max-w-2xl mb-8">
+            <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
+              A lot of buyers think the biggest challenge is finding the right house. Usually that is not the biggest challenge. Usually it is everything around it.
             </p>
+            
+            <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
+              How much you can comfortably afford. What the payment really looks like once everything is included. Whether a grant or assistance program actually helps. Whether seller concessions could make the deal easier. Whether the lender is helping the strategy or quietly limiting it. Whether the offer is strong enough for the moment without putting you in a bad spot later.
+            </p>
+            
+            <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
+              That is where people get stuck.
+            </p>
+            
+            <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
+              I help buyers think through that part before the pressure kicks in. That matters. A lot of agents can get you into the house. That is not the same thing as helping you make a smart move once you are there.
+            </p>
+            
+            <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
+              If you want help thinking through the numbers, the pressure points, and the parts most people do not explain very well, I can help with that.
+            </p>
+          </div>
 
-            <div className="space-y-4 mb-6 sm:mb-8">
-              {benefits.map((b, i) => (
-                <motion.div
-                  key={b.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="flex gap-4"
-                >
-                  <div className="w-10 h-10 rounded flex items-center justify-center bg-gold/10 text-gold shrink-0 mt-0.5">
-                    <b.icon size={20} />
-                  </div>
-                  <div>
-                    <h3
-                      className="text-white font-semibold mb-1 text-base"
-                      style={{ fontFamily: "'Outfit', sans-serif" }}
-                    >
-                      {b.title}
-                    </h3>
-                    <p className="text-cream/60 text-sm leading-relaxed">{b.text}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            <button
-              onClick={() => scrollTo("#contact")}
-              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 bg-gold text-charcoal font-semibold rounded-lg sm:rounded transition-all hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Ask About Buyer Programs
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </button>
-          </motion.div>
-        </div>
+          <button
+            onClick={() => navigate("/buying-a-home-in-denver")}
+            className="group inline-flex items-center gap-2.5 px-6 py-3 text-gold font-semibold text-base transition-colors hover:text-gold-light"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            Help Me Buy Smarter
+            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+          </button>
+        </motion.div>
       </div>
     </section>
   );
