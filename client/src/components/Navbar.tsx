@@ -121,8 +121,8 @@ function MarketsDropdown({ textClass }: { textClass: string }) {
   );
 }
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+export default function Navbar({ compact = false }: { compact?: boolean }) {
+  const [scrolled, setScrolled] = useState(compact);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [marketsExpanded, setMarketsExpanded] = useState(false);
   const [portalTarget, setPortalTarget] = useState<Element | null>(null);
@@ -131,7 +131,7 @@ export default function Navbar() {
   useEffect(() => { setPortalTarget(document.body); }, []);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60);
+    const handleScroll = () => setScrolled(compact || window.scrollY > 60);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -312,7 +312,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
             ? "bg-charcoal/95 backdrop-blur-md shadow-lg"
-            : "bg-transparent"
+            : compact ? "bg-charcoal/95 backdrop-blur-md shadow-lg" : "bg-transparent"
         }`}
       >
         {/* === SCROLLED (compact): logo left + nav right === */}

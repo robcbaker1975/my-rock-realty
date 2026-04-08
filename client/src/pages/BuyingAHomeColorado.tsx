@@ -38,12 +38,12 @@ export default function BuyingAHomeColorado() {
         schema={[]}
       />
 
-      <Navbar />
+      <Navbar compact />
 
       {/* ── 1. HERO SECTION ─────────────────────────────────────────── */}
       <section
         id="hero"
-        className="relative bg-charcoal overflow-hidden pt-40 sm:pt-44 md:pt-52 pb-20 sm:pb-28"
+        className="relative bg-charcoal overflow-hidden pt-[72px] pb-20 sm:pb-28"
       >
         {/* Mountain road background image */}
         <img

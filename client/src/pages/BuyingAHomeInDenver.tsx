@@ -69,7 +69,7 @@ export default function BuyingAHomeInDenver() {
 
   return (
     <div className="hub-page min-h-screen flex flex-col bg-cream">
-      <Navbar />
+      <Navbar compact />
       <SeoHead
         metadata={{
           title:
@@ -83,7 +83,7 @@ export default function BuyingAHomeInDenver() {
       />
 
       {/* ─── HERO ─── */}
-      <section className="relative bg-charcoal overflow-hidden">
+      <section className="relative bg-charcoal overflow-hidden pt-[72px]">
         <img
           src={HERO_BG}
           alt="Denver residential street with row houses"

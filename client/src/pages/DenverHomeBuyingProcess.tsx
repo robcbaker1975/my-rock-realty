@@ -100,7 +100,7 @@ export default function DenverHomeBuyingProcess() {
 
   return (
     <div className="hub-page min-h-screen flex flex-col bg-cream">
-      <Navbar />
+      <Navbar compact />
       <SeoHead
         metadata={{
           title: "Denver Home Buying Process | Steps to Buy a Home in Denver",
@@ -113,7 +113,7 @@ export default function DenverHomeBuyingProcess() {
       />
 
       {/* 1. HERO */}
-      <section className="relative bg-charcoal overflow-hidden">
+      <section className="relative bg-charcoal overflow-hidden pt-[72px]">
         {/* Hero Background Image */}
         <img
           src={DENVER_HERO_BG}
