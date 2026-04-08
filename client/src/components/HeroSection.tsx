@@ -25,7 +25,7 @@ export default function HeroSection() {
       <div className="absolute top-0 left-0 right-0 h-1 bg-gold z-10" />
 
       {/* Content */}
-      <div className="relative container mx-auto w-full max-w-4xl px-6 sm:px-8 pt-32 sm:pt-36 md:pt-44 pb-20 sm:pb-28 md:pb-36 z-20">
+      <div className="relative container mx-auto w-full max-w-4xl px-6 sm:px-8 pt-40 sm:pt-44 md:pt-52 pb-20 sm:pb-28 md:pb-36 z-20">
         {/* Tagline — desktop without dash, mobile with dash */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
