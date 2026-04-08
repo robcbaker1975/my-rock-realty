@@ -11,11 +11,11 @@ import { motion } from "framer-motion";
 import SeoHead from "@/components/seo/SeoHead";
 import LeadForm from "@/components/LeadForm";
 import {
-import Navbar from "@/components/Navbar";
   ArrowLeft,
   CheckCircle2,
   ChevronDown,
 } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/logo-256-q90_82c472ae.webp";
 
