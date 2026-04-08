@@ -270,7 +270,7 @@ export default function DenverCondosForSale() {
           4. What to Know Before Buying a Condo
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -310,7 +310,7 @@ export default function DenverCondosForSale() {
           5. Denver Condo Market Considerations
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -344,7 +344,7 @@ export default function DenverCondosForSale() {
           7. Denver Condo Buyer Resources
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -382,7 +382,7 @@ export default function DenverCondosForSale() {
           8. Denver Condo FAQs
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
