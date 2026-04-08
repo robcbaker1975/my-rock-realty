@@ -74,7 +74,7 @@ export default function HeroSection() {
           style={{ fontFamily: "'Libre Franklin', sans-serif" }}
         >
           <p className="text-lg sm:text-xl text-white/80 leading-relaxed mb-5">
-            A lot of people do not need more real estate talk. They need someone who can help them slow things down, think clearly, and keep them from making expensive decisions under pressure.
+            People do not need more real estate talk. They need someone who can help them slow things down, think clearly, and keep them from making expensive decisions under pressure.
           </p>
           <p className="text-lg sm:text-xl text-white font-semibold mb-5">
             That is what I do.

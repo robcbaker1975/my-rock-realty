@@ -31,7 +31,7 @@ export default function TrustSection() {
             className="text-3xl sm:text-4xl font-bold text-white mb-8 leading-tight"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            A lot of people want something pretty simple.
+            Most people want the same few things.
           </h2>
 
           <div className="space-y-5 max-w-2xl mb-9">
@@ -39,7 +39,7 @@ export default function TrustSection() {
               They want direct advice from someone who knows what they are doing. They want someone who will tell them the truth. And they want a process that feels steady instead of sloppy.
             </p>
             <p className="text-lg sm:text-xl text-white/75 leading-relaxed">
-              That is what I try to deliver. You get practical advice, honest answers, and help thinking through the decision instead of just being pushed toward one. You also get the benefit of solid people involved where they matter, so the process has support without feeling impersonal.
+              That is what I am aiming for. You get practical advice, honest answers, and help thinking through the decision instead of just being pushed toward one. You also get the benefit of the right people involved at the right points, so the process has real support without feeling impersonal.
             </p>
             <p className="text-lg sm:text-xl text-white/75 leading-relaxed">
               I do not think people need more hype. I think people need someone useful.
@@ -51,7 +51,7 @@ export default function TrustSection() {
             className="group inline-flex items-center gap-2.5 px-0 py-1 text-gold font-semibold text-base border-b border-gold/40 transition-colors hover:border-gold"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            See How I Can Help
+            Talk With Rob
             <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
           </button>
         </motion.div>

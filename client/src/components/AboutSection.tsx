@@ -26,11 +26,11 @@ export default function AboutSection() {
             </p>
             
             <p className="text-lg sm:text-xl text-white/75 leading-relaxed">
-              What I took from that is simple. A lot of people are making major decisions with far less real help than they should have.
+              What that showed me is pretty simple. Too many people are making major decisions without enough real help.
             </p>
             
             <p className="text-lg sm:text-xl text-white/75 leading-relaxed">
-              So I built this site to be a clearer, more useful place to start. That means helping people understand what they are doing, what could trip them up, and what the smarter move looks like before they are deep into the process.
+              So I built this site around the way I actually work with clients: clear thinking, honest answers, and practical help before the pressure starts doing the thinking for them.
             </p>
           </div>
         </motion.div>

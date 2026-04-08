@@ -25,7 +25,7 @@ export default function WorkshopSection() {
             className="text-3xl sm:text-4xl font-bold text-[#292524] mb-8 leading-tight"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            A lot of buyers are not ready to jump into private showings yet.
+            Many buyers are not ready to jump into private showings or serious one-on-one conversations yet.
           </h2>
 
           <div className="space-y-5 max-w-2xl mb-9">

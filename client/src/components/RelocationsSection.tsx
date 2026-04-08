@@ -36,10 +36,10 @@ export default function RelocationsSection() {
               You need to know what areas may make sense, what your payment may realistically look like, what kind of pace you may be walking into, and what to do first so the move does not feel like ten moving parts all hitting at once.
             </p>
             <p className="text-lg sm:text-xl text-[#292524]/75 leading-relaxed">
-              That is usually where we start.
+              That is usually the first thing to sort out.
             </p>
             <p className="text-lg sm:text-xl text-[#292524]/75 leading-relaxed">
-              I help relocation clients sort through the questions that matter early, so the move feels more organized, more informed, and a lot less reactive.
+              I help relocation clients sort through the questions that matter early, so the move feels more organized, more informed, and much less reactive.
             </p>
           </div>
 

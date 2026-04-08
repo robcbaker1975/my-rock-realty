@@ -28,7 +28,7 @@ export default function SellersSection() {
             className="text-3xl sm:text-4xl font-bold text-white mb-8 leading-tight"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            A lot of sellers are given very surface-level advice.
+            Some of the most expensive seller mistakes start with advice that sounds good at first.
           </h2>
 
           <div className="space-y-5 max-w-2xl mb-9">
@@ -45,7 +45,7 @@ export default function SellersSection() {
               I help sellers look at the full picture before they make a move. Where to spend. Where not to. Where to stay disciplined. Where to be flexible. What is likely to help. What is probably just noise.
             </p>
             <p className="text-lg sm:text-xl text-white/75 leading-relaxed">
-              A lot of the money is made or lost before the listing ever goes live.
+              A surprising amount of money is made or lost before the listing ever goes live.
             </p>
           </div>
 

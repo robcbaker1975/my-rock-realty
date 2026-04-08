@@ -25,7 +25,7 @@ export default function BuyersSection() {
             className="text-3xl sm:text-4xl font-bold text-[#292524] mb-8 leading-tight"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            A lot of buyers think the biggest challenge is finding the right house.
+            Most buyers think the hard part is finding the right house.
           </h2>
 
           <div className="space-y-5 max-w-2xl mb-9">
@@ -39,7 +39,7 @@ export default function BuyersSection() {
               That is where people get stuck.
             </p>
             <p className="text-lg sm:text-xl text-[#292524]/75 leading-relaxed">
-              I help buyers think through that part before the pressure kicks in. That matters. A lot of agents can get you into the house. That is not the same thing as helping you make a smart move once you are there.
+              I help buyers think through that part before the pressure kicks in. That part matters. Plenty of agents can get you into the house. That is not the same thing as helping you make a smart move once you are there.
             </p>
             <p className="text-lg sm:text-xl text-[#292524]/75 leading-relaxed">
               If you want help thinking through the numbers, the pressure points, and the parts most people do not explain very well, I can help with that.
