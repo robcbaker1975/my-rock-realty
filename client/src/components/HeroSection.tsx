@@ -23,7 +23,7 @@ export default function HeroSection() {
       />
 
       {/* Content */}
-      <div className="relative container mx-auto w-full max-w-4xl px-6 sm:px-8 pt-20 sm:pt-28 md:pt-36 pb-20 sm:pb-28 md:pb-36">
+      <div className="relative container mx-auto w-full max-w-4xl px-6 sm:px-8 pt-28 sm:pt-32 md:pt-40 pb-20 sm:pb-28 md:pb-36">
         {/* Tagline */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -45,10 +45,12 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-[3.5rem] font-bold text-white mb-8 sm:mb-10 leading-[1.1]"
+          className="text-3xl sm:text-5xl md:text-[3.5rem] font-bold text-white mb-8 sm:mb-10 leading-[1.15]"
           style={{ fontFamily: "'Outfit', sans-serif" }}
         >
-          Colorado real estate help that is clear, practical, and worth acting on.
+          <span className="block">Colorado</span>
+          <span className="block">Real Estate Help</span>
+          <span className="block">Clear, Practical, &amp; Honest</span>
         </motion.h1>
 
         {/* Opening narrative */}
