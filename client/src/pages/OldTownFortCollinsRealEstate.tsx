@@ -98,7 +98,7 @@ export default function OldTownFortCollinsRealEstate() {
         </div>
       </section>
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2 className="text-3xl sm:text-4xl font-bold text-charcoal mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
               What Old Town feels like
@@ -117,7 +117,7 @@ More tied into the middle of things.</p>
         </div>
       </section>
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2 className="text-3xl sm:text-4xl font-bold text-cream mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
               Why Old Town stays in the conversation
@@ -133,7 +133,7 @@ More tied into the middle of things.</p>
         </div>
       </section>
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2 className="text-3xl sm:text-4xl font-bold text-charcoal mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
               Who Old Town tends to fit
@@ -153,7 +153,7 @@ More tied into the middle of things.</p>
         </div>
       </section>
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2 className="text-3xl sm:text-4xl font-bold text-cream mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
               Who may not love Old Town
@@ -169,7 +169,7 @@ More tied into the middle of things.</p>
         </div>
       </section>
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2 className="text-3xl sm:text-4xl font-bold text-charcoal mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
               What the home search usually turns into
@@ -190,7 +190,7 @@ It is here because Old Town solves a more specific Fort Collins decision.</p>
         </div>
       </section>
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2 className="text-3xl sm:text-4xl font-bold text-cream mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
               The tradeoffs are the whole point
@@ -208,7 +208,7 @@ It is here because Old Town solves a more specific Fort Collins decision.</p>
         </div>
       </section>
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2 className="text-3xl sm:text-4xl font-bold text-charcoal mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
               Old Town vs the rest of Fort Collins
@@ -225,7 +225,7 @@ Old Town usually stays stronger when the buyer wants this particular version of 
         </div>
       </section>
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2 className="text-3xl sm:text-4xl font-bold text-cream mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
               What people tend to underestimate
@@ -239,7 +239,7 @@ Old Town usually stays stronger when the buyer wants this particular version of 
         </div>
       </section>
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2 className="text-3xl sm:text-4xl font-bold text-charcoal mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
               Buy now or rent first
@@ -255,7 +255,7 @@ Old Town usually stays stronger when the buyer wants this particular version of 
         </div>
       </section>
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2 className="text-3xl sm:text-4xl font-bold text-cream mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
               Final thoughts
@@ -272,7 +272,7 @@ The center.</p>
         </div>
       </section>
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2 className="text-3xl sm:text-4xl font-bold text-charcoal mb-10" style={{ fontFamily: "'Outfit', sans-serif" }}>FAQ</h2>
           </motion.div>
@@ -292,7 +292,7 @@ The center.</p>
         </div>
       </section>
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2 className="text-2xl font-bold text-cream mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>Still sorting out the right fit?</h2>
             <p className="text-lg text-cream/80 mb-8 leading-relaxed">A lot of buyers start with the house first. What usually helps more is getting clear on which place fits the way you want everyday life to work.</p>

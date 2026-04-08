@@ -133,7 +133,7 @@ export default function FortCollinsCoHomesForSale() {
       </section>
       {/* 2. Intro */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <p className="text-lg text-charcoal/80 leading-relaxed">
               Fort Collins comes up early for a lot of buyers, but staying on the list and actually fitting are not always the same thing. This page is here to help with that part. You can use it to narrow Fort Collins more clearly, understand where the tradeoffs tend to show up, and compare it with nearby options like Windsor, Timnath, Loveland, and Wellington before the search gets too broad.
@@ -143,7 +143,7 @@ export default function FortCollinsCoHomesForSale() {
       </section>
       {/* 3. What Fort Collins feels like */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -171,7 +171,7 @@ export default function FortCollinsCoHomesForSale() {
       </section>
       {/* 4. Why Fort Collins stays in the conversation */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -196,7 +196,7 @@ export default function FortCollinsCoHomesForSale() {
       </section>
       {/* 5. Who Fort Collins tends to fit */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -229,7 +229,7 @@ export default function FortCollinsCoHomesForSale() {
       </section>
       {/* 6. Who may not love Fort Collins */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -262,7 +262,7 @@ export default function FortCollinsCoHomesForSale() {
       </section>
       {/* 7. What the home search usually turns into */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -293,7 +293,7 @@ export default function FortCollinsCoHomesForSale() {
       </section>
       {/* 8. The tradeoffs */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -318,7 +318,7 @@ export default function FortCollinsCoHomesForSale() {
       </section>
       {/* 9. Fort Collins vs nearby alternatives */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -361,7 +361,7 @@ export default function FortCollinsCoHomesForSale() {
       </section>
       {/* 10. What people tend to underestimate */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -389,7 +389,7 @@ export default function FortCollinsCoHomesForSale() {
       </section>
       {/* 11. Buy now or rent first */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -420,7 +420,7 @@ export default function FortCollinsCoHomesForSale() {
       </section>
       {/* 11b. EXPLORE FORT COLLINS AREA */}
       <section className="py-16 sm:py-20 bg-cream/50">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -457,7 +457,7 @@ export default function FortCollinsCoHomesForSale() {
       </section>
       {/* 12. FAQ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-10"
@@ -506,7 +506,7 @@ export default function FortCollinsCoHomesForSale() {
       </section>
       {/* 13. Final thoughts */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -537,7 +537,7 @@ export default function FortCollinsCoHomesForSale() {
       </section>
       {/* 14. Endcap */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-2xl font-bold text-charcoal mb-4"

@@ -144,7 +144,7 @@ export default function BoulderHomesForSale() {
           2. Intro
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <p className="text-lg text-charcoal/80 leading-relaxed">
               Boulder is one of the first places many buyers look, but the harder question is whether Boulder itself fits the way they actually want to live. This page is here to help you sort that out. You can use it to narrow Boulder as a real option, understand where the tradeoffs show up, and compare it with nearby choices like Longmont, Lafayette, or University Hill before you go too far down the wrong path.
@@ -156,7 +156,7 @@ export default function BoulderHomesForSale() {
           3. What the area feels like
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -194,7 +194,7 @@ export default function BoulderHomesForSale() {
           4. Why it stays in the conversation
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -238,7 +238,7 @@ export default function BoulderHomesForSale() {
           5. Who it tends to fit
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -285,7 +285,7 @@ export default function BoulderHomesForSale() {
           6. Who may not love it
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -331,7 +331,7 @@ export default function BoulderHomesForSale() {
           7. What the home search usually turns into
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -394,7 +394,7 @@ export default function BoulderHomesForSale() {
           8. Boulder tradeoffs
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -447,7 +447,7 @@ export default function BoulderHomesForSale() {
           9. Compare nearby options
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -545,7 +545,7 @@ export default function BoulderHomesForSale() {
           10. What people tend to underestimate
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -582,7 +582,7 @@ export default function BoulderHomesForSale() {
           11. Buy now or rent first
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -630,7 +630,7 @@ export default function BoulderHomesForSale() {
           12. Boulder FAQs
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-10"
@@ -678,7 +678,7 @@ export default function BoulderHomesForSale() {
           13. Final thoughts
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -717,7 +717,7 @@ export default function BoulderHomesForSale() {
           14. Endcap — Keep Exploring Boulder Area Options
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-2xl font-bold text-charcoal mb-8"

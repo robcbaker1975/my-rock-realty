@@ -133,7 +133,7 @@ export default function MapletonHillBoulderRealEstate() {
           2. Intro
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
               A lot of buyers get to Mapleton Hill once the Boulder search stops being broad and starts getting very specific.
@@ -160,7 +160,7 @@ export default function MapletonHillBoulderRealEstate() {
           3. What the area feels like
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -190,7 +190,7 @@ export default function MapletonHillBoulderRealEstate() {
           4. Why it stays in the conversation
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -226,7 +226,7 @@ export default function MapletonHillBoulderRealEstate() {
           5. Who it tends to fit
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -262,7 +262,7 @@ export default function MapletonHillBoulderRealEstate() {
           6. Who may not love it
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -301,7 +301,7 @@ export default function MapletonHillBoulderRealEstate() {
           7. What the home search usually turns into
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -363,7 +363,7 @@ export default function MapletonHillBoulderRealEstate() {
           8. The tradeoffs are the whole point
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -399,7 +399,7 @@ export default function MapletonHillBoulderRealEstate() {
           9. Compare nearby options
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -493,7 +493,7 @@ export default function MapletonHillBoulderRealEstate() {
           10. What people tend to underestimate
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -529,7 +529,7 @@ export default function MapletonHillBoulderRealEstate() {
           11. Buy now or rent first
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -573,7 +573,7 @@ export default function MapletonHillBoulderRealEstate() {
           12. FAQ
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-10"
@@ -617,7 +617,7 @@ export default function MapletonHillBoulderRealEstate() {
           13. Final thoughts
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -647,7 +647,7 @@ export default function MapletonHillBoulderRealEstate() {
           14. Endcap — Keep Exploring Boulder Area Options
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-2xl font-bold text-charcoal mb-8"

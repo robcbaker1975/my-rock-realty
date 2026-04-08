@@ -133,7 +133,7 @@ export default function NorthBoulderNoBoRealEstate() {
           2. Intro
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <p className="text-lg text-charcoal/80 mb-5 leading-relaxed">
               A lot of buyers get to North Boulder once they already know Boulder is still in the conversation, but they are trying to sort out what kind of Boulder actually fits.
@@ -160,7 +160,7 @@ export default function NorthBoulderNoBoRealEstate() {
           3. What the area feels like
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -193,7 +193,7 @@ export default function NorthBoulderNoBoRealEstate() {
           4. Why it stays in the conversation
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -223,7 +223,7 @@ export default function NorthBoulderNoBoRealEstate() {
           5. Who it tends to fit
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -259,7 +259,7 @@ export default function NorthBoulderNoBoRealEstate() {
           6. Who may not love it
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -298,7 +298,7 @@ export default function NorthBoulderNoBoRealEstate() {
           7. What the home search usually turns into
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -356,7 +356,7 @@ export default function NorthBoulderNoBoRealEstate() {
           8. The tradeoffs are the whole point
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -392,7 +392,7 @@ export default function NorthBoulderNoBoRealEstate() {
           9. Compare nearby options
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -482,7 +482,7 @@ export default function NorthBoulderNoBoRealEstate() {
           10. What people tend to underestimate
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-8"
@@ -518,7 +518,7 @@ export default function NorthBoulderNoBoRealEstate() {
           11. Buy now or rent first
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -563,7 +563,7 @@ export default function NorthBoulderNoBoRealEstate() {
           12. FAQ
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-charcoal mb-10"
@@ -607,7 +607,7 @@ export default function NorthBoulderNoBoRealEstate() {
           13. Final thoughts
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-3xl sm:text-4xl font-bold text-cream mb-8"
@@ -637,7 +637,7 @@ export default function NorthBoulderNoBoRealEstate() {
           14. Endcap — Keep Exploring Boulder Area Options
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" variants={fadeUp}>
             <h2
               className="text-2xl font-bold text-charcoal mb-8"
