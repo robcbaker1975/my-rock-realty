@@ -9,23 +9,32 @@ export default function HomeFinalCTASection() {
   };
 
   return (
-    <section className="relative bg-charcoal py-20 sm:py-28 md:py-32">
+    <section className="relative bg-[#1a1714] py-20 sm:py-28 md:py-32">
+      {/* Gold accent bar — top */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gold/30" />
       <div className="container mx-auto w-full max-w-4xl px-6 sm:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8" style={{ fontFamily: "'Outfit', sans-serif" }}>
+          <p
+            className="text-xs font-semibold tracking-[0.18em] uppercase text-gold mb-5"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            Start Where You Are
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8 leading-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>
             Start Where You Are
           </h2>
           
-          <div className="space-y-6 max-w-2xl mb-10">
-            <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
+          <div className="space-y-5 max-w-2xl mb-10">
+            <p className="text-lg sm:text-xl text-white/75 leading-relaxed">
               You do not need to be fully ready. You do not need to know every answer. You do not need to wait until things feel urgent.
             </p>
             
-            <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
+            <p className="text-lg sm:text-xl text-white/75 leading-relaxed">
               If you are thinking about buying, selling, relocating, or just trying to figure out what makes the most sense, reach out. We will look at where you are, talk through the real options, and figure out the next step from there.
             </p>
           </div>

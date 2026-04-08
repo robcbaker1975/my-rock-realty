@@ -9,22 +9,33 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-charcoal/95 via-charcoal to-charcoal/98 py-24 sm:py-32 md:py-40">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,_white_1px,_transparent_1px)] bg-[length:40px_40px]" />
-      </div>
+    <section className="relative bg-[#1a1714] overflow-hidden">
+      {/* Gold accent bar — top edge */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gold" />
 
-      <div className="relative container mx-auto w-full max-w-4xl px-6 sm:px-8">
-        {/* Tagline Badge */}
+      {/* Subtle texture overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.4) 39px, rgba(255,255,255,0.4) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.4) 39px, rgba(255,255,255,0.4) 40px)",
+        }}
+      />
+
+      {/* Content */}
+      <div className="relative container mx-auto w-full max-w-4xl px-6 sm:px-8 pt-20 sm:pt-28 md:pt-36 pb-20 sm:pb-28 md:pb-36">
+        {/* Tagline */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 mb-10 sm:mb-12 rounded-full border border-gold/30 bg-gold/10 backdrop-blur-sm"
+          transition={{ duration: 0.45 }}
+          className="flex items-center gap-3 mb-10 sm:mb-12"
         >
-          <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-gold animate-pulse" />
-          <span className="text-gold text-xs sm:text-sm font-medium tracking-[0.15em] uppercase" style={{ fontFamily: "'Outfit', sans-serif" }}>
+          <span className="block w-8 h-[2px] bg-gold" />
+          <span
+            className="text-gold text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
             Built on Local Knowledge. Backed by Rock-Solid Guidance.
           </span>
         </motion.div>
@@ -34,7 +45,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 sm:mb-10 leading-tight"
+          className="text-4xl sm:text-5xl md:text-[3.5rem] font-bold text-white mb-8 sm:mb-10 leading-[1.1]"
           style={{ fontFamily: "'Outfit', sans-serif" }}
         >
           Colorado real estate help that is clear, practical, and worth acting on.
@@ -42,33 +53,33 @@ export default function HeroSection() {
 
         {/* Opening narrative */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-14 sm:mb-16 text-white/85 leading-relaxed max-w-2xl"
+          className="mb-14 sm:mb-16 max-w-2xl"
           style={{ fontFamily: "'Libre Franklin', sans-serif" }}
         >
-          <p className="text-lg sm:text-xl mb-5">
+          <p className="text-lg sm:text-xl text-white/80 leading-relaxed mb-5">
             A lot of people do not need more real estate talk. They need someone who can help them slow things down, think clearly, and keep them from making expensive decisions under pressure.
           </p>
-          <p className="text-lg sm:text-xl mb-5 font-semibold">
+          <p className="text-lg sm:text-xl text-white font-semibold mb-5">
             That is what I do.
           </p>
-          <p className="text-lg sm:text-xl">
+          <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
             I'm Rob Baker. I help buyers, sellers, and relocation clients across Colorado make smarter moves with better planning, stronger negotiation, and a clearer understanding of what actually matters before things get rushed.
           </p>
         </motion.div>
 
         {/* Primary CTAs */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-5"
+          className="flex flex-col sm:flex-row gap-4"
         >
           <button
             onClick={() => scrollTo("#contact")}
-            className="group inline-flex items-center justify-center gap-3 px-8 py-4 sm:px-10 bg-gold text-charcoal font-bold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/30 active:scale-[0.98] text-base sm:text-lg"
+            className="group inline-flex items-center justify-center gap-3 px-8 py-4 sm:px-10 bg-gold text-charcoal font-bold rounded transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/25 active:scale-[0.98] text-base sm:text-lg"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Talk With Rob
@@ -76,7 +87,7 @@ export default function HeroSection() {
           </button>
           <button
             onClick={() => navigate("/listing-results")}
-            className="group inline-flex items-center justify-center gap-3 px-8 py-4 sm:px-10 bg-transparent border-2 border-gold/70 text-gold font-semibold rounded-lg transition-all hover:border-gold hover:bg-gold/10 active:scale-[0.98] text-base sm:text-lg"
+            className="group inline-flex items-center justify-center gap-3 px-8 py-4 sm:px-10 border border-gold/50 text-gold font-semibold rounded transition-all hover:border-gold hover:bg-gold/8 active:scale-[0.98] text-base sm:text-lg"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             Start Your Search
@@ -84,6 +95,9 @@ export default function HeroSection() {
           </button>
         </motion.div>
       </div>
+
+      {/* Bottom section divider — gold rule */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gold/20" />
     </section>
   );
 }
