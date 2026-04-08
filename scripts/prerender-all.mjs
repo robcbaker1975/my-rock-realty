@@ -155,6 +155,7 @@ async function prerenderAll() {
   "entry-server-highland": resolve(ROOT, "client/src/entry-server-highland.tsx"),
   "entry-server-home": resolve(ROOT, "client/src/entry-server-home.tsx"),
   "entry-server-buying-in-lohi-denver": resolve(ROOT, "client/src/entry-server-buying-in-lohi-denver.tsx"),
+  "entry-server-buying-a-home-colorado": resolve(ROOT, "client/src/entry-server-buying-a-home-colorado.tsx"),
         },
         output: {
           format: "esm",
@@ -4024,7 +4025,31 @@ async function prerenderAll() {
     console.log("[prerender-all] Done: buying-in-lohi-denver");
   }
 
-  console.log("[prerender-all] All 108 routes complete.");
+  // --- buying-a-home-colorado ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-buying-a-home-colorado.js"));
+    const html = ssrMod.renderBuyingAHomeColorado();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_buying_a_home_colorado = SEO_METADATA_MAP["buying-a-home-colorado"];
+    const _seoBlock_buying_a_home_colorado = buildSeoHeadBlock({
+      title: _seoMeta_buying_a_home_colorado.title,
+      description: _seoMeta_buying_a_home_colorado.description,
+      canonical: _seoMeta_buying_a_home_colorado.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_buying_a_home_colorado.breadcrumbs), _seoMeta_buying_a_home_colorado.faqSchema],
+      slug: "buying-a-home-colorado",
+    });
+    const _injectedHtml_buying_a_home_colorado = injectSeoHead(prerenderedShell, _seoBlock_buying_a_home_colorado, _seoMeta_buying_a_home_colorado.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "buying-a-home-colorado.html"), _injectedHtml_buying_a_home_colorado, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "buying-a-home-colorado.html"), _injectedHtml_buying_a_home_colorado, "utf-8");
+    const written_buying_a_home_colorado = readFileSync(resolve(serverPrerenderedDir, "buying-a-home-colorado.html"), "utf-8");
+    if (written_buying_a_home_colorado.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for buying-a-home-colorado");
+    console.log("[prerender-all] Done: buying-a-home-colorado");
+  }
+
+  console.log("[prerender-all] All 109 routes complete.");
 
   // Copy Buying Buddy foundation pages (not in prerender pipeline) to dist/prerendered/
   // These are standalone HTML files that must exist in dist for production route handlers.

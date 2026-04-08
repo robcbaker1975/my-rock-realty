@@ -44,6 +44,7 @@ const RiNoDenverBuyerGuide = lazy(() => import("./pages/RiNoDenverBuyerGuide"));
 const CentralParkDenverBuyerGuide = lazy(() => import("./pages/CentralParkDenverBuyerGuide"));
 const SloanLakeDenverBuyerGuide = lazy(() => import("./pages/SloanLakeDenverBuyerGuide"));
 const BuyingAHomeInDenver = lazy(() => import("./pages/BuyingAHomeInDenver"));
+const BuyingAHomeColorado = lazy(() => import("./pages/BuyingAHomeColorado"));
 const FirstTimeHomeBuyerDenver = lazy(() => import("./pages/FirstTimeHomeBuyerDenver"));
 const DenverHomeBuyingProcess = lazy(() => import("./pages/DenverHomeBuyingProcess"));
 const CostOfLivingInDenverColorado = lazy(() => import("./pages/CostOfLivingInDenverColorado"));
@@ -195,6 +196,7 @@ function Router() {
       <Route path={"/central-park-denver-buyer-guide"} component={CentralParkDenverBuyerGuide} />
       <Route path={"/sloan-lake-denver-buyer-guide"} component={SloanLakeDenverBuyerGuide} />
       <Route path={"/buying-a-home-in-denver"} component={BuyingAHomeInDenver} />
+      <Route path={"/buying-a-home-colorado"} component={BuyingAHomeColorado} />
       <Route path={"/first-time-home-buyer-denver"} component={FirstTimeHomeBuyerDenver} />
       <Route path={"/denver-home-buying-process"} component={DenverHomeBuyingProcess} />
       <Route path={"/cost-of-living-in-denver-colorado"} component={CostOfLivingInDenverColorado} />

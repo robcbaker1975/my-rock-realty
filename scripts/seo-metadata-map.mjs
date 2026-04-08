@@ -1030,6 +1030,29 @@ export const SEO_METADATA_MAP = {
     ],
     faqSchema: {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Boulder or Fort Collins better for buying a home?", "acceptedAnswer": {"@type": "Answer", "text": "Neither is better across the board. Boulder often appeals to people who want a city shaped more strongly by setting and foothills context. Fort Collins can be a better match for those who want a city that feels broader and a little more straightforward to compare section by section."}}, {"@type": "Question", "name": "What is the biggest difference between Boulder and Fort Collins homes for sale?", "acceptedAnswer": {"@type": "Answer", "text": "The biggest difference is how each city feels on the map. Boulder is more immediately shaped by the Flatirons and by location within a tighter city footprint. Fort Collins usually feels broader, flatter, and easier to sort through by larger sections of town."}}, {"@type": "Question", "name": "Should I compare Boulder and Fort Collins at the city level or neighborhood level?", "acceptedAnswer": {"@type": "Answer", "text": "Start at the city level if you are still deciding between the two. Once one city starts pulling ahead, neighborhood comparison becomes the next step in both markets."}}, {"@type": "Question", "name": "Are the homes in Boulder very different from the homes in Fort Collins?", "acceptedAnswer": {"@type": "Answer", "text": "There is overlap in both cities, including condos, townhomes, and single-family homes. The bigger difference is how those homes are spread across each city and how much the setting shapes the search."}}, {"@type": "Question", "name": "Does Boulder always mean a more foothills-oriented home search?", "acceptedAnswer": {"@type": "Answer", "text": "Not always, but the foothills and the Flatirons are part of how Boulder reads from the start. That setting tends to matter more in the way buyers orient themselves around Boulder than it does in Fort Collins."}}, {"@type": "Question", "name": "Is Fort Collins basically one type of market or neighborhood?", "acceptedAnswer": {"@type": "Answer", "text": "No. Fort Collins includes established areas, newer sections, and a wide mix of housing types. Even so, many buyers find it easier to compare across the city as a whole before narrowing further."}}]},
   },
+  "buying-a-home-colorado": {
+    title: "Buying a Home in Colorado | My Rock Realty",
+    description:
+      "Most buyers start in the wrong place. My Rock Realty helps Colorado buyers slow down, get clear, and make smarter decisions from the first step to the keys.",
+    canonical: "https://myrockhomes.com/buying-a-home-colorado/",
+    pageType: "guide",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Buying a Home in Colorado", item: "https://myrockhomes.com/buying-a-home-colorado/" },
+    ],
+    faqSchema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Where should a Colorado home buyer start?", "acceptedAnswer": { "@type": "Answer", "text": "Most buyers should start by getting clear on what the home needs to do for them, what their payment comfort actually is, and what tradeoffs they are willing to make. Starting with listings before those questions are answered usually leads to a longer, more frustrating search." } },
+        { "@type": "Question", "name": "Do I need to be pre-approved before I start looking at homes in Colorado?", "acceptedAnswer": { "@type": "Answer", "text": "Pre-approval is a practical step that helps you understand your real budget, move faster when the right home appears, and show sellers you are a serious buyer. It is worth doing early." } },
+        { "@type": "Question", "name": "What is the biggest mistake Colorado buyers make?", "acceptedAnswer": { "@type": "Answer", "text": "Staying too broad for too long. Buyers who keep expanding their search area, price range, and home type criteria tend to spend more time looking without getting closer to a decision." } },
+        { "@type": "Question", "name": "How do I know which Colorado city or neighborhood is right for me?", "acceptedAnswer": { "@type": "Answer", "text": "Start with what the home needs to do for your life, not with a list of neighborhoods. Once you know your real priorities, location comparison becomes much easier to navigate." } },
+        { "@type": "Question", "name": "What does a Colorado home buyer's agent actually do?", "acceptedAnswer": { "@type": "Answer", "text": "A good buyer's agent helps you get clear on your search before you start, shows you homes that actually fit, helps you understand what you are buying, and guides you through the offer, inspection, and closing process with fewer surprises." } },
+        { "@type": "Question", "name": "Is the Colorado real estate market competitive?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the area, price range, and time of year. Some segments move fast. Others give buyers more time. Understanding the specific market you are shopping in matters more than general headlines." } },
+      ],
+    },
+  },
   "university-hill-cu-boulder-real-estate": {
     title: "Living Near University Hill and CU Boulder: Real Estate, Tradeoffs, and What It's Actually Like | My Rock Realty",
     description:
