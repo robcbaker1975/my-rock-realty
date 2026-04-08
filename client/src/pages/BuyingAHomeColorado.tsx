@@ -6,7 +6,6 @@
  */
 
 import { useEffect } from "react";
-import { Link } from "wouter";
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
@@ -73,22 +72,22 @@ export default function BuyingAHomeColorado() {
             >
               Download the Needs, Wants, and Dreams Worksheet
             </a>
-            <Link
+            <a
               href="/colorado-home-buying-workshop"
               className="inline-block px-7 py-4 font-semibold text-base rounded-sm border transition-opacity hover:opacity-90"
               style={{ borderColor: GOLD, color: GOLD, fontFamily: "Outfit, sans-serif" }}
             >
               Sign Up for the Colorado Home Buyers Workshop
-            </Link>
+            </a>
           </div>
           <div className="mt-6">
-            <Link
+            <a
               href="/listing-results"
               className="text-base font-medium underline underline-offset-4 transition-opacity hover:opacity-80"
               style={{ color: "rgba(255,255,255,0.6)" }}
             >
               Search Homes
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -265,13 +264,13 @@ export default function BuyingAHomeColorado() {
           <p className="text-lg mb-10" style={{ color: "#4a4540", lineHeight: 1.75 }}>
             If you want a deeper walkthrough, sign up for the Colorado Home Buyers Workshop. It is built to help buyers understand the process, avoid common mistakes, and see options they may not realize they have.
           </p>
-          <Link
+          <a
             href="/colorado-home-buying-workshop"
             className="inline-block px-7 py-4 font-semibold text-base rounded-sm transition-opacity hover:opacity-90"
             style={{ background: CHARCOAL, color: "#fff", fontFamily: "Outfit, sans-serif" }}
           >
             Sign Up for the Colorado Home Buyers Workshop
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -346,20 +345,20 @@ export default function BuyingAHomeColorado() {
             >
               Download the Worksheet
             </a>
-            <Link
+            <a
               href="/colorado-home-buying-workshop"
               className="inline-block px-7 py-4 font-semibold text-base rounded-sm border transition-opacity hover:opacity-90"
               style={{ borderColor: CHARCOAL, color: CHARCOAL, fontFamily: "Outfit, sans-serif" }}
             >
               Sign Up for the Workshop
-            </Link>
-            <Link
+            </a>
+            <a
               href="/listing-results"
               className="inline-block px-7 py-4 font-semibold text-base rounded-sm border transition-opacity hover:opacity-90"
               style={{ borderColor: CHARCOAL, color: CHARCOAL, fontFamily: "Outfit, sans-serif" }}
             >
               Search Homes
-            </Link>
+            </a>
           </div>
         </div>
       </section>
