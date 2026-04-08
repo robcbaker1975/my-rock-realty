@@ -58,7 +58,7 @@ export default function AgentPartner() {
             SECTION 1 — HERO / OPENER
         ══════════════════════════════════════════════ */}
         <section className="bg-charcoal text-cream py-20 sm:py-24">
-          <div className="container max-w-2xl">
+          <div className="container max-w-4xl">
             <motion.p
               className="text-gold font-display text-xs font-semibold tracking-[0.2em] uppercase mb-5"
               variants={fadeUp}
@@ -93,7 +93,7 @@ export default function AgentPartner() {
             SECTION 2 — OFFER FRAMING
         ══════════════════════════════════════════════ */}
         <section className="bg-cream py-16 sm:py-20">
-          <div className="container max-w-2xl">
+          <div className="container max-w-4xl">
             <motion.h2
               className="font-display text-2xl sm:text-3xl font-bold text-charcoal mb-5"
               variants={fadeUp}
@@ -134,7 +134,7 @@ export default function AgentPartner() {
           className="py-16 sm:py-20"
           style={{ backgroundColor: "#F0EBE3" }}
         >
-          <div className="container max-w-2xl">
+          <div className="container max-w-4xl">
             <motion.h2
               className="font-display text-2xl sm:text-3xl font-bold text-charcoal mb-10"
               variants={fadeUp}
@@ -184,7 +184,7 @@ export default function AgentPartner() {
             SECTION 4 — PROOF (live site link)
         ══════════════════════════════════════════════ */}
         <section className="bg-cream py-16 sm:py-20">
-          <div className="container max-w-2xl">
+          <div className="container max-w-4xl">
             <motion.h2
               className="font-display text-2xl sm:text-3xl font-bold text-charcoal mb-5"
               variants={fadeUp}
@@ -229,7 +229,7 @@ export default function AgentPartner() {
           className="py-16 sm:py-20"
           style={{ backgroundColor: "#F0EBE3" }}
         >
-          <div className="container max-w-2xl">
+          <div className="container max-w-4xl">
             <motion.h2
               className="font-display text-2xl sm:text-3xl font-bold text-charcoal mb-6"
               variants={fadeUp}

@@ -355,7 +355,7 @@ export default function PcsColorado() {
 
       {/* ─── Contact Form ─── */}
       <section id="contact-rob" className="py-12 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <LeadForm
             variant="pcs"
             source="PCS Colorado"

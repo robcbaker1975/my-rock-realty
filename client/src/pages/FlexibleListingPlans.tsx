@@ -392,7 +392,7 @@ export default function FlexibleListingPlans() {
         id="seller-consultation"
         className="py-12 sm:py-20 bg-charcoal"
       >
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <LeadForm
             variant="seller"
             source="Flexible Listing Plans"
@@ -405,7 +405,7 @@ export default function FlexibleListingPlans() {
           FAQ
       ═══════════════════════════════════════════════════ */}
       <section className="py-12 sm:py-20 bg-warm-white">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.div
             variants={fadeUp}
             initial="hidden"

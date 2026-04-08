@@ -262,7 +262,7 @@ export default function DenverTownhomesForSale() {
           4. What to Know Before Buying a Townhome
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -386,7 +386,7 @@ export default function DenverTownhomesForSale() {
           8. Denver Townhome FAQs
       ═══════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}

@@ -571,7 +571,7 @@ export default function MilitaryRelocation() {
 
       {/* ─── Contact Form ─── */}
       <section id="contact-rob" className="py-12 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
