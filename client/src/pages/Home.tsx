@@ -13,7 +13,8 @@
 import SeoHead from "@/components/seo/SeoHead";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import Navbar from "@/components/Navbar";
-import HeroNarrativeSection from "@/components/HeroNarrativeSection";
+import HeroSection from "@/components/HeroSection";
+import TrustSection from "@/components/TrustSection";
 import BuyersSection from "@/components/BuyersSection";
 import SellersSection from "@/components/SellersSection";
 import RelocationsSection from "@/components/RelocationsSection";
@@ -81,7 +82,8 @@ export default function Home() {
       <Navbar />
       <main>
         {/* ── PRIMARY PATHS ── */}
-        <HeroNarrativeSection />
+        <HeroSection />
+        <TrustSection />
         <BuyersSection />
         <SellersSection />
         {/* Rental / Tour Support — includes PCS/Military mention, links to /rental-tour-support/ */}
