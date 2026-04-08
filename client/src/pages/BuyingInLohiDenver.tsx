@@ -174,7 +174,7 @@ export default function BuyingInLohiDenver() {
 
       {/* ── START HERE ── */}
       <section className="py-14 sm:py-18 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -214,7 +214,7 @@ export default function BuyingInLohiDenver() {
 
       {/* ── THE REAL TEST ── */}
       <section className="py-14 sm:py-18 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-2xl sm:text-3xl font-bold text-cream mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -256,7 +256,7 @@ export default function BuyingInLohiDenver() {
 
       {/* ── WHEN LOHI STARTS FALLING APART ── */}
       <section className="py-14 sm:py-18 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -289,7 +289,7 @@ export default function BuyingInLohiDenver() {
 
       {/* ── WHAT THE SEARCH USUALLY TURNS INTO ── */}
       <section className="py-14 sm:py-18 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-2xl sm:text-3xl font-bold text-cream mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -351,7 +351,7 @@ export default function BuyingInLohiDenver() {
 
       {/* ── WHAT YOU ARE REALLY PAYING FOR ── */}
       <section className="py-14 sm:py-18 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -452,7 +452,7 @@ export default function BuyingInLohiDenver() {
 
       {/* ── IF LOHI STAYS ON YOUR LIST ── */}
       <section className="py-14 sm:py-18 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -486,7 +486,7 @@ export default function BuyingInLohiDenver() {
 
       {/* ── IF LOHI DROPS OFF YOUR LIST ── */}
       <section className="py-14 sm:py-18 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-2xl sm:text-3xl font-bold text-cream mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -517,7 +517,7 @@ export default function BuyingInLohiDenver() {
 
       {/* ── LOHI / LOWER HIGHLAND / HIGHLAND / THE HIGHLANDS ── */}
       <section className="py-14 sm:py-18 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -549,7 +549,7 @@ export default function BuyingInLohiDenver() {
 
       {/* ── COMPARISONS ── */}
       <section className="py-14 sm:py-18 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-2xl sm:text-3xl font-bold text-cream mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -648,7 +648,7 @@ export default function BuyingInLohiDenver() {
 
       {/* ── IF YOU OWN IN LOHI AND MAY SELL ── */}
       <section className="py-14 sm:py-18 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -707,7 +707,7 @@ export default function BuyingInLohiDenver() {
 
       {/* ── BUY NOW OR RENT FIRST ── */}
       <section className="py-14 sm:py-18 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-2xl sm:text-3xl font-bold text-cream mb-6"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -746,7 +746,7 @@ export default function BuyingInLohiDenver() {
 
       {/* ── FAQ ── */}
       <section className="py-14 sm:py-18 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-8"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -790,7 +790,7 @@ export default function BuyingInLohiDenver() {
 
       {/* ── FINAL CTA ── */}
       <section className="py-14 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-2xl sm:text-3xl font-bold text-cream mb-4"
             style={{ fontFamily: "'Outfit', sans-serif" }}

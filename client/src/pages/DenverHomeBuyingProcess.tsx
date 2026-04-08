@@ -205,7 +205,7 @@ export default function DenverHomeBuyingProcess() {
 
       {/* 3. Core Decision Factors — Process Steps */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-cream mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -294,7 +294,7 @@ export default function DenverHomeBuyingProcess() {
 
       {/* 5. Denver Market Considerations */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-cream mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -385,7 +385,7 @@ export default function DenverHomeBuyingProcess() {
 
       {/* 7. Related Buyer Resources */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -428,7 +428,7 @@ export default function DenverHomeBuyingProcess() {
 
       {/* 8. FAQs */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -465,7 +465,7 @@ export default function DenverHomeBuyingProcess() {
 
       {/* 9. Final CTA */}
       <section id="contact-rob" className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <LeadForm
             variant="buyer"
             source="Denver Home Buying Process"

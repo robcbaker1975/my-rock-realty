@@ -193,7 +193,7 @@ export default function RelocatingToDenverColorado() {
 
       {/* 3. Choosing Between Neighborhoods and Suburbs */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -315,7 +315,7 @@ export default function RelocatingToDenverColorado() {
 
       {/* 5. Denver Lifestyle and Location Tradeoffs */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-cream mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -349,7 +349,7 @@ export default function RelocatingToDenverColorado() {
 
       {/* 6. Practical Steps for Planning a Denver Relocation */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -384,7 +384,7 @@ export default function RelocatingToDenverColorado() {
 
       {/* 7. Related Denver Buyer Resources */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -430,7 +430,7 @@ export default function RelocatingToDenverColorado() {
 
       {/* 8. FAQs */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}

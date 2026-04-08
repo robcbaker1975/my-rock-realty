@@ -192,7 +192,7 @@ export default function DenverVsColoradoSprings() {
 
       {/* 3. Housing and Neighborhood Tradeoffs */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -242,7 +242,7 @@ export default function DenverVsColoradoSprings() {
 
       {/* 4. Lifestyle and Location Considerations */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -347,7 +347,7 @@ export default function DenverVsColoradoSprings() {
 
       {/* 6. How Buyers Can Narrow the Right Fit */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -382,7 +382,7 @@ export default function DenverVsColoradoSprings() {
 
       {/* 7. Related Colorado Buyer Resources */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -429,7 +429,7 @@ export default function DenverVsColoradoSprings() {
 
       {/* 8. FAQs */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}

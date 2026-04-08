@@ -196,7 +196,7 @@ export default function DenverVsFortCollins() {
 
       {/* 3. Denver Communities */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-cream mb-8 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -246,7 +246,7 @@ export default function DenverVsFortCollins() {
 
       {/* 4. Fort Collins Communities */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-8 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -347,7 +347,7 @@ export default function DenverVsFortCollins() {
 
       {/* 6. Which Search May Fit Different Priorities */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -381,7 +381,7 @@ export default function DenverVsFortCollins() {
 
       {/* 7. How to Narrow the Right Fit */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-cream mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -416,7 +416,7 @@ export default function DenverVsFortCollins() {
 
       {/* 8. Related Colorado Buyer Resources */}
       <section className="py-16 sm:py-20 bg-cream">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-charcoal mb-8 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -465,7 +465,7 @@ export default function DenverVsFortCollins() {
 
       {/* 9. FAQs */}
       <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl">
+        <div className="container max-w-4xl">
           <h2
             className="text-3xl sm:text-4xl font-bold text-cream mb-12 text-center"
             style={{ fontFamily: "'Outfit', sans-serif" }}
