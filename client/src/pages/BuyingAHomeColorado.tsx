@@ -59,9 +59,6 @@ export default function BuyingAHomeColorado() {
         <div className="absolute inset-0 bg-black/40" />
         {/* Content container */}
         <div className="relative max-w-3xl mx-auto px-8">
-          <div className="mb-6">
-            <Breadcrumbs items={breadcrumbItems} />
-          </div>
           {/* Gold accent bar */}
           <div style={{ width: 48, height: 3, background: GOLD }} className="mb-6" />
           <h1

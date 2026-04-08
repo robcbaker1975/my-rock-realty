@@ -112,13 +112,6 @@ export default function DenverHomeBuyingProcess() {
         schema={faqSchema ? [faqSchema] : []}
       />
 
-      {/* BREADCRUMBS */}
-      <div className="bg-charcoal">
-        <div className="container py-3">
-          <Breadcrumbs items={breadcrumbItems} />
-        </div>
-      </div>
-
       {/* 1. HERO */}
       <section className="relative bg-charcoal overflow-hidden">
         {/* Hero Background Image */}
