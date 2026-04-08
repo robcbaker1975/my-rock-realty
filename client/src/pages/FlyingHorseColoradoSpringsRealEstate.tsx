@@ -5,9 +5,9 @@
  * Presentation: Briargate benchmark layout
  */
 import SeoHead from "@/components/seo/SeoHead";
-import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
+import Navbar from "@/components/Navbar";
 
 /* ─── FAQ Content ─── */
 const faqContent = [
@@ -92,6 +92,7 @@ const sectionLabel = "text-xs font-semibold tracking-widest uppercase text-[#C9A
 export default function FlyingHorseColoradoSpringsRealEstate() {
   return (
     <>
+      <Navbar compact />
       <SeoHead
         metadata={{
           title: "Living in Flying Horse, Colorado Springs: Real Estate, Tradeoffs, and What It's Like",
@@ -103,37 +104,11 @@ export default function FlyingHorseColoradoSpringsRealEstate() {
         schema={faqSchema ? [faqSchema] : []}
       />
 
-      {/* ─── Header ─── */}
-      <header className="bg-[#292524] py-4 px-6 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2">
-          <img
-            src="/logo-light.png"
-            alt="My Rock Realty"
-            className="h-8 w-auto"
-            onError={(e) => {
-              (e.target as HTMLImageElement).style.display = "none";
-            }}
-          />
-          <span className="text-[#F5F0EB] font-semibold text-sm">My Rock Realty</span>
-        </a>
-        <a
-          href="/"
-          className="text-[#C9A96E] text-sm hover:text-[#F5F0EB] transition-colors"
-        >
-          ← Back to Main Site
-        </a>
-      </header>
-
-      {/* ─── Breadcrumb Bar ─── */}
-      <div className="bg-[#292524]/95 border-b border-stone-700 px-6 py-2">
-        <Breadcrumbs items={breadcrumbItems} />
-      </div>
-
       {/* ─── Main Content ─── */}
       <main className="bg-[#F5F0EB] min-h-screen">
 
         {/* ─── Hero ─── */}
-        <section className="bg-[#292524] pt-12 pb-14 px-6 border-b-4 border-[#C9A96E]">
+        <section className="bg-[#292524] pt-[72px] pb-14 px-6 border-b-4 border-[#C9A96E]">
           <motion.div
             className="max-w-3xl mx-auto"
             initial="hidden"

@@ -6,10 +6,10 @@
  */
 import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
-import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 /* ─── FAQ Content ─── */
 const faqContent = [
@@ -75,6 +75,7 @@ export default function OldNorthEndColoradoSpringsRealEstate() {
 
   return (
     <>
+      <Navbar compact />
       <SeoHead
         metadata={{
           title:
@@ -91,7 +92,6 @@ export default function OldNorthEndColoradoSpringsRealEstate() {
         {/* ─── Hero ─── */}
         <section className="relative bg-gradient-to-b from-stone-900 to-charcoal pt-24 pb-16 px-6">
           <div className="max-w-3xl mx-auto">
-            <Breadcrumbs items={breadcrumbItems} />
             <motion.h1
               className="font-display text-4xl md:text-5xl text-cream mt-6 mb-4 leading-tight"
               initial={{ opacity: 0, y: 20 }}
