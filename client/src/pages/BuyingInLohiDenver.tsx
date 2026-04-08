@@ -8,7 +8,7 @@
 
 import { useState, useEffect } from "react";
 import SeoHead from "@/components/seo/SeoHead";
-import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import Navbar from "@/components/Navbar";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { ChevronDown } from "lucide-react";
 import BuyingBuddyWidget from "@/components/BuyingBuddyWidget";
@@ -87,6 +87,7 @@ export default function BuyingInLohiDenver() {
 
   return (
     <div className="min-h-screen flex flex-col bg-cream">
+      <Navbar compact />
       <SeoHead
         metadata={{
           title: "Buying in LoHi Denver | Should It Stay on Your List?",
@@ -98,15 +99,8 @@ export default function BuyingInLohiDenver() {
         schema={faqSchema ? [faqSchema] : []}
       />
 
-      {/* BREADCRUMBS */}
-      <div className="bg-charcoal">
-        <div className="container py-3">
-          <Breadcrumbs items={breadcrumbItems} />
-        </div>
-      </div>
-
       {/* ── HERO ── */}
-      <section className="relative bg-charcoal overflow-hidden">
+      <section className="relative bg-charcoal overflow-hidden pt-[72px]">
         <img
           src={HERO_BG}
           alt="Row houses along a residential street in Denver"

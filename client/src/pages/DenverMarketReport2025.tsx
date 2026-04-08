@@ -5,7 +5,7 @@
  */
 
 import SeoHead from "@/components/seo/SeoHead";
-import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import Navbar from "@/components/Navbar";
 
 const breadcrumbItems = [
   { label: "Home", href: "/" },
@@ -16,6 +16,7 @@ const breadcrumbItems = [
 export default function DenverMarketReport2025() {
   return (
     <div className="hub-page min-h-screen flex flex-col bg-cream">
+      <Navbar compact />
       <SeoHead
         metadata={{
           title: "Denver Real Estate Market Report 2025: Key Trends & Insights",
@@ -28,15 +29,8 @@ export default function DenverMarketReport2025() {
         schema={[]}
       />
 
-      {/* BREADCRUMBS */}
-      <div className="bg-charcoal">
-        <div className="container py-3">
-          <Breadcrumbs items={breadcrumbItems} />
-        </div>
-      </div>
-
       {/* HERO */}
-      <section className="bg-charcoal py-16">
+      <section className="bg-charcoal py-16 pt-[72px]">
         <div className="container max-w-3xl">
           <p className="text-gold font-outfit text-sm font-semibold uppercase tracking-widest mb-4">
             Market Update · 2025

@@ -8,7 +8,7 @@
 
 import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
-import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import Navbar from "@/components/Navbar";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
 import {
@@ -91,6 +91,7 @@ export default function DenverVsFortCollins() {
 
   return (
     <div className="hub-page min-h-screen flex flex-col bg-cream">
+      <Navbar compact />
       <SeoHead
         metadata={{
           title: "Denver vs Fort Collins Homes for Sale | Colorado City Comparison for Buyers",
@@ -102,15 +103,8 @@ export default function DenverVsFortCollins() {
         schema={faqSchema ? [faqSchema] : []}
       />
 
-      {/* BREADCRUMBS */}
-      <div className="bg-charcoal">
-        <div className="container py-3">
-          <Breadcrumbs items={breadcrumbItems} />
-        </div>
-      </div>
-
       {/* 1. HERO */}
-      <section className="relative bg-charcoal overflow-hidden">
+      <section className="relative bg-charcoal overflow-hidden pt-[72px]">
         <img
           src={DENVER_HERO_BG}
           alt="Row houses along a residential street in Denver"
