@@ -112,6 +112,7 @@ async function prerenderAll() {
   "entry-server-pcs-timeline-checklist": resolve(ROOT, "client/src/entry-server-pcs-timeline-checklist.tsx"),
   "entry-server-temporary-housing-colorado-springs": resolve(ROOT, "client/src/entry-server-temporary-housing-colorado-springs.tsx"),
   "entry-server-remote-home-tours": resolve(ROOT, "client/src/entry-server-remote-home-tours.tsx"),
+  "entry-server-buying-remotely": resolve(ROOT, "client/src/entry-server-buying-remotely.tsx"),
   "entry-server-pcs-relocation-tour-support": resolve(ROOT, "client/src/entry-server-pcs-relocation-tour-support.tsx"),
   "entry-server-best-communities-near-fort-carson": resolve(ROOT, "client/src/entry-server-best-communities-near-fort-carson.tsx"),
   "entry-server-best-communities-near-peterson-space-force-base": resolve(ROOT, "client/src/entry-server-best-communities-near-peterson-space-force-base.tsx"),
@@ -2683,6 +2684,43 @@ async function prerenderAll() {
     if (written_remote_home_tours.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for remote-home-tours");
     console.log("[prerender-all] Done: remote-home-tours");
   }
+  // --- buying-remotely ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-buying-remotely.js"));
+    const html = ssrMod.renderBuyingRemotely();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    const finalHtml = prerenderedShell;
+    // SEO injection
+    // === SEO_INJECTED ===
+      const _seoBlock = buildSeoHeadBlock({
+        title: 'Buying a Home Remotely | Colorado Remote Home Buying Support | My Rock Realty',
+        description: "Remote home buying support for military and PCS buyers relocating to Colorado Springs and the Denver metro. Recorded video tours, live virtual tours, and in-person tour blocks for buyers who aren't yet local.",
+        canonical: 'https://myrockhomes.com/military-relocation/buying-remotely/',
+        slug: 'military-relocation/buying-remotely',
+        ogImage: OG_IMAGE_MILITARY,
+        schemas: [
+          ...BASE_SCHEMAS,
+          buildBreadcrumbSchema([
+            { name: 'Home', url: 'https://myrockhomes.com/' },
+            { name: 'Military Relocation', url: 'https://myrockhomes.com/military-relocation/' },
+            { name: 'Buying Remotely', url: 'https://myrockhomes.com/military-relocation/buying-remotely/' },
+          ]),
+        ],
+      });
+      const finalHtmlSeo = injectSeoHead(finalHtml, _seoBlock, 'https://myrockhomes.com/military-relocation/buying-remotely/');
+      const serverDir = resolve(ROOT, "server/prerendered");
+      mkdirSync(serverDir, { recursive: true });
+      const serverOut = resolve(serverDir, "buying-remotely.html");
+      writeFileSync(serverOut, finalHtmlSeo, "utf-8");
+      console.log(`[prerender-buying-remotely] Written to ${serverOut} (${finalHtml.length} bytes)`);
+      const distDir = resolve(ROOT, "dist/prerendered");
+      mkdirSync(distDir, { recursive: true });
+      const distOut = resolve(distDir, "buying-remotely.html");
+      writeFileSync(distOut, finalHtmlSeo, "utf-8");
+    const written_buying_remotely = readFileSync(resolve(serverPrerenderedDir, "buying-remotely.html"), "utf-8");
+    if (written_buying_remotely.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for buying-remotely");
+    console.log("[prerender-all] Done: buying-remotely");
+  }
 
   // --- pcs-relocation-tour-support ---
   {
@@ -4072,7 +4110,7 @@ async function prerenderAll() {
     if (written_selling_a_home_colorado.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for selling-a-home-in-colorado");
     console.log("[prerender-all] Done: selling-a-home-in-colorado");
   }
-  console.log("[prerender-all] All 110 routes complete.");
+  console.log("[prerender-all] All 111 routes complete.");
 
   // Copy Buying Buddy foundation pages (not in prerender pipeline) to dist/prerendered/
   // These are standalone HTML files that must exist in dist for production route handlers.

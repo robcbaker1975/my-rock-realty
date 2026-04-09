@@ -146,6 +146,7 @@ const VeteransBuyingColorado = lazy(() => import("./pages/VeteransBuyingColorado
 const PcsTimelineChecklist = lazy(() => import("./pages/PcsTimelineChecklist"));
 const TemporaryHousingColoradoSprings = lazy(() => import("./pages/TemporaryHousingColoradoSprings"));
 const RemoteHomeTours = lazy(() => import("./pages/RemoteHomeTours"));
+const BuyingRemotely = lazy(() => import("./pages/BuyingRemotely"));
 const PcsRelocationTourSupport = lazy(() => import("./pages/PcsRelocationTourSupport"));
 const RentalTourSupport = lazy(() => import("./pages/RentalTourSupport"));
 const DenverMarketReport2025 = lazy(() => import("./pages/DenverMarketReport2025"));
@@ -299,6 +300,7 @@ function Router() {
       <Route path={"/military-relocation/pcs-timeline-checklist/"} component={PcsTimelineChecklist} />
       <Route path={"/military-relocation/temporary-housing-colorado-springs/"} component={TemporaryHousingColoradoSprings} />
       <Route path={"/military-relocation/remote-home-tours/"} component={RemoteHomeTours} />
+      <Route path={"/military-relocation/buying-remotely/"} component={BuyingRemotely} />
       <Route path={"/military-relocation/pcs-relocation-tour-support/"} component={PcsRelocationTourSupport} />
       <Route path={"/rental-tour-support/"} component={RentalTourSupport} />
       <Route path={"/blog/denver-real-estate-market-report-2025/"} component={DenverMarketReport2025} />

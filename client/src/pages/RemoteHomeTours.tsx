@@ -1,58 +1,70 @@
 /**
- * Remote Home Tours — My Rock Realty
+ * Remote Home Tours — PCS Relocation Tour Support — My Rock Realty
  * /military-relocation/remote-home-tours/
  * Design: Front Range Modern — matches existing site design system
- * Updated: trust-first rewrite for remote/PCS buyers
+ * Palette: Warm charcoal (#292524), cream (#F5F0EB), antique gold (#C9A96E)
+ * Typography: Outfit (display) + Libre Franklin (body)
+ * Intent: PCS rental assistance / relocation tour support / pre-arrival housing evaluation
  */
 import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
 import Navbar from "@/components/Navbar";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown, Phone, Mail, Video, Monitor, MapPin } from "lucide-react";
+import {
+  ArrowRight,
+  Shield,
+  MapPin,
+  Home,
+  ChevronDown,
+  CheckCircle,
+  Compass,
+  Users,
+} from "lucide-react";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/denver-rowhouses-hero_2f59d4ac.jpg";
 
+/* ─── FAQ Content ─── */
 const faqContent = [
   {
-    question: "Who is remote home touring designed for?",
+    question: "What exactly happens during a tour session?",
     answer:
-      "Remote home touring is designed primarily for military and PCS buyers who are not yet local to Colorado Springs or the Denver metro. If you're relocating on orders, managing a compressed timeline, or need to make decisions before you can visit in person, remote touring options help you stay informed and move with confidence.",
+      "Each tour is a structured showing session — in-person property access and guided walkthrough where available, or a 15–30 minute virtual or recorded tour support session where in-person access is not available. Rob provides neighborhood context, market guidance, and practical relocation considerations to help you evaluate each property.",
   },
   {
-    question: "How does a live virtual tour work?",
+    question: "Can I use tours for both rental properties and homes for purchase?",
     answer:
-      "A live virtual tour is a real-time video walkthrough of a property conducted by Rob while you participate remotely via video call. You can ask questions, request specific views, and get Rob's on-the-ground observations as the tour happens. Availability depends on property access and scheduling.",
+      "Yes. Tour support is available for PCS families evaluating rental options, homes for purchase, or both. The goal is to help you make a well-informed housing decision before you arrive — regardless of whether you plan to rent or buy.",
   },
   {
-    question: "What is a recorded video tour?",
+    question: "What areas does this service cover?",
     answer:
-      "A recorded video tour is a detailed walkthrough of a property captured on video and delivered to you for review at your convenience. Rob narrates the tour with observations relevant to your priorities — condition, layout, neighborhood context, and anything that would be hard to assess from listing photos alone.",
+      "Tour support is available within a 25-mile radius of downtown Denver and a 25-mile radius of downtown Colorado Springs — covering Fort Carson, Peterson Space Force Base, Schriever Space Force Base, the U.S. Air Force Academy, and Buckley Space Force Base. Properties outside the standard service area may be available by custom quote.",
   },
   {
-    question: "What are in-person tour blocks?",
+    question: "Does this service include representation or lease negotiation?",
     answer:
-      "An in-person tour block is a scheduled session where Rob tours multiple properties on your behalf in a single outing, documenting each with video and notes. This format is efficient for buyers who want to evaluate several options in a compressed timeframe without being present.",
+      "No. This is a tour support and guidance service only. It does not create a tenant representation relationship, buyer representation relationship, agency relationship, or any brokerage relationship. Lease negotiation, application assistance, and approval guarantees are not included. You remain unrepresented unless you sign a separate written agreement with My Rock Realty.",
   },
   {
-    question: "Can I make an offer on a home I've only seen remotely?",
+    question: "How do I schedule tours after purchasing a package?",
     answer:
-      "Yes. Military buyers regularly make offers on homes they haven't seen in person, particularly when timelines are compressed. Rob can provide the context and documentation you need to make an informed decision remotely. Inspection contingencies and other standard buyer protections remain available and are discussed as part of the process.",
+      "After purchasing, you'll coordinate directly with Rob to schedule your showing sessions. Rob makes reasonable efforts to accommodate requests within 5–7 business days. Scheduling is flexible within your package validity period.",
   },
   {
-    question: "How do I get started with remote home touring?",
+    question: "What is the cancellation policy?",
     answer:
-      "The best starting point is a conversation about your timeline, target neighborhoods, and what you need to feel confident making a decision remotely. From there, Rob can explain which format makes the most sense for your situation and what to expect from the process.",
+      "Same-day cancellations (less than 24 hours' notice) forfeit that day's showings and 3 showing credits. Arrival more than 15 minutes late without notice may result in forfeiture of that day's showings at My Rock Realty's discretion. Access delays or last-minute cancellations outside My Rock Realty's control restore the showing credit and may be rescheduled.",
   },
   {
-    question: "How will I know what Rob actually thinks about a home?",
+    question: "What if I find a home before using all my showing days?",
     answer:
-      "Rob gives you his honest read — not a sales pitch. If a home has a layout that doesn't work well for most buyers, a location that creates resale risk, or condition issues that will show up on inspection, he'll tell you. The goal is to help you make a clear decision, not to push you toward an offer.",
+      "If you find the right home before using all your showing days, that's a good outcome — the service did its job. Unused showing days and credits expire at the end of your package validity period and do not carry over.",
   },
   {
-    question: "What happens if I make an offer and something comes up on inspection?",
+    question: "What is the future home purchase credit?",
     answer:
-      "Inspection contingencies are a standard buyer protection and are part of every offer Rob structures for remote buyers. If the inspection turns up something significant, you'll have options — negotiate a repair credit, request a price adjustment, or walk away. Rob will walk you through what the findings actually mean before you decide.",
+      "If you later enter into a separate written buyer representation agreement with My Rock Realty and successfully close on a home purchase through us within 60 months of your tour service purchase, your paid tour fee may be credited in full at closing, where permitted and as outlined in the separate written agreement, subject to brokerage policy, applicable law, lender approval, and successful closing.",
   },
 ];
 
@@ -64,29 +76,137 @@ const breadcrumbItems = [
   { label: "Remote Home Tours", url: "/military-relocation/remote-home-tours/" },
 ];
 
-const tourFormats = [
+/* ─── How It Works Steps ─── */
+const steps = [
   {
-    icon: Video,
-    title: "Recorded Video Tours",
-    description:
-      "Rob tours the property on your behalf and delivers a narrated video walkthrough. He covers layout, condition, neighborhood context, and anything that would be hard to assess from listing photos — including things worth flagging before you get too far into a decision.",
-    note: "Available for properties with confirmed access. Delivery timing depends on scheduling and property availability.",
+    number: "01",
+    title: "Contact Rob",
+    body: "Reach out to discuss your PCS situation, timeline, and housing priorities. Rob will confirm availability and service fit before you purchase.",
   },
   {
-    icon: Monitor,
-    title: "Live Virtual Tours",
-    description:
-      "A real-time video walkthrough conducted by Rob while you participate remotely. You can direct the tour, ask questions as they come up, and get live observations on the things that matter to your search — as close to being there as possible without being local.",
-    note: "Requires scheduling coordination and confirmed property access. Best for buyers with some timeline flexibility.",
+    number: "02",
+    title: "Purchase Your Package",
+    body: "Select the package that fits your timeline and the number of properties or neighborhoods you want to evaluate. Military and veteran pricing applied automatically.",
   },
   {
-    icon: MapPin,
-    title: "In-Person Tour Blocks",
-    description:
-      "Rob tours multiple properties in a single scheduled session, documenting each with video and notes. Efficient for buyers working through a shortlist who want thorough, honest coverage of several options without needing to be present for each one.",
-    note: "Best suited for buyers with a defined shortlist. Scope and number of properties are discussed in advance.",
+    number: "03",
+    title: "Schedule Your Showings",
+    body: "Coordinate directly with Rob to schedule your showing days. Flexible scheduling within your package validity period.",
+  },
+  {
+    number: "04",
+    title: "Evaluate and Decide",
+    body: "Use your showing days to gather real information about properties and neighborhoods before you arrive. Make your housing decision with confidence.",
   },
 ];
+
+/* ─── What's Included ─── */
+const included = [
+  "Property shortlist review based on your criteria",
+  "15–30 minute virtual or recorded tour support per showing day, where permitted and available",
+  "In-person property access and guided showings, where available",
+  "Neighborhood and lifestyle overview",
+  "General Colorado market guidance",
+  "Flexible scheduling within the package validity period",
+];
+
+/* ─── What's Not Included ─── */
+const notIncluded = [
+  "Tenant representation, buyer representation, agency, or any brokerage relationship",
+  "Lease negotiation or application assistance",
+  "Deposit, rent, or application-fee handling",
+  "Lease, financing, or application approval guarantees",
+  "Property management or ongoing tenant support",
+  "Legal, tax, lending, or property-management advice",
+];
+
+/* ─── Packages ─── */
+const packages = [
+  {
+    name: "1 Showing Day",
+    price: "$349",
+    standardPrice: "$499",
+    homes: "Up to 3 homes",
+    showingDays: "1 showing day",
+    validity: "Valid for 45 days from purchase",
+    description:
+      "Ideal for PCS families with a focused search and a clear top choice.",
+    recommended: false,
+  },
+  {
+    name: "2 Showing Days",
+    price: "$549",
+    standardPrice: "$799",
+    homes: "Up to 6 homes",
+    showingDays: "Up to 2 showing days",
+    validity: "Valid for 90 days from purchase",
+    description:
+      "Ideal for PCS families evaluating a broader set of properties or neighborhoods.",
+    recommended: true,
+  },
+  {
+    name: "3 Showing Days",
+    price: "$849",
+    standardPrice: "$999",
+    homes: "Up to 10 homes",
+    showingDays: "Up to 3 showing days",
+    validity: "Valid for 120 days from purchase",
+    description:
+      "Ideal for PCS families with a wider search area or longer decision timeline.",
+    recommended: false,
+  },
+];
+
+/* ─── Trust Points ─── */
+const trustPoints = [
+  {
+    icon: Compass,
+    title: "Colorado Market Knowledge",
+    body: "Rob has deep familiarity with the Colorado Springs and Denver metro markets — the neighborhoods, commute corridors, and practical considerations that matter for military families.",
+  },
+  {
+    icon: Shield,
+    title: "Military-Aware Guidance",
+    body: "Rob regularly works with PCS families navigating compressed timelines, remote searches, and the unique pressures of military relocation. He understands the context.",
+  },
+  {
+    icon: Users,
+    title: "Structured, Professional Support",
+    body: "Each showing day is structured and focused. You get professional observations and market context — not generic advice.",
+  },
+];
+
+/* ─── FAQ Accordion ─── */
+function FaqItem({ question, answer, isOpen, onToggle }: {
+  question: string;
+  answer: string;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <div className="border-b border-cream-dark/40 last:border-b-0">
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between py-5 text-left gap-4 group"
+      >
+        <span
+          className="font-medium text-charcoal text-[15px] leading-snug group-hover:text-gold-dark transition-colors"
+          style={{ fontFamily: "'Outfit', sans-serif" }}
+        >
+          {question}
+        </span>
+        <ChevronDown
+          className={`w-5 h-5 text-gold flex-shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+        />
+      </button>
+      {isOpen && (
+        <div className="pb-5 pr-8">
+          <p className="text-charcoal/75 text-[14px] leading-relaxed">{answer}</p>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function RemoteHomeTours() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -96,13 +216,15 @@ export default function RemoteHomeTours() {
       <Navbar compact />
       <SeoHead
         metadata={{
-          title: "Remote Home Tours for Military & PCS Buyers | My Rock Realty",
-          description: "Remote home touring support for military and PCS buyers relocating to Colorado Springs and the Denver metro. Recorded video tours, live virtual tours, and in-person tour blocks for buyers who aren't yet local.",
+          title: "PCS Relocation Tour Support | Remote Home Tours | My Rock Realty",
+          description:
+            "PCS families relocating to Colorado Springs or Denver can evaluate housing before they arrive. Structured in-person showings and neighborhood guidance — military pricing available. My Rock Realty.",
           canonicalUrl: "https://myrockhomes.com/military-relocation/remote-home-tours/",
-          image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
+          image:
+            "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/relocations-bg-KPyJJGfxXDepzsW2dzzYt2.webp",
         }}
         schema={[faqSchema]}
-        />
+      />
 
       {/* ─── Hero ─── */}
       <section
@@ -113,370 +235,460 @@ export default function RemoteHomeTours() {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-charcoal/82" />
-        <div className="container relative">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-gold text-sm font-semibold tracking-widest uppercase mb-4 block"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Military Relocation Support
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-5 max-w-3xl"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Buying a Home Remotely{" "}
-            <span className="text-gold">Without Guessing</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-cream/80 text-[15px] sm:text-lg leading-relaxed max-w-2xl mb-4"
-          >
-            Most remote buyers aren't worried about finding homes to look at. They're worried about making a major financial decision on a home they haven't walked through — and not knowing what they missed.
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.25 }}
-            className="text-cream/80 text-[15px] sm:text-lg leading-relaxed max-w-2xl mb-8"
-          >
-            Remote home touring is how Rob helps PCS and out-of-state buyers get honest, on-the-ground information — so you can evaluate homes clearly, narrow the right areas, and make decisions with confidence instead of pressure.
-          </motion.p>
+        <div className="absolute inset-0 bg-charcoal/80" />
+        <div className="relative container">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-3"
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl"
           >
-            <a
-              href="#contact-rob"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
+            <div
+              className="inline-flex items-center gap-2 text-gold text-xs font-semibold tracking-widest uppercase mb-6"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Talk to Rob About Your Move
-              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-            </a>
-            <a
-              href="/military-relocation/"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-cream/80 font-medium rounded-lg transition-all hover:border-gold/40 hover:text-gold text-[15px] sm:text-base"
+              <Shield className="w-3.5 h-3.5" />
+              PCS RELOCATION · COLORADO
+            </div>
+            <h1
+              className="text-4xl sm:text-5xl md:text-6xl font-bold text-cream leading-tight mb-6"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Military Relocation Hub
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </a>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ─── What Rob Actually Does ─── */}
-      <section className="py-12 sm:py-20 bg-cream border-b border-cream-dark/40">
-        <div className="container max-w-3xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-5"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            What Rob actually does for remote buyers
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="space-y-4 text-[15px] sm:text-base leading-relaxed text-charcoal-light/80"
-          >
-            <p>
-              Before you start touring homes remotely, the most useful thing is usually a conversation about areas. A lot of remote buyers waste time evaluating homes in neighborhoods that don't actually fit their priorities — commute, schools, resale, lifestyle. Rob helps you narrow that down first, so you're not chasing the wrong shortlist.
+              Evaluate Colorado Homes Before You Arrive
+            </h1>
+            <p className="text-cream/80 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
+              PCS households often have to make housing decisions before they arrive — evaluating properties and neighborhoods remotely, under a compressed timeline, without local knowledge. This service gives you structured, professional guidance on Colorado Springs and Denver so you're not deciding blind.
             </p>
-            <p>
-              Once you have a list worth looking at, Rob tours properties on your behalf and gives you an honest read — not a highlight reel. He covers layout, condition, what the neighborhood actually feels like, and anything that would be hard to assess from listing photos alone. If something looks off, he'll tell you.
-            </p>
-            <p>
-              He also helps you understand what your standard buyer protections look like in a remote purchase — inspection contingencies, what the inspection process covers, and what your options are if something comes up. The goal is to make sure you're not flying blind on any part of the process.
-            </p>
-            <p>
-              Communication is direct and consistent. You'll know what's happening, what the next step is, and what Rob actually thinks — not just what sounds reassuring.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ─── Tour Formats ─── */}
-      <section className="py-12 sm:py-20 bg-white">
-        <div className="container">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Remote Tour Formats
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-10"
-          >
-            Three formats are available depending on your timeline, how many properties you're evaluating, and how much real-time interaction you need. Which format makes sense for your situation is part of the first conversation.
-          </motion.p>
-          <div className="grid sm:grid-cols-3 gap-6 sm:gap-8">
-            {tourFormats.map((format, i) => (
-              <motion.div
-                key={format.title}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 * i }}
-                className="p-6 sm:p-8 rounded bg-cream border border-cream-dark/60"
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="mailto:rob@myrockhomes.com?subject=PCS%20Relocation%20Tour%20Support%20Inquiry"
+                className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-charcoal font-semibold px-8 py-4 rounded transition-colors"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                <div className="w-12 h-12 rounded flex items-center justify-center bg-gold/10 text-gold-dark mb-5">
-                  <format.icon size={24} strokeWidth={1.8} />
+                Request Tour Support
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="/military-relocation/"
+                className="inline-flex items-center gap-2 border border-cream/30 hover:border-cream/60 text-cream px-8 py-4 rounded transition-colors"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                View PCS Resources
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── What This Service Is ─── */}
+      <section className="py-16 sm:py-20 bg-cream">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-charcoal mb-4"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              What PCS Relocation Tour Support Is
+            </h2>
+            <p className="text-charcoal/70 text-base sm:text-lg leading-relaxed">
+              PCS Relocation Tour Support is a structured showing and guidance service designed to
+              help military families evaluate housing options in Colorado before they arrive. Rob
+              Baker provides in-person property access and guided showings where available, plus
+              neighborhood context and general Colorado market guidance — helping you understand
+              your options before you commit.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Included */}
+            <div className="bg-white rounded-lg p-8 border border-cream-dark/40">
+              <h3
+                className="text-lg font-bold text-charcoal mb-5 flex items-center gap-2"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                <CheckCircle className="w-5 h-5 text-gold" />
+                What's Included
+              </h3>
+              <ul className="space-y-3">
+                {included.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-[14px] text-charcoal/75 leading-relaxed">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Not Included */}
+            <div className="bg-charcoal/4 rounded-lg p-8 border border-cream-dark/40">
+              <h3
+                className="text-lg font-bold text-charcoal mb-5"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                What's Not Included
+              </h3>
+              <ul className="space-y-3">
+                {notIncluded.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-[14px] text-charcoal/65 leading-relaxed">
+                    <span className="w-1.5 h-1.5 rounded-full bg-charcoal/30 mt-2 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Packages ─── */}
+      <section className="py-16 sm:py-20 bg-charcoal">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-cream mb-4"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Tour Support Packages
+            </h2>
+            <p className="text-cream/65 text-base sm:text-lg leading-relaxed">
+              Military and veteran pricing is applied automatically. Contact Rob before purchasing if you have questions about which package fits your situation.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {packages.map((pkg, i) => (
+              <div
+                key={i}
+                className={`relative rounded-lg p-7 border flex flex-col ${
+                  pkg.recommended
+                    ? "bg-gold/10 border-gold/40"
+                    : "bg-white/5 border-white/10"
+                }`}
+              >
+                {pkg.recommended && (
+                  <div
+                    className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-charcoal text-[11px] font-bold px-3 py-1 rounded-full tracking-wide uppercase"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    Most Popular
+                  </div>
+                )}
+                <div className="mb-4">
+                  <p
+                    className="text-cream/60 text-xs font-semibold tracking-widest uppercase mb-2"
+                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                  >
+                    {pkg.name}
+                  </p>
+                  <div className="flex items-baseline gap-2">
+                    <span
+                      className="text-4xl font-bold text-cream"
+                      style={{ fontFamily: "'Outfit', sans-serif" }}
+                    >
+                      {pkg.price}
+                    </span>
+                    <span className="text-cream/40 text-sm line-through">{pkg.standardPrice}</span>
+                  </div>
+                  <p className="text-gold text-xs mt-1">Military / Veteran Pricing</p>
                 </div>
-                <h3
-                  className="text-lg font-semibold text-charcoal mb-3"
+                <ul className="space-y-2 mb-6 flex-1">
+                  {[pkg.homes, pkg.showingDays, pkg.validity].map((detail, j) => (
+                    <li key={j} className="flex items-center gap-2 text-cream/70 text-[13px]">
+                      <CheckCircle className="w-3.5 h-3.5 text-gold flex-shrink-0" />
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-cream/50 text-[12px] leading-relaxed mb-6">{pkg.description}</p>
+                <a
+                  href="mailto:rob@myrockhomes.com?subject=PCS%20Tour%20Support%20Package%20Inquiry"
+                  className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-charcoal font-semibold px-5 py-3 rounded text-sm transition-colors"
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
-                  {format.title}
-                </h3>
-                <p className="text-charcoal-light/70 leading-relaxed mb-4 text-[15px]">
-                  {format.description}
-                </p>
-                <p className="text-charcoal-light/50 text-xs leading-relaxed border-t border-cream-dark/50 pt-3 mt-3">
-                  {format.note}
-                </p>
-              </motion.div>
+                  Contact Rob
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
             ))}
           </div>
-
-          {/* Expectation-setting note */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-10 p-5 rounded bg-cream border border-cream-dark/50"
-          >
-            <p className="text-charcoal-light/70 text-[15px] leading-relaxed">
-              <strong className="text-charcoal font-semibold">A note on scope and availability:</strong>{" "}
-              Remote touring formats, scheduling, and structure are discussed at the start of the working relationship. Availability depends on property access, market conditions, and representation context. Rob will be direct about what's realistic for your specific situation and timeline.
-            </p>
-          </motion.div>
         </div>
       </section>
 
-      {/* ─── How It Reduces Risk ─── */}
-      <section className="py-12 sm:py-20 bg-cream border-t border-b border-cream-dark/40">
-        <div className="container max-w-3xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-5"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            How remote touring reduces risk — not just distance
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="space-y-4 text-[15px] sm:text-base leading-relaxed text-charcoal-light/80"
-          >
-            <p>
-              The risk in buying remotely isn't just that you can't see the home. It's that listing photos are optimized to look good, and you can't ask the right questions of someone who's actually standing in the property.
-            </p>
-            <p>
-              Remote touring with Rob gives you a second set of eyes that's working for you — not for the sale. He's looking at the things that matter for your decision: layout flow, condition signals, how the home sits on the lot, what the street and immediate neighborhood actually feel like, and whether anything looks like it'll show up on inspection.
-            </p>
-            <p>
-              On top of that, standard buyer protections still apply. Inspection contingencies are part of every offer. If the inspection turns up something significant, you'll have options — negotiate a credit, request a price adjustment, or walk away. Rob will explain what the findings mean before you decide, not after.
-            </p>
-            <p>
-              The combination of honest pre-offer information and intact buyer protections is what makes remote purchasing workable — not just possible.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ─── Related Resources ─── */}
-      <section className="py-10 sm:py-16 bg-white border-t border-cream-dark/40">
+      {/* ─── Service Area ─── */}
+      <section className="py-16 sm:py-20 bg-charcoal/90 border-t border-white/5">
         <div className="container">
-          <h3
-            className="text-lg font-semibold text-charcoal mb-5"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Related Military Relocation Resources
-          </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="max-w-3xl mx-auto text-center mb-10">
+            <h2
+              className="text-2xl sm:text-3xl font-bold text-cream mb-3"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Service Area
+            </h2>
+            <p className="text-cream/65 text-base leading-relaxed">
+              Tour support is available within the following areas. Properties outside the standard service area may be available by custom quote.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {[
-              { label: "Military & PCS Relocation Hub", href: "/military-relocation/" },
-              { label: "PCS Moves to Colorado", href: "/military-relocation/pcs-colorado/" },
-              { label: "PCS Timeline Checklist", href: "/military-relocation/pcs-timeline-checklist/" },
-              { label: "Military Spouses Buying in Colorado", href: "/military-relocation/military-spouses-buying-colorado/" },
-              { label: "Temporary Housing — Colorado Springs", href: "/military-relocation/temporary-housing-colorado-springs/" },
-            ].map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="group flex items-center justify-between p-4 rounded bg-cream border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-md hover:shadow-gold/5"
-              >
-                <span
-                  className="font-medium text-charcoal text-[15px] group-hover:text-gold-dark transition-colors"
+              {
+                icon: MapPin,
+                region: "Colorado Springs Area",
+                detail: "25-mile radius from downtown Colorado Springs — Fort Carson, Peterson SFB, Schriever SFB, USAFA",
+              },
+              {
+                icon: MapPin,
+                region: "Denver / Aurora Area",
+                detail: "25-mile radius from downtown Denver — Buckley Space Force Base",
+              },
+            ].map((area, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 rounded-lg p-6 flex items-start gap-4">
+                <area.icon className="w-5 h-5 text-gold mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="font-semibold text-cream text-[15px]" style={{ fontFamily: "'Outfit', sans-serif" }}>{area.region}</p>
+                  <p className="text-cream/60 text-[13px] mt-1">{area.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-cream/50 text-[13px] mt-6">
+            Outside the standard service area?{" "}
+            <a href="mailto:rob@myrockhomes.com?subject=PCS%20Tour%20Support%20Custom%20Quote" className="text-gold hover:underline">
+              Contact Rob for a custom quote.
+            </a>
+          </p>
+        </div>
+      </section>
+
+      {/* ─── Who It's For ─── */}
+      <section className="py-16 sm:py-20 bg-cream">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-charcoal mb-4"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Who It's For
+            </h2>
+            <p className="text-charcoal/70 text-base sm:text-lg leading-relaxed">
+              This service is designed for PCS households who need to evaluate Colorado housing
+              options before they're local — and want structured, professional guidance rather than
+              searching blind.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                icon: Compass,
+                title: "Active Duty PCS Families",
+                body: "Relocating to Colorado Springs or Denver on military orders and need to evaluate housing options before your report date.",
+              },
+              {
+                icon: Users,
+                title: "Military Spouses Managing the Search",
+                body: "Handling the housing search independently while your service member is unavailable — and need reliable, structured guidance.",
+              },
+              {
+                icon: Home,
+                title: "Buyers and Renters Evaluating Options",
+                body: "Considering both rental and purchase options and want professional context on properties and neighborhoods before committing.",
+              },
+            ].map((card, i) => (
+              <div key={i} className="bg-charcoal/5 border border-cream-dark/40 rounded-lg p-7">
+                <card.icon className="w-8 h-8 text-gold mb-4" />
+                <h3
+                  className="text-base font-bold text-charcoal mb-2"
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
-                  {link.label}
-                </span>
-                <ArrowRight size={16} className="text-gold-dark opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-              </a>
+                  {card.title}
+                </h3>
+                <p className="text-charcoal/65 text-[14px] leading-relaxed">{card.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── How It Works ─── */}
+      <section className="py-16 sm:py-20 bg-charcoal/5 border-y border-cream-dark/30">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-charcoal mb-4"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              How It Works
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {steps.map((step, i) => (
+              <div key={i} className="relative">
+                <div
+                  className="text-5xl font-bold text-gold/20 mb-3 leading-none"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  {step.number}
+                </div>
+                <h3
+                  className="text-base font-bold text-charcoal mb-2"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  {step.title}
+                </h3>
+                <p className="text-charcoal/65 text-[14px] leading-relaxed">{step.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Trust Points ─── */}
+      <section className="py-16 sm:py-20 bg-cream border-b border-cream-dark/40">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-charcoal mb-4"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Why Rob
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {trustPoints.map((point, i) => (
+              <div key={i} className="text-center px-4">
+                <point.icon className="w-10 h-10 text-gold mx-auto mb-4" />
+                <h3
+                  className="text-base font-bold text-charcoal mb-2"
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  {point.title}
+                </h3>
+                <p className="text-charcoal/65 text-[14px] leading-relaxed">{point.body}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* ─── FAQ ─── */}
-      <section className="py-12 sm:py-20 bg-cream border-t border-cream-dark/40">
-        <div className="container max-w-3xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl sm:text-3xl font-bold text-charcoal mb-8"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Common Questions — Remote Home Tours
-          </motion.h2>
-          <div className="space-y-3">
-            {faqContent.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.05 * i }}
-                className="border border-cream-dark/60 rounded overflow-hidden"
-              >
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between gap-4 p-5 text-left bg-white hover:bg-cream/60 transition-colors"
-                  aria-expanded={openFaq === i}
-                >
-                  <span
-                    className="font-medium text-charcoal text-[15px] leading-snug"
-                    style={{ fontFamily: "'Outfit', sans-serif" }}
-                  >
-                    {item.question}
-                  </span>
-                  <ChevronDown
-                    size={18}
-                    className={`text-gold-dark shrink-0 transition-transform ${openFaq === i ? "rotate-180" : ""}`}
-                  />
-                </button>
-                {openFaq === i && (
-                  <div className="px-5 pb-5 pt-2 bg-cream/30">
-                    <p className="text-charcoal-light/80 text-[15px] leading-relaxed">
-                      {item.answer}
-                    </p>
-                  </div>
-                )}
-              </motion.div>
-            ))}
+      <section className="py-16 sm:py-20 bg-cream">
+        <div className="container">
+          <div className="max-w-2xl mx-auto">
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-charcoal mb-10"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Frequently Asked Questions
+            </h2>
+            <div className="divide-y divide-cream-dark/40">
+              {faqContent.map((item, i) => (
+                <FaqItem
+                  key={i}
+                  question={item.question}
+                  answer={item.answer}
+                  isOpen={openFaq === i}
+                  onToggle={() => setOpenFaq(openFaq === i ? null : i)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ─── Contact CTA ─── */}
-      <section id="contact-rob" className="py-12 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl sm:text-3xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Not sure where to start?
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-cream/70 text-[15px] sm:text-base leading-relaxed mb-8"
-          >
-            The first conversation is usually about areas — what fits your priorities, what doesn't, and what you actually need to know before you start looking at specific homes. That's where the process gets a lot clearer. No pressure, no pitch.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
-          >
-            <a
-              href="/#contact"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
+      {/* ─── Service Terms Note ─── */}
+      <section className="py-10 bg-charcoal/5 border-t border-cream-dark/30">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <h3
+              className="text-base font-bold text-charcoal mb-4"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Schedule a Consultation
-              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-            </a>
-            <a
-              href="tel:7203636544"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-cream/80 font-medium rounded-lg transition-all hover:border-gold/40 hover:text-gold text-[15px] sm:text-base"
+              A note on scope and availability
+            </h3>
+            <ul className="space-y-3">
+              {[
+                "This is a tour support and guidance service only. No agency, representation, or brokerage relationship is created.",
+                "Rob makes reasonable efforts to accommodate scheduling requests within 5–7 business days. Scheduling is subject to availability.",
+                "Same-day cancellations (less than 24 hours' notice) forfeit that day's showings and 3 showing credits.",
+                "Access delays or last-minute cancellations outside My Rock Realty's control restore the showing credit and may be rescheduled.",
+                "Standard service area: 25-mile radius from downtown Denver or downtown Colorado Springs. Outside the standard area is available by custom quote only.",
+                "Customer is responsible for independently verifying rental requirements, application standards, school boundaries, commute needs, pet rules, lease terms, HOA restrictions, and all other material facts before signing any lease or application.",
+              ].map((note, i) => (
+                <li key={i} className="flex items-start gap-2.5 text-[13px] text-charcoal/60 leading-relaxed">
+                  <span className="w-1 h-1 rounded-full bg-charcoal/30 mt-2 flex-shrink-0" />
+                  {note}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Fair Housing ─── */}
+      <section className="py-8 bg-charcoal/5 border-t border-cream-dark/30">
+        <div className="container">
+          <div className="max-w-3xl mx-auto flex items-center gap-3">
+            <Shield className="w-4 h-4 text-charcoal/40 flex-shrink-0" />
+            <p className="text-[12px] text-charcoal/50 leading-relaxed">
+              My Rock Realty offers tour services in compliance with applicable federal, state, and local fair housing laws, including the Fair Housing Act and the Colorado Anti-Discrimination Act. We do not discriminate based on race, color, national origin, religion, sex, familial status, disability, or any other protected class.{" "}
+              <a href="/fair-housing" className="text-gold-dark hover:underline">View our full Fair Housing Statement.</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CTA ─── */}
+      <section className="py-16 sm:py-20 bg-charcoal">
+        <div className="container">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-cream mb-4"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              <Phone size={16} />
-              Call or Text Rob
-            </a>
-          </motion.div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-cream/50 text-sm">
-            <a href="tel:7203636544" className="flex items-center gap-2 hover:text-gold transition-colors">
-              <Phone size={15} />
-              (720) 363-6544
-            </a>
-            <span className="hidden sm:block">·</span>
-            <a href="mailto:rob@myrockhomes.com" className="flex items-center gap-2 hover:text-gold transition-colors">
-              <Mail size={15} />
-              rob@myrockhomes.com
-            </a>
+              Ready to Start Your Housing Search?
+            </h2>
+            <p className="text-cream/70 text-base sm:text-lg leading-relaxed mb-8">
+              Contact Rob to discuss your PCS timeline and confirm availability before purchasing.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="mailto:rob@myrockhomes.com?subject=PCS%20Relocation%20Tour%20Support%20Inquiry"
+                className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-charcoal font-semibold px-8 py-4 rounded transition-colors"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                Contact Rob
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="tel:7203636544"
+                className="inline-flex items-center gap-2 border border-cream/30 hover:border-cream/60 text-cream px-8 py-4 rounded transition-colors"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                (720) 363-6544
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ─── Back Link ─── */}
       <div className="bg-cream border-t border-cream-dark/40 py-5">
-        <div className="container">
+        <div className="container flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
           <a
             href="/military-relocation/"
             className="inline-flex items-center gap-2 text-charcoal-light/60 hover:text-gold-dark text-sm transition-colors"
           >
-            ← Back to Military & PCS Relocation
+            ← Military &amp; PCS Relocation
           </a>
-          <span className="text-charcoal-light/30 mx-2">·</span>
+          <span className="hidden sm:block text-charcoal-light/30">·</span>
           <a
-            href="/colorado-springs-co-homes-for-sale"
+            href="/military-relocation/pcs-relocation-tour-support/"
             className="inline-flex items-center gap-2 text-charcoal-light/60 hover:text-gold-dark text-sm transition-colors"
           >
-            Colorado Springs Homes for Sale
+            PCS Relocation Tour Support
           </a>
-          <span className="text-charcoal-light/30 mx-2">·</span>
+          <span className="hidden sm:block text-charcoal-light/30">·</span>
           <a
-            href="/moving-to-colorado-springs/"
+            href="/military-relocation/buying-remotely/"
             className="inline-flex items-center gap-2 text-charcoal-light/60 hover:text-gold-dark text-sm transition-colors"
           >
-            Moving to Colorado Springs
+            Buying a Home Remotely
           </a>
         </div>
       </div>

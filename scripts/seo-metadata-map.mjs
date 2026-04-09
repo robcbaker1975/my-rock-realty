@@ -1111,4 +1111,24 @@ export const SEO_METADATA_MAP = {
       ],
     },
   },
+  "military-relocation/remote-home-tours": {
+    title: "PCS Relocation Tour Support | Remote Home Tours | My Rock Realty",
+    description: "PCS families relocating to Colorado Springs or Denver can evaluate housing before they arrive. Structured in-person showings and neighborhood guidance — military pricing available. My Rock Realty.",
+    canonicalUrl: "https://myrockhomes.com/military-relocation/remote-home-tours/",
+    breadcrumbs: [
+      { label: "Home", url: "/" },
+      { label: "Military & PCS Relocation", url: "/military-relocation/" },
+      { label: "Remote Home Tours", url: "/military-relocation/remote-home-tours/" },
+    ],
+  },
+  "military-relocation/buying-remotely": {
+    title: "Buying a Home Remotely | Colorado Remote Home Buying Support | My Rock Realty",
+    description: "Remote home buying support for military and PCS buyers relocating to Colorado Springs and the Denver metro. Recorded video tours, live virtual tours, and in-person tour blocks for buyers who aren't yet local.",
+    canonicalUrl: "https://myrockhomes.com/military-relocation/buying-remotely/",
+    breadcrumbs: [
+      { label: "Home", url: "/" },
+      { label: "Military & PCS Relocation", url: "/military-relocation/" },
+      { label: "Buying Remotely", url: "/military-relocation/buying-remotely/" },
+    ],
+  },
 };
