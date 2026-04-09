@@ -1065,4 +1065,15 @@ export const SEO_METADATA_MAP = {
       { "@type": "ListItem", position: 3, name: "University Hill / CU Boulder", item: "https://myrockhomes.com/university-hill-cu-boulder-real-estate/" },
     ],
   },
+  "selling-a-home-in-colorado": {
+    title: "Selling Your Home in Colorado | My Rock Realty",
+    description:
+      "Pricing alone is not a complete strategy. My Rock Realty helps Colorado sellers understand positioning, concessions, and what actually gets a home sold.",
+    canonical: "https://myrockhomes.com/selling-a-home-in-colorado/",
+    pageType: "guide",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Selling Your Home in Colorado", item: "https://myrockhomes.com/selling-a-home-in-colorado/" },
+    ],
+  },
 };

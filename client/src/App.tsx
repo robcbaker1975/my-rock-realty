@@ -45,6 +45,7 @@ const CentralParkDenverBuyerGuide = lazy(() => import("./pages/CentralParkDenver
 const SloanLakeDenverBuyerGuide = lazy(() => import("./pages/SloanLakeDenverBuyerGuide"));
 const BuyingAHomeInDenver = lazy(() => import("./pages/BuyingAHomeInDenver"));
 const BuyingAHomeColorado = lazy(() => import("./pages/BuyingAHomeColorado"));
+const SellingAHomeColorado = lazy(() => import("./pages/SellingAHomeColorado"));
 const FirstTimeHomeBuyerDenver = lazy(() => import("./pages/FirstTimeHomeBuyerDenver"));
 const DenverHomeBuyingProcess = lazy(() => import("./pages/DenverHomeBuyingProcess"));
 const CostOfLivingInDenverColorado = lazy(() => import("./pages/CostOfLivingInDenverColorado"));
@@ -197,6 +198,7 @@ function Router() {
       <Route path={"/sloan-lake-denver-buyer-guide"} component={SloanLakeDenverBuyerGuide} />
       <Route path={"/buying-a-home-in-denver"} component={BuyingAHomeInDenver} />
       <Route path={"/buying-a-home-colorado"} component={BuyingAHomeColorado} />
+      <Route path={"/selling-a-home-in-colorado"} component={SellingAHomeColorado} />
       <Route path={"/first-time-home-buyer-denver"} component={FirstTimeHomeBuyerDenver} />
       <Route path={"/denver-home-buying-process"} component={DenverHomeBuyingProcess} />
       <Route path={"/cost-of-living-in-denver-colorado"} component={CostOfLivingInDenverColorado} />

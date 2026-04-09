@@ -156,6 +156,7 @@ async function prerenderAll() {
   "entry-server-home": resolve(ROOT, "client/src/entry-server-home.tsx"),
   "entry-server-buying-in-lohi-denver": resolve(ROOT, "client/src/entry-server-buying-in-lohi-denver.tsx"),
   "entry-server-buying-a-home-colorado": resolve(ROOT, "client/src/entry-server-buying-a-home-colorado.tsx"),
+  "entry-server-selling-a-home-colorado": resolve(ROOT, "client/src/entry-server-selling-a-home-colorado.tsx"),
         },
         output: {
           format: "esm",
@@ -4048,8 +4049,30 @@ async function prerenderAll() {
     if (written_buying_a_home_colorado.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for buying-a-home-colorado");
     console.log("[prerender-all] Done: buying-a-home-colorado");
   }
-
-  console.log("[prerender-all] All 109 routes complete.");
+  // --- selling-a-home-in-colorado ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-selling-a-home-colorado.js"));
+    const html = ssrMod.renderSellingAHomeColorado();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_selling_a_home_colorado = SEO_METADATA_MAP["selling-a-home-in-colorado"];
+    const _seoBlock_selling_a_home_colorado = buildSeoHeadBlock({
+      title: _seoMeta_selling_a_home_colorado.title,
+      description: _seoMeta_selling_a_home_colorado.description,
+      canonical: _seoMeta_selling_a_home_colorado.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_selling_a_home_colorado.breadcrumbs)],
+      slug: "selling-a-home-in-colorado",
+    });
+    const _injectedHtml_selling_a_home_colorado = injectSeoHead(prerenderedShell, _seoBlock_selling_a_home_colorado, _seoMeta_selling_a_home_colorado.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "selling-a-home-in-colorado.html"), _injectedHtml_selling_a_home_colorado, "utf-8");
+    mkdirSync(distPrerenderedDir, { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "selling-a-home-in-colorado.html"), _injectedHtml_selling_a_home_colorado, "utf-8");
+    const written_selling_a_home_colorado = readFileSync(resolve(serverPrerenderedDir, "selling-a-home-in-colorado.html"), "utf-8");
+    if (written_selling_a_home_colorado.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for selling-a-home-in-colorado");
+    console.log("[prerender-all] Done: selling-a-home-in-colorado");
+  }
+  console.log("[prerender-all] All 110 routes complete.");
 
   // Copy Buying Buddy foundation pages (not in prerender pipeline) to dist/prerendered/
   // These are standalone HTML files that must exist in dist for production route handlers.
