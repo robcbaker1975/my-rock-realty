@@ -14,6 +14,48 @@ const DEEP_CHARCOAL = "#1a1714";
 const CREAM = "#F5F0EB";
 const GOLD = "#C9A96E";
 
+const faqItems = [
+  {
+    question: "How do I know if my home is priced correctly in Colorado?",
+    answer:
+      "Pricing correctly means understanding what comparable homes actually did — not just what they listed for. That includes whether they reduced, how long they sat, what concessions they offered, and how your home compares on condition and presentation. A pricing and positioning review looks at all of that before you go live.",
+  },
+  {
+    question: "What are seller concessions and should I offer them?",
+    answer:
+      "Seller concessions are contributions toward a buyer's closing costs or rate buydown. In many Colorado markets, the majority of homes close with some form of concession. Offering them strategically can help buyers who are payment-sensitive say yes without forcing a larger headline price cut. Whether to offer them — and how much — depends on your specific market, price range, and competition.",
+  },
+  {
+    question: "How important is the first launch window when selling a home?",
+    answer:
+      "The first launch window is your strongest attention window. When a home first hits the market, active buyers are paying close attention. If the pricing, presentation, or overall deal does not feel right, you do not just lose time — you often lose momentum that is hard to recover. Getting the front-end strategy right before you go live matters more than adjusting after the fact.",
+  },
+  {
+    question: "Do I need to make repairs or updates before listing my Colorado home?",
+    answer:
+      "Not always. What matters is that your home is positioned correctly for its condition. Some sellers benefit from targeted preparation. Others are better off pricing to condition and letting buyers decide. The right answer depends on your timeline, budget, and what comparable homes in your area are doing. That is part of what a positioning review helps clarify.",
+  },
+  {
+    question: "What is the difference between pricing a home and positioning a home?",
+    answer:
+      "Pricing is the number. Positioning is everything that makes a buyer choose your home over the competition — condition, presentation, photos, concessions, timing, and how the overall deal feels to a buyer who is comparing multiple options. A home can be priced right and still sit if the positioning is off.",
+  },
+  {
+    question: "How long does it take to sell a home in Colorado?",
+    answer:
+      "It depends on the market, price range, and how well the home is positioned. In some segments homes move in days. In others, the average days on market can stretch to 60, 80, or more. Understanding what is actually happening in your specific segment — not just general headlines — is what drives a realistic timeline.",
+  },
+];
+
+const faqSchema = {
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+};
+
 const breadcrumbItems = [
   { label: "Home", url: "/" },
   { label: "Selling Your Home in Colorado", url: "/selling-a-home-in-colorado" },
@@ -34,7 +76,7 @@ export default function SellingAHomeColorado() {
           canonicalUrl: "https://myrockhomes.com/selling-a-home-in-colorado/",
           breadcrumbs: breadcrumbItems,
         }}
-        schema={[]}
+        schema={[faqSchema]}
       />
 
       <Navbar compact />
@@ -349,6 +391,36 @@ export default function SellingAHomeColorado() {
             >
               See Flexible Listing Plans
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 9. FAQ SECTION ──────────────────────────────────────────── */}
+      <section id="faq" style={{ background: CHARCOAL }} className="py-20 sm:py-28">
+        <div className="max-w-3xl mx-auto px-8">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: GOLD }}>
+            Common Questions
+          </p>
+          <h2
+            className="text-3xl sm:text-4xl font-bold mb-12"
+            style={{ color: "#fff", fontFamily: "Outfit, sans-serif" }}
+          >
+            Seller FAQ
+          </h2>
+          <div className="space-y-10">
+            {faqItems.map((item) => (
+              <div key={item.question}>
+                <h3
+                  className="text-xl font-semibold mb-3"
+                  style={{ color: GOLD, fontFamily: "Outfit, sans-serif" }}
+                >
+                  {item.question}
+                </h3>
+                <p className="text-lg" style={{ color: "rgba(255,255,255,0.85)", lineHeight: 1.75 }}>
+                  {item.answer}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

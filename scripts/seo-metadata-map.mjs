@@ -1075,5 +1075,40 @@ export const SEO_METADATA_MAP = {
       { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
       { "@type": "ListItem", position: 2, name: "Selling Your Home in Colorado", item: "https://myrockhomes.com/selling-a-home-in-colorado/" },
     ],
+    faqSchema: {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "How do I know if my home is priced correctly in Colorado?",
+          acceptedAnswer: { "@type": "Answer", text: "Pricing correctly means understanding what comparable homes actually did \u2014 not just what they listed for. That includes whether they reduced, how long they sat, what concessions they offered, and how your home compares on condition and presentation. A pricing and positioning review looks at all of that before you go live." },
+        },
+        {
+          "@type": "Question",
+          name: "What are seller concessions and should I offer them?",
+          acceptedAnswer: { "@type": "Answer", text: "Seller concessions are contributions toward a buyer's closing costs or rate buydown. In many Colorado markets, the majority of homes close with some form of concession. Offering them strategically can help buyers who are payment-sensitive say yes without forcing a larger headline price cut. Whether to offer them \u2014 and how much \u2014 depends on your specific market, price range, and competition." },
+        },
+        {
+          "@type": "Question",
+          name: "How important is the first launch window when selling a home?",
+          acceptedAnswer: { "@type": "Answer", text: "The first launch window is your strongest attention window. When a home first hits the market, active buyers are paying close attention. If the pricing, presentation, or overall deal does not feel right, you do not just lose time \u2014 you often lose momentum that is hard to recover. Getting the front-end strategy right before you go live matters more than adjusting after the fact." },
+        },
+        {
+          "@type": "Question",
+          name: "Do I need to make repairs or updates before listing my Colorado home?",
+          acceptedAnswer: { "@type": "Answer", text: "Not always. What matters is that your home is positioned correctly for its condition. Some sellers benefit from targeted preparation. Others are better off pricing to condition and letting buyers decide. The right answer depends on your timeline, budget, and what comparable homes in your area are doing. That is part of what a positioning review helps clarify." },
+        },
+        {
+          "@type": "Question",
+          name: "What is the difference between pricing a home and positioning a home?",
+          acceptedAnswer: { "@type": "Answer", text: "Pricing is the number. Positioning is everything that makes a buyer choose your home over the competition \u2014 condition, presentation, photos, concessions, timing, and how the overall deal feels to a buyer who is comparing multiple options. A home can be priced right and still sit if the positioning is off." },
+        },
+        {
+          "@type": "Question",
+          name: "How long does it take to sell a home in Colorado?",
+          acceptedAnswer: { "@type": "Answer", text: "It depends on the market, price range, and how well the home is positioned. In some segments homes move in days. In others, the average days on market can stretch to 60, 80, or more. Understanding what is actually happening in your specific segment \u2014 not just general headlines \u2014 is what drives a realistic timeline." },
+        },
+      ],
+    },
   },
 };

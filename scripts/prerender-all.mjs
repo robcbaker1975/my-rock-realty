@@ -4061,7 +4061,7 @@ async function prerenderAll() {
       description: _seoMeta_selling_a_home_colorado.description,
       canonical: _seoMeta_selling_a_home_colorado.canonical,
       ogImage: OG_IMAGE_DEFAULT,
-      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_selling_a_home_colorado.breadcrumbs)],
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_selling_a_home_colorado.breadcrumbs), _seoMeta_selling_a_home_colorado.faqSchema],
       slug: "selling-a-home-in-colorado",
     });
     const _injectedHtml_selling_a_home_colorado = injectSeoHead(prerenderedShell, _seoBlock_selling_a_home_colorado, _seoMeta_selling_a_home_colorado.canonical);
