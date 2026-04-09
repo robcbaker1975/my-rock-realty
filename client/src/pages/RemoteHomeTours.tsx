@@ -2,6 +2,7 @@
  * Remote Home Tours — My Rock Realty
  * /military-relocation/remote-home-tours/
  * Design: Front Range Modern — matches existing site design system
+ * Updated: trust-first rewrite for remote/PCS buyers
  */
 import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
@@ -41,7 +42,17 @@ const faqContent = [
   {
     question: "How do I get started with remote home touring?",
     answer:
-      "The best starting point is a conversation with Rob about your timeline, target neighborhoods, and what you need to feel confident making a decision remotely. From there, he can explain which format makes the most sense for your situation and what to expect from the process.",
+      "The best starting point is a conversation about your timeline, target neighborhoods, and what you need to feel confident making a decision remotely. From there, Rob can explain which format makes the most sense for your situation and what to expect from the process.",
+  },
+  {
+    question: "How will I know what Rob actually thinks about a home?",
+    answer:
+      "Rob gives you his honest read — not a sales pitch. If a home has a layout that doesn't work well for most buyers, a location that creates resale risk, or condition issues that will show up on inspection, he'll tell you. The goal is to help you make a clear decision, not to push you toward an offer.",
+  },
+  {
+    question: "What happens if I make an offer and something comes up on inspection?",
+    answer:
+      "Inspection contingencies are a standard buyer protection and are part of every offer Rob structures for remote buyers. If the inspection turns up something significant, you'll have options — negotiate a repair credit, request a price adjustment, or walk away. Rob will walk you through what the findings actually mean before you decide.",
   },
 ];
 
@@ -58,21 +69,21 @@ const tourFormats = [
     icon: Video,
     title: "Recorded Video Tours",
     description:
-      "Rob tours the property on your behalf and delivers a detailed narrated video walkthrough. Covers layout, condition, neighborhood context, and anything that matters to your search — reviewed on your schedule.",
+      "Rob tours the property on your behalf and delivers a narrated video walkthrough. He covers layout, condition, neighborhood context, and anything that would be hard to assess from listing photos — including things worth flagging before you get too far into a decision.",
     note: "Available for properties with confirmed access. Delivery timing depends on scheduling and property availability.",
   },
   {
     icon: Monitor,
     title: "Live Virtual Tours",
     description:
-      "A real-time video walkthrough conducted by Rob while you participate remotely. Ask questions, request specific views, and get live observations as the tour happens — as close to being there as possible without being local.",
+      "A real-time video walkthrough conducted by Rob while you participate remotely. You can direct the tour, ask questions as they come up, and get live observations on the things that matter to your search — as close to being there as possible without being local.",
     note: "Requires scheduling coordination and confirmed property access. Best for buyers with some timeline flexibility.",
   },
   {
     icon: MapPin,
     title: "In-Person Tour Blocks",
     description:
-      "Rob tours multiple properties in a single scheduled session, documenting each with video and notes. Efficient for buyers evaluating several options in a compressed timeframe who want thorough coverage without being present.",
+      "Rob tours multiple properties in a single scheduled session, documenting each with video and notes. Efficient for buyers working through a shortlist who want thorough, honest coverage of several options without needing to be present for each one.",
     note: "Best suited for buyers with a defined shortlist. Scope and number of properties are discussed in advance.",
   },
 ];
@@ -119,19 +130,24 @@ export default function RemoteHomeTours() {
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-5 max-w-3xl"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Remote Home Tours{" "}
-            <span className="text-gold">for Military & PCS Buyers</span>
+            Buying a Home Remotely{" "}
+            <span className="text-gold">Without Guessing</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
+            className="text-cream/80 text-[15px] sm:text-lg leading-relaxed max-w-2xl mb-4"
+          >
+            Most remote buyers aren't worried about finding homes to look at. They're worried about making a major financial decision on a home they haven't walked through — and not knowing what they missed.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25 }}
             className="text-cream/80 text-[15px] sm:text-lg leading-relaxed max-w-2xl mb-8"
           >
-            When you're relocating to Colorado on military orders, being physically present
-            for every home tour isn't always possible. Remote home touring gives you the
-            information and perspective you need to make confident decisions — without
-            requiring you to be local first.
+            Remote home touring is how Rob helps PCS and out-of-state buyers get honest, on-the-ground information — so you can evaluate homes clearly, narrow the right areas, and make decisions with confidence instead of pressure.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -159,6 +175,41 @@ export default function RemoteHomeTours() {
         </div>
       </section>
 
+      {/* ─── What Rob Actually Does ─── */}
+      <section className="py-12 sm:py-20 bg-cream border-b border-cream-dark/40">
+        <div className="container max-w-3xl">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-2xl sm:text-3xl font-bold text-charcoal mb-5"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            What Rob actually does for remote buyers
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="space-y-4 text-[15px] sm:text-base leading-relaxed text-charcoal-light/80"
+          >
+            <p>
+              Before you start touring homes remotely, the most useful thing is usually a conversation about areas. A lot of remote buyers waste time evaluating homes in neighborhoods that don't actually fit their priorities — commute, schools, resale, lifestyle. Rob helps you narrow that down first, so you're not chasing the wrong shortlist.
+            </p>
+            <p>
+              Once you have a list worth looking at, Rob tours properties on your behalf and gives you an honest read — not a highlight reel. He covers layout, condition, what the neighborhood actually feels like, and anything that would be hard to assess from listing photos alone. If something looks off, he'll tell you.
+            </p>
+            <p>
+              He also helps you understand what your standard buyer protections look like in a remote purchase — inspection contingencies, what the inspection process covers, and what your options are if something comes up. The goal is to make sure you're not flying blind on any part of the process.
+            </p>
+            <p>
+              Communication is direct and consistent. You'll know what's happening, what the next step is, and what Rob actually thinks — not just what sounds reassuring.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ─── Tour Formats ─── */}
       <section className="py-12 sm:py-20 bg-white">
         <div className="container">
@@ -169,7 +220,7 @@ export default function RemoteHomeTours() {
             className="text-2xl sm:text-3xl font-bold text-charcoal mb-3"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Current Remote Tour Formats
+            Remote Tour Formats
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -178,10 +229,7 @@ export default function RemoteHomeTours() {
             transition={{ delay: 0.1 }}
             className="text-charcoal-light/70 text-[15px] sm:text-base leading-relaxed max-w-2xl mb-10"
           >
-            Three formats are currently available depending on your timeline, how many
-            properties you're evaluating, and how much real-time interaction you need.
-            Availability and scope depend on property access, scheduling, and your
-            representation context — discussed at the start of the process.
+            Three formats are available depending on your timeline, how many properties you're evaluating, and how much real-time interaction you need. Which format makes sense for your situation is part of the first conversation.
           </motion.p>
           <div className="grid sm:grid-cols-3 gap-6 sm:gap-8">
             {tourFormats.map((format, i) => (
@@ -221,17 +269,49 @@ export default function RemoteHomeTours() {
           >
             <p className="text-charcoal-light/70 text-[15px] leading-relaxed">
               <strong className="text-charcoal font-semibold">A note on scope and availability:</strong>{" "}
-              Remote touring formats, scheduling, and structure are discussed at the start of
-              the working relationship. Availability depends on property access, market
-              conditions, and representation context. Rob will be direct about what's
-              realistic for your specific situation and timeline.
+              Remote touring formats, scheduling, and structure are discussed at the start of the working relationship. Availability depends on property access, market conditions, and representation context. Rob will be direct about what's realistic for your specific situation and timeline.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── How It Reduces Risk ─── */}
+      <section className="py-12 sm:py-20 bg-cream border-t border-b border-cream-dark/40">
+        <div className="container max-w-3xl">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-2xl sm:text-3xl font-bold text-charcoal mb-5"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+          >
+            How remote touring reduces risk — not just distance
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="space-y-4 text-[15px] sm:text-base leading-relaxed text-charcoal-light/80"
+          >
+            <p>
+              The risk in buying remotely isn't just that you can't see the home. It's that listing photos are optimized to look good, and you can't ask the right questions of someone who's actually standing in the property.
+            </p>
+            <p>
+              Remote touring with Rob gives you a second set of eyes that's working for you — not for the sale. He's looking at the things that matter for your decision: layout flow, condition signals, how the home sits on the lot, what the street and immediate neighborhood actually feel like, and whether anything looks like it'll show up on inspection.
+            </p>
+            <p>
+              On top of that, standard buyer protections still apply. Inspection contingencies are part of every offer. If the inspection turns up something significant, you'll have options — negotiate a credit, request a price adjustment, or walk away. Rob will explain what the findings mean before you decide, not after.
+            </p>
+            <p>
+              The combination of honest pre-offer information and intact buyer protections is what makes remote purchasing workable — not just possible.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* ─── Related Resources ─── */}
-      <section className="py-10 sm:py-16 bg-cream border-t border-cream-dark/40">
+      <section className="py-10 sm:py-16 bg-white border-t border-cream-dark/40">
         <div className="container">
           <h3
             className="text-lg font-semibold text-charcoal mb-5"
@@ -250,7 +330,7 @@ export default function RemoteHomeTours() {
               <a
                 key={link.href}
                 href={link.href}
-                className="group flex items-center justify-between p-4 rounded bg-white border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-md hover:shadow-gold/5"
+                className="group flex items-center justify-between p-4 rounded bg-cream border border-cream-dark/60 hover:border-gold/40 transition-all hover:shadow-md hover:shadow-gold/5"
               >
                 <span
                   className="font-medium text-charcoal text-[15px] group-hover:text-gold-dark transition-colors"
@@ -266,7 +346,7 @@ export default function RemoteHomeTours() {
       </section>
 
       {/* ─── FAQ ─── */}
-      <section className="py-12 sm:py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-cream border-t border-cream-dark/40">
         <div className="container max-w-3xl">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -326,7 +406,7 @@ export default function RemoteHomeTours() {
             className="text-2xl sm:text-3xl font-bold text-white mb-4"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Ready to Start Your Remote Search?
+            Not sure where to start?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -335,10 +415,7 @@ export default function RemoteHomeTours() {
             transition={{ delay: 0.1 }}
             className="text-cream/70 text-[15px] sm:text-base leading-relaxed mb-8"
           >
-            The first step is a conversation about your timeline, target area, and what
-            you need to feel confident making decisions remotely. Rob can explain what
-            remote touring looks like for your specific situation and what to expect
-            from the process.
+            The first conversation is usually about areas — what fits your priorities, what doesn't, and what you actually need to know before you start looking at specific homes. That's where the process gets a lot clearer. No pressure, no pitch.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -354,6 +431,14 @@ export default function RemoteHomeTours() {
             >
               Schedule a Consultation
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+            </a>
+            <a
+              href="tel:7203636544"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-cream/80 font-medium rounded-lg transition-all hover:border-gold/40 hover:text-gold text-[15px] sm:text-base"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              <Phone size={16} />
+              Call or Text Rob
             </a>
           </motion.div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-cream/50 text-sm">
