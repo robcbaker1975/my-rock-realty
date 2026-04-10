@@ -12,6 +12,7 @@ export type FormVariant =
   | "buyer"
   | "seller"
   | "pcs"
+  | "rental"
   | "workshop"
   | "referral"
   | "coaching"
@@ -122,6 +123,31 @@ export const FORM_VARIANTS: Record<FormVariant, FormVariantConfig> = {
       branch: true,
       baseDutyStation: true,
       pcsTimeline: true,
+      workshopInterest: false,
+      referralNeed: false,
+      referralMarket: false,
+      experienceLevel: false,
+      coachingInterest: false,
+      marketsOfInterest: false,
+      message: true,
+    },
+  },
+
+  rental: {
+    form_type: "Rental Tour Intake",
+    title: "Rental Tour Support Inquiry",
+    subtitle: "Let's discuss your rental search and find the right package for you.",
+    submitLabel: "Send My Inquiry",
+    successMessage: "Thank you! Rob will be in touch with you shortly.",
+    smsConsent: { transactional: true, marketing: true },
+    fields: {
+      phone: true,
+      propertyType: false,
+      propertyAddress: false,
+      sellingTimeline: false,
+      branch: false,
+      baseDutyStation: false,
+      pcsTimeline: false,
       workshopInterest: false,
       referralNeed: false,
       referralMarket: false,

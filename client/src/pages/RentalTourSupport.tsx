@@ -8,6 +8,7 @@
 import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
 import Navbar from "@/components/Navbar";
+import LeadForm from "@/components/LeadForm";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { motion } from "framer-motion";
 import {
@@ -342,6 +343,47 @@ export default function RentalTourSupport() {
         </div>
       </section>
 
+      {/* ─── Renting Tours ─── */}
+      <section className="py-16 sm:py-20 bg-charcoal">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-cream mb-6"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              Rental Tour Support for People Who Are Tired of Chasing the Wrong Places
+            </h2>
+            <div className="space-y-4 text-cream/80 text-base sm:text-lg leading-relaxed mb-8">
+              <p>A lot of renters think the hard part is finding places to go see.</p>
+              <p>A lot of times, it is figuring out which places are even worth your time.</p>
+              <p>A lot of rental searches get expensive one wasted trip at a time.</p>
+              <p>A better filter is usually worth more than more listings.</p>
+              <p>The point is not to see more places. The point is to stop seeing the wrong ones.</p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="#contact-rob"
+                className="inline-flex items-center justify-center px-6 py-2.5 bg-gold/20 hover:bg-gold/30 text-gold font-medium rounded transition-colors text-sm"
+              >
+                Talk Through Your Rental Search
+              </a>
+              <a
+                href="#contact-rob"
+                className="inline-flex items-center justify-center px-6 py-2.5 bg-gold/20 hover:bg-gold/30 text-gold font-medium rounded transition-colors text-sm"
+              >
+                Ask Which Package Actually Fits
+              </a>
+              <a
+                href="#contact-rob"
+                className="inline-flex items-center justify-center px-6 py-2.5 bg-gold/20 hover:bg-gold/30 text-gold font-medium rounded transition-colors text-sm"
+              >
+                Stop Wasting Trips on the Wrong Places
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── Service Area ─── */}
       <section className="py-14 sm:py-18 bg-charcoal">
         <div className="container">
@@ -631,34 +673,34 @@ export default function RentalTourSupport() {
         </div>
       </section>
 
-      {/* ─── CTA ─── */}
-      <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2
-              className="text-3xl sm:text-4xl font-bold text-cream mb-4"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Ready to Start Your Rental Search?
-            </h2>
-            <p className="text-cream/70 text-base sm:text-lg leading-relaxed mb-8">
-              Contact Rob to discuss your search criteria and confirm availability before purchasing.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:rob@myrockhomes.com?subject=Rental%20Tour%20Support%20Inquiry"
-                className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-charcoal font-semibold px-8 py-4 rounded transition-colors"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                Contact Rob
-                <ArrowRight className="w-4 h-4" />
-              </a>
+      {/* ─── Contact Form ─── */}
+      <section id="contact-rob" className="py-12 sm:py-20 bg-charcoal">
+        <div className="container max-w-4xl">
+          <LeadForm
+            variant="rental"
+            source="Rental Tour Support"
+            dark
+          />
+          <div className="mt-8 pt-8 border-t border-charcoal-light/20">
+            <p className="text-cream/70 text-sm mb-4">To reach out to Rob directly:</p>
+            <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="tel:7203636544"
-                className="inline-flex items-center gap-2 border border-cream/30 hover:border-cream/60 text-cream px-8 py-4 rounded transition-colors"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
+                className="inline-flex items-center justify-center px-6 py-2.5 bg-gold/20 hover:bg-gold/30 text-gold font-medium rounded transition-colors text-sm"
               >
-                (720) 363-6544
+                Call
+              </a>
+              <a
+                href="sms:7203636544"
+                className="inline-flex items-center justify-center px-6 py-2.5 bg-gold/20 hover:bg-gold/30 text-gold font-medium rounded transition-colors text-sm"
+              >
+                Text
+              </a>
+              <a
+                href="mailto:rob@myrockhomes.com"
+                className="inline-flex items-center justify-center px-6 py-2.5 bg-gold/20 hover:bg-gold/30 text-gold font-medium rounded transition-colors text-sm"
+              >
+                E-Mail
               </a>
             </div>
           </div>
