@@ -701,6 +701,29 @@ export default function RemoteHomeTours() {
             source="Remote Home Tours"
             dark
           />
+          <div className="mt-8 pt-8 border-t border-charcoal-light/20">
+            <p className="text-cream/70 text-sm mb-4">To reach out to Rob directly:</p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="tel:7203636544"
+                className="inline-flex items-center justify-center px-6 py-2.5 bg-gold/20 hover:bg-gold/30 text-gold font-medium rounded transition-colors text-sm"
+              >
+                Call
+              </a>
+              <a
+                href="sms:7203636544"
+                className="inline-flex items-center justify-center px-6 py-2.5 bg-gold/20 hover:bg-gold/30 text-gold font-medium rounded transition-colors text-sm"
+              >
+                Text
+              </a>
+              <a
+                href="mailto:rob@myrockhomes.com"
+                className="inline-flex items-center justify-center px-6 py-2.5 bg-gold/20 hover:bg-gold/30 text-gold font-medium rounded transition-colors text-sm"
+              >
+                E-Mail
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
