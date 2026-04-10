@@ -505,6 +505,65 @@ export default function RemoteHomeTours() {
         </div>
       </section>
 
+      {/* ─── PCS Renting ─── */}
+      <section className="py-16 sm:py-20 bg-charcoal">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <p
+              className="text-gold text-xs font-semibold uppercase tracking-widest mb-4"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              PCS Renting
+            </p>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-cream mb-8"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              PCS Renting in Colorado Without Running Yourself Ragged
+            </h2>
+            <div className="space-y-5 text-cream/80 text-base sm:text-lg leading-relaxed">
+              <p>A lot of PCS families assume renting should be the easier answer.</p>
+              <p>Sometimes it is.</p>
+              <p>
+                A lot of times, it only feels easier until the search starts eating nights, weekends,
+                and patience.
+              </p>
+              <p>That wears people out.</p>
+              <p>Renting first is not losing. Sometimes it is the smartest move on the board.</p>
+              <p>
+                If you are renting on a PCS move, the better question is what actually works for
+                this move.
+              </p>
+              <p>A rental does not have to be perfect. It does have to make your life easier.</p>
+              <p>The point is not to win the rental search. The point is to stop letting it run you.</p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 mt-10">
+              <a
+                href="mailto:rob@myrockhomes.com?subject=PCS%20Renting%20in%20Colorado"
+                className="inline-block px-6 py-3 bg-gold text-charcoal text-sm font-semibold rounded text-center hover:bg-gold/90 transition-colors"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                Talk Through Renting First
+              </a>
+              <a
+                href="mailto:rob@myrockhomes.com?subject=PCS%20Renting%20in%20Colorado"
+                className="inline-block px-6 py-3 border border-cream/30 text-cream text-sm font-semibold rounded text-center hover:border-cream/60 transition-colors"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                Figure Out What Actually Fits
+              </a>
+              <a
+                href="mailto:rob@myrockhomes.com?subject=PCS%20Renting%20in%20Colorado"
+                className="inline-block px-6 py-3 border border-cream/30 text-cream text-sm font-semibold rounded text-center hover:border-cream/60 transition-colors"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                Ask Which Areas Make the Most Sense
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── How It Works ─── */}
       <section className="py-16 sm:py-20 bg-charcoal/5 border-y border-cream-dark/30">
         <div className="container">
