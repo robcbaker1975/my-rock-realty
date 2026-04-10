@@ -8,6 +8,7 @@ import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
 import Navbar from "@/components/Navbar";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
+import LeadForm from "@/components/LeadForm";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, Phone, Mail, Video, Monitor, MapPin } from "lucide-react";
 
@@ -475,62 +476,14 @@ export default function BuyingRemotely() {
         </div>
       </section>
 
-      {/* ─── Contact CTA ─── */}
+      {/* ─── Contact Form ─── */}
       <section id="contact-rob" className="py-12 sm:py-20 bg-charcoal">
-        <div className="container max-w-2xl text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl sm:text-3xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            Not sure where to start?
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-cream/70 text-[15px] sm:text-base leading-relaxed mb-8"
-          >
-            The first conversation is usually about areas — what fits your priorities, what doesn't, and what you actually need to know before you start looking at specific homes. That's where the process gets a lot clearer. No pressure, no pitch.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
-          >
-            <a
-              href="/#contact"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-charcoal font-semibold rounded-lg transition-all hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20 active:scale-[0.98] text-[15px] sm:text-base"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Schedule a Consultation
-              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-            </a>
-            <a
-              href="tel:7203636544"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 border border-white/20 text-cream/80 font-medium rounded-lg transition-all hover:border-gold/40 hover:text-gold text-[15px] sm:text-base"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              <Phone size={16} />
-              Call or Text Rob
-            </a>
-          </motion.div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-cream/50 text-sm">
-            <a href="tel:7203636544" className="flex items-center gap-2 hover:text-gold transition-colors">
-              <Phone size={15} />
-              (720) 363-6544
-            </a>
-            <span className="hidden sm:block">·</span>
-            <a href="mailto:rob@myrockhomes.com" className="flex items-center gap-2 hover:text-gold transition-colors">
-              <Mail size={15} />
-              rob@myrockhomes.com
-            </a>
-          </div>
+        <div className="container max-w-4xl">
+          <LeadForm
+            variant="pcs"
+            source="Buying Remotely"
+            dark
+          />
         </div>
       </section>
 

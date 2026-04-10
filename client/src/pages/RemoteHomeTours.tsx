@@ -10,6 +10,7 @@ import { useState } from "react";
 import SeoHead from "@/components/seo/SeoHead";
 import Navbar from "@/components/Navbar";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
+import LeadForm from "@/components/LeadForm";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -692,37 +693,14 @@ export default function RemoteHomeTours() {
         </div>
       </section>
 
-      {/* ─── CTA ─── */}
-      <section className="py-16 sm:py-20 bg-charcoal">
-        <div className="container">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2
-              className="text-3xl sm:text-4xl font-bold text-cream mb-4"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
-            >
-              Ready to Start Your Housing Search?
-            </h2>
-            <p className="text-cream/70 text-base sm:text-lg leading-relaxed mb-8">
-              Contact Rob to discuss your PCS timeline and confirm availability before purchasing.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:rob@myrockhomes.com?subject=PCS%20Relocation%20Tour%20Support%20Inquiry"
-                className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-charcoal font-semibold px-8 py-4 rounded transition-colors"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                Contact Rob
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="tel:7203636544"
-                className="inline-flex items-center gap-2 border border-cream/30 hover:border-cream/60 text-cream px-8 py-4 rounded transition-colors"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                (720) 363-6544
-              </a>
-            </div>
-          </div>
+      {/* ─── Contact Form ─── */}
+      <section id="contact-rob" className="py-12 sm:py-20 bg-charcoal">
+        <div className="container max-w-4xl">
+          <LeadForm
+            variant="pcs"
+            source="Remote Home Tours"
+            dark
+          />
         </div>
       </section>
 
