@@ -310,6 +310,85 @@ export default function BuyingRemotely() {
         </div>
       </section>
 
+      {/* ─── PCS Buying ─── */}
+      <section className="py-16 sm:py-20 bg-charcoal">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <p
+              className="text-gold text-xs font-semibold uppercase tracking-widest mb-4"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              PCS Home Buying
+            </p>
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-cream mb-8"
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+            >
+              PCS Home Buying in Colorado Without Guessing Your Way Into the Wrong Move
+            </h2>
+            <div className="space-y-5 text-cream/80 text-base sm:text-lg leading-relaxed">
+              <p>A lot of PCS buyers think the first step is finding homes to look at.</p>
+              <p>Sometimes it is.</p>
+              <p>
+                A lot of times, though, the bigger issue is figuring out what actually makes sense
+                before the search starts pulling you in five directions at once.
+              </p>
+              <p>
+                Wrong area.<br />
+                Wrong payment.<br />
+                Wrong home type.<br />
+                Wrong plan for how long you may even be here.
+              </p>
+              <p>That gets expensive.</p>
+              <p>A house can be nice and still be the wrong move.</p>
+              <p>
+                If you are buying in Colorado on orders, I do not want to start with hype, tours, or
+                whatever just popped up online.
+              </p>
+              <p>I want to start with the move.</p>
+              <p>
+                What base are you tied to?<br />
+                What commute is actually realistic?<br />
+                What payment feels fine when this is your real life and not just a lender number?<br />
+                What kind of home works for this assignment?<br />
+                And if plans change, how exposed are you?
+              </p>
+              <p>
+                I would rather slow the search down for a week than help you clean up a bad decision
+                for five years.
+              </p>
+              <p>
+                I am not trying to get you under contract fast. I am trying to keep you from getting
+                under contract wrong.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 mt-10">
+              <a
+                href="mailto:rob@myrockhomes.com?subject=PCS%20Home%20Buying%20in%20Colorado"
+                className="inline-block px-6 py-3 bg-gold text-charcoal text-sm font-semibold rounded text-center hover:bg-gold/90 transition-colors"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                Talk Through Your PCS Move
+              </a>
+              <a
+                href="mailto:rob@myrockhomes.com?subject=PCS%20Home%20Buying%20in%20Colorado"
+                className="inline-block px-6 py-3 border border-cream/30 text-cream text-sm font-semibold rounded text-center hover:border-cream/60 transition-colors"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                Figure Out Whether Buying Now Makes Sense
+              </a>
+              <a
+                href="mailto:rob@myrockhomes.com?subject=PCS%20Home%20Buying%20in%20Colorado"
+                className="inline-block px-6 py-3 border border-cream/30 text-cream text-sm font-semibold rounded text-center hover:border-cream/60 transition-colors"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                Narrow the Right Fit First
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── Related Resources ─── */}
       <section className="py-10 sm:py-16 bg-white border-t border-cream-dark/40">
         <div className="container">
