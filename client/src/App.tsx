@@ -15,6 +15,7 @@ const Terms = lazy(() => import("./pages/Terms"));
 const FairHousing = lazy(() => import("./pages/FairHousing"));
 const WorkshopDraft = lazy(() => import("./pages/WorkshopDraft"));
 const WorkshopResources = lazy(() => import("./pages/WorkshopResources"));
+const NeedsWantsDreams = lazy(() => import("./pages/NeedsWantsDreams"));
 const JoinUs = lazy(() => import("./pages/JoinUs"));
 const Coaching = lazy(() => import("./pages/Coaching"));
 const Accessibility = lazy(() => import("./pages/Accessibility"));
@@ -168,6 +169,7 @@ function Router() {
       <Route path={"/fair-housing"} component={FairHousing} />
       <Route path={"/colorado-home-buying-workshop"} component={WorkshopDraft} />
       <Route path={"/colorado-home-buying-workshop/resources"} component={WorkshopResources} />
+      <Route path={"/colorado-home-buying-workshop/resources/needs-wants-dreams"} component={NeedsWantsDreams} />
       <Route path={"/join-us"} component={JoinUs} />
       <Route path={"/real-estate-coaching"} component={Coaching} />
       <Route path={"/coaching"}>{() => { window.location.href = "/real-estate-coaching"; return null; }}</Route>

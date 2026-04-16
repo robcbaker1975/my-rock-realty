@@ -20,7 +20,7 @@ const worksheets = [
     role: "Get clear on what actually matters before the search gets noisy.",
     description:
       "Most buyers start looking at homes before they know what they really need. The result is a scattered search, emotional decisions, and a lot of wasted time. This worksheet helps you separate true needs from flexible wants and longer-term dreams — so your search stays focused, your conversations with your agent stay productive, and you don't end up settling for the wrong home.",
-    href: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/needs-wants-dreams-worksheet_c8e606ce.html",
+    href: "/colorado-home-buying-workshop/resources/needs-wants-dreams",
     cta: "Open Worksheet 1",
   },
   {
