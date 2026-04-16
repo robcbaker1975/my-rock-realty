@@ -1131,4 +1131,16 @@ export const SEO_METADATA_MAP = {
       { label: "Buying Remotely", url: "/military-relocation/buying-remotely/" },
     ],
   },
+  "colorado-home-buying-workshop/resources/needs-wants-dreams": {
+    title: "Needs, Wants & Dreams Worksheet | Colorado Home Buying Workshop | My Rock Realty",
+    description:
+      "Use this worksheet to get clear on what you actually need, what you want, and what can wait — before your home search gets noisy. Part of the Colorado Home Buying Workshop from My Rock Realty.",
+    canonical: "https://myrockhomes.com/colorado-home-buying-workshop/resources/needs-wants-dreams/",
+    pageType: "resource",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Colorado Home Buying Workshop Resources", item: "https://myrockhomes.com/colorado-home-buying-workshop/resources/" },
+      { "@type": "ListItem", position: 3, name: "Needs, Wants & Dreams", item: "https://myrockhomes.com/colorado-home-buying-workshop/resources/needs-wants-dreams/" },
+    ],
+  },
 };

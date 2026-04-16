@@ -158,6 +158,7 @@ async function prerenderAll() {
   "entry-server-buying-in-lohi-denver": resolve(ROOT, "client/src/entry-server-buying-in-lohi-denver.tsx"),
   "entry-server-buying-a-home-colorado": resolve(ROOT, "client/src/entry-server-buying-a-home-colorado.tsx"),
   "entry-server-selling-a-home-colorado": resolve(ROOT, "client/src/entry-server-selling-a-home-colorado.tsx"),
+  "entry-server-needs-wants-dreams": resolve(ROOT, "client/src/entry-server-needs-wants-dreams.tsx"),
         },
         output: {
           format: "esm",
@@ -169,7 +170,7 @@ async function prerenderAll() {
     logLevel: "warn",
   });
 
-  console.log("[prerender-all] SSR build complete. Rendering all 105 routes...");
+  console.log("[prerender-all] SSR build complete. Rendering all 112 routes...");
 
   // STEP 2: Read the client shell (built by vite build step before this script runs)
   const shellPath = resolve(ROOT, "dist/public/index.html");
@@ -4110,7 +4111,31 @@ async function prerenderAll() {
     if (written_selling_a_home_colorado.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for selling-a-home-in-colorado");
     console.log("[prerender-all] Done: selling-a-home-in-colorado");
   }
-  console.log("[prerender-all] All 111 routes complete.");
+  // --- colorado-home-buying-workshop/resources/needs-wants-dreams ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-needs-wants-dreams.js"));
+    const html = ssrMod.renderNeedsWantsDreams();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_needs_wants_dreams = SEO_METADATA_MAP["colorado-home-buying-workshop/resources/needs-wants-dreams"];
+    const _seoBlock_needs_wants_dreams = buildSeoHeadBlock({
+      title: _seoMeta_needs_wants_dreams.title,
+      description: _seoMeta_needs_wants_dreams.description,
+      canonical: _seoMeta_needs_wants_dreams.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_needs_wants_dreams.breadcrumbs)],
+      slug: "colorado-home-buying-workshop/resources/needs-wants-dreams",
+    });
+    const _injectedHtml_needs_wants_dreams = injectSeoHead(prerenderedShell, _seoBlock_needs_wants_dreams, _seoMeta_needs_wants_dreams.canonical);
+    mkdirSync(resolve(serverPrerenderedDir, "colorado-home-buying-workshop/resources"), { recursive: true });
+    writeFileSync(resolve(serverPrerenderedDir, "colorado-home-buying-workshop/resources/needs-wants-dreams.html"), _injectedHtml_needs_wants_dreams, "utf-8");
+    mkdirSync(resolve(distPrerenderedDir, "colorado-home-buying-workshop/resources"), { recursive: true });
+    writeFileSync(resolve(distPrerenderedDir, "colorado-home-buying-workshop/resources/needs-wants-dreams.html"), _injectedHtml_needs_wants_dreams, "utf-8");
+    const written_needs_wants_dreams = readFileSync(resolve(serverPrerenderedDir, "colorado-home-buying-workshop/resources/needs-wants-dreams.html"), "utf-8");
+    if (written_needs_wants_dreams.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for needs-wants-dreams");
+    console.log("[prerender-all] Done: colorado-home-buying-workshop/resources/needs-wants-dreams");
+  }
+  console.log("[prerender-all] All 112 routes complete.");
 
   // Copy Buying Buddy foundation pages (not in prerender pipeline) to dist/prerendered/
   // These are standalone HTML files that must exist in dist for production route handlers.
