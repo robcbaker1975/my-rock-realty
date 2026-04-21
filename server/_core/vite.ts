@@ -1604,7 +1604,15 @@ export function serveStatic(app: Express) {
   });
   app.use(express.static(distPath));
   // fall through to index.html if the file doesn't exist
-  app.use("*", (_req, res) => {
+  // BUT: do NOT fall through for /assets/* — those are static files that should 404 if missing
+  app.use("*", (req, res) => {
+    // Prevent /assets/* from falling through to HTML fallback
+    // If a request for /assets/something.js reaches here, it means the file doesn't exist
+    // Serve 404 instead of HTML to avoid browser trying to parse HTML as JS/CSS
+    if (req.path.startsWith("/assets/")) {
+      res.status(404).send("Not Found");
+      return;
+    }
     res.sendFile(path.resolve(distPath, "index.html"));
   });
 }
