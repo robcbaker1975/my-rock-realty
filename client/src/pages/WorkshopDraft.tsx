@@ -462,32 +462,32 @@ export default function WorkshopDraft() {
 
           <div className="bg-white rounded-lg border border-charcoal/5 shadow-sm px-5 sm:px-8">
             <FAQItem
-              question="Can I really buy a home in Colorado with little or no money down?"
-              answer="Some buyers may qualify for low down payment or no down payment loan programs depending on eligibility. The workshop covers common Colorado buyer programs, seller concessions, and financing strategies that may help reduce upfront cash needed at closing."
+              question="Can I buy a home in Colorado with no money down?"
+              answer="Yes, some buyers qualify. The workshop covers FHA, VA, USDA, and grant programs that may require little or no down payment. Seller concessions can also reduce upfront costs."
             />
             <FAQItem
-              question="How much does the workshop cost?"
-              answer="It's completely free. Seats are limited each Tuesday at 6 PM MT, so we recommend reserving early."
+              question="Is this workshop really free?"
+              answer="Yes, completely free. Seats are limited, so register early for the Tuesday 6 PM MT session that works for you."
+            />
+            <FAQItem
+              question="Is this a sales pitch?"
+              answer="No. Rob teaches education-first. You'll get actionable steps and resources, not a hard sell."
             />
             <FAQItem
               question="Who should attend?"
-              answer="First-time buyers, renters, and anyone curious about FHA, VA, USDA, and grant options in Colorado. Whether you're just starting to think about buying or actively searching, you'll get value from this workshop."
+              answer="First-time buyers, renters exploring homeownership, current homeowners planning their next purchase, and anyone uncertain about financing or programs."
             />
             <FAQItem
-              question="What credit score do I need?"
-              answer="Credit requirements vary by loan type, lender, and overall financial profile. The workshop covers common program guidelines, what lenders typically look for, and practical next steps for buyers who may need more preparation."
+              question="What if I've already started the buying process?"
+              answer="You'll still benefit. The workshop covers programs, negotiation strategies, and financing options you may not have explored yet."
             />
             <FAQItem
-              question="Is this just a sales pitch?"
-              answer="No. This is an educational workshop led by Rob Baker. You'll get actionable steps and resources, not a hard sell. Rob's coaching background at Zillow means the focus is always on education first."
+              question="Do I need to be ready to buy right now?"
+              answer="No. Whether you're just curious or actively searching, the workshop gives you a clear roadmap and helps you avoid costly mistakes."
             />
             <FAQItem
-              question="What if I'm worried about overpaying or hidden repair issues?"
-              answer="Appraisals, professional inspections, and home warranty options can provide peace of mind. The workshop covers how to use market data, comparable sales, and negotiation strategy to make a more informed decision about pricing and condition."
-            />
-            <FAQItem
-              question="What if I'm uncertain about financing or don't have much cash upfront?"
-              answer="That's exactly what the workshop addresses. Trusted lender partners and financing programs may help buyers explore options that work for their situation. Seller concessions can also help reduce upfront closing costs in some transactions."
+              question="Will grants and down payment assistance be covered?"
+              answer="Yes. The workshop covers Colorado buyer programs, down payment assistance, grants, and seller concessions that may help reduce upfront cash needed."
             />
           </div>
         </div>
@@ -496,10 +496,10 @@ export default function WorkshopDraft() {
       {/* ═══════════════════════════════════════════════════
           FINANCING DISCLAIMER
       ═══════════════════════════════════════════════════ */}
-      <section className="py-10 sm:py-14 bg-warm-white/50 border-t border-charcoal/5">
+      <section className="py-8 sm:py-10 bg-warm-white/50 border-t border-charcoal/5">
         <div className="container max-w-3xl">
-          <p className="text-[14px] sm:text-[15px] text-charcoal/70 leading-relaxed text-center">
-            <span className="font-semibold text-charcoal">My Rock Realty, LLC is not a mortgage lender.</span> Loan options, approval, rates, and program eligibility are determined by licensed lenders and may vary based on qualifications and current guidelines.
+          <p className="text-[13px] sm:text-[14px] text-charcoal/60 leading-relaxed text-center">
+            <span className="font-semibold text-charcoal/70">My Rock Realty, LLC is not a lender.</span> Loan approval, rates, and program eligibility are determined by licensed lenders and vary by qualifications.
           </p>
         </div>
       </section>
@@ -510,14 +510,14 @@ export default function WorkshopDraft() {
       <section className="py-8 sm:py-10 bg-charcoal/5 border-t border-charcoal/10">
         <div className="container max-w-3xl">
           <p className="text-charcoal/70 text-[14px] sm:text-[15px] leading-relaxed mb-3">
-            Looking for the workshop worksheets? Three practical tools — Needs, Wants &amp; Dreams, Monthly Payment Comfort, and Buyer Offer Strategy — are available to support the workshop.
+            After the workshop, download three practical worksheets to help you move forward: Needs, Wants &amp; Dreams, Monthly Payment Comfort, and Buyer Offer Strategy.
           </p>
           <a
             href="/colorado-home-buying-workshop/resources"
             className="inline-flex items-center gap-2 text-charcoal text-sm font-semibold underline underline-offset-4 hover:text-gold transition-colors"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            View Workshop Worksheets &amp; Resources →
+            Get the Worksheets →
           </a>
         </div>
       </section>
@@ -562,10 +562,10 @@ export default function WorkshopDraft() {
             className="text-2xl sm:text-3xl lg:text-4xl font-bold text-cream leading-tight mb-5"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Ready to Take the First Step Toward Homeownership?
+            Get Clear on Your Colorado Home Buying Options
           </h2>
           <p className="text-cream/70 text-[15px] sm:text-base leading-relaxed mb-4 max-w-xl mx-auto">
-            Join Rob Baker's free weekly workshop and discover the programs, strategies, and steps that may help Colorado buyers reduce upfront costs and move toward homeownership with more clarity and confidence.
+            Attend Rob Baker's free workshop. Learn which programs you may qualify for, how to reduce upfront costs, and the exact steps to move forward with confidence.
           </p>
 
           <div className="text-cream/50 text-sm mb-8">
