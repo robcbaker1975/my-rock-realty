@@ -142,10 +142,10 @@ export default function WorkshopDraft() {
               className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cream leading-tight mb-5"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
-              Colorado Home Buying Workshop
+              Free Colorado Home Buying Workshop
             </h1>
             <p className="text-cream/80 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl mx-auto">
-              In just 60 minutes, learn how Colorado home buying programs, seller concessions, and financing strategies may help reduce upfront cash needs — and walk away with a clear, step-by-step roadmap to homeownership.
+              Hosted by Rob Baker. Learn how to avoid costly mistakes, understand financing and down payment assistance options, and build a smarter buying plan — all in 60 minutes.
             </p>
 
             {/* Workshop details — professional bullet formatting */}
@@ -165,7 +165,7 @@ export default function WorkshopDraft() {
                 <div className="w-9 h-9 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-2">
                   <Award size={16} className="text-gold" />
                 </div>
-                <p className="text-cream/70 text-xs sm:text-sm font-medium leading-tight">In Real Estate<br />Since 2018</p>
+                <p className="text-cream/70 text-xs sm:text-sm font-medium leading-tight">Over a Decade<br />in Real Estate</p>
               </div>
               <div className="text-center">
                 <div className="w-9 h-9 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-2">
@@ -420,9 +420,28 @@ export default function WorkshopDraft() {
             <h3 className="text-xl sm:text-2xl font-bold text-charcoal mb-5" style={{ fontFamily: "'Outfit', sans-serif" }}>
               Who This Workshop Is For
             </h3>
-            <p className="text-charcoal/70 text-[15px] sm:text-base leading-relaxed">
-              First-time buyers. Renters exploring homeownership. Current homeowners planning their next purchase. Buyers relocating to Colorado. Anyone who wants clarity before talking to a lender or making a move. If you're curious about your options, this workshop is for you.
-            </p>
+            <ul className="text-charcoal/70 text-[15px] sm:text-base leading-relaxed space-y-3">
+              <li className="flex items-start gap-3">
+                <span className="text-gold font-bold mt-0.5">•</span>
+                <span><strong className="text-charcoal">First-time buyers</strong> who want a clear roadmap before starting to search</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-gold font-bold mt-0.5">•</span>
+                <span><strong className="text-charcoal">Renters</strong> exploring homeownership and wondering if it's possible with limited down payment</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-gold font-bold mt-0.5">•</span>
+                <span><strong className="text-charcoal">Current homeowners</strong> planning their next purchase or upgrade</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-gold font-bold mt-0.5">•</span>
+                <span><strong className="text-charcoal">Buyers relocating to Colorado</strong> who need to understand local programs and market dynamics</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-gold font-bold mt-0.5">•</span>
+                <span><strong className="text-charcoal">Anyone uncertain about financing</strong> who wants real answers before talking to a lender</span>
+              </li>
+            </ul>
           </motion.div>
         </div>
       </section>
