@@ -6,7 +6,7 @@
 import SeoHead from "@/components/seo/SeoHead";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { useEffect } from "react";
-import { ArrowRight, Phone, Mail, ClipboardList, DollarSign, FileText } from "lucide-react";
+import { ArrowRight, Phone, Mail, ClipboardList, DollarSign, FileText, ChevronRight } from "lucide-react";
 
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/logo-256-q90_82c472ae.webp";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/workshop-section-Yp8jnnKmpb9X4Au9XRWi4s.webp";
@@ -14,36 +14,42 @@ const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq
 const worksheets = [
   {
     number: "Step 1",
+    step: "01",
     icon: ClipboardList,
     title: "Needs, Wants & Dreams",
-    when: "Use this before you start searching.",
+    when: "Before you start searching",
     role: "Get clear on what actually matters before the search gets noisy.",
     description:
       "Most buyers start looking at homes before they know what they really need. The result is a scattered search, emotional decisions, and a lot of wasted time. This worksheet helps you separate true needs from flexible wants and longer-term dreams — so your search stays focused, your conversations with your agent stay productive, and you don't end up settling for the wrong home.",
     href: "/colorado-home-buying-workshop/resources/needs-wants-dreams",
     cta: "Open Worksheet 1",
+    external: false,
   },
   {
     number: "Step 2",
+    step: "02",
     icon: DollarSign,
     title: "Monthly Payment Comfort",
-    when: "Use this before you make any offers.",
+    when: "Before you make any offers",
     role: "Separate what a lender approves from what you're actually comfortable paying.",
     description:
       "Lender approval tells you the ceiling. This worksheet helps you find your floor — the monthly payment you can genuinely live with, not just technically afford. Working through this before you write an offer means you go in with a number that's grounded in your real life, not just what the bank says is possible.",
     href: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/monthly-payment-comfort-worksheet_e42740c1.html",
     cta: "Open Worksheet 2",
+    external: true,
   },
   {
     number: "Step 3",
+    step: "03",
     icon: FileText,
     title: "Buyer Offer Strategy",
-    when: "Use this when you're ready to write an offer.",
+    when: "When you're ready to write an offer",
     role: "Think through price, concessions, contingencies, and structure before you write.",
     description:
       "Writing an offer without a clear strategy usually leads to regret — either you overpay, leave protections on the table, or lose a home you could have won. This worksheet walks you through every major decision point: price, seller concessions, loan and property risk, contingencies, and offer structure. You go in with a plan instead of a guess.",
     href: "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/buyer-offer-strategy-worksheet_b9d78a0a.html",
     cta: "Open Worksheet 3",
+    external: true,
   },
 ];
 
@@ -123,7 +129,7 @@ export default function WorkshopResources() {
           </a>
           <a
             href="/colorado-home-buying-workshop"
-            className="text-cream/70 hover:text-gold text-xs sm:text-sm font-medium transition-colors"
+            className="inline-flex items-center gap-1.5 text-cream/70 hover:text-gold text-xs sm:text-sm font-medium transition-colors"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             ← Back to Workshop
@@ -149,7 +155,7 @@ export default function WorkshopResources() {
       </div>
 
       {/* ═══════════════════════════════════════════════════
-          HERO — Workshop-branded, charcoal with background image
+          HERO
       ═══════════════════════════════════════════════════ */}
       <section className="relative bg-charcoal overflow-hidden">
         <div
@@ -169,16 +175,16 @@ export default function WorkshopResources() {
           >
             Workshop Toolkit
           </h1>
-          <p className="text-cream/80 text-base sm:text-lg leading-relaxed max-w-2xl">
-            Three worksheets built to support the workshop — one for each major decision point in the Colorado home buying process. Use them in sequence to build clarity before you search, before you offer, and before you sign.
+          <p className="text-cream/80 text-base sm:text-lg leading-relaxed max-w-2xl mb-0">
+            Three worksheets built for the workshop — one for each major decision point in the Colorado home buying process. Use them in sequence to build clarity before you search, before you offer, and before you sign.
           </p>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          HOW TO USE THESE RESOURCES
+          HOW TO USE — 3-step sequence visual
       ═══════════════════════════════════════════════════ */}
-      <section className="py-12 sm:py-16 border-b border-charcoal/10">
+      <section className="py-10 sm:py-14 border-b border-charcoal/10 bg-warm-white">
         <div className="container max-w-3xl">
           <p
             className="text-gold text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4"
@@ -192,67 +198,89 @@ export default function WorkshopResources() {
           >
             Three worksheets. Three decision points. One clear sequence.
           </h2>
-          <div className="text-charcoal/70 text-[15px] sm:text-base leading-relaxed space-y-3 max-w-2xl">
-            <p>
-              The workshop covers a lot of ground in 60 minutes. These worksheets give you a place to apply that thinking to your specific situation — before you start searching, before you write an offer, and before you commit to a number you haven't fully thought through.
-            </p>
-            <p>
-              Each worksheet is standalone. You don't need to complete all three at once. Start with the one that matches where you are right now, and come back to the others as you move through the process.
-            </p>
+          <p className="text-charcoal/70 text-[15px] sm:text-base leading-relaxed mb-8 max-w-2xl">
+            The workshop covers a lot of ground in 60 minutes. These worksheets give you a place to apply that thinking to your specific situation. Each one is standalone — start with the one that matches where you are right now.
+          </p>
+          {/* Sequence visual */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { step: "01", label: "Before you search", title: "Needs, Wants & Dreams" },
+              { step: "02", label: "Before you offer", title: "Monthly Payment Comfort" },
+              { step: "03", label: "Before you sign", title: "Buyer Offer Strategy" },
+            ].map((item, i) => (
+              <div key={item.step} className="flex sm:flex-col items-start sm:items-start gap-3 sm:gap-2 bg-charcoal/[0.04] border border-charcoal/10 rounded-lg px-4 py-4">
+                <span className="text-gold text-2xl font-bold shrink-0" style={{ fontFamily: "'Outfit', sans-serif" }}>{item.step}</span>
+                <div>
+                  <p className="text-charcoal/50 text-[11px] font-semibold tracking-widest uppercase mb-0.5" style={{ fontFamily: "'Outfit', sans-serif" }}>{item.label}</p>
+                  <p className="text-charcoal text-sm font-semibold leading-snug" style={{ fontFamily: "'Outfit', sans-serif" }}>{item.title}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          WORKSHEET SEQUENCE — 3 premium blocks
+          WORKSHEET CARDS — 3 premium blocks
       ═══════════════════════════════════════════════════ */}
-      <section className="py-12 sm:py-16">
+      <section className="py-10 sm:py-14 bg-warm-white">
         <div className="container max-w-3xl">
-          <div className="flex flex-col gap-0">
-            {worksheets.map((ws, idx) => {
+          <div className="flex flex-col gap-6">
+            {worksheets.map((ws) => {
               const Icon = ws.icon;
               return (
                 <div
                   key={ws.number}
-                  className={`relative flex flex-col sm:flex-row gap-6 sm:gap-8 py-10 sm:py-12 ${idx < worksheets.length - 1 ? "border-b border-charcoal/10" : ""}`}
+                  className="bg-white border border-charcoal/10 rounded-xl shadow-sm overflow-hidden"
                 >
-                  {/* Step number + connector line */}
-                  <div className="flex sm:flex-col items-center sm:items-center gap-3 sm:gap-0 shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-charcoal flex items-center justify-center shrink-0">
-                      <Icon size={20} className="text-gold" />
+                  {/* Card header bar */}
+                  <div className="bg-charcoal px-6 py-4 flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center shrink-0">
+                        <Icon size={17} className="text-gold" />
+                      </div>
+                      <div>
+                        <p className="text-gold text-[11px] font-semibold tracking-widest uppercase leading-none mb-0.5" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                          {ws.number}
+                        </p>
+                        <h3
+                          className="text-cream text-base sm:text-lg font-bold leading-snug"
+                          style={{ fontFamily: "'Outfit', sans-serif" }}
+                        >
+                          {ws.title}
+                        </h3>
+                      </div>
                     </div>
-                    {idx < worksheets.length - 1 && (
-                      <div className="hidden sm:block w-px flex-1 bg-charcoal/15 mt-3" style={{ minHeight: "3rem" }} />
-                    )}
+                    <span className="hidden sm:block text-gold/40 text-4xl font-bold" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                      {ws.step}
+                    </span>
                   </div>
 
-                  {/* Content */}
-                  <div className="flex-1 pt-0 sm:pt-1">
-                    <p
-                      className="text-gold text-xs font-semibold tracking-widest uppercase mb-1"
-                      style={{ fontFamily: "'Outfit', sans-serif" }}
-                    >
-                      {ws.number}
+                  {/* Card body */}
+                  <div className="px-6 py-6">
+                    {/* When to use */}
+                    <div className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/20 rounded-full px-3 py-1 mb-4">
+                      <span className="text-gold/90 text-[11px] font-semibold tracking-wide uppercase" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                        Use this: {ws.when}
+                      </span>
+                    </div>
+
+                    {/* Role / purpose */}
+                    <p className="text-charcoal text-[15px] sm:text-base font-semibold leading-snug mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                      {ws.role}
                     </p>
-                    <h3
-                      className="text-xl sm:text-2xl font-bold text-charcoal mb-1 leading-snug"
-                      style={{ fontFamily: "'Outfit', sans-serif" }}
-                    >
-                      {ws.title}
-                    </h3>
-                    <p className="text-gold/80 text-xs sm:text-sm font-medium mb-3" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                      {ws.when}
-                    </p>
-                    <p className="text-charcoal/60 text-sm font-semibold mb-3 italic">{ws.role}</p>
-                    <p className="text-charcoal/70 text-[14px] sm:text-[15px] leading-relaxed mb-6">
+
+                    {/* Description */}
+                    <p className="text-charcoal/65 text-[14px] sm:text-[15px] leading-relaxed mb-6">
                       {ws.description}
                     </p>
+
+                    {/* CTA */}
                     <a
                       href={ws.href}
-                      className="inline-flex items-center gap-2 bg-charcoal text-cream text-sm font-semibold px-5 py-3 rounded transition-all duration-200 hover:bg-charcoal/80"
+                      className="inline-flex items-center gap-2 bg-charcoal text-cream text-sm font-semibold px-5 py-3 rounded-lg transition-all duration-200 hover:bg-charcoal/80"
                       style={{ fontFamily: "'Outfit', sans-serif" }}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      {...(ws.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     >
                       {ws.cta}
                       <ArrowRight size={15} />
@@ -266,9 +294,9 @@ export default function WorkshopResources() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          FAQ — 3 real questions, no filler
+          FAQ
       ═══════════════════════════════════════════════════ */}
-      <section className="py-12 sm:py-16 bg-charcoal/[0.03] border-t border-charcoal/10">
+      <section className="py-10 sm:py-14 bg-charcoal/[0.03] border-t border-charcoal/10">
         <div className="container max-w-3xl">
           <p
             className="text-gold text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4"
@@ -282,7 +310,7 @@ export default function WorkshopResources() {
           >
             About the worksheets
           </h2>
-          <div>
+          <div className="bg-white border border-charcoal/10 rounded-xl px-5 sm:px-8">
             {faqs.map((f) => (
               <FAQItem key={f.q} q={f.q} a={f.a} />
             ))}
@@ -298,9 +326,9 @@ export default function WorkshopResources() {
       {/* ═══════════════════════════════════════════════════
           CLOSING CTA — Workshop registration
       ═══════════════════════════════════════════════════ */}
-      <section className="py-12 sm:py-16 border-t border-charcoal/10">
+      <section className="py-10 sm:py-14 border-t border-charcoal/10 bg-warm-white">
         <div className="container max-w-3xl">
-          <div className="bg-charcoal rounded-lg px-7 sm:px-10 py-9 sm:py-11">
+          <div className="bg-charcoal rounded-xl px-7 sm:px-10 py-9 sm:py-11">
             <p
               className="text-gold text-xs font-semibold tracking-widest uppercase mb-3"
               style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -321,7 +349,7 @@ export default function WorkshopResources() {
                 href="https://coloradohomebuyingworkshop.com/registration-form-page"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gold text-charcoal text-sm font-bold px-6 py-3.5 rounded transition-all duration-200 hover:bg-gold/90"
+                className="inline-flex items-center gap-2 bg-gold text-charcoal text-sm font-bold px-6 py-3.5 rounded-lg transition-all duration-200 hover:bg-gold/90"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
                 Reserve Your Free Seat
@@ -329,10 +357,11 @@ export default function WorkshopResources() {
               </a>
               <a
                 href="/colorado-home-buying-workshop"
-                className="text-cream/60 hover:text-gold text-sm font-medium transition-colors"
+                className="inline-flex items-center gap-1 text-cream/60 hover:text-gold text-sm font-medium transition-colors"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                Learn more about the workshop →
+                Learn more about the workshop
+                <ChevronRight size={14} />
               </a>
             </div>
           </div>

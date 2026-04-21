@@ -2,6 +2,7 @@
 import SeoHead from "@/components/seo/SeoHead";
 import LeadForm from "@/components/LeadForm";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import { buildFAQPageSchema } from "@/lib/seo/schema";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown, Clock, MapPin, DollarSign, Star, ArrowRight, Phone, Mail, Shield, Users, TrendingUp, Award, Home as HomeIcon, Landmark, Wrench, Banknote, BadgeCheck, Globe } from "lucide-react";
@@ -70,6 +71,39 @@ function CTAButton({ variant = "primary", className = "" }: { variant?: "primary
 export default function WorkshopDraft() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
+  const faqContent = [
+    {
+      question: "Can I buy a home in Colorado with no money down?",
+      answer: "Yes, some buyers qualify. The workshop covers FHA, VA, USDA, and grant programs that may require little or no down payment. Seller concessions can also reduce upfront costs.",
+    },
+    {
+      question: "Is this workshop really free?",
+      answer: "Yes, completely free. Seats are limited, so register early for the Tuesday 6 PM MT session that works for you.",
+    },
+    {
+      question: "Is this a sales pitch?",
+      answer: "No. Rob teaches education-first. You'll get actionable steps and resources, not a hard sell.",
+    },
+    {
+      question: "Who should attend?",
+      answer: "First-time buyers, renters exploring homeownership, current homeowners planning their next purchase, and anyone uncertain about financing or programs.",
+    },
+    {
+      question: "What if I've already started the buying process?",
+      answer: "You'll still benefit. The workshop covers programs, negotiation strategies, and financing options you may not have explored yet.",
+    },
+    {
+      question: "Do I need to be ready to buy right now?",
+      answer: "No. Whether you're just curious or actively searching, the workshop gives you a clear roadmap and helps you avoid costly mistakes.",
+    },
+    {
+      question: "Will grants and down payment assistance be covered?",
+      answer: "Yes. The workshop covers Colorado buyer programs, down payment assistance, grants, and seller concessions that may help reduce upfront cash needed.",
+    },
+  ];
+
+  const faqSchema = buildFAQPageSchema(faqContent);
+
   return (
     <div className="hub-page min-h-screen bg-warm-white">
       <SeoHead
@@ -81,6 +115,7 @@ export default function WorkshopDraft() {
             { label: "Workshop", href: "/colorado-home-buying-workshop" },
           ],
         }}
+        schema={faqSchema ? [faqSchema] : []}
       />
       {/* ═══════════════════════════════════════════════════
           HEADER — Logo + back to main site
