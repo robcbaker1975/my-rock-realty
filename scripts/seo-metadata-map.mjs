@@ -993,6 +993,20 @@ export const SEO_METADATA_MAP = {
     ],
   },
 
+  // Correct nested-path entry for the live route /colorado-home-buying-workshop/resources
+  "colorado-home-buying-workshop/resources": {
+    title: "Colorado Home Buying Workshop \u2014 Worksheets & Toolkit | My Rock Realty",
+    description:
+      "Three practical worksheets for Colorado home buyers: Needs, Wants & Dreams; Monthly Payment Comfort; and Buyer Offer Strategy. Use them in sequence to support the Colorado Home Buying Workshop.",
+    canonical: "https://myrockhomes.com/colorado-home-buying-workshop/resources/",
+    pageType: "guide",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Colorado Home Buying Workshop", item: "https://myrockhomes.com/colorado-home-buying-workshop/" },
+      { "@type": "ListItem", position: 3, name: "Workshop Toolkit", item: "https://myrockhomes.com/colorado-home-buying-workshop/resources/" },
+    ],
+  },
+
   // ── COMPARISON PAGES ──────────────────────────────────────────────────────
   "adams-county-vs-jefferson-county": {
     title: "Adams County vs Jefferson County, CO | My Rock Realty",
