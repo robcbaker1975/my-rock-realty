@@ -20,6 +20,18 @@ export async function setupVite(app: Express, server: Server) {
     appType: "custom",
   });
 
+  // DEV-MODE: Serve prerendered workshop page before Vite SPA fallback
+  app.get(["/colorado-home-buying-workshop", "/colorado-home-buying-workshop/"], (_req, res, next) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/colorado-home-buying-workshop.html");
+    if (fs.existsSync(srcPrerendered)) {
+      res.sendFile(srcPrerendered);
+      return;
+    }
+    // Fallback to SPA if prerendered file doesn't exist
+    next();
+  });
+
+
   app.use(vite.middlewares);
   app.use("*", async (req, res, next) => {
     const url = req.originalUrl;
@@ -1602,7 +1614,21 @@ export function serveStatic(app: Express) {
       res.sendFile(path.resolve(distPath, "index.html"));
     }
   });
+  // IL-121: Serve prerendered HTML for /colorado-home-buying-workshop (+ trailing-slash form).
+  // Primary: server/prerendered/colorado-home-buying-workshop.html — committed to git.
+  // Fallback: dist/prerendered/colorado-home-buying-workshop.html — build artifact.
+  app.get(["/colorado-home-buying-workshop", "/colorado-home-buying-workshop/"], (_req, res) => {
+    const srcPrerendered = path.resolve(process.cwd(), "server/prerendered/colorado-home-buying-workshop.html");
+    const distPrerendered = path.resolve(import.meta.dirname, "prerendered/colorado-home-buying-workshop.html");
+    const prerendered = fs.existsSync(srcPrerendered) ? srcPrerendered : distPrerendered;
+    if (fs.existsSync(prerendered)) {
+      res.sendFile(prerendered);
+    } else {
+      res.sendFile(path.resolve(distPath, "index.html"));
+    }
+  });
   app.use(express.static(distPath));
+
   // fall through to index.html if the file doesn't exist
   // BUT: do NOT fall through for /assets/* — those are static files that should 404 if missing
   app.use("*", (req, res) => {
