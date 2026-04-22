@@ -160,6 +160,7 @@ async function prerenderAll() {
   "entry-server-selling-a-home-colorado": resolve(ROOT, "client/src/entry-server-selling-a-home-colorado.tsx"),
   "entry-server-needs-wants-dreams": resolve(ROOT, "client/src/entry-server-needs-wants-dreams.tsx"),
   "entry-server-workshop-resources": resolve(ROOT, "client/src/entry-server-workshop-resources.tsx"),
+  "entry-server-workshop-draft": resolve(ROOT, "client/src/entry-server-workshop-draft.tsx"),
         },
         output: {
           format: "esm",
@@ -4160,7 +4161,30 @@ async function prerenderAll() {
     if (written_workshop_resources.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for workshop-resources");
     console.log("[prerender-all] Done: colorado-home-buying-workshop/resources");
   }
-  console.log("[prerender-all] All 113 routes complete.");
+
+  // --- colorado-home-buying-workshop ---
+  {
+    const ssrMod = await import(resolve(ROOT, "dist/server/entry-server-workshop-draft.js"));
+    const html = ssrMod.render();
+    const prerenderedShell = shell.replace(PLACEHOLDER, `<div id="root">${html}</div>`);
+    mkdirSync(serverPrerenderedDir, { recursive: true });
+    const _seoMeta_workshop = SEO_METADATA_MAP["colorado-home-buying-workshop"];
+    const _seoBlock_workshop = buildSeoHeadBlock({
+      title: _seoMeta_workshop.title,
+      description: _seoMeta_workshop.description,
+      canonical: _seoMeta_workshop.canonical,
+      ogImage: OG_IMAGE_DEFAULT,
+      schemas: [...BASE_SCHEMAS, buildBreadcrumbSchema(_seoMeta_workshop.breadcrumbs), _seoMeta_workshop.faqSchema],
+      slug: "colorado-home-buying-workshop",
+    });
+    const _injectedHtml_workshop = injectSeoHead(prerenderedShell, _seoBlock_workshop, _seoMeta_workshop.canonical);
+    writeFileSync(resolve(serverPrerenderedDir, "colorado-home-buying-workshop.html"), _injectedHtml_workshop, "utf-8");
+    writeFileSync(resolve(distPrerenderedDir, "colorado-home-buying-workshop.html"), _injectedHtml_workshop, "utf-8");
+    const written_workshop = readFileSync(resolve(serverPrerenderedDir, "colorado-home-buying-workshop.html"), "utf-8");
+    if (written_workshop.includes('<div id="root"></div>')) throw new Error("[prerender-all] FAIL: root still empty for colorado-home-buying-workshop");
+    console.log("[prerender-all] Done: colorado-home-buying-workshop");
+  }
+  console.log("[prerender-all] All 114 routes complete.");
 
   // Copy Buying Buddy foundation pages (not in prerender pipeline) to dist/prerendered/
   // These are standalone HTML files that must exist in dist for production route handlers.

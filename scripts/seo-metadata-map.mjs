@@ -981,6 +981,25 @@ export const SEO_METADATA_MAP = {
       { "@type": "ListItem", position: 2, name: "Denver Market Report 2025", item: "https://myrockhomes.com/denver-real-estate-market-report-2025/" },
     ],
   },
+  "colorado-home-buying-workshop": {
+    title: "Free Colorado Home Buying Workshop | My Rock Realty",
+    description: "Attend the free Colorado Home Buying Workshop with Rob Baker. Learn how to buy a home in Colorado with clear strategy, no pressure, and real-world guidance.",
+    canonical: "https://myrockhomes.com/colorado-home-buying-workshop",
+    breadcrumbs: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://myrockhomes.com/" },
+      { "@type": "ListItem", position: 2, name: "Colorado Home Buying Workshop", item: "https://myrockhomes.com/colorado-home-buying-workshop" },
+    ],
+    faqSchema: {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "Can I buy a home in Colorado with no money down?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, some buyers qualify. The workshop covers FHA, VA, USDA, and grant programs that may require little or no down payment. Seller concessions can also reduce upfront costs."}},
+      {"@type": "Question", "name": "Is this workshop really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, completely free. Seats are limited, so register early for the Tuesday 6 PM MT session that works for you."}},
+      {"@type": "Question", "name": "Is this a sales pitch?", "acceptedAnswer": {"@type": "Answer", "text": "No. Rob teaches education-first. You'll get actionable steps and resources, not a hard sell."}},
+      {"@type": "Question", "name": "Who should attend?", "acceptedAnswer": {"@type": "Answer", "text": "First-time buyers, renters exploring homeownership, current homeowners planning their next purchase, and anyone uncertain about financing or programs."}},
+      {"@type": "Question", "name": "What if I've already started the buying process?", "acceptedAnswer": {"@type": "Answer", "text": "You'll still benefit. The workshop covers programs, negotiation strategies, and financing options you may not have explored yet."}},
+      {"@type": "Question", "name": "Do I need to be ready to buy right now?", "acceptedAnswer": {"@type": "Answer", "text": "No. Whether you're just curious or actively searching, the workshop gives you a clear roadmap and helps you avoid costly mistakes."}},
+      {"@type": "Question", "name": "Will grants and down payment assistance be covered?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The workshop covers Colorado buyer programs, down payment assistance, grants, and seller concessions that may help reduce upfront cash needed."}}
+    ]},
+  },
+
   "colorado-home-buying-workshop-resources": {
     title: "Colorado Home Buying Workshop Resources | My Rock Realty",
     description:

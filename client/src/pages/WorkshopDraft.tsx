@@ -3,9 +3,12 @@ import SeoHead from "@/components/seo/SeoHead";
 import LeadForm from "@/components/LeadForm";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { buildFAQPageSchema } from "@/lib/seo/schema";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown, Clock, MapPin, DollarSign, Star, ArrowRight, Phone, Mail, Shield, Users, TrendingUp, Award, Home as HomeIcon, Landmark, Wrench, Banknote, BadgeCheck, Globe } from "lucide-react";
+
+// SSR-safe: suppress tRPC-dependent components during server-side rendering
+const isSSR = typeof window === "undefined";
 
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/logo-256-q90_82c472ae.webp";
 const HEADSHOT_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663410368883/7E7tsq995TWJY7BfhkC5hJ/rob-headshot_a6a8b976.jpg";
@@ -112,7 +115,8 @@ export default function WorkshopDraft() {
           description: "Attend the free Colorado Home Buying Workshop with Rob Baker. Learn how to buy a home in Colorado with clear strategy, no pressure, and real-world guidance.",
           canonicalUrl: "https://myrockhomes.com/colorado-home-buying-workshop",
           breadcrumbs: [
-            { label: "Workshop", href: "/colorado-home-buying-workshop" },
+            { label: "Home", href: "/" },
+            { label: "Colorado Home Buying Workshop", href: "/colorado-home-buying-workshop" },
           ],
         }}
         schema={faqSchema ? [faqSchema] : []}
@@ -578,12 +582,19 @@ export default function WorkshopDraft() {
               Send Rob a message and he'll get back to you before the next session.
             </p>
           </div>
-          <LeadForm
-            variant="workshop"
-            source="Workshop"
-            titleOverride=""
-            subtitleOverride=""
-          />
+          {!isSSR && (
+            <LeadForm
+              variant="workshop"
+              source="Workshop"
+              titleOverride=""
+              subtitleOverride=""
+            />
+          )}
+          {isSSR && (
+            <div className="rounded-lg border border-gold/20 bg-cream/40 p-8 text-center text-charcoal/60 text-sm">
+              Loading contact form...
+            </div>
+          )}
         </div>
       </section>
 
