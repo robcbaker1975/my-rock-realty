@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    <section className="relative bg-[#292524] py-20 sm:py-28 md:py-32">
+    <section id="about" className="relative bg-[#292524] py-20 sm:py-28 md:py-32">
       <div className="container mx-auto w-full max-w-4xl px-6 sm:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

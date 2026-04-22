@@ -5,7 +5,7 @@ export default function BuyersSection() {
   const navigate = (path: string) => { window.location.href = path; };
 
   return (
-    <section className="relative bg-[#F5F0EB] py-20 sm:py-28 md:py-32">
+    <section id="buyers" className="relative bg-[#F5F0EB] py-20 sm:py-28 md:py-32">
       <div className="container mx-auto w-full max-w-4xl px-6 sm:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
